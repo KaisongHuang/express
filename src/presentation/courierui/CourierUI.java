@@ -7,14 +7,17 @@ import javax.swing.*;
 
 import java.awt.*;
 public class CourierUI   implements ActionListener{
-	JPanel panel;
 	JFrame frame;
+	JPanel panel;
 	JButton button3;
-	 JButton button2;
-	 JButton button1;
+	JButton button2;
+	JButton button1;
 	 int width;
 	 int height;
     public void init(){
+
+    	  frame=new JFrame("courier");
+
     	  frame=new JFrame();
     	  frame.setSize(1000,700);
     	  
@@ -23,13 +26,14 @@ public class CourierUI   implements ActionListener{
       	  height=screensize.height;
       	
       	  frame.setLocation(width/2-500,height/2-350);
+
           panel=new JPanel();
           panel.setOpaque(true);
           panel.setSize(1000,700);
       
           button1=new JButton("OrderInput");
           button2=new JButton("AcceptInput");
-          button3=new JButton("BACk");
+          button3=new JButton("BACK");
           panel.add(button1);
           panel.add(button2);
           panel.add(button3);
@@ -41,7 +45,8 @@ public class CourierUI   implements ActionListener{
           frame.setVisible(true);
           button1.addActionListener(this);
       	  button3.addActionListener(this);
-    }
+    }		  
+
 	public void actionPerformed(ActionEvent e) {
 	      if(e.getSource()==button3){
 	    	  frame.dispose();
@@ -49,8 +54,6 @@ public class CourierUI   implements ActionListener{
 	      if(e.getSource()==button1){
 	    	  new OrderInput().init();
 	      }
-	      
-		  
 	}
     public JPanel getPanel(){
     	return panel;

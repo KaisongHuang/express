@@ -20,7 +20,8 @@ public class MainFrame implements ActionListener{
       	int height;
       	
     public void init(){
-    	frame=new JFrame("快递物流系统");
+
+    	frame=new JFrame("Express System");
     	//c.init();
     	Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();
     	width=screensize.width;
@@ -59,8 +60,11 @@ public class MainFrame implements ActionListener{
     	panel.add(button7);
     	panel.add(button8);
         frame.setVisible(true);
+
+    	button2.addActionListener(this);
     	button2.addActionListener(this );
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
     
     public void actionPerformed(ActionEvent e){
