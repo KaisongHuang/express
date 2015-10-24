@@ -9,16 +9,15 @@ import java.awt.*;
 public class CourierUI   implements ActionListener{
 	JFrame frame;
 	JPanel panel;
-	JFrame frame;
 	JButton button3;
-	 JButton button2;
-	 JButton button1;
+	JButton button2;
+	JButton button1;
 	 int width;
 	 int height;
     public void init(){
-<<<<<<< HEAD
+
     	  frame=new JFrame("courier");
-=======
+
     	  frame=new JFrame();
     	  frame.setSize(1000,700);
     	  
@@ -27,7 +26,7 @@ public class CourierUI   implements ActionListener{
       	  height=screensize.height;
       	
       	  frame.setLocation(width/2-500,height/2-350);
->>>>>>> master
+
           panel=new JPanel();
           panel.setOpaque(true);
           panel.setSize(1000,700);
@@ -47,9 +46,9 @@ public class CourierUI   implements ActionListener{
           button1.addActionListener(this);
       	  button3.addActionListener(this);
     }
-<<<<<<< HEAD
+
 	public void actionPerformed(ActionEvent e) {		  
-=======
+
 	public void actionPerformed(ActionEvent e) {
 	      if(e.getSource()==button3){
 	    	  frame.dispose();
@@ -57,9 +56,6 @@ public class CourierUI   implements ActionListener{
 	      if(e.getSource()==button1){
 	    	  new OrderInput().init();
 	      }
-	      
-		  
->>>>>>> master
 	}
     public JPanel getPanel(){
     	return panel;

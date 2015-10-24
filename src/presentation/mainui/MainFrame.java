@@ -20,16 +20,14 @@ public class MainFrame implements ActionListener{
       	int height;
       	
     public void init(){
-<<<<<<< HEAD
+
     	frame=new JFrame("express");
-=======
-    	frame=new JFrame("¿ìµÝÎïÁ÷ÏµÍ³");
+    	frame=new JFrame("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³");
     	//c.init();
     	Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();
     	width=screensize.width;
     	height=screensize.height;
     	
->>>>>>> master
     	panel=new JPanel();
     	frame.setLocation(width/2-500,height/2-350);
     	
@@ -63,12 +61,11 @@ public class MainFrame implements ActionListener{
     	panel.add(button7);
     	panel.add(button8);
         frame.setVisible(true);
-<<<<<<< HEAD
+
     	button2.addActionListener(this);
-=======
     	button2.addActionListener(this );
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
->>>>>>> master
+
     }
     
     public void actionPerformed(ActionEvent e){
