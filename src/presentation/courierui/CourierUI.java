@@ -18,7 +18,7 @@ public class CourierUI   implements ActionListener{
 
     	  frame=new JFrame("courier");
 
-    	  frame=new JFrame();
+    	  
     	  frame.setSize(1000,700);
     	  
     	  Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();

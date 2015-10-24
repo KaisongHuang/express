@@ -239,6 +239,7 @@ public class OrderInput implements ActionListener {
 		panel.setBackground(Color.WHITE);
 		frame.setVisible(true);
 
+		button2.addActionListener(this);
 		button3.addActionListener(this);
 
 	}
@@ -246,6 +247,25 @@ public class OrderInput implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == button3) {
 			frame.dispose();
+		}
+		if (e.getSource() == button2) {
+			field1.setText("");
+			field2.setText("");
+			field3.setText("");
+			field4.setText("");
+			field5.setText("");
+			field6.setText("");
+			field7.setText("");
+			field8.setText("");
+			field9.setText("");
+			field10.setText("");
+			field11.setText("");
+			field12.setText("");
+			field13.setText("");
+			field14.setText("");
+			field15.setText("");
+			field16.setText("");
+			
 		}
 
 	}
