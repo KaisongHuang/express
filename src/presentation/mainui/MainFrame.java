@@ -21,8 +21,7 @@ public class MainFrame implements ActionListener{
       	
     public void init(){
 
-    	frame=new JFrame("express");
-    	frame=new JFrame("�������ϵͳ");
+    	frame=new JFrame("Express System");
     	//c.init();
     	Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();
     	width=screensize.width;

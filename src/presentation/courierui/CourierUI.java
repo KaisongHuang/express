@@ -33,7 +33,7 @@ public class CourierUI   implements ActionListener{
       
           button1=new JButton("OrderInput");
           button2=new JButton("AcceptInput");
-          button3=new JButton("BACk");
+          button3=new JButton("BACK");
           panel.add(button1);
           panel.add(button2);
           panel.add(button3);
@@ -45,9 +45,7 @@ public class CourierUI   implements ActionListener{
           frame.setVisible(true);
           button1.addActionListener(this);
       	  button3.addActionListener(this);
-    }
-
-	public void actionPerformed(ActionEvent e) {		  
+    }		  
 
 	public void actionPerformed(ActionEvent e) {
 	      if(e.getSource()==button3){
