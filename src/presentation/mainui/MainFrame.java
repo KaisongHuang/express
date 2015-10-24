@@ -14,7 +14,7 @@ public class MainFrame implements ActionListener{
 	    JFrame frame;
 	    JPanel panel;
     public void init(){
-    	frame=new JFrame("快递物流系统");
+    	frame=new JFrame("express");
     	panel=new JPanel();
     	frame.setSize(1000,700);
     	panel.setSize(1000,700);
@@ -46,7 +46,7 @@ public class MainFrame implements ActionListener{
     	panel.add(button7);
     	panel.add(button8);
         frame.setVisible(true);
-    	button2.addActionListener(this );
+    	button2.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e){

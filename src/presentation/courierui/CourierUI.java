@@ -7,8 +7,10 @@ import javax.swing.*;
 
 import java.awt.*;
 public class CourierUI   implements ActionListener{
+	JFrame frame;
 	JPanel panel;
     public void init(){
+    	  frame=new JFrame("courier");
           panel=new JPanel();
           panel.setSize(1000,700);
           panel.setBackground(Color.BLACK);
@@ -21,9 +23,7 @@ public class CourierUI   implements ActionListener{
           button2.setBounds(470,400,200,80);
           button1.addActionListener(this);
     }
-	public void actionPerformed(ActionEvent e) {
-		// TODO 自动生成的方法存根
-		  
+	public void actionPerformed(ActionEvent e) {		  
 	}
     public JPanel getPanel(){
     	return panel;
