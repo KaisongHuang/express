@@ -1,5 +1,7 @@
 package presentation.mainui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,9 +15,20 @@ import presentation.courierui.CourierUI;
 public class MainFrame implements ActionListener{
 	    JFrame frame;
 	    JPanel panel;
+	   // CourierUI c=new CourierUI();
+      	int width;
+      	int height;
+      	
     public void init(){
     	frame=new JFrame("快递物流系统");
+    	//c.init();
+    	Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();
+    	width=screensize.width;
+    	height=screensize.height;
+    	
     	panel=new JPanel();
+    	frame.setLocation(width/2-500,height/2-350);
+    	
     	frame.setSize(1000,700);
     	panel.setSize(1000,700);
     	frame.add(panel);
@@ -47,12 +60,13 @@ public class MainFrame implements ActionListener{
     	panel.add(button8);
         frame.setVisible(true);
     	button2.addActionListener(this );
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
     public void actionPerformed(ActionEvent e){
-    	panel.removeAll();
+    	//frame.remove(panel);
     	CourierUI c=new CourierUI();
     	c.init();
-    	frame.add(c.getPanel());
+    	//frame.add(c.getPanel());
     }
 }
