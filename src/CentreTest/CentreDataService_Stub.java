@@ -10,7 +10,7 @@ public class CentreDataService_Stub implements CentreDataService {
 	
 	public CentrePO find(int id) throws RemoteException {
 		
-		System.out.println("Find!");
+		System.out.println("Find!!");
 		
 		return new CentrePO();
 		
