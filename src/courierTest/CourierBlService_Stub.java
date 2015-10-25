@@ -1,4 +1,4 @@
-package CourierTest;
+package courierTest;
 import po.CourierPO;
 import po.SenderPO;
 import vo.CourierVO;
@@ -19,11 +19,11 @@ public class CourierBlService_Stub implements CourierBlService{
 
 	public String getTime(int distance) {
 		
-		return "2Ìì3Ð¡Ê±";
+		return "2ï¿½ï¿½3Ð¡Ê±";
 	}
 
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return ResultMessage.Success;
 	}
     

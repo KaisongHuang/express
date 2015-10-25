@@ -1,4 +1,4 @@
-package CourierTest;
+package courierTest;
 
 import _enum.ResultMessage;
 import vo.CourierVO;
@@ -11,9 +11,9 @@ public class CourierBlService_Driver {
     	 System.out.println(courierBlService.getTime(1000));
     	 ResultMessage result=courierBlService.OrderInput(new SenderVO());
     	 if(result==ResultMessage.Success)
-    		 System.out.println("¶©µ¥ÊäÈë³É¹¦");
+    		 System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
          result=courierBlService.ConsigneeinfoInput(new CourierVO());
          if(result==ResultMessage.Success)
-    		 System.out.println("ÊÕ¼þÐÅÏ¢ÊäÈë³É¹¦");
+    		 System.out.println("ï¿½Õ¼ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
      }
 }

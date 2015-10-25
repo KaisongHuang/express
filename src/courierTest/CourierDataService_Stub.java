@@ -1,4 +1,4 @@
-package CourierTest;
+package courierTest;
 import java.rmi.RemoteException;
 
 import po.CourierPO;
