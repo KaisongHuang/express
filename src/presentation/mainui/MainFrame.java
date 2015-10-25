@@ -21,7 +21,7 @@ public class MainFrame implements ActionListener{
       	
     public void init(){
 
-    	frame=new JFrame("Express System");
+    	frame=new JFrame("Express Logistics System");
     	//c.init();
     	Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();
     	width=screensize.width;
