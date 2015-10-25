@@ -1,8 +1,8 @@
-package vo;
+package po;
 
 import java.util.ArrayList;
 
-public class CentreTransforVO {
+public class CentreTransforPO extends CentrePO {
 	
 	String transferStyle;
 	String dataOfGetin;
@@ -15,7 +15,7 @@ public class CentreTransforVO {
     ArrayList<Integer> list=new ArrayList();
     double fee;
     
-    public CentreTransforVO(String ts,String dog,int cti,int bh,String start,String arrival,int hgh,String jzy,ArrayList<Integer> list,double fee){
+    public CentreTransforPO(String ts,String dog,int cti,int bh,String start,String arrival,int hgh,String jzy,ArrayList<Integer> list,double fee){
     	this.transferStyle=ts;
     	this.dataOfGetin=dog;
     	this.centreTransferID=cti;

@@ -1,12 +1,12 @@
-package ManageTest;
+package ManagerTest;
 
 import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
-import data.managerdataservice.ManageDataService;
+import data.managerdataservice.ManagerDataService;
 import po.ManagerPO;
 
-public class ManageDataService_Stub implements ManageDataService {
+public class ManagerDataService_Stub implements ManagerDataService {
 	
 	public ManagerPO find(int id) throws RemoteException {
 		

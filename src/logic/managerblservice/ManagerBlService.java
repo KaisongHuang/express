@@ -1,5 +1,5 @@
 package logic.managerblservice;
 
-public interface ManageBlService {
+public interface ManagerBlService {
 
 }
