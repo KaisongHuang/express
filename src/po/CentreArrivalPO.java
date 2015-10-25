@@ -1,6 +1,6 @@
-package vo;
+package po;
 
-public class CentreArrivalVO {
+public class CentreArrivalPO extends CentrePO {
 	
 	int centreID;
 	String getDate;
@@ -8,7 +8,7 @@ public class CentreArrivalVO {
 	String start;
 	String expressState;
 	
-	public CentreArrivalVO(int ci, String gd, int ti, String start, String es){
+	public CentreArrivalPO(int ci, String gd, int ti, String start, String es){
 		
 		this.centreID=ci;
 		this.getDate=gd;
