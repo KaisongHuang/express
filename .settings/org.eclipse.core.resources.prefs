@@ -1,10 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=refs/remotes/origin/master
 eclipse.preferences.version=1
-<<<<<<< HEAD
+encoding//src/SellingareaTest/SellingareaBlService_Driver.java=UTF-8
 encoding//src/main/Start.java=UTF-8
-=======
-<<<<<<< HEAD
-encoding//src/main/Start.java=UTF-8
-=======
 encoding//src/presentation/courierui/OrderInput.java=UTF-8
->>>>>>> master
->>>>>>> refs/remotes/origin/master
