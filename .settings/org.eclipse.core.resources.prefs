@@ -3,6 +3,7 @@
 >>>>>>>=refs/remotes/origin/master
 eclipse.preferences.version=1
 <<<<<<< HEAD
+<<<<<<< HEAD
 encoding//src/main/Start.java=UTF-8
 encoding//src/presentation/courierui/OrderInput.java=UTF-8
 encoding//src/sellingareaTest/SellingareaBlService_Driver.java=UTF-8
@@ -10,4 +11,10 @@ encoding//src/sellingareaTest/SellingareaBlService_Driver.java=UTF-8
 encoding//src/SellingareaTest/SellingareaBlService_Driver.java=UTF-8
 encoding//src/main/Start.java=UTF-8
 encoding//src/presentation/courierui/OrderInput.java=UTF-8
+>>>>>>> master
+=======
+encoding//src/courierTest/CourierBlService_Driver.java=UTF-8
+encoding//src/main/Start.java=UTF-8
+encoding//src/presentation/courierui/OrderInput.java=UTF-8
+encoding//src/sellingareaTest/SellingareaBlService_Driver.java=UTF-8
 >>>>>>> master
