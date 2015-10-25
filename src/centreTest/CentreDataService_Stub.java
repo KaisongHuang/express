@@ -1,4 +1,4 @@
-package CentreTest;
+package centreTest;
 
 import java.rmi.RemoteException;
 

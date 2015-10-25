@@ -1,4 +1,4 @@
-package SellingareaTest;
+package sellingareaTest;
 
 import java.rmi.RemoteException;
 

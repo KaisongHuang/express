@@ -1,4 +1,4 @@
-package SellingareaTest;
+package sellingareaTest;
 
 import vo.AcceptVO;
 import vo.CarPackVO;
@@ -14,21 +14,21 @@ public class SellingareaBlService_Driver {
       public void drive(SellingareaBlService sellingarea){
     	  ResultMessage result=sellingarea.manageCarPack(new CarPackVO() );
     	  if(result==ResultMessage.Error)
-    		  System.out.println("ÊäÈëµÄÐÅÏ¢´íÎó");
+    		  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½");
     	  result=sellingarea.createReceiving(new AcceptVO());
     	  if(result==ResultMessage.Fail)
-    		  System.out.println("ÐÅÏ¢ÉÏ´«Ê§°Ü");
+    		  System.out.println("ï¿½ï¿½Ï¢ï¿½Ï´ï¿½Ê§ï¿½ï¿½");
     	  result=sellingarea.createDelivery(new DeliverVO());
     	  if(result==ResultMessage.Success)
-    		  System.out.println("ÐÅÏ¢ÉÏ´«³É¹¦");
+    		  System.out.println("ï¿½ï¿½Ï¢ï¿½Ï´ï¿½ï¿½É¹ï¿½");
     	  result=sellingarea.createDebitnote(new ReceiptVO());
     	  if(result==ResultMessage.Success)
-    		  System.out.println("ÐÅÏ¢ÉÏ´«³É¹¦");
+    		  System.out.println("ï¿½ï¿½Ï¢ï¿½Ï´ï¿½ï¿½É¹ï¿½");
     	  result=sellingarea.manageCarinfo(new CarVO(), Operation.delete);
     	  if(result==ResultMessage.Fail)
-    		  System.out.println("ÐÅÏ¢ÉÏ´«Ê§°Ü");
+    		  System.out.println("ï¿½ï¿½Ï¢ï¿½Ï´ï¿½Ê§ï¿½ï¿½");
     	  result=sellingarea.manageDriverinfo(new DriverVO(), Operation.find);
     	  if(result==ResultMessage.Error)
-    		  System.out.println("ÊäÈëµÄÐÅÏ¢´íÎó");
+    		  System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½");
       }
 }
