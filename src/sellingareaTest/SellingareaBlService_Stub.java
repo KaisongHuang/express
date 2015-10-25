@@ -1,4 +1,4 @@
-package SellingareaTest;
+package sellingareaTest;
 import vo.AcceptVO;
 import vo.CarPackVO;
 import vo.CarVO;
