@@ -62,7 +62,6 @@ public class MainFrame implements ActionListener{
         frame.setVisible(true);
 
     	button2.addActionListener(this);
-    	button2.addActionListener(this );
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
