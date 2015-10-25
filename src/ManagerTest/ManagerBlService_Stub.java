@@ -1,9 +1,9 @@
-package ManageTest;
+package ManagerTest;
 
 import _enum.ResultMessage;
-import logic.managerblservice.ManageBlService;
+import logic.managerblservice.ManagerBlService;
 
-public class ManageBlService_Stub implements ManageBlService {
+public class ManagerBlService_Stub implements ManagerBlService {
 	
 	public ResultMessage manageMember(){
 		

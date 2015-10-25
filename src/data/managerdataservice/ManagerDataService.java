@@ -6,7 +6,7 @@ import _enum.ResultMessage;
 
 import po.ManagerPO;
 
-public interface ManageDataService {
+public interface ManagerDataService {
 	
 	public ManagerPO find(int id) throws RemoteException;
 	public ResultMessage insert(ManagerPO po) throws RemoteException;
