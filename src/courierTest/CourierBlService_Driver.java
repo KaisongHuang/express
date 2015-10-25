@@ -11,9 +11,9 @@ public class CourierBlService_Driver {
     	 System.out.println(courierBlService.getTime(1000));
     	 ResultMessage result=courierBlService.OrderInput(new SenderVO());
     	 if(result==ResultMessage.Success)
-    		 System.out.println("��������ɹ�");
+    		 System.out.println("锟斤拷锟斤拷锟斤拷锟斤拷晒锟�");
          result=courierBlService.ConsigneeinfoInput(new CourierVO());
          if(result==ResultMessage.Success)
-    		 System.out.println("�ռ���Ϣ����ɹ�");
+    		 System.out.println("锟秸硷拷锟斤拷息锟斤拷锟斤拷晒锟�");
      }
 }
