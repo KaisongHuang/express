@@ -1,6 +1,6 @@
 package logic.financeblservice;
 
-import vo.CountVO;
+import vo.AccountVO;
 import vo.FinanceVO;
 import vo.PayVO;
 import _enum.Operation;
@@ -13,5 +13,6 @@ public interface FinanceBlService {
 
 	public FinanceVO getTotal(String begin, String end);
 
-	public ResultMessage managerCount(CountVO vo, Operation op);
+	public ResultMessage manageAccount(AccountVO vo, Operation op);
+	public AccountVO find (String bankAccount);
 }
