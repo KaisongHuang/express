@@ -6,11 +6,10 @@ import po.SellingareaPO;
 import _enum.ResultMessage;
 import data.sellingareadataservice.SellingareaDataService;
 
-public class SellingDataService_Stub implements SellingareaDataService{
+public class SellingDataService_Stub implements SellingareaDataService {
 
 	public SellingareaPO find(int id) throws RemoteException {
 		System.out.println("find Succeed!");
-		
 		return new SellingareaPO();
 	}
 
