@@ -21,7 +21,7 @@ public class FinanceBlService_Stub implements FinanceBlService{
 
 	public FinanceVO getTotal(String begin, String end) {
 		// TODO Auto-generated method stub
-		return null;
+		return new FinanceVO();
 	}
 
 	public ResultMessage managerCount(CountVO vo, Operation op) {
