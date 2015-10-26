@@ -1,4 +1,4 @@
-package managerTest;
+package ManagerTest;
 
 import _enum.ResultMessage;
 import logic.managerblservice.ManagerBlService;

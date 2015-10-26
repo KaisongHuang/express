@@ -1,4 +1,4 @@
-package managerTest;
+package ManagerTest;
 
 import java.rmi.RemoteException;
 

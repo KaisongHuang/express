@@ -1,4 +1,4 @@
-package centreTest;
+package CentreTest;
 
 import _enum.ResultMessage;
 import logic.centreblservice.CentreBlService;
