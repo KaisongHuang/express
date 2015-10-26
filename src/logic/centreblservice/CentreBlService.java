@@ -8,6 +8,7 @@ import vo.PackVO;
 
 public interface CentreBlService {
 	
+	
 	public ResultMessage manageTranfor(CentreTransforVO vo);
 	public ResultMessage createReceive(CentreArrivalVO vo);
 	public ResultMessage createPack(PackVO vo);

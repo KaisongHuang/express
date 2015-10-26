@@ -1,6 +1,6 @@
 package financeTest;
 
-import vo.CountVO;
+import vo.AccountVO;
 import vo.PayVO;
 import _enum.Operation;
 import _enum.ResultMessage;
@@ -14,12 +14,16 @@ public class FinanceBlService_Driver {
 
 		ResultMessage result;
 		Operation op = Operation.delete;
-		result = finance.createCost(new PayVO());
+		result = finance.createCost(new PayVO(null, null, null, null, null, 0));
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
 
-		result = finance.managerCount(new CountVO(), op);
+		result = finance.manageAccount(new AccountVO(null, 0), op);
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
+		
+		AccountVO res=finance.find(null);
+		if(res==null)
+			System.out.println("Not Found!");
 	}
 }

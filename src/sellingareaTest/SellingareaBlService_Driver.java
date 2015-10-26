@@ -30,5 +30,13 @@ public class SellingareaBlService_Driver {
     	  result=sellingarea.manageDriverinfo(new DriverVO(), Operation.find);
     	  if(result==ResultMessage.Error)
     		  System.out.println("锟斤拷锟斤拷锟斤拷锟较拷锟斤拷锟�");
+    	  
+    	  CarVO resCar=sellingarea.findCar(0);
+    	  if(resCar==null)
+    		  System.out.println("Not Found!");
+    	  
+    	  DriverVO resDriver=sellingarea.findDriver(0);
+    	  if(resDriver==null)
+    		  System.out.println("Not Found!");
       }
 }
