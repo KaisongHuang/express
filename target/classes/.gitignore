@@ -1,26 +1,2 @@
-<<<<<<< HEAD
-/data/
-/logic/
-/po/
-=======
->>>>>>> master
-/presentation/
-/main/
-/po/
-/logic/
-/ResultMessage/
-/ResultMessage.class
-/_enum/
-/vo/
-/CourierTest/
-/SellingareaBlService_Stub/
-/SellingareaTest/
-/data/
-/WarehouseTest/
-/sellingareaTest/
-/warehouseTest/
-/managerTest/
 /centreTest/
-/courierTest/
-/financeTest.class
-/financeTest/
+/managerTest/
