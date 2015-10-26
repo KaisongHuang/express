@@ -4,12 +4,15 @@ public class SenderPO {
       String SenderName,SenderAddress,SenderCompany,SenderCall,SenderPhone;
       String RecipientName,RecipientAddress,RecipientCompany,RecipientCall,RecipientPhone;
       int pcs,weight,volume,commodity;
-      int[] size=new int[3];
-      int bagging,total,BarCode,type;
+      String size="";
+      String bagging;
+      double total;
+      int BarCode;
+      String type;
       public SenderPO(String SenderName,String SenderAddress,String SenderCompany,String SenderCall,String SenderPhone,
       String RecipientName,String RecipientAddress,String RecipientCompany,String RecipientCall,String RecipientPhone,
       int pcs,int weight,int volume,int commodity,
-      int[] size,int bagging,int total,int BarCode,int type){
+      String size,String bagging,double total,int BarCode,String type){
     	  this.SenderName=SenderName;
     	  this.SenderAddress=SenderAddress;
     	  this.SenderCompany=SenderCompany;
