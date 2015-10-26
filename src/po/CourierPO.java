@@ -1,6 +1,8 @@
 package po;
 
-public class CourierPO {
+import java.io.Serializable;
+
+public class CourierPO implements Serializable {
 	int number;
 	String name;
 	String date;
@@ -12,7 +14,7 @@ public class CourierPO {
 	}
 
 	public CourierPO() {
-		// TODO �Զ���ɵĹ��캯����
+		// TODO 锟皆讹拷锟斤拷傻墓锟斤拷旌拷锟斤拷锟�
 	}
 
 }

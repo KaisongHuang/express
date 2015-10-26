@@ -1,5 +1,8 @@
 package logic.courierblservice;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import _enum.ResultMessage;
 import data.courierdata.Insert;
 import po.SenderPO;
@@ -11,7 +14,15 @@ public class OrderInputClass implements CourierBlService {
 	public ResultMessage OrderInput(SenderVO vo) {
 		// TODO Auto-generated method stub
 		
-		new Insert().write(new SenderPO(vo.getSenderName(),vo.getSenderAddress(),vo.getSenderCompany(),vo.getSenderCall(),vo.getSenderPhone(),vo.getRecipientName(),vo.getRecipientAddress(),vo.getRecipientCompany(),vo.getRecipientCall(),vo.getRecipientPhone(),vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),10,vo.getBarCode(),vo.getType()));
+		try {
+			new Insert().write(new SenderPO(vo.getSenderName(),vo.getSenderAddress(),vo.getSenderCompany(),vo.getSenderCall(),vo.getSenderPhone(),vo.getRecipientName(),vo.getRecipientAddress(),vo.getRecipientCompany(),vo.getRecipientCall(),vo.getRecipientPhone(),vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),10,vo.getBarCode(),vo.getType()));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return null;
 	}
