@@ -6,6 +6,9 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import logic.courierblservice.OrderInputClass;
+import vo.SenderVO;
+
 public class OrderInput implements ActionListener {
 	JButton button1;
 	JButton button2;
@@ -241,6 +244,7 @@ public class OrderInput implements ActionListener {
 
 		button2.addActionListener(this);
 		button3.addActionListener(this);
+		button1.addActionListener(this);
 
 	}
 
@@ -268,6 +272,38 @@ public class OrderInput implements ActionListener {
 			
 		}
 
+		if(e.getSource()==button1){
+			new OrderInputClass().OrderInput(new SenderVO());
+		}
+	}
+	
+	public SenderVO read(){
+		
+		String SenderName = field1.getText();
+		String SenderAddress = field2.getText();
+		String SenderCompany = field3.getText();
+		String SenderCall = field4.getText();
+		String SenderPhone = field5.getText();
+		String RecipientName = field6.getText();
+		String RecipientAddress = field7.getText();
+		String RecipientCompany = field8.getText();
+		String RecipientCall = field9.getText();
+		String RecipientPhone = field10.getText();
+		int pcs = Integer.valueOf(field11.getText());
+		int weight = Integer.valueOf(field12.getText());
+		int volume = Integer.valueOf(field13.getText());
+		int commodity = Integer.valueOf(field14.getText());
+		String size = field15.getText();
+		String bagging = (String) combo1.getSelectedItem();
+		int BarCode = Integer.valueOf(field16.getText());
+		String type = (String) combo2.getSelectedItem();
+		
+		
+		return new SenderVO(SenderName,SenderAddress,SenderCompany,SenderCall,SenderPhone,
+			    RecipientName,RecipientAddress,RecipientCompany,RecipientCall,RecipientPhone,
+			    pcs,weight,volume,commodity,
+			    size,bagging,BarCode,type);
+		
 	}
 
 }
