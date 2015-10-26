@@ -1,16 +1,18 @@
 package po;
 
 public class CourierPO {
-       int number;
-       String name;
-       String date;
-       public CourierPO(int num,String na,String da){
-    	   number=num;
-    	   name=na;
-    	   date=da;
-       }
-	public CourierPO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+	int number;
+	String name;
+	String date;
+
+	public CourierPO(int num, String na, String da) {
+		number = num;
+		name = na;
+		date = da;
 	}
-       
+
+	public CourierPO() {
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
+	}
+
 }
