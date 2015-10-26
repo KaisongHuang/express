@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/main/Start.java=UTF-8
+=======
 encoding//src/presentation/courierui/OrderInput.java=UTF-8
+>>>>>>> master
