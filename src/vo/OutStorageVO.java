@@ -12,4 +12,5 @@ public class OutStorageVO extends WarehouseVO{
 		this.trans_id=trans_id;
 	}
 
+
 }

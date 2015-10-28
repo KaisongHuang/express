@@ -18,4 +18,6 @@ public class InStorageVO extends WarehouseVO{
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 }

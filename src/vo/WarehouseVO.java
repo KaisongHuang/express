@@ -8,4 +8,5 @@ public class WarehouseVO {
 		this.id = id;
 		this.destination = destination;
 	}
+	
 }
