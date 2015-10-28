@@ -1,10 +1,6 @@
 package financeTest;
 
 import vo.AccountVO;
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 import vo.FinanceVO;
 import vo.PayVO;
 import _enum.Operation;

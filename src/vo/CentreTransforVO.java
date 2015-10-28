@@ -12,7 +12,7 @@ public class CentreTransforVO {
 	String arrival;
     int huoGuiHao;
     String jianZhuangYuan;
-    ArrayList<Integer> list=new ArrayList();
+    ArrayList<Integer> list=new ArrayList<Integer>();
     double fee;
     
     public CentreTransforVO(String ts,String dog,int cti,int bh,String start,String arrival,int hgh,String jzy,ArrayList<Integer> list,double fee){

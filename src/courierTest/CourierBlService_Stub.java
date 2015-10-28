@@ -1,6 +1,4 @@
 package courierTest;
-import po.CourierPO;
-import po.SenderPO;
 import vo.CourierVO;
 import vo.SenderVO;
 import _enum.ResultMessage;

@@ -2,7 +2,6 @@ package senderTest;
 
 import java.rmi.RemoteException;
 
-import _enum.ResultMessage;
 import data.senderdataservice.SenderDataService;
 import po.SenderPO;
 

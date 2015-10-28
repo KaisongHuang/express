@@ -9,7 +9,7 @@ public class CarPackPO extends SellingareaPO{
       String destination;
       int supervisor;
       int supercargo;
-      ArrayList<Integer> list=new ArrayList();
+      ArrayList<Integer> list=new ArrayList<Integer>();
       int fee;
       public CarPackPO(String date,int number,String start,String destination,int supervisor,int supercargo,ArrayList<Integer> list,int fee){
     	  this.date=date;

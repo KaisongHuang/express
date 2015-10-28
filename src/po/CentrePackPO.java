@@ -10,7 +10,7 @@ public class CentrePackPO extends CentrePO {
 	int carID;
 	String jianZhuangYuan;
 	String yaYunYuan;
-	ArrayList<Integer> list=new ArrayList();
+	ArrayList<Integer> list=new ArrayList<Integer>();
 	double fee;
 	
 	public CentrePackPO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,double fee){

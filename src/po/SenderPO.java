@@ -3,7 +3,11 @@ package po;
 import java.io.Serializable;
 
 public class SenderPO implements Serializable  {
-      String SenderName,SenderAddress,SenderCompany,SenderCall,SenderPhone;
+      /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String SenderName,SenderAddress,SenderCompany,SenderCall,SenderPhone;
       String RecipientName,RecipientAddress,RecipientCompany,RecipientCall,RecipientPhone;
       int pcs,weight,volume,commodity;
       String size="";
