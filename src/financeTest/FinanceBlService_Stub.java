@@ -1,7 +1,6 @@
 package financeTest;
 
 import vo.AccountVO;
-
 import vo.FinanceVO;
 import vo.PayVO;
 import _enum.Operation;
@@ -30,14 +29,14 @@ public class FinanceBlService_Stub implements FinanceBlService{
 		return ResultMessage.Success;
 	}
 
-	public ResultMessage manageAccount(AccountVO vo, Operation op) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public AccountVO find(String bankAccount) {
 		// TODO Auto-generated method stub
 		return new AccountVO(null, 0);
+	}
+
+	public ResultMessage manageAccount(AccountVO vo, Operation op) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

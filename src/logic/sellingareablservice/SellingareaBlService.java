@@ -2,12 +2,6 @@ package logic.sellingareablservice;
 
 import _enum.Operation;
 import _enum.ResultMessage;
-import po.AcceptPO;
-import po.CarPO;
-import po.CarPackPO;
-import po.DeliverPO;
-import po.DriverPO;
-import po.ReceiptPO;
 import vo.AcceptVO;
 import vo.CarPackVO;
 import vo.CarVO;

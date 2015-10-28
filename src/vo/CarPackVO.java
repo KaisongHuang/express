@@ -9,7 +9,7 @@ public class CarPackVO {
       String destination;
       int supervisor;
       int supercargo;
-      ArrayList<Integer> list=new ArrayList();
+      ArrayList<Integer> list=new ArrayList<Integer>();
       int fee;
       public CarPackVO(String date,int number,String start,String destination,int supervisor,int supercargo,ArrayList<Integer> list,int fee){
     	  this.date=date;
@@ -23,6 +23,6 @@ public class CarPackVO {
     	  this.fee=fee;
       }
 	public CarPackVO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
 	}
 }

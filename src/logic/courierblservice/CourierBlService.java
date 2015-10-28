@@ -1,8 +1,6 @@
 package logic.courierblservice;
 
 import _enum.ResultMessage;
-import po.CourierPO;
-import po.SenderPO;
 import vo.CourierVO;
 import vo.SenderVO;
 

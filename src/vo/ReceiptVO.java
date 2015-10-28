@@ -4,12 +4,12 @@ public class ReceiptVO {
     int number;
     int money;
     String date;
-    public ReceiptVO(int numbe,int money,String date){
+    public ReceiptVO(int money,String date, int number){
   	  this.number=number;
   	  this.money=money;
   	  this.date=date;
     }
 	public ReceiptVO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
 	}
 }

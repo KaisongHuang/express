@@ -12,6 +12,7 @@ public class Insert {
 	
 	public ResultMessage write(SenderPO po) throws FileNotFoundException, IOException{
 		
+		@SuppressWarnings("resource")
 		ObjectOutputStream objOut=new ObjectOutputStream(new FileOutputStream("src/temp.dat"));
 		objOut.writeObject(po);
 		
