@@ -9,7 +9,6 @@
   </parent>
   <groupId>xiaochao</groupId>
   <artifactId>Client</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>Client</name>
   <url>http://maven.apache.org</url>
   <properties>
