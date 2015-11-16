@@ -1,5 +1,7 @@
 package logic.managerbl;
 
-public class Test {
+public class Manager {
+	
+	
 
 }

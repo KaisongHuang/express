@@ -1,5 +1,5 @@
 package logic.centrebl;
 
-public class Test {
+public class Centre {
 
 }
