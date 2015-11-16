@@ -1,12 +1,13 @@
 package logic.senderblservice;
 
+import vo.HistoryVO;
 import vo.SenderVO;
 
 public interface SenderBlService {
 	
 	
 
-	public SenderVO search(int id);
+	public HistoryVO search(int id);
 	
 
 }
