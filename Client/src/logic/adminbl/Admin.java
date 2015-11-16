@@ -1,5 +1,5 @@
 package logic.adminbl;
 
-public class Test {
+public class Admin {
 
 }

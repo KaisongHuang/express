@@ -1,5 +1,6 @@
 package logic.courierbl;
 
-public class Test {
 
+
+public class Courier {
 }
