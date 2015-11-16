@@ -8,8 +8,8 @@ public class MockAdmin extends Admin{
 	public ResultMessage manageCount(AdminVO vo,Operation op){
 		return ResultMessage.Correct;
 	}
+	
 	public AdminVO find(int id){
-		return null;
-		
+		return null;		
 	}
 }
