@@ -6,7 +6,7 @@ public class InStorageVO extends WarehouseVO{
 	String pos_pai;
 	String pos_jia;
 	String pos_wei;
-
+	//ArrayList<ArrivalPO>
 	public InStorageVO(int id, String indate, String destination,
 			String pos_qu, String pos_pai, String pos_jia, String pos_wei) {
 		super(id, destination);

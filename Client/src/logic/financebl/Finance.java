@@ -1,5 +1,5 @@
 package logic.financebl;
 
-public class Test {
+public class Finance {
 
 }

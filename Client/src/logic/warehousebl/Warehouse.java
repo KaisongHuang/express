@@ -1,5 +1,5 @@
 package logic.warehousebl;
 
-public class Test {
+public class Warehouse {
 
 }

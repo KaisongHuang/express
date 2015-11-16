@@ -10,7 +10,8 @@ public class MockCourier extends Courier {
 		return ResultMessage.Correct;
 	}
 	public double MockgetPrice(double f,double p){
-		return (Double) null;
+	   //double price = f+p;
+	   return 0.0;
 		
 	}
 	public String MockgetTime(long distance){
