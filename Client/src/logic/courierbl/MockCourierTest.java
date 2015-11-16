@@ -9,16 +9,17 @@ import _enum.ResultMessage;
 public class MockCourierTest {
 
 	
+	
 	@Test
 	public void test() {
-		MockCourier Courier1 = new MockCourier();
-		MockCourier Courier2 = new MockCourier();
-		MockCourier Courier3 = new MockCourier();
-		MockCourier Courier4 = new MockCourier();
-		assertEquals(ResultMessage.Correct,Courier1.OrderInput(null));
-		assertEquals(null,Courier2.MockgetPrice(0,0));
-		assertEquals(null,Courier3.MockgetTime(0));
-		assertEquals(ResultMessage.Correct,Courier4. ConsigneeinfoInput(null));
+		ResultMessage Courier1 = new MockCourier().OrderInput(null);
+		double Courier2 = new MockCourier().MockgetPrice(0,0);
+		String Courier3 = new MockCourier().MockgetTime(0);
+		ResultMessage Courier4 = new MockCourier().ConsigneeinfoInput(null);
+		assertEquals(ResultMessage.Correct,Courier1);
+		assertEquals(0.0==Courier2,true);
+		assertEquals(null,Courier3);
+		assertEquals(ResultMessage.Correct,Courier4);
 	}
 
 }
