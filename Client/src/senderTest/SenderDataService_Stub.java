@@ -11,7 +11,7 @@ public class SenderDataService_Stub implements SenderDataService {
 
 	public HistoryPO find(int id) throws RemoteException {
 		// TODO Auto-generated method stub
-		return new HistoryPO();
+		return new HistoryPO(null, null);
 	}
 
 }
