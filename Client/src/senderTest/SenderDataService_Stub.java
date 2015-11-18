@@ -3,13 +3,15 @@ package senderTest;
 import java.rmi.RemoteException;
 
 import data.senderdataservice.SenderDataService;
+import po.HistoryPO;
 import po.SenderPO;
+import vo.HistoryVO;
 
 public class SenderDataService_Stub implements SenderDataService {
 
-	public SenderPO find(int id) throws RemoteException {
+	public HistoryPO find(int id) throws RemoteException {
 		// TODO Auto-generated method stub
-		return new SenderPO(null, null, null, null, null, null, null, null, null, null, id, id, id, id, null, null, id, id, null);
+		return new HistoryPO();
 	}
 
 }

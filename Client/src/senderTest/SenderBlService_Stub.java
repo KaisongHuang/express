@@ -1,5 +1,6 @@
 package senderTest;
 
+import vo.HistoryVO;
 import vo.SenderVO;
 import _enum.ResultMessage;
 import logic.senderblservice.SenderBlService;
@@ -11,7 +12,7 @@ public class SenderBlService_Stub implements SenderBlService {
 		return ResultMessage.Error;
 	}
 
-	public SenderVO search(int id) {
+	public HistoryVO search(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
