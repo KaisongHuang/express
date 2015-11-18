@@ -18,4 +18,41 @@ public class CarVO {
 	public CarVO() {
 		// TODO 自动生成的构造函数存根
 	}
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	public int getEngineNumber() {
+		return EngineNumber;
+	}
+	public void setEngineNumber(int engineNumber) {
+		EngineNumber = engineNumber;
+	}
+	public int getCarNumber() {
+		return CarNumber;
+	}
+	public void setCarNumber(int carNumber) {
+		CarNumber = carNumber;
+	}
+	public int getChassisNumber() {
+		return ChassisNumber;
+	}
+	public void setChassisNumber(int chassisNumber) {
+		ChassisNumber = chassisNumber;
+	}
+	public String getPurchase() {
+		return purchase;
+	}
+	public void setPurchase(String purchase) {
+		this.purchase = purchase;
+	}
+	public int getServiceTime() {
+		return ServiceTime;
+	}
+	public void setServiceTime(int serviceTime) {
+		ServiceTime = serviceTime;
+	}
+	
 }

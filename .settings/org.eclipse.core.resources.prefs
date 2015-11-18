@@ -2,3 +2,5 @@
 <<<<<<<=HEAD
 >>>>>>>=master
 eclipse.preferences.version=1
+encoding//Client/src/vo/CarPackVO.java=UTF-8
+encoding//Client/src/vo/ReceiptVO.java=UTF-8

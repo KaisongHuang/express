@@ -9,4 +9,24 @@ public class DeliverPO extends SellingareaPO{
     	 this.date=date;
     	 this.number=number;
      }
+	public int getBarCode() {
+		return BarCode;
+	}
+	public void setBarCode(int barCode) {
+		BarCode = barCode;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public int getNumber() {
+		return number;
+	}
+	public void setNumber(int number) {
+		this.number = number;
+	}
+     
+     
 }
