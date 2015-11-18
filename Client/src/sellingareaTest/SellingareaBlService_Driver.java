@@ -27,7 +27,7 @@ public class SellingareaBlService_Driver {
     	  result=sellingarea.manageCarinfo(new CarVO(), Operation.delete);
     	  if(result==ResultMessage.Fail)
     		  System.out.println("锟斤拷息锟较达拷失锟斤拷");
-    	  result=sellingarea.manageDriverinfo(new DriverVO(), Operation.find);
+    	  result=sellingarea.manageDriverinfo(new DriverVO(), Operation.delete);
     	  if(result==ResultMessage.Error)
     		  System.out.println("锟斤拷锟斤拷锟斤拷锟较拷锟斤拷锟�");
     	  
