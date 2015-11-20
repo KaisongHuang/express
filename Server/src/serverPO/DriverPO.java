@@ -1,5 +1,5 @@
-package serverPo;
-/*司机编号、姓名、出生日期、身份证号、手机、车辆单位、性别、行驶证期限*/
+package serverPO;
+/*司锟斤拷锟脚★拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷凇锟斤拷锟斤拷证锟脚★拷锟街伙拷锟斤拷锟斤拷位锟斤拷锟皆憋拷锟斤拷驶证锟斤拷锟斤拷*/
 public class DriverPO extends SellingareaPO{
     int number;
     String name;

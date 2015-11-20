@@ -1,4 +1,4 @@
-package serverPo;
+package serverPO;
 
 public class AccountPO extends FinancePO{
 	String bankAccount;

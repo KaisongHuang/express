@@ -1,4 +1,4 @@
-package serverPo;
+package serverPO;
 
 public class PayPO extends FinancePO{
 	String date;
