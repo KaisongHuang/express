@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import po.AcceptPO;
 import Server_enum.ResultMessage;
+import serverPO.AcceptPO;
 
 
 public class MySQLDataBase {
@@ -34,13 +34,13 @@ public class MySQLDataBase {
     	  try {
 			Class.forName(driverClassName);
 		} catch (ClassNotFoundException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			e.printStackTrace();
 		}
     	  try {
 			con=DriverManager.getConnection(dbURL,userName,password);
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			e.printStackTrace();
 		}
     	  initPS(con);
@@ -57,7 +57,7 @@ public class MySQLDataBase {
 			ps[6][0]=con.prepareStatement("insert into CentrePack(dog,cti,arrival,ci,jzy,yyy,list,fee) values(?,?,?,?,?)");
 			
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			e.printStackTrace();
 		}
       }
@@ -67,7 +67,7 @@ public class MySQLDataBase {
     	  try{
     		  st=(Statement) con.createStatement();
     		  int count= ((java.sql.Statement) st).executeUpdate(sql);
-    		  System.out.println("Ïò"+tableName+"ÖÐ²åÈë"+count+"ÌõÊý¾Ý³É¹¦");
+    		  System.out.println("ï¿½ï¿½"+tableName+"ï¿½Ð²ï¿½ï¿½ï¿½"+count+"ï¿½ï¿½ï¿½ï¿½Ý³É¹ï¿½");
     	  }catch(SQLException ex){
     		  return ResultMessage.Fail;
     	  }
@@ -94,7 +94,7 @@ public class MySQLDataBase {
     	  try{
     		  st=(Statement) con.createStatement();
     		  ((java.sql.Statement) st).executeQuery(sql);
-    		  System.out.println("³É¹¦É¾³ý");
+    		  System.out.println("ï¿½É¹ï¿½É¾ï¿½ï¿½");
     	  }catch(SQLException ex){
     		  return ResultMessage.Fail;
     	  }
