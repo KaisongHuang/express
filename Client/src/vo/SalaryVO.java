@@ -1,11 +1,11 @@
-package po;
+package vo;
 
-public class SalaryPO extends ManagerPO {
-
+public class SalaryVO {
+	
 	String employeeName;
 	String salaryMethod;
 	
-	public SalaryPO(String en,String sm){
+	public SalaryVO(String en,String sm){
 		this.employeeName=en;
 		this.salaryMethod=sm;
 	}
@@ -26,4 +26,5 @@ public class SalaryPO extends ManagerPO {
 		this.salaryMethod = salaryMethod;
 	}
 	
+
 }

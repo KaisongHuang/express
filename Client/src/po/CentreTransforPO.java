@@ -29,56 +29,87 @@ public class CentreTransforPO extends CentrePO {
 		this.list = list;
 		this.fee = fee;
 	}
-	
-	public String getTS() {
-		// TODO Auto-generated method stub
+
+	public String getTransferStyle() {
 		return transferStyle;
 	}
 
-	public String getDOG() {
-		// TODO Auto-generated method stub
+	public void setTransferStyle(String transferStyle) {
+		this.transferStyle = transferStyle;
+	}
+
+	public String getDataOfGetin() {
 		return dataOfGetin;
 	}
 
-	public int getCTI() {
-		// TODO Auto-generated method stub
+	public void setDataOfGetin(String dataOfGetin) {
+		this.dataOfGetin = dataOfGetin;
+	}
+
+	public int getCentreTransferID() {
 		return centreTransferID;
 	}
 
-	public int getBH() {
-		// TODO Auto-generated method stub
+	public void setCentreTransferID(int centreTransferID) {
+		this.centreTransferID = centreTransferID;
+	}
+
+	public int getBanHao() {
 		return banHao;
 	}
 
+	public void setBanHao(int banHao) {
+		this.banHao = banHao;
+	}
+
 	public String getStart() {
-		// TODO Auto-generated method stub
 		return start;
 	}
 
+	public void setStart(String start) {
+		this.start = start;
+	}
+
 	public String getArrival() {
-		// TODO Auto-generated method stub
 		return arrival;
 	}
 
-	public int getHGH() {
-		// TODO Auto-generated method stub
+	public void setArrival(String arrival) {
+		this.arrival = arrival;
+	}
+
+	public int getHuoGuiHao() {
 		return huoGuiHao;
 	}
 
-	public String getJZY() {
-		// TODO Auto-generated method stub
+	public void setHuoGuiHao(int huoGuiHao) {
+		this.huoGuiHao = huoGuiHao;
+	}
+
+	public String getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
 
+	public void setJianZhuangYuan(String jianZhuangYuan) {
+		this.jianZhuangYuan = jianZhuangYuan;
+	}
+
 	public ArrayList<Integer> getList() {
-		// TODO Auto-generated method stub
 		return list;
 	}
 
+	public void setList(ArrayList<Integer> list) {
+		this.list = list;
+	}
+
 	public double getFee() {
-		// TODO Auto-generated method stub
 		return fee;
 	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+	
 	
 
 }
