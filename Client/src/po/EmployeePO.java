@@ -17,5 +17,23 @@ public class EmployeePO extends ManagerPO {
 		this.timeOfWorking=tow;
 		this.belongToWho=btw;
 	}
+	public int getEI(){
+		return employeeID;
+	}
+	public String getEN(){
+		return employeeName;
+	}
+	public int getEA(){
+		return employeeAging;
+	}
+	public String getEP(){
+		return employeePosition;
+	}
+	public double getTOW(){
+		return timeOfWorking;
+	}
+	public String getBTW(){
+		return belongToWho;
+	}
 	
 }

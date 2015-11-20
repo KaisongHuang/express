@@ -26,5 +26,48 @@ public class CentrePackPO extends CentrePO {
 		
 	}
 	
+	public String getDOG() {
+		// TODO Auto-generated method stub
+		return dataOfGetin;
+	}
+
+	public int getCTI() {
+		// TODO Auto-generated method stub
+		return centreTransferID;
+	}
+
+
+	public String getArrival() {
+		// TODO Auto-generated method stub
+		return arrival;
+	}
+	
+	public int getCI() {
+		// TODO Auto-generated method stub
+		return carID;
+	}
+
+
+	public String getJZY() {
+		// TODO Auto-generated method stub
+		return jianZhuangYuan;
+	}
+	
+	public String getYYY() {
+		// TODO Auto-generated method stub
+		return yaYunYuan;
+	}
+
+	public ArrayList<Integer> getList() {
+		// TODO Auto-generated method stub
+		return list;
+	}
+
+	public double getFee() {
+		// TODO Auto-generated method stub
+		return fee;
+	}
+	
+
 	
 }
