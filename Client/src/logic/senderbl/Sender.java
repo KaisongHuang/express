@@ -5,7 +5,6 @@ import java.rmi.RemoteException;
 import po.HistoryPO;
 import data.senderdata.SenderData;
 import vo.HistoryVO;
-import vo.SenderVO;
 import logic.senderblservice.SenderBlService;
 
 public class Sender implements SenderBlService{
