@@ -1,4 +1,4 @@
-package serverPo;
+package serverPO;
 
 public class ReceiptPO extends SellingareaPO{
       int number;

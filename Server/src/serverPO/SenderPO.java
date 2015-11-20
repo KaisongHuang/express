@@ -1,4 +1,4 @@
-package serverPo;
+package serverPO;
 
 import java.io.Serializable;
 

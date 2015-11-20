@@ -1,4 +1,4 @@
-package serverPo;
+package serverPO;
 
 public class OutStoragePO extends WarehousePO {
 	String outdate;

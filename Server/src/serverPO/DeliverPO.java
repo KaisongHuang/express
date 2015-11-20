@@ -1,5 +1,5 @@
-package serverPo;
-/*ÍĞÔË¶©µ¥ÌõĞÎÂë¡¢µ½´ïÈÕÆÚ¡¢ÅÉ¼şÔ±±àºÅ */
+package serverPO;
+/*ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½É¼ï¿½Ô±ï¿½ï¿½ï¿½ */
 public class DeliverPO extends SellingareaPO{
      int BarCode;
      String date;

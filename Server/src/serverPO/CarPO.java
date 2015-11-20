@@ -1,5 +1,5 @@
-package serverPo;
-/*³µÁ¾´úºÅ¡¢·¢¶¯»úºÅ¡¢³µÁ¾ºÅ¡¢µ×ÅÌºÅ¡¢¹ºÂòÊ±¼ä¡¢·þÒÛÊ±¼ä*/
+package serverPO;
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ÌºÅ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä¡¢ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½*/
 public class CarPO extends SellingareaPO{
      int number;
      int EngineNumber;

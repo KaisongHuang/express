@@ -1,4 +1,4 @@
-package serverPo;
+package serverPO;
 
 public class InStoragePO extends WarehousePO {
 	String indate;
