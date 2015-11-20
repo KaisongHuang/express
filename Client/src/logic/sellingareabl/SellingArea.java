@@ -3,12 +3,12 @@ package logic.sellingareabl;
 import java.lang.invoke.VolatileCallSite;
 import java.rmi.RemoteException;
 
-import po.AcceptPO;
 import po.CarPO;
 import po.CarPackPO;
 import po.DeliverPO;
 import po.DriverPO;
 import po.ReceiptPO;
+import serverPo.AcceptPO;
 import data.sellingareadata.SellingAreaData;
 import vo.AcceptVO;
 import vo.CarPackVO;
