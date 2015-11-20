@@ -9,12 +9,12 @@ public class ManagerBlService_Driver {
 		
         ResultMessage result;
 		
-		result=manager.checkDocument();
+		result=manager.checkDocument(null);
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}
 		
-		result=manager.checkStatistics();
+		result=manager.checkStatistics(result);
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}

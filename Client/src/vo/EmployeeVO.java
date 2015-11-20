@@ -17,25 +17,55 @@ public class EmployeeVO {
 		this.timeOfWorking=tow;
 		this.belongToWho=btw;
 	}
-		
-	public int getEI(){
+
+	public int getEmployeeID() {
 		return employeeID;
 	}
-	public String getEN(){
+
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
+	}
+
+	public String getEmployeeName() {
 		return employeeName;
 	}
-	public int getEA(){
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	public int getEmployeeAging() {
 		return employeeAging;
 	}
-	public String getEP(){
+
+	public void setEmployeeAging(int employeeAging) {
+		this.employeeAging = employeeAging;
+	}
+
+	public String getEmployeePosition() {
 		return employeePosition;
 	}
-	public double getTOW(){
+
+	public void setEmployeePosition(String employeePosition) {
+		this.employeePosition = employeePosition;
+	}
+
+	public double getTimeOfWorking() {
 		return timeOfWorking;
 	}
-	public String getBTW(){
+
+	public void setTimeOfWorking(double timeOfWorking) {
+		this.timeOfWorking = timeOfWorking;
+	}
+
+	public String getBelongToWho() {
 		return belongToWho;
 	}
+
+	public void setBelongToWho(String belongToWho) {
+		this.belongToWho = belongToWho;
+	}
+		
 	
 
 }

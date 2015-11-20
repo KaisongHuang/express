@@ -15,5 +15,37 @@ public class InstitutionPO extends ManagerPO {
 		this.name=n;
 		
 	}
+
+	public int getOrganizationID() {
+		return organizationID;
+	}
+
+	public void setOrganizationID(int organizationID) {
+		this.organizationID = organizationID;
+	}
+
+	public double getDistance() {
+		return distance;
+	}
+
+	public void setDistance(double distance) {
+		this.distance = distance;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 }

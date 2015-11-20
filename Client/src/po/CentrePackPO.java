@@ -25,48 +25,72 @@ public class CentrePackPO extends CentrePO {
 		this.fee=fee;
 		
 	}
-	
-	public String getDOG() {
-		// TODO Auto-generated method stub
+
+	public String getDataOfGetin() {
 		return dataOfGetin;
 	}
 
-	public int getCTI() {
-		// TODO Auto-generated method stub
+	public void setDataOfGetin(String dataOfGetin) {
+		this.dataOfGetin = dataOfGetin;
+	}
+
+	public int getCentreTransferID() {
 		return centreTransferID;
 	}
 
+	public void setCentreTransferID(int centreTransferID) {
+		this.centreTransferID = centreTransferID;
+	}
 
 	public String getArrival() {
-		// TODO Auto-generated method stub
 		return arrival;
 	}
-	
-	public int getCI() {
-		// TODO Auto-generated method stub
+
+	public void setArrival(String arrival) {
+		this.arrival = arrival;
+	}
+
+	public int getCarID() {
 		return carID;
 	}
 
+	public void setCarID(int carID) {
+		this.carID = carID;
+	}
 
-	public String getJZY() {
-		// TODO Auto-generated method stub
+	public String getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
-	
-	public String getYYY() {
-		// TODO Auto-generated method stub
+
+	public void setJianZhuangYuan(String jianZhuangYuan) {
+		this.jianZhuangYuan = jianZhuangYuan;
+	}
+
+	public String getYaYunYuan() {
 		return yaYunYuan;
 	}
 
+	public void setYaYunYuan(String yaYunYuan) {
+		this.yaYunYuan = yaYunYuan;
+	}
+
 	public ArrayList<Integer> getList() {
-		// TODO Auto-generated method stub
 		return list;
 	}
 
+	public void setList(ArrayList<Integer> list) {
+		this.list = list;
+	}
+
 	public double getFee() {
-		// TODO Auto-generated method stub
 		return fee;
 	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+	
+	
 	
 
 	

@@ -19,7 +19,9 @@ public class Centre implements CentreBlService {
 	public ResultMessage manageTranfor(CentreTransforVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		CentreTransforPO po = new CentreTransforPO(vo.getTS(), vo.getDOG(), vo.getCTI(), vo.getBH(), vo.getStart(), vo.getArrival(), vo.getHGH(), vo.getJZY(), vo.getList(), vo.getFee());
+		CentreTransforPO po = new CentreTransforPO(vo.getTransferStyle(), vo.getDataOfGetin(), vo.getCentreTransferID(),
+				vo.getBanHao(), vo.getStart(), vo.getArrival(),	vo.getHuoGuiHao(), vo.getJianZhuangYuan(), 
+				vo.getList(), vo.getFee());
 		try{
 			rm=cd.insert(po);
 			return rm;
@@ -33,7 +35,8 @@ public class Centre implements CentreBlService {
 	public ResultMessage createReceive(CentreArrivalVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		CentreArrivalPO po = new CentreArrivalPO(vo.getCI(),vo.getGD(),vo.getTI(),vo.getStart(),vo.getES());
+		CentreArrivalPO po = new CentreArrivalPO(vo.getCentreID(),vo.getGetDate(),vo.getTransferID(),vo.getStart(),
+				vo.getExpressState());
 		try {
 			rm=cd.insert(po);
 			return rm;
@@ -47,7 +50,8 @@ public class Centre implements CentreBlService {
 	public ResultMessage createPack(PackVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		CentrePackPO po = new CentrePackPO(vo.getDOG(),vo.getCTI(),vo.getArrival(),vo.getCI(),vo.getJZY(),vo.getYYY(),vo.getList(),vo.getFee());
+		CentrePackPO po = new CentrePackPO(vo.getDataOfGetin(),vo.getCentreTransferID(),vo.getArrival(),vo.getCarID(),
+				vo.getJianZhuangYuan(),vo.getYaYunYuan(),vo.getList(),vo.getFee());
 		try {
 			rm=cd.insert(po);
 			return rm;
