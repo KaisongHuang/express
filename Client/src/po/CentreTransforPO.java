@@ -29,5 +29,56 @@ public class CentreTransforPO extends CentrePO {
 		this.list = list;
 		this.fee = fee;
 	}
+	
+	public String getTS() {
+		// TODO Auto-generated method stub
+		return transferStyle;
+	}
+
+	public String getDOG() {
+		// TODO Auto-generated method stub
+		return dataOfGetin;
+	}
+
+	public int getCTI() {
+		// TODO Auto-generated method stub
+		return centreTransferID;
+	}
+
+	public int getBH() {
+		// TODO Auto-generated method stub
+		return banHao;
+	}
+
+	public String getStart() {
+		// TODO Auto-generated method stub
+		return start;
+	}
+
+	public String getArrival() {
+		// TODO Auto-generated method stub
+		return arrival;
+	}
+
+	public int getHGH() {
+		// TODO Auto-generated method stub
+		return huoGuiHao;
+	}
+
+	public String getJZY() {
+		// TODO Auto-generated method stub
+		return jianZhuangYuan;
+	}
+
+	public ArrayList<Integer> getList() {
+		// TODO Auto-generated method stub
+		return list;
+	}
+
+	public double getFee() {
+		// TODO Auto-generated method stub
+		return fee;
+	}
+	
 
 }

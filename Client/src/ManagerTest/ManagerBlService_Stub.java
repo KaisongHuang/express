@@ -1,7 +1,10 @@
 package ManagerTest;
 
+import java.util.ArrayList;
+
 import _enum.ResultMessage;
 import logic.managerblservice.ManagerBlService;
+import vo.EmployeeVO;
 
 public class ManagerBlService_Stub implements ManagerBlService {
 	
@@ -21,6 +24,16 @@ public class ManagerBlService_Stub implements ManagerBlService {
 		
 		return ResultMessage.Error;
 		
+	}
+
+	public ArrayList<String> checkLogging() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage manageMember(EmployeeVO vo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
