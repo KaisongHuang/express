@@ -28,4 +28,87 @@ public class CentreTransforVO {
     	this.fee=fee;
     }
 
+	public String getTransferStyle() {
+		return transferStyle;
+	}
+
+	public void setTransferStyle(String transferStyle) {
+		this.transferStyle = transferStyle;
+	}
+
+	public String getDataOfGetin() {
+		return dataOfGetin;
+	}
+
+	public void setDataOfGetin(String dataOfGetin) {
+		this.dataOfGetin = dataOfGetin;
+	}
+
+	public int getCentreTransferID() {
+		return centreTransferID;
+	}
+
+	public void setCentreTransferID(int centreTransferID) {
+		this.centreTransferID = centreTransferID;
+	}
+
+	public int getBanHao() {
+		return banHao;
+	}
+
+	public void setBanHao(int banHao) {
+		this.banHao = banHao;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getArrival() {
+		return arrival;
+	}
+
+	public void setArrival(String arrival) {
+		this.arrival = arrival;
+	}
+
+	public int getHuoGuiHao() {
+		return huoGuiHao;
+	}
+
+	public void setHuoGuiHao(int huoGuiHao) {
+		this.huoGuiHao = huoGuiHao;
+	}
+
+	public String getJianZhuangYuan() {
+		return jianZhuangYuan;
+	}
+
+	public void setJianZhuangYuan(String jianZhuangYuan) {
+		this.jianZhuangYuan = jianZhuangYuan;
+	}
+
+	public ArrayList<Integer> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<Integer> list) {
+		this.list = list;
+	}
+
+	public double getFee() {
+		return fee;
+	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
+    
+    
+
+
 }

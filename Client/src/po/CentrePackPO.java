@@ -25,6 +25,73 @@ public class CentrePackPO extends CentrePO {
 		this.fee=fee;
 		
 	}
+
+	public String getDataOfGetin() {
+		return dataOfGetin;
+	}
+
+	public void setDataOfGetin(String dataOfGetin) {
+		this.dataOfGetin = dataOfGetin;
+	}
+
+	public int getCentreTransferID() {
+		return centreTransferID;
+	}
+
+	public void setCentreTransferID(int centreTransferID) {
+		this.centreTransferID = centreTransferID;
+	}
+
+	public String getArrival() {
+		return arrival;
+	}
+
+	public void setArrival(String arrival) {
+		this.arrival = arrival;
+	}
+
+	public int getCarID() {
+		return carID;
+	}
+
+	public void setCarID(int carID) {
+		this.carID = carID;
+	}
+
+	public String getJianZhuangYuan() {
+		return jianZhuangYuan;
+	}
+
+	public void setJianZhuangYuan(String jianZhuangYuan) {
+		this.jianZhuangYuan = jianZhuangYuan;
+	}
+
+	public String getYaYunYuan() {
+		return yaYunYuan;
+	}
+
+	public void setYaYunYuan(String yaYunYuan) {
+		this.yaYunYuan = yaYunYuan;
+	}
+
+	public ArrayList<Integer> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<Integer> list) {
+		this.list = list;
+	}
+
+	public double getFee() {
+		return fee;
+	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
 	
+	
+	
+
 	
 }

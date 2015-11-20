@@ -18,4 +18,45 @@ public class CentreArrivalVO {
 		
 	}
 
+	public int getCentreID() {
+		return centreID;
+	}
+
+	public void setCentreID(int centreID) {
+		this.centreID = centreID;
+	}
+
+	public String getGetDate() {
+		return getDate;
+	}
+
+	public void setGetDate(String getDate) {
+		this.getDate = getDate;
+	}
+
+	public int getTransferID() {
+		return transferID;
+	}
+
+	public void setTransferID(int transferID) {
+		this.transferID = transferID;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getExpressState() {
+		return expressState;
+	}
+
+	public void setExpressState(String expressState) {
+		this.expressState = expressState;
+	}
+
+
 }
