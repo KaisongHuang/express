@@ -1,13 +1,13 @@
-package po;
+package logic.managerbl;
 
-public class InstitutionPO extends ManagerPO {
-
+public class InstitutionVO {
+	
 	int organizationID;
 	double distance;
 	double price;
 	String name;
 	
-	public InstitutionPO(int oi, double d, double p, String n){
+	public InstitutionVO(int oi, double d, double p, String n){
 		
 		this.organizationID=oi;
 		this.distance=d;
@@ -47,5 +47,5 @@ public class InstitutionPO extends ManagerPO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }

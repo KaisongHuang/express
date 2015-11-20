@@ -18,31 +18,49 @@ public class CentreArrivalPO extends CentrePO {
 
 	}
 
+	public int getCentreID() {
+		return centreID;
+	}
 
-public int getCI() {
-	// TODO Auto-generated method stub
-	return centreID;
-}
+	public void setCentreID(int centreID) {
+		this.centreID = centreID;
+	}
 
-public String getGD() {
-	// TODO Auto-generated method stub
-	return getDate;
-}
+	public String getGetDate() {
+		return getDate;
+	}
 
-public int getTI() {
-	// TODO Auto-generated method stub
-	return transferID;
-}
+	public void setGetDate(String getDate) {
+		this.getDate = getDate;
+	}
 
-public String getStart() {
-	// TODO Auto-generated method stub
-	return start;
-}
+	public int getTransferID() {
+		return transferID;
+	}
 
-public String getES() {
-	// TODO Auto-generated method stub
-	return expressState;
-}
+	public void setTransferID(int transferID) {
+		this.transferID = transferID;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getExpressState() {
+		return expressState;
+	}
+
+	public void setExpressState(String expressState) {
+		this.expressState = expressState;
+	}
+	
+	
+
+
 	
 	
 }
