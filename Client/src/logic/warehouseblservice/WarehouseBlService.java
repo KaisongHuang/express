@@ -11,6 +11,8 @@ public interface WarehouseBlService {
 	public ResultMessage importGoods(InStorageVO vo);
 
 	public ResultMessage exportGoods(OutStorageVO vo);
+	
+	public ResultMessage adjustGoods(int id,String qu,String pai,String jia,String wei);
 
 	public ResultMessage setAlarm(double rate);
 	

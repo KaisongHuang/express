@@ -1,20 +1,26 @@
 package logic.financeblservice;
 
 import vo.AccountVO;
+import vo.FinanceVO;
 import vo.PayVO;
 
 import java.util.ArrayList;
 
 import _enum.Operation;
 import _enum.ResultMessage;
+import po.ReceiptPO;
 
 public interface FinanceBlService {
-	public double getBalance();
 
 	public ResultMessage createCost(PayVO vo);
 
 	public ArrayList<Object> getTotal(String begin, String end);
 
+	public ResultMessage initAccount(String Account, double Money);
+
 	public ResultMessage manageAccount(AccountVO vo, Operation op);
-	public AccountVO find (String bankAccount);
+
+	public AccountVO findAccount(String bankAccount);
+
+	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea);
 }
