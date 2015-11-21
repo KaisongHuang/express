@@ -17,7 +17,7 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage importGoods(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		InStoragePO po=new InStoragePO(0, null, null, null, null, null, null, 0);
+		InStoragePO po=new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
 			return rm;
@@ -30,7 +30,7 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage exportGoods(OutStorageVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		OutStoragePO po=new OutStoragePO(0, null, null, null, 0, 0);
+		OutStoragePO po=new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(), vo.getTransportation(), vo.getTrans_id(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
 			return rm;
@@ -40,12 +40,17 @@ public class Warehouse implements WarehouseBlService {
 		return null;
 	}
 
-	public ResultMessage setAlarm() {
+	public ResultMessage setAlarm(double rate) {
 		// TODO Auto-generated method stub
 		
 		return null;
 	}
 
+	public ResultMessage checkAlarm() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public ResultMessage checkWarehouse(int begin, int end) {
 		// TODO Auto-generated method stub
 		return null;
@@ -60,5 +65,7 @@ public class Warehouse implements WarehouseBlService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

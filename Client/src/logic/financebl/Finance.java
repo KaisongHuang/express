@@ -23,7 +23,7 @@ public class Finance implements FinanceBlService {
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		PayPO po = new PayPO(null, null, null, null, null, 0, 0);
+		PayPO po = new PayPO(vo.getDate(), vo.getPayer(), vo.getPayAccount(), vo.getEntry(), vo.getComments(), vo.getCost(), vo.getIsCheck());
 		try {
 			rm = fd.insert(po);
 			return rm;
@@ -41,7 +41,7 @@ public class Finance implements FinanceBlService {
 	public ResultMessage manageAccount(AccountVO vo, Operation op) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		AccountPO po = new AccountPO(null, 0);
+		AccountPO po = new AccountPO(vo.getBankAccount(), vo.getBalance());
 		if (op == Operation.insert) {
 			try {
 				rm = fd.insert(po);
