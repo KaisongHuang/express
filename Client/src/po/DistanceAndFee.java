@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class DistanceAndFee {
     ArrayList<String> city1;
     ArrayList<String> city2;
+    int distance;
     int fee;
-    public DistanceAndFee(ArrayList<String> city1,ArrayList<String> city2,int fee){
+    public DistanceAndFee(ArrayList<String> city1,ArrayList<String> city2,int distance,int fee){
     	this.city1=city1;
     	this.city2=city2;
+    	this.distance=distance;
     	this.fee=fee;
     }
 	public ArrayList<String> getCity1() {

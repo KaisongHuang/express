@@ -2,7 +2,7 @@ package serverPO;
 
 import po.SellingareaPO;
 
-/*�������š��������š������š����̺š�����ʱ�䡢����ʱ��*/
+
 public class CarPO extends SellingareaPO{
      int number;
      int EngineNumber;
