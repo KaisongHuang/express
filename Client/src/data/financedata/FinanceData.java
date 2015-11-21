@@ -1,10 +1,18 @@
 package data.financedata;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
+<<<<<<< HEAD
 import serverPO.FinancePO;
+=======
+import po.AccountPO;
+import po.FinancePO;
+import po.PayPO;
+import po.ReceiptPO;
+>>>>>>> refs/remotes/origin/master
 
 public class FinanceData implements FinanceDataService {
 
@@ -27,5 +35,15 @@ public class FinanceData implements FinanceDataService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	public ArrayList<AccountPO> find() throws RemoteException{		
+		return null;
+	}
+	public ArrayList<PayPO> findPay(){
+		return null;
+	}
+	
+	public ArrayList<ReceiptPO> findReceipt(){
+		return null;
+	}
 }

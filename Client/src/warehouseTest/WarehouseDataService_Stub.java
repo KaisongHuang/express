@@ -11,7 +11,7 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 	public WarehousePO find(int id) throws RemoteException {
 		// TODO Auto-generated method stub
 		System.out.println("find Succeed!");
-		return new WarehousePO(id, null);
+		return new WarehousePO();
 	}
 
 	public ResultMessage insert(WarehousePO po) throws RemoteException {

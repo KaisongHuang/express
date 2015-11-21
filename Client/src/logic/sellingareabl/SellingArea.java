@@ -170,7 +170,7 @@ public class SellingArea implements SellingareaBlService {
 			po = (DriverPO) sd.find(id);
 			DriverVO vo = new DriverVO(po.getNumber(), po.getName(), po.getBirthday(), po.getID(), po.getPhone(),
 					po.getCarCompany(), po.getSex(), po.getLicenceTime());
-			return null;
+			return vo;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();

@@ -2,6 +2,9 @@ package warehouseTest;
 
 import vo.InStorageVO;
 import vo.OutStorageVO;
+
+import java.util.ArrayList;
+
 import _enum.ResultMessage;
 import logic.warehouseblservice.WarehouseBlService;
 
@@ -43,6 +46,16 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 	}
 
 	public ResultMessage checkAlarm() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<Object> checkWarehouse(String begin, String end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage summarizeWarehouse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
