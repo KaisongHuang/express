@@ -2,6 +2,8 @@ package po;
 
 import java.util.ArrayList;
 
+import serverPO.CentrePO;
+
 public class CentrePackPO extends CentrePO {
 
 	String dataOfGetin;

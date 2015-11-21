@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.managerdataservice.ManagerDataService;
-import po.ManagerPO;
+import serverPO.ManagerPO;
 
 public class ManagerDataService_Stub implements ManagerDataService {
 	

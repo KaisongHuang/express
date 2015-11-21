@@ -1,5 +1,7 @@
 package po;
 
+import serverPO.WarehousePO;
+
 public class OutStoragePO extends WarehousePO {
 	String outdate;
 	String transportation;

@@ -1,4 +1,7 @@
 package po;
+
+import serverPO.SellingareaPO;
+
 /*���������롢�������ڡ���ת����š������ء����ﵽ��״̬���𻵡�����ʧ��*/
 public class AcceptPO extends SellingareaPO{
      int BarCode;

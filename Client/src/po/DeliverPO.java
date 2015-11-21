@@ -1,4 +1,7 @@
 package po;
+
+import serverPO.SellingareaPO;
+
 /*���˶��������롢�������ڡ��ɼ�Ա��� */
 public class DeliverPO extends SellingareaPO{
      public int getIsCheck() {

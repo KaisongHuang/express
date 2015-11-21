@@ -1,7 +1,7 @@
 package courierTest;
 import java.rmi.RemoteException;
 
-import po.CourierPO;
+import serverPO.CourierPO;
 import _enum.ResultMessage;
 import data.courierdataservice.*;
 public class CourierDataService_Stub implements CourierDataService{

@@ -1,5 +1,7 @@
 package po;
 
+import serverPO.WarehousePO;
+
 public class InStoragePO extends WarehousePO {
 	public int getIsCheck() {
 		return isCheck;

@@ -1,5 +1,7 @@
 package po;
 
+import serverPO.SellingareaPO;
+
 public class ReceiptPO extends SellingareaPO{
       public int getIsChenk() {
 		return isChenk;

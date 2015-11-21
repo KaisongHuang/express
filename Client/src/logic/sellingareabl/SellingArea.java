@@ -2,12 +2,12 @@ package logic.sellingareabl;
 
 import java.rmi.RemoteException;
 
-import po.CarPO;
-import po.CarPackPO;
-import po.DeliverPO;
-import po.DriverPO;
-import po.ReceiptPO;
-import po.AcceptPO;
+import serverPO.AcceptPO;
+import serverPO.CarPO;
+import serverPO.CarPackPO;
+import serverPO.DeliverPO;
+import serverPO.DriverPO;
+import serverPO.ReceiptPO;
 import data.sellingareadata.SellingAreaData;
 import vo.AcceptVO;
 import vo.CarPackVO;
