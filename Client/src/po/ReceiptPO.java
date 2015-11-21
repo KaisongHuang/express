@@ -4,10 +4,12 @@ public class ReceiptPO extends SellingareaPO{
       int number;
       int money;
       String date;
-      public ReceiptPO(int money,String date, int number){
+      int isChenk;
+      public ReceiptPO(int money,String date, int number,int isCheck){
     	  this.number=number;
     	  this.money=money;
     	  this.date=date;
+    	  this.isChenk=isCheck;
       }
 	public int getNumber() {
 		return number;

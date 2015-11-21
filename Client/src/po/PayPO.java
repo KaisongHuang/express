@@ -7,14 +7,15 @@ public class PayPO extends FinancePO{
 	String payAccount;
 	String entry;
 	String comments;
-	
-	public PayPO(String date,String payer,String payAccount,String entry,String comments,double cost){
+	int isCheck;
+	public PayPO(String date,String payer,String payAccount,String entry,String comments,double cost,int isCheck){
 		this.date=date;
 		this.payer=payer;
 		this.payAccount=payAccount;
 		this.cost=cost;
 		this.entry=entry;
 		this.comments=comments;
+		this.isCheck=isCheck;
 	}
 
 	public String getDate() {
