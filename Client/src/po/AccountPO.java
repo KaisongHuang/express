@@ -1,8 +1,8 @@
 package po;
 
 public class AccountPO extends FinancePO{
-	String bankAccount;
-	double balance;
+	private String bankAccount;
+	private double balance;
 	public AccountPO(String bankAccount,double balance){
 		this.bankAccount=bankAccount;
 		this.balance=balance;

@@ -1,7 +1,6 @@
 package logic.senderbl;
 
 import vo.HistoryVO;
-import vo.SenderVO;
 
 public class MockSender extends Sender{
 	HistoryVO historyVO;

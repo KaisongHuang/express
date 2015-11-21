@@ -1,7 +1,6 @@
 package senderTest;
 
 import vo.HistoryVO;
-import vo.SenderVO;
 import _enum.ResultMessage;
 import logic.senderblservice.SenderBlService;
 

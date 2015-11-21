@@ -3,11 +3,7 @@ package po;
 public class WarehousePO {
 	int id;
 	String destination;
-
-	public WarehousePO(int id, String destination) {
-		this.id = id;
-		this.destination = destination;
-	}
+	double rate;
 
 	public int getId() {
 		return id;
@@ -23,6 +19,14 @@ public class WarehousePO {
 
 	public void setDestination(String destination) {
 		this.destination = destination;
+	}
+	
+	public void setAlarmRate(double rate){
+		this.rate=rate;
+	}
+	
+	public double getAlarmRate(){
+		return rate;
 	}
 	
 }

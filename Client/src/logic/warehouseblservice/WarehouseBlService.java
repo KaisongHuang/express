@@ -2,6 +2,9 @@ package logic.warehouseblservice;
 
 import vo.InStorageVO;
 import vo.OutStorageVO;
+
+import java.util.ArrayList;
+
 import _enum.ResultMessage;
 
 public interface WarehouseBlService {
@@ -13,9 +16,9 @@ public interface WarehouseBlService {
 	
 	public ResultMessage checkAlarm();
 
-	public ResultMessage checkWarehouse(int begin, int end);
+	public ArrayList<Object> checkWarehouse(String begin, String end);
 
-	public ResultMessage summarizeWarehouse(int end);
+	public ResultMessage summarizeWarehouse();
 
 	public ResultMessage initWarehouse(InStorageVO vo);
 }

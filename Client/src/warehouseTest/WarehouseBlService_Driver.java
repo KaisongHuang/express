@@ -24,11 +24,11 @@ public class WarehouseBlService_Driver {
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
-		result = warehouse.checkWarehouse(0, 0);
-		if (result == ResultMessage.Error)
-			System.out.println("ERROR!");
+//		result = warehouse.checkWarehouse("0","0");
+//		if (result == ResultMessage.Error)
+//			System.out.println("ERROR!");
 
-		result = warehouse.summarizeWarehouse(0);
+		result = warehouse.summarizeWarehouse();
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
