@@ -3,12 +3,10 @@ package financeTest;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-<<<<<<< HEAD
-import serverPO.FinancePO;
-=======
+
 import po.AccountPO;
 import po.FinancePO;
->>>>>>> refs/remotes/origin/master
+
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
 

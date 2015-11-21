@@ -7,9 +7,10 @@ import java.rmi.RemoteException;
 
 import java.sql.ResultSet;
 
+import po.HistoryPO;
 import dataservice.senderdataservice.SenderDataService;
 import server.database.MySQLDataBase;
-import serverPO.HistoryPO;
+
 
 
 

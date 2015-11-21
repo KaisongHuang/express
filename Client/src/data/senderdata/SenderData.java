@@ -2,13 +2,11 @@ package data.senderdata;
 
 import java.rmi.RemoteException;
 
-<<<<<<< HEAD
-import serverPO.HistoryPO;
-=======
+
 import _enum.ResultMessage;
 import po.HistoryPO;
 import po.SenderPO;
->>>>>>> refs/remotes/origin/master
+
 import data.senderdataservice.SenderDataService;
 
 public class SenderData implements SenderDataService{

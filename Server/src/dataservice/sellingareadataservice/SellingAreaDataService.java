@@ -1,8 +1,9 @@
 package dataservice.sellingareadataservice;
 
+import po.SellingareaPO;
 import Server_enum.ResultMessage;
 import server.database.MySQLDataBase;
-import serverPO.SellingareaPO;
+
 
 public interface SellingAreaDataService {
        public SellingareaPO find(MySQLDataBase db,int id,String tableName);
