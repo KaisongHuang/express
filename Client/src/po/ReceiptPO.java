@@ -1,7 +1,13 @@
 package po;
 
 public class ReceiptPO extends SellingareaPO{
-      int number;
+      public int getIsChenk() {
+		return isChenk;
+	}
+	public void setIsChenk(int isChenk) {
+		this.isChenk = isChenk;
+	}
+	int number;
       int money;
       String date;
       int isChenk;

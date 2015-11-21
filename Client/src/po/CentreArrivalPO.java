@@ -18,6 +18,22 @@ public class CentreArrivalPO extends CentrePO {
         this.isCheck=isCheck;
 	}
 
+	public int getTransforID() {
+		return transforID;
+	}
+
+	public void setTransforID(int transforID) {
+		this.transforID = transforID;
+	}
+
+	public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
+
 	public int getCentreID() {
 		return centreID;
 	}

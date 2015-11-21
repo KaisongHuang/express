@@ -25,8 +25,13 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage manageCarPack(CarPackVO vo) {
 		ResultMessage rs;
+<<<<<<< HEAD
 		CarPackPO po = new CarPackPO(vo.getDate(), vo.getNumber(), vo.getStart(), vo.getDestination(),
 				vo.getSupervisor(), vo.getSupercargo(), vo.getList(), vo.getFee());
+=======
+		CarPackPO po=new CarPackPO(vo.getDate(),vo.getNumber(),vo.getStart(),vo.getDestination(),vo.getSupervisor(),vo.getSupercargo(),
+				vo.getList(),vo.getFee(),vo.getIsCheck());
+>>>>>>> master
 		try {
 			rs = sd.insert(po);
 			return rs;
@@ -39,7 +44,11 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createReceiving(AcceptVO vo) {
 		ResultMessage rs;
+<<<<<<< HEAD
 		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getStart());
+=======
+		AcceptPO po=new AcceptPO(vo.getBarCode(),vo.getDate(),vo.getNumber(),vo.getStart(),vo.getStart(),vo.getIsCheck());
+>>>>>>> master
 		try {
 			rs = sd.insert(po);
 			return rs;
@@ -52,7 +61,11 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createDelivery(DeliverVO vo) {
 		ResultMessage rs;
+<<<<<<< HEAD
 		DeliverPO po = new DeliverPO(vo.getBarCode(), vo.getDate(), vo.getNumber());
+=======
+		DeliverPO po=new DeliverPO(vo.getBarCode(),vo.getDate(),vo.getNumber(),vo.getIsCheck());
+>>>>>>> master
 		try {
 			rs = sd.insert(po);
 			return rs;
@@ -66,7 +79,11 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
 		ResultMessage rs;
+<<<<<<< HEAD
 		ReceiptPO po = new ReceiptPO(vo.getMoney(), vo.getDate(), vo.getNumber());
+=======
+		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getNumber(),vo.getIsCheck());
+>>>>>>> master
 		try {
 			rs = sd.insert(po);
 			return rs;

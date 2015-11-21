@@ -5,6 +5,12 @@ public class OutStoragePO extends WarehousePO {
 	String transportation;
 	int trans_id;
 	int isCheck;
+	public int getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
 	public OutStoragePO(int id, String destination,String outdate,String transportation,int trans_id,int isCheck) {
 		super(id, destination);
 		// TODO Auto-generated constructor stub

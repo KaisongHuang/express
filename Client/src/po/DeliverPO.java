@@ -1,7 +1,13 @@
 package po;
-/*ÍÐÔË¶©µ¥ÌõÐÎÂë¡¢µ½´ïÈÕÆÚ¡¢ÅÉ¼þÔ±±àºÅ */
+/*ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½É¼ï¿½Ô±ï¿½ï¿½ï¿½ */
 public class DeliverPO extends SellingareaPO{
-     int BarCode;
+     public int getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
+	int BarCode;
      String date;
      int number;
      int isCheck;
