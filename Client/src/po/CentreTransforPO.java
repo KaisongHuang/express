@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class CentreTransforPO extends CentrePO {
 
-	String transferStyle;
+	String transforStyle;
 	String dataOfGetin;
-	int centreTransferID;
+	int centreTransforID;
 	int banHao;
 	String start;
 	String arrival;
@@ -18,9 +18,9 @@ public class CentreTransforPO extends CentrePO {
 	public CentreTransforPO(String ts, String dog, int cti, int bh,
 			String start, String arrival, int hgh, String jzy,
 			ArrayList<Integer> list, double fee) {
-		this.transferStyle = ts;
+		this.transforStyle = ts;
 		this.dataOfGetin = dog;
-		this.centreTransferID = cti;
+		this.centreTransforID = cti;
 		this.banHao = bh;
 		this.start = start;
 		this.arrival = arrival;
@@ -31,11 +31,11 @@ public class CentreTransforPO extends CentrePO {
 	}
 
 	public String getTransferStyle() {
-		return transferStyle;
+		return transforStyle;
 	}
 
 	public void setTransferStyle(String transferStyle) {
-		this.transferStyle = transferStyle;
+		this.transforStyle = transferStyle;
 	}
 
 	public String getDataOfGetin() {
@@ -47,11 +47,11 @@ public class CentreTransforPO extends CentrePO {
 	}
 
 	public int getCentreTransferID() {
-		return centreTransferID;
+		return centreTransforID;
 	}
 
 	public void setCentreTransferID(int centreTransferID) {
-		this.centreTransferID = centreTransferID;
+		this.centreTransforID = centreTransferID;
 	}
 
 	public int getBanHao() {
