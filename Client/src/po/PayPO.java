@@ -3,12 +3,12 @@ package po;
 public class PayPO extends FinancePO{
 	String date;
 	double cost;
-	String payer;
+	int payer;
 	String payAccount;
 	String entry;
-	String comments;
+	int comments;
 	int isCheck;
-	public PayPO(String date,String payer,String payAccount,String entry,String comments,double cost,int isCheck){
+	public PayPO(String date,int payer,String payAccount,String entry,int comments,double cost,int isCheck){
 		this.date=date;
 		this.payer=payer;
 		this.payAccount=payAccount;
@@ -34,11 +34,11 @@ public class PayPO extends FinancePO{
 		this.cost = cost;
 	}
 
-	public String getPayer() {
+	public int getPayer() {
 		return payer;
 	}
 
-	public void setPayer(String payer) {
+	public void setPayer(int payer) {
 		this.payer = payer;
 	}
 
@@ -58,11 +58,11 @@ public class PayPO extends FinancePO{
 		this.entry = entry;
 	}
 
-	public String getComments() {
+	public int getComments() {
 		return comments;
 	}
 
-	public void setComments(String comments) {
+	public void setComments(int comments) {
 		this.comments = comments;
 	}
 	
