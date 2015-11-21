@@ -23,7 +23,6 @@ import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
 import po.SalaryPO;
-import serverPO.*;
 import vo.*;
 
 public class Manager implements ManagerBlService {

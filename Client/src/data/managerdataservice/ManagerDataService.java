@@ -3,7 +3,7 @@ package data.managerdataservice;
 import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
-import serverPO.ManagerPO;
+import po.ManagerPO;
 
 public interface ManagerDataService {
 	
