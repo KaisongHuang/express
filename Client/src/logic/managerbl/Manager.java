@@ -70,7 +70,7 @@ public class Manager implements ManagerBlService {
 			}
 		}else if(tempvo instanceof InstitutionVO){
 			InstitutionVO vo = (InstitutionVO) tempvo;
-			InstitutionPO po = new InstitutionPO(vo.getOrganizationID(),vo.getDistance(),vo.getPrice(),vo.getName());
+			InstitutionPO po = new InstitutionPO(vo.getOrganizationID(),vo.getName());
 			try {
 				rm=md.insert(po);
 				return rm;
