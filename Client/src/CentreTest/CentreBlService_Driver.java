@@ -13,7 +13,7 @@ public class CentreBlService_Driver {
 		ResultMessage result;
 		
 		
-		result=centre.createPack(new PackVO(null, 0, null, 0, null, null, null, 0, 0));
+		result=centre.createPack(new PackVO(null, 0, null, 0, 0, 0, null, 0, 0));
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}
