@@ -2,8 +2,8 @@ package data.senderdataservice;
 
 import java.rmi.RemoteException;
 
-import po.HistoryPO;
-import po.SenderPO;
+import serverPO.HistoryPO;
+import serverPO.SenderPO;
 
 public interface SenderDataService {
 	

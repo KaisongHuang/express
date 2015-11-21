@@ -1,5 +1,7 @@
 package po;
 
+import serverPO.ManagerPO;
+
 public class SalaryPO extends ManagerPO {
 
 	String employeeName;

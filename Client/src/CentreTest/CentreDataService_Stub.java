@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.centredataservice.CentreDataService;
-import po.CentrePO;
+import serverPO.CentrePO;
 
 public class CentreDataService_Stub implements CentreDataService {
 

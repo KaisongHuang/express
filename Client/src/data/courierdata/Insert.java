@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import _enum.ResultMessage;
-import po.SenderPO;
+import serverPO.SenderPO;
 
 public class Insert {
 	

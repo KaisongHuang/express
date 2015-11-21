@@ -5,8 +5,8 @@ import java.rmi.RemoteException;
 import _enum.ResultMessage;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
-import po.InStoragePO;
-import po.OutStoragePO;
+import serverPO.InStoragePO;
+import serverPO.OutStoragePO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
 

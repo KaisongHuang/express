@@ -2,7 +2,7 @@ package financeTest;
 
 import java.rmi.RemoteException;
 
-import po.FinancePO;
+import serverPO.FinancePO;
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
 

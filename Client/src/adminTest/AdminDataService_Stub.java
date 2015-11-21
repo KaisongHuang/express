@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.admindataservice.AdminDataService;
-import po.AdminPO;
+import serverPO.AdminPO;
 
 public class AdminDataService_Stub implements AdminDataService {
 

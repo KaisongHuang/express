@@ -1,19 +1,36 @@
 package serverPO;
 
+import po.ManagerPO;
+
 public class InstitutionPO extends ManagerPO {
 
 	int organizationID;
-	double distance;
-	double price;
 	String name;
 	
-	public InstitutionPO(int oi, double d, double p, String n){
+	public InstitutionPO(int oi, String n){
 		
 		this.organizationID=oi;
-		this.distance=d;
-		this.price=p;
+		
+		
 		this.name=n;
 		
+	}
+
+	public int getOrganizationID() {
+		return organizationID;
+	}
+
+	public void setOrganizationID(int organizationID) {
+		this.organizationID = organizationID;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

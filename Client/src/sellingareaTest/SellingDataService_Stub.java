@@ -2,7 +2,7 @@ package sellingareaTest;
 
 import java.rmi.RemoteException;
 
-import po.SellingareaPO;
+import serverPO.SellingareaPO;
 import _enum.ResultMessage;
 import data.sellingareadataservice.SellingareaDataService;
 
