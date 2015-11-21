@@ -7,15 +7,15 @@ public class CentreArrivalPO extends CentrePO {
 	int transforID;
 	String start;
 	String expressState;
-
-	public CentreArrivalPO(int ci, String gd, int ti, String start, String es) {
+    int isCheck;
+	public CentreArrivalPO(int ci, String gd, int ti, String start, String es,int isCheck) {
 
 		this.centreID = ci;
 		this.getDate = gd;
 		this.transforID = ti;
 		this.start = start;
 		this.expressState = es;
-
+        this.isCheck=isCheck;
 	}
 
 	public int getCentreID() {

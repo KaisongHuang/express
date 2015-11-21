@@ -11,13 +11,13 @@ public class CentreTransforPO extends CentrePO {
 	String start;
 	String arrival;
 	int huoGuiHao;
-	String jianZhuangYuan;
+	int jianZhuangYuan;
 	ArrayList<Integer> list = new ArrayList<Integer>();
 	double fee;
-
+    int isCheck;
 	public CentreTransforPO(String ts, String dog, int cti, int bh,
-			String start, String arrival, int hgh, String jzy,
-			ArrayList<Integer> list, double fee) {
+			String start, String arrival, int hgh, int jzy,
+			ArrayList<Integer> list, double fee,int isCheck) {
 		this.transforStyle = ts;
 		this.dataOfGetin = dog;
 		this.centreTransforID = cti;
@@ -28,6 +28,7 @@ public class CentreTransforPO extends CentrePO {
 		this.jianZhuangYuan = jzy;
 		this.list = list;
 		this.fee = fee;
+		this.isCheck=isCheck;
 	}
 
 	public String getTransferStyle() {
@@ -86,11 +87,11 @@ public class CentreTransforPO extends CentrePO {
 		this.huoGuiHao = huoGuiHao;
 	}
 
-	public String getJianZhuangYuan() {
+	public int getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
 
-	public void setJianZhuangYuan(String jianZhuangYuan) {
+	public void setJianZhuangYuan(int jianZhuangYuan) {
 		this.jianZhuangYuan = jianZhuangYuan;
 	}
 
