@@ -44,8 +44,15 @@ public class Warehouse implements WarehouseBlService {
 		return null;
 	}
 
-	public ResultMessage adjustGoods(int id,String qu,String pai,String jia,String wei) {
-		
+	public ResultMessage adjustGoods(int id,int qu,int pai,int jia,int wei) {
+//		ResultMessage rm;
+//		
+//		try {
+//			rm = wd.insert(po);
+//			return rm;
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//		}
 		return null;
 	}
 	

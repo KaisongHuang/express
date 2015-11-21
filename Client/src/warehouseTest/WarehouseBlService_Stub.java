@@ -19,22 +19,7 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		// TODO Auto-generated method stub
 		return ResultMessage.Error;
 	}
-
-	public ResultMessage setAlarm() {
-		// TODO Auto-generated method stub
-		return ResultMessage.Error;
-	}
-
-	public ResultMessage checkWarehouse(int begin, int end) {
-		// TODO Auto-generated method stub
-		return ResultMessage.Error;
-	}
-
-	public ResultMessage summarizeWarehouse(int end) {
-		// TODO Auto-generated method stub
-		return ResultMessage.Error;
-	}
-
+	
 	public ResultMessage initWarehouse(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		return ResultMessage.Error;
@@ -60,7 +45,7 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		return null;
 	}
 
-	public ResultMessage adjustGoods(int id, String qu, String pai, String jia, String wei) {
+	public ResultMessage adjustGoods(int id, int qu, int pai, int jia, int wei) {
 		// TODO Auto-generated method stub
 		return null;
 	}

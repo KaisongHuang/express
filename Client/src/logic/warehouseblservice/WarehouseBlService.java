@@ -12,7 +12,7 @@ public interface WarehouseBlService {
 
 	public ResultMessage exportGoods(OutStorageVO vo);
 	
-	public ResultMessage adjustGoods(int id,String qu,String pai,String jia,String wei);
+	public ResultMessage adjustGoods(int id,int qu,int pai,int jia,int wei);
 
 	public ResultMessage setAlarm(double rate);
 	
