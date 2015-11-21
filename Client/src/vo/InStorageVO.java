@@ -2,14 +2,14 @@ package vo;
 
 public class InStorageVO extends WarehouseVO{
 	String indate;
-	String pos_qu;
-	String pos_pai;
-	String pos_jia;
-	String pos_wei;
-	int isCheck;
+	int pos_qu;
+	int pos_pai;
+	int pos_jia;
+	int pos_wei;
+    int isCheck;
 	//ArrayList<ArrivalPO>
 	public InStorageVO(int id, String indate, String destination,
-			String pos_qu, String pos_pai, String pos_jia, String pos_wei,int isCheck) {
+			int pos_qu, int pos_pai, int pos_jia, int pos_wei,int isCheck) {
 		super(id, destination);
 		this.indate = indate;
 		this.pos_qu = pos_qu;
@@ -31,31 +31,30 @@ public class InStorageVO extends WarehouseVO{
 	public void setIndate(String indate) {
 		this.indate = indate;
 	}
-	public String getPos_qu() {
+	public int getPos_qu() {
 		return pos_qu;
 	}
-	public void setPos_qu(String pos_qu) {
+	public void setPos_qu(int pos_qu) {
 		this.pos_qu = pos_qu;
 	}
-	public String getPos_pai() {
+	public int getPos_pai() {
 		return pos_pai;
 	}
-	public void setPos_pai(String pos_pai) {
+	public void setPos_pai(int pos_pai) {
 		this.pos_pai = pos_pai;
 	}
-	public String getPos_jia() {
+	public int getPos_jia() {
 		return pos_jia;
 	}
-	public void setPos_jia(String pos_jia) {
+	public void setPos_jia(int pos_jia) {
 		this.pos_jia = pos_jia;
 	}
-	public String getPos_wei() {
+	public int getPos_wei() {
 		return pos_wei;
 	}
-	public void setPos_wei(String pos_wei) {
+	public void setPos_wei(int pos_wei) {
 		this.pos_wei = pos_wei;
 	}
-	
 	
 
 }
