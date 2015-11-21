@@ -3,15 +3,13 @@ package po;
 public class InstitutionPO extends ManagerPO {
 
 	int organizationID;
-	double distance;
-	double price;
 	String name;
 	
-	public InstitutionPO(int oi, double d, double p, String n){
+	public InstitutionPO(int oi, String n){
 		
 		this.organizationID=oi;
-		this.distance=d;
-		this.price=p;
+		
+		
 		this.name=n;
 		
 	}
@@ -24,21 +22,6 @@ public class InstitutionPO extends ManagerPO {
 		this.organizationID = organizationID;
 	}
 
-	public double getDistance() {
-		return distance;
-	}
-
-	public void setDistance(double distance) {
-		this.distance = distance;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
 
 	public String getName() {
 		return name;
