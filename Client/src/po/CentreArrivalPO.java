@@ -4,18 +4,18 @@ public class CentreArrivalPO extends CentrePO {
 
 	int centreID;
 	String getDate;
-	int transferID;
+	int transforID;
 	String start;
 	String expressState;
-
-	public CentreArrivalPO(int ci, String gd, int ti, String start, String es) {
+    int isCheck;
+	public CentreArrivalPO(int ci, String gd, int ti, String start, String es,int isCheck) {
 
 		this.centreID = ci;
 		this.getDate = gd;
-		this.transferID = ti;
+		this.transforID = ti;
 		this.start = start;
 		this.expressState = es;
-
+        this.isCheck=isCheck;
 	}
 
 	public int getCentreID() {
@@ -35,11 +35,11 @@ public class CentreArrivalPO extends CentrePO {
 	}
 
 	public int getTransferID() {
-		return transferID;
+		return transforID;
 	}
 
-	public void setTransferID(int transferID) {
-		this.transferID = transferID;
+	public void setTransferID(int transforID) {
+		this.transforID = transforID;
 	}
 
 	public String getStart() {

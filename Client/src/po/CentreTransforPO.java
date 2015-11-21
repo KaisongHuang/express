@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class CentreTransforPO extends CentrePO {
 
-	String transferStyle;
+	String transforStyle;
 	String dataOfGetin;
-	int centreTransferID;
+	int centreTransforID;
 	int banHao;
 	String start;
 	String arrival;
 	int huoGuiHao;
-	String jianZhuangYuan;
+	int jianZhuangYuan;
 	ArrayList<Integer> list = new ArrayList<Integer>();
 	double fee;
-
+    int isCheck;
 	public CentreTransforPO(String ts, String dog, int cti, int bh,
-			String start, String arrival, int hgh, String jzy,
-			ArrayList<Integer> list, double fee) {
-		this.transferStyle = ts;
+			String start, String arrival, int hgh, int jzy,
+			ArrayList<Integer> list, double fee,int isCheck) {
+		this.transforStyle = ts;
 		this.dataOfGetin = dog;
-		this.centreTransferID = cti;
+		this.centreTransforID = cti;
 		this.banHao = bh;
 		this.start = start;
 		this.arrival = arrival;
@@ -28,14 +28,15 @@ public class CentreTransforPO extends CentrePO {
 		this.jianZhuangYuan = jzy;
 		this.list = list;
 		this.fee = fee;
+		this.isCheck=isCheck;
 	}
 
 	public String getTransferStyle() {
-		return transferStyle;
+		return transforStyle;
 	}
 
 	public void setTransferStyle(String transferStyle) {
-		this.transferStyle = transferStyle;
+		this.transforStyle = transferStyle;
 	}
 
 	public String getDataOfGetin() {
@@ -47,11 +48,11 @@ public class CentreTransforPO extends CentrePO {
 	}
 
 	public int getCentreTransferID() {
-		return centreTransferID;
+		return centreTransforID;
 	}
 
 	public void setCentreTransferID(int centreTransferID) {
-		this.centreTransferID = centreTransferID;
+		this.centreTransforID = centreTransferID;
 	}
 
 	public int getBanHao() {
@@ -86,11 +87,11 @@ public class CentreTransforPO extends CentrePO {
 		this.huoGuiHao = huoGuiHao;
 	}
 
-	public String getJianZhuangYuan() {
+	public int getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
 
-	public void setJianZhuangYuan(String jianZhuangYuan) {
+	public void setJianZhuangYuan(int jianZhuangYuan) {
 		this.jianZhuangYuan = jianZhuangYuan;
 	}
 

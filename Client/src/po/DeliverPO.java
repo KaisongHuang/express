@@ -4,10 +4,12 @@ public class DeliverPO extends SellingareaPO{
      int BarCode;
      String date;
      int number;
-     public DeliverPO(int BarCode,String date,int number){
+     int isCheck;
+     public DeliverPO(int BarCode,String date,int number,int isCheck){
     	 this.BarCode=BarCode;
     	 this.date=date;
     	 this.number=number;
+    	 this.isCheck=isCheck;
      }
 	public int getBarCode() {
 		return BarCode;
