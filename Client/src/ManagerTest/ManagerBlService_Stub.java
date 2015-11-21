@@ -71,4 +71,9 @@ public class ManagerBlService_Stub implements ManagerBlService {
 		return null;
 	}
 
+	public ArrayList<String> checkLogging(Object vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

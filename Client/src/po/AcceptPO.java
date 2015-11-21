@@ -1,5 +1,5 @@
 package po;
-/*¶©µ¥ÌõÐÎÂë¡¢µ½´ïÈÕÆÚ¡¢ÖÐ×ªµ¥±àºÅ¡¢³ö·¢µØ¡¢»õÎïµ½´ï×´Ì¬£¨Ëð»µ¡¢ÍêÕû¡¢¶ªÊ§£©*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½ï¿½ï¿½ï¿½ïµ½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ð»µ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½*/
 public class AcceptPO extends SellingareaPO{
      int BarCode;
      String date;
@@ -15,6 +15,12 @@ public class AcceptPO extends SellingareaPO{
     	 this.state=start;
     	 this.isCheck=isCheck;
      }
+	public int getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
 	public int getBarCode() {
 		return BarCode;
 	}

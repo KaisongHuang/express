@@ -9,7 +9,9 @@ public interface WarehouseBlService {
 
 	public ResultMessage exportGoods(OutStorageVO vo);
 
-	public ResultMessage setAlarm();
+	public ResultMessage setAlarm(double rate);
+	
+	public ResultMessage checkAlarm();
 
 	public ResultMessage checkWarehouse(int begin, int end);
 

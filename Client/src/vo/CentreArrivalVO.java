@@ -7,15 +7,25 @@ public class CentreArrivalVO {
 	int transferID;
 	String start;
 	String expressState;
+	int isCheck;
 	
-	public CentreArrivalVO(int ci, String gd, int ti, String start, String es){
+	public CentreArrivalVO(int ci, String gd, int ti, String start, String es, int isCheck){
 		
 		this.centreID=ci;
 		this.getDate=gd;
 		this.transferID=ti;
 		this.start=start;
 		this.expressState=es;
+		this.isCheck=isCheck;
 		
+	}
+
+	public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
 	}
 
 	public int getCentreID() {

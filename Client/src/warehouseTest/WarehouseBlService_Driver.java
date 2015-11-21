@@ -8,15 +8,19 @@ import logic.warehouseblservice.WarehouseBlService;
 public class WarehouseBlService_Driver {
 	public void drive(WarehouseBlService warehouse) {
 		ResultMessage result;
-		result = warehouse.importGoods(new InStorageVO(0, null, null, null, null, null, null));
+		result = warehouse.importGoods(new InStorageVO(0, null, null, null, null, null, null, 0));
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
-		result = warehouse.exportGoods(new OutStorageVO(0, null, null, null, 0));
+		result = warehouse.exportGoods(new OutStorageVO(0, null, null, null, 0, 0));
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
-		result = warehouse.setAlarm();
+		result = warehouse.setAlarm(98);
+		if (result == ResultMessage.Error)
+			System.out.println("ERROR!");
+		
+		result = warehouse.checkAlarm();
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
@@ -28,7 +32,7 @@ public class WarehouseBlService_Driver {
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
-		result = warehouse.initWarehouse(new InStorageVO(0, null, null, null, null, null, null));
+		result = warehouse.initWarehouse(new InStorageVO(0, null, null, null, null, null, null, 0));
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 	}
