@@ -2,13 +2,7 @@ package server.data.sellingareadata;
 
 import java.sql.ResultSet;
 import server.database.MySQLDataBase;
-import serverPO.AcceptPO;
-import serverPO.CarPO;
-import serverPO.CarPackPO;
-import serverPO.DeliverPO;
-import serverPO.DriverPO;
-import serverPO.ReceiptPO;
-import serverPO.SellingareaPO;
+import po.*;
 import Server_enum.ResultMessage;
 import dataservice.sellingareadataservice.SellingAreaDataService;
 

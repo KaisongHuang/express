@@ -1,7 +1,8 @@
 package dataservice.senderdataservice;
 
+import po.HistoryPO;
 import server.database.MySQLDataBase;
-import serverPO.HistoryPO;
+
 
 
 public interface SenderDataService {

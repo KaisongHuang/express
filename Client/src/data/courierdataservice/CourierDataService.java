@@ -3,7 +3,7 @@ package data.courierdataservice;
 import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
-import serverPO.CourierPO;
+import po.CourierPO;
 
 public interface CourierDataService {
 	public CourierPO find(int id) throws RemoteException;
