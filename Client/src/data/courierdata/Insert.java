@@ -5,16 +5,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-import _enum.ResultMessage;
 import po.SenderPO;
+import _enum.ResultMessage;
+
 
 public class Insert {
 	
-	public ResultMessage write(SenderPO po) throws FileNotFoundException, IOException{
+	public ResultMessage write(SenderPO senderPO) throws FileNotFoundException, IOException{
 		
 		@SuppressWarnings("resource")
 		ObjectOutputStream objOut=new ObjectOutputStream(new FileOutputStream("src/temp.dat"));
-		objOut.writeObject(po);
+		objOut.writeObject(senderPO);
 		
 		return ResultMessage.Success;
 		

@@ -2,7 +2,7 @@ package warehouseTest;
 
 import java.rmi.RemoteException;
 
-import po.WarehousePO;
+import serverPO.WarehousePO;
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
 

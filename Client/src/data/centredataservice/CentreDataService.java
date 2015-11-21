@@ -3,7 +3,7 @@ package data.centredataservice;
 import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
-import po.CentrePO;
+import serverPO.CentrePO;
 
 
 public interface CentreDataService {

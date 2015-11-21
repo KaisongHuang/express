@@ -1,5 +1,7 @@
 package po;
 
+import serverPO.CentrePO;
+
 public class CentreArrivalPO extends CentrePO {
 
 	int centreID;

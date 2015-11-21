@@ -3,8 +3,10 @@ package data.sellingareadataservice;
 import java.rmi.RemoteException;
 
 
+
+
 import _enum.ResultMessage;
-import po.SellingareaPO;
+import serverPO.SellingareaPO;
 
 public interface SellingareaDataService {
 	public SellingareaPO find(int id) throws RemoteException;

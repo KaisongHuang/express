@@ -2,6 +2,8 @@ package po;
 
 import java.util.ArrayList;
 
+import serverPO.CentrePO;
+
 public class CentreTransforPO extends CentrePO {
 
 	String transforStyle;

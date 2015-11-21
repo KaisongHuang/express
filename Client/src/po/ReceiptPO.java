@@ -1,7 +1,19 @@
 package po;
 
+<<<<<<< HEAD
 public class ReceiptPO extends SellingareaPO {
 	
+=======
+import serverPO.SellingareaPO;
+
+public class ReceiptPO extends SellingareaPO{
+      public int getIsChenk() {
+		return isChenk;
+	}
+	public void setIsChenk(int isChenk) {
+		this.isChenk = isChenk;
+	}
+>>>>>>> master
 	int number;
 	int money;
 	int isCheck;
