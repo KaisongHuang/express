@@ -11,7 +11,9 @@ public class CarPackVO {
       int supercargo;
       ArrayList<Integer> list=new ArrayList<Integer>();
       int fee;
-      public CarPackVO(String date,int number,String start,String destination,int supervisor,int supercargo,ArrayList<Integer> list,int fee){
+      int isCheck;
+      public CarPackVO(String date,int number,String start,String destination,int supervisor,int supercargo,
+    		  ArrayList<Integer> list,int fee,int isCheck){
     	  this.date=date;
     	  this.start=start;
     	  this.number=number;
@@ -21,7 +23,14 @@ public class CarPackVO {
     	  this.list=list;
     	  this.supercargo=supercargo;
     	  this.fee=fee;
+    	  this.isCheck=isCheck;
       }
+	public int getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
 	public CarPackVO() {
 		// TODO 锟皆讹拷锟斤拷傻墓锟斤拷旌拷锟斤拷锟�
 	}

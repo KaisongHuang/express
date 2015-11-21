@@ -4,13 +4,21 @@ public class DeliverVO {
     int BarCode;
     String date;
     int number;
-    public DeliverVO(int BarCode,String date,int number){
+    int isCheck;
+    public DeliverVO(int BarCode,String date,int number,int isCheck){
    	 this.BarCode=BarCode;
    	 this.date=date;
    	 this.number=number;
+   	 this.isCheck=isCheck;
     }
+	public int getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
 	public DeliverVO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
 	}
 	public int getBarCode() {
 		return BarCode;

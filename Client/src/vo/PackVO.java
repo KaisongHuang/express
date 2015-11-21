@@ -12,8 +12,9 @@ public class PackVO {
 	String yaYunYuan;
 	ArrayList<Integer> list=new ArrayList<Integer>();
 	double fee;
+	int isCheck;
 	
-	public PackVO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,double fee){
+	public PackVO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,double fee,int isCheck){
 		
 		this.dataOfGetin=dog;
 		this.carID=ci;
@@ -23,7 +24,16 @@ public class PackVO {
 		this.yaYunYuan=yyy;
 		this.list=list;
 		this.fee=fee;
+		this.isCheck=isCheck;
 		
+	}
+
+	public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
 	}
 
 	public String getDataOfGetin() {

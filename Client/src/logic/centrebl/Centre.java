@@ -21,12 +21,12 @@ public class Centre implements CentreBlService {
 		ResultMessage rm;
 		CentreTransforPO po = new CentreTransforPO(vo.getTransferStyle(), vo.getDataOfGetin(), vo.getCentreTransferID(),
 				vo.getBanHao(), vo.getStart(), vo.getArrival(),	vo.getHuoGuiHao(), vo.getJianZhuangYuan(), 
-				vo.getList(), vo.getFee());
+				vo.getList(), vo.getFee(),vo.getIsCheck());
 		try{
 			rm=cd.insert(po);
 			return rm;
 		}catch (RemoteException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			e.printStackTrace();
 		}
 		return null;
@@ -36,12 +36,12 @@ public class Centre implements CentreBlService {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
 		CentreArrivalPO po = new CentreArrivalPO(vo.getCentreID(),vo.getGetDate(),vo.getTransferID(),vo.getStart(),
-				vo.getExpressState());
+				vo.getExpressState(),vo.getIsCheck());
 		try {
 			rm=cd.insert(po);
 			return rm;
 		} catch (RemoteException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			e.printStackTrace();
 		}
 		return null;
@@ -51,12 +51,12 @@ public class Centre implements CentreBlService {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
 		CentrePackPO po = new CentrePackPO(vo.getDataOfGetin(),vo.getCentreTransferID(),vo.getArrival(),vo.getCarID(),
-				vo.getJianZhuangYuan(),vo.getYaYunYuan(),vo.getList(),vo.getFee());
+				vo.getJianZhuangYuan(),vo.getYaYunYuan(),vo.getList(),vo.getFee(),vo.getIsCheck());
 		try {
 			rm=cd.insert(po);
 			return rm;
 		} catch (RemoteException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			e.printStackTrace();
 		}
 		return null;

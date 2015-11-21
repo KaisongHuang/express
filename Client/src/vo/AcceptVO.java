@@ -6,15 +6,23 @@ public class AcceptVO {
     int number;
     int start;
     int state;
-    public AcceptVO(int BarCode,String date,int number,int start,int state){
+    int isCheck;
+    public AcceptVO(int BarCode,String date,int number,int start,int state,int isCheck){
    	 this.BarCode=BarCode;
    	 this.date=date;
    	 this.number=number;
    	 this.start=start;
    	 this.state=start;
+   	 this.isCheck=isCheck;
     }
+	public int getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
 	public AcceptVO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
 	}
 	public int getBarCode() {
 		return BarCode;

@@ -1,6 +1,14 @@
 package po;
 
 public class InStoragePO extends WarehousePO {
+	public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
+
 	String indate;
 	String pos_qu;
 	String pos_pai;

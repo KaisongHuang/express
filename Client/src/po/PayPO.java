@@ -1,6 +1,14 @@
 package po;
 
 public class PayPO extends FinancePO{
+	public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
+
 	String date;
 	double cost;
 	String payer;

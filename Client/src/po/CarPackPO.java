@@ -27,7 +27,15 @@ public class CarPackPO extends SellingareaPO {
 		this.isCheck=isCheck;
 	}
 	
-	 public String getDate() {
+	 public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
+
+	public String getDate() {
 			return date;
 		}
 		public void setDate(String date) {
