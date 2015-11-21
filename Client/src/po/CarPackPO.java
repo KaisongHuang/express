@@ -2,6 +2,8 @@ package po;
 
 import java.util.ArrayList;
 
+import serverPO.SellingareaPO;
+
 public class CarPackPO extends SellingareaPO {
 	String date;
 	int number;

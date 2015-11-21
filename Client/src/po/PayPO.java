@@ -1,5 +1,7 @@
 package po;
 
+import serverPO.FinancePO;
+
 public class PayPO extends FinancePO{
 	public int getIsCheck() {
 		return isCheck;

@@ -1,13 +1,23 @@
 package serverPO;
 
+import po.SellingareaPO;
+
 public class ReceiptPO extends SellingareaPO{
-      int number;
+      public int getIsChenk() {
+		return isChenk;
+	}
+	public void setIsChenk(int isChenk) {
+		this.isChenk = isChenk;
+	}
+	int number;
       int money;
       String date;
-      public ReceiptPO(int money,String date, int number){
+      int isChenk;
+      public ReceiptPO(int money,String date, int number,int isCheck){
     	  this.number=number;
     	  this.money=money;
     	  this.date=date;
+    	  this.isChenk=isCheck;
       }
 	public int getNumber() {
 		return number;

@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
-import po.WarehousePO;
+import serverPO.WarehousePO;
 
 public class WarehouseData implements WarehouseDataService {
 

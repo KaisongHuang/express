@@ -3,8 +3,8 @@ package senderTest;
 import java.rmi.RemoteException;
 
 import data.senderdataservice.SenderDataService;
-import po.HistoryPO;
-import po.SenderPO;
+import serverPO.HistoryPO;
+import serverPO.SenderPO;
 import vo.HistoryVO;
 
 public class SenderDataService_Stub implements SenderDataService {

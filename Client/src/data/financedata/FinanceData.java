@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
-import po.FinancePO;
+import serverPO.FinancePO;
 
 public class FinanceData implements FinanceDataService {
 
