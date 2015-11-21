@@ -16,7 +16,11 @@ public class WarehouseBlService_Driver {
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
-		result = warehouse.setAlarm();
+		result = warehouse.setAlarm(98);
+		if (result == ResultMessage.Error)
+			System.out.println("ERROR!");
+		
+		result = warehouse.checkAlarm();
 		if (result == ResultMessage.Error)
 			System.out.println("ERROR!");
 
