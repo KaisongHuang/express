@@ -18,7 +18,7 @@ public interface WarehouseBlService {
 
 	public ArrayList<Object> checkWarehouse(String begin, String end);
 
-	public ResultMessage summarizeWarehouse();
+	public ArrayList<Object> summarizeWarehouse();
 
 	public ResultMessage initWarehouse(InStorageVO vo);
 }
