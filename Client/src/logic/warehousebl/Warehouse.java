@@ -92,15 +92,24 @@ public class Warehouse implements WarehouseBlService {
 		return arr;
 	}
 
-	public ResultMessage summarizeWarehouse() {
+	@SuppressWarnings("null")
+	public ArrayList<Object> summarizeWarehouse() {
 		// TODO Auto-generated method stub
 		Calendar time = Calendar.getInstance();
 		int year = time.get(Calendar.YEAR); 
 		int month = time.get(Calendar.MONTH)+1; 
 		int date = time.get(Calendar.DATE); 
 		String date1=""+year+month+date;
-		
-		return null;
+		ArrayList<Object> arr = null;
+		for (int i = 0; i < wd.findInStorage().size(); i++) {
+			if(wd.findInStorage().get(i).getIndate().compareTo(date1)==0&&wd.findInStorage().get(i).getIndate().compareTo(date1)==0)
+				arr.add(wd.findInStorage().get(i));
+		}
+		for (int i = 0; i < wd.findOutStorage().size(); i++) {
+			if(wd.findOutStorage().get(i).getOutdate().compareTo(date1)==0&&wd.findOutStorage().get(i).getOutdate().compareTo(date1)==0)
+				arr.add(wd.findOutStorage().get(i));
+		}
+		return arr;
 	}
 
 }

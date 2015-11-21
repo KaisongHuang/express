@@ -55,7 +55,7 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		return null;
 	}
 
-	public ResultMessage summarizeWarehouse() {
+	public ArrayList<Object> summarizeWarehouse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
