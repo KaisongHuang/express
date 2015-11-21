@@ -1,19 +1,12 @@
 package po;
 
-<<<<<<< HEAD
-public class ReceiptPO extends SellingareaPO {
-	
-=======
-import serverPO.SellingareaPO;
-
 public class ReceiptPO extends SellingareaPO{
       public int getIsChenk() {
-		return isChenk;
+		return isCheck;
 	}
 	public void setIsChenk(int isChenk) {
-		this.isChenk = isChenk;
+		this.isCheck = isChenk;
 	}
->>>>>>> master
 	int number;
 	int money;
 	int isCheck;

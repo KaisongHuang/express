@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.SellingareaPO;
+import po.SellingareaPO;
 
 /*���������롢�������ڡ���ת����š������ء����ﵽ��״̬���𻵡�����ʧ��*/
 public class AcceptPO extends SellingareaPO{

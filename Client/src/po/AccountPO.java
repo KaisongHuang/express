@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.FinancePO;
+import po.FinancePO;
 
 public class AccountPO extends FinancePO{
 	private String bankAccount;
