@@ -13,12 +13,9 @@ public class CentrePackPO extends CentrePO {
 	ArrayList<Integer> list=new ArrayList<Integer>();
 	double fee;
 	int isCheck;
-<<<<<<< HEAD
+
 	public CentrePackPO(String dog,int cti,String arrival,int ci, int jzy,int yyy,ArrayList<Integer> list,double fee,int isCheck){
-=======
-	public CentrePackPO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,
-			double fee,int isCheck){
->>>>>>> refs/remotes/origin/master
+
 		
 		this.dataOfGetin=dog;
 		this.carID=ci;
