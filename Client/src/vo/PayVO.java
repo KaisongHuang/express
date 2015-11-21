@@ -3,13 +3,13 @@ package vo;
 public class PayVO {
 	String date;
 	double cost;
-	String payer;
+	int payer;
 	String payAccount;
 	String entry;
-	String comments;
+	int comments;
 	int isCheck;
 	
-	public PayVO(String date,String payer,String payAccount,String entry,String comments,double cost,int isCheck){
+	public PayVO(String date,int payer,String payAccount,String entry,int comments,double cost,int isCheck){
 		this.date=date;
 		this.payer=payer;
 		this.payAccount=payAccount;
@@ -43,14 +43,6 @@ public class PayVO {
 		this.cost = cost;
 	}
 
-	public String getPayer() {
-		return payer;
-	}
-
-	public void setPayer(String payer) {
-		this.payer = payer;
-	}
-
 	public String getPayAccount() {
 		return payAccount;
 	}
@@ -67,12 +59,20 @@ public class PayVO {
 		this.entry = entry;
 	}
 
-	public String getComments() {
+	public int getPayer() {
+		return payer;
+	}
+
+	public void setPayer(int payer) {
+		this.payer = payer;
+	}
+
+	public int getComments() {
 		return comments;
 	}
 
-	public void setComments(String comments) {
+	public void setComments(int comments) {
 		this.comments = comments;
 	}
-	
+
 }

@@ -8,13 +8,13 @@ public class PackVO {
 	int centreTransferID;
 	String arrival;
 	int carID;
-	String jianZhuangYuan;
-	String yaYunYuan;
+	int jianZhuangYuan;
+	int yaYunYuan;
 	ArrayList<Integer> list=new ArrayList<Integer>();
 	double fee;
 	int isCheck;
 	
-	public PackVO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,double fee,int isCheck){
+	public PackVO(String dog,int cti,String arrival,int ci, int jzy,int yyy,ArrayList<Integer> list,double fee,int isCheck){
 		
 		this.dataOfGetin=dog;
 		this.carID=ci;
@@ -68,19 +68,19 @@ public class PackVO {
 		this.carID = carID;
 	}
 
-	public String getJianZhuangYuan() {
+	public int getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
 
-	public void setJianZhuangYuan(String jianZhuangYuan) {
+	public void setJianZhuangYuan(int jianZhuangYuan) {
 		this.jianZhuangYuan = jianZhuangYuan;
 	}
 
-	public String getYaYunYuan() {
+	public int getYaYunYuan() {
 		return yaYunYuan;
 	}
 
-	public void setYaYunYuan(String yaYunYuan) {
+	public void setYaYunYuan(int yaYunYuan) {
 		this.yaYunYuan = yaYunYuan;
 	}
 

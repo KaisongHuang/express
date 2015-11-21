@@ -14,7 +14,7 @@ public class FinanceBlService_Driver {
 
 		ResultMessage result;
 		Operation op = Operation.delete;
-		result = finance.createCost(new PayVO(null, null, null, null, null, 0, 0));
+		result = finance.createCost(new PayVO(null, 0, null, null, 0, 0, 0));
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
 
