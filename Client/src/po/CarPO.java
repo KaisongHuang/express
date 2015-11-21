@@ -7,6 +7,7 @@ public class CarPO extends SellingareaPO{
      int ChassisNumber;
      String purchase;
      int ServiceTime;
+    
      public CarPO( int number,int EngineNumber,int CarNumber,int ChassisNumber,String purchase,int ServiceTime){
     	 this.number=number;
     	 this.EngineNumber=EngineNumber;

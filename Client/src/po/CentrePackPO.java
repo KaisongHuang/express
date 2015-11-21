@@ -12,8 +12,8 @@ public class CentrePackPO extends CentrePO {
 	String yaYunYuan;
 	ArrayList<Integer> list=new ArrayList<Integer>();
 	double fee;
-	
-	public CentrePackPO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,double fee){
+	int isCheck;
+	public CentrePackPO(String dog,int cti,String arrival,int ci, String jzy,String yyy,ArrayList<Integer> list,double fee,int isCheck){
 		
 		this.dataOfGetin=dog;
 		this.carID=ci;
@@ -23,7 +23,7 @@ public class CentrePackPO extends CentrePO {
 		this.yaYunYuan=yyy;
 		this.list=list;
 		this.fee=fee;
-		
+		this.isCheck=isCheck;
 	}
 
 	public String getDataOfGetin() {

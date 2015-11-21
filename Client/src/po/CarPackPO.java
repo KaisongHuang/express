@@ -12,9 +12,9 @@ public class CarPackPO extends SellingareaPO {
 	int supercargo;
 	ArrayList<Integer> list = new ArrayList<Integer>();
 	int fee;
-
+    int isCheck;
 	public CarPackPO(String date, int number, String start, String destination,
-			int supervisor, int supercargo, ArrayList<Integer> list, int fee) {
+			int supervisor, int supercargo, ArrayList<Integer> list, int fee,int isCheck) {
 		this.date = date;
 		this.start = start;
 		this.number = number;
@@ -24,6 +24,7 @@ public class CarPackPO extends SellingareaPO {
 		this.list = list;
 		this.supercargo = supercargo;
 		this.fee = fee;
+		this.isCheck=isCheck;
 	}
 	
 	 public String getDate() {
@@ -32,6 +33,7 @@ public class CarPackPO extends SellingareaPO {
 		public void setDate(String date) {
 			this.date = date;
 		}
+		
 		public int getNumber() {
 			return number;
 		}

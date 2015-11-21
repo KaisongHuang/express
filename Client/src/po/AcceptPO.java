@@ -6,12 +6,14 @@ public class AcceptPO extends SellingareaPO{
      int number;
      int start;
      int state;
-     public AcceptPO(int BarCode,String date,int number,int start,int state){
+     int isCheck;
+     public AcceptPO(int BarCode,String date,int number,int start,int state,int isCheck){
     	 this.BarCode=BarCode;
     	 this.date=date;
     	 this.number=number;
     	 this.start=start;
     	 this.state=start;
+    	 this.isCheck=isCheck;
      }
 	public int getBarCode() {
 		return BarCode;
