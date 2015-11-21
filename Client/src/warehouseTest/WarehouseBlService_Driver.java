@@ -28,9 +28,9 @@ public class WarehouseBlService_Driver {
 //		if (result == ResultMessage.Error)
 //			System.out.println("ERROR!");
 
-		result = warehouse.summarizeWarehouse();
-		if (result == ResultMessage.Error)
-			System.out.println("ERROR!");
+//		result = warehouse.summarizeWarehouse();
+//		if (result == ResultMessage.Error)
+//			System.out.println("ERROR!");
 
 		result = warehouse.initWarehouse(new InStorageVO(0, null, null, 0, 0, 0, 0, 0));
 		if (result == ResultMessage.Error)
