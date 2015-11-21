@@ -11,11 +11,13 @@ public class CentreTransforVO {
 	String start;
 	String arrival;
     int huoGuiHao;
-    String jianZhuangYuan;
+    int jianZhuangYuan;
     ArrayList<Integer> list=new ArrayList<Integer>();
     double fee;
+    int isCheck;
     
-    public CentreTransforVO(String ts,String dog,int cti,int bh,String start,String arrival,int hgh,String jzy,ArrayList<Integer> list,double fee){
+    public CentreTransforVO(String ts,String dog,int cti,int bh,String start,String arrival,int hgh,
+    		int jzy,ArrayList<Integer> list,double fee,int isCheck){
     	this.transferStyle=ts;
     	this.dataOfGetin=dog;
     	this.centreTransferID=cti;
@@ -26,7 +28,20 @@ public class CentreTransforVO {
     	this.jianZhuangYuan=jzy;
     	this.list=list;
     	this.fee=fee;
+    	this.isCheck=isCheck;
     }
+
+	public int getIsCheck() {
+		return isCheck;
+	}
+
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
+
+	public void setJianZhuangYuan(int jianZhuangYuan) {
+		this.jianZhuangYuan = jianZhuangYuan;
+	}
 
 	public String getTransferStyle() {
 		return transferStyle;
@@ -84,14 +99,6 @@ public class CentreTransforVO {
 		this.huoGuiHao = huoGuiHao;
 	}
 
-	public String getJianZhuangYuan() {
-		return jianZhuangYuan;
-	}
-
-	public void setJianZhuangYuan(String jianZhuangYuan) {
-		this.jianZhuangYuan = jianZhuangYuan;
-	}
-
 	public ArrayList<Integer> getList() {
 		return list;
 	}
@@ -102,6 +109,10 @@ public class CentreTransforVO {
 
 	public double getFee() {
 		return fee;
+	}
+
+	public int getJianZhuangYuan() {
+		return jianZhuangYuan;
 	}
 
 	public void setFee(double fee) {
