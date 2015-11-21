@@ -2,6 +2,8 @@ package logic.warehousebl;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import _enum.ResultMessage;
@@ -18,7 +20,7 @@ public class MockWarehouseTest {
 		ResultMessage warehouse3 = new MockWarehouse().setAlarm(50);
 		ResultMessage warehouse4 = new MockWarehouse().checkAlarm();
 		ResultMessage warehouse5 = new MockWarehouse().adjustGoods(1000000000, null, null, null, null);
-		ResultMessage warehouse6 = new MockWarehouse().checkWarehouse("20150101", "20150103");
+		ArrayList<Object> warehouse6 = new MockWarehouse().checkWarehouse("20150101", "20150103");
 		ResultMessage warehouse7 = new MockWarehouse().summarizeWarehouse("12:10");
 		ResultMessage warehouse8 = new MockWarehouse().exportSnapshot();
 		ResultMessage warehouse9 = new MockWarehouse()

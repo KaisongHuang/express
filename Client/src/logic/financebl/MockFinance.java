@@ -1,5 +1,7 @@
 package logic.financebl;
 
+import java.util.ArrayList;
+
 import _enum.Operation;
 import _enum.ResultMessage;
 import vo.AccountVO;
@@ -19,7 +21,7 @@ public class MockFinance extends Finance {
 		return null;
 	}
 
-	public FinanceVO getTotal(String begin, String end) {
+	public ArrayList<Object> getTotal(String begin, String end) {
 		return null;
 	}
 

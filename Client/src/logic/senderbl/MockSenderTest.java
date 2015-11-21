@@ -2,10 +2,7 @@ package logic.senderbl;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-
 import vo.HistoryVO;
-import vo.SenderVO;
 
 public class MockSenderTest {
 

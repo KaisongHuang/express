@@ -17,7 +17,8 @@ public class InStoragePO extends WarehousePO {
     int isCheck;
 	public InStoragePO(int id, String indate, String destination,
 			int pos_qu, int pos_pai,int pos_jia,int pos_wei,int isCheck) {
-		super(id, destination);
+		this.id=id;
+		this.destination=destination;
 		this.indate = indate;
 		this.pos_qu = pos_qu;
 		this.pos_pai = pos_pai;

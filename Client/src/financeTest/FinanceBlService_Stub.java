@@ -1,8 +1,10 @@
 package financeTest;
 
 import vo.AccountVO;
-import vo.FinanceVO;
 import vo.PayVO;
+
+import java.util.ArrayList;
+
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.financeblservice.FinanceBlService;
@@ -19,9 +21,9 @@ public class FinanceBlService_Stub implements FinanceBlService{
 		return ResultMessage.Success;
 	}
 
-	public FinanceVO getTotal(String begin, String end) {
+	public ArrayList<Object> getTotal(String begin, String end) {
 		// TODO Auto-generated method stub
-		return new FinanceVO();
+		return null;
 	}
 
 	public ResultMessage managerAccount(AccountVO vo, Operation op) {
