@@ -8,7 +8,6 @@ import logic.financeblservice.FinanceBlService;
 
 public class FinanceBlService_Driver {
 	public void drive(FinanceBlService finance) {
-		System.out.println(finance.getBalance());
 
 		System.out.println(finance.getTotal("20150101", "20150103"));
 
@@ -22,8 +21,10 @@ public class FinanceBlService_Driver {
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
 		
-		AccountVO res=finance.find(null);
+		AccountVO res=finance.findAccount(null);
 		if(res==null)
 			System.out.println("Not Found!");
+		
+		
 	}
 }

@@ -5,14 +5,12 @@ import java.util.ArrayList;
 
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
-<<<<<<< HEAD
-import serverPO.FinancePO;
-=======
+
 import po.AccountPO;
 import po.FinancePO;
 import po.PayPO;
 import po.ReceiptPO;
->>>>>>> refs/remotes/origin/master
+
 
 public class FinanceData implements FinanceDataService {
 

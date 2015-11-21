@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.WarehousePO;
+import po.WarehousePO;
 
 public class OutStoragePO extends WarehousePO {
 	String outdate;

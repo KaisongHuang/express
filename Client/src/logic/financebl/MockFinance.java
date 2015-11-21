@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import _enum.Operation;
 import _enum.ResultMessage;
+import po.ReceiptPO;
 import vo.AccountVO;
 import vo.FinanceVO;
 import vo.PayVO;
@@ -17,7 +18,7 @@ public class MockFinance extends Finance {
 		return ResultMessage.Success;
 	}
 
-	public FinanceVO checkReceipt(String date, String sellingArea) {
+	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea) {
 		return null;
 	}
 

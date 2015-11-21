@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.SellingareaPO;
+import po.SellingareaPO;
 
 /*���˶��������롢�������ڡ��ɼ�Ա��� */
 public class DeliverPO extends SellingareaPO{

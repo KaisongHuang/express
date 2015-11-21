@@ -3,9 +3,10 @@ package logic.courierblservice;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import po.DistanceAndFee;
+import po.SenderPO;
 import _enum.ResultMessage;
 import data.courierdata.Insert;
-import serverPO.SenderPO;
 import vo.CourierVO;
 import vo.SenderVO;
 
@@ -39,6 +40,11 @@ public class OrderInputClass implements CourierBlService {
 
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage OrderInput(SenderVO vo, DistanceAndFee daf) {
+		// TODO 自动生成的方法存根
 		return null;
 	}
 

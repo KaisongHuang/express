@@ -59,5 +59,10 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public ResultMessage adjustGoods(int id, String qu, String pai, String jia, String wei) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
