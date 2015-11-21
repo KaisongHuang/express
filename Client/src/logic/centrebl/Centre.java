@@ -13,7 +13,7 @@ import vo.CentreTransforVO;
 import vo.PackVO;
 
 public class Centre implements CentreBlService {
-	
+
 	CentreData cd;
 
 	public ResultMessage manageTranfor(CentreTransforVO vo) {
@@ -38,7 +38,7 @@ public class Centre implements CentreBlService {
 		CentreArrivalPO po = new CentreArrivalPO(vo.getCentreID(),vo.getGetDate(),vo.getTransferID(),vo.getStart(),
 				vo.getExpressState(),vo.getIsCheck());
 		try {
-			rm=cd.insert(po);
+			rm = cd.insert(po);
 			return rm;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
@@ -53,7 +53,7 @@ public class Centre implements CentreBlService {
 		CentrePackPO po = new CentrePackPO(vo.getDataOfGetin(),vo.getCentreTransferID(),vo.getArrival(),vo.getCarID(),
 				vo.getJianZhuangYuan(),vo.getYaYunYuan(),vo.getList(),vo.getFee(),vo.getIsCheck());
 		try {
-			rm=cd.insert(po);
+			rm = cd.insert(po);
 			return rm;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
@@ -61,7 +61,5 @@ public class Centre implements CentreBlService {
 		}
 		return null;
 	}
-
-
 
 }

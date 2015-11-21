@@ -36,5 +36,15 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		// TODO Auto-generated method stub
 		return ResultMessage.Error;
 	}
+
+	public ResultMessage setAlarm(double rate) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage checkAlarm() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
