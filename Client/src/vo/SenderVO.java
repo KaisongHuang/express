@@ -79,10 +79,10 @@ public class SenderVO {
 	public void setVolume(int volume) {
 		this.volume = volume;
 	}
-	public int getCommodity() {
+	public String getCommodity() {
 		return commodity;
 	}
-	public void setCommodity(int commodity) {
+	public void setCommodity(String commodity) {
 		this.commodity = commodity;
 	}
 	public String getSize() {
@@ -111,14 +111,15 @@ public class SenderVO {
 	}
 	String SenderName,SenderAddress,SenderCompany,SenderCall,SenderPhone;
     String RecipientName,RecipientAddress,RecipientCompany,RecipientCall,RecipientPhone;
-    int pcs,weight,volume,commodity;
+    int pcs,weight,volume;
+    String commodity;
     String size="";
     String bagging;
     int BarCode;
     String type;
     public SenderVO(String SenderName,String SenderAddress,String SenderCompany,String SenderCall,String SenderPhone,
     String RecipientName,String RecipientAddress,String RecipientCompany,String RecipientCall,String RecipientPhone,
-    int pcs,int weight,int volume,int commodity,
+    int pcs,int weight,int volume,String commodity,
     String size,String bagging,int BarCode,String type){
   	  this.SenderName=SenderName;
   	  this.SenderAddress=SenderAddress;
