@@ -44,6 +44,11 @@ public class Warehouse implements WarehouseBlService {
 		return null;
 	}
 
+	public ResultMessage adjustGoods(int id,String qu,String pai,String jia,String wei) {
+		
+		return null;
+	}
+	
 	public ResultMessage initWarehouse(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/

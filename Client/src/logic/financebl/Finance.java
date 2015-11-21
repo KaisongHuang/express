@@ -9,17 +9,13 @@ import data.financedata.FinanceData;
 import logic.financeblservice.FinanceBlService;
 import po.AccountPO;
 import po.PayPO;
+import po.ReceiptPO;
 import vo.AccountVO;
+import vo.FinanceVO;
 import vo.PayVO;
 
 public class Finance implements FinanceBlService {
 	FinanceData fd = new FinanceData();
-
-	public double getBalance() {
-		// TODO Auto-generated method stub
-		
-		return 0;
-	}
 
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
@@ -88,7 +84,7 @@ public class Finance implements FinanceBlService {
 		return null;
 	}
 
-	public AccountVO find(String bankAccount) {
+	public AccountVO findAccount(String bankAccount) {
 		// TODO Auto-generated method stub
 		AccountPO po;
 		AccountVO vo;
@@ -104,6 +100,24 @@ public class Finance implements FinanceBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+
+	@SuppressWarnings("null")
+	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea) {
+		// TODO Auto-generated method stub
+		ArrayList<ReceiptPO> arr = null;
+		for (int i = 0; i < fd.findReceipt().size(); i++) {
+			if (fd.findReceipt().get(i).getDate().equals(date)
+					&& fd.findReceipt().get(i).getSellingArea().equals(sellingArea));
+				arr.add(fd.findReceipt().get(i));
+		}
+		return arr;
+	}
+
+	public ResultMessage initAccount(String Account, double Money) {
+		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

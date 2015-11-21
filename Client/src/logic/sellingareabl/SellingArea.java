@@ -67,7 +67,7 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
 		ResultMessage rs;
-		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getNumber(),vo.getIsCheck());
+		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getIsCheck());
 		try {
 			rs = sd.insert(po);
 			return rs;

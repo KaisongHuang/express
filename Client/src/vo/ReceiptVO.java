@@ -4,12 +4,14 @@ public class ReceiptVO {
     int number;
     int money;
     String date;
+    String sellingArea;
     int isCheck;
-    public ReceiptVO(int money,String date, int number,int isCheck){
+    public ReceiptVO(int money,String date, String sellingArea, int number,int isCheck){
   	  this.number=number;
   	  this.money=money;
   	  this.date=date;
   	  this.isCheck=isCheck;
+  	  this.sellingArea=sellingArea;
     }
 	public int getIsCheck() {
 		return isCheck;
@@ -39,5 +41,12 @@ public class ReceiptVO {
 		this.date = date;
 	}
 	
+	public void setSellingArea(String sellingArea){
+		this.sellingArea=sellingArea;
+	}
+	
+	public String getSellingArea(){
+		return sellingArea;
+	}
 	
 }
