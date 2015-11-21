@@ -29,6 +29,8 @@ public class DistanceAndFee {
 	public void setFee(int fee) {
 		this.fee = fee;
 	}
+	
+	
     
     
 }
