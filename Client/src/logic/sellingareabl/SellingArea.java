@@ -2,12 +2,12 @@ package logic.sellingareabl;
 
 import java.rmi.RemoteException;
 
-import po.CarPO;
-import po.CarPackPO;
-import po.DeliverPO;
-import po.DriverPO;
-import po.ReceiptPO;
-import po.AcceptPO;
+import serverPO.AcceptPO;
+import serverPO.CarPO;
+import serverPO.CarPackPO;
+import serverPO.DeliverPO;
+import serverPO.DriverPO;
+import serverPO.ReceiptPO;
 import data.sellingareadata.SellingAreaData;
 import vo.AcceptVO;
 import vo.CarPackVO;
@@ -170,7 +170,7 @@ public class SellingArea implements SellingareaBlService {
 			po = (DriverPO) sd.find(id);
 			DriverVO vo = new DriverVO(po.getNumber(), po.getName(), po.getBirthday(), po.getID(), po.getPhone(),
 					po.getCarCompany(), po.getSex(), po.getLicenceTime());
-			return null;
+			return vo;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();

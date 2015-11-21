@@ -2,6 +2,8 @@ package logic.financebl;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -20,7 +22,7 @@ public class MockFinanceTest {
 		double balance = new MockFinance().getBalance();
 
 		AccountVO find = new MockFinance().find(null);
-		FinanceVO getTotal = new MockFinance().getTotal(null, null);
+		ArrayList<Object> getTotal = new MockFinance().getTotal(null, null);
 		FinanceVO checkReceipt = new MockFinance().checkReceipt(null, null);
 
 		ResultMessage createCost = new MockFinance().createCost(null);

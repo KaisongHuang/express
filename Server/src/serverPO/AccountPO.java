@@ -1,5 +1,7 @@
 package serverPO;
 
+import po.FinancePO;
+
 public class AccountPO extends FinancePO{
 	String bankAccount;
 	double balance;
@@ -7,4 +9,17 @@ public class AccountPO extends FinancePO{
 		this.bankAccount=bankAccount;
 		this.balance=balance;
 	}
+	public String getBankAccount() {
+		return bankAccount;
+	}
+	public void setBankAccount(String bankAccount) {
+		this.bankAccount = bankAccount;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	
 }

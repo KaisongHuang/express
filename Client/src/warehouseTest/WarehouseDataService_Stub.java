@@ -2,7 +2,7 @@ package warehouseTest;
 
 import java.rmi.RemoteException;
 
-import po.WarehousePO;
+import serverPO.WarehousePO;
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
 
@@ -11,7 +11,7 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 	public WarehousePO find(int id) throws RemoteException {
 		// TODO Auto-generated method stub
 		System.out.println("find Succeed!");
-		return new WarehousePO(id, null);
+		return new WarehousePO();
 	}
 
 	public ResultMessage insert(WarehousePO po) throws RemoteException {

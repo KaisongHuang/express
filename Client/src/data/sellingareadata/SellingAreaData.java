@@ -2,29 +2,29 @@ package data.sellingareadata;
 
 import java.rmi.RemoteException;
 
-import po.SellingareaPO;
+import serverPO.SellingareaPO;
 import _enum.ResultMessage;
 import data.sellingareadataservice.SellingareaDataService;
 
 public class SellingAreaData implements SellingareaDataService{
 
 	public SellingareaPO find(int id) throws RemoteException {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return null;
 	}
 
 	public ResultMessage insert(SellingareaPO po) throws RemoteException {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return null;
 	}
 
 	public ResultMessage delete(SellingareaPO po) throws RemoteException {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return null;
 	}
 
 	public ResultMessage update(SellingareaPO po) throws RemoteException {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return null;
 	}
 

@@ -1,5 +1,8 @@
 package serverPO;
-/*˾���š�����������ڡ����֤�š��ֻ�����λ���Ա���ʻ֤����*/
+
+import po.SellingareaPO;
+
+/*˾����š��������������ڡ����֤�š��ֻ���������λ���Ա���ʻ֤����*/
 public class DriverPO extends SellingareaPO{
     int number;
     String name;

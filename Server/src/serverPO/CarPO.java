@@ -1,5 +1,8 @@
 package serverPO;
-/*������š�������š������š����̺š�����ʱ�䡢����ʱ��*/
+
+import po.SellingareaPO;
+
+
 public class CarPO extends SellingareaPO{
      int number;
      int EngineNumber;
@@ -7,6 +10,7 @@ public class CarPO extends SellingareaPO{
      int ChassisNumber;
      String purchase;
      int ServiceTime;
+    
      public CarPO( int number,int EngineNumber,int CarNumber,int ChassisNumber,String purchase,int ServiceTime){
     	 this.number=number;
     	 this.EngineNumber=EngineNumber;

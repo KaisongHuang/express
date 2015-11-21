@@ -10,7 +10,20 @@ import data.managerdata.ManagerData;
 import data.sellingareadata.SellingAreaData;
 import data.warehousedata.WarehouseData;
 import logic.managerblservice.ManagerBlService;
-import po.*;
+import po.AcceptPO;
+import po.CarPackPO;
+import po.CentreArrivalPO;
+import po.CentrePackPO;
+import po.CentreTransforPO;
+import po.DeliverPO;
+import po.EmployeePO;
+import po.InStoragePO;
+import po.InstitutionPO;
+import po.OutStoragePO;
+import po.PayPO;
+import po.ReceiptPO;
+import po.SalaryPO;
+import serverPO.*;
 import vo.*;
 
 public class Manager implements ManagerBlService {

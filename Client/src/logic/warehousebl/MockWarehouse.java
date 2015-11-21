@@ -1,5 +1,7 @@
 package logic.warehousebl;
 
+import java.util.ArrayList;
+
 import _enum.ResultMessage;
 import vo.InStorageVO;
 import vo.OutStorageVO;
@@ -27,8 +29,8 @@ public class MockWarehouse extends Warehouse {
 		return ResultMessage.Success;
 	}
 
-	public ResultMessage checkWarehouse(String begin, String end) {
-		return ResultMessage.Success;
+	public ArrayList<Object> checkWarehouse(String begin, String end) {
+		return null;
 	}
 
 	public ResultMessage summarizeWarehouse(String end) {

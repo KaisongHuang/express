@@ -9,7 +9,8 @@ public class SenderPO implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	String SenderName,SenderAddress,SenderCompany,SenderCall,SenderPhone;
       String RecipientName,RecipientAddress,RecipientCompany,RecipientCall,RecipientPhone;
-      int pcs,weight,volume,commodity;
+      int pcs,weight,volume;
+      String commodity;
       String size="";
       String bagging;
       double total;
@@ -17,7 +18,7 @@ public class SenderPO implements Serializable  {
       String type;
       public SenderPO(String SenderName,String SenderAddress,String SenderCompany,String SenderCall,String SenderPhone,
       String RecipientName,String RecipientAddress,String RecipientCompany,String RecipientCall,String RecipientPhone,
-      int pcs,int weight,int volume,int commodity,
+      int pcs,int weight,int volume,String commodity,
       String size,String bagging,double total,int BarCode,String type){
     	  this.SenderName=SenderName;
     	  this.SenderAddress=SenderAddress;

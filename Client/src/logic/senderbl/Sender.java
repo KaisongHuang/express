@@ -2,7 +2,7 @@ package logic.senderbl;
 
 import java.rmi.RemoteException;
 
-import po.HistoryPO;
+import serverPO.HistoryPO;
 import data.senderdata.SenderData;
 import vo.HistoryVO;
 import logic.senderblservice.SenderBlService;

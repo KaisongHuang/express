@@ -3,7 +3,7 @@ package data.admindataservice;
 import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
-import po.AdminPO;
+import serverPO.AdminPO;
 
 public interface AdminDataService {
 	

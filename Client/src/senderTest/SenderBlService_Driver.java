@@ -2,7 +2,6 @@ package senderTest;
 
 import logic.senderblservice.SenderBlService;
 import vo.HistoryVO;
-import vo.SenderVO;
 
 public class SenderBlService_Driver {
 	
