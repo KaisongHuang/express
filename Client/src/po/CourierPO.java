@@ -16,9 +16,41 @@ public class CourierPO implements Serializable {
 		name = na;
 		date = da;
 	}
+	
 
-	public CourierPO() {
-		// TODO 锟皆讹拷锟斤拷傻墓锟斤拷旌拷锟斤拷锟�
+	public int getNumber() {
+		return number;
 	}
+
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 }
