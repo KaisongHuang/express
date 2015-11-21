@@ -11,7 +11,6 @@ import po.AccountPO;
 import po.PayPO;
 import po.ReceiptPO;
 import vo.AccountVO;
-import vo.FinanceVO;
 import vo.PayVO;
 
 public class Finance implements FinanceBlService {
@@ -117,7 +116,16 @@ public class Finance implements FinanceBlService {
 
 	public ResultMessage initAccount(String Account, double Money) {
 		// TODO Auto-generated method stub
-		
+		/*********** needs to be modified when adding listener *********/
+		ResultMessage rm;
+		AccountPO po=new AccountPO(Account, Money);
+		try {
+			rm=fd.insert(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 		return null;
 	}
 
