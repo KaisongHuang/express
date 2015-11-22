@@ -2,7 +2,7 @@ package po;
 
 import java.util.ArrayList;
 
-import serverPO.CentrePO;
+import po.CentrePO;
 
 public class CentrePackPO extends CentrePO {
 

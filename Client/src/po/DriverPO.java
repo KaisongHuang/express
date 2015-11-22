@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.SellingareaPO;
+import po.SellingareaPO;
 
 /*˾����š��������������ڡ����֤�š��ֻ���������λ���Ա���ʻ֤����*/
 public class DriverPO extends SellingareaPO{

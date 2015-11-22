@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 
 
 import _enum.ResultMessage;
-import serverPO.SellingareaPO;
+import po.SellingareaPO;
 
 public interface SellingareaDataService {
 	public SellingareaPO find(int id) throws RemoteException;

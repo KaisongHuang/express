@@ -23,7 +23,6 @@ import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
 import po.SalaryPO;
-import serverPO.*;
 import vo.*;
 
 public class Manager implements ManagerBlService {
@@ -106,7 +105,7 @@ public class Manager implements ManagerBlService {
 		}else if(vo instanceof ReceiptVO){
 			ReceiptVO vo4 = (ReceiptVO) vo;
 			if(vo4.getIsCheck()==0){
-				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getNumber(),vo4.getIsCheck());
+				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getIsCheck());
 				vo4.setIsCheck(1);
 				try {
 					rm=sad.update(po4);

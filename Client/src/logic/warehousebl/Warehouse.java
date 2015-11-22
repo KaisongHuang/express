@@ -7,14 +7,9 @@ import java.util.Calendar;
 import _enum.ResultMessage;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
-<<<<<<< HEAD
-import serverPO.InStoragePO;
-import serverPO.OutStoragePO;
-=======
 import po.InStoragePO;
 import po.OutStoragePO;
 import po.WarehousePO;
->>>>>>> refs/remotes/origin/master
 import vo.InStorageVO;
 import vo.OutStorageVO;
 
@@ -49,6 +44,18 @@ public class Warehouse implements WarehouseBlService {
 		return null;
 	}
 
+	public ResultMessage adjustGoods(int id,int qu,int pai,int jia,int wei) {
+//		ResultMessage rm;
+//		
+//		try {
+//			rm = wd.insert(po);
+//			return rm;
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//		}
+		return null;
+	}
+	
 	public ResultMessage initWarehouse(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/

@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.managerdataservice.ManagerDataService;
-import serverPO.ManagerPO;
+import po.ManagerPO;
 
 public class ManagerData implements ManagerDataService {
 

@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.CentrePO;
+import po.CentrePO;
 
 public class CentreArrivalPO extends CentrePO {
 

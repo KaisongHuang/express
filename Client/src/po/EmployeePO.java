@@ -1,6 +1,6 @@
 package po;
 
-import serverPO.ManagerPO;
+import po.ManagerPO;
 
 public class EmployeePO extends ManagerPO {
 

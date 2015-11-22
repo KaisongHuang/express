@@ -2,12 +2,12 @@ package logic.sellingareabl;
 
 import java.rmi.RemoteException;
 
-import serverPO.AcceptPO;
-import serverPO.CarPO;
-import serverPO.CarPackPO;
-import serverPO.DeliverPO;
-import serverPO.DriverPO;
-import serverPO.ReceiptPO;
+import po.AcceptPO;
+import po.CarPO;
+import po.CarPackPO;
+import po.DeliverPO;
+import po.DriverPO;
+import po.ReceiptPO;
 import data.sellingareadata.SellingAreaData;
 import vo.AcceptVO;
 import vo.CarPackVO;
@@ -67,7 +67,7 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
 		ResultMessage rs;
-		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getNumber(),vo.getIsCheck());
+		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getIsCheck());
 		try {
 			rs = sd.insert(po);
 			return rs;

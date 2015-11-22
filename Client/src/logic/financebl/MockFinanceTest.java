@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import _enum.ResultMessage;
+import po.ReceiptPO;
 import vo.AccountVO;
 import vo.FinanceVO;
 
@@ -23,7 +24,7 @@ public class MockFinanceTest {
 
 		AccountVO find = new MockFinance().find(null);
 		ArrayList<Object> getTotal = new MockFinance().getTotal(null, null);
-		FinanceVO checkReceipt = new MockFinance().checkReceipt(null, null);
+		ArrayList<ReceiptPO> checkReceipt = new MockFinance().checkReceipt(null, null);
 
 		ResultMessage createCost = new MockFinance().createCost(null);
 		ResultMessage initAccount = new MockFinance().initAccount(null, 0);
