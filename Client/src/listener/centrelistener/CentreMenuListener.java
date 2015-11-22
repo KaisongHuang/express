@@ -13,28 +13,33 @@ import presentation.centreui.*;
 public class CentreMenuListener implements MouseListener, ActionListener {
 	
 	private CentreMenuUI ui;
+	JPanel panel1;
+	JPanel panel2;
 	
 	public CentreMenuListener (CentreMenuUI ui){
+		
 		super();
 		this.ui = ui;
+		panel1 = new CentreUI(ui.getFrame());
+		panel2 = new CentreUI1(ui.getFrame());
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getBtnNewButton_8()){
 			System.out.println("ok");
-			JPanel panel = new CentreUI(ui.getFrame());
-			panel.doLayout();
-			ui.getFrame().add(panel);
+			
+			panel1.doLayout();
+			ui.getFrame().add(panel1);
 			
 			
 		}else if(e.getSource()==ui.getBtnNewButton_7()){
 			System.out.println("ok");
-			JPanel panel = new CentreUI1(ui.getFrame());
-			panel.setSize(763, 500);
-			panel.setLocation(100, 200);
-			panel.doLayout();
-			ui.getFrame().add(panel);
+			
+			panel2.setSize(763, 500);
+			panel2.setLocation(100, 200);
+			panel2.doLayout();
+			ui.getFrame().add(panel2);
 			
 			
 			
