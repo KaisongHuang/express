@@ -51,12 +51,14 @@ public class SellingAreaData implements SellingAreaDataService{
 	}
 
 	public ResultMessage insert(MySQLDataBase db, Object po,String tableName) {
+		System.out.println("insert ok");
 		String sql="insert into "+tableName+" values(";
 		if(tableName.equals("CarPack")){
 			CarPackPO po1=(CarPackPO) po;
 			sql=sql+"'"+po1.getDate()+"',"+po1.getNumber()+",'"+po1.getStart()+"','"
 				+po1.getDestination()+"',"+po1.getSupervisor()+","+po1.getSupercargo()+","+po1.getList()+","+po1.getFee()+","+po1.getIsCheck()+")";
 		}else if(tableName.equals("Car")){
+			System.out.println("Car ok");
 			CarPO po1=(CarPO) po;
 			sql=sql+po1.getNumber()+","+po1.getEngineNumber()+","+po1.getCarNumber()+","+po1.getChassisNumber()+",'"+po1.getPurchase()+"',"+po1.getServiceTime()+")";
 		}else if(tableName.equals("Driver")){
