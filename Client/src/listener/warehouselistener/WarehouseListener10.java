@@ -23,12 +23,9 @@ public class WarehouseListener10 implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getExportButton()) {
-			System.out.println("New Export");
-
-		} else if (e.getSource() == ui.getImportButton()) {
-			System.out.println("New Import");
-
+		if (e.getSource() == ui.getImportButton()) {
+			System.out.println("Import");
+			ui.getPanel().setVisible(false);
 		} else if (e.getSource() == ui.getClearButton()) {
 			System.out.println("clear");
 			
