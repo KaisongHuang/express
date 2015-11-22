@@ -15,6 +15,7 @@ import vo.CarVO;
 import vo.DeliverVO;
 import vo.DriverVO;
 import vo.ReceiptVO;
+import _enum.Opera;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.sellingareablservice.SellingareaBlService;
@@ -118,7 +119,7 @@ public class SellingArea implements SellingareaBlService {
 		CarPO po;
 		CarVO vo;
 		try {
-			po = (CarPO) sd.find(id);
+			po = (CarPO) sd.find(id,Opera.Car_find);
 			vo = new CarVO(po.getNumber(), po.getEngineNumber(), po.getCarNumber(), po.getChassisNumber(),
 					po.getPurchase(), po.getServiceTime());
 			return vo;
@@ -167,7 +168,7 @@ public class SellingArea implements SellingareaBlService {
 	public DriverVO findDriver(int id) {
 		DriverPO po;
 		try {
-			po = (DriverPO) sd.find(id);
+			po = (DriverPO) sd.find(id,Opera.Driver_insert);
 			DriverVO vo = new DriverVO(po.getNumber(), po.getName(), po.getBirthday(), po.getID(), po.getPhone(),
 					po.getCarCompany(), po.getSex(), po.getLicenceTime());
 			return vo;

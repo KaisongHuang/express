@@ -11,6 +11,6 @@ import po.SenderPO;
 public interface SenderDataService {
 	
 	public HistoryPO find(int id) throws RemoteException;
-	public ResultMessage insert(SenderPO po) throws RemoteException;
+
 
 }
