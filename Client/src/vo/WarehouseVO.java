@@ -4,6 +4,9 @@ public class WarehouseVO {
 	int id;
 	String destination;
 
+	public WarehouseVO() {
+	}
+
 	public WarehouseVO(int id, String destination) {
 		this.id = id;
 		this.destination = destination;
@@ -24,6 +27,5 @@ public class WarehouseVO {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-	
-	
+
 }
