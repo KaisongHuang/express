@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.courierdata.CourierData;
+import data.courierdataservice.CourierDataService;
 import data.senderdata.SenderData;
 import logic.courierblservice.CourierBlService;
 import po.CourierPO;
@@ -33,15 +34,12 @@ public class Courier implements CourierBlService {
 				vo.getRecipientName(),vo.getRecipientAddress(),vo.getRecipientCompany(),vo.getRecipientCall(),vo.getRecipientPhone(),
 				vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),this.getPrice(daf.getFee(),packing ),
 				vo.getBarCode(),vo.getType());
-		try {
-			rm=sd.insert(po);
-			return rm;
-		} catch (RemoteException e) {
-			// TODO �Զ���ɵ� catch ��
-			e.printStackTrace();
-		}
 		
-		return null;
+			rm= cd.OrderInput(po);
+			return rm;
+		
+		
+	
 	}
 
 	public double getPrice(double fee, double packing) {

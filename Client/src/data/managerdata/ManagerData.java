@@ -9,7 +9,7 @@ import po.ManagerPO;
 public class ManagerData implements ManagerDataService {
 
 	public ManagerPO find(int id) throws RemoteException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
