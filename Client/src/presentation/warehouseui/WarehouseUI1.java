@@ -120,7 +120,7 @@ public class WarehouseUI1 extends JPanel {
 		exportPanel.add(comboBox);
 
 		label_3 = new JLabel("年");
-		label_3.setBounds(349, 6, 57, 15);
+		label_3.setBounds(349, 6, 12, 15);
 		exportPanel.add(label_3);
 
 		comboBox_1 = new JComboBox<String>();
@@ -128,7 +128,7 @@ public class WarehouseUI1 extends JPanel {
 		exportPanel.add(comboBox_1);
 
 		label_4 = new JLabel("月");
-		label_4.setBounds(430, 6, 57, 15);
+		label_4.setBounds(430, 6, 13, 15);
 		exportPanel.add(label_4);
 
 		comboBox_2 = new JComboBox<String>();
@@ -177,12 +177,12 @@ public class WarehouseUI1 extends JPanel {
 		panel.add(importPanel, "import");
 		
 		label_7 = new JLabel("快递编号:");
-		label_7.setBounds(6, 6, 57, 15);
+		label_7.setBounds(6, 12, 57, 15);
 		importPanel.add(label_7);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(75, 0, 122, 27);
+		textField_3.setBounds(75, 6, 122, 27);
 		importPanel.add(textField_3);
 		
 		label_8 = new JLabel("出库日期:");
@@ -190,12 +190,12 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_8);
 		
 		label_9 = new JLabel("目的地:");
-		label_9.setBounds(236, 6, 57, 15);
+		label_9.setBounds(247, 12, 57, 15);
 		importPanel.add(label_9);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(298, -1, 122, 27);
+		textField_4.setBounds(300, 6, 122, 27);
 		importPanel.add(textField_4);
 		
 		comboBox_4 = new JComboBox<Object>();
@@ -203,7 +203,7 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(comboBox_4);
 		
 		label_10 = new JLabel("年");
-		label_10.setBounds(157, 45, 57, 15);
+		label_10.setBounds(145, 45, 20, 15);
 		importPanel.add(label_10);
 		
 		comboBox_5 = new JComboBox<Object>();
@@ -211,7 +211,7 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(comboBox_5);
 		
 		label_11 = new JLabel("月");
-		label_11.setBounds(282, 45, 57, 15);
+		label_11.setBounds(272, 45, 20, 15);
 		importPanel.add(label_11);
 		
 		comboBox_6 = new JComboBox<Object>();
@@ -235,15 +235,15 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(button_7);
 		
 		label_13 = new JLabel("区号:");
-		label_13.setBounds(6, 83, 61, 16);
+		label_13.setBounds(32, 85, 31, 16);
 		importPanel.add(label_13);
 		
 		comboBox_7 = new JComboBox<Object>();
-		comboBox_7.setBounds(75, 76, 70, 27);
+		comboBox_7.setBounds(75, 79, 70, 27);
 		importPanel.add(comboBox_7);
 		
 		label_14 = new JLabel("排号:");
-		label_14.setBounds(157, 83, 61, 16);
+		label_14.setBounds(167, 85, 42, 16);
 		importPanel.add(label_14);
 		
 		comboBox_8 = new JComboBox<Object>();
@@ -251,15 +251,15 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(comboBox_8);
 		
 		label_15 = new JLabel("架号:");
-		label_15.setBounds(282, 83, 61, 16);
+		label_15.setBounds(290, 85, 42, 16);
 		importPanel.add(label_15);
 		
 		comboBox_9 = new JComboBox<Object>();
-		comboBox_9.setBounds(318, 78, 70, 27);
+		comboBox_9.setBounds(318, 79, 70, 27);
 		importPanel.add(comboBox_9);
 		
 		label_16 = new JLabel("位号:");
-		label_16.setBounds(390, 83, 61, 16);
+		label_16.setBounds(405, 83, 61, 16);
 		importPanel.add(label_16);
 		
 		comboBox_10 = new JComboBox<Object>();
@@ -318,8 +318,12 @@ public class WarehouseUI1 extends JPanel {
 		return this.importButton;
 	}
 
-	public JButton getClearButton() {
+	public JButton getExportClearButton() {
 		return this.button_3;
+	}
+	
+	public JButton getImportClearButton() {
+		return this.button_6;
 	}
 
 	public JButton getBackButton() {
@@ -333,4 +337,190 @@ public class WarehouseUI1 extends JPanel {
 	public JPanel getPanel() {
 		return this.panel;
 	}
+	
+	public CardLayout getCardLayout(){
+		return this.getCardLayout();
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public JButton getButton_3() {
+		return button_3;
+	}
+
+	public JButton getButton_4() {
+		return button_4;
+	}
+
+	public JButton getButton_5() {
+		return button_5;
+	}
+
+	public JPanel getExportPanel() {
+		return exportPanel;
+	}
+
+	public JLabel getLabel() {
+		return label;
+	}
+
+	public JLabel getLabel_1() {
+		return label_1;
+	}
+
+	public JLabel getLabel_2() {
+		return label_2;
+	}
+
+	public JLabel getLabel_3() {
+		return label_3;
+	}
+
+	public JLabel getLabel_4() {
+		return label_4;
+	}
+
+	public JLabel getLabel_5() {
+		return label_5;
+	}
+
+	public JLabel getLabel_6() {
+		return label_6;
+	}
+
+	public JLabel getLblNewLabel_1() {
+		return lblNewLabel_1;
+	}
+
+	public JComboBox<String> getComboBox() {
+		return comboBox;
+	}
+
+	public JComboBox<String> getComboBox_1() {
+		return comboBox_1;
+	}
+
+	public JComboBox<String> getComboBox_2() {
+		return comboBox_2;
+	}
+
+	public JComboBox<String> getComboBox_3() {
+		return comboBox_3;
+	}
+
+	public WarehouseListener10 getListener() {
+		return listener;
+	}
+
+	public CardLayout getCard() {
+		return card;
+	}
+
+	public JPanel getImportPanel() {
+		return importPanel;
+	}
+
+	public JLabel getLabel_7() {
+		return label_7;
+	}
+
+	public JTextField getTextField_3() {
+		return textField_3;
+	}
+
+	public JLabel getLabel_8() {
+		return label_8;
+	}
+
+	public JLabel getLabel_9() {
+		return label_9;
+	}
+
+	public JTextField getTextField_4() {
+		return textField_4;
+	}
+
+	public JComboBox<Object> getComboBox_4() {
+		return comboBox_4;
+	}
+
+	public JLabel getLabel_10() {
+		return label_10;
+	}
+
+	public JComboBox<Object> getComboBox_5() {
+		return comboBox_5;
+	}
+
+	public JLabel getLabel_11() {
+		return label_11;
+	}
+
+	public JComboBox<Object> getComboBox_6() {
+		return comboBox_6;
+	}
+
+	public JLabel getLabel_12() {
+		return label_12;
+	}
+
+	public JButton getButton() {
+		return button;
+	}
+
+	public JButton getButton_6() {
+		return button_6;
+	}
+
+	public JButton getButton_7() {
+		return button_7;
+	}
+
+	public JLabel getLabel_13() {
+		return label_13;
+	}
+
+	public JComboBox<Object> getComboBox_7() {
+		return comboBox_7;
+	}
+
+	public JLabel getLabel_14() {
+		return label_14;
+	}
+
+	public JComboBox<Object> getComboBox_8() {
+		return comboBox_8;
+	}
+
+	public JLabel getLabel_15() {
+		return label_15;
+	}
+
+	public JComboBox<Object> getComboBox_9() {
+		return comboBox_9;
+	}
+
+	public JLabel getLabel_16() {
+		return label_16;
+	}
+
+	public JComboBox<Object> getComboBox_10() {
+		return comboBox_10;
+	}
+	
+	
 }
