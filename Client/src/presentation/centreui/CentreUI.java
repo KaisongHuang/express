@@ -11,23 +11,33 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
+import listener.centrelistener.CentreListener0;
+
 import javax.swing.JComboBox;
 
 
 public class CentreUI extends JPanel{
 
-	
+	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private JComboBox comboBox;
+	private JButton btnNewButton_9;
+	private JButton btnNewButton_10;
+	CentreListener0 centreListener;
 
 
 
 	/**
 	 * Create the application.
 	 */
-	public CentreUI() {
+	public CentreUI(JFrame frame) {
+		
+		this.frame = frame;
+		centreListener = new CentreListener0(this);
 		initialize();
 	}
 
@@ -39,9 +49,8 @@ public class CentreUI extends JPanel{
 	
 		
 		
-		this.setBackground(new Color(255, 255, 255));
-		this.setBounds(136, 116, 712, 437);
-		
+		this.setBackground(Color.BLACK);
+	
 		this.setLayout(null);
 		
 		JPanel panel_5 = new JPanel();
@@ -93,22 +102,85 @@ public class CentreUI extends JPanel{
 		lblNewLabel_5.setBounds(17, 155, 55, 18);
 		panel_5.add(lblNewLabel_5);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		comboBox.setBounds(99, 150, 122, 28);
 		panel_5.add(comboBox);
 		
-		JButton btnNewButton_9 = new JButton("\u786E\u8BA4");
+		btnNewButton_9 = new JButton("\u786E\u8BA4");
 		btnNewButton_9.setBounds(89, 340, 90, 30);
 		this.add(btnNewButton_9);
+		btnNewButton_9.addActionListener(centreListener);
 		
-		JButton btnNewButton_10 = new JButton("\u53D6\u6D88");
+		btnNewButton_10 = new JButton("\u53D6\u6D88");
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btnNewButton_10.setBounds(493, 340, 90, 30);
 		this.add(btnNewButton_10);
+		btnNewButton_10.addActionListener(centreListener);
 		
 	
 	}
+
+	public JButton getBtnNewButton_9() {
+		return btnNewButton_9;
+	}
+
+	public void setBtnNewButton_9(JButton btnNewButton_9) {
+		this.btnNewButton_9 = btnNewButton_9;
+	}
+
+	public JButton getBtnNewButton_10() {
+		return btnNewButton_10;
+	}
+
+	public void setBtnNewButton_10(JButton btnNewButton_10) {
+		this.btnNewButton_10 = btnNewButton_10;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public void setTextField_2(JTextField textField_2) {
+		this.textField_2 = textField_2;
+	}
+
+	public JTextField getTextField_3() {
+		return textField_3;
+	}
+
+	public void setTextField_3(JTextField textField_3) {
+		this.textField_3 = textField_3;
+	}
+
+	public JComboBox getComboBox() {
+		return comboBox;
+	}
+
+	public void setComboBox(JComboBox comboBox) {
+		this.comboBox = comboBox;
+	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
 }
