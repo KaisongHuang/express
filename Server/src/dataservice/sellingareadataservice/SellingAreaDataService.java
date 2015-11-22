@@ -1,6 +1,7 @@
 package dataservice.sellingareadataservice;
 
-import Server_enum.ResultMessage;
+import _enum.ResultMessage;
+import po.SellingareaPO;
 import server.database.MySQLDataBase;
 
 
