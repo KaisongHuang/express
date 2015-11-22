@@ -11,6 +11,10 @@ import javax.swing.UIManager;
 
 public class WarehouseUI1_1 extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	/**
@@ -65,7 +69,7 @@ public class WarehouseUI1_1 extends JPanel{
 		panel_5.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<?> comboBox = new JComboBox<Object>();
 		comboBox.setBounds(75, 39, 70, 25);
 		panel_5.add(comboBox);
 		
@@ -73,7 +77,7 @@ public class WarehouseUI1_1 extends JPanel{
 		label_3.setBounds(157, 45, 57, 15);
 		panel_5.add(label_3);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		JComboBox<?> comboBox_1 = new JComboBox<Object>();
 		comboBox_1.setBounds(200, 41, 70, 25);
 		panel_5.add(comboBox_1);
 		
@@ -81,7 +85,7 @@ public class WarehouseUI1_1 extends JPanel{
 		label_4.setBounds(282, 45, 57, 15);
 		panel_5.add(label_4);
 		
-		JComboBox comboBox_2 = new JComboBox();
+		JComboBox<?> comboBox_2 = new JComboBox<Object>();
 		comboBox_2.setBounds(318, 41, 70, 25);
 		panel_5.add(comboBox_2);
 		
@@ -105,7 +109,7 @@ public class WarehouseUI1_1 extends JPanel{
 		label_6.setBounds(6, 83, 61, 16);
 		panel_5.add(label_6);
 		
-		JComboBox comboBox_3 = new JComboBox();
+		JComboBox<?> comboBox_3 = new JComboBox<Object>();
 		comboBox_3.setBounds(75, 76, 70, 27);
 		panel_5.add(comboBox_3);
 		
@@ -113,7 +117,7 @@ public class WarehouseUI1_1 extends JPanel{
 		label_7.setBounds(157, 83, 61, 16);
 		panel_5.add(label_7);
 		
-		JComboBox comboBox_4 = new JComboBox();
+		JComboBox<?> comboBox_4 = new JComboBox<Object>();
 		comboBox_4.setBounds(200, 79, 70, 27);
 		panel_5.add(comboBox_4);
 		
@@ -121,7 +125,7 @@ public class WarehouseUI1_1 extends JPanel{
 		label_8.setBounds(282, 83, 61, 16);
 		panel_5.add(label_8);
 		
-		JComboBox comboBox_5 = new JComboBox();
+		JComboBox<?> comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(318, 78, 70, 27);
 		panel_5.add(comboBox_5);
 		
@@ -129,7 +133,7 @@ public class WarehouseUI1_1 extends JPanel{
 		label_9.setBounds(390, 83, 61, 16);
 		panel_5.add(label_9);
 		
-		JComboBox comboBox_6 = new JComboBox();
+		JComboBox<?> comboBox_6 = new JComboBox<Object>();
 		comboBox_6.setBounds(435, 79, 70, 27);
 		panel_5.add(comboBox_6);
 	}
