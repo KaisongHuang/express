@@ -11,16 +11,25 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import listener.centrelistener.CentreMenuListener;
+
 
 public class CentreMenuUI extends JPanel{
 
-
+	private JFrame frame;
+	private JButton btnNewButton_7;
+	private JButton btnNewButton_8;
+	CentreMenuListener centreMenuListener;
 
 	/**
 	 * Create the application.
 	 */
-	public CentreMenuUI() {
+	public CentreMenuUI(JFrame frame) {
+		centreMenuListener = new CentreMenuListener(this);
+		this.frame = frame;
 		initialize();
+	
+		
 	}
 
 	/**
@@ -30,18 +39,50 @@ public class CentreMenuUI extends JPanel{
 		
 		
 		
-		this.setBounds(136, 58, 746, 58);
+		
 		
 		this.setLayout(null);
 		
-		JButton btnNewButton_8 = new JButton("\u88C5\u8FD0\u7BA1\u7406");
+		btnNewButton_8 = new JButton("\u88C5\u8FD0\u7BA1\u7406");
 		btnNewButton_8.setBounds(137, 0, 137, 55);
 		this.add(btnNewButton_8);
+		btnNewButton_8.addActionListener(centreMenuListener);
 		
-		JButton btnNewButton_7 = new JButton("\u63A5\u53D7\u5355");
+		
+		btnNewButton_7 = new JButton("\u63A5\u53D7\u5355");
 		btnNewButton_7.setBackground(new Color(255, 248, 220));
 		btnNewButton_7.setBounds(0, 0, 137, 55);
 		this.add(btnNewButton_7);
+		btnNewButton_7.addActionListener(centreMenuListener);
+		System.out.println("ok");
 		
 	}
+
+	public JButton getBtnNewButton_7() {
+		return btnNewButton_7;
+	}
+
+	public void setBtnNewButton_7(JButton btnNewButton_7) {
+		this.btnNewButton_7 = btnNewButton_7;
+	}
+
+	public JButton getBtnNewButton_8() {
+		return btnNewButton_8;
+	}
+
+	public void setBtnNewButton_8(JButton btnNewButton_8) {
+		this.btnNewButton_8 = btnNewButton_8;
+	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+	
+	
+	
+	
 }
