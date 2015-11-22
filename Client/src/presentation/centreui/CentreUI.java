@@ -47,7 +47,7 @@ public class CentreUI extends JPanel{
 	private void initialize() {
 		
 	
-		
+		this.setBounds(0,0,500,500);
 		
 		this.setBackground(Color.BLACK);
 	
