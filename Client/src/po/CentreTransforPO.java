@@ -32,7 +32,9 @@ public class CentreTransforPO extends CentrePO {
 		this.fee = fee;
 		this.isCheck=isCheck;
 	}
-
+    public int getIsCheck(){
+    	return isCheck;
+    }
 	public String getTransferStyle() {
 		return transforStyle;
 	}
