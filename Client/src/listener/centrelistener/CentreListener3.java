@@ -29,11 +29,9 @@ public class CentreListener3 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 				
 		if(e.getSource()==ui.getBtnNewButton_9()){
-			ui.getFrame().dispose();
 			JPanel panel = new CentreUI1(ui.getFrame());
 			ui.getFrame().add(panel);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
-			ui.getFrame().dispose();
 			JPanel panel = new CentreUI2(ui.getFrame());
 			ui.getFrame().add(panel);
 		}else if(e.getSource()==ui.getBtnNewButton_12()){
