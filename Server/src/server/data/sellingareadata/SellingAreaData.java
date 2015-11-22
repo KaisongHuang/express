@@ -1,9 +1,10 @@
 package server.data.sellingareadata;
 
 import java.sql.ResultSet;
+
+import _enum.ResultMessage;
 import server.database.MySQLDataBase;
 import po.*;
-import Server_enum.ResultMessage;
 import dataservice.sellingareadataservice.SellingAreaDataService;
 
 public class SellingAreaData implements SellingAreaDataService{

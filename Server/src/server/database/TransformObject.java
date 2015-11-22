@@ -1,5 +1,7 @@
 package server.database;
-import Server_enum.Opera;
+
+import _enum.Opera;
+
 
 
 public class TransformObject {
