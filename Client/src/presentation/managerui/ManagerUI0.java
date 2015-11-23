@@ -78,22 +78,22 @@ public class ManagerUI0 extends JPanel{
 		
 		btnNewButton_11 = new JButton("\u67E5\u8BE2");
 		btnNewButton_11.setBackground(new Color(255, 248, 220));
-		btnNewButton_11.setBounds(32, 6, 90, 30);
+		btnNewButton_11.setBounds(32, 6, 100, 30);
 		panel_5.add(btnNewButton_11);
 		btnNewButton_11.addActionListener(managerlistener);
 		
 		btnNewButton_12 = new JButton("\u66F4\u65B0");
-		btnNewButton_12.setBounds(158, 6, 90, 30);
+		btnNewButton_12.setBounds(158, 6, 100, 30);
 		panel_5.add(btnNewButton_12);
 		btnNewButton_12.addActionListener(managerlistener);
 		
 		btnNewButton_13 = new JButton("\u5220\u9664");
-		btnNewButton_13.setBounds(290, 6, 90, 30);
+		btnNewButton_13.setBounds(290, 6, 100, 30);
 		panel_5.add(btnNewButton_13);
 		btnNewButton_13.addActionListener(managerlistener);
 		
 		btnNewButton_14 = new JButton("\u6DFB\u52A0");
-		btnNewButton_14.setBounds(453, 6, 90, 30);
+		btnNewButton_14.setBounds(453, 6, 100, 30);
 		panel_5.add(btnNewButton_14);
 		btnNewButton_14.addActionListener(managerlistener);
 		
@@ -103,59 +103,59 @@ public class ManagerUI0 extends JPanel{
 		panel_6.setLayout(null);
 		
 		lblNewLabel_2 = new JLabel("员工信息");
-		lblNewLabel_2.setBounds(251, 0, 55, 18);
+		lblNewLabel_2.setBounds(251, 0, 100, 18);
 		panel_6.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("员工姓名：");
-		lblNewLabel_3.setBounds(12, 37, 55, 18);
+		lblNewLabel_3.setBounds(12, 37, 100, 18);
 		panel_6.add(lblNewLabel_3);
 		
 		lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBounds(122, 38, 55, 18);
+		lblNewLabel_4.setBounds(122, 38, 100, 18);
 		panel_6.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("员工职位：");
-		lblNewLabel_5.setBounds(14, 85, 55, 18);
+		lblNewLabel_5.setBounds(14, 85, 100, 18);
 		panel_6.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("上层机构：");
-		lblNewLabel_6.setBounds(14, 139, 55, 18);
+		lblNewLabel_6.setBounds(14, 139, 100, 18);
 		panel_6.add(lblNewLabel_6);
 		
 		lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setBounds(120, 87, 55, 18);
+		lblNewLabel_7.setBounds(120, 87, 100, 18);
 		panel_6.add(lblNewLabel_7);
 		
 		lblNewLabel_8 = new JLabel("");
-		lblNewLabel_8.setBounds(120, 143, 55, 18);
+		lblNewLabel_8.setBounds(120, 143, 100, 18);
 		panel_6.add(lblNewLabel_8);
 		
 		lblNewLabel_9 = new JLabel("员工编号：");
-		lblNewLabel_9.setBounds(331, 42, 55, 18);
+		lblNewLabel_9.setBounds(331, 42, 100, 18);
 		panel_6.add(lblNewLabel_9);
 		
 		lblNewLabel_10 = new JLabel("");
-		lblNewLabel_10.setBounds(448, 44, 55, 18);
+		lblNewLabel_10.setBounds(448, 44, 100, 18);
 		panel_6.add(lblNewLabel_10);
 		
 		lblNewLabel_11 = new JLabel("员工年龄：");
-		lblNewLabel_11.setBounds(334, 86, 55, 18);
+		lblNewLabel_11.setBounds(334, 86, 100, 18);
 		panel_6.add(lblNewLabel_11);
 		
 		lblNewLabel_12 = new JLabel("工作时间：");
-		lblNewLabel_12.setBounds(333, 138, 55, 18);
+		lblNewLabel_12.setBounds(333, 138, 100, 18);
 		panel_6.add(lblNewLabel_12);
 		
 		lblNewLabel_13 = new JLabel("");
-		lblNewLabel_13.setBounds(449, 89, 55, 18);
+		lblNewLabel_13.setBounds(449, 89, 100, 18);
 		panel_6.add(lblNewLabel_13);
 		
 		lblNewLabel_14 = new JLabel("");
-		lblNewLabel_14.setBounds(452, 139, 55, 18);
+		lblNewLabel_14.setBounds(452, 139, 100, 18);
 		panel_6.add(lblNewLabel_14);
 		
 		lblNewLabel_1 = new JLabel("员工编号：");
-		lblNewLabel_1.setBounds(21, 69, 55, 18);
+		lblNewLabel_1.setBounds(21, 69, 100, 18);
 		this.add(lblNewLabel_1);
 		
 		textField = new JTextField();
@@ -163,8 +163,8 @@ public class ManagerUI0 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 		
-		btnNewButton_15 = new JButton("New button");
-		btnNewButton_15.setBounds(308, 67, 90, 30);
+		btnNewButton_15 = new JButton("查询");
+		btnNewButton_15.setBounds(308, 67, 120, 30);
 		this.add(btnNewButton_15);
 		btnNewButton_15.addActionListener(managerlistener);
 		

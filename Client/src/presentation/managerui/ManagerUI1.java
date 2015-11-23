@@ -16,6 +16,8 @@ import javax.swing.JComboBox;
 
 public class ManagerUI1 extends JPanel{
 
+	JFrame frame;
+	
 	private JTextField textField;
 
 	/**
