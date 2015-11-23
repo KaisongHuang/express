@@ -30,7 +30,11 @@ public class SellingDataService_Stub implements SellingareaDataService {
 	}
 
 	public SellingareaPO find(int id, Opera op) throws RemoteException {
+<<<<<<< HEAD
+		// TODO Auto-generated method stub
+=======
 		// TODO 自动生成的方法存根
+>>>>>>> master
 		return null;
 	}
 
