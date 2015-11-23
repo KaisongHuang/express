@@ -2,7 +2,7 @@ package po;
 
 import java.util.ArrayList;
 
-public class DistanceAndFee {
+public class DistanceAndFee extends ManagerPO{
     ArrayList<String> city1;
     ArrayList<String> city2;
     int distance;

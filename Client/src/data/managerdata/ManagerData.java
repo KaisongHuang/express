@@ -20,22 +20,43 @@ public class ManagerData implements ManagerDataService {
 		return (ManagerPO) acp.getOb();
 	}
 
-	public ResultMessage insert(ManagerPO po) throws RemoteException {
-
+	public ResultMessage insert(ManagerPO po,Opera op) throws RemoteException {
+		send=new TransformObject(op,po);
+		ClientAdapter.write(send);
+		acp=(TransformObject) ClientAdapter.readData();
 		return null;
 	}
 
-	public ResultMessage delete(ManagerPO po) throws RemoteException {
-	
+	public ResultMessage delete(ManagerPO po,Opera op) throws RemoteException {
+		send=new TransformObject(op,po);
+		ClientAdapter.write(send);
+		acp=(TransformObject) ClientAdapter.readData();
 		return null;
 	}
 
-	public ResultMessage update(ManagerPO po) throws RemoteException {
-	
+	public ResultMessage update(ManagerPO po,Opera op) throws RemoteException {
+		send=new TransformObject(op,po);
+		ClientAdapter.write(send);
+		acp=(TransformObject) ClientAdapter.readData();
 		return null;
 	}
 
 	public ManagerPO find(int id) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	public ResultMessage insert(ManagerPO po) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	public ResultMessage delete(ManagerPO po) throws RemoteException {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	public ResultMessage update(ManagerPO po) throws RemoteException {
 		// TODO 自动生成的方法存根
 		return null;
 	}
