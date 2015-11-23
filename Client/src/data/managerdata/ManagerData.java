@@ -7,7 +7,9 @@ import Client.network.client.TransformObject;
 import _enum.Opera;
 import _enum.ResultMessage;
 import data.managerdataservice.ManagerDataService;
+import po.DistanceAndFee;
 import po.ManagerPO;
+import po.SalaryPO;
 
 public class ManagerData implements ManagerDataService {
 	   TransformObject send;
@@ -35,7 +37,14 @@ public class ManagerData implements ManagerDataService {
 	}
 
 	public ResultMessage update(ManagerPO po,Opera op) throws RemoteException {
-		send=new TransformObject(op,po);
+		if(po instanceof SalaryPO){
+		     send=new TransformObject(Opera.Manager_insert,po);
+		}else if(po instanceof DistanceAndFee){
+			  send=new TransformObject(Opera.Manager_insert,po);
+			
+		}else{
+			send=new TransformObject(op,po);
+		}
 		ClientAdapter.write(send);
 		acp=(TransformObject) ClientAdapter.readData();
 		return null;
