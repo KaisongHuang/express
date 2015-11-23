@@ -10,24 +10,26 @@ public class InStoragePO extends WarehousePO {
 	public void setIsCheck(int isCheck) {
 		this.isCheck = isCheck;
 	}
-
+    int id;
 	String indate;
+	String destination;
+	String WarehouseID;
 	int pos_qu;
 	int pos_pai;
 	int pos_jia;
 	int pos_wei;
     int isCheck;
-	public InStoragePO(int id, String indate, String destination,
-			int pos_qu, int pos_pai,int pos_jia,int pos_wei,int isCheck) {
+	public InStoragePO  (int id, String indate, String destination,String WarehouseID,int pos_qu, int pos_pai,int pos_jia,int pos_wei,int isCheck){
 		this.id=id;
+		this.indate=indate;
 		this.destination=destination;
-		this.indate = indate;
+		this.WarehouseID=WarehouseID;
 		this.pos_qu = pos_qu;
 		this.pos_pai = pos_pai;
 		this.pos_jia = pos_jia;
 		this.pos_wei = pos_wei;
 		this.isCheck=isCheck;
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public String getIndate() {
