@@ -21,9 +21,10 @@ public class Test extends JFrame {
 	}
 	public void init(){
 		this.setLayout(null);
-		this.setSize(1200, 1000);
+		this.setSize(900, 700);
 		
-		JPanel panel=new ManagerUI2(this);
+		JPanel panel=new ManagerUI14(this);
+		
 		
 		
 		panel.setBounds(136, 58, 746,800);
