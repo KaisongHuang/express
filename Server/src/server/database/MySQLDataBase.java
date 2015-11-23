@@ -1,10 +1,11 @@
 package server.database;
-import java.beans.Statement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import _enum.ResultMessage;
@@ -16,7 +17,7 @@ public class MySQLDataBase {
     
 	   Connection con;
 	  public MySQLDataBase(){
-		  con=getMySQL_Con(null, null, null, null, null, null);
+		  con=getMySQL_Con(null, null, null, "express", "root",null);
 		  
 	  }
       public  Connection getMySQL_Con(String driverClassName,String serverHost,String serverPort,String dbName,String userName,
@@ -46,6 +47,7 @@ public class MySQLDataBase {
 			con=DriverManager.getConnection(dbURL,userName,password);
 		} catch (SQLException e) {
 			// TODO �Զ���ɵ� catch ��
+			
 			e.printStackTrace();
 		}
     	  

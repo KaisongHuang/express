@@ -30,12 +30,8 @@ public class CentreListener1 implements MouseListener, ActionListener {
 				
 		if(e.getSource()==ui.getBtnNewButton_10()){
 			
-			JPanel panel = new CentreUI2(ui.getFrame());
-			ui.getFrame().add(panel);
 		}else if(e.getSource()==ui.getBtnNewButton_11()){
-			
-			JPanel panel = new CentreUI3(ui.getFrame());
-			ui.getFrame().add(panel);
+
 		}else if(e.getSource()==ui.getBtnNewButton_12()){
 			ResultMessage rm;
 			CentreTransforVO vo = this.read();

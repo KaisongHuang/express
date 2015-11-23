@@ -16,7 +16,7 @@ import listener.centrelistener.CentreMenuListener;
 
 public class CentreMenuUI extends JPanel{
 
-	private JFrame frame;
+	private Test frame;
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
 	CentreMenuListener centreMenuListener;
@@ -26,7 +26,7 @@ public class CentreMenuUI extends JPanel{
 	 */
 	public CentreMenuUI(JFrame frame) {
 		centreMenuListener = new CentreMenuListener(this);
-		this.frame = frame;
+		this.frame = (Test) frame;
 		initialize();
 	
 		
@@ -74,12 +74,12 @@ public class CentreMenuUI extends JPanel{
 		this.btnNewButton_8 = btnNewButton_8;
 	}
 
-	public JFrame getFrame() {
+	public Test getFrame() {
 		return frame;
 	}
 
 	public void setFrame(JFrame frame) {
-		this.frame = frame;
+		this.frame = (Test) frame;
 	}
 	
 	

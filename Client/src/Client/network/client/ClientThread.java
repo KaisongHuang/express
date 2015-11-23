@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 
 
 
-public class ClientThread extends Thread {
+public class ClientThread {
 	private Socket server;
 	private ObjectInputStream reader;
 	private ObjectOutputStream out;
@@ -23,46 +23,15 @@ public class ClientThread extends Thread {
 		
 		reader = new ObjectInputStream(new BufferedInputStream(server.getInputStream()));
 	}
-	//read data
-	@Override
-	public void run(){
-		while(!this.isInterrupted()){
-			
-			//read from socket;
-			try {
-				Object obj = reader.readObject();
-				
-				ClientAdapter.readData(obj);
-				
-				
-			} catch(SocketException se){
-				System.out.println("socket connection is closed!!!");
-				this.close();
-				break;
-			}catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			try {
-				Thread.sleep(50);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
 	
+
 	public void close(){
 		
 		try {
 			reader.close();
 			out.close();
 			server.close();
-			this.interrupt();
+		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,4 +52,16 @@ public class ClientThread extends Thread {
 		return true;
 	}
 
+	public Object read(){
+		try {
+			return reader.readObject();
+		} catch (ClassNotFoundException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

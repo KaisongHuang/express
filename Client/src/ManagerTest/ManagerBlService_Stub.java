@@ -76,4 +76,9 @@ public class ManagerBlService_Stub implements ManagerBlService {
 		return null;
 	}
 
+	public EmployeeVO find(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
