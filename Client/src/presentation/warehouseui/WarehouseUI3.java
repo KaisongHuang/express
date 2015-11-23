@@ -1,24 +1,17 @@
 package presentation.warehouseui;
 
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.UIManager;
-import javax.swing.JList;
-
 
 public class WarehouseUI3 extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 
 

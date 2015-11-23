@@ -6,15 +6,12 @@ import java.net.UnknownHostException;
 
 public class ClientAdapter {
 	protected static ClientThread socket;
-	protected static ClientInHandler handler;
+
 	
-	public static boolean init(String addr,int port,ClientInHandler h){
+	public static boolean init(String addr,int port){
 		try {
 			socket = new ClientThread(addr,port);
 			
-			handler = h;
-			
-			socket.start();
 			return true;
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
@@ -32,8 +29,8 @@ public class ClientAdapter {
 	}
 	
 	//from read
-	public static void readData(Object data){
-		handler.inputHandle(data);
+	public static Object readData(){
+	    return socket.read();
 	}
 	
 	public static void close(){

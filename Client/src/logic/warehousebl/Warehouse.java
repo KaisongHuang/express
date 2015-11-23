@@ -3,13 +3,11 @@ package logic.warehousebl;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Calendar;
-
 import _enum.ResultMessage;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
 import po.InStoragePO;
 import po.OutStoragePO;
-import po.WarehousePO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
 
@@ -19,7 +17,7 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage importGoods(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getPos_qu(),
+		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(),vo.getWarehouseID(), vo.getPos_qu(),
 				vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
@@ -33,7 +31,7 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage exportGoods(OutStorageVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		OutStoragePO po = new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(), vo.getTransportation(),
+		OutStoragePO po = new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(),vo.getWarehouseID(), vo.getTransportation(),
 				vo.getTrans_id(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
@@ -60,7 +58,7 @@ public class Warehouse implements WarehouseBlService {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
 		ResultMessage rm;
-		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getPos_qu(),
+		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(),vo.getWarehouseID(), vo.getPos_qu(),
 				vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
@@ -72,15 +70,17 @@ public class Warehouse implements WarehouseBlService {
 	}
 
 	public ResultMessage setAlarm(double rate) {
-		// TODO Auto-generated method stub
-		WarehousePO po = new WarehousePO();
-		po.setAlarmRate(rate);
-		return null;
+		return wd.setAlarm(rate);
 	}
 
 	public ResultMessage checkAlarm() {
-		// TODO Auto-generated method stub
-
+		
+		try {
+			return wd.checkAlarm();
+		} catch (RemoteException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -88,33 +88,35 @@ public class Warehouse implements WarehouseBlService {
 	public ArrayList<Object> checkWarehouse(String begin, String end) {
 		// TODO Auto-generated method stub
 		ArrayList<Object> arr = null;
-		for (int i = 0; i < wd.findInStorage().size(); i++) {
-			if(wd.findInStorage().get(i).getIndate().compareTo(begin)>=0&&wd.findInStorage().get(i).getIndate().compareTo(end)<=0)
-				arr.add(wd.findInStorage().get(i));
+		ArrayList<InStoragePO> list=wd.findInStorage();
+		ArrayList<OutStoragePO> list1=wd.findOutStorage();
+		for (int i = 0; i <list.size(); i++) {
+			if(list.get(i).getIndate().compareTo(begin)>=0&&list.get(i).getIndate().compareTo(end)<=0)
+				arr.add(list.get(i));
 		}
 		for (int i = 0; i < wd.findOutStorage().size(); i++) {
-			if(wd.findOutStorage().get(i).getOutdate().compareTo(begin)>=0&&wd.findOutStorage().get(i).getOutdate().compareTo(end)<=0)
-				arr.add(wd.findOutStorage().get(i));
+			if(list1.get(i).getOutdate().compareTo(begin)>=0&&list1.get(i).getOutdate().compareTo(end)<=0)
+				arr.add(list1.get(i));
 		}
+		
+		
 		return arr;
 	}
 
 	@SuppressWarnings("null")
 	public ArrayList<Object> summarizeWarehouse() {
-		// TODO Auto-generated method stub
+		// 待修改
 		Calendar time = Calendar.getInstance();
 		int year = time.get(Calendar.YEAR); 
 		int month = time.get(Calendar.MONTH)+1; 
 		int date = time.get(Calendar.DATE); 
 		String date1=""+year+month+date;
+		System.out.println("summarizeWarehouse()"+date1);
 		ArrayList<Object> arr = null;
-		for (int i = 0; i < wd.findInStorage().size(); i++) {
-			if(wd.findInStorage().get(i).getIndate().compareTo(date1)==0&&wd.findInStorage().get(i).getIndate().compareTo(date1)==0)
-				arr.add(wd.findInStorage().get(i));
-		}
-		for (int i = 0; i < wd.findOutStorage().size(); i++) {
-			if(wd.findOutStorage().get(i).getOutdate().compareTo(date1)==0&&wd.findOutStorage().get(i).getOutdate().compareTo(date1)==0)
-				arr.add(wd.findOutStorage().get(i));
+		ArrayList<InStoragePO>  list=wd.findInStorage();
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getIndate().compareTo(date1)==0&&list.get(i).getIndate().compareTo(date1)==0)
+				arr.add(list.get(i));
 		}
 		return arr;
 	}
