@@ -26,8 +26,10 @@ public class CentreData implements CentreDataService {
 	}
 
 	public ResultMessage update(CentrePO po) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		send=new TransformObject(Opera.Centre_update,po);
+		ClientAdapter.write(send);
+		acp=(TransformObject) ClientAdapter.readData();
+		return (ResultMessage) acp.getOb();
 	}
 
 }

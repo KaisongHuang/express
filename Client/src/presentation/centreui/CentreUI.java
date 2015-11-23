@@ -47,9 +47,9 @@ public class CentreUI extends JPanel{
 	private void initialize() {
 		
 	
-		this.setBounds(0,0,500,500);
+		this.setBounds(136, 116, 746, 437);
 		
-		this.setBackground(Color.BLACK);
+		this.setBackground(new Color(255, 255, 255));
 	
 		this.setLayout(null);
 		
@@ -62,8 +62,8 @@ public class CentreUI extends JPanel{
 		label.setBounds(184, 6, 109, 18);
 		panel_5.add(label);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(17, 39, 55, 18);
+		JLabel lblNewLabel_1 = new JLabel("中转中心编号：");
+		lblNewLabel_1.setBounds(17, 39, 100, 18);
 		panel_5.add(lblNewLabel_1);
 		
 		textField = new JTextField();
@@ -71,8 +71,8 @@ public class CentreUI extends JPanel{
 		panel_5.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(253, 42, 55, 18);
+		JLabel lblNewLabel_2 = new JLabel("到达日期：");
+		lblNewLabel_2.setBounds(253, 42, 100, 18);
 		panel_5.add(lblNewLabel_2);
 		
 		textField_1 = new JTextField();
@@ -80,8 +80,8 @@ public class CentreUI extends JPanel{
 		panel_5.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(17, 93, 55, 18);
+		JLabel lblNewLabel_3 = new JLabel("中转编号：");
+		lblNewLabel_3.setBounds(17, 93, 100, 18);
 		panel_5.add(lblNewLabel_3);
 		
 		textField_2 = new JTextField();
@@ -89,8 +89,8 @@ public class CentreUI extends JPanel{
 		panel_5.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(253, 93, 55, 18);
+		JLabel lblNewLabel_4 = new JLabel("出发地：");
+		lblNewLabel_4.setBounds(253, 93, 100, 18);
 		panel_5.add(lblNewLabel_4);
 		
 		textField_3 = new JTextField();
@@ -98,11 +98,15 @@ public class CentreUI extends JPanel{
 		panel_5.add(textField_3);
 		textField_3.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(17, 155, 55, 18);
+		JLabel lblNewLabel_5 = new JLabel("状态：");
+		lblNewLabel_5.setBounds(17, 155, 100, 18);
 		panel_5.add(lblNewLabel_5);
 		
 		comboBox = new JComboBox();
+		comboBox.addItem("完整");
+		comboBox.addItem("损坏");
+		comboBox.addItem("丢失");
+		comboBox.setSelectedItem(0);
 		comboBox.setBounds(99, 150, 122, 28);
 		panel_5.add(comboBox);
 		

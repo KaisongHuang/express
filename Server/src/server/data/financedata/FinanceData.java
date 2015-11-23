@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import po.AccountPO;
 import po.PayPO;
+import po.ReceiptPO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
 import dataservice.financedataservice.FinanceDataService;
@@ -32,6 +33,11 @@ public class FinanceData implements FinanceDataService{
 		return null;
 	}
 
+	public ArrayList<ReceiptPO> getReceipt(MySQLDataBase db, String tableName){
+		String sql="select * from "+tableName;
+		ResultSet rs=db.find(sql);
+		return null;
+	}
 	public ResultMessage delete(MySQLDataBase db, Object po, String tableName) {
 		String sql="delete from "+tableName+" where ";
 		AccountPO po1=(AccountPO) po;
