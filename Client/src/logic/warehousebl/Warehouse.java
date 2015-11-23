@@ -3,13 +3,11 @@ package logic.warehousebl;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Calendar;
-
 import _enum.ResultMessage;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
 import po.InStoragePO;
 import po.OutStoragePO;
-import po.WarehousePO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
 
@@ -111,16 +109,12 @@ public class Warehouse implements WarehouseBlService {
 		int month = time.get(Calendar.MONTH)+1; 
 		int date = time.get(Calendar.DATE); 
 		String date1=""+year+month+date;
+		System.out.println("summarizeWarehouse()"+date1);
 		ArrayList<Object> arr = null;
 		ArrayList<InStoragePO>  list=wd.findInStorage();
-		ArrayList<OutStoragePO>  list1=wd.findOutStorage();
 		for (int i = 0; i < list.size(); i++) {
 			if(list.get(i).getIndate().compareTo(date1)==0&&list.get(i).getIndate().compareTo(date1)==0)
 				arr.add(list.get(i));
-		}
-		for (int i = 0; i < list.size(); i++) {
-			if( list1.get(i).getOutdate().compareTo(date1)==0&&list1.get(i).getOutdate().compareTo(date1)==0)
-				arr.add(list1.get(i));
 		}
 		return arr;
 	}

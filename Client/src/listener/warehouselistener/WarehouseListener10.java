@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI1;
+import vo.InStorageVO;
 import vo.OutStorageVO;
 
 public class WarehouseListener10 implements ActionListener {
@@ -48,19 +49,34 @@ public class WarehouseListener10 implements ActionListener {
 		// else if (e.getSource() == ui.getBackButton()) {
 		// System.out.println("back");
 		// }
-		else if (e.getSource() == ui.getConfirmButton()) {
+		else if (e.getSource() == ui.getExportConfirmButton()) {
 			System.out.println("confirm");
 			warehouseBl.exportGoods(this.getOutStorageVO());
+		} else if (e.getSource() == ui.getImportConfirmButton()) {
+			System.out.println("export");
+			warehouseBl.importGoods(this.getInStorageVO());
 		}
 	}
 
 	public OutStorageVO getOutStorageVO() {
 		OutStorageVO out = new OutStorageVO();
-		out.setId(Integer.parseInt(ui.getID()));
-		out.setDestination(ui.getDestination());
+		out.setId(Integer.parseInt(ui.getExportID()));
+		out.setDestination(ui.getExportDestination());
 		out.setTrans_id(Integer.parseInt(ui.getTrans_ID()));
-		out.setOutdate(ui.getDate());
+		out.setOutdate(ui.getExportDate());
 		out.setTransportation(ui.getTransportation());
 		return out;
+	}
+
+	public InStorageVO getInStorageVO() {
+		InStorageVO in = new InStorageVO();
+		in.setId(Integer.parseInt(ui.getImportID()));// textField_3
+		in.setDestination(ui.getImportDestination());// textField_4
+		in.setIndate(ui.getImportDate());// comboBox_4comboBox_5comboBox_6
+		in.setPos_qu(ui.getPos_qu());// comboBox_7
+		in.setPos_pai(ui.getPos_pai());// comboBox_8
+		in.setPos_jia(ui.getPos_jia());// comboBox_9
+		in.setPos_wei(ui.getPos_wei());// comboBox_10
+		return in;
 	}
 }

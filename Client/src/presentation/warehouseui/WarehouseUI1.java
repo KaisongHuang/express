@@ -170,102 +170,102 @@ public class WarehouseUI1 extends JPanel {
 		button_4.setBounds(349, 93, 94, 27);
 		button_4.addActionListener(listener);
 		exportPanel.add(button_4);
-		
+
 		importPanel = new JPanel();
 		importPanel.setLayout(null);
 		importPanel.setBackground(Color.WHITE);
 		panel.add(importPanel, "import");
-		
+
 		label_7 = new JLabel("快递编号:");
 		label_7.setBounds(6, 12, 57, 15);
 		importPanel.add(label_7);
-		
+
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(75, 6, 122, 27);
 		importPanel.add(textField_3);
-		
+
 		label_8 = new JLabel("出库日期:");
 		label_8.setBounds(6, 45, 57, 15);
 		importPanel.add(label_8);
-		
+
 		label_9 = new JLabel("目的地:");
 		label_9.setBounds(247, 12, 57, 15);
 		importPanel.add(label_9);
-		
+
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(300, 6, 122, 27);
 		importPanel.add(textField_4);
-		
+
 		comboBox_4 = new JComboBox<Object>();
 		comboBox_4.setBounds(75, 39, 70, 25);
 		importPanel.add(comboBox_4);
-		
+
 		label_10 = new JLabel("年");
 		label_10.setBounds(145, 45, 20, 15);
 		importPanel.add(label_10);
-		
+
 		comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(200, 41, 70, 25);
 		importPanel.add(comboBox_5);
-		
+
 		label_11 = new JLabel("月");
 		label_11.setBounds(272, 45, 20, 15);
 		importPanel.add(label_11);
-		
+
 		comboBox_6 = new JComboBox<Object>();
 		comboBox_6.setBounds(318, 41, 70, 25);
 		importPanel.add(comboBox_6);
-		
+
 		label_12 = new JLabel("日");
 		label_12.setBounds(390, 45, 57, 15);
 		importPanel.add(label_12);
-		
+
 		button = new JButton("确认");
 		button.setBounds(75, 126, 94, 27);
 		importPanel.add(button);
-		
+
 		button_6 = new JButton("清空");
 		button_6.setBounds(200, 126, 94, 27);
 		importPanel.add(button_6);
-		
+
 		button_7 = new JButton("返回");
 		button_7.setBounds(328, 126, 94, 27);
 		importPanel.add(button_7);
-		
+
 		label_13 = new JLabel("区号:");
 		label_13.setBounds(32, 85, 31, 16);
 		importPanel.add(label_13);
-		
+
 		comboBox_7 = new JComboBox<Object>();
 		comboBox_7.setBounds(75, 79, 70, 27);
 		importPanel.add(comboBox_7);
-		
+
 		label_14 = new JLabel("排号:");
 		label_14.setBounds(167, 85, 42, 16);
 		importPanel.add(label_14);
-		
+
 		comboBox_8 = new JComboBox<Object>();
 		comboBox_8.setBounds(200, 79, 70, 27);
 		importPanel.add(comboBox_8);
-		
+
 		label_15 = new JLabel("架号:");
 		label_15.setBounds(290, 85, 42, 16);
 		importPanel.add(label_15);
-		
+
 		comboBox_9 = new JComboBox<Object>();
 		comboBox_9.setBounds(318, 79, 70, 27);
 		importPanel.add(comboBox_9);
-		
+
 		label_16 = new JLabel("位号:");
 		label_16.setBounds(405, 83, 61, 16);
 		importPanel.add(label_16);
-		
+
 		comboBox_10 = new JComboBox<Object>();
 		comboBox_10.setBounds(435, 79, 70, 27);
 		importPanel.add(comboBox_10);
-		
+
 		exportButton = new JButton("新建出库单");
 		exportButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -287,29 +287,6 @@ public class WarehouseUI1 extends JPanel {
 
 	}
 
-	public String getID() {
-		return this.textField.getText();
-	}
-
-	public String getDestination() {
-		return this.textField_1.getText();
-	}
-
-	public String getTrans_ID() {
-		return this.textField_2.getText();
-	}
-
-	public String getDate() {
-		String year = (String) comboBox.getSelectedItem();
-		String month = (String) comboBox_1.getSelectedItem();
-		String date = (String) comboBox_2.getSelectedItem();
-		return year + month + date;
-	}
-
-	public String getTransportation() {
-		return (String) comboBox_3.getSelectedItem();
-	}
-
 	public JButton getExportButton() {
 		return this.exportButton;
 	}
@@ -321,7 +298,7 @@ public class WarehouseUI1 extends JPanel {
 	public JButton getExportClearButton() {
 		return this.button_3;
 	}
-	
+
 	public JButton getImportClearButton() {
 		return this.button_6;
 	}
@@ -330,20 +307,16 @@ public class WarehouseUI1 extends JPanel {
 		return this.button_4;
 	}
 
-	public JButton getConfirmButton() {
+	public JButton getExportConfirmButton() {
 		return this.button_5;
 	}
 
 	public JPanel getPanel() {
 		return this.panel;
 	}
-	
-	public CardLayout getCardLayout(){
-		return this.getCardLayout();
-	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public CardLayout getCardLayout() {
+		return this.getCardLayout();
 	}
 
 	public JTextField getTextField() {
@@ -521,6 +494,63 @@ public class WarehouseUI1 extends JPanel {
 	public JComboBox<Object> getComboBox_10() {
 		return comboBox_10;
 	}
-	
-	
+
+	public JButton getImportConfirmButton() {
+		return this.button;
+	}
+
+	public int getPos_qu() {
+		return (Integer) comboBox_7.getSelectedItem();
+	}
+
+	public int getPos_pai() {
+		return (Integer) comboBox_8.getSelectedItem();
+	}
+
+	public int getPos_jia() {
+		return (Integer) comboBox_9.getSelectedItem();
+	}
+
+	public int getPos_wei() {
+		return (Integer) comboBox_10.getSelectedItem();
+	}
+
+	public String getExportDate() {
+		String year = (String) comboBox.getSelectedItem();
+		String month = (String) comboBox_1.getSelectedItem();
+		String date = (String) comboBox_2.getSelectedItem();
+		return year + month + date;
+	}
+
+	public String getImportDate() {
+		String year = (String) comboBox_4.getSelectedItem();
+		String month = (String) comboBox_5.getSelectedItem();
+		String date = (String) comboBox_6.getSelectedItem();
+		return year + month + date;
+	}
+
+	public String getExportID() {
+		return this.textField.getText();
+	}
+
+	public String getImportID() {
+		return this.textField_3.getText();
+	}
+
+	public String getExportDestination() {
+		return this.textField_1.getText();
+	}
+
+	public String getImportDestination() {
+		return this.textField_4.getText();
+	}
+
+	public String getTrans_ID() {
+		return this.textField_2.getText();
+	}
+
+	public String getTransportation() {
+		return (String) comboBox_3.getSelectedItem();
+	}
+
 }

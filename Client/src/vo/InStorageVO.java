@@ -8,6 +8,8 @@ public class InStorageVO extends WarehouseVO{
 	int pos_wei;
     int isCheck;
 	//ArrayList<ArrivalPO>
+    public InStorageVO(){
+    }
 	public InStorageVO(int id, String indate, String destination,
 			int pos_qu, int pos_pai, int pos_jia, int pos_wei,int isCheck) {
 		super(id, destination);

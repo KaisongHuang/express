@@ -3,6 +3,7 @@ package sellingareaTest;
 import java.rmi.RemoteException;
 
 import po.SellingareaPO;
+import _enum.Opera;
 import _enum.ResultMessage;
 import data.sellingareadataservice.SellingareaDataService;
 
@@ -26,6 +27,11 @@ public class SellingDataService_Stub implements SellingareaDataService {
 	public ResultMessage update(SellingareaPO po) throws RemoteException {
 		System.out.println("update Succeed!");
 		return ResultMessage.Success;
+	}
+
+	public SellingareaPO find(int id, Opera op) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

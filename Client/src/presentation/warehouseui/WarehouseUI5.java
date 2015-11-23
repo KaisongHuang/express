@@ -1,25 +1,17 @@
 package presentation.warehouseui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import javax.swing.UIManager;
-import javax.swing.JTable;
-import javax.swing.JTextPane;
-
 
 public class WarehouseUI5 extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -92,7 +84,7 @@ public class WarehouseUI5 extends JPanel{
 		label_2.setBounds(41, 76, 57, 15);
 		this.add(label_2);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<?> comboBox = new JComboBox<Object>();
 		comboBox.setBounds(110, 71, 57, 25);
 		this.add(comboBox);
 		
@@ -100,7 +92,7 @@ public class WarehouseUI5 extends JPanel{
 		label_3.setBounds(179, 76, 12, 15);
 		this.add(label_3);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		JComboBox<?> comboBox_1 = new JComboBox<Object>();
 		comboBox_1.setBounds(203, 71, 57, 25);
 		this.add(comboBox_1);
 		
@@ -108,7 +100,7 @@ public class WarehouseUI5 extends JPanel{
 		label_4.setBounds(275, 76, 12, 15);
 		this.add(label_4);
 		
-		JComboBox comboBox_2 = new JComboBox();
+		JComboBox<?> comboBox_2 = new JComboBox<Object>();
 		comboBox_2.setBounds(299, 71, 57, 25);
 		this.add(comboBox_2);
 		
@@ -120,15 +112,15 @@ public class WarehouseUI5 extends JPanel{
 		lblNewLabel_1.setBounds(41, 125, 57, 15);
 		this.add(lblNewLabel_1);
 		
-		JComboBox comboBox_3 = new JComboBox();
+		JComboBox<?> comboBox_3 = new JComboBox<Object>();
 		comboBox_3.setBounds(110, 120, 57, 25);
 		this.add(comboBox_3);
 		
-		JComboBox comboBox_4 = new JComboBox();
+		JComboBox<?> comboBox_4 = new JComboBox<Object>();
 		comboBox_4.setBounds(203, 120, 57, 25);
 		this.add(comboBox_4);
 		
-		JComboBox comboBox_5 = new JComboBox();
+		JComboBox<?> comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(299, 120, 57, 25);
 		this.add(comboBox_5);
 		
@@ -144,7 +136,7 @@ public class WarehouseUI5 extends JPanel{
 		label_8.setBounds(368, 125, 12, 15);
 		this.add(label_8);
 		
-		JComboBox comboBox_6 = new JComboBox();
+		JComboBox<?> comboBox_6 = new JComboBox<Object>();
 		comboBox_6.setBounds(392, 120, 57, 25);
 		this.add(comboBox_6);
 		
