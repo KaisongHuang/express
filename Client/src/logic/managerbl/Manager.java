@@ -188,7 +188,7 @@ public class Manager implements ManagerBlService {
 		}else if(vo instanceof InStorageVO){
 			InStorageVO vo10 = (InStorageVO) vo;
 			if(vo10.getIsCheck()==0){
-				InStoragePO po10 = new InStoragePO(vo10.getId(),vo10.getIndate(),vo10.getDestination(),vo10.getPos_qu(),
+				InStoragePO po10 = new InStoragePO(vo10.getId(),vo10.getIndate(),vo10.getDestination(),vo10.getWarehouseID(),vo10.getPos_qu(),
 						vo10.getPos_jia(),vo10.getPos_jia(),vo10.getPos_wei(),vo10.getIsCheck());
 				vo10.setIsCheck(1);
 				try {
@@ -202,7 +202,7 @@ public class Manager implements ManagerBlService {
 		}else if(vo instanceof OutStorageVO){
 			OutStorageVO vo11 = (OutStorageVO) vo;
 			if(vo11.getIsCheck()==0){
-				OutStoragePO po11 = new OutStoragePO(vo11.getId(),vo11.getDestination(),vo11.getOutdate(),
+				OutStoragePO po11 = new OutStoragePO(vo11.getId(),vo11.getDestination(),vo11.getOutdate(),vo11.getWarehouseID(),
 						vo11.getTransportation(),vo11.getTrans_id(),vo11.getIsCheck());
 				vo11.setIsCheck(1);
 				try {

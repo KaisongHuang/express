@@ -8,9 +8,9 @@ public class InStorageVO extends WarehouseVO{
 	int pos_wei;
     int isCheck;
 	//ArrayList<ArrivalPO>
-	public InStorageVO(int id, String indate, String destination,
+	public InStorageVO(int id, String indate, String destination,String WarehouseID,
 			int pos_qu, int pos_pai, int pos_jia, int pos_wei,int isCheck) {
-		super(id, destination);
+		super(id, destination,WarehouseID);
 		this.indate = indate;
 		this.pos_qu = pos_qu;
 		this.pos_pai = pos_pai;
@@ -54,6 +54,10 @@ public class InStorageVO extends WarehouseVO{
 	}
 	public void setPos_wei(int pos_wei) {
 		this.pos_wei = pos_wei;
+	}
+	public String getWarehouseID() {
+		// TODO 自动生成的方法存根
+		return WarehouseID;
 	}
 	
 
