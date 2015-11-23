@@ -4,10 +4,10 @@ import po.ManagerPO;
 
 public class InstitutionPO extends ManagerPO {
 
-	int organizationID;
+	String organizationID;
 	String name;
 	
-	public InstitutionPO(int oi, String n){
+	public InstitutionPO(String oi, String n){
 		
 		this.organizationID=oi;
 		
@@ -16,11 +16,11 @@ public class InstitutionPO extends ManagerPO {
 		
 	}
 
-	public int getOrganizationID() {
+	public String getOrganizationID() {
 		return organizationID;
 	}
 
-	public void setOrganizationID(int organizationID) {
+	public void setOrganizationID(String organizationID) {
 		this.organizationID = organizationID;
 	}
 

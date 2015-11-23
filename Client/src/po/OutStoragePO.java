@@ -3,6 +3,9 @@ package po;
 import po.WarehousePO;
 
 public class OutStoragePO extends WarehousePO {
+	int id;
+	String destination;
+	String WarehouseID;
 	String outdate;
 	String transportation;
 	int trans_id;
@@ -13,10 +16,11 @@ public class OutStoragePO extends WarehousePO {
 	public void setIsCheck(int isCheck) {
 		this.isCheck = isCheck;
 	}
-	public OutStoragePO(int id, String destination,String outdate,String transportation,int trans_id,int isCheck) {
+	public OutStoragePO(int id, String destination,String outdate,String WarehouseID,String transportation,int trans_id,int isCheck) {
 		// TODO Auto-generated constructor stub
 		this.id=id;
 		this.destination=destination;
+		this.WarehouseID=WarehouseID;
 		this.outdate=outdate;
 		this.transportation=transportation;
 		this.trans_id=trans_id;

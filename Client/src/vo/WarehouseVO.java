@@ -3,13 +3,14 @@ package vo;
 public class WarehouseVO {
 	int id;
 	String destination;
-
+    String WarehouseID;
 	public WarehouseVO() {
 	}
 
-	public WarehouseVO(int id, String destination) {
+	public WarehouseVO(int id, String destination,String WarehouseID) {
 		this.id = id;
 		this.destination = destination;
+		this.WarehouseID=WarehouseID;
 	}
 
 	public int getId() {

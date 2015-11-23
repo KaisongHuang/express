@@ -15,8 +15,8 @@ public class MockWarehouseTest {
 	@Test
 	public void test() {
 		ResultMessage warehouse1 = new MockWarehouse()
-				.importGoods(new InStorageVO(0, null, null, 0, 0, 0, 0, 0));
-		ResultMessage warehouse2 = new MockWarehouse().exportGoods(new OutStorageVO(0, null, null, null, 0, 0));
+				.importGoods(new InStorageVO(0, null, null,null, 0, 0, 0, 0, 0));
+		ResultMessage warehouse2 = new MockWarehouse().exportGoods(new OutStorageVO(0, null, null,null, null, 0, 0));
 		ResultMessage warehouse3 = new MockWarehouse().setAlarm(50);
 		ResultMessage warehouse4 = new MockWarehouse().checkAlarm();
 		ResultMessage warehouse5 = new MockWarehouse().adjustGoods(1000000000, null, null, null, null);
@@ -24,7 +24,7 @@ public class MockWarehouseTest {
 		ResultMessage warehouse7 = new MockWarehouse().summarizeWarehouse("12:10");
 		ResultMessage warehouse8 = new MockWarehouse().exportSnapshot();
 		ResultMessage warehouse9 = new MockWarehouse()
-				.initWarehouse(new InStorageVO(0, null, null, 0, 0, 0, 0, 0));
+				.initWarehouse(new InStorageVO(0, null, null,null, 0, 0, 0, 0, 0));
 
 		assertEquals(warehouse1, ResultMessage.Success);
 		assertEquals(warehouse2, ResultMessage.Success);

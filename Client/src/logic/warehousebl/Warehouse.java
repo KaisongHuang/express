@@ -17,7 +17,7 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage importGoods(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getPos_qu(),
+		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(),vo.getWarehouseID(), vo.getPos_qu(),
 				vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
@@ -31,7 +31,7 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage exportGoods(OutStorageVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
-		OutStoragePO po = new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(), vo.getTransportation(),
+		OutStoragePO po = new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(),vo.getWarehouseID(), vo.getTransportation(),
 				vo.getTrans_id(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
@@ -58,7 +58,7 @@ public class Warehouse implements WarehouseBlService {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
 		ResultMessage rm;
-		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getPos_qu(),
+		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(),vo.getWarehouseID(), vo.getPos_qu(),
 				vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
@@ -98,6 +98,8 @@ public class Warehouse implements WarehouseBlService {
 			if(list1.get(i).getOutdate().compareTo(begin)>=0&&list1.get(i).getOutdate().compareTo(end)<=0)
 				arr.add(list1.get(i));
 		}
+		
+		
 		return arr;
 	}
 
