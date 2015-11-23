@@ -15,15 +15,31 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.UIManager;
 
+import listener.adminlistener.AdminListener2;
+
 
 public class AdminUI2 extends JPanel{
 
+	private JFrame frame;
+	
+	private JTextField textField;
+	private JLabel label1;
 	private JTextField textField_2;
+	
+	private JComboBox comboBox_1;
+	
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
 
+	AdminListener2 adminlistener;
+	
 	/**
 	 * Create the application.
 	 */
-	public AdminUI2() {
+	public AdminUI2(JFrame frame) {
+		this.frame=frame;
+		adminlistener = new AdminListener2(this);
 		initialize();
 	}
 
@@ -45,20 +61,119 @@ public class AdminUI2 extends JPanel{
 		this.add(textField_2);
 		textField_2.setColumns(10);
 		
+		button_2 = new JButton("查询");
+		button_2.setBounds(300, 28, 61, 29);
+		this.add(button_2);
+		
+		JLabel label_4 = new JLabel("姓名：");
+		label_4.setBounds(66, 74, 61, 16);
+		this.add(label_4);
+		
+		textField = new JTextField();
+		textField.setBounds(139, 75, 134, 28);
+		this.add(textField);
+		
+		JLabel label_1 = new JLabel("密码：");
+		label_1.setBounds(66, 125, 61, 16);
+		this.add(label_1);
+		
+		label1 = new JLabel();
+		label1.setBounds(139, 126, 134, 28);
+		this.add(label1);
+		
 		JLabel label_3 = new JLabel("权限:");
-		label_3.setBounds(66, 74, 61, 16);
+		label_3.setBounds(66, 176, 61, 16);
 		this.add(label_3);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(139, 70, 134, 27);
+		comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(139, 177, 134, 27); 
+		comboBox_1.addItem("无");
+	    comboBox_1.addItem("总经理");
+	    comboBox_1.addItem("财务人员");
+	    comboBox_1.addItem("中转中心业务员");
+	    comboBox_1.addItem("仓库管理人员");
+	    comboBox_1.addItem("营业厅业务员");
+	    comboBox_1.addItem("快递员");
+	    comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 		
-		JButton button = new JButton("确认");
-		button.setBounds(139, 119, 61, 29);
+		button = new JButton("确认");
+		button.setBounds(139, 228, 61, 29);
 		this.add(button);
 		
-		JButton button_1 = new JButton("返回");
-		button_1.setBounds(212, 119, 61, 29);
+		button_1 = new JButton("取消");
+		button_1.setBounds(212, 228, 61, 29);
 		this.add(button_1);
+		
+		button.addActionListener(adminlistener);
+		button_1.addActionListener(adminlistener);
+		button_2.addActionListener(adminlistener);
 	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public void setTextField_2(JTextField textField_2) {
+		this.textField_2 = textField_2;
+	}
+
+	public JComboBox getComboBox_1() {
+		return comboBox_1;
+	}
+
+	public void setComboBox_1(JComboBox comboBox_1) {
+		this.comboBox_1 = comboBox_1;
+	}
+
+	public JButton getButton() {
+		return button;
+	}
+
+	public void setButton(JButton button) {
+		this.button = button;
+	}
+
+	public JButton getButton_1() {
+		return button_1;
+	}
+
+	public void setButton_1(JButton button_1) {
+		this.button_1 = button_1;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+
+	public JLabel getLabel1() {
+		return label1;
+	}
+
+	public void setLabel1(JLabel label1) {
+		this.label1 = label1;
+	}
+
+	public JButton getButton_2() {
+		return button_2;
+	}
+
+	public void setButton_2(JButton button_2) {
+		this.button_2 = button_2;
+	}
+	
+	
 }
