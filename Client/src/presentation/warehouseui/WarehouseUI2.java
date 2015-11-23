@@ -1,22 +1,40 @@
 package presentation.warehouseui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import javax.swing.UIManager;
 
-
-public class WarehouseUI2 extends JPanel{
+public class WarehouseUI2 extends JPanel {
+	private JLabel label_7;
+	private JLabel label_8;
+	private JLabel label_9;
+	private JLabel label_10;
+	private JLabel label_11;
+	private JLabel label_12;
+	private JLabel label_13;
+	private JLabel label_14;
+	private JLabel label_15;
+	private JLabel label_16;
+	private JLabel label_17;
+	private JButton button_1;
+	private JButton button_2;
+	private JComboBox<?> comboBox;
+	private JComboBox<?> comboBox_1;
+	private JComboBox<?> comboBox_2;
+	private JComboBox<?> comboBox_3;
+	private JComboBox<?> comboBox_4;
+	private JComboBox<?> comboBox_5;
+	private JTable table;
+	private JScrollPane JSP;
+	private String[] name = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
+	private String[][] data = {};
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the application.
@@ -29,120 +47,185 @@ public class WarehouseUI2 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(34, 29, 444, 300);
-		this.add(textArea);
-		
-		JLabel label = new JLabel("快递编号");
-		label.setBounds(85, 15, 57, 15);
-		this.add(label);
-		
-		JLabel label_1 = new JLabel("入库日期");
-		label_1.setBounds(174, 15, 57, 15);
-		this.add(label_1);
-		
-		JLabel label_2 = new JLabel("目的地");
-		label_2.setBounds(243, 15, 57, 15);
-		this.add(label_2);
-		
-		JLabel label_3 = new JLabel("区号");
-		label_3.setBounds(312, 15, 24, 15);
-		this.add(label_3);
-		
-		JLabel label_4 = new JLabel("排号");
-		label_4.setBounds(348, 15, 24, 15);
-		this.add(label_4);
-		
-		JLabel label_5 = new JLabel("架号");
-		label_5.setBounds(384, 15, 24, 15);
-		this.add(label_5);
-		
-		JLabel label_6 = new JLabel("位号");
-		label_6.setBounds(420, 15, 24, 15);
-		this.add(label_6);
-		
-		JLabel label_7 = new JLabel("当前日期");
+
+		table = new JTable(data, name);
+		JSP = new JScrollPane(table);
+		JSP.setBounds(34, 29, 444, 300);
+		this.add(JSP);
+
+		label_7 = new JLabel("当前日期");
 		label_7.setBounds(34, 341, 57, 15);
 		this.add(label_7);
-		
-		JButton btnexcel = new JButton("导出为Excel");
-		btnexcel.setBounds(384, 335, 94, 27);
-		this.add(btnexcel);
-		
-		JLabel label_8 = new JLabel("库存查看");
+
+		label_8 = new JLabel("库存查看");
 		label_8.setBounds(579, 15, 57, 15);
 		this.add(label_8);
-		
-		JLabel label_9 = new JLabel("开始日期:");
+
+		label_9 = new JLabel("开始日期:");
 		label_9.setBounds(490, 35, 57, 15);
 		this.add(label_9);
-		
-		JLabel label_10 = new JLabel("结束日期:");
+
+		label_10 = new JLabel("结束日期:");
 		label_10.setBounds(490, 62, 57, 15);
 		this.add(label_10);
-		
-		JComboBox comboBox = new JComboBox();
+
+		comboBox = new JComboBox<Object>();
 		comboBox.setBounds(545, 30, 64, 25);
 		this.add(comboBox);
-		
-		JLabel label_11 = new JLabel("年");
+
+		label_11 = new JLabel("年");
 		label_11.setBounds(608, 35, 12, 15);
 		this.add(label_11);
-		
-		JComboBox comboBox_1 = new JComboBox();
+
+		comboBox_1 = new JComboBox<Object>();
 		comboBox_1.setBounds(621, 30, 44, 25);
 		this.add(comboBox_1);
-		
-		JLabel label_12 = new JLabel("月");
+
+		label_12 = new JLabel("月");
 		label_12.setBounds(663, 35, 12, 15);
 		this.add(label_12);
-		
-		JComboBox comboBox_2 = new JComboBox();
+
+		comboBox_2 = new JComboBox<Object>();
 		comboBox_2.setBounds(677, 30, 44, 25);
 		this.add(comboBox_2);
-		
-		JLabel label_13 = new JLabel("日");
+
+		label_13 = new JLabel("日");
 		label_13.setBounds(720, 35, 12, 15);
 		this.add(label_13);
-		
-		JComboBox comboBox_3 = new JComboBox();
+
+		comboBox_3 = new JComboBox<Object>();
 		comboBox_3.setBounds(545, 57, 64, 25);
 		this.add(comboBox_3);
-		
-		JLabel label_14 = new JLabel("年");
+
+		label_14 = new JLabel("年");
 		label_14.setBounds(608, 62, 12, 15);
 		this.add(label_14);
-		
-		JComboBox comboBox_4 = new JComboBox();
+
+		comboBox_4 = new JComboBox<Object>();
 		comboBox_4.setBounds(621, 57, 44, 25);
 		this.add(comboBox_4);
-		
-		JLabel label_15 = new JLabel("月");
+
+		label_15 = new JLabel("月");
 		label_15.setBounds(663, 62, 12, 15);
 		this.add(label_15);
-		
-		JComboBox comboBox_5 = new JComboBox();
+
+		comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(677, 57, 44, 25);
 		this.add(comboBox_5);
-		
-		JLabel label_16 = new JLabel("日");
+
+		label_16 = new JLabel("日");
 		label_16.setBounds(720, 62, 12, 15);
 		this.add(label_16);
-		
-		JButton button_1 = new JButton("查询");
+
+		button_1 = new JButton("查询");
 		button_1.setBounds(545, 94, 64, 27);
 		this.add(button_1);
-		
-		JButton button_2 = new JButton("清空");
+
+		button_2 = new JButton("清空");
 		button_2.setBounds(618, 94, 64, 27);
 		this.add(button_2);
-		
-		JLabel lblNewLabel_1 = new JLabel("/*提示系统信息*/");
-		lblNewLabel_1.setBounds(490, 133, 231, 15);
-		this.add(lblNewLabel_1);
+
+		label_17 = new JLabel("/*提示系统信息*/");
+		label_17.setBounds(490, 133, 231, 15);
+		this.add(label_17);
+	}
+
+	public JTable getTable() {
+		return table;
+	}
+
+	public JLabel getLabel_7() {
+		return label_7;
+	}
+
+	public JLabel getLabel_8() {
+		return label_8;
+	}
+
+	public JLabel getLabel_9() {
+		return label_9;
+	}
+
+	public JLabel getLabel_10() {
+		return label_10;
+	}
+
+	public JLabel getLabel_11() {
+		return label_11;
+	}
+
+	public JLabel getLabel_12() {
+		return label_12;
+	}
+
+	public JLabel getLabel_13() {
+		return label_13;
+	}
+
+	public JLabel getLabel_14() {
+		return label_14;
+	}
+
+	public JLabel getLabel_15() {
+		return label_15;
+	}
+
+	public JLabel getLabel_16() {
+		return label_16;
+	}
+
+	public JLabel getLabel_17() {
+		return label_17;
+	}
+
+	public JButton getButton_1() {
+		return button_1;
+	}
+
+	public JButton getButton_2() {
+		return button_2;
+	}
+
+	public JComboBox<?> getComboBox() {
+		return comboBox;
+	}
+
+	public JComboBox<?> getComboBox_1() {
+		return comboBox_1;
+	}
+
+	public JComboBox<?> getComboBox_2() {
+		return comboBox_2;
+	}
+
+	public JComboBox<?> getComboBox_3() {
+		return comboBox_3;
+	}
+
+	public JComboBox<?> getComboBox_4() {
+		return comboBox_4;
+	}
+
+	public JComboBox<?> getComboBox_5() {
+		return comboBox_5;
+	}
+
+	public void setData(String[][] data) {
+		this.data = data;
+	}
+	public String getBeginDate(){
+		String year=(String) this.comboBox.getSelectedItem();
+		String month=(String) this.comboBox_1.getSelectedItem();
+		String date=(String) this.comboBox_2.getSelectedItem();
+		return year+month+date;
+	}
+	public String getEndDate(){
+		String year=(String) this.comboBox_3.getSelectedItem();
+		String month=(String) this.comboBox_4.getSelectedItem();
+		String date=(String) this.comboBox_5.getSelectedItem();
+		return year+month+date;
 	}
 }

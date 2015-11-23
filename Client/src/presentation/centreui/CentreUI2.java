@@ -86,12 +86,13 @@ public class CentreUI2 extends JPanel{
 		this.add(panel_6);
 		panel_6.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(202, 6, 55, 18);
+
+		JLabel lblNewLabel_1 = new JLabel("中转转出");
+		lblNewLabel_1.setBounds(202, 6, 100, 18);
 		panel_6.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(19, 44, 55, 18);
+		JLabel lblNewLabel_2 = new JLabel("到达日期：");
+		lblNewLabel_2.setBounds(19, 44, 100, 18);
 		panel_6.add(lblNewLabel_2);
 		
 		textField = new JTextField();
@@ -119,32 +120,32 @@ public class CentreUI2 extends JPanel{
 		panel_6.add(textField_4);
 		textField_4.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(19, 96, 55, 18);
+		JLabel lblNewLabel_3 = new JLabel("中转中心编号：");
+		lblNewLabel_3.setBounds(19, 96, 100, 18);
 		panel_6.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(19, 146, 55, 18);
+		JLabel lblNewLabel_4 = new JLabel("列车班号：");
+		lblNewLabel_4.setBounds(19, 146, 100, 18);
 		panel_6.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(19, 200, 55, 18);
+		JLabel lblNewLabel_5 = new JLabel("货柜号：");
+		lblNewLabel_5.setBounds(19, 200, 100, 18);
 		panel_6.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setBounds(277, 44, 55, 18);
+		JLabel lblNewLabel_6 = new JLabel("出发地：");
+		lblNewLabel_6.setBounds(277, 44, 100, 18);
 		panel_6.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_7 = new JLabel("New label");
-		lblNewLabel_7.setBounds(277, 96, 55, 18);
+		JLabel lblNewLabel_7 = new JLabel("目的地：");
+		lblNewLabel_7.setBounds(277, 96, 100, 18);
 		panel_6.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_8 = new JLabel("New label");
-		lblNewLabel_8.setBounds(277, 146, 55, 18);
+		JLabel lblNewLabel_8 = new JLabel("监装员：");
+		lblNewLabel_8.setBounds(277, 146, 100, 18);
 		panel_6.add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_9 = new JLabel("New label");
-		lblNewLabel_9.setBounds(277, 200, 55, 18);
+		JLabel lblNewLabel_9 = new JLabel("押运员：");
+		lblNewLabel_9.setBounds(277, 200, 100, 18);
 		panel_6.add(lblNewLabel_9);
 		
 		textField_5 = new JTextField();
@@ -162,8 +163,8 @@ public class CentreUI2 extends JPanel{
 		panel_6.add(textField_7);
 		textField_7.setColumns(10);
 		
-		JLabel lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setBounds(19, 243, 55, 18);
+		JLabel lblNewLabel_10 = new JLabel("费用：");
+		lblNewLabel_10.setBounds(19, 243, 100, 18);
 		panel_6.add(lblNewLabel_10);
 		
 		textField_8 = new JTextField();

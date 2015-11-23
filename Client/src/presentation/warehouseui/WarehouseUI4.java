@@ -1,25 +1,19 @@
 package presentation.warehouseui;
 
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import javax.swing.UIManager;
-import javax.swing.JTable;
-import javax.swing.JTextPane;
 
 
 public class WarehouseUI4 extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 
 	/**
@@ -58,19 +52,19 @@ public class WarehouseUI4 extends JPanel{
 		label_2.setBounds(56, 160, 57, 15);
 		this.add(label_2);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<?> comboBox = new JComboBox<Object>();
 		comboBox.setBounds(56, 187, 57, 25);
 		this.add(comboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		JComboBox<?> comboBox_1 = new JComboBox<Object>();
 		comboBox_1.setBounds(152, 187, 57, 25);
 		this.add(comboBox_1);
 		
-		JComboBox comboBox_2 = new JComboBox();
+		JComboBox<?> comboBox_2 = new JComboBox<Object>();
 		comboBox_2.setBounds(259, 187, 57, 25);
 		this.add(comboBox_2);
 		
-		JComboBox comboBox_3 = new JComboBox();
+		JComboBox<?> comboBox_3 = new JComboBox<Object>();
 		comboBox_3.setBounds(360, 187, 57, 25);
 		this.add(comboBox_3);
 		
