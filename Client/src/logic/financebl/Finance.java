@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import _enum.Operation;
 import _enum.ResultMessage;
+import data.admindata.AdminData;
 import data.financedata.FinanceData;
 import logic.financeblservice.FinanceBlService;
 import po.AccountPO;
@@ -15,7 +16,7 @@ import vo.PayVO;
 
 public class Finance implements FinanceBlService {
 	FinanceData fd = new FinanceData();
-
+    AdminData ad=new AdminData();
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
