@@ -8,13 +8,10 @@ public class InStorageVO extends WarehouseVO{
 	int pos_wei;
     int isCheck;
 	//ArrayList<ArrivalPO>
-<<<<<<< HEAD
+
     public InStorageVO(){
     }
-	public InStorageVO(int id, String indate, String destination,
-=======
 	public InStorageVO(int id, String indate, String destination,String WarehouseID,
->>>>>>> master
 			int pos_qu, int pos_pai, int pos_jia, int pos_wei,int isCheck) {
 		super(id, destination,WarehouseID);
 		this.indate = indate;
