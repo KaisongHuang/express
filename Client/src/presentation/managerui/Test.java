@@ -1,4 +1,4 @@
-package presentation.centreui;
+package presentation.managerui;
 
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -23,10 +23,10 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(1200, 1000);
 		
-		JPanel panel=new CentreUI3(this);
+		JPanel panel=new ManagerUI2(this);
 		
 		
-		panel.setBounds(136, 58, 746, 500);
+		panel.setBounds(136, 58, 746,800);
 		this.add(panel);
 		
 //		cardPanel = new JPanel();
