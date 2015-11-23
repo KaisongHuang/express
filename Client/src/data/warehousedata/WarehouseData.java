@@ -33,8 +33,11 @@ public class WarehouseData implements WarehouseDataService {
 	}
 
 	public ResultMessage update(WarehousePO po) throws RemoteException {
+		send=new TransformObject(Opera.Warehouse_update,po);
+		ClientAdapter.write(send);
+		acp=(TransformObject) ClientAdapter.readData();
+		return (ResultMessage) acp.getOb();
 		
-		return null;
 	}
 	
 	public ArrayList<InStoragePO> findInStorage(){

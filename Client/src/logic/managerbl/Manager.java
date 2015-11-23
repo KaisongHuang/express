@@ -60,7 +60,7 @@ public class Manager implements ManagerBlService {
 	}
 
 
-	public ResultMessage manageMember(Object tempvo) {
+	public ResultMessage manageMember(Object tempvo,Opera op) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
 		
@@ -69,7 +69,12 @@ public class Manager implements ManagerBlService {
 			EmployeePO po = new EmployeePO(vo.getEmployeeID(),vo.getEmployeeName(), vo.getEmployeeAging(),vo.getEmployeePosition(),
 					vo.getTimeOfWorking(), vo.getBelongToWho());			
 			try {
-				rm=md.insert(po);
+				if(op==Opera.Employee_insert)
+				    rm=md.insert(po,op);
+				if(op==Opera.Employee_delete)
+				    rm=md.delete(po,op);
+				else
+				    rm=md.update(po,op);	
 				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
@@ -79,8 +84,13 @@ public class Manager implements ManagerBlService {
 			InstitutionVO vo = (InstitutionVO) tempvo;
 			InstitutionPO po = new InstitutionPO(vo.getOrganizationID(),vo.getName());
 			try {
-				rm=md.insert(po);
-				return rm;
+			if(op==Opera.Institution_insert)
+			    rm=md.insert(po,op);
+			if(op==Opera.Institution_delete)
+			    rm=md.delete(po,op);
+			else
+			    rm=md.update(po,op);	
+			return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
@@ -267,6 +277,12 @@ public class Manager implements ManagerBlService {
 
 
 	public EmployeeVO find(int id) {
+		// TODO 自动生成的方法存根
+		return null;
+	}
+
+
+	public ResultMessage manageMember(Object vo) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
