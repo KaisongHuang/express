@@ -100,6 +100,8 @@ public class Warehouse implements WarehouseBlService {
 			if(list1.get(i).getOutdate().compareTo(begin)>=0&&list1.get(i).getOutdate().compareTo(end)<=0)
 				arr.add(list1.get(i));
 		}
+		
+		
 		return arr;
 	}
 

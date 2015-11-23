@@ -3,6 +3,7 @@ package logic.managerbl;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+import _enum.Opera;
 import _enum.ResultMessage;
 import data.centredata.CentreData;
 import data.financedata.FinanceData;
@@ -19,6 +20,7 @@ import po.DeliverPO;
 import po.EmployeePO;
 import po.InStoragePO;
 import po.InstitutionPO;
+import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
@@ -34,13 +36,19 @@ public class Manager implements ManagerBlService {
 	FinanceData fd = new FinanceData();
 	
 
-	public EmployeeVO find(int id){		
+	public Object find(String id,Opera op){		
 		EmployeePO ep;
-		
-		try{			
-			ep = (EmployeePO) md.find(id);
-			return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
-					ep.getTimeOfWorking(), ep.getBelongToWho());			
+		InstitutionPO po;
+		try{
+			if(op==Opera.Employee_find){
+			     ep = (EmployeePO) md.find(id,op);
+			     return new EmployeeVO(Integer.parseInt(id), ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
+					  ep.getTimeOfWorking(), ep.getBelongToWho());
+			}else{
+			     po=(InstitutionPO) md.find(id,op);
+			     return new InstitutionPO(po.getName(),po.getOrganizationID());
+			}
+			
 		}catch(RemoteException e){
 			
 			e.printStackTrace();
@@ -90,10 +98,10 @@ public class Manager implements ManagerBlService {
 		
 		if(vo instanceof CarPackVO){
 			CarPackVO vo1 = (CarPackVO) vo;
-			if(vo1.getIsCheck()==0){
+			
 				CarPackPO po1 = new CarPackPO(vo1.getDate(),vo1.getNumber(),vo1.getStart(),vo1.getDestination(),
 						vo1.getSupervisor(),vo1.getSupercargo(),vo1.getList(),vo1.getFee(),vo1.getIsCheck());
-				vo1.setIsCheck(1);
+	
 				try {
 					rm=sad.update(po1);
 					return rm;
@@ -101,26 +109,26 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof ReceiptVO){
 			ReceiptVO vo4 = (ReceiptVO) vo;
-			if(vo4.getIsCheck()==0){
+		
 				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getIsCheck());
-				vo4.setIsCheck(1);
+			
 				try {
 					rm=sad.update(po4);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
-				}
+				
 			}
 		}else if(vo instanceof AcceptVO){
 			AcceptVO vo5 = (AcceptVO) vo;
-			if(vo5.getIsCheck()==0){
+		
 				AcceptPO po5 = new AcceptPO(vo5.getBarCode(),vo5.getDate(),vo5.getNumber(),vo5.getStart(),vo5.getState(),
 						vo5.getIsCheck());
-				vo5.setIsCheck(1);
+				
 				try {
 					rm=sad.update(po5);
 					return rm;
@@ -128,12 +136,12 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof DeliverVO){
 			DeliverVO vo6 = (DeliverVO) vo;
-			if(vo6.getIsCheck()==0){
+			
 				DeliverPO po6 = new DeliverPO(vo6.getBarCode(),vo6.getDate(),vo6.getNumber(),vo6.getIsCheck());
-				vo6.setIsCheck(1);
+				
 				try {
 					rm=sad.update(po6);
 					return rm;
@@ -141,13 +149,13 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof CentreArrivalVO){
 			CentreArrivalVO vo7 = (CentreArrivalVO) vo;
-			if(vo7.getIsCheck()==0){
+			
 				CentreArrivalPO po7 = new CentreArrivalPO(vo7.getCentreID(),vo7.getGetDate(),vo7.getTransferID(),
 						vo7.getStart(),vo7.getExpressState(),vo7.getIsCheck());
-				vo7.setIsCheck(1);
+			
 				try {
 					rm=cd.update(po7);
 					return rm;
@@ -155,14 +163,14 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof CentreTransforVO){
 			CentreTransforVO vo8 = (CentreTransforVO) vo;
-			if(vo8.getIsCheck()==0){
+		
 				CentreTransforPO po8 = new CentreTransforPO(vo8.getTransferStyle(), vo8.getDataOfGetin(), vo8.getCentreTransferID(),
 						vo8.getBanHao(), vo8.getStart(), vo8.getArrival(),	vo8.getHuoGuiHao(), vo8.getJianZhuangYuan(), 
 						vo8.getList(), vo8.getFee(),vo8.getIsCheck());
-				vo8.setIsCheck(1);
+			
 				try {
 					rm=cd.update(po8);
 					return rm;
@@ -170,10 +178,10 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof PackVO){
 			PackVO vo9 = (PackVO) vo;
-			if(vo9.getIsCheck()==0){
+		
 				CentrePackPO po9 = new CentrePackPO(vo9.getDataOfGetin(),vo9.getCentreTransferID(),vo9.getArrival(),vo9.getCarID(),
 						vo9.getJianZhuangYuan(),vo9.getYaYunYuan(),vo9.getList(),vo9.getFee(),vo9.getIsCheck());
 				vo9.setIsCheck(1);
@@ -184,13 +192,13 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof InStorageVO){
 			InStorageVO vo10 = (InStorageVO) vo;
-			if(vo10.getIsCheck()==0){
+			
 				InStoragePO po10 = new InStoragePO(vo10.getId(),vo10.getIndate(),vo10.getDestination(),vo10.getWarehouseID(),vo10.getPos_qu(),
 						vo10.getPos_jia(),vo10.getPos_jia(),vo10.getPos_wei(),vo10.getIsCheck());
-				vo10.setIsCheck(1);
+			
 				try {
 					rm=wd.update(po10);
 					return rm;
@@ -198,13 +206,13 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof OutStorageVO){
 			OutStorageVO vo11 = (OutStorageVO) vo;
-			if(vo11.getIsCheck()==0){
+			
 				OutStoragePO po11 = new OutStoragePO(vo11.getId(),vo11.getDestination(),vo11.getOutdate(),vo11.getWarehouseID(),
 						vo11.getTransportation(),vo11.getTrans_id(),vo11.getIsCheck());
-				vo11.setIsCheck(1);
+				
 				try {
 					rm=wd.update(po11);
 					return rm;
@@ -212,13 +220,13 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}else if(vo instanceof PayVO){
 			PayVO vo13 = (PayVO) vo;
-			if(vo13.getIsCheck()==0){
+		
 				PayPO po13 = new PayPO(vo13.getDate(),vo13.getPayer(),vo13.getPayAccount(),vo13.getEntry(),
 						vo13.getComments(),vo13.getCost(),vo13.getIsCheck());
-				vo13.setIsCheck(1);
+				
 				try {
 					rm=fd.update(po13);
 					return rm;
@@ -226,7 +234,7 @@ public class Manager implements ManagerBlService {
 					// TODO �Զ���ɵ� catch ��
 					e.printStackTrace();
 				}
-			}
+			
 		}
 		
 		return null;
@@ -254,6 +262,12 @@ public class Manager implements ManagerBlService {
 
 	public ArrayList<String> checkLogging(Object vo) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public EmployeeVO find(int id) {
+		// TODO 自动生成的方法存根
 		return null;
 	}
 	

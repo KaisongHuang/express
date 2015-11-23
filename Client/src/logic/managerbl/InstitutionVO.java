@@ -2,21 +2,21 @@ package logic.managerbl;
 
 public class InstitutionVO {
 	
-	int organizationID;
+	String organizationID;
 	String name;
 	
-	public InstitutionVO(int oi, String n){
+	public InstitutionVO(String oi, String n){
 		
 		this.organizationID=oi;
 		this.name=n;
 		
 	}
 
-	public int getOrganizationID() {
+	public String getOrganizationID() {
 		return organizationID;
 	}
 
-	public void setOrganizationID(int organizationID) {
+	public void setOrganizationID(String organizationID) {
 		this.organizationID = organizationID;
 	}
 
