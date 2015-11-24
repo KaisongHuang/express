@@ -3,14 +3,13 @@ package listener.warehouselistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 import logic.warehousebl.Warehouse;
-import logic.warehouseblservice.WarehouseBlService;
+import po.InStoragePO;
 import presentation.warehouseui.WarehouseUI2;
 
 public class WarehouseListener20 implements ActionListener {
 	private WarehouseUI2 ui;
-	WarehouseBlService warehouseBl = new Warehouse();
+	Warehouse warehouse = new Warehouse();
 
 	public WarehouseListener20(WarehouseUI2 ui) {
 		super();
@@ -21,12 +20,37 @@ public class WarehouseListener20 implements ActionListener {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public void actionPerformed(ActionEvent e) {
 		// enquireButton
 		if (e.getSource() == ui.getButton_1()) {
 			//快递编号，入库日期，目的地，区号，排号，架号，位号
-			ArrayList<Object> arr=warehouseBl.checkWarehouse(ui.getBeginDate(),ui.getEndDate());
+			//库存查看(设定一个时间段，查看此时间段内的出／入库数量，存储位置，库存数量要有合计)
+			ArrayList<Object> arr=warehouse.checkWarehouse(ui.getBeginDate(),ui.getEndDate());
+			ArrayList<InStoragePO> po = null;
+			String inNum=""+warehouse.getInNum();
+			String outNum=""+warehouse.getOutNum();
+			String total=""+warehouse.getTotal();
+			String[][] data=new String[warehouse.getInNum()][];
 			
+			ui.getTextArea().setText(inNum);
+			ui.getTextArea_1().setText(outNum);
+			ui.getTextArea_2().setText(total);
+			for(int i=0;i<warehouse.getInNum();i++){
+				po=(ArrayList<InStoragePO>) arr.get(i);
+			}
+			for(int i=0;i<warehouse.getInNum();i++){			
+				String[] item=new String[7];
+				item[0]=""+po.get(i).getId();
+				item[1]=po.get(i).getIndate();
+				item[2]=po.get(i).getDestination();
+				item[3]=""+po.get(i).getPos_qu();
+				item[4]=""+po.get(i).getPos_pai();
+				item[5]=""+po.get(i).getPos_jia();
+				item[6]=""+po.get(i).getPos_wei();
+				data[i]=item;
+			}
+			ui.setData(data);
 		}
 		// clearButton
 		else if (e.getSource() == ui.getButton_2()) {

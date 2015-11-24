@@ -13,6 +13,20 @@ import vo.OutStorageVO;
 
 public class Warehouse implements WarehouseBlService {
 	WarehouseData wd = new WarehouseData();
+	private int inNum;
+	private int outNum;
+	private int total;
+	public int getInNum() {
+		return inNum;
+	}
+
+	public int getOutNum() {
+		return outNum;
+	}
+
+	public int getTotal() {
+		return total;
+	}
 
 	public ResultMessage importGoods(InStorageVO vo) {
 		// TODO Auto-generated method stub
@@ -90,16 +104,21 @@ public class Warehouse implements WarehouseBlService {
 		ArrayList<Object> arr = null;
 		ArrayList<InStoragePO> list=wd.findInStorage();
 		ArrayList<OutStoragePO> list1=wd.findOutStorage();
+		this.inNum=0;
+		this.outNum=0;
 		for (int i = 0; i <list.size(); i++) {
-			if(list.get(i).getIndate().compareTo(begin)>=0&&list.get(i).getIndate().compareTo(end)<=0)
+			if(list.get(i).getIndate().compareTo(begin)>=0&&list.get(i).getIndate().compareTo(end)<=0){
 				arr.add(list.get(i));
+				this.inNum++;
+			}
 		}
 		for (int i = 0; i < wd.findOutStorage().size(); i++) {
-			if(list1.get(i).getOutdate().compareTo(begin)>=0&&list1.get(i).getOutdate().compareTo(end)<=0)
+			if(list1.get(i).getOutdate().compareTo(begin)>=0&&list1.get(i).getOutdate().compareTo(end)<=0){
 				arr.add(list1.get(i));
+				this.outNum++;
+			}
 		}
-		
-		
+		this.total=this.inNum-this.outNum;		
 		return arr;
 	}
 
