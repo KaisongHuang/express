@@ -15,15 +15,26 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.UIManager;
 
+import listener.adminlistener.AdminListener4;
+
 
 public class AdminUI4 extends JPanel{
+	
+	private JFrame frame;
 
 	private JTextField textField;
+	
+	private JButton btnNewButton_10;
+	private JButton btnNewButton_11;
+	
+	AdminListener4 adminlistener;
 
 	/**
 	 * Create the application.
 	 */
-	public AdminUI4() {
+	public AdminUI4(JFrame frame) {
+		this.frame=frame;
+		adminlistener = new AdminListener4(this);
 		initialize();
 	}
 
@@ -62,14 +73,14 @@ public class AdminUI4 extends JPanel{
 		this.setLayout(null);
 		
 		JLabel label = new JLabel("删除账户名:");
-		label.setBounds(54, 43, 69, 16);
+		label.setBounds(54, 43, 80, 16);
 		this.add(label);
 		
-		JButton btnNewButton_10 = new JButton("确认");
+		btnNewButton_10 = new JButton("确认");
 		btnNewButton_10.setBounds(135, 90, 61, 29);
 		this.add(btnNewButton_10);
 		
-		JButton btnNewButton_11 = new JButton("返回");
+		btnNewButton_11 = new JButton("取消");
 		btnNewButton_11.setBounds(208, 90, 61, 29);
 		this.add(btnNewButton_11);
 		
@@ -77,5 +88,41 @@ public class AdminUI4 extends JPanel{
 		textField.setBounds(135, 37, 134, 28);
 		this.add(textField);
 		textField.setColumns(10);
+		
+		btnNewButton_10.addActionListener(adminlistener);
+		btnNewButton_11.addActionListener(adminlistener);
 	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JButton getBtnNewButton_10() {
+		return btnNewButton_10;
+	}
+
+	public void setBtnNewButton_10(JButton btnNewButton_10) {
+		this.btnNewButton_10 = btnNewButton_10;
+	}
+
+	public JButton getBtnNewButton_11() {
+		return btnNewButton_11;
+	}
+
+	public void setBtnNewButton_11(JButton btnNewButton_11) {
+		this.btnNewButton_11 = btnNewButton_11;
+	}
+	
 }
