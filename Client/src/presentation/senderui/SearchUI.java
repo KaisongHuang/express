@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import listener.senderlistener.SenderListener0;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -14,30 +17,26 @@ import java.awt.Color;
 
 
 public class SearchUI extends JFrame {
+	
+	private JFrame frame;
 
 	private JPanel contentPane;
 	private JTextField textField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					SearchUI frame = new SearchUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	SenderListener0 senderlistener;
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public SearchUI() {
+	public SearchUI(JFrame frame) {
+		this.frame=frame;
+		senderlistener = new SenderListener0(this);
+		initialize();
+	}
+	
+	private void initialize(){
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
