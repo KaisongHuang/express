@@ -6,9 +6,9 @@ import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JTextArea;
 
 public class WarehouseUI2 extends JPanel {
-	private JLabel label_7;
 	private JLabel label_8;
 	private JLabel label_9;
 	private JLabel label_10;
@@ -27,6 +27,9 @@ public class WarehouseUI2 extends JPanel {
 	private JComboBox<?> comboBox_3;
 	private JComboBox<?> comboBox_4;
 	private JComboBox<?> comboBox_5;
+	private JTextArea textArea;
+	private JTextArea textArea_1;
+	private JTextArea textArea_2;
 	private JTable table;
 	private JScrollPane JSP;
 	private String[] name = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
@@ -56,89 +59,104 @@ public class WarehouseUI2 extends JPanel {
 		JSP.setBounds(34, 29, 444, 300);
 		this.add(JSP);
 
-		label_7 = new JLabel("当前日期");
-		label_7.setBounds(34, 341, 57, 15);
-		this.add(label_7);
-
 		label_8 = new JLabel("库存查看");
-		label_8.setBounds(579, 15, 57, 15);
+		label_8.setBounds(608, 33, 57, 15);
 		this.add(label_8);
 
 		label_9 = new JLabel("开始日期:");
-		label_9.setBounds(490, 35, 57, 15);
+		label_9.setBounds(490, 103, 57, 15);
 		this.add(label_9);
 
 		label_10 = new JLabel("结束日期:");
-		label_10.setBounds(490, 62, 57, 15);
+		label_10.setBounds(490, 130, 57, 15);
 		this.add(label_10);
 
 		comboBox = new JComboBox<Object>();
-		comboBox.setBounds(545, 30, 64, 25);
+		comboBox.setBounds(545, 98, 64, 25);
 		this.add(comboBox);
 
 		label_11 = new JLabel("年");
-		label_11.setBounds(608, 35, 12, 15);
+		label_11.setBounds(608, 103, 12, 15);
 		this.add(label_11);
 
 		comboBox_1 = new JComboBox<Object>();
-		comboBox_1.setBounds(621, 30, 44, 25);
+		comboBox_1.setBounds(621, 98, 44, 25);
 		this.add(comboBox_1);
 
 		label_12 = new JLabel("月");
-		label_12.setBounds(663, 35, 12, 15);
+		label_12.setBounds(663, 103, 12, 15);
 		this.add(label_12);
 
 		comboBox_2 = new JComboBox<Object>();
-		comboBox_2.setBounds(677, 30, 44, 25);
+		comboBox_2.setBounds(677, 98, 44, 25);
 		this.add(comboBox_2);
 
 		label_13 = new JLabel("日");
-		label_13.setBounds(720, 35, 12, 15);
+		label_13.setBounds(720, 103, 12, 15);
 		this.add(label_13);
 
 		comboBox_3 = new JComboBox<Object>();
-		comboBox_3.setBounds(545, 57, 64, 25);
+		comboBox_3.setBounds(545, 125, 64, 25);
 		this.add(comboBox_3);
 
 		label_14 = new JLabel("年");
-		label_14.setBounds(608, 62, 12, 15);
+		label_14.setBounds(608, 130, 12, 15);
 		this.add(label_14);
 
 		comboBox_4 = new JComboBox<Object>();
-		comboBox_4.setBounds(621, 57, 44, 25);
+		comboBox_4.setBounds(621, 125, 44, 25);
 		this.add(comboBox_4);
 
 		label_15 = new JLabel("月");
-		label_15.setBounds(663, 62, 12, 15);
+		label_15.setBounds(663, 130, 12, 15);
 		this.add(label_15);
 
 		comboBox_5 = new JComboBox<Object>();
-		comboBox_5.setBounds(677, 57, 44, 25);
+		comboBox_5.setBounds(677, 125, 44, 25);
 		this.add(comboBox_5);
 
 		label_16 = new JLabel("日");
-		label_16.setBounds(720, 62, 12, 15);
+		label_16.setBounds(720, 130, 12, 15);
 		this.add(label_16);
 
 		button_1 = new JButton("查询");
-		button_1.setBounds(545, 94, 64, 27);
+		button_1.setBounds(545, 170, 64, 27);
 		this.add(button_1);
 
 		button_2 = new JButton("清空");
-		button_2.setBounds(618, 94, 64, 27);
+		button_2.setBounds(657, 170, 64, 27);
 		this.add(button_2);
 
-		label_17 = new JLabel("/*提示系统信息*/");
-		label_17.setBounds(490, 133, 231, 15);
+		label_17 = new JLabel("入库数量(件)：");
+		label_17.setBounds(490, 222, 80, 15);
 		this.add(label_17);
+
+		JLabel label = new JLabel("出库数量(件)：");
+		label.setBounds(490, 260, 80, 15);
+		add(label);
+
+		JLabel lblji = new JLabel("库存合计(件)：");
+		lblji.setBounds(490, 293, 80, 15);
+		add(lblji);
+
+		textArea = new JTextArea();
+		textArea.setBounds(582, 216, 80, 27);
+		textArea.setEditable(false);
+		add(textArea);
+
+		textArea_1 = new JTextArea();
+		textArea_1.setBounds(582, 254, 80, 27);
+		textArea_1.setEditable(false);
+		add(textArea_1);
+
+		textArea_2 = new JTextArea();
+		textArea_2.setBounds(582, 287, 80, 27);
+		textArea_2.setEditable(false);
+		add(textArea_2);
 	}
 
 	public JTable getTable() {
 		return table;
-	}
-
-	public JLabel getLabel_7() {
-		return label_7;
 	}
 
 	public JLabel getLabel_8() {
@@ -216,16 +234,30 @@ public class WarehouseUI2 extends JPanel {
 	public void setData(String[][] data) {
 		this.data = data;
 	}
-	public String getBeginDate(){
-		String year=(String) this.comboBox.getSelectedItem();
-		String month=(String) this.comboBox_1.getSelectedItem();
-		String date=(String) this.comboBox_2.getSelectedItem();
-		return year+month+date;
+
+	public String getBeginDate() {
+		String year = (String) this.comboBox.getSelectedItem();
+		String month = (String) this.comboBox_1.getSelectedItem();
+		String date = (String) this.comboBox_2.getSelectedItem();
+		return year + month + date;
 	}
-	public String getEndDate(){
-		String year=(String) this.comboBox_3.getSelectedItem();
-		String month=(String) this.comboBox_4.getSelectedItem();
-		String date=(String) this.comboBox_5.getSelectedItem();
-		return year+month+date;
+
+	public String getEndDate() {
+		String year = (String) this.comboBox_3.getSelectedItem();
+		String month = (String) this.comboBox_4.getSelectedItem();
+		String date = (String) this.comboBox_5.getSelectedItem();
+		return year + month + date;
+	}
+
+	public JTextArea getTextArea() {
+		return textArea;
+	}
+
+	public JTextArea getTextArea_1() {
+		return textArea_1;
+	}
+
+	public JTextArea getTextArea_2() {
+		return textArea_2;
 	}
 }
