@@ -33,7 +33,7 @@ public class SellingAreaUI extends JPanel{
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
 
-	SellingAreaListener00 sellingarea;
+	SellingAreaListener00 sellingarealistener;
 
 
 	/**
@@ -41,7 +41,7 @@ public class SellingAreaUI extends JPanel{
 	 */
 	public SellingAreaUI(JFrame frame) {
 		this.frame=frame;
-		sellingarea = new SellingAreaListener00(this);
+		sellingarealistener = new SellingAreaListener00(this);
 		initialize();
 	}
 
@@ -60,7 +60,7 @@ public class SellingAreaUI extends JPanel{
 		label.setBounds(69, 35, 100, 18);
 		this.add(label);
 		
-		textField = new JTextField("0");
+		textField = new JTextField();
 		textField.setBounds(149, 29, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -69,7 +69,7 @@ public class SellingAreaUI extends JPanel{
 		label_1.setBounds(362, 35, 100, 18);
 		this.add(label_1);
 		
-		textField_1 = new JTextField("1");
+		textField_1 = new JTextField();
 		textField_1.setBounds(465, 29, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -78,7 +78,7 @@ public class SellingAreaUI extends JPanel{
 		lblNewLabel_1.setBounds(68, 102, 100, 18);
 		this.add(lblNewLabel_1);
 		
-		textField_2 = new JTextField("2");
+		textField_2 = new JTextField();
 		textField_2.setBounds(147, 96, 122, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
@@ -87,7 +87,7 @@ public class SellingAreaUI extends JPanel{
 		lblNewLabel_2.setBounds(362, 103, 100, 18);
 		this.add(lblNewLabel_2);
 		
-		textField_3 = new JTextField("3");
+		textField_3 = new JTextField();
 		textField_3.setBounds(464, 95, 122, 30);
 		this.add(textField_3);
 		textField_3.setColumns(10);
@@ -96,7 +96,7 @@ public class SellingAreaUI extends JPanel{
 		lblNewLabel_3.setBounds(67, 175, 100, 18);
 		this.add(lblNewLabel_3);
 		
-		textField_4 = new JTextField("4");
+		textField_4 = new JTextField();
 		textField_4.setBounds(148, 168, 122, 30);
 		this.add(textField_4);
 		textField_4.setColumns(10);
@@ -105,7 +105,7 @@ public class SellingAreaUI extends JPanel{
 		lblNewLabel_4.setBounds(356, 168, 100, 18);
 		this.add(lblNewLabel_4);
 		
-		textField_5 = new JTextField("5");
+		textField_5 = new JTextField();
 		textField_5.setBounds(470, 164, 122, 30);
 		this.add(textField_5);
 		textField_5.setColumns(10);
@@ -129,7 +129,7 @@ public class SellingAreaUI extends JPanel{
 		lblNewLabel_5.setBounds(359, 240, 100, 18);
 		this.add(lblNewLabel_5);
 		
-		textField_6 = new JTextField("6");
+		textField_6 = new JTextField();
 		textField_6.setBounds(470, 233, 122, 30);
 		this.add(textField_6);
 		textField_6.setColumns(10);
@@ -142,8 +142,8 @@ public class SellingAreaUI extends JPanel{
 		btnNewButton_11.setBounds(455, 380, 100, 30);
 		this.add(btnNewButton_11);
 		
-		btnNewButton_10.addActionListener(sellingarea);
-		btnNewButton_11.addActionListener(sellingarea);
+		btnNewButton_10.addActionListener(sellingarealistener);
+		btnNewButton_11.addActionListener(sellingarealistener);
 		
 	
 	}
