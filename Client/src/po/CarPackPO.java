@@ -6,17 +6,17 @@ import po.SellingareaPO;
 
 public class CarPackPO extends SellingareaPO {
 	String date;
-	int number;
-
+	String number;
 	String start;
 	String destination;
-	int supervisor;
-	int supercargo;
-	ArrayList<Integer> list = new ArrayList<Integer>();
-	int fee;
-    int isCheck;
-	public CarPackPO(String date, int number, String start, String destination,
-			int supervisor, int supercargo, ArrayList<Integer> list, int fee,int isCheck) {
+	String supervisor;
+	String supercargo;
+	ArrayList<String> list = new ArrayList<String>();
+	double fee;
+	int isCheck;
+
+	public CarPackPO(String date, String number, String start, String destination, String supervisor, String supercargo,
+			ArrayList<String> list, double fee, int isCheck) {
 		this.date = date;
 		this.start = start;
 		this.number = number;
@@ -26,10 +26,10 @@ public class CarPackPO extends SellingareaPO {
 		this.list = list;
 		this.supercargo = supercargo;
 		this.fee = fee;
-		this.isCheck=isCheck;
+		this.isCheck = isCheck;
 	}
-	
-	 public int getIsCheck() {
+
+	public int getIsCheck() {
 		return isCheck;
 	}
 
@@ -38,52 +38,66 @@ public class CarPackPO extends SellingareaPO {
 	}
 
 	public String getDate() {
-			return date;
-		}
-		public void setDate(String date) {
-			this.date = date;
-		}
-		
-		public int getNumber() {
-			return number;
-		}
-		public void setNumber(int number) {
-			this.number = number;
-		}
-		public String getStart() {
-			return start;
-		}
-		public void setStart(String start) {
-			this.start = start;
-		}
-		public String getDestination() {
-			return destination;
-		}
-		public void setDestination(String destination) {
-			this.destination = destination;
-		}
-		public int getSupervisor() {
-			return supervisor;
-		}
-		public void setSupervisor(int supervisor) {
-			this.supervisor = supervisor;
-		}
-		public int getSupercargo() {
-			return supercargo;
-		}
-		public void setSupercargo(int supercargo) {
-			this.supercargo = supercargo;
-		}
-		public ArrayList<Integer> getList() {
-			return list;
-		}
-		public void setList(ArrayList<Integer> list) {
-			this.list = list;
-		}
-		public int getFee() {
-			return fee;
-		}
-		public void setFee(int fee) {
-			this.fee = fee;
-		}
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public String getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(String supervisor) {
+		this.supervisor = supervisor;
+	}
+
+	public String getSupercargo() {
+		return supercargo;
+	}
+
+	public void setSupercargo(String supercargo) {
+		this.supercargo = supercargo;
+	}
+
+	public ArrayList<String> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<String> list) {
+		this.list = list;
+	}
+
+	public double getFee() {
+		return fee;
+	}
+
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
 }

@@ -2,30 +2,32 @@ package po;
 
 import po.FinancePO;
 
-public class PayPO extends FinancePO{
+public class PayPO extends FinancePO {
+
+	String date;
+	double cost;
+	String payer;
+	String payAccount;
+	String entry;
+	String comments;
+	int isCheck;
+
+	public PayPO(String date, String payer, String payAccount, String entry, String comments, double cost, int isCheck) {
+		this.date = date;
+		this.payer = payer;
+		this.payAccount = payAccount;
+		this.cost = cost;
+		this.entry = entry;
+		this.comments = comments;
+		this.isCheck = isCheck;
+	}
+
 	public int getIsCheck() {
 		return isCheck;
 	}
 
 	public void setIsCheck(int isCheck) {
 		this.isCheck = isCheck;
-	}
-
-	String date;
-	double cost;
-	int payer;
-	String payAccount;
-	String entry;
-	int comments;
-	int isCheck;
-	public PayPO(String date,int payer,String payAccount,String entry,int comments,double cost,int isCheck){
-		this.date=date;
-		this.payer=payer;
-		this.payAccount=payAccount;
-		this.cost=cost;
-		this.entry=entry;
-		this.comments=comments;
-		this.isCheck=isCheck;
 	}
 
 	public String getDate() {
@@ -44,11 +46,11 @@ public class PayPO extends FinancePO{
 		this.cost = cost;
 	}
 
-	public int getPayer() {
+	public String getPayer() {
 		return payer;
 	}
 
-	public void setPayer(int payer) {
+	public void setPayer(String payer) {
 		this.payer = payer;
 	}
 
@@ -68,12 +70,12 @@ public class PayPO extends FinancePO{
 		this.entry = entry;
 	}
 
-	public int getComments() {
+	public String getComments() {
 		return comments;
 	}
 
-	public void setComments(int comments) {
+	public void setComments(String comments) {
 		this.comments = comments;
 	}
-	
+
 }

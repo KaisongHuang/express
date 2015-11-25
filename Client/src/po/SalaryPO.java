@@ -6,10 +6,10 @@ public class SalaryPO extends ManagerPO {
 
 	String employeeName;
 	String salaryMethod;
-	
-	public SalaryPO(String en,String sm){
-		this.employeeName=en;
-		this.salaryMethod=sm;
+
+	public SalaryPO(String en, String sm) {
+		this.employeeName = en;
+		this.salaryMethod = sm;
 	}
 
 	public String getEmployeeName() {
@@ -27,5 +27,5 @@ public class SalaryPO extends ManagerPO {
 	public void setSalaryMethod(String salaryMethod) {
 		this.salaryMethod = salaryMethod;
 	}
-	
+
 }

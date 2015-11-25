@@ -1,28 +1,28 @@
 package vo;
 
 public class EmployeeVO {
-	
-	int employeeID;
+
+	String employeeID;
 	String employeeName;
 	int employeeAging;
 	String employeePosition;
 	double timeOfWorking;
 	String belongToWho;
-	
-	public EmployeeVO(int ei,String en,int ea,String ep,double tow,String btw){
-		this.employeeAging=ea;
-		this.employeeID=ei;
-		this.employeeName=en;
-		this.employeePosition=ep;
-		this.timeOfWorking=tow;
-		this.belongToWho=btw;
+
+	public EmployeeVO(String ei, String en, int ea, String ep, double tow, String btw) {
+		this.employeeAging = ea;
+		this.employeeID = ei;
+		this.employeeName = en;
+		this.employeePosition = ep;
+		this.timeOfWorking = tow;
+		this.belongToWho = btw;
 	}
 
-	public int getEmployeeID() {
+	public String getEmployeeID() {
 		return employeeID;
 	}
 
-	public void setEmployeeID(int employeeID) {
+	public void setEmployeeID(String employeeID) {
 		this.employeeID = employeeID;
 	}
 
@@ -65,7 +65,5 @@ public class EmployeeVO {
 	public void setBelongToWho(String belongToWho) {
 		this.belongToWho = belongToWho;
 	}
-		
-	
 
 }

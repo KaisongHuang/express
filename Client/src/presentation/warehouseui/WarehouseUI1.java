@@ -499,8 +499,8 @@ public class WarehouseUI1 extends JPanel {
 		return this.button;
 	}
 
-	public int getPos_qu() {
-		return (Integer) comboBox_7.getSelectedItem();
+	public String getPos_qu() {
+		return (String) comboBox_7.getSelectedItem();
 	}
 
 	public int getPos_pai() {

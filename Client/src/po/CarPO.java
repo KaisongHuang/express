@@ -2,59 +2,70 @@ package po;
 
 import po.SellingareaPO;
 
-/*�������š��������š������š����̺š�����ʱ�䡢����ʱ��*/
-public class CarPO extends SellingareaPO{
-     int number;
-     int EngineNumber;
-     int CarNumber;
-     int ChassisNumber;
-     String purchase;
-     int ServiceTime;
-    
-     public CarPO( int number,int EngineNumber,int CarNumber,int ChassisNumber,String purchase,int ServiceTime){
-    	 this.number=number;
-    	 this.EngineNumber=EngineNumber;
-    	 this.CarNumber=CarNumber;
-    	 this.ChassisNumber=ChassisNumber;
-    	 this.purchase=purchase;
-    	 this.ServiceTime=ServiceTime;
-     }
-	public int getNumber() {
+public class CarPO extends SellingareaPO {
+	String number;
+	String EngineNumber;
+	String CarNumber;
+	String ChassisNumber;
+	String purchase;
+	int ServiceTime;
+
+	public CarPO(String number, String EngineNumber, String CarNumber, String ChassisNumber, String purchase,
+			int ServiceTime) {
+		this.number = number;
+		this.EngineNumber = EngineNumber;
+		this.CarNumber = CarNumber;
+		this.ChassisNumber = ChassisNumber;
+		this.purchase = purchase;
+		this.ServiceTime = ServiceTime;
+	}
+
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+
+	public void setNumber(String number) {
 		this.number = number;
 	}
-	public int getEngineNumber() {
+
+	public String getEngineNumber() {
 		return EngineNumber;
 	}
-	public void setEngineNumber(int engineNumber) {
+
+	public void setEngineNumber(String engineNumber) {
 		EngineNumber = engineNumber;
 	}
-	public int getCarNumber() {
+
+	public String getCarNumber() {
 		return CarNumber;
 	}
-	public void setCarNumber(int carNumber) {
+
+	public void setCarNumber(String carNumber) {
 		CarNumber = carNumber;
 	}
-	public int getChassisNumber() {
+
+	public String getChassisNumber() {
 		return ChassisNumber;
 	}
-	public void setChassisNumber(int chassisNumber) {
+
+	public void setChassisNumber(String chassisNumber) {
 		ChassisNumber = chassisNumber;
 	}
+
 	public String getPurchase() {
 		return purchase;
 	}
+
 	public void setPurchase(String purchase) {
 		this.purchase = purchase;
 	}
+
 	public int getServiceTime() {
 		return ServiceTime;
 	}
+
 	public void setServiceTime(int serviceTime) {
 		ServiceTime = serviceTime;
 	}
-     
-     
+
 }

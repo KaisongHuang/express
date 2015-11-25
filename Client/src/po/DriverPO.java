@@ -2,18 +2,17 @@ package po;
 
 import po.SellingareaPO;
 
-/*˾����š��������������ڡ����֤�š��ֻ���������λ���Ա���ʻ֤����*/
 public class DriverPO extends SellingareaPO{
-    int number;
+    String number;
     String name;
     String birthday;
-    int ID;
+    String ID;
     String phone;
     String CarCompany;
     String sex;
     String LicenceTime;
     
-    public DriverPO(int number,String name,String birthday,int ID,String phone,String CarCompany,String sex,String LicenceTime){
+    public DriverPO(String number,String name,String birthday,String ID,String phone,String CarCompany,String sex,String LicenceTime){
     	this.number=number;
     	this.name=name;
     	this.birthday=birthday;
@@ -24,11 +23,11 @@ public class DriverPO extends SellingareaPO{
     	this.LicenceTime=LicenceTime;
     }
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 
@@ -48,11 +47,11 @@ public class DriverPO extends SellingareaPO{
 		this.birthday = birthday;
 	}
 
-	public int getID() {
+	public String getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
+	public void setID(String iD) {
 		ID = iD;
 	}
 

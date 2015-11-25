@@ -1,13 +1,13 @@
 package vo;
 
 public class SalaryVO {
-	
+
 	String employeeName;
 	String salaryMethod;
-	
-	public SalaryVO(String en,String sm){
-		this.employeeName=en;
-		this.salaryMethod=sm;
+
+	public SalaryVO(String en, String sm) {
+		this.employeeName = en;
+		this.salaryMethod = sm;
 	}
 
 	public String getEmployeeName() {
@@ -25,6 +25,5 @@ public class SalaryVO {
 	public void setSalaryMethod(String salaryMethod) {
 		this.salaryMethod = salaryMethod;
 	}
-	
 
 }

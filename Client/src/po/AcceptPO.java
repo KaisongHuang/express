@@ -2,20 +2,19 @@ package po;
 
 import po.SellingareaPO;
 
-/*���������롢�������ڡ���ת����š������ء����ﵽ��״̬���𻵡�����ʧ��*/
 public class AcceptPO extends SellingareaPO{
      String BarCode;
      String date;
-     int number;
-     int start;
-     int state;
+     String number;
+     String start;
+     String state;
      int isCheck;
-     public AcceptPO(String BarCode,String date,int number,int start,int state,int isCheck){
+     public AcceptPO(String BarCode,String date,String number,String start,String state,int isCheck){
     	 this.BarCode=BarCode;
     	 this.date=date;
     	 this.number=number;
     	 this.start=start;
-    	 this.state=start;
+    	 this.state=state;
     	 this.isCheck=isCheck;
      }
 	public int getIsCheck() {
@@ -36,22 +35,22 @@ public class AcceptPO extends SellingareaPO{
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
-	public int getStart() {
+	public String getStart() {
 		return start;
 	}
-	public void setStart(int start) {
+	public void setStart(String start) {
 		this.start = start;
 	}
-	public int getState() {
+	public String getState() {
 		return state;
 	}
-	public void setState(int state) {
+	public void setState(String state) {
 		this.state = state;
 	}
      
