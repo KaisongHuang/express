@@ -16,7 +16,7 @@ import server.database.MySQLDataBase;
 
 public class SenderData implements SenderDataService{
 
-	public HistoryPO find(MySQLDataBase db,int id,String tableName) {
+	public HistoryPO find(MySQLDataBase db,String id,String tableName) {
         String sql="select * from "+tableName+" where id="+id;
         ResultSet rs=db.find(sql);
         
