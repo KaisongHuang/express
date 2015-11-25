@@ -2,12 +2,12 @@ package vo;
 
 public class AdminVO {
 	
-	int id;
+	String id;
 	String name;
 	String password;
 	String role;
 	
-	public AdminVO(int id,String name,String password,String role){
+	public AdminVO(String id,String name,String password,String role){
 		
 		this.id=id;
 		this.name=name;
@@ -16,11 +16,11 @@ public class AdminVO {
 		
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

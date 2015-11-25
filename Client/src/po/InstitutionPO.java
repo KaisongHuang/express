@@ -6,14 +6,13 @@ public class InstitutionPO extends ManagerPO {
 
 	String organizationID;
 	String name;
-	
-	public InstitutionPO(String oi, String n){
-		
-		this.organizationID=oi;
-		
-		
-		this.name=n;
-		
+
+	public InstitutionPO(String oi, String n) {
+
+		this.organizationID = oi;
+
+		this.name = n;
+
 	}
 
 	public String getOrganizationID() {
@@ -24,7 +23,6 @@ public class InstitutionPO extends ManagerPO {
 		this.organizationID = organizationID;
 	}
 
-
 	public String getName() {
 		return name;
 	}
@@ -32,5 +30,5 @@ public class InstitutionPO extends ManagerPO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }

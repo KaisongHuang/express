@@ -1,59 +1,71 @@
 package vo;
 
 public class AcceptVO {
-    int BarCode;
-    String date;
-    int number;
-    int start;
-    int state;
-    int isCheck;
-    public AcceptVO(int BarCode,String date,int number,int start,int state,int isCheck){
-   	 this.BarCode=BarCode;
-   	 this.date=date;
-   	 this.number=number;
-   	 this.start=start;
-   	 this.state=start;
-   	 this.isCheck=isCheck;
-    }
+	String BarCode;
+	String date;
+	String number;
+	String start;
+	String state;
+	int isCheck;
+
+	public AcceptVO(String BarCode, String date, String number, String start, String state, int isCheck) {
+		this.BarCode = BarCode;
+		this.date = date;
+		this.number = number;
+		this.start = start;
+		this.state = state;
+		this.isCheck = isCheck;
+	}
+
 	public int getIsCheck() {
 		return isCheck;
 	}
+
 	public void setIsCheck(int isCheck) {
 		this.isCheck = isCheck;
 	}
+
 	public AcceptVO() {
-		// TODO �Զ���ɵĹ��캯����
 	}
-	public int getBarCode() {
+
+	public String getBarCode() {
 		return BarCode;
 	}
-	public void setBarCode(int barCode) {
+
+	public void setBarCode(String barCode) {
 		BarCode = barCode;
 	}
+
 	public String getDate() {
 		return date;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public int getNumber() {
+
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+
+	public void setNumber(String number) {
 		this.number = number;
 	}
-	public int getStart() {
+
+	public String getStart() {
 		return start;
 	}
-	public void setStart(int start) {
+
+	public void setStart(String start) {
 		this.start = start;
 	}
-	public int getState() {
+
+	public String getState() {
 		return state;
 	}
-	public void setState(int state) {
+
+	public void setState(String state) {
 		this.state = state;
-	}  
-	
-	
+	}
+
 }

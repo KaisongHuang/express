@@ -1,16 +1,16 @@
 package vo;
 
 public class DriverVO {
-    int number;
+	String number;
     String name;
     String birthday;
-    int ID;
+    String ID;
     String phone;
     String CarCompany;
     String sex;
     String LicenceTime;
     
-    public DriverVO(int number,String name,String birthday,int ID,String phone,String CarCompany,String sex,String LicenceTime){
+    public DriverVO(String number,String name,String birthday,String ID,String phone,String CarCompany,String sex,String LicenceTime){
     	this.number=number;
     	this.name=name;
     	this.birthday=birthday;
@@ -22,14 +22,14 @@ public class DriverVO {
     }
 
 	public DriverVO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
 	}
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 
@@ -49,11 +49,11 @@ public class DriverVO {
 		this.birthday = birthday;
 	}
 
-	public int getID() {
+	public String getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
+	public void setID(String iD) {
 		ID = iD;
 	}
 

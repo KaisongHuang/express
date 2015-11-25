@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class CarPackVO {
       String date;
-      int number;
+      String number;
       String start;
       String destination;
-      int supervisor;
-      int supercargo;
-      ArrayList<Integer> list=new ArrayList<Integer>();
-      int fee;
+      String supervisor;
+      String supercargo;
+      ArrayList<String> list=new ArrayList<String>();
+      double fee;
       int isCheck;
-      public CarPackVO(String date,int number,String start,String destination,int supervisor,int supercargo,
-    		  ArrayList<Integer> list,int fee,int isCheck){
+      public CarPackVO(String date,String number,String start,String destination,String supervisor,String supercargo,
+    		  ArrayList<String> list,double fee,int isCheck){
     	  this.date=date;
     	  this.start=start;
     	  this.number=number;
@@ -32,7 +32,6 @@ public class CarPackVO {
 		this.isCheck = isCheck;
 	}
 	public CarPackVO() {
-		// TODO 锟皆讹拷锟斤拷傻墓锟斤拷旌拷锟斤拷锟�
 	}
 	public String getDate() {
 		return date;
@@ -40,10 +39,10 @@ public class CarPackVO {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	public String getStart() {
@@ -58,28 +57,28 @@ public class CarPackVO {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-	public int getSupervisor() {
+	public String getSupervisor() {
 		return supervisor;
 	}
-	public void setSupervisor(int supervisor) {
+	public void setSupervisor(String supervisor) {
 		this.supervisor = supervisor;
 	}
-	public int getSupercargo() {
+	public String getSupercargo() {
 		return supercargo;
 	}
-	public void setSupercargo(int supercargo) {
+	public void setSupercargo(String supercargo) {
 		this.supercargo = supercargo;
 	}
-	public ArrayList<Integer> getList() {
+	public ArrayList<String> getList() {
 		return list;
 	}
-	public void setList(ArrayList<Integer> list) {
+	public void setList(ArrayList<String> list) {
 		this.list = list;
 	}
-	public int getFee() {
+	public double getFee() {
 		return fee;
 	}
-	public void setFee(int fee) {
+	public void setFee(double fee) {
 		this.fee = fee;
 	}
 	

@@ -2,42 +2,50 @@ package po;
 
 import po.SellingareaPO;
 
-/*���˶��������롢�������ڡ��ɼ�Ա��� */
-public class DeliverPO extends SellingareaPO{
-     public int getIsCheck() {
+public class DeliverPO extends SellingareaPO {
+
+	String BarCode;
+	String date;
+	String number;
+	int isCheck;
+
+	public DeliverPO(String BarCode, String date, String number, int isCheck) {
+		this.BarCode = BarCode;
+		this.date = date;
+		this.number = number;
+		this.isCheck = isCheck;
+	}
+
+	public int getIsCheck() {
 		return isCheck;
 	}
+
 	public void setIsCheck(int isCheck) {
 		this.isCheck = isCheck;
 	}
-	int BarCode;
-     String date;
-     int number;
-     int isCheck;
-     public DeliverPO(int BarCode,String date,int number,int isCheck){
-    	 this.BarCode=BarCode;
-    	 this.date=date;
-    	 this.number=number;
-    	 this.isCheck=isCheck;
-     }
-	public int getBarCode() {
+
+	public String getBarCode() {
 		return BarCode;
 	}
-	public void setBarCode(int barCode) {
+
+	public void setBarCode(String barCode) {
 		BarCode = barCode;
 	}
+
 	public String getDate() {
 		return date;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public int getNumber() {
+
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+
+	public void setNumber(String number) {
 		this.number = number;
 	}
-     
-     
+
 }
