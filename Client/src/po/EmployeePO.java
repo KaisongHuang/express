@@ -4,27 +4,27 @@ import po.ManagerPO;
 
 public class EmployeePO extends ManagerPO {
 
-	int employeeID;
+	String employeeID;
 	String employeeName;
-	int employeeAging;
 	String employeePosition;
-	double timeOfWorking;
 	String belongToWho;
-	
-	public EmployeePO(int ei,String en,int ea,String ep,double tow,String btw){
-		this.employeeAging=ea;
-		this.employeeID=ei;
-		this.employeeName=en;
-		this.employeePosition=ep;
-		this.timeOfWorking=tow;
-		this.belongToWho=btw;
+	int employeeAging;
+	double timeOfWorking;
+
+	public EmployeePO(String ei, String en, int ea, String ep, double tow, String btw) {
+		this.employeeAging = ea;
+		this.employeeID = ei;
+		this.employeeName = en;
+		this.employeePosition = ep;
+		this.timeOfWorking = tow;
+		this.belongToWho = btw;
 	}
 
-	public int getEmployeeID() {
+	public String getEmployeeID() {
 		return employeeID;
 	}
 
-	public void setEmployeeID(int employeeID) {
+	public void setEmployeeID(String employeeID) {
 		this.employeeID = employeeID;
 	}
 
@@ -67,7 +67,5 @@ public class EmployeePO extends ManagerPO {
 	public void setBelongToWho(String belongToWho) {
 		this.belongToWho = belongToWho;
 	}
-	
-	
-	
+
 }

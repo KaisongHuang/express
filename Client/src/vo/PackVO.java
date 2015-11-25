@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 public class PackVO {
 	
-	String dataOfGetin;
-	int centreTransferID;
+	String dateOfGetin;
+	String centreTransferID;
 	String arrival;
-	int carID;
-	int jianZhuangYuan;
-	int yaYunYuan;
-	ArrayList<Integer> list=new ArrayList<Integer>();
+	String carID;
+	String jianZhuangYuan;
+	String yaYunYuan;
+	ArrayList<String> list=new ArrayList<String>();
 	double fee;
 	int isCheck;
 	
-	public PackVO(String dog,int cti,String arrival,int ci, int jzy,int yyy,ArrayList<Integer> list,double fee,int isCheck){
+	public PackVO(String dog,String cti,String arrival,String ci, String jzy,String yyy,ArrayList<String> list,double fee,int isCheck){
 		
-		this.dataOfGetin=dog;
+		this.dateOfGetin=dog;
 		this.carID=ci;
 		this.centreTransferID=cti;
 		this.arrival=arrival;
@@ -37,18 +37,18 @@ public class PackVO {
 	}
 
 	public String getDataOfGetin() {
-		return dataOfGetin;
+		return dateOfGetin;
 	}
 
 	public void setDataOfGetin(String dataOfGetin) {
-		this.dataOfGetin = dataOfGetin;
+		this.dateOfGetin = dataOfGetin;
 	}
 
-	public int getCentreTransferID() {
+	public String getCentreTransferID() {
 		return centreTransferID;
 	}
 
-	public void setCentreTransferID(int centreTransferID) {
+	public void setCentreTransferID(String centreTransferID) {
 		this.centreTransferID = centreTransferID;
 	}
 
@@ -60,35 +60,35 @@ public class PackVO {
 		this.arrival = arrival;
 	}
 
-	public int getCarID() {
+	public String getCarID() {
 		return carID;
 	}
 
-	public void setCarID(int carID) {
+	public void setCarID(String carID) {
 		this.carID = carID;
 	}
 
-	public int getJianZhuangYuan() {
+	public String getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
 
-	public void setJianZhuangYuan(int jianZhuangYuan) {
+	public void setJianZhuangYuan(String jianZhuangYuan) {
 		this.jianZhuangYuan = jianZhuangYuan;
 	}
 
-	public int getYaYunYuan() {
+	public String getYaYunYuan() {
 		return yaYunYuan;
 	}
 
-	public void setYaYunYuan(int yaYunYuan) {
+	public void setYaYunYuan(String yaYunYuan) {
 		this.yaYunYuan = yaYunYuan;
 	}
 
-	public ArrayList<Integer> getList() {
+	public ArrayList<String> getList() {
 		return list;
 	}
 
-	public void setList(ArrayList<Integer> list) {
+	public void setList(ArrayList<String> list) {
 		this.list = list;
 	}
 

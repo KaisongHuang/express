@@ -1,23 +1,23 @@
 package vo;
 
 public class CentreArrivalVO {
-	
-	int centreID;
+
+	String centreID;
 	String getDate;
-	int transferID;
+	String transferID;
 	String start;
 	String expressState;
 	int isCheck;
-	
-	public CentreArrivalVO(int ci, String gd, int ti, String start, String es, int isCheck){
-		
-		this.centreID=ci;
-		this.getDate=gd;
-		this.transferID=ti;
-		this.start=start;
-		this.expressState=es;
-		this.isCheck=isCheck;
-		
+
+	public CentreArrivalVO(String ci, String gd, String ti, String start, String es, int isCheck) {
+
+		this.centreID = ci;
+		this.getDate = gd;
+		this.transferID = ti;
+		this.start = start;
+		this.expressState = es;
+		this.isCheck = isCheck;
+
 	}
 
 	public int getIsCheck() {
@@ -28,11 +28,11 @@ public class CentreArrivalVO {
 		this.isCheck = isCheck;
 	}
 
-	public int getCentreID() {
+	public String getCentreID() {
 		return centreID;
 	}
 
-	public void setCentreID(int centreID) {
+	public void setCentreID(String centreID) {
 		this.centreID = centreID;
 	}
 
@@ -44,11 +44,11 @@ public class CentreArrivalVO {
 		this.getDate = getDate;
 	}
 
-	public int getTransferID() {
+	public String getTransferID() {
 		return transferID;
 	}
 
-	public void setTransferID(int transferID) {
+	public void setTransferID(String transferID) {
 		this.transferID = transferID;
 	}
 
@@ -67,6 +67,5 @@ public class CentreArrivalVO {
 	public void setExpressState(String expressState) {
 		this.expressState = expressState;
 	}
-
 
 }

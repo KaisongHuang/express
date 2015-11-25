@@ -2,12 +2,12 @@ package po;
 
 public class AdminPO {
 	
-	int id;
+	String id;
 	String name;
 	String password;
 	String role;
 	
-	public AdminPO(int id,String name,String password,String role){
+	public AdminPO(String id,String name,String password,String role){
 		
 		this.id=id;
 		this.name=name;
@@ -16,11 +16,11 @@ public class AdminPO {
 		
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
