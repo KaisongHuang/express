@@ -3,6 +3,8 @@ package listener.warehouselistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Vector;
+
 import logic.warehousebl.Warehouse;
 import po.InStoragePO;
 import presentation.warehouseui.WarehouseUI2;
@@ -20,7 +22,7 @@ public class WarehouseListener20 implements ActionListener {
 
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "null" })
 	public void actionPerformed(ActionEvent e) {
 		// enquireButton
 		if (e.getSource() == ui.getButton_1()) {
@@ -31,7 +33,7 @@ public class WarehouseListener20 implements ActionListener {
 			String inNum=""+warehouse.getInNum();
 			String outNum=""+warehouse.getOutNum();
 			String total=""+warehouse.getTotal();
-			String[][] data=new String[warehouse.getInNum()][];
+			Vector<Object> data = null;
 			
 			ui.getTextArea().setText(inNum);
 			ui.getTextArea_1().setText(outNum);
@@ -40,15 +42,16 @@ public class WarehouseListener20 implements ActionListener {
 				po=(ArrayList<InStoragePO>) arr.get(i);
 			}
 			for(int i=0;i<warehouse.getInNum();i++){			
-				String[] item=new String[7];
-				item[0]=""+po.get(i).getId();
-				item[1]=po.get(i).getIndate();
-				item[2]=po.get(i).getDestination();
-				item[3]=""+po.get(i).getPos_qu();
-				item[4]=""+po.get(i).getPos_pai();
-				item[5]=""+po.get(i).getPos_jia();
-				item[6]=""+po.get(i).getPos_wei();
-				data[i]=item;
+				Vector<Object> item = new Vector<Object>();
+				item.add(po.get(i).getId());
+				item.add(po.get(i).getIndate());
+				item.add(po.get(i).getDestination());
+				item.add(po.get(i).getPos_qu());
+				item.add(po.get(i).getPos_pai());
+				item.add(po.get(i).getPos_jia());
+				item.add(po.get(i).getPos_wei());
+				data.addElement(item);
+				
 			}
 			ui.setData(data);
 		}

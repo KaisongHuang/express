@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
+import java.util.Arrays;
+import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
@@ -32,8 +34,9 @@ public class WarehouseUI2 extends JPanel {
 	private JTextArea textArea_2;
 	private JTable table;
 	private JScrollPane JSP;
-	private String[] name = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
-	private String[][] data = {};
+//	private String[] name;
+	private Vector<String> name;
+	private Vector<Object> data;
 	/**
 	 * 
 	 */
@@ -53,9 +56,11 @@ public class WarehouseUI2 extends JPanel {
 
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
-		table = new JTable(data, name);
-		JSP = new JScrollPane(table);
+		
+		String names[] = {"快递编号","入库日期","目的地","区号","排号","架号","位号"};
+		name = new Vector<String>( Arrays.asList( names ) );
+		table = new JTable(data,name);
+		JSP=new JScrollPane(table);
 		JSP.setBounds(34, 29, 444, 300);
 		this.add(JSP);
 
@@ -231,7 +236,7 @@ public class WarehouseUI2 extends JPanel {
 		return comboBox_5;
 	}
 
-	public void setData(String[][] data) {
+	public void setData(Vector<Object> data) {
 		this.data = data;
 	}
 
