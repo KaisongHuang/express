@@ -3,23 +3,18 @@ package po;
 import po.WarehousePO;
 
 public class InStoragePO extends WarehousePO {
-	public int getIsCheck() {
-		return isCheck;
-	}
-
-	public void setIsCheck(int isCheck) {
-		this.isCheck = isCheck;
-	}
-    int id;
-	String indate;
-	String destination;
-	String WarehouseID;
-	int pos_qu;
-	int pos_pai;
-	int pos_jia;
-	int pos_wei;
-    int isCheck;
-	public InStoragePO  (int id, String indate, String destination,String WarehouseID,int pos_qu, int pos_pai,int pos_jia,int pos_wei,int isCheck){
+	
+    private int id;
+	private String indate;
+	private String destination;
+	private String WarehouseID;
+	private int pos_qu;
+	private int pos_pai;
+	private int pos_jia;
+	private int pos_wei;
+    private int isCheck;
+	
+    public InStoragePO  (int id, String indate, String destination,String WarehouseID,int pos_qu, int pos_pai,int pos_jia,int pos_wei,int isCheck){
 		this.id=id;
 		this.indate=indate;
 		this.destination=destination;
@@ -31,7 +26,13 @@ public class InStoragePO extends WarehousePO {
 		this.isCheck=isCheck;
 	
 	}
+	public int getIsCheck() {
+		return isCheck;
+	}
 
+	public void setIsCheck(int isCheck) {
+		this.isCheck = isCheck;
+	}
 	public String getIndate() {
 		return indate;
 	}
@@ -72,6 +73,24 @@ public class InStoragePO extends WarehousePO {
 		this.pos_wei = pos_wei;
 	}
 	
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getDestination() {
+		return destination;
+	}
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+	public String getWarehouseID() {
+		return WarehouseID;
+	}
+	public void setWarehouseID(String warehouseID) {
+		WarehouseID = warehouseID;
+	}
+
 
 }
