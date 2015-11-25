@@ -1,4 +1,4 @@
-package presentation.managerui;
+package presentation.adminui;
 
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -23,7 +23,7 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(900, 700);
 		
-		JPanel panel=new ManagerUI14(this);
+		JPanel panel=new AdminUI4(this);
 		
 		
 		
