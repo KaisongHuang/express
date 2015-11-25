@@ -8,7 +8,7 @@ public class CourierDataService_Stub implements CourierDataService{
 
 	public CourierPO find(int id) throws RemoteException {
 		System.out.println("find Succeed");
-		return new CourierPO(id, null, null);
+		return new CourierPO(null, null, null);
 	}
 
 	public ResultMessage insert(CourierPO po) throws RemoteException {

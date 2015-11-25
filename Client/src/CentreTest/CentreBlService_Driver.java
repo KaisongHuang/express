@@ -13,17 +13,17 @@ public class CentreBlService_Driver {
 		ResultMessage result;
 		
 		
-		result=centre.createPack(new PackVO(null, 0, null, 0, 0, 0, null, 0, 0));
+		result=centre.createPack(new PackVO(null, null, null, null, null, null, null, 0, 0));
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}
 		
-		result=centre.createReceive(new CentreArrivalVO(0, null, 0, null, null, 0));
+		result=centre.createReceive(new CentreArrivalVO(null, null, null, null, null, 0));
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}
 		
-		result=centre.manageTranfor(new CentreTransforVO(null, null, 0, 0, null, null, 0, 0, null, 0, 0));
+		result=centre.manageTranfor(new CentreTransforVO(null, null, null, null, null, null, null, null, null, 0, 0));
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}

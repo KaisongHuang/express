@@ -70,7 +70,7 @@ public class ManagerListener02 implements MouseListener, ActionListener {
 		String employeeAging = ui.getLblNewLabel_11().getText();
 		String timeOfWorking = ui.getLblNewLabel_13().getText();
 		
-		EmployeeVO vo = new EmployeeVO(Integer.parseInt(employeeID), employeeName, Integer.parseInt(employeeAging),
+		EmployeeVO vo = new EmployeeVO(employeeID, employeeName, Integer.parseInt(employeeAging),
 				employeePosition, Integer.parseInt(timeOfWorking), belongToWho);
 		
 		return vo;

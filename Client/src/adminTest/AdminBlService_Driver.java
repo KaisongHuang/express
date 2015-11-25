@@ -16,7 +16,7 @@ public class AdminBlService_Driver {
 			System.out.println("Not Found!");
 		}
 		
-		ResultMessage res=admin.manageCount(new AdminVO(0, null, null, null), Operation.update);
+		ResultMessage res=admin.manageCount(new AdminVO(null, null, null, null), Operation.update);
 		
 		if(res==ResultMessage.Error){
 			System.out.println("ERROR!");

@@ -2,9 +2,9 @@ package CentreTest;
 
 import _enum.ResultMessage;
 import logic.centreblservice.CentreBlService;
+import po.DeliverPO;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
-import vo.DeliveryVO;
 import vo.PackVO;
 
 public class CentreBlService_Stub implements CentreBlService {
@@ -27,7 +27,7 @@ public class CentreBlService_Stub implements CentreBlService {
 		
 	}
 	
-	public ResultMessage createDelivery(DeliveryVO vo){
+	public ResultMessage createDelivery(DeliverPO vo){
 		
 		return ResultMessage.Error;
 		
