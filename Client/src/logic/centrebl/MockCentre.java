@@ -3,7 +3,7 @@ package logic.centrebl;
 import _enum.ResultMessage;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
-import vo.DeliveryVO;
+import vo.DeliverVO;
 import vo.PackVO;
 
 public class MockCentre extends Centre {
@@ -31,7 +31,7 @@ public class MockCentre extends Centre {
 		
 	}
 	
-	public ResultMessage createDelivery(DeliveryVO vo){
+	public ResultMessage createDelivery(DeliverVO vo){
 		
 		return ResultMessage.Fail;
 		

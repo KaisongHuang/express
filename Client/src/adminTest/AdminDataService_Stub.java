@@ -10,7 +10,7 @@ public class AdminDataService_Stub implements AdminDataService {
 
 	public AdminPO find(int id) throws RemoteException {
 		// TODO Auto-generated method stub
-		return new AdminPO(id, null, null, null);
+		return new AdminPO(null, null, null, null);
 	}
 
 	public ResultMessage insert(AdminPO po) throws RemoteException {

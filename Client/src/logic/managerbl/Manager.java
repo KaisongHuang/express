@@ -42,7 +42,7 @@ public class Manager implements ManagerBlService {
 		try{
 			if(op==Opera.Employee_find){
 			     ep = (EmployeePO) md.find(id,op);
-			     return new EmployeeVO(Integer.parseInt(id), ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
+			     return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
 					  ep.getTimeOfWorking(), ep.getBelongToWho());
 			}else{
 			     po=(InstitutionPO) md.find(id,op);
