@@ -19,7 +19,6 @@ import javax.swing.JComboBox;
 
 public class ManagerUI11 extends JPanel{
 	
-	JFrame frame;
 
 	private JTextField textField;
 	private JTextField textField_1;
@@ -42,8 +41,7 @@ public class ManagerUI11 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public ManagerUI11(JFrame frame) {
-		this.frame=frame;
+	public ManagerUI11() {
 		managerlistener = new ManagerListener11(this);
 		initialize();
 	}
@@ -161,13 +159,6 @@ public class ManagerUI11 extends JPanel{
 		
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JTextField getTextField() {
 		return textField;

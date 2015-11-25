@@ -1,4 +1,5 @@
 package presentation.managerui;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ import listener.managerlistener.ManagerMenuListener;
 public class ManagerMenuUI extends JPanel{
 
 
-	private JFrame frame;
+	private CardLayout card;
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
 	private JButton btnNewButton_9;
@@ -28,9 +29,9 @@ public class ManagerMenuUI extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public ManagerMenuUI(JFrame frame) {
+	public ManagerMenuUI(CardLayout card) {
 		managermenulistener = new ManagerMenuListener(this);
-		this.frame = frame;
+		this.card = card;
 		initialize();
 	}
 
@@ -64,13 +65,12 @@ public class ManagerMenuUI extends JPanel{
 		this.add(btnNewButton_16);
 		
 	}
-
-	public JFrame getFrame() {
-		return frame;
+	public CardLayout getCard() {
+		return card;
 	}
 
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
+	public void setCard(CardLayout card) {
+		this.card = card;
 	}
 
 	public JButton getBtnNewButton_7() {

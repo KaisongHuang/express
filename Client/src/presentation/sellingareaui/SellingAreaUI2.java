@@ -20,7 +20,6 @@ import listener.sellingarealistener.SellingAreaListener20;
 
 public class SellingAreaUI2 extends JPanel{
 
-	private JFrame frame;
 	
 	private JTable table;
 	private JButton btnNewButton_10;
@@ -30,8 +29,7 @@ public class SellingAreaUI2 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public SellingAreaUI2(JFrame frame) {
-		this.frame=frame;
+	public SellingAreaUI2() {
 		sellingarealistener = new SellingAreaListener20(this);
 		initialize();
 	}
@@ -163,13 +161,6 @@ public class SellingAreaUI2 extends JPanel{
 		panel_4.add(lblNewLabel_3);
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JTable getTable() {
 		return table;

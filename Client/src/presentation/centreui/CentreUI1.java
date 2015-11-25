@@ -19,7 +19,6 @@ import javax.swing.JComboBox;
 
 public class CentreUI1 extends JPanel{
 
-	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -41,9 +40,8 @@ public class CentreUI1 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public CentreUI1(JFrame frame) {
+	public CentreUI1() {
 		
-		this.frame = frame;
 		centrelistener = new CentreListener1(this);
 		initialize();
 	}
@@ -295,13 +293,6 @@ public class CentreUI1 extends JPanel{
 		this.btnNewButton_13 = btnNewButton_13;
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 	
 	
 }
