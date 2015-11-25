@@ -19,7 +19,6 @@ import javax.swing.JComboBox;
 
 public class SellingAreaUI extends JPanel{
 	
-	private JFrame frame;
 
 	private JTextField textField;
 	private JTextField textField_1;
@@ -39,8 +38,7 @@ public class SellingAreaUI extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public SellingAreaUI(JFrame frame) {
-		this.frame=frame;
+	public SellingAreaUI() {
 		sellingarealistener = new SellingAreaListener00(this);
 		initialize();
 	}
@@ -148,13 +146,6 @@ public class SellingAreaUI extends JPanel{
 	
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JTextField getTextField() {
 		return textField;

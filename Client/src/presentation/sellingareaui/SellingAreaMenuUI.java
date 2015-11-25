@@ -1,4 +1,5 @@
 package presentation.sellingareaui;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ import listener.sellingarealistener.SellingAreaMenuListener;
 
 public class SellingAreaMenuUI extends JPanel{
 	
-	private JFrame frame;
+	private CardLayout card;
 	
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
@@ -31,8 +32,8 @@ public class SellingAreaMenuUI extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public SellingAreaMenuUI(JFrame frame) {
-		this.frame=frame;
+	public SellingAreaMenuUI(CardLayout card) {
+		this.card=card;
 		sellingarealistener = new SellingAreaMenuListener(this);
 		initialize();
 	}
@@ -79,13 +80,6 @@ public class SellingAreaMenuUI extends JPanel{
 	
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JButton getBtnNewButton_7() {
 		return btnNewButton_7;
@@ -125,6 +119,14 @@ public class SellingAreaMenuUI extends JPanel{
 
 	public void setButton(JButton button) {
 		this.button = button;
+	}
+
+	public CardLayout getCard() {
+		return card;
+	}
+
+	public void setCard(CardLayout card) {
+		this.card = card;
 	}
 	
 	

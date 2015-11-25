@@ -19,7 +19,6 @@ import javax.swing.JComboBox;
 
 public class ManagerUI4 extends JPanel{
 
-	JFrame frame;
 	
 	private JButton btnNewButton_12;
 	private JButton btnNewButton_13;
@@ -39,8 +38,7 @@ public class ManagerUI4 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public ManagerUI4(JFrame frame) {
-		this.frame=frame;
+	public ManagerUI4() {
 		managerlistener = new ManagerListener40(this);
 		initialize();
 	}
@@ -142,13 +140,6 @@ public class ManagerUI4 extends JPanel{
 		
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JButton getBtnNewButton_12() {
 		return btnNewButton_12;

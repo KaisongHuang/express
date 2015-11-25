@@ -19,7 +19,6 @@ import javax.swing.JComboBox;
 
 public class CentreUI extends JPanel{
 
-	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -34,9 +33,8 @@ public class CentreUI extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public CentreUI(JFrame frame) {
+	public CentreUI() {
 		
-		this.frame = frame;
 		centreListener = new CentreListener0(this);
 		initialize();
 	}
@@ -183,8 +181,5 @@ public class CentreUI extends JPanel{
 		this.comboBox = comboBox;
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
 
 }

@@ -20,7 +20,6 @@ import listener.adminlistener.AdminListener1;
 
 public class AdminUI1 extends JPanel{
 	
-	private JFrame frame;
 
 	private JTextField textField;
 	private JTextField textField_1;
@@ -36,8 +35,7 @@ public class AdminUI1 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public AdminUI1(JFrame frame) {
-		this.frame=frame;
+	public AdminUI1() {
 		adminlistener = new AdminListener1(this);
 		initialize();
 	}
@@ -109,13 +107,6 @@ public class AdminUI1 extends JPanel{
 
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JTextField getTextField() {
 		return textField;
