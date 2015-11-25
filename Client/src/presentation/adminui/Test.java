@@ -23,7 +23,15 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(900, 700);
 		
-		JPanel panel=new AdminUI4(this);
+		cardPanel = new JPanel();
+		cardPanel.setBounds(0,200,800,600);
+		card = new CardLayout(0,0);
+		cardPanel.setLayout(card);
+//		cardPanel.add(new AdminMenuUI(card), "1");
+//		cardPanel.add(new CentreUI1(this), "2");
+		this.add(cardPanel);
+		
+		JPanel panel=new AdminMenuUI(card);
 		
 		
 		

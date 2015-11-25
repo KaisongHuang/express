@@ -7,6 +7,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import listener.senderlistener.SenderListener0;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -28,6 +31,7 @@ public class SearchUI extends JPanel {
 		this.frame=frame;
 		this.setLayout(null);
 		lblNewLabel = new JLabel("快递编号:");
+
 		lblNewLabel.setBounds(152, 206, 87, 18);
 		this.add(lblNewLabel);
 		

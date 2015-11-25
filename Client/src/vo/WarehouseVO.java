@@ -1,23 +1,24 @@
 package vo;
 
 public class WarehouseVO {
-	int id;
+	String id;
 	String destination;
-    String WarehouseID;
+	String WarehouseID;
+
 	public WarehouseVO() {
 	}
 
-	public WarehouseVO(int id, String destination,String WarehouseID) {
+	public WarehouseVO(String id, String destination, String WarehouseID) {
 		this.id = id;
 		this.destination = destination;
-		this.WarehouseID=WarehouseID;
+		this.WarehouseID = WarehouseID;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -27,6 +28,14 @@ public class WarehouseVO {
 
 	public void setDestination(String destination) {
 		this.destination = destination;
+	}
+
+	public String getWarehouseID() {
+		return WarehouseID;
+	}
+
+	public void setWarehouseID(String warehouseID) {
+		WarehouseID = warehouseID;
 	}
 
 }

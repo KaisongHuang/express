@@ -1,58 +1,73 @@
 package vo;
 
 public class CarVO {
-    int number;
-    int EngineNumber;
-    int CarNumber;
-    int ChassisNumber;
-    String purchase;
-    int ServiceTime;
-    public CarVO( int number,int EngineNumber,int CarNumber,int ChassisNumber,String purchase,int ServiceTime){
-   	 this.number=number;
-   	 this.EngineNumber=EngineNumber;
-   	 this.CarNumber=CarNumber;
-   	 this.ChassisNumber=ChassisNumber;
-   	 this.purchase=purchase;
-   	 this.ServiceTime=ServiceTime;
-    }
-	public CarVO() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êý´æ¸ù
+	String number;
+	String EngineNumber;
+	String CarNumber;
+	String ChassisNumber;
+	String purchase;
+	int ServiceTime;
+
+	public CarVO(String number, String EngineNumber, String CarNumber, String ChassisNumber, String purchase,
+			int ServiceTime) {
+		this.number = number;
+		this.EngineNumber = EngineNumber;
+		this.CarNumber = CarNumber;
+		this.ChassisNumber = ChassisNumber;
+		this.purchase = purchase;
+		this.ServiceTime = ServiceTime;
 	}
-	public int getNumber() {
+
+	public CarVO() {
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½
+	}
+
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+
+	public void setNumber(String number) {
 		this.number = number;
 	}
-	public int getEngineNumber() {
+
+	public String getEngineNumber() {
 		return EngineNumber;
 	}
-	public void setEngineNumber(int engineNumber) {
+
+	public void setEngineNumber(String engineNumber) {
 		EngineNumber = engineNumber;
 	}
-	public int getCarNumber() {
+
+	public String getCarNumber() {
 		return CarNumber;
 	}
-	public void setCarNumber(int carNumber) {
+
+	public void setCarNumber(String carNumber) {
 		CarNumber = carNumber;
 	}
-	public int getChassisNumber() {
+
+	public String getChassisNumber() {
 		return ChassisNumber;
 	}
-	public void setChassisNumber(int chassisNumber) {
+
+	public void setChassisNumber(String chassisNumber) {
 		ChassisNumber = chassisNumber;
 	}
+
 	public String getPurchase() {
 		return purchase;
 	}
+
 	public void setPurchase(String purchase) {
 		this.purchase = purchase;
 	}
+
 	public int getServiceTime() {
 		return ServiceTime;
 	}
+
 	public void setServiceTime(int serviceTime) {
 		ServiceTime = serviceTime;
 	}
-	
+
 }

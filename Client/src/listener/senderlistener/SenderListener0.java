@@ -15,9 +15,8 @@ public class SenderListener0 implements ActionListener{
 		sender=new Sender();
 	}
 	public void actionPerformed(ActionEvent e) {
-		String s=search.gettextFieldContent();
-		HistoryVO h= sender.search(Integer.parseInt(s));
-		
+//		String s=search.getTextFieldContent();
+//		HistoryVO h= sender.search(Integer.parseInt(s));
 	}
 
 }

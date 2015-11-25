@@ -19,7 +19,6 @@ import listener.managerlistener.ManagerListener12;
 
 public class ManagerUI12 extends JPanel{
 
-	JFrame frame;
 	
 	private JTextField textField;
 	
@@ -49,8 +48,7 @@ public class ManagerUI12 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public ManagerUI12(JFrame frame) {
-		this.frame=frame;
+	public ManagerUI12() {
 		managerlistener = new ManagerListener12(this);
 		initialize();
 	}
@@ -165,13 +163,6 @@ public class ManagerUI12 extends JPanel{
 		
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JTextField getTextField() {
 		return textField;

@@ -1,12 +1,12 @@
 package vo;
 
 public class ReceiptVO {
-    int number;
-    int money;
+    String number;
+    double money;
     String date;
     String sellingArea;
     int isCheck;
-    public ReceiptVO(int money,String date, String sellingArea, int number,int isCheck){
+    public ReceiptVO(double money,String date, String sellingArea, String number,int isCheck){
   	  this.number=number;
   	  this.money=money;
   	  this.date=date;
@@ -22,16 +22,16 @@ public class ReceiptVO {
 	public ReceiptVO() {
 		
 	}
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
-	public int getMoney() {
+	public double getMoney() {
 		return money;
 	}
-	public void setMoney(int money) {
+	public void setMoney(double money) {
 		this.money = money;
 	}
 	public String getDate() {

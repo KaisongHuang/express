@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class DistanceAndFee extends ManagerPO{
     ArrayList<String> city1;
     ArrayList<String> city2;
-    int distance;
-    int fee;
-    public DistanceAndFee(ArrayList<String> city1,ArrayList<String> city2,int distance,int fee){
+    double distance;
+    double fee;
+    public DistanceAndFee(ArrayList<String> city1,ArrayList<String> city2,double distance,double fee){
     	this.city1=city1;
     	this.city2=city2;
     	this.distance=distance;
@@ -25,7 +25,7 @@ public class DistanceAndFee extends ManagerPO{
 	public void setCity2(ArrayList<String> city2) {
 		this.city2 = city2;
 	}
-	public int getFee() {
+	public double getFee() {
 		return fee;
 	}
 	public void setFee(int fee) {

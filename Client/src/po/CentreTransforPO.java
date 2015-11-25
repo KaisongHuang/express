@@ -8,21 +8,21 @@ public class CentreTransforPO extends CentrePO {
 
 	String transforStyle;
 	String dataOfGetin;
-	int centreTransforID;
-	int banHao;
+	String centreTransferID;
+	String banHao;
 	String start;
 	String arrival;
-	int huoGuiHao;
-	int jianZhuangYuan;
-	ArrayList<Integer> list = new ArrayList<Integer>();
+	String huoGuiHao;
+	String jianZhuangYuan;
+	ArrayList<String> list = new ArrayList<String>();
 	double fee;
     int isCheck;
-	public CentreTransforPO(String ts, String dog, int cti, int bh,
-			String start, String arrival, int hgh, int jzy,
-			ArrayList<Integer> list, double fee,int isCheck) {
+	public CentreTransforPO(String ts, String dog, String cti, String bh,
+			String start, String arrival, String hgh, String jzy,
+			ArrayList<String> list, double fee,int isCheck) {
 		this.transforStyle = ts;
 		this.dataOfGetin = dog;
-		this.centreTransforID = cti;
+		this.centreTransferID = cti;
 		this.banHao = bh;
 		this.start = start;
 		this.arrival = arrival;
@@ -51,19 +51,19 @@ public class CentreTransforPO extends CentrePO {
 		this.dataOfGetin = dataOfGetin;
 	}
 
-	public int getCentreTransferID() {
-		return centreTransforID;
+	public String getCentreTransferID() {
+		return centreTransferID;
 	}
 
-	public void setCentreTransferID(int centreTransferID) {
-		this.centreTransforID = centreTransferID;
+	public void setCentreTransferID(String centreTransferID) {
+		this.centreTransferID = centreTransferID;
 	}
 
-	public int getBanHao() {
+	public String getBanHao() {
 		return banHao;
 	}
 
-	public void setBanHao(int banHao) {
+	public void setBanHao(String banHao) {
 		this.banHao = banHao;
 	}
 
@@ -83,27 +83,27 @@ public class CentreTransforPO extends CentrePO {
 		this.arrival = arrival;
 	}
 
-	public int getHuoGuiHao() {
+	public String getHuoGuiHao() {
 		return huoGuiHao;
 	}
 
-	public void setHuoGuiHao(int huoGuiHao) {
+	public void setHuoGuiHao(String huoGuiHao) {
 		this.huoGuiHao = huoGuiHao;
 	}
 
-	public int getJianZhuangYuan() {
+	public String getJianZhuangYuan() {
 		return jianZhuangYuan;
 	}
 
-	public void setJianZhuangYuan(int jianZhuangYuan) {
+	public void setJianZhuangYuan(String jianZhuangYuan) {
 		this.jianZhuangYuan = jianZhuangYuan;
 	}
 
-	public ArrayList<Integer> getList() {
+	public ArrayList<String> getList() {
 		return list;
 	}
 
-	public void setList(ArrayList<Integer> list) {
+	public void setList(ArrayList<String> list) {
 		this.list = list;
 	}
 

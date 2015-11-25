@@ -3,12 +3,12 @@ package vo;
 public class OutStorageVO extends WarehouseVO {
 	String outdate;
 	String transportation;
-	int trans_id;
+	String trans_id;
 	int isCheck;
 
-	public OutStorageVO(int id, String destination, String outdate,String WarehouseID, String transportation, int trans_id, int isCheck) {
-		super(id, destination,WarehouseID);
-		// TODO Auto-generated constructor stub
+	public OutStorageVO(String id, String destination, String outdate, String WarehouseID, String transportation,
+			String trans_id, int isCheck) {
+		super(id, destination, WarehouseID);
 		this.outdate = outdate;
 		this.transportation = transportation;
 		this.trans_id = trans_id;
@@ -42,16 +42,15 @@ public class OutStorageVO extends WarehouseVO {
 		this.transportation = transportation;
 	}
 
-	public int getTrans_id() {
+	public String getTrans_id() {
 		return trans_id;
 	}
 
-	public void setTrans_id(int trans_id) {
+	public void setTrans_id(String trans_id) {
 		this.trans_id = trans_id;
 	}
 
 	public String getWarehouseID() {
-		// TODO 自动生成的方法存根
 		return WarehouseID;
 	}
 

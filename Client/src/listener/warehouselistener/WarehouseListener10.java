@@ -60,9 +60,9 @@ public class WarehouseListener10 implements ActionListener {
 
 	public OutStorageVO getOutStorageVO() {
 		OutStorageVO out = new OutStorageVO();
-		out.setId(Integer.parseInt(ui.getExportID()));
+		out.setId(ui.getExportID());
 		out.setDestination(ui.getExportDestination());
-		out.setTrans_id(Integer.parseInt(ui.getTrans_ID()));
+		out.setTrans_id(ui.getTrans_ID());
 		out.setOutdate(ui.getExportDate());
 		out.setTransportation(ui.getTransportation());
 		return out;
@@ -70,7 +70,7 @@ public class WarehouseListener10 implements ActionListener {
 
 	public InStorageVO getInStorageVO() {
 		InStorageVO in = new InStorageVO();
-		in.setId(Integer.parseInt(ui.getImportID()));// textField_3
+		in.setId(ui.getImportID());// textField_3
 		in.setDestination(ui.getImportDestination());// textField_4
 		in.setIndate(ui.getImportDate());// comboBox_4comboBox_5comboBox_6
 		in.setPos_qu(ui.getPos_qu());// comboBox_7
