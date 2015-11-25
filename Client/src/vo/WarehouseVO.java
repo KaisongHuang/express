@@ -29,4 +29,14 @@ public class WarehouseVO {
 		this.destination = destination;
 	}
 
+	public String getWarehouseID() {
+		return WarehouseID;
+	}
+
+	public void setWarehouseID(String warehouseID) {
+		WarehouseID = warehouseID;
+	}
+	
+	
+
 }
