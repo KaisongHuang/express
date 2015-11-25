@@ -1,4 +1,5 @@
 package presentation.centreui;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ import listener.centrelistener.CentreMenuListener;
 
 public class CentreMenuUI extends JPanel{
 
-	private Test frame;
+	private CardLayout card;
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
 	CentreMenuListener centreMenuListener;
@@ -24,9 +25,9 @@ public class CentreMenuUI extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public CentreMenuUI(JFrame frame) {
+	public CentreMenuUI(CardLayout card) {
 		centreMenuListener = new CentreMenuListener(this);
-		this.frame = (Test) frame;
+		this.card = card;
 		initialize();
 	
 		
@@ -74,14 +75,14 @@ public class CentreMenuUI extends JPanel{
 		this.btnNewButton_8 = btnNewButton_8;
 	}
 
-	public Test getFrame() {
-		return frame;
+	public CardLayout getCard() {
+		return card;
 	}
 
-	public void setFrame(JFrame frame) {
-		this.frame = (Test) frame;
+	public void setCard(CardLayout card) {
+		this.card = card;
 	}
-	
+
 	
 	
 	

@@ -20,7 +20,6 @@ import javax.swing.JComboBox;
 public class ManagerUI2 extends JPanel{
 
 
-	JFrame frame;
 	private JComboBox comboBox;
 	private JButton button1;
 	private JButton button2;
@@ -30,8 +29,7 @@ public class ManagerUI2 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public ManagerUI2(JFrame frame) {
-		this.frame=frame;
+	public ManagerUI2() {
 		managerlistener = new ManagerListener20(this);
 		initialize();
 	}
@@ -79,13 +77,6 @@ public class ManagerUI2 extends JPanel{
 		
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
-	}
 
 	public JButton getButton1() {
 		return button1;

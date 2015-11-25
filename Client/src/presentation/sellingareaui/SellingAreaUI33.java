@@ -11,6 +11,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
+import listener.sellingarealistener.SellingAreaListener33;
+
 import javax.swing.JComboBox;
 
 
@@ -24,12 +27,20 @@ public class SellingAreaUI33 extends JPanel{
 	private JTextField textField_4;
 	private JTextField textField_5;
 
+	SellingAreaListener33 sellingarealistener;
+	private JButton btnNewButton_16;
+	private JButton btnNewButton_15;
+	private JButton btnNewButton_14;
+	private JButton btnNewButton_13;
+	private JButton btnNewButton_11;
+	private JButton btnNewButton_10;
 
 
 	/**
 	 * Create the application.
 	 */
 	public SellingAreaUI33() {
+		sellingarealistener = new SellingAreaListener33(this);
 		initialize();
 	}
 
@@ -48,19 +59,19 @@ public class SellingAreaUI33 extends JPanel{
 		this.add(panel_5);
 		panel_5.setLayout(null);
 		
-		JButton btnNewButton_10 = new JButton("\u67E5\u8BE2");
+		btnNewButton_10 = new JButton("\u67E5\u8BE2");
 		btnNewButton_10.setBounds(44, 8, 90, 30);
 		panel_5.add(btnNewButton_10);
 		
-		JButton btnNewButton_11 = new JButton("\u66F4\u65B0");
+		btnNewButton_11 = new JButton("\u66F4\u65B0");
 		btnNewButton_11.setBounds(194, 8, 90, 30);
 		panel_5.add(btnNewButton_11);
 		
-		JButton btnNewButton_13 = new JButton("\u5220\u9664");
+		btnNewButton_13 = new JButton("\u5220\u9664");
 		btnNewButton_13.setBounds(348, 8, 90, 30);
 		panel_5.add(btnNewButton_13);
 		
-		JButton btnNewButton_14 = new JButton("\u6DFB\u52A0");
+		btnNewButton_14 = new JButton("\u6DFB\u52A0");
 		btnNewButton_14.setBackground(new Color(255, 248, 220));
 		btnNewButton_14.setBounds(525, 8, 90, 30);
 		panel_5.add(btnNewButton_14);
@@ -70,8 +81,8 @@ public class SellingAreaUI33 extends JPanel{
 		this.add(panel_6);
 		panel_6.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(30, 18, 55, 18);
+		JLabel lblNewLabel_1 = new JLabel("车辆编号：");
+		lblNewLabel_1.setBounds(30, 18, 100, 18);
 		panel_6.add(lblNewLabel_1);
 		
 		textField = new JTextField();
@@ -79,8 +90,8 @@ public class SellingAreaUI33 extends JPanel{
 		panel_6.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(332, 18, 55, 18);
+		JLabel lblNewLabel_2 = new JLabel("发动机号：");
+		lblNewLabel_2.setBounds(332, 18, 100, 18);
 		panel_6.add(lblNewLabel_2);
 		
 		textField_1 = new JTextField();
@@ -88,8 +99,8 @@ public class SellingAreaUI33 extends JPanel{
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(30, 66, 55, 18);
+		JLabel lblNewLabel_3 = new JLabel("车辆号：");
+		lblNewLabel_3.setBounds(30, 66, 100, 18);
 		panel_6.add(lblNewLabel_3);
 		
 		textField_2 = new JTextField();
@@ -97,8 +108,8 @@ public class SellingAreaUI33 extends JPanel{
 		panel_6.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(332, 66, 55, 18);
+		JLabel lblNewLabel_4 = new JLabel("底盘号：");
+		lblNewLabel_4.setBounds(332, 66, 100, 18);
 		panel_6.add(lblNewLabel_4);
 		
 		textField_3 = new JTextField();
@@ -106,8 +117,8 @@ public class SellingAreaUI33 extends JPanel{
 		panel_6.add(textField_3);
 		textField_3.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(30, 121, 55, 18);
+		JLabel lblNewLabel_5 = new JLabel("购买时间：");
+		lblNewLabel_5.setBounds(30, 121, 100, 18);
 		panel_6.add(lblNewLabel_5);
 		
 		textField_4 = new JTextField();
@@ -115,8 +126,8 @@ public class SellingAreaUI33 extends JPanel{
 		panel_6.add(textField_4);
 		textField_4.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setBounds(332, 121, 55, 18);
+		JLabel lblNewLabel_6 = new JLabel("服役时间：");
+		lblNewLabel_6.setBounds(332, 121, 100, 18);
 		panel_6.add(lblNewLabel_6);
 		
 		textField_5 = new JTextField();
@@ -124,13 +135,118 @@ public class SellingAreaUI33 extends JPanel{
 		panel_6.add(textField_5);
 		textField_5.setColumns(10);
 		
-		JButton btnNewButton_15 = new JButton("\u6DFB\u52A0");
-		btnNewButton_15.setBounds(107, 377, 90, 30);
+		btnNewButton_15 = new JButton("\u6DFB\u52A0");
+		btnNewButton_15.setBounds(107, 377, 100, 30);
 		this.add(btnNewButton_15);
 		
-		JButton btnNewButton_16 = new JButton("\u53D6\u6D88");
-		btnNewButton_16.setBounds(491, 377, 90, 30);
+		btnNewButton_16 = new JButton("\u53D6\u6D88");
+		btnNewButton_16.setBounds(491, 377, 100, 30);
 		this.add(btnNewButton_16);
 		
+		btnNewButton_10.addActionListener(sellingarealistener);
+		btnNewButton_11.addActionListener(sellingarealistener);
+		btnNewButton_13.addActionListener(sellingarealistener);
+		btnNewButton_14.addActionListener(sellingarealistener);
+		btnNewButton_15.addActionListener(sellingarealistener);
+		btnNewButton_16.addActionListener(sellingarealistener);
+		
 	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public void setTextField_2(JTextField textField_2) {
+		this.textField_2 = textField_2;
+	}
+
+	public JTextField getTextField_3() {
+		return textField_3;
+	}
+
+	public void setTextField_3(JTextField textField_3) {
+		this.textField_3 = textField_3;
+	}
+
+	public JTextField getTextField_4() {
+		return textField_4;
+	}
+
+	public void setTextField_4(JTextField textField_4) {
+		this.textField_4 = textField_4;
+	}
+
+	public JTextField getTextField_5() {
+		return textField_5;
+	}
+
+	public void setTextField_5(JTextField textField_5) {
+		this.textField_5 = textField_5;
+	}
+
+	public JButton getBtnNewButton_16() {
+		return btnNewButton_16;
+	}
+
+	public void setBtnNewButton_16(JButton btnNewButton_16) {
+		this.btnNewButton_16 = btnNewButton_16;
+	}
+
+	public JButton getBtnNewButton_15() {
+		return btnNewButton_15;
+	}
+
+	public void setBtnNewButton_15(JButton btnNewButton_15) {
+		this.btnNewButton_15 = btnNewButton_15;
+	}
+
+	public JButton getBtnNewButton_14() {
+		return btnNewButton_14;
+	}
+
+	public void setBtnNewButton_14(JButton btnNewButton_14) {
+		this.btnNewButton_14 = btnNewButton_14;
+	}
+
+	public JButton getBtnNewButton_13() {
+		return btnNewButton_13;
+	}
+
+	public void setBtnNewButton_13(JButton btnNewButton_13) {
+		this.btnNewButton_13 = btnNewButton_13;
+	}
+
+	public JButton getBtnNewButton_11() {
+		return btnNewButton_11;
+	}
+
+	public void setBtnNewButton_11(JButton btnNewButton_11) {
+		this.btnNewButton_11 = btnNewButton_11;
+	}
+
+	public JButton getBtnNewButton_10() {
+		return btnNewButton_10;
+	}
+
+	public void setBtnNewButton_10(JButton btnNewButton_10) {
+		this.btnNewButton_10 = btnNewButton_10;
+	}
+	
+	
 }

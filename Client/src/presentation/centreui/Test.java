@@ -23,7 +23,7 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(1200, 1000);
 		
-		JPanel panel=new CentreUI3(this);
+		JPanel panel=new CentreUI3();
 		
 		
 		panel.setBounds(136, 58, 746, 500);
