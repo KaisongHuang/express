@@ -9,7 +9,7 @@ import dataservice.admindataservice.AdminDataService;
 
 public class AdminData implements AdminDataService{
 
-	public AdminPO find(MySQLDataBase db, int id, String tableName) {
+	public AdminPO find(MySQLDataBase db, String id, String tableName) {
 	    
 		String sql="select * from "+tableName+" where id="+id;
 		ResultSet rs=db.find(sql);
@@ -30,10 +30,12 @@ public class AdminData implements AdminDataService{
 		return rm;
 	}
 
-	public ResultMessage delete(MySQLDataBase db, int id, String tableName) {
+	public ResultMessage delete(MySQLDataBase db, String id, String tableName) {
 		String sql="delete from "+tableName+" where id="+id;
 		ResultMessage rm=db.delete(sql);
 		return rm;
 	}
+
+	
 
 }
