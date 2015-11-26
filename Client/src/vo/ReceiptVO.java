@@ -5,14 +5,22 @@ public class ReceiptVO {
     double money;
     String date;
     String sellingArea;
+    String ID;
     int isCheck;
-    public ReceiptVO(double money,String date, String sellingArea, String number,int isCheck){
+    public ReceiptVO(double money,String date, String sellingArea, String number,String ID,int isCheck){
   	  this.number=number;
   	  this.money=money;
   	  this.date=date;
   	  this.isCheck=isCheck;
   	  this.sellingArea=sellingArea;
+  	  this.ID=ID;
     }
+	public String getID() {
+		return ID;
+	}
+	public void setID(String iD) {
+		ID = iD;
+	}
 	public int getIsCheck() {
 		return isCheck;
 	}
