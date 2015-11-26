@@ -66,11 +66,12 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_16;
 	private JComboBox<Object> comboBox_10;
 	private JPanel panel;
-
+	WarehouseListener10 warehouseListener10;
 	/**
 	 * Create the application.
 	 */
 	public WarehouseUI1() {
+		warehouseListener10 = new WarehouseListener10(this);
 		initialize();
 	}
 

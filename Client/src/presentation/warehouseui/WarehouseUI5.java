@@ -7,6 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import listener.warehouselistener.WarehouseListener50;
+
 import javax.swing.JComboBox;
 import java.util.Arrays;
 import java.util.Vector;
@@ -24,7 +27,7 @@ public class WarehouseUI5 extends JPanel {
 	private JTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
-	private Vector<Vector <Object>> data;
+	private Vector<Vector<Object>> data;
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel label_2;
@@ -47,11 +50,14 @@ public class WarehouseUI5 extends JPanel {
 	private JComboBox<?> comboBox_4;
 	private JComboBox<?> comboBox_5;
 	private JComboBox<?> comboBox_6;
+	private DefaultTableModel model;
+	WarehouseListener50 warehouseListener50;
 
 	/**
 	 * Create the application.
 	 */
 	public WarehouseUI5() {
+		warehouseListener50 = new WarehouseListener50(this);
 		initialize();
 	}
 
@@ -98,6 +104,7 @@ public class WarehouseUI5 extends JPanel {
 		String names[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);
+		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(29, 88, 444, 300);
 		this.add(JSP);
@@ -121,7 +128,7 @@ public class WarehouseUI5 extends JPanel {
 		textField_1.setColumns(10);
 
 		label_2 = new JLabel("入库时间:");
-		label_2.setBounds(508, 188, 57, 15);
+		label_2.setBounds(485, 188, 57, 15);
 		this.add(label_2);
 
 		comboBox = new JComboBox<Object>();
@@ -185,50 +192,23 @@ public class WarehouseUI5 extends JPanel {
 		this.add(label_10);
 
 		button_1 = new JButton("新增");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int id = Integer.parseInt(getTextField().getText());
-//				String id=getTextField().getText();
-				String destination = getTextField_1().getText();
-//				String year = (String) getComboBox().getSelectedItem();
-//				String month = (String) getComboBox_1().getSelectedItem();
-//				String date = (String) getComboBox_2().getSelectedItem();
-//				String time = year + month + date;
-//				String qu = (String) getComboBox_3().getSelectedItem();
-//				String pai = (String) getComboBox_4().getSelectedItem();
-//				String jia = (String) getComboBox_5().getSelectedItem();
-//				String wei = (String) getComboBox_6().getSelectedItem();
-				Vector<Object> item = new Vector<Object>();
-				item.add(id);
-				item.add(destination);
-				item.add("123");
-				item.add("123");
-				item.add("123");
-				item.add("123");
-				item.add("123");
-//				data.add(item);
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(item);
-				}
-		});
-		button_1.setBounds(508, 330, 94, 27);
+		button_1.setBounds(506, 361, 94, 27);
+		button_1.addActionListener(warehouseListener50);
 		this.add(button_1);
 
 		button_2 = new JButton("清空");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				getTextField().setText("123456");
-			}
-		});
-		button_2.setBounds(616, 330, 94, 27);
+		button_2.setBounds(616, 361, 94, 27);
+		button_2.addActionListener(warehouseListener50);
 		this.add(button_2);
 
-		button_3 = new JButton("返回");
-		button_3.setBounds(616, 369, 94, 27);
+		button_3 = new JButton("完成");
+		button_3.setBounds(29, 49, 94, 27);
+		button_3.addActionListener(warehouseListener50);
 		this.add(button_3);
 
 		button = new JButton("删除");
-		button.setBounds(508, 369, 94, 27);
+		button.setBounds(379, 49, 94, 27);
+		button.addActionListener(warehouseListener50);
 		add(button);
 	}
 
@@ -244,7 +224,7 @@ public class WarehouseUI5 extends JPanel {
 		return table;
 	}
 
-	public Vector<Vector <Object>> getData() {
+	public Vector<Vector<Object>> getData() {
 		return data;
 	}
 
@@ -290,5 +270,9 @@ public class WarehouseUI5 extends JPanel {
 
 	public JComboBox<?> getComboBox_6() {
 		return comboBox_6;
+	}
+
+	public DefaultTableModel getModel() {
+		return model;
 	}
 }
