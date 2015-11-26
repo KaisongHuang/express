@@ -57,7 +57,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		String password = ui.getLabel1().getText();
 		String role = (String) ui.getComboBox_1().getSelectedItem();
 		
-		AdminVO vo1 = new AdminVO(Integer.parseInt(id),name,password,role);
+		AdminVO vo1 = new AdminVO(id,name,password,role);
 		return vo1;
 	}
 

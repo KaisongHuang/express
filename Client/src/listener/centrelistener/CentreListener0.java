@@ -79,8 +79,7 @@ public class CentreListener0 implements MouseListener, ActionListener {
 		String start = ui.getTextField_3().getText();
 		String expressState = (String) ui.getComboBox().getSelectedItem();
 		
-		CentreArrivalVO vo = new CentreArrivalVO(Integer.parseInt(centreID), getData, Integer.parseInt(transferID), 
-				start, expressState, 0);
+		CentreArrivalVO vo = new CentreArrivalVO(centreID, getData, transferID, start, expressState, 0);
 		
 		return vo;
 		

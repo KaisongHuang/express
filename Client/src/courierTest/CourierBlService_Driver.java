@@ -13,7 +13,7 @@ public class CourierBlService_Driver {
 		result = courierBlService.OrderInput(new SenderVO(), null);
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
-		result = courierBlService.ConsigneeinfoInput(new CourierVO(0, null, null));
+		result = courierBlService.ConsigneeinfoInput(new CourierVO(null, null, null));
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
 	}
