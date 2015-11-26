@@ -1,127 +1,103 @@
 package presentation.financeui;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.Vector;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.UIManager;
 
+import listener.financelistener.FinanceListener1;
 
-public class FinanceUI1 extends JPanel{
-	/**
-	 * Create the application.
-	 */
+public class FinanceUI1 extends JPanel {
+
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JLabel label_4;
+	private JLabel label_5;
+	private JComboBox<?> comboBox;
+	private JComboBox<?> comboBox_1;
+	private JComboBox<?> comboBox_2;
+	private JComboBox<?> comboBox_3;
+	private JButton button;
+	private Vector<String> name;
+	private Vector<Object> data;
+	private JTable table;
+	private JScrollPane JSP;
+	FinanceListener1 financeListener1;
+
 	public FinanceUI1() {
+		financeListener1 = new FinanceListener1(this);
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
-		
+
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		
-		JLabel lblNewLabel_2 = new JLabel("收款单位:");
-		lblNewLabel_2.setBounds(95, 139, 61, 16);
-		this.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("收款人:");
-		lblNewLabel_3.setBounds(95, 167, 61, 16);
-		this.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("收款金额:");
-		lblNewLabel_4.setBounds(95, 195, 61, 16);
-		this.add(lblNewLabel_4);
-		
-		JLabel label_1 = new JLabel("收款地点:");
-		label_1.setBounds(95, 223, 61, 16);
-		this.add(label_1);
-		
-		JLabel label_2 = new JLabel("New label");
-		label_2.setBounds(185, 139, 138, 16);
-		this.add(label_2);
-		
-		JLabel label_3 = new JLabel("New label");
-		label_3.setBounds(185, 167, 138, 16);
-		this.add(label_3);
-		
-		JLabel label_5 = new JLabel("New label");
-		label_5.setBounds(185, 195, 138, 16);
-		this.add(label_5);
-		
-		JLabel label_6 = new JLabel("New label");
-		label_6.setBounds(185, 223, 138, 16);
-		this.add(label_6);
-		
-		JButton btnNewButton_10 = new JButton("上一张");
-		btnNewButton_10.setBounds(62, 309, 111, 29);
-		this.add(btnNewButton_10);
-		
-		JButton btnNewButton_11 = new JButton("下一张");
-		btnNewButton_11.setBounds(185, 309, 111, 29);
-		this.add(btnNewButton_11);
-		
-		JLabel label_7 = new JLabel("序号:");
-		label_7.setBounds(95, 111, 61, 16);
-		this.add(label_7);
-		
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setBounds(185, 111, 61, 16);
-		this.add(lblNewLabel_6);
-		
-		JLabel lblNewLabel_7 = new JLabel("日期:");
-		lblNewLabel_7.setBounds(95, 27, 57, 15);
-		this.add(lblNewLabel_7);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(181, 22, 61, 25);
+
+		String names[] = { "日期", "收款单位", "收款人", "收款地点", "收款金额" };
+		name = new Vector<String>(Arrays.asList(names));
+		table = new JTable(data, name);
+		JSP = new JScrollPane(table);
+		JSP.setBounds(88, 84, 502, 300);
+		this.add(JSP);
+
+		comboBox = new JComboBox<Object>();
+		comboBox.setBounds(127, 34, 61, 25);
 		this.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(278, 22, 61, 25);
+
+		comboBox_1 = new JComboBox<Object>();
+		comboBox_1.setBounds(200, 34, 61, 25);
 		this.add(comboBox_1);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(377, 22, 61, 25);
+
+		comboBox_2 = new JComboBox<Object>();
+		comboBox_2.setBounds(273, 34, 61, 25);
 		this.add(comboBox_2);
-		
-		JLabel label_8 = new JLabel("年");
-		label_8.setBounds(254, 27, 12, 15);
-		this.add(label_8);
-		
-		JLabel label_9 = new JLabel("合计:");
-		label_9.setBounds(95, 282, 57, 15);
-		this.add(label_9);
-		
-		JLabel lblNewLabel_8 = new JLabel("New label");
-		lblNewLabel_8.setBounds(185, 282, 57, 15);
-		this.add(lblNewLabel_8);
-		
-		JLabel label = new JLabel("营业厅:");
-		label.setBounds(95, 84, 57, 15);
-		this.add(label);
-		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(185, 74, 78, 25);
+
+		comboBox_3 = new JComboBox<Object>();
+		comboBox_3.setBounds(408, 34, 85, 25);
 		this.add(comboBox_3);
-		
-		JLabel label_4 = new JLabel("月");
-		label_4.setBounds(351, 27, 12, 15);
+
+		label = new JLabel("营业厅:");
+		label.setBounds(364, 39, 57, 15);
+		this.add(label);
+
+		label_1 = new JLabel("年");
+		label_1.setBounds(189, 39, 12, 15);
+		this.add(label_1);
+
+		label_2 = new JLabel("月");
+		label_2.setBounds(261, 39, 12, 15);
+		this.add(label_2);
+
+		label_3 = new JLabel("日");
+		label_3.setBounds(335, 39, 17, 15);
+		this.add(label_3);
+
+		label_4 = new JLabel("合计:");
+		label_4.setBounds(661, 281, 57, 15);
 		this.add(label_4);
-		
-		JLabel label_10 = new JLabel("日");
-		label_10.setBounds(450, 27, 17, 15);
-		this.add(label_10);
+
+		label_5 = new JLabel("日期:");
+		label_5.setBounds(88, 39, 57, 15);
+		this.add(label_5);
+
+		button = new JButton("查看");
+		button.setBounds(505, 33, 85, 27);
+		button.addActionListener(financeListener1);
+		add(button);
 	}
 }

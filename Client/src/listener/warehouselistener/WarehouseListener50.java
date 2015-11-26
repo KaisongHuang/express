@@ -8,9 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import _enum.EmployeeMes;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI5;
+import vo.InStorageVO;
 
 public class WarehouseListener50 implements ActionListener {
 	private WarehouseUI5 ui;
@@ -83,6 +86,23 @@ public class WarehouseListener50 implements ActionListener {
 			button.setBounds(86, 75, 117, 29);
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					for (int i = 0; i < ui.getTable().getRowCount(); i++) {
+						InStorageVO vo = new InStorageVO();
+						Vector<Object> rowData = new Vector<Object>();
+						for (int j = 0; j < 7; j++) {
+							rowData.add(ui.getTable().getValueAt(i, j));
+						}
+						vo.setId((String) rowData.get(0));
+						vo.setDestination((String) rowData.get(1));
+						vo.setIndate((String) rowData.get(2));
+						vo.setPos_qu((String) rowData.get(3));
+						vo.setPos_pai((Integer) rowData.get(4));
+						vo.setPos_jia((Integer) rowData.get(5));
+						vo.setPos_wei((Integer) rowData.get(6));
+						vo.setWarehouseID(EmployeeMes.belongToWho);
+						vo.setIsCheck(1);
+						warehouseBl.initWarehouse(vo);
+					}
 
 				}
 			});

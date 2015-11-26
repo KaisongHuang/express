@@ -36,26 +36,16 @@ public class WarehouseUI2 extends JPanel {
 	private JTextArea textArea_2;
 	private JTable table;
 	private JScrollPane JSP;
-	// private String[] name;
 	private Vector<String> name;
 	private Vector<Object> data;
-	WarehouseListener20 warehouseListener20;
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	WarehouseListener20 warehouseListener20;
 
-	/**
-	 * Create the application.
-	 */
 	public WarehouseUI2() {
 		warehouseListener20 = new WarehouseListener20(this);
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 
 		this.setBounds(136, 115, 746, 438);

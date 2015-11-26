@@ -71,10 +71,13 @@ public class InStorageVO extends WarehouseVO {
 	public void setPos_wei(int pos_wei) {
 		this.pos_wei = pos_wei;
 	}
-	// public String getWarehouseID() {
-	// // TODO 自动生成的方法存根
-	// return WarehouseID;
-	// }
-	//
+	 
+	public void setWarehouseID(String warehouseID) {
+		WarehouseID=warehouseID;
+	 }
+	
+	public String getWarehouseID(){
+		return WarehouseID;
+	}
 
 }
