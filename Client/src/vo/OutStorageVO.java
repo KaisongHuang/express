@@ -50,8 +50,11 @@ public class OutStorageVO extends WarehouseVO {
 		this.trans_id = trans_id;
 	}
 
-	public String getWarehouseID() {
-		return WarehouseID;
+	public void setWarehouseID(String warehouseID) {
+		WarehouseID = warehouseID;
 	}
 
+	public String getWarehouseID(){
+		return WarehouseID;
+	}
 }
