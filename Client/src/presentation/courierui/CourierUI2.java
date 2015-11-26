@@ -11,6 +11,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
+import listener.courierlistener.CourierListener2;
+
 import javax.swing.JComboBox;
 
 
@@ -19,6 +22,10 @@ public class CourierUI2 extends JPanel{
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	
+	CourierListener2 courierlistener;
+	private JButton btnNewButton_11;
+	private JButton btnNewButton_10;
 
 	/**
 	 * Launch the application.
@@ -29,6 +36,7 @@ public class CourierUI2 extends JPanel{
 	 * Create the application.
 	 */
 	public CourierUI2() {
+		courierlistener = new CourierListener2(this);
 		initialize();
 	}
 
@@ -45,7 +53,7 @@ public class CourierUI2 extends JPanel{
 		this.setLayout(null);
 		
 		JLabel label = new JLabel("\u6536\u4EF6\u7F16\u53F7\uFF1A");
-		label.setBounds(116, 43, 67, 18);
+		label.setBounds(116, 43, 100, 18);
 		this.add(label);
 		
 		textField = new JTextField();
@@ -54,7 +62,7 @@ public class CourierUI2 extends JPanel{
 		textField.setColumns(10);
 		
 		JLabel label_1 = new JLabel("\u6536\u4EF6\u4EBA\uFF1A");
-		label_1.setBounds(118, 109, 55, 18);
+		label_1.setBounds(118, 109, 100, 18);
 		this.add(label_1);
 		
 		textField_1 = new JTextField();
@@ -63,7 +71,7 @@ public class CourierUI2 extends JPanel{
 		textField_1.setColumns(10);
 		
 		JLabel label_2 = new JLabel("\u6536\u4EF6\u65E5\u671F\uFF1A");
-		label_2.setBounds(115, 187, 65, 18);
+		label_2.setBounds(115, 187, 100, 18);
 		this.add(label_2);
 		
 		textField_2 = new JTextField();
@@ -71,13 +79,57 @@ public class CourierUI2 extends JPanel{
 		this.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JButton btnNewButton_10 = new JButton("\u786E\u8BA4");
-		btnNewButton_10.setBounds(74, 347, 90, 30);
+		btnNewButton_10 = new JButton("\u786E\u8BA4");
+		btnNewButton_10.setBounds(74, 347, 100, 30);
 		this.add(btnNewButton_10);
 		
-		JButton btnNewButton_11 = new JButton("\u6E05\u7A7A");
-		btnNewButton_11.setBounds(454, 348, 90, 30);
+		btnNewButton_11 = new JButton("\u6E05\u7A7A");
+		btnNewButton_11.setBounds(454, 348, 100, 30);
 		this.add(btnNewButton_11);
 		
+		btnNewButton_10.addActionListener(courierlistener);
+		btnNewButton_11.addActionListener(courierlistener);
 	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public void setTextField_2(JTextField textField_2) {
+		this.textField_2 = textField_2;
+	}
+
+	public JButton getBtnNewButton_11() {
+		return btnNewButton_11;
+	}
+
+	public void setBtnNewButton_11(JButton btnNewButton_11) {
+		this.btnNewButton_11 = btnNewButton_11;
+	}
+
+	public JButton getBtnNewButton_10() {
+		return btnNewButton_10;
+	}
+
+	public void setBtnNewButton_10(JButton btnNewButton_10) {
+		this.btnNewButton_10 = btnNewButton_10;
+	}
+	
+	
 }
