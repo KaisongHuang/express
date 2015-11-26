@@ -11,6 +11,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
+import listener.courierlistener.CourierListener1;
+
 import javax.swing.JComboBox;
 
 
@@ -20,12 +23,16 @@ public class CourierUI1 extends JPanel{
 	private JTextField textField;
 	private JTextField textField_1;
 
+	CourierListener1 courierlistener;
+	private JButton btnNewButton_10;
+	private JButton btnNewButton_11;
 
 
 	/**
 	 * Create the application.
 	 */
 	public CourierUI1() {
+		courierlistener = new CourierListener1(this);
 		initialize();
 	}
 
@@ -61,13 +68,48 @@ public class CourierUI1 extends JPanel{
 		this.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton_10 = new JButton("\u786E\u8BA4");
+		btnNewButton_10 = new JButton("\u786E\u8BA4");
 		btnNewButton_10.setBounds(109, 382, 90, 30);
 		this.add(btnNewButton_10);
 		
-		JButton btnNewButton_11 = new JButton("\u8FD4\u56DE");
+		btnNewButton_11 = new JButton("\u8FD4\u56DE");
 		btnNewButton_11.setBounds(485, 382, 90, 30);
 		this.add(btnNewButton_11);
+		
+		btnNewButton_10.addActionListener(courierlistener);
+		btnNewButton_11.addActionListener(courierlistener);
 	
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JButton getBtnNewButton_10() {
+		return btnNewButton_10;
+	}
+
+	public void setBtnNewButton_10(JButton btnNewButton_10) {
+		this.btnNewButton_10 = btnNewButton_10;
+	}
+
+	public JButton getBtnNewButton_11() {
+		return btnNewButton_11;
+	}
+
+	public void setBtnNewButton_11(JButton btnNewButton_11) {
+		this.btnNewButton_11 = btnNewButton_11;
 	}
 }
