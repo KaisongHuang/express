@@ -2,18 +2,28 @@ package po;
 
 public class ReceiptPO extends SellingareaPO {
 
-	String number;
-	double money;
-	int isCheck;
-	String date;
-	String sellingArea;
+	private String number;
+	private double money;
+	private int isCheck;
+	private String date;
+	private String sellingArea;
+	private String ID;
 
-	public ReceiptPO(double money, String date, String sellingArea, String number, int isCheck) {
+	public ReceiptPO(double money, String date, String sellingArea, String number,String ID, int isCheck) {
 		this.number = number;
 		this.money = money;
 		this.date = date;
 		this.isCheck = isCheck;
 		this.sellingArea = sellingArea;
+		this.ID=ID;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		ID = iD;
 	}
 
 	public int getIsChenk() {
