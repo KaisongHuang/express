@@ -7,7 +7,7 @@ public class SenderBlService_Driver {
 	
 	public void drive(SenderBlService sender){
 		
-		HistoryVO result = sender.search(0);
+		HistoryVO result = sender.search(null);
 		if(result==null){
 			System.out.println("Not Found!");
 		}

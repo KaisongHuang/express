@@ -46,7 +46,7 @@ public class FinanceUI1 extends JPanel {
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 
-		String names[] = { "收款日期", "收款单位", "收款快递员", "快递单号", "收款金额" };
+		String names[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);
 		JSP = new JScrollPane(table);

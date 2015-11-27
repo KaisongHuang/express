@@ -8,7 +8,7 @@ import po.ManagerPO;
 
 public class ManagerDataService_Stub implements ManagerDataService {
 	
-	public ManagerPO find(int id) throws RemoteException {
+	public ManagerPO find(String id) throws RemoteException {
 		
 		System.out.println("Find!");
 		

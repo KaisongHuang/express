@@ -45,7 +45,7 @@ public class WarehouseListener20 implements ActionListener {
 				item.add(po.get(i).getPos_pai());
 				item.add(po.get(i).getPos_jia());
 				item.add(po.get(i).getPos_wei());
-				data.addElement(item);
+				data.add(item);
 
 			}
 			ui.setData(data);

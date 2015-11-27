@@ -11,7 +11,7 @@ public class AdminBlService_Driver {
 	
 	public void drive(AdminBlService admin){
 		
-		AdminVO result=admin.find(0);
+		AdminVO result=admin.find(null);
 		if(result==null){
 			System.out.println("Not Found!");
 		}

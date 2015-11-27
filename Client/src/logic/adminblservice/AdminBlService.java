@@ -6,7 +6,7 @@ import vo.AdminVO;
 
 public interface AdminBlService {
 	
-	public AdminVO find(int id);
+	public AdminVO find(String id);
 	public ResultMessage manageCount(AdminVO vo,Operation op);
 
 }

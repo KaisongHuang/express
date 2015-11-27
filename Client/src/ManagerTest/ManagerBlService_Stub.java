@@ -3,6 +3,7 @@ package ManagerTest;
 import java.util.ArrayList;
 
 import _enum.ResultMessage;
+import logic.managerbl.InstitutionVO;
 import logic.managerblservice.ManagerBlService;
 import vo.AcceptVO;
 import vo.AccountVO;
@@ -76,7 +77,12 @@ public class ManagerBlService_Stub implements ManagerBlService {
 		return null;
 	}
 
-	public EmployeeVO find(int id) {
+	public EmployeeVO findEmployee(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public InstitutionVO findInstitution(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
