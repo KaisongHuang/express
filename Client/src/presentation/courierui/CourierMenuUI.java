@@ -20,32 +20,33 @@ public class CourierMenuUI extends JPanel{
 	JButton button1;
 	JButton button2;
 	JButton button3;
+	private int width;
+	private int height;
 	CardLayout card;
 	public CourierMenuUI(CardLayout card) {
 		this.card=card;
+		width=this.getWidth();
+		height=this.getHeight();
 		initialize();
 		
 	}
 
 	
 	private void initialize() {
-
-        this.setBounds(136, 58, 746, 58);
 	
         this.setLayout(null);
 		
 		button1 = new JButton("订单输入");
-		button1.setBackground(new Color(255, 248, 220));
-		button1.setBounds(0, 0, 137, 55);
+		button1.setBounds(0, 0, width, height/5);
 		this.add(button1);
 		
 		button2 = new JButton("收件信息输入");
-		button2.setBounds(137, 0, 137, 55);
+		button2.setBounds(0, height/5, width, height/5);
 		this.add(button2);
 		
 		button3 = new JButton("订单查询");
 		
-		button3.setBounds(271, 0, 130, 55);
+		button3.setBounds(0, 2*height/5, width, height/5);
 		this.add(button3);
 		
 	}

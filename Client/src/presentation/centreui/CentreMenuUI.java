@@ -20,6 +20,8 @@ public class CentreMenuUI extends JPanel{
 	private CardLayout card;
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
+	private int width;
+	private int height;
 	CentreMenuListener centreMenuListener;
 
 	/**
@@ -28,6 +30,8 @@ public class CentreMenuUI extends JPanel{
 	public CentreMenuUI(CardLayout card) {
 		centreMenuListener = new CentreMenuListener(this);
 		this.card = card;
+		width=this.getWidth();
+		height=this.getHeight();
 		initialize();
 	
 		
@@ -45,14 +49,14 @@ public class CentreMenuUI extends JPanel{
 		this.setLayout(null);
 		
 		btnNewButton_8 = new JButton("\u88C5\u8FD0\u7BA1\u7406");
-		btnNewButton_8.setBounds(137, 0, 137, 55);
+		btnNewButton_8.setBounds(0, height/5, width, height);
 		this.add(btnNewButton_8);
 		btnNewButton_8.addActionListener(centreMenuListener);
 		
 		
 		btnNewButton_7 = new JButton("\u63A5\u53D7\u5355");
 		btnNewButton_7.setBackground(new Color(255, 248, 220));
-		btnNewButton_7.setBounds(0, 0, 137, 55);
+		btnNewButton_7.setBounds(0, 0, width, height/5);
 		this.add(btnNewButton_7);
 		btnNewButton_7.addActionListener(centreMenuListener);
 		System.out.println("ok");
