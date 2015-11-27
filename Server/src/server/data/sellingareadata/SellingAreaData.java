@@ -9,7 +9,7 @@ import dataservice.sellingareadataservice.SellingAreaDataService;
 
 public class SellingAreaData implements SellingAreaDataService{
 
-	public SellingareaPO find(MySQLDataBase db, int id,String tableName) {
+	public SellingareaPO find(MySQLDataBase db, String id,String tableName) {
 	    String sql="select * from "+tableName+" where ";
 	    if(tableName.equals("Car"))
 	    	sql=sql+"number="+id;
