@@ -56,17 +56,17 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 		String fee = ui.getTextField_6().getText();
 //		int count = ui.getTextArea().getLineCount();
 //		System.out.println(count);
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		ArrayList<String> list = new ArrayList<String>();
 		String templist = ui.getTextArea().getText();
 		String a[] = templist.split("[\\t \\n]+");
 		for(int i=0;i<a.length;i++){
-			list.add(Integer.parseInt(a[i]));
+			list.add(a[i]);
 //			System.out.println(a[i]);
 		}
 //		System.out.println(list);
 		
-		CarPackVO vo = new CarPackVO(date,Integer.parseInt(number),start,destination,Integer.parseInt(supervisor),
-				Integer.parseInt(supercargo),list,Integer.parseInt(fee),0);
+		CarPackVO vo = new CarPackVO(date,number,start,destination,supervisor,
+				supercargo,list,Double.parseDouble(fee),0);
 		
 		return vo;
 	}

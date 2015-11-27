@@ -14,7 +14,7 @@ public class AdminBlService_Stub implements AdminBlService {
 
 	public AdminVO find(int id) {
 		// TODO Auto-generated method stub
-		return new AdminVO(id, null, null, null);
+		return new AdminVO(null, null, null, null);
 	}
 
 }

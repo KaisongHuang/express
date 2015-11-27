@@ -1,4 +1,4 @@
-package presentation.sellingareaui;
+package presentation.courierui;
 
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -23,7 +23,12 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(900, 700);
 		
-		JPanel panel=new SellingAreaUI43();
+//		cardPanel = new JPanel();
+//		cardPanel.setBounds(0,200,800,600);
+//		card = new CardLayout(0,0);
+//		cardPanel.setLayout(card);
+//		
+		JPanel panel=new CourierUI4();
 		
 		
 		panel.setBounds(136, 58, 746, 500);

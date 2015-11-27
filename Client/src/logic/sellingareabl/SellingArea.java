@@ -46,7 +46,6 @@ public class SellingArea implements SellingareaBlService {
 			rs = sd.insert(po);
 			return rs;
 		} catch (RemoteException e) {
-			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
 		}
 		return null;
@@ -68,7 +67,7 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
 		ResultMessage rs;
-		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getIsCheck());
+		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getID(),vo.getIsCheck());
 		try {
 			rs = sd.insert(po);
 			return rs;

@@ -68,9 +68,8 @@ public class CentreListener2 implements MouseListener, ActionListener {
 		String YaYunYuan = ui.getTextField_7().getText();
 		String fee = ui.getTextField_8().getText();
 		
-		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin, Integer.parseInt(centreTransferID),
-				Integer.parseInt(banHao), start, arrival, Integer.parseInt(JianZhuangYuan), Integer.parseInt(YaYunYuan),
-				null, Double.parseDouble(fee), 0);
+		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin,centreTransferID,banHao, start, arrival,
+				JianZhuangYuan,YaYunYuan,null, Double.parseDouble(fee), 0);
 		
 		return vo;
 	}

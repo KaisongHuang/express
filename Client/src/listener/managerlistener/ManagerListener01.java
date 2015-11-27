@@ -66,7 +66,7 @@ public class ManagerListener01 implements MouseListener, ActionListener {
 		String employeeAging = ui.getTextField_5().getText();
 		String timeOfWorking = ui.getTextField_6().getText();
 		
-		EmployeeVO vo = new EmployeeVO(Integer.parseInt(employeeID), employeeName, Integer.parseInt(employeeAging),
+		EmployeeVO vo = new EmployeeVO(employeeID, employeeName, Integer.parseInt(employeeAging),
 				employeePosition, Integer.parseInt(timeOfWorking), belongToWho);
 		
 		return vo;

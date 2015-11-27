@@ -49,9 +49,9 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 
 	private DeliverVO read2() {
 		// TODO Auto-generated method stub
-		int BarCode = Integer.parseInt(ui.getTextField_3().getText());
+		String BarCode = ui.getTextField_3().getText();
 		String date = ui.getTextField_5().getText();
-		int number = Integer.parseInt(ui.getTextField_4().getText());
+		String number = ui.getTextField_4().getText();
 		
 		DeliverVO vo = new DeliverVO(BarCode,date,number,0);
 		
@@ -60,13 +60,13 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 
 	private AcceptVO read1() {
 		// TODO Auto-generated method stub
-		int BarCode = Integer.parseInt(ui.getTextField().getText());
+		String BarCode = ui.getTextField().getText();
 		String date = ui.getTextField_1().getText();
 		String start = ui.getTextField_2().getText();
 		String state = (String) ui.getComboBox().getSelectedItem();
 		
-		AcceptVO vo = new AcceptVO(BarCode,date,BarCode,Integer.parseInt(start),
-				Integer.parseInt(state),0);
+		AcceptVO vo = new AcceptVO(BarCode,date,BarCode,start,
+				state,0);
 		
 		return vo;
 	}

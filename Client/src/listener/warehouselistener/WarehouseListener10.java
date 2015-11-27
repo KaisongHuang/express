@@ -2,6 +2,8 @@ package listener.warehouselistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import _enum.EmployeeMes;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI1;
@@ -65,6 +67,8 @@ public class WarehouseListener10 implements ActionListener {
 		out.setTrans_id(ui.getTrans_ID());
 		out.setOutdate(ui.getExportDate());
 		out.setTransportation(ui.getTransportation());
+		out.setWarehouseID(EmployeeMes.belongToWho);
+		out.setIsCheck(1);
 		return out;
 	}
 
@@ -77,6 +81,8 @@ public class WarehouseListener10 implements ActionListener {
 		in.setPos_pai(ui.getPos_pai());// comboBox_8
 		in.setPos_jia(ui.getPos_jia());// comboBox_9
 		in.setPos_wei(ui.getPos_wei());// comboBox_10
+		in.setWarehouseID(EmployeeMes.belongToWho);
+		in.setIsCheck(1);
 		return in;
 	}
 }

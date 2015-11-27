@@ -42,7 +42,7 @@ public class Manager implements ManagerBlService {
 		try{
 			if(op==Opera.Employee_find){
 			     ep = (EmployeePO) md.find(id,op);
-			     return new EmployeeVO(Integer.parseInt(id), ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
+			     return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
 					  ep.getTimeOfWorking(), ep.getBelongToWho());
 			}else{
 			     po=(InstitutionPO) md.find(id,op);
@@ -123,7 +123,7 @@ public class Manager implements ManagerBlService {
 		}else if(vo instanceof ReceiptVO){
 			ReceiptVO vo4 = (ReceiptVO) vo;
 		
-				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getIsCheck());
+				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getID(),vo4.getIsCheck());
 			
 				try {
 					rm=sad.update(po4);

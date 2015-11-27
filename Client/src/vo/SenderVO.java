@@ -4,7 +4,7 @@ public class SenderVO {
 
 	String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone;
 	String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone;
-	double pcs, weight, volume;
+	int pcs, weight, volume;
 	String commodity;
 	String size = "";
 	String bagging;
@@ -118,28 +118,29 @@ public class SenderVO {
 		RecipientPhone = recipientPhone;
 	}
 
-	public double getPcs() {
+	public int getPcs() {
 		return pcs;
 	}
 
-	public void setPcs(double pcs) {
-		this.pcs = pcs;
-	}
 
-	public double getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 
-	public double getVolume() {
+	public int getVolume() {
 		return volume;
 	}
 
-	public void setVolume(double volume) {
+	public void setVolume(int volume) {
 		this.volume = volume;
+	}
+
+	public void setPcs(int pcs) {
+		this.pcs = pcs;
 	}
 
 	public String getCommodity() {

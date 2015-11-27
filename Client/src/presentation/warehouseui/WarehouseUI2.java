@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 
+import listener.warehouselistener.WarehouseListener20;
+
 public class WarehouseUI2 extends JPanel {
 	private JLabel label_8;
 	private JLabel label_9;
@@ -34,33 +36,25 @@ public class WarehouseUI2 extends JPanel {
 	private JTextArea textArea_2;
 	private JTable table;
 	private JScrollPane JSP;
-//	private String[] name;
 	private Vector<String> name;
 	private Vector<Object> data;
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	WarehouseListener20 warehouseListener20;
 
-	/**
-	 * Create the application.
-	 */
 	public WarehouseUI2() {
+		warehouseListener20 = new WarehouseListener20(this);
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		
-		String names[] = {"快递编号","入库日期","目的地","区号","排号","架号","位号"};
-		name = new Vector<String>( Arrays.asList( names ) );
-		table = new JTable(data,name);
-		JSP=new JScrollPane(table);
+
+		String names[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
+		name = new Vector<String>(Arrays.asList(names));
+		table = new JTable(data, name);
+		JSP = new JScrollPane(table);
 		JSP.setBounds(34, 29, 444, 300);
 		this.add(JSP);
 
@@ -126,10 +120,12 @@ public class WarehouseUI2 extends JPanel {
 
 		button_1 = new JButton("查询");
 		button_1.setBounds(545, 170, 64, 27);
+		button_1.addActionListener(warehouseListener20);
 		this.add(button_1);
 
 		button_2 = new JButton("清空");
 		button_2.setBounds(657, 170, 64, 27);
+		button_2.addActionListener(warehouseListener20);
 		this.add(button_2);
 
 		label_17 = new JLabel("入库数量(件)：");

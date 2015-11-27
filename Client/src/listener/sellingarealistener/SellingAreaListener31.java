@@ -70,8 +70,8 @@ public class SellingAreaListener31 implements ActionListener {
 		String purchase = ui.getTextField_3().getText();
 		String ServiceTime = ui.getTextField_6().getText();
 		
-		CarVO vo = new CarVO(Integer.parseInt(number),Integer.parseInt(EngineNumber),Integer.parseInt(CarNumber),
-				Integer.parseInt(ChassisNumber),purchase,Integer.parseInt(ServiceTime));
+		CarVO vo = new CarVO(number,EngineNumber,CarNumber,
+				ChassisNumber,purchase,Integer.parseInt(ServiceTime));
 		
 		return vo;
 	}
