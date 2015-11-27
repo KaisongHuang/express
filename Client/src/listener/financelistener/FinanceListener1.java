@@ -27,7 +27,18 @@ public class FinanceListener1 implements ActionListener {
 			String sellingArea=(String)ui.getComboBox_3().getSelectedItem();
 			ArrayList<ReceiptPO> po=finance.checkReceipt(date, sellingArea);
 			Vector<Object> data = new Vector<Object>();
-			
+			double sum=0;
+			for(int i=0;i<po.size();i++){
+				Vector<Object> item = new Vector<Object>();
+				item.add(po.get(i).getDate());
+				item.add(po.get(i).getSellingArea());
+				item.add(po.get(i).getNumber());
+				item.add(po.get(i).getMoney());
+				data.add(item);
+				sum=sum+po.get(i).getMoney();
+			}
+			ui.setData(data);
+			ui.getTextArea().setText(""+sum);
 		}
 	}
 
