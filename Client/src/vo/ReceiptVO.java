@@ -1,25 +1,27 @@
 package vo;
 
+import java.util.ArrayList;
+
 public class ReceiptVO {
     String number;
     double money;
     String date;
     String sellingArea;
-    String ID;
+    ArrayList<String> id;
     int isCheck;
-    public ReceiptVO(double money,String date, String sellingArea, String number,String ID,int isCheck){
+    public ReceiptVO(double money,String date, String sellingArea, String number,ArrayList<String> id,int isCheck){
   	  this.number=number;
   	  this.money=money;
   	  this.date=date;
   	  this.isCheck=isCheck;
   	  this.sellingArea=sellingArea;
-  	  this.ID=ID;
+  	  this.id=id;
     }
-	public String getID() {
-		return ID;
+	public ArrayList<String> getId() {
+		return id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(ArrayList<String> id) {
+		this.id = id;
 	}
 	public int getIsCheck() {
 		return isCheck;

@@ -2,7 +2,11 @@ package listener.financelistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
+
 import logic.financebl.Finance;
+import po.ReceiptPO;
 import presentation.financeui.FinanceUI1;
 
 public class FinanceListener1 implements ActionListener {
@@ -15,7 +19,16 @@ public class FinanceListener1 implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
+		if(e.getSource()==ui.getButton()){
+			String year=(String)ui.getComboBox().getSelectedItem();
+			String month=(String)ui.getComboBox_1().getSelectedItem();
+			String day=(String)ui.getComboBox_2().getSelectedItem();
+			String date=year+month+day;
+			String sellingArea=(String)ui.getComboBox_3().getSelectedItem();
+			ArrayList<ReceiptPO> po=finance.checkReceipt(date, sellingArea);
+			Vector<Object> data = new Vector<Object>();
+			
+		}
 	}
 
 }

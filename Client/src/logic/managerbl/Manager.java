@@ -123,7 +123,7 @@ public class Manager implements ManagerBlService {
 		}else if(vo instanceof ReceiptVO){
 			ReceiptVO vo4 = (ReceiptVO) vo;
 		
-				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getID(),vo4.getIsCheck());
+				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getId(),vo4.getIsCheck());
 			
 				try {
 					rm=sad.update(po4);
