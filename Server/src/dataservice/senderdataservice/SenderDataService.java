@@ -6,7 +6,7 @@ import server.database.MySQLDataBase;
 
 
 public interface SenderDataService {
-      public HistoryPO find(MySQLDataBase db,int id,String tableName);
+      public HistoryPO find(MySQLDataBase db,String id,String tableName);
     	  
       
 }

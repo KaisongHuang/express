@@ -1,4 +1,6 @@
 package presentation.senderui;
+
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -11,63 +13,42 @@ import listener.senderlistener.SenderListener0;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
+import listener.senderlistener.SenderListener0;
 
-public class SearchUI extends JFrame {
-	
-	private JFrame frame;
 
-	private JPanel contentPane;
+public class SearchUI extends JPanel {
+
 	private JTextField textField;
-
-	SenderListener0 senderlistener;
-	
-
-	/**
-	 * Create the frame.
-	 */
+	JFrame frame;
+	JLabel lblNewLabel; 
+	JButton btnNewButton;
 	public SearchUI(JFrame frame) {
 		this.frame=frame;
-		senderlistener = new SenderListener0(this);
-		initialize();
-	}
-	
-	private void initialize(){
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 600);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("\u5FEB\u9012\u5355\u53F7\uFF1A");
+		this.setLayout(null);
+		lblNewLabel = new JLabel("快递编号:");
+
 		lblNewLabel.setBounds(152, 206, 87, 18);
-		contentPane.add(lblNewLabel);
+		this.add(lblNewLabel);
 		
 		textField = new JTextField();
 		textField.setBounds(295, 203, 273, 24);
-		contentPane.add(textField);
+		this.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("\u67E5\u8BE2");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnNewButton = new JButton("查询");
+		btnNewButton.addActionListener(new SenderListener0(this));
+			
+	
 		btnNewButton.setBounds(650, 200, 113, 27);
-		contentPane.add(btnNewButton);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(14, 13, 854, 159);
-		contentPane.add(panel);
-		
-		JLabel label = new JLabel("\u56FE\u7247\u5C55\u793A\u533A");
-		panel.add(label);
+		this.add(btnNewButton);		
+	}
+	
+	public String gettextFieldContent(){
+		return textField.getText();
 	}
 }
