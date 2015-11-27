@@ -11,12 +11,12 @@ public class Test extends JFrame {
 	CardLayout card;
 	JPanel cardPanel;
 	public static void main(String[] args){
-		try {
-
-			UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//
+//			UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		new Test().init();
 	}
 	public void init(){
