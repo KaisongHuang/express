@@ -25,7 +25,8 @@ public class SellingAreaMenuUI extends JPanel{
 	private JButton btnNewButton_9;
 	private JButton btnNewButton_12;
 	private JButton button;
-	
+	private int width;
+	private int height;
 	
 	SellingAreaMenuListener sellingarealistener;
 
@@ -35,6 +36,8 @@ public class SellingAreaMenuUI extends JPanel{
 	public SellingAreaMenuUI(CardLayout card) {
 		this.card=card;
 		sellingarealistener = new SellingAreaMenuListener(this);
+		width=this.getWidth();
+		height=this.getHeight();
 		initialize();
 	}
 
@@ -43,12 +46,10 @@ public class SellingAreaMenuUI extends JPanel{
 	 */
 	private void initialize() {
 	
-		this.setBounds(136, 58, 746, 58);
-	
 		this.setLayout(null);
 		
 		btnNewButton_8 = new JButton("8\u63A5\u6536\u4E0E\u6D3E\u4EF6");
-		btnNewButton_8.setBounds(137, 0, 137, 55);
+		btnNewButton_8.setBounds(0, height/5, width, height/5);
 		this.add(btnNewButton_8);
 		
 		btnNewButton_9 = new JButton("9\u6536\u6B3E\u5355");
@@ -56,20 +57,20 @@ public class SellingAreaMenuUI extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_9.setBounds(271, 0, 137, 55);
+		btnNewButton_9.setBounds(0, 2*height/5, 137, 55);
 		this.add(btnNewButton_9);
 		
 		btnNewButton_7 = new JButton("7\u8F66\u8F86\u88C5\u8F66\u7BA1\u7406");
 		btnNewButton_7.setBackground(new Color(255, 248, 220));
-		btnNewButton_7.setBounds(0, 0, 137, 55);
+		btnNewButton_7.setBounds(0, 0, width, height/5);
 		this.add(btnNewButton_7);
 		
 		btnNewButton_12 = new JButton("12\u8F66\u8F86\u4FE1\u606F\u7BA1\u7406");
-		btnNewButton_12.setBounds(405, 0, 137, 55);
+		btnNewButton_12.setBounds(0, 3*height/5, 137, 55);
 		this.add(btnNewButton_12);
 		
 		button = new JButton("\u53F8\u673A\u4FE1\u606F\u7BA1\u7406");
-		button.setBounds(540, 0, 137, 55);
+		button.setBounds(0, 4*height/5, width, height/5);
 		this.add(button);
 		
 		btnNewButton_7.addActionListener(sellingarealistener);

@@ -23,42 +23,40 @@ public class AdminMenuUI extends JPanel {
 	private Component btnNewButton_7;
 
 	private JButton btnNewButton_8;
-	
+	private int width;
+	private int height;
 	public AdminMenuUI (CardLayout card){
 		this.card=card;
 		adminlistener = new AdminMenuListener(this);
+		width=this.getWidth();
+		height=this.getHeight();
 		initialize();
 	}
 
 	private void initialize() {
 		// TODO Auto-generated method stub
-		this.setBounds(136, 58, 746, 58);
 		
 		this.setLayout(null);
 	
 		
 		btnNewButton_7 = new JButton("新增账户");
 		btnNewButton_7.setBackground(UIManager.getColor("Button.background"));
-		btnNewButton_7.setBounds(0, 0, 137, 55);
+		btnNewButton_7.setBounds(0, 0, width, height/5);
 		this.add(btnNewButton_7);
 		
 		btnNewButton_8 = new JButton("权限管理");
-		btnNewButton_8.setBounds(137, 0, 137, 55);
+		btnNewButton_8.setBounds(0, height/5, width, height/5);
 		this.add(btnNewButton_8);
 		
 		btnNewButton_9 = new JButton("修改密码");
-		btnNewButton_9.setBounds(268, 0, 137, 55);
+		btnNewButton_9.setBounds(0, 2*height/5, width, height/5);
 		this.add(btnNewButton_9);
 		
 		btnNewButton_12 = new JButton("删除账户");
-		btnNewButton_12.setBackground(new Color(255, 248, 220));
-		btnNewButton_12.setBounds(400, 0, 137, 55);
+	
+		btnNewButton_12.setBounds(0, 3*height/5, width, height/5);
 		this.add(btnNewButton_12);
 		
-	}
-
-	public void setCard(CardLayout card) {
-		this.card = card;
 	}
 
 	public CardLayout getCard() {
