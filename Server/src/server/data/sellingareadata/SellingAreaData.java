@@ -66,7 +66,7 @@ public class SellingAreaData implements SellingAreaDataService{
 			sql=sql+po1.getNumber()+",'"+po1.getName()+"','"+po1.getBirthday()+"',"+po1.getID()+",'"+po1.getPhone()+"','"+po1.getCarCompany()+"','"+po1.getSex()+"','"+po1.getLicenceTime()+"')";
 		}else if(tableName.equals("Receipt")){
 			ReceiptPO po1=(ReceiptPO) po;
-			sql=sql+po1.getMoney()+",'"+po1.getDate()+"',"+po1.getNumber()+","+po1.getIsChenk()+")";
+			sql=sql+po1.getMoney()+",'"+po1.getDate()+"',"+po1.getNumber()+","+po1.getIsChenk()+",'"+po1.getID()+"','"+po1.getSellingArea()+"')";
 		}else if(tableName.equals("Accept")){
 			AcceptPO po1=(AcceptPO) po;
 			sql=sql+po1.getBarCode()+",'"+po1.getDate()+"',"+po1.getNumber()+","+po1.getStart()+","+po1.getState()+","+po1.getIsCheck()+")";
