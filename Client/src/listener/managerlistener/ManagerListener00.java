@@ -34,7 +34,7 @@ public class ManagerListener00 implements MouseListener, ActionListener {
 			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			String s = ui.getTextField().getText();
-			EmployeeVO vo = manager.find(Integer.parseInt(s));
+			EmployeeVO vo = manager.findEmployee(s);
 			setLabel(vo);
 		}
 		

@@ -12,8 +12,8 @@ import data.sellingareadataservice.SellingareaDataService;
 public class SellingAreaData implements SellingareaDataService{
 	TransformObject send;
     TransformObject acp;
-	public SellingareaPO find(int id,Opera op) throws RemoteException {
-		send=new TransformObject(op,new Integer(id));
+	public SellingareaPO find(String id,Opera op) throws RemoteException {
+		send=new TransformObject(op,id);
 		ClientAdapter.write(send);
 		acp=(TransformObject) ClientAdapter.readData();
 		return (SellingareaPO) acp.getOb();

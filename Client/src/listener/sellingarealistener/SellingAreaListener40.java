@@ -33,7 +33,7 @@ public class SellingAreaListener40 implements ActionListener {
 			delete(ui.getLblNewLabel_8());
 			delete(ui.getLblNewLabel_9());
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			int id = Integer.parseInt(ui.getTextField().getText());
+			String id = ui.getTextField().getText();
 			DriverVO vo = sellingarea.findDriver(id);
 			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){

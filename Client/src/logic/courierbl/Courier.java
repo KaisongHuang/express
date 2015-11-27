@@ -47,7 +47,7 @@ public class Courier implements CourierBlService {
 		return fee+packing;
 	}
 
-	public String getTime(int distance) {
+	public String getTime(double distance) {
 		// TODO Auto-generated method stub
 		
 		

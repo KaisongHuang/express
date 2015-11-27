@@ -16,15 +16,15 @@ public class SellingAreaListener31 implements ActionListener {
 
 	private SellingAreaUI31 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-	
-	public SellingAreaListener31 (SellingAreaUI31 ui){
+
+	public SellingAreaListener31(SellingAreaUI31 ui) {
 		super();
-		this.ui=ui;
+		this.ui = ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_17()){
+		if (e.getSource() == ui.getBtnNewButton_17()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
@@ -32,33 +32,33 @@ public class SellingAreaListener31 implements ActionListener {
 			delete(ui.getTextField_4());
 			delete(ui.getTextField_5());
 			delete(ui.getTextField_6());
-		}else if(e.getSource()==ui.getBtnNewButton_16()){
+		} else if (e.getSource() == ui.getBtnNewButton_16()) {
 			ResultMessage rm;
 			CarVO vo = this.read();
 			rm = sellingarea.manageCarinfo(vo, Operation.update);
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			int id = Integer.parseInt(ui.getTextField().getText());
+		} else if (e.getSource() == ui.getBtnNewButton_15()) {
+			String id = ui.getTextField().getText();
 			CarVO vo = sellingarea.findCar(id);
 			set(vo);
-		}else if(e.getSource()==ui.getBtnNewButton_10()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_11()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_14()){
-			
+		} else if (e.getSource() == ui.getBtnNewButton_10()) {
+
+		} else if (e.getSource() == ui.getBtnNewButton_11()) {
+
+		} else if (e.getSource() == ui.getBtnNewButton_13()) {
+
+		} else if (e.getSource() == ui.getBtnNewButton_14()) {
+
 		}
 	}
 
 	private void set(CarVO vo) {
 		// TODO Auto-generated method stub
-		ui.getTextField_1().setText(""+vo.getNumber());
-		ui.getTextField_2().setText(""+vo.getCarNumber());
+		ui.getTextField_1().setText("" + vo.getNumber());
+		ui.getTextField_2().setText("" + vo.getCarNumber());
 		ui.getTextField_3().setText(vo.getPurchase());
-		ui.getTextField_4().setText(""+vo.getEngineNumber());
-		ui.getTextField_5().setText(""+vo.getChassisNumber());
-		ui.getTextField_6().setText(""+vo.getServiceTime());
+		ui.getTextField_4().setText("" + vo.getEngineNumber());
+		ui.getTextField_5().setText("" + vo.getChassisNumber());
+		ui.getTextField_6().setText("" + vo.getServiceTime());
 	}
 
 	private CarVO read() {
@@ -69,10 +69,9 @@ public class SellingAreaListener31 implements ActionListener {
 		String ChassisNumber = ui.getTextField_5().getText();
 		String purchase = ui.getTextField_3().getText();
 		String ServiceTime = ui.getTextField_6().getText();
-		
-		CarVO vo = new CarVO(number,EngineNumber,CarNumber,
-				ChassisNumber,purchase,Integer.parseInt(ServiceTime));
-		
+
+		CarVO vo = new CarVO(number, EngineNumber, CarNumber, ChassisNumber, purchase, Integer.parseInt(ServiceTime));
+
 		return vo;
 	}
 

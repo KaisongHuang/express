@@ -30,7 +30,7 @@ public class SellingAreaListener30 implements ActionListener {
 			delete(ui.getLblNewLabel_12());
 			delete(ui.getLblNewLabel_13());
 		}else if(e.getSource()==ui.getButton_1()){
-			int id = Integer.parseInt(ui.getTextField().getText());
+			String id = ui.getTextField().getText();
 			CarVO vo = sellingarea.findCar(id);
 			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){

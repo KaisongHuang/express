@@ -33,7 +33,7 @@ public class AdminListener3 implements MouseListener, ActionListener {
 			delete(ui.getTextField_2());
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			ResultMessage rm;
-			int id = Integer.parseInt(ui.getTextField_2().getText());
+			String id = ui.getTextField_2().getText();
 			vo = admin.find(id);
 			vo.setPassword(ui.getTextField().getText());
 			rm=admin.manageCount(vo, Operation.update);

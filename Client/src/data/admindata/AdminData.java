@@ -12,8 +12,8 @@ import po.AdminPO;
 public class AdminData implements AdminDataService {
     TransformObject send;
     TransformObject acp;
-	public AdminPO find(int id) throws RemoteException {
-		send=new TransformObject(Opera.Admin_find,new Integer(id));
+	public AdminPO find(String id) throws RemoteException {
+		send=new TransformObject(Opera.Admin_find,id);
 		ClientAdapter.write(send);
 		acp=(TransformObject) ClientAdapter.readData();
 		return (AdminPO) acp.getOb();

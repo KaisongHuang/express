@@ -17,7 +17,7 @@ import po.ReceiptPO;
 public class FinanceData implements FinanceDataService {
 	 TransformObject send;
 	 TransformObject acp;
-	public FinancePO find(int id) throws RemoteException {
+	public FinancePO find(String id) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}

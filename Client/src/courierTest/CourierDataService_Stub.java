@@ -6,7 +6,7 @@ import _enum.ResultMessage;
 import data.courierdataservice.*;
 public class CourierDataService_Stub implements CourierDataService{
 
-	public CourierPO find(int id) throws RemoteException {
+	public CourierPO find(String id) throws RemoteException {
 		System.out.println("find Succeed");
 		return new CourierPO(null, null, null);
 	}

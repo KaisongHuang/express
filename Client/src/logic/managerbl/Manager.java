@@ -276,7 +276,7 @@ public class Manager implements ManagerBlService {
 	}
 
 
-	public EmployeeVO find(int id) {
+	public EmployeeVO findEmployee(String id) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
@@ -284,6 +284,12 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage manageMember(Object vo) {
 		// TODO 自动生成的方法存根
+		return null;
+	}
+
+
+	public InstitutionVO findInstitution(String id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	

@@ -17,7 +17,7 @@ public interface SellingareaBlService {
 	public ResultMessage createDelivery(DeliverVO vo);
 	public ResultMessage createDebitnote(ReceiptVO vo);
 	public ResultMessage manageCarinfo(CarVO vo,Operation op);
-	public CarVO findCar(int id);
+	public CarVO findCar(String id);
 	public ResultMessage manageDriverinfo(DriverVO vo,Operation op);
-	public DriverVO findDriver(int id);
+	public DriverVO findDriver(String id);
 }

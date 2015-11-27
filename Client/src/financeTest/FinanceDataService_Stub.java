@@ -12,7 +12,7 @@ import data.financedataservice.FinanceDataService;
 
 public class FinanceDataService_Stub implements FinanceDataService{
 
-	public FinancePO find(int id) throws RemoteException {
+	public FinancePO find(String id) throws RemoteException {
 		// TODO Auto-generated method stub
 		System.out.println("find Succeed");
 		return new FinancePO();

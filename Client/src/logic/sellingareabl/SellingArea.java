@@ -114,7 +114,7 @@ public class SellingArea implements SellingareaBlService {
 		return null;
 	}
 
-	public CarVO findCar(int id) {
+	public CarVO findCar(String id) {
 		CarPO po;
 		CarVO vo;
 		try {
@@ -164,7 +164,7 @@ public class SellingArea implements SellingareaBlService {
 		return null;
 	}
 
-	public DriverVO findDriver(int id) {
+	public DriverVO findDriver(String id) {
 		DriverPO po;
 		try {
 			po = (DriverPO) sd.find(id,Opera.Driver_insert);

@@ -10,7 +10,7 @@ import po.SenderPO;
 
 public interface SenderDataService {
 	
-	public HistoryPO find(int id) throws RemoteException;
+	public HistoryPO find(String id) throws RemoteException;
 
 
 }
