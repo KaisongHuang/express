@@ -22,6 +22,7 @@ public class SellingAreaListener33 implements ActionListener {
 		super();
 		this.card=card;
 		this.ui=ui;
+		this.card=card;
 	}
 	
 	public void actionPerformed(ActionEvent e) {

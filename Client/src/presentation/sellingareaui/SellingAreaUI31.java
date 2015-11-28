@@ -53,6 +53,7 @@ public class SellingAreaUI31 extends JPanel{
 
 	/**
 	 * Create the application.
+	 * @param card 
 	 */
 	public SellingAreaUI31(CardLayout card) {
 		sellingarealistener = new SellingAreaListener31(this,card);

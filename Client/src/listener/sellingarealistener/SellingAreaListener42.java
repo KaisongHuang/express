@@ -24,6 +24,7 @@ public class SellingAreaListener42 implements MouseListener, ActionListener {
 		super();
 		this.card=card;
 		this.ui=ui;
+		this.card=card;
 	}
 
 	

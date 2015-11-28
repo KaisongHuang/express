@@ -16,10 +16,15 @@ public class SellingAreaListener30 implements ActionListener {
 	private SellingAreaUI3 ui;
 	SellingareaBlService sellingarea = new SellingArea();
 	CardLayout card;
+<<<<<<< HEAD
+	public SellingAreaListener30 (SellingAreaUI3 ui, CardLayout card){
+=======
 	public SellingAreaListener30 (SellingAreaUI3 ui,CardLayout card){
+>>>>>>> refs/remotes/origin/master
 		super();
 		this.card=card;
 		this.ui=ui;
+		this.card=card;
 	}
 	
 	public void actionPerformed(ActionEvent e) {
