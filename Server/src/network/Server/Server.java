@@ -1,20 +1,14 @@
 package network.Server;
 
-import ChatServer;
-
 import java.io.IOException;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-
-
 
 public class Server {
 	boolean started = false;
 	ServerSocket ss = null;
-	
+
 	public void start() {
 		try {
 			ss = new ServerSocket(8888);
@@ -26,15 +20,15 @@ public class Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		try {
-			
-			while(started) {
+
+			while (started) {
 				Socket s = ss.accept();
 				ServerClient c = new ServerClient(s);
-                System.out.println("a client connected!");
+				System.out.println("a client connected!");
 				new Thread(c).start();
-				
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -46,4 +40,5 @@ public class Server {
 				e.printStackTrace();
 			}
 		}
+	}
 }

@@ -16,6 +16,6 @@ public class StartServer {
       
       public void test(){
     	  System.out.println("test ok");
-    	  s.insert(db,new CarPO(1000000000,1000000001,1000000002,1000000003,"154",10),"Car");
+    	  s.insert(db,new CarPO("1000000000","1000000001","1000000002","1000000003","154",10),"Car");
       }
 }
