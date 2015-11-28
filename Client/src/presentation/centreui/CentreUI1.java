@@ -50,36 +50,10 @@ public class CentreUI1 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-	
-		
-	
-		
 
-		this.setBackground(new Color(255, 255, 255));
 		this.setBounds(136, 116, 746, 437);
 		
-		this.setLayout(null);
-		
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 746, 47);
-		this.add(panel_5);
-		panel_5.setLayout(null);
-		
-		btnNewButton_9 = new JButton("\u98DE\u673A");
-		btnNewButton_9.setBackground(new Color(255, 248, 220));
-		btnNewButton_9.setBounds(68, 6, 90, 30);
-		panel_5.add(btnNewButton_9);
-		
-		btnNewButton_10 = new JButton("\u706B\u8F66");
-		btnNewButton_10.setBounds(221, 6, 90, 30);
-		panel_5.add(btnNewButton_10);
-		btnNewButton_10.addActionListener(centrelistener);
-		
-		btnNewButton_11 = new JButton("\u6C7D\u8F66");
-		btnNewButton_11.setBounds(374, 6, 90, 30);
-		panel_5.add(btnNewButton_11);
-		btnNewButton_11.addActionListener(centrelistener);
-		
+		this.setLayout(null);	
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(75, 59, 476, 282);
 		this.add(panel_6);

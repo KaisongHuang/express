@@ -16,39 +16,42 @@ public class WarehouseMenuUI extends JPanel{
 	private int width;
 	private int height;
 	WarehouseMenuListener listen;
-	public WarehouseMenuUI(CardLayout card){
-		width=this.getWidth();
-		height=this.getHeight();
-		listen=new WarehouseMenuListener(this,card);
+
+	public WarehouseMenuUI(CardLayout card, int width, int height, JFrame frame){
+		width=width;
+		height=height;
+		
+		listen=new WarehouseMenuListener(this,card,frame);
+		
 	}
-	public void init(){
-			
+	public void init(){	
+		     this.setSize(width,height);
 			 this.setLayout(null);
 			
 			 button1= new JButton("出库入库");
 			
-			 button1.setBounds(0, 0, width, height/5);
+			 button1.setBounds(0, 0, width, height/6);
 			 button1.addActionListener(listen);
 			 this.add(button1);
 			
 			 button2 = new JButton("库存盘点");
 
-			 button2.setBounds(0, height/5, width, height/5);
+			 button2.setBounds(0, height/6, width, height/6);
 			 button2.addActionListener(listen);
 			 this.add(button2);
 			
 			 button3 = new JButton("库存报警");
-			 button3.setBounds(0,2*height/5,width,height/5);
+			 button3.setBounds(0,2*height/6,width,height/6);
 			 button3.addActionListener(listen);
 			 this.add(button3);
 			
 			 button4 = new JButton("库区调整");
-			 button4.setBounds(0,3*height/5,width,height/5);
+			 button4.setBounds(0,3*height/6,width,height/6);
 			 this.add(button4);
 			 button4.addActionListener(listen);
 			 button5 = new JButton("库存信息初始化");
 	
-			 button5.setBounds(0, 4*height/5, width, height/5);
+			 button5.setBounds(0, 4*height/6, width, height/6);
 			 this.add(button5);
 	}
 	
