@@ -24,31 +24,31 @@ public class CourierMenuUI extends JPanel {
 	CardLayout card;
 	CourierMenuListener cml;
 
-	public CourierMenuUI(CardLayout card) {
+	public CourierMenuUI(CardLayout card, int width, int height) {
 		super();
 		this.card = card;
-		width = this.getWidth();
-		height = this.getHeight();
+		this.width = width;
+		this.height = height;
 		cml = new CourierMenuListener(this, card);
 		initialize();
 
 	}
 
 	private void initialize() {
-
+		this.setSize(width,height);
 		this.setLayout(null);
 		button1 = new JButton("订单输入");
-		button1.setBounds(0, 0, width, height / 5);
+		button1.setBounds(0, 0, width, height / 6);
 		button1.addActionListener(cml);
 		this.add(button1);
 
 		button2 = new JButton("收件信息输入");
-		button2.setBounds(0, height / 5, width, height / 5);
+		button2.setBounds(0, height / 6, width, height / 6);
 		button2.addActionListener(cml);
 		this.add(button2);
 
 		button3 = new JButton("订单查询");
-		button3.setBounds(0, 2 * height / 5, width, height / 5);
+		button3.setBounds(0, 2 * height / 6, width, height / 6);
 		button3.addActionListener(cml);
 		this.add(button3);
 
