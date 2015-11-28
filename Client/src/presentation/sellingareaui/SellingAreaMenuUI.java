@@ -1,23 +1,20 @@
 package presentation.sellingareaui;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
 import listener.sellingarealistener.SellingAreaMenuListener;
 
 
 public class SellingAreaMenuUI extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private CardLayout card;
 	
 	private JButton btnNewButton_7;
@@ -27,7 +24,6 @@ public class SellingAreaMenuUI extends JPanel{
 	private JButton button;
 	private int width;
 	private int height;
-	
 	SellingAreaMenuListener sellingarealistener;
 
 	/**
@@ -35,9 +31,10 @@ public class SellingAreaMenuUI extends JPanel{
 	 */
 	public SellingAreaMenuUI(CardLayout card) {
 		this.card=card;
-		sellingarealistener = new SellingAreaMenuListener(this);
+		sellingarealistener = new SellingAreaMenuListener(this,card);
 		width=this.getWidth();
 		height=this.getHeight();
+		
 		initialize();
 	}
 

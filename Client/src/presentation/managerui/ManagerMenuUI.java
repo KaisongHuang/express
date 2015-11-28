@@ -31,7 +31,7 @@ public class ManagerMenuUI extends JPanel{
 	 * Create the application.
 	 */
 	public ManagerMenuUI(CardLayout card) {
-		managermenulistener = new ManagerMenuListener(this);
+		managermenulistener = new ManagerMenuListener(this,card);
 		this.card = card;
 		width=this.getWidth();
 		height=this.getHeight();
@@ -48,23 +48,29 @@ public class ManagerMenuUI extends JPanel{
 		
 		btnNewButton_8 = new JButton("\u673A\u6784\u7BA1\u7406");
 		btnNewButton_8.setBounds(0, 0, width, height/5);
+		btnNewButton_8.addActionListener(managermenulistener);
 		this.add(btnNewButton_8);
 		
 		btnNewButton_7 = new JButton("\u4EBA\u5458\u7BA1\u7406");
 		btnNewButton_7.setBackground(new Color(255, 248, 220));
 		btnNewButton_7.setBounds(0, height/5, width, height/5);
+		btnNewButton_7.addActionListener(managermenulistener);
 		this.add(btnNewButton_7);
 		
 		btnNewButton_9 = new JButton("\u5BA1\u6279\u5355\u636E");
 		btnNewButton_9.setBounds(0, 2*height/5, width, height/5);
+		btnNewButton_9.addActionListener(managermenulistener);
 		this.add(btnNewButton_9);
 		
 		btnNewButton_10 = new JButton("\u67E5\u770B\u7EDF\u8BA1\u5206\u6790");
 		btnNewButton_10.setBounds(0, 3*height/5, width, height/5);
+		btnNewButton_10.addActionListener(managermenulistener);
 		this.add(btnNewButton_10);
+		
 		
 		btnNewButton_16 = new JButton("\u5236\u5B9A");
 		btnNewButton_16.setBounds(0, 4*height/5, width, height/5);
+		btnNewButton_16.addActionListener(managermenulistener);
 		this.add(btnNewButton_16);
 		
 	}
