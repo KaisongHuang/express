@@ -1,5 +1,6 @@
 package listener.sellingarealistener;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,10 +17,11 @@ public class SellingAreaListener33 implements ActionListener {
 
 	private SellingAreaUI33 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-	
-	public SellingAreaListener33 (SellingAreaUI33 ui){
+	CardLayout card;
+	public SellingAreaListener33 (SellingAreaUI33 ui, CardLayout card){
 		super();
 		this.ui=ui;
+		this.card=card;
 	}
 	
 	public void actionPerformed(ActionEvent e) {
