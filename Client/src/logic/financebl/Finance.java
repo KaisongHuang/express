@@ -16,7 +16,9 @@ import vo.PayVO;
 
 public class Finance implements FinanceBlService {
 	FinanceData fd = new FinanceData();
-    AdminData ad=new AdminData();
+	AdminData ad = new AdminData();
+	private int count;
+
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
@@ -35,10 +37,13 @@ public class Finance implements FinanceBlService {
 	public ArrayList<Object> getTotal(String begin, String end) {
 		// TODO Auto-generated method stub
 		ArrayList<Object> arr = null;
+		this.count = 0;
 		for (int i = 0; i < fd.findPay().size(); i++) {
 			if (fd.findPay().get(i).getDate().compareTo(begin) >= 0
-					&& fd.findPay().get(i).getDate().compareTo(end) <= 0)
+					&& fd.findPay().get(i).getDate().compareTo(end) <= 0) {
 				arr.add(fd.findPay().get(i));
+				this.count++;
+			}
 		}
 		for (int i = 0; i < fd.findReceipt().size(); i++) {
 			if (fd.findReceipt().get(i).getDate().compareTo(begin) >= 0
@@ -89,9 +94,9 @@ public class Finance implements FinanceBlService {
 		AccountPO po;
 		AccountVO vo;
 		try {
-			for (int i = 0; i < fd.find().size(); i++) {
-				if (fd.find().get(i).getBankAccount().contains(bankAccount)) {
-					po = fd.find().get(i);
+			for (int i = 0; i < fd.findAccount().size(); i++) {
+				if (fd.findAccount().get(i).getBankAccount().contains(bankAccount)) {
+					po = fd.findAccount().get(i);
 					vo = new AccountVO(po.getBankAccount(), po.getBalance());
 					return vo;
 				}
@@ -109,8 +114,9 @@ public class Finance implements FinanceBlService {
 		ArrayList<ReceiptPO> arr = null;
 		for (int i = 0; i < fd.findReceipt().size(); i++) {
 			if (fd.findReceipt().get(i).getDate().equals(date)
-					&& fd.findReceipt().get(i).getSellingArea().equals(sellingArea));
-				arr.add(fd.findReceipt().get(i));
+					&& fd.findReceipt().get(i).getSellingArea().equals(sellingArea))
+				;
+			arr.add(fd.findReceipt().get(i));
 		}
 		return arr;
 	}
@@ -119,15 +125,19 @@ public class Finance implements FinanceBlService {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
 		ResultMessage rm;
-		AccountPO po=new AccountPO(Account, Money);
+		AccountPO po = new AccountPO(Account, Money);
 		try {
-			rm=fd.insert(po);
+			rm = fd.insert(po);
 			return rm;
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
+		}
 		return null;
+	}
+
+	public int getCount() {
+		return count;
 	}
 
 }
