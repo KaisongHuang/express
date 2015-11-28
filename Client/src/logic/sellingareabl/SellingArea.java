@@ -67,7 +67,7 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
 		ResultMessage rs;
-		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getID(),vo.getIsCheck());
+		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getId(),vo.getIsCheck());
 		try {
 			rs = sd.insert(po);
 			return rs;
@@ -114,7 +114,7 @@ public class SellingArea implements SellingareaBlService {
 		return null;
 	}
 
-	public CarVO findCar(int id) {
+	public CarVO findCar(String id) {
 		CarPO po;
 		CarVO vo;
 		try {
@@ -164,7 +164,7 @@ public class SellingArea implements SellingareaBlService {
 		return null;
 	}
 
-	public DriverVO findDriver(int id) {
+	public DriverVO findDriver(String id) {
 		DriverPO po;
 		try {
 			po = (DriverPO) sd.find(id,Opera.Driver_insert);

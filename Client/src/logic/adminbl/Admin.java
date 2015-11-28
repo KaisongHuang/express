@@ -13,7 +13,7 @@ public class Admin implements AdminBlService {
 	
 	AdminData ad = new AdminData();
 
-	public AdminVO find(int id) {
+	public AdminVO find(String id) {
 		// TODO Auto-generated method stub
 		AdminPO ap;
 		

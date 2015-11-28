@@ -6,12 +6,8 @@ import logic.senderblservice.SenderBlService;
 
 public class SenderBlService_Stub implements SenderBlService {
 
-	public ResultMessage search(long id) {
-		// TODO Auto-generated method stub
-		return ResultMessage.Error;
-	}
 
-	public HistoryVO search(int id) {
+	public HistoryVO search(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

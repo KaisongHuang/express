@@ -16,8 +16,13 @@ public class SellingAreaListener30 implements ActionListener {
 	private SellingAreaUI3 ui;
 	SellingareaBlService sellingarea = new SellingArea();
 	CardLayout card;
+<<<<<<< HEAD
 	public SellingAreaListener30 (SellingAreaUI3 ui, CardLayout card){
+=======
+	public SellingAreaListener30 (SellingAreaUI3 ui,CardLayout card){
+>>>>>>> refs/remotes/origin/master
 		super();
+		this.card=card;
 		this.ui=ui;
 		this.card=card;
 	}
@@ -33,7 +38,7 @@ public class SellingAreaListener30 implements ActionListener {
 			delete(ui.getLblNewLabel_12());
 			delete(ui.getLblNewLabel_13());
 		}else if(e.getSource()==ui.getButton_1()){
-			int id = Integer.parseInt(ui.getTextField().getText());
+			String id = ui.getTextField().getText();
 			CarVO vo = sellingarea.findCar(id);
 			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){

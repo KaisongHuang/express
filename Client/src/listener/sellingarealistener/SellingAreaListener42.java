@@ -22,6 +22,7 @@ public class SellingAreaListener42 implements MouseListener, ActionListener {
 	CardLayout card;
 	public SellingAreaListener42 (SellingAreaUI42 ui, CardLayout card){
 		super();
+		this.card=card;
 		this.ui=ui;
 		this.card=card;
 	}
@@ -41,10 +42,10 @@ public class SellingAreaListener42 implements MouseListener, ActionListener {
 			delete(ui.getLblNewLabel_9());
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			ResultMessage rm;
-			int id = Integer.parseInt(ui.getTextField().getText());
+			String id = ui.getTextField().getText();
 			rm = sellingarea.manageDriverinfo(sellingarea.findDriver(id), Operation.delete);
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			int id = Integer.parseInt(ui.getTextField().getText());
+			String id = ui.getTextField().getText();
 			DriverVO vo = sellingarea.findDriver(id);
 			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){

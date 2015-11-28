@@ -1,109 +1,171 @@
 package presentation.financeui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
+import javax.swing.JTable;
+import listener.financelistener.FinanceListener3;
+import javax.swing.JLabel;
+
+import java.util.Arrays;
+import java.util.Vector;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.UIManager;
-import javax.swing.JList;
 
+public class FinanceUI3 extends JPanel {
 
-public class FinanceUI3 extends JPanel{
+	private static final long serialVersionUID = 1L;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JLabel label;
+	private JLabel lblRi;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JComboBox<String> comboBox;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox_2;
+	private JComboBox<String> comboBox_3;
+	private JComboBox<String> comboBox_4;
+	private JComboBox<String> comboBox_5;
+	private JButton button;
+	private Vector<String> name1;
+	private Vector<Object> data1;
+	private JTable table1;
+	private JScrollPane JSP1;
+	private Vector<String> name2;
+	private Vector<Object> data2;
+	private JTable table2;
+	private JScrollPane JSP2;
+	FinanceListener3 financeListener3;
 
-	/**
-	 * Create the application.
-	 */
 	public FinanceUI3() {
+		financeListener3 = new FinanceListener3(this);
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
-		
+
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("开始日期:");
-		lblNewLabel_1.setBounds(90, 58, 57, 15);
+
+		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
+		name1 = new Vector<String>(Arrays.asList(names1));
+		table1 = new JTable(data1, name1);
+		JSP1 = new JScrollPane(table1);
+		JSP1.setBounds(90, 79, 530, 175);
+		this.add(JSP1);
+
+		String names2[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
+		name2 = new Vector<String>(Arrays.asList(names2));
+		table2 = new JTable(data2, name2);
+		JSP2 = new JScrollPane(table2);
+		JSP2.setBounds(90, 257, 530, 175);
+		this.add(JSP2);
+
+		lblNewLabel_1 = new JLabel("开始日期:");
+		lblNewLabel_1.setBounds(90, 25, 57, 15);
 		this.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("结束日期:");
-		lblNewLabel_2.setBounds(90, 85, 57, 15);
+
+		lblNewLabel_2 = new JLabel("结束日期:");
+		lblNewLabel_2.setBounds(90, 52, 57, 15);
 		this.add(lblNewLabel_2);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(159, 53, 80, 25);
+
+		comboBox = new JComboBox<String>();
+		comboBox.setBounds(159, 20, 80, 25);
 		this.add(comboBox);
-		
-		JLabel lblNewLabel_3 = new JLabel("年");
-		lblNewLabel_3.setBounds(246, 58, 20, 15);
+
+		lblNewLabel_3 = new JLabel("年");
+		lblNewLabel_3.setBounds(246, 25, 20, 15);
 		this.add(lblNewLabel_3);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(278, 53, 80, 25);
+
+		comboBox_1 = new JComboBox<String>();
+		comboBox_1.setBounds(278, 20, 80, 25);
 		this.add(comboBox_1);
-		
-		JLabel label = new JLabel("月");
-		label.setBounds(370, 58, 20, 15);
+
+		label = new JLabel("月");
+		label.setBounds(370, 25, 20, 15);
 		this.add(label);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(402, 53, 80, 25);
+
+		comboBox_2 = new JComboBox<String>();
+		comboBox_2.setBounds(402, 20, 80, 25);
 		this.add(comboBox_2);
-		
-		JLabel lblRi = new JLabel("日");
-		lblRi.setBounds(494, 58, 20, 15);
+
+		lblRi = new JLabel("日");
+		lblRi.setBounds(494, 25, 20, 15);
 		this.add(lblRi);
-		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(159, 80, 80, 25);
+
+		comboBox_3 = new JComboBox<String>();
+		comboBox_3.setBounds(159, 47, 80, 25);
 		this.add(comboBox_3);
-		
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setBounds(278, 80, 80, 25);
+
+		comboBox_4 = new JComboBox<String>();
+		comboBox_4.setBounds(278, 47, 80, 25);
 		this.add(comboBox_4);
-		
-		JComboBox comboBox_5 = new JComboBox();
-		comboBox_5.setBounds(402, 80, 80, 25);
+
+		comboBox_5 = new JComboBox<String>();
+		comboBox_5.setBounds(402, 47, 80, 25);
 		this.add(comboBox_5);
-		
-		JLabel label_1 = new JLabel("年");
-		label_1.setBounds(246, 85, 57, 15);
+
+		label_1 = new JLabel("年");
+		label_1.setBounds(246, 52, 57, 15);
 		this.add(label_1);
-		
-		JLabel label_2 = new JLabel("月");
-		label_2.setBounds(370, 85, 57, 15);
+
+		label_2 = new JLabel("月");
+		label_2.setBounds(370, 52, 57, 15);
 		this.add(label_2);
-		
-		JLabel label_3 = new JLabel("日");
-		label_3.setBounds(494, 85, 57, 15);
+
+		label_3 = new JLabel("日");
+		label_3.setBounds(494, 52, 57, 15);
 		this.add(label_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("/*提示信息*/");
-		lblNewLabel_4.setBounds(278, 117, 80, 15);
-		this.add(lblNewLabel_4);
-		
-		JButton button = new JButton("查看报表");
-		button.setBounds(159, 148, 94, 27);
+
+		button = new JButton("查看");
+		button.setBounds(526, 33, 94, 27);
+		button.addActionListener(financeListener3);
 		this.add(button);
-		
-		JButton button_1 = new JButton("导出报表");
-		button_1.setBounds(278, 148, 94, 27);
-		this.add(button_1);
-		
-		JButton button_2 = new JButton("返回");
-		button_2.setBounds(402, 148, 94, 27);
-		this.add(button_2);
+	}
+
+	public JTable getTable1() {
+		return table1;
+	}
+
+	public JTable getTable2() {
+		return table2;
+	}
+
+	public void setData1(Vector<Object> data1) {
+		this.data1 = data1;
+	}
+
+	public void setData2(Vector<Object> data2) {
+		this.data2 = data2;
+	}
+
+	public JComboBox<String> getComboBox() {
+		return comboBox;
+	}
+
+	public JComboBox<String> getComboBox_1() {
+		return comboBox_1;
+	}
+
+	public JComboBox<String> getComboBox_2() {
+		return comboBox_2;
+	}
+
+	public JComboBox<String> getComboBox_3() {
+		return comboBox_3;
+	}
+
+	public JComboBox<String> getComboBox_4() {
+		return comboBox_4;
+	}
+
+	public JComboBox<String> getComboBox_5() {
+		return comboBox_5;
+	}
+
+	public JButton getButton() {
+		return button;
 	}
 }

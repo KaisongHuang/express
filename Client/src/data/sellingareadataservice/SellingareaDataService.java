@@ -11,7 +11,7 @@ import _enum.ResultMessage;
 import po.SellingareaPO;
 
 public interface SellingareaDataService {
-	public SellingareaPO find(int id,Opera op) throws RemoteException;
+	public SellingareaPO find(String id,Opera op) throws RemoteException;
 	public ResultMessage insert(SellingareaPO po) throws RemoteException;
 	public ResultMessage delete(SellingareaPO po) throws RemoteException;
 	public ResultMessage update(SellingareaPO po) throws RemoteException;

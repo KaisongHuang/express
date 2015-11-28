@@ -20,6 +20,7 @@ public class SellingAreaListener33 implements ActionListener {
 	CardLayout card;
 	public SellingAreaListener33 (SellingAreaUI33 ui, CardLayout card){
 		super();
+		this.card=card;
 		this.ui=ui;
 		this.card=card;
 	}

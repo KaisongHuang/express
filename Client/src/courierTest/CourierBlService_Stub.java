@@ -16,7 +16,7 @@ public class CourierBlService_Stub implements CourierBlService{
 		return 100;
 	}
 
-	public String getTime(int distance) {
+	public String getTime(double distance) {
 		
 		return "2��3Сʱ";
 	}

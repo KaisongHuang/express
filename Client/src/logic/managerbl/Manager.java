@@ -123,7 +123,7 @@ public class Manager implements ManagerBlService {
 		}else if(vo instanceof ReceiptVO){
 			ReceiptVO vo4 = (ReceiptVO) vo;
 		
-				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getID(),vo4.getIsCheck());
+				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getId(),vo4.getIsCheck());
 			
 				try {
 					rm=sad.update(po4);
@@ -276,7 +276,7 @@ public class Manager implements ManagerBlService {
 	}
 
 
-	public EmployeeVO find(int id) {
+	public EmployeeVO findEmployee(String id) {
 		// TODO 自动生成的方法存根
 		return null;
 	}
@@ -284,6 +284,12 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage manageMember(Object vo) {
 		// TODO 自动生成的方法存根
+		return null;
+	}
+
+
+	public InstitutionVO findInstitution(String id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	

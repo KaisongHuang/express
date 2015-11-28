@@ -18,24 +18,23 @@ public class WarehouseListener20 implements ActionListener {
 		this.ui = ui;
 	}
 
-	@SuppressWarnings({ "unchecked", "null" })
 	public void actionPerformed(ActionEvent e) {
 		// enquireButton
 		if (e.getSource() == ui.getButton_1()) {
 			// 快递编号，入库日期，目的地，区号，排号，架号，位号
 			// 库存查看(设定一个时间段，查看此时间段内的出／入库数量，存储位置，库存数量要有合计)
 			ArrayList<Object> arr = warehouse.checkWarehouse(ui.getBeginDate(), ui.getEndDate());
-			ArrayList<InStoragePO> po = null;
+			ArrayList<InStoragePO> po = new ArrayList<InStoragePO>();
 			String inNum = "" + warehouse.getInNum();
 			String outNum = "" + warehouse.getOutNum();
 			String total = "" + warehouse.getTotal();
-			Vector<Object> data = null;
+			Vector<Object> data = new Vector<Object>();
 
 			ui.getTextArea().setText(inNum);
 			ui.getTextArea_1().setText(outNum);
 			ui.getTextArea_2().setText(total);
 			for (int i = 0; i < warehouse.getInNum(); i++) {
-				po = (ArrayList<InStoragePO>) arr.get(i);
+				po.add((InStoragePO) arr.get(i));
 			}
 			for (int i = 0; i < warehouse.getInNum(); i++) {
 				Vector<Object> item = new Vector<Object>();
@@ -46,7 +45,7 @@ public class WarehouseListener20 implements ActionListener {
 				item.add(po.get(i).getPos_pai());
 				item.add(po.get(i).getPos_jia());
 				item.add(po.get(i).getPos_wei());
-				data.addElement(item);
+				data.add(item);
 
 			}
 			ui.setData(data);

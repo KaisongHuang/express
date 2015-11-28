@@ -22,6 +22,7 @@ public class SellingAreaListener43 implements MouseListener, ActionListener {
 	CardLayout card;
 	public SellingAreaListener43 (SellingAreaUI43 ui, CardLayout card){
 		super();
+		this.card=card;
 		this.ui=ui;
 		this.card=card;
 	}

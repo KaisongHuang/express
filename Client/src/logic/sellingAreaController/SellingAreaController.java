@@ -35,7 +35,7 @@ public class SellingAreaController implements SellingAreaControllerService{
 		return sa.manageCarinfo(vo, op);
 	}
 
-	public CarVO findCar(int id) {
+	public CarVO findCar(String id) {
 		return sa.findCar(id);
 	}
 
@@ -43,8 +43,9 @@ public class SellingAreaController implements SellingAreaControllerService{
 		return sa.manageDriverinfo(vo, op);
 	}
 
-	public DriverVO findDriver(int id) {
+	public DriverVO findDriver(String id) {
 		return sa.findDriver(id);
 	}
+
       
 }

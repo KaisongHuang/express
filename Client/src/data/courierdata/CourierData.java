@@ -15,7 +15,7 @@ import vo.SenderVO;
 public class CourierData implements CourierDataService {
     TransformObject send;
     TransformObject acp;
-	public CourierPO find(int id) throws RemoteException {
+	public CourierPO find(String id) throws RemoteException {
 		
 		return null;
 	}

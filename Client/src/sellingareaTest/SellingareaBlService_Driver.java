@@ -31,11 +31,11 @@ public class SellingareaBlService_Driver {
     	  if(result==ResultMessage.Error)
     		  System.out.println("锟斤拷锟斤拷锟斤拷锟较拷锟斤拷锟�");
     	  
-    	  CarVO resCar=sellingarea.findCar(0);
+    	  CarVO resCar=sellingarea.findCar(null);
     	  if(resCar==null)
     		  System.out.println("Not Found!");
     	  
-    	  DriverVO resDriver=sellingarea.findDriver(0);
+    	  DriverVO resDriver=sellingarea.findDriver(null);
     	  if(resDriver==null)
     		  System.out.println("Not Found!");
       }

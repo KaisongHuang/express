@@ -8,7 +8,7 @@ import po.AdminPO;
 
 public class AdminDataService_Stub implements AdminDataService {
 
-	public AdminPO find(int id) throws RemoteException {
+	public AdminPO find(String id) throws RemoteException {
 		// TODO Auto-generated method stub
 		return new AdminPO(null, null, null, null);
 	}
