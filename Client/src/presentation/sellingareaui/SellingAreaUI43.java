@@ -53,6 +53,10 @@ public class SellingAreaUI43 extends JPanel{
 		initialize();
 	}
 
+	public SellingAreaUI43() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */

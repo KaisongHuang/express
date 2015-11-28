@@ -72,7 +72,7 @@ public class SellingAreaUI32 extends JPanel{
 	 * @param card 
 	 */
 	public SellingAreaUI32(CardLayout card) {
-		sellingarealistener = new SellingAreaListener32(this,card)
+		sellingarealistener = new SellingAreaListener32(this,card);
 		initialize();
 	}
 
