@@ -1,13 +1,18 @@
 package presentation.sellingareaui;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
 import java.awt.Color;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -38,9 +43,10 @@ public class SellingAreaUI33 extends JPanel{
 
 	/**
 	 * Create the application.
+	 * @param card 
 	 */
-	public SellingAreaUI33() {
-		sellingarealistener = new SellingAreaListener33(this);
+	public SellingAreaUI33(CardLayout card) {
+		sellingarealistener = new SellingAreaListener33(this,card);
 		initialize();
 	}
 
