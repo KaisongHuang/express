@@ -19,9 +19,6 @@ public class WarehouseListener50 implements ActionListener {
 	private WarehouseUI5 ui;
 	WarehouseBlService warehouseBl = new Warehouse();
 
-	public WarehouseListener50() {
-	}
-
 	public WarehouseListener50(WarehouseUI5 ui) {
 		super();
 		this.ui = ui;
@@ -62,7 +59,6 @@ public class WarehouseListener50 implements ActionListener {
 		else if (e.getSource() == ui.getButton_2()) {
 			ui.getTextField().setText("");
 			ui.getTextField_1().setText("");
-			;
 			ui.getComboBox().setSelectedIndex(0);
 			ui.getComboBox_1().setSelectedIndex(0);
 			ui.getComboBox_2().setSelectedIndex(0);
