@@ -1,22 +1,18 @@
 package presentation.centreui;
+
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import listener.centrelistener.CentreMenuListener;
 
+public class CentreMenuUI extends JPanel {
 
-public class CentreMenuUI extends JPanel{
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private CardLayout card;
 	private JButton btnNewButton_7;
 	private JButton btnNewButton_8;
@@ -28,39 +24,33 @@ public class CentreMenuUI extends JPanel{
 	 * Create the application.
 	 */
 	public CentreMenuUI(CardLayout card) {
-		centreMenuListener = new CentreMenuListener(this);
+		centreMenuListener = new CentreMenuListener(this, card);
 		this.card = card;
-		width=this.getWidth();
-		height=this.getHeight();
+		width = this.getWidth();
+		height = this.getHeight();
 		initialize();
-	
-		
+
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-		
-		
-		
+
 		this.setLayout(null);
-		
+
 		btnNewButton_8 = new JButton("\u88C5\u8FD0\u7BA1\u7406");
-		btnNewButton_8.setBounds(0, height/5, width, height);
-		this.add(btnNewButton_8);
+		btnNewButton_8.setBounds(0, height / 5, width, height);
 		btnNewButton_8.addActionListener(centreMenuListener);
-		
-		
+		this.add(btnNewButton_8);
+
 		btnNewButton_7 = new JButton("\u63A5\u53D7\u5355");
 		btnNewButton_7.setBackground(new Color(255, 248, 220));
-		btnNewButton_7.setBounds(0, 0, width, height/5);
-		this.add(btnNewButton_7);
+		btnNewButton_7.setBounds(0, 0, width, height / 5);
 		btnNewButton_7.addActionListener(centreMenuListener);
+		this.add(btnNewButton_7);
 		System.out.println("ok");
-		
+
 	}
 
 	public JButton getBtnNewButton_7() {
@@ -87,7 +77,4 @@ public class CentreMenuUI extends JPanel{
 		this.card = card;
 	}
 
-	
-	
-	
 }
