@@ -1,7 +1,9 @@
 package listener.sellingarealistener;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 
 import logic.sellingareabl.SellingArea;
@@ -13,9 +15,10 @@ public class SellingAreaListener30 implements ActionListener {
 
 	private SellingAreaUI3 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-	
-	public SellingAreaListener30 (SellingAreaUI3 ui){
+	CardLayout card;
+	public SellingAreaListener30 (SellingAreaUI3 ui,CardLayout card){
 		super();
+		this.card=card;
 		this.ui=ui;
 	}
 	

@@ -1,13 +1,18 @@
 package presentation.sellingareaui;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
 import java.awt.Color;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -42,15 +47,17 @@ public class SellingAreaUI3 extends JPanel{
 	private JButton btnNewButton_14;
 	private JButton button_1;
 	private JButton button_2;
-
+    private CardLayout card;
 	SellingAreaListener30 sellingarealistener;
 	
 
 	/**
 	 * Create the application.
 	 */
-	public SellingAreaUI3() {
-		sellingarealistener = new SellingAreaListener30(this);
+	public SellingAreaUI3(CardLayout card) {
+		this.card=card;
+		sellingarealistener = new SellingAreaListener30(this,card);
+		
 		initialize();
 	}
 
@@ -75,18 +82,20 @@ public class SellingAreaUI3 extends JPanel{
 		btnNewButton_10.setBackground(new Color(255, 248, 220));
 		btnNewButton_10.setBounds(44, 8, 90, 30);
 		panel_5.add(btnNewButton_10);
+		btnNewButton_10.addActionListener(sellingarealistener);
 		
 		btnNewButton_11 = new JButton("\u66F4\u65B0");
 		btnNewButton_11.setBounds(194, 8, 90, 30);
 		panel_5.add(btnNewButton_11);
-		
+		btnNewButton_11.addActionListener(sellingarealistener);
 		btnNewButton_13 = new JButton("\u5220\u9664");
 		btnNewButton_13.setBounds(348, 8, 90, 30);
 		panel_5.add(btnNewButton_13);
-		
+		btnNewButton_13.addActionListener(sellingarealistener);
 		btnNewButton_14 = new JButton("\u6DFB\u52A0");
 		btnNewButton_14.setBounds(525, 8, 90, 30);
 		panel_5.add(btnNewButton_14);
+		btnNewButton_14.addActionListener(sellingarealistener);
 		
 		lblNewLabel_1 = new JLabel("车辆编号：");
 		lblNewLabel_1.setBounds(44, 62, 100, 18);

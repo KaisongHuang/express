@@ -70,8 +70,8 @@ public class SellingAreaUI32 extends JPanel{
 	/**
 	 * Create the application.
 	 */
-	public SellingAreaUI32() {
-		sellingarealistener = new SellingAreaListener32(this);
+	public SellingAreaUI32(CardLayout card) {
+		sellingarealistener = new SellingAreaListener32(this,card);
 		initialize();
 	}
 
