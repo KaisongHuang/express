@@ -68,7 +68,7 @@ public class WarehouseListener10 implements ActionListener {
 		out.setOutdate(ui.getExportDate());
 		out.setTransportation(ui.getTransportation());
 		out.setWarehouseID(EmployeeMes.belongToWho);
-		out.setIsCheck(1);
+		out.setIsCheck(0);
 		return out;
 	}
 
