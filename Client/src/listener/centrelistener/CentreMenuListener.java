@@ -11,16 +11,14 @@ import javax.swing.JPanel;
 import presentation.centreui.CentreMenuUI;
 import presentation.centreui.*;
 
-public class CentreMenuListener implements MouseListener, ActionListener {
-	
+public class CentreMenuListener implements ActionListener {
+	private CardLayout card;
 	private CentreMenuUI ui;
-	JPanel panel1;
-	JPanel panel2;
 	
-	public CentreMenuListener (CentreMenuUI ui){
-		
+	public CentreMenuListener(CentreMenuUI centreMenuUI, CardLayout card) {
 		super();
-		this.ui = ui;
+		this.ui = centreMenuUI;
+		this.card=card;
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -32,32 +30,4 @@ public class CentreMenuListener implements MouseListener, ActionListener {
 		}
 		
 	}
-
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-
 }
