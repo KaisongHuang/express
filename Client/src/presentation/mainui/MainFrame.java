@@ -64,9 +64,9 @@ public class MainFrame implements ActionListener{
 			label1.setBounds(0,0,4*weight/5,4*height/5);
 			label2.setBounds(0,0,weight,height/5);
 			
-			ImageIcon icon1=new ImageIcon("D:\\Java\\express\\软工\\蓝色背景.png");
+			ImageIcon icon1=new ImageIcon("image/蓝色背景.png");
 			icon1.setImage( icon1.getImage().getScaledInstance(weight, 4*height/5, Image.SCALE_DEFAULT));
-			ImageIcon  icon2=new ImageIcon("D:\\Java\\express\\软工\\装饰图.png");
+			ImageIcon  icon2=new ImageIcon("image/装饰图.png");
 			icon2.setImage( icon2.getImage().getScaledInstance(weight, height/5, Image.SCALE_DEFAULT));
 			
 		    label1.setIcon(icon1);
@@ -75,19 +75,19 @@ public class MainFrame implements ActionListener{
 		    button1=new JButton();
 		    button1.setBorderPainted(false);
 		 
-		    ImageIcon bi1=new ImageIcon("D:\\Java\\express\\软工\\黄色按钮.png");
+		    ImageIcon bi1=new ImageIcon("image/黄色按钮.png");
 		    bi1.setImage( bi1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		    button1.setIcon(bi1);
 		    button1.setContentAreaFilled(false);
 		    button2=new JButton();
 		    button2.setBorderPainted(false);
-		    ImageIcon bi2=new ImageIcon("D:\\Java\\express\\软工\\绿色按钮.png");
+		    ImageIcon bi2=new ImageIcon("image/绿色按钮.png");
 		    bi2.setImage( bi2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		    button2.setIcon(bi2);
 		    button2.setContentAreaFilled(false);
 		    button3=new JButton();
 		    button3.setBorderPainted(false);
-		    ImageIcon bi3=new ImageIcon("D:\\Java\\express\\软工\\红色按钮.png");
+		    ImageIcon bi3=new ImageIcon("image/红色按钮.png");
 		    bi3.setImage( bi3.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		    button3.setIcon(bi3);
 		    button3.setContentAreaFilled(false);

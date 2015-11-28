@@ -27,7 +27,7 @@ public class WarehouseUI5 extends JPanel {
 	private JTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
-	private Vector<Vector<Object>> data;
+	private Vector<Object> data;
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel label_2;
@@ -222,10 +222,6 @@ public class WarehouseUI5 extends JPanel {
 
 	public JTable getTable() {
 		return table;
-	}
-
-	public Vector<Vector<Object>> getData() {
-		return data;
 	}
 
 	public JButton getButton() {
