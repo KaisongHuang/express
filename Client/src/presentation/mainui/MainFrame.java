@@ -50,7 +50,7 @@ public class MainFrame implements ActionListener {
 		frame.setUndecorated(true);
 		frame.setSize(width, height);
 		frame.setLocation(100, 100);
-
+       
 		panel1 = new JPanel();
 		panel2 = new JPanel();
 		getPanel3();
@@ -142,10 +142,10 @@ public class MainFrame implements ActionListener {
 
 	public void setCard() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel1.add(new CourierUI(), "0");
-			panel1.add(new CourierUI1(), "1");
-			panel1.add(new CourierUI2(), "2");
-			panel1.add(new CourierUI4(), "3");
+			panel1.add(new CourierUI(), 0);
+			panel1.add(new CourierUI1(), 1);
+			panel1.add(new CourierUI2(), 2);
+			panel1.add(new CourierUI4(), 3);
 
 		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
 			panel1.add(new SellingAreaUI(), 0);
@@ -193,20 +193,20 @@ public class MainFrame implements ActionListener {
 
 	public void getPanel3() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5);}
-//		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
-//			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5);
-//		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
-//			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5);
-//		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
-//			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5);
-//		} else if (EmployeeMes.employeePosition.equals("财务员")) {
-//			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5);
-//		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-//			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5);
-//		} else if (EmployeeMes.employeePosition.equals("管理员")) {
-//			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5);
-//		}
+			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5,frame);
+		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
+			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5,frame);
+		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
+			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5,frame);
+		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
+			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5,frame);
+		} else if (EmployeeMes.employeePosition.equals("财务员")) {
+			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5,frame);
+		} else if (EmployeeMes.employeePosition.equals("总经理")) {
+			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5,frame);
+		} else if (EmployeeMes.employeePosition.equals("管理员")) {
+			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5,frame);
+		}
 	}
 
 }
