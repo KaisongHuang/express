@@ -47,8 +47,9 @@ public class MainFrame implements ActionListener{
 			
 			panel1=new JPanel();
 			panel2=new JPanel();
-			
-			
+			Card=new CardLayout();
+			setCard();
+			panel1.setLayout(Card);
 			panel2.setLayout(null);
 			label1=new JLabel();
 			label2=new JLabel();
