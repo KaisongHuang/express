@@ -105,11 +105,11 @@ public class FinanceUI4 extends JPanel{
 		this.add(btnNewButton_13);
 		
 		JButton button_1 = new JButton("期初建账");
-		button_1.setBounds(448, 288, 94, 27);
+		button_1.setBounds(533, 35, 94, 27);
 		this.add(button_1);
 		
 		JButton btnNewButton_14 = new JButton("期初信息");
-		btnNewButton_14.setBounds(448, 327, 94, 27);
+		btnNewButton_14.setBounds(639, 35, 94, 27);
 		this.add(btnNewButton_14);
 	}
 }
