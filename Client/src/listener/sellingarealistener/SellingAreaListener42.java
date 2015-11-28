@@ -1,5 +1,6 @@
 package listener.sellingarealistener;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -18,10 +19,12 @@ public class SellingAreaListener42 implements MouseListener, ActionListener {
 
 	private SellingAreaUI42 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-
-	public SellingAreaListener42 (SellingAreaUI42 ui){
+	CardLayout card;
+	public SellingAreaListener42 (SellingAreaUI42 ui, CardLayout card){
 		super();
+		this.card=card;
 		this.ui=ui;
+		this.card=card;
 	}
 
 	

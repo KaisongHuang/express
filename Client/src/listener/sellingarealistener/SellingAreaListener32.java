@@ -1,5 +1,6 @@
 package listener.sellingarealistener;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,12 +17,23 @@ public class SellingAreaListener32 implements ActionListener {
 
 	private SellingAreaUI32 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-
-	public SellingAreaListener32(SellingAreaUI32 ui) {
+<<<<<<< HEAD
+	
+	public SellingAreaListener32 (SellingAreaUI32 ui, CardLayout card){
 		super();
+		this.ui=ui;
+		this.card=card;
+	}	
+	
+=======
+    CardLayout card;
+	public SellingAreaListener32(SellingAreaUI32 ui, CardLayout card) {
+		super();
+		this.card=card;
 		this.ui = ui;
 	}
 
+>>>>>>> refs/remotes/origin/master
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getBtnNewButton_16()) {
