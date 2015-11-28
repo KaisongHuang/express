@@ -8,15 +8,19 @@ public class PayVO {
 	String entry;
 	String comments;
 	int isCheck;
-	
-	public PayVO(String date,String payer,String payAccount,String entry,String comments,double cost,int isCheck){
-		this.date=date;
-		this.payer=payer;
-		this.payAccount=payAccount;
-		this.cost=cost;
-		this.entry=entry;
-		this.comments=comments;
-		this.isCheck=isCheck;
+
+	public PayVO(String date, String payer, String payAccount, String entry, String comments, double cost,
+			int isCheck) {
+		this.date = date;
+		this.payer = payer;
+		this.payAccount = payAccount;
+		this.cost = cost;
+		this.entry = entry;
+		this.comments = comments;
+		this.isCheck = isCheck;
+	}
+
+	public PayVO() {
 	}
 
 	public int getIsCheck() {

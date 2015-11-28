@@ -96,7 +96,7 @@ public class WarehouseListener50 implements ActionListener {
 						vo.setPos_jia((Integer) rowData.get(5));
 						vo.setPos_wei((Integer) rowData.get(6));
 						vo.setWarehouseID(EmployeeMes.belongToWho);
-						vo.setIsCheck(1);
+						vo.setIsCheck(0);
 						warehouseBl.initWarehouse(vo);
 					}
 

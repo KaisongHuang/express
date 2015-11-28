@@ -26,7 +26,6 @@ public class FinanceUI2 extends JPanel {
 	private JLabel lblNewLabel_4;
 	private JLabel lblNewLabel_5;
 	private JLabel label;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -43,9 +42,15 @@ public class FinanceUI2 extends JPanel {
 	private Vector<String> name;
 	private Vector<Vector<Object>> data;
 	FinanceListener2 financeListener2;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox_2;
+	private JComboBox<String> comboBox_3;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
 
 	public FinanceUI2() {
-		financeListener2=new FinanceListener2(this);
+		financeListener2 = new FinanceListener2(this);
 		initialize();
 	}
 
@@ -59,21 +64,16 @@ public class FinanceUI2 extends JPanel {
 		table = new JTable(data, name);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
-		JSP.setBounds(29, 88, 444, 300);
+		JSP.setBounds(29, 61, 444, 327);
 		this.add(JSP);
 
 		lblNewLabel_1 = new JLabel("付款日期:");
-		lblNewLabel_1.setBounds(491, 92, 67, 15);
+		lblNewLabel_1.setBounds(491, 65, 67, 15);
 		this.add(lblNewLabel_1);
 
 		lblNewLabel_2 = new JLabel("付款金额:");
 		lblNewLabel_2.setBounds(491, 132, 67, 15);
 		this.add(lblNewLabel_2);
-
-		textField = new JTextField();
-		textField.setBounds(570, 86, 134, 28);
-		this.add(textField);
-		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(570, 126, 134, 28);
@@ -126,23 +126,59 @@ public class FinanceUI2 extends JPanel {
 		this.add(button_1);
 
 		button_2 = new JButton("查看成本收益表");
-		button_2.setBounds(570, 359, 134, 29);
+		button_2.setBounds(29, 20, 134, 29);
 		button_2.addActionListener(financeListener2);
 		this.add(button_2);
 
 		btnNewButton = new JButton("删除");
-		btnNewButton.setBounds(393, 59, 78, 27);
+		btnNewButton.setBounds(570, 361, 67, 27);
 		btnNewButton.addActionListener(financeListener2);
 		add(btnNewButton);
 
 		button_3 = new JButton("完成");
-		button_3.setBounds(29, 59, 78, 27);
+		button_3.setBounds(637, 361, 67, 27);
 		button_3.addActionListener(financeListener2);
 		add(button_3);
+
+		comboBox_1 = new JComboBox<String>();
+		comboBox_1.setBounds(570, 60, 122, 25);
+		add(comboBox_1);
+
+		comboBox_2 = new JComboBox<String>();
+		comboBox_2.setBounds(570, 89, 55, 25);
+		add(comboBox_2);
+
+		comboBox_3 = new JComboBox<String>();
+		comboBox_3.setBounds(637, 89, 55, 25);
+		add(comboBox_3);
+
+		label_1 = new JLabel("年");
+		label_1.setBounds(692, 65, 19, 15);
+		add(label_1);
+
+		label_2 = new JLabel("月");
+		label_2.setBounds(624, 94, 19, 15);
+		add(label_2);
+
+		label_3 = new JLabel("日");
+		label_3.setBounds(692, 94, 19, 15);
+		add(label_3);
 	}
 
-	public JTextField getTextField() {
-		return textField;
+	// public JTextField getTextField() {
+	// return textField;
+	// }
+
+	public JComboBox<String> getComboBox_1() {
+		return comboBox_1;
+	}
+
+	public JComboBox<String> getComboBox_2() {
+		return comboBox_2;
+	}
+
+	public JComboBox<String> getComboBox_3() {
+		return comboBox_3;
 	}
 
 	public JTextField getTextField_1() {
