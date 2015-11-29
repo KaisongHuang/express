@@ -18,23 +18,26 @@ public class ManagerMenuUI extends JPanel{
 
 
 	private CardLayout card;
-	private JButton btnNewButton_7;
-	private JButton btnNewButton_8;
-	private JButton btnNewButton_9;
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_16;
+	private JButton button1;
+	private JButton button2;
+	private JButton button3;
+	private JButton button4;
+	private JButton button5;
 	private int width;
 	private int height;
 	ManagerMenuListener managermenulistener;
 
 	/**
 	 * Create the application.
+	 * @param height 
+	 * @param width 
+	 * @param frame 
 	 */
-	public ManagerMenuUI(CardLayout card) {
-		managermenulistener = new ManagerMenuListener(this,card);
+	public ManagerMenuUI(CardLayout card, int width, int height, JFrame frame) {
+		managermenulistener = new ManagerMenuListener(this,card,frame);
 		this.card = card;
-		width=this.getWidth();
-		height=this.getHeight();
+		width=width;
+		height=height;
 		initialize();
 	}
 
@@ -42,36 +45,35 @@ public class ManagerMenuUI extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-	
+		this.setSize(width,height);
 		this.setLayout(null);
 		
-		btnNewButton_8 = new JButton("\u673A\u6784\u7BA1\u7406");
-		btnNewButton_8.setBounds(0, 0, width, height/5);
-		btnNewButton_8.addActionListener(managermenulistener);
-		this.add(btnNewButton_8);
+		button1 = new JButton("机构管理");
+		button1.setBounds(0, 0, width, height/5);
+		button1.addActionListener(managermenulistener);
+		this.add(button1);
 		
-		btnNewButton_7 = new JButton("\u4EBA\u5458\u7BA1\u7406");
-		btnNewButton_7.setBackground(new Color(255, 248, 220));
-		btnNewButton_7.setBounds(0, height/5, width, height/5);
-		btnNewButton_7.addActionListener(managermenulistener);
-		this.add(btnNewButton_7);
+		button2 = new JButton("人员管理");
 		
-		btnNewButton_9 = new JButton("\u5BA1\u6279\u5355\u636E");
-		btnNewButton_9.setBounds(0, 2*height/5, width, height/5);
-		btnNewButton_9.addActionListener(managermenulistener);
-		this.add(btnNewButton_9);
+		button2.setBounds(0, height/5, width, height/5);
+		button2.addActionListener(managermenulistener);
+		this.add(button2);
 		
-		btnNewButton_10 = new JButton("\u67E5\u770B\u7EDF\u8BA1\u5206\u6790");
-		btnNewButton_10.setBounds(0, 3*height/5, width, height/5);
-		btnNewButton_10.addActionListener(managermenulistener);
-		this.add(btnNewButton_10);
+		button3 = new JButton("审批单据");
+		button3.setBounds(0, 2*height/5, width, height/5);
+		button3.addActionListener(managermenulistener);
+		this.add(button3);
+		
+		button4 = new JButton("查看统计分析");
+		button4.setBounds(0, 3*height/5, width, height/5);
+		button4.addActionListener(managermenulistener);
+		this.add(button4);
 		
 		
-		btnNewButton_16 = new JButton("\u5236\u5B9A");
-		btnNewButton_16.setBounds(0, 4*height/5, width, height/5);
-		btnNewButton_16.addActionListener(managermenulistener);
-		this.add(btnNewButton_16);
+		button5 = new JButton("制定");
+		button5.setBounds(0, 4*height/5, width, height/5);
+		button5.addActionListener(managermenulistener);
+		this.add(button5);
 		
 	}
 	public CardLayout getCard() {
@@ -82,45 +84,26 @@ public class ManagerMenuUI extends JPanel{
 		this.card = card;
 	}
 
-	public JButton getBtnNewButton_7() {
-		return btnNewButton_7;
+	public JButton getButton1() {
+		return button1;
 	}
 
-	public void setBtnNewButton_7(JButton btnNewButton_7) {
-		this.btnNewButton_7 = btnNewButton_7;
+
+	public JButton getButton2() {
+		return button2;
 	}
 
-	public JButton getBtnNewButton_8() {
-		return btnNewButton_8;
+	public JButton getButton3() {
+		return button3;
+	}
+	public JButton getButton4() {
+		return button4;
 	}
 
-	public void setBtnNewButton_8(JButton btnNewButton_8) {
-		this.btnNewButton_8 = btnNewButton_8;
+	public JButton getButton5() {
+		return button5;
 	}
 
-	public JButton getBtnNewButton_9() {
-		return btnNewButton_9;
-	}
-
-	public void setBtnNewButton_9(JButton btnNewButton_9) {
-		this.btnNewButton_9 = btnNewButton_9;
-	}
-
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
-
-	public JButton getBtnNewButton_16() {
-		return btnNewButton_16;
-	}
-
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
-		this.btnNewButton_16 = btnNewButton_16;
-	}
 	
 	
 }
