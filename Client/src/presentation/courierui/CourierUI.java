@@ -42,12 +42,17 @@ public class CourierUI extends JPanel{
 	private JComboBox comboBox;
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
-
+    private int width;
+    private int height;
 	/**
 	 * Create the application.
+	 * @param width 
+	 * @param width 
 	 */
-	public CourierUI() {
+	public CourierUI(int width, int height) {
 		courierlistener = new CourierListener0(this);
+		this.width=width;
+		this.height=height;
 		initialize();
 	}
 
@@ -55,20 +60,12 @@ public class CourierUI extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-		
-		this.setBackground(Color.LIGHT_GRAY);
-		this.setBounds(136, 116, 746, 434);
+
 	
 		this.setLayout(null);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(487, 13, 2, 2);
-		this.add(scrollPane);
-		
+	
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");
-		lblNewLabel_1.setBounds(322, 0, 100, 18);
+		lblNewLabel_1.setBounds(300, 0, 100, 18);
 		this.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("寄件人姓名：");
@@ -92,7 +89,7 @@ public class CourierUI extends JPanel{
 		JLabel label = new JLabel("单位：");
 		label.setBounds(434, 19,100, 18);
 		this.add(label);
-		
+
 		textField_2 = new JTextField();
 		textField_2.setBounds(497, 15, 122, 30);
 		this.add(textField_2);

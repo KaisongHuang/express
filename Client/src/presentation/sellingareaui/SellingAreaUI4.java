@@ -49,14 +49,19 @@ public class SellingAreaUI4 extends JPanel{
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_8;
 	private JLabel lblNewLabel_9;
-
+	private int width;
+	private int height;
 
 	/**
 	 * Create the application.
 	 * @param card 
+	 * @param j 
+	 * @param i 
 	 */
-	public SellingAreaUI4(CardLayout card) {
+	public SellingAreaUI4(CardLayout card, int i, int j) {
 		sellingarealistener = new SellingAreaListener40(this,card);
+		width=i;
+		height=j;
 		initialize();
 	}
 

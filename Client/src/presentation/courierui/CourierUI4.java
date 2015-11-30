@@ -36,12 +36,17 @@ public class CourierUI4 extends JPanel{
 
 
 	private JButton btnNewButton_10;
-	
+	private int width;
+	private int height;
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public CourierUI4() {
+	public CourierUI4(int i, int j) {
 		courierlistener = new CourierListener4(this);
+		width=i;
+		height=j;
 		initialize();
 	}
 

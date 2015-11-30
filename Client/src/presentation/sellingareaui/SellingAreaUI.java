@@ -33,13 +33,18 @@ public class SellingAreaUI extends JPanel{
 	private JButton btnNewButton_11;
 
 	SellingAreaListener00 sellingarealistener;
-
+	private int width;
+	private int height;
 
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public SellingAreaUI() {
+	public SellingAreaUI(int i, int j) {
 		sellingarealistener = new SellingAreaListener00(this);
+		width=i;
+		height=j;
 		initialize();
 	}
 
