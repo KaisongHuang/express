@@ -40,7 +40,7 @@ public class FinanceUI2 extends JPanel {
 	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
-	private Vector<Vector<Object>> data;
+	private Vector<Object> data;
 	FinanceListener2 financeListener2;
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox_2;
@@ -229,7 +229,7 @@ public class FinanceUI2 extends JPanel {
 		return model;
 	}
 
-	public void setData(Vector<Vector<Object>> data) {
+	public void setData(Vector<Object> data) {
 		this.data = data;
 	}
 }
