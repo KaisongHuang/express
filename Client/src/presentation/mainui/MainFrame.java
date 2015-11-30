@@ -142,51 +142,60 @@ public class MainFrame implements ActionListener {
 
 	public void setCard() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel1.add(new CourierUI(), 0);
-			panel1.add(new CourierUI1(), 1);
-			panel1.add(new CourierUI2(), 2);
-			panel1.add(new CourierUI4(), 3);
+			panel1.add(new CourierUI(4*width/5,4*height/5), 0);
+			panel1.add(new CourierUI1(4*width/5,4*height/5), 1);
+			panel1.add(new CourierUI2(4*width/5,4*height/5), 2);
+			panel1.add(new CourierUI4(4*width/5,4*height/5), 3);
 
 		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
-			panel1.add(new SellingAreaUI(), 0);
-			panel1.add(new SellingAreaUI1(), 1);
-			panel1.add(new SellingAreaUI2(), 2);
-			panel1.add(new SellingAreaUI3(Card), 3);
-			panel1.add(new SellingAreaUI31(Card), 4);
-			panel1.add(new SellingAreaUI32(Card), 5);
-			panel1.add(new SellingAreaUI33(Card), 6);
-			panel1.add(new SellingAreaUI4(Card), 7);
-			panel1.add(new SellingAreaUI41(Card), 8);
-			panel1.add(new SellingAreaUI42(Card), 9);
-			panel1.add(new SellingAreaUI43(Card), 10);
+			panel1.add(new SellingAreaUI(4*width/5,4*height/5), 0);
+			panel1.add(new SellingAreaUI1(4*width/5,4*height/5), 1);
+			panel1.add(new SellingAreaUI2(4*width/5,4*height/5), 2);
+			panel1.add(new SellingAreaUI3(Card,4*width/5,4*height/5), 3);
+			panel1.add(new SellingAreaUI31(Card,4*width/5,4*height/5), 4);
+			panel1.add(new SellingAreaUI32(Card,4*width/5,4*height/5), 5);
+			panel1.add(new SellingAreaUI33(Card,4*width/5,4*height/5), 6);
+			panel1.add(new SellingAreaUI4(Card,4*width/5,4*height/5), 7);
+			panel1.add(new SellingAreaUI41(Card,4*width/5,4*height/5), 8);
+			panel1.add(new SellingAreaUI42(Card,4*width/5,4*height/5), 9);
+			panel1.add(new SellingAreaUI43(Card,4*width/5,4*height/5), 10);
 		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
-			panel1.add(new CentreUI(), 0);
-			panel1.add(new CentreUI1(), 1);
-			panel1.add(new CentreUI2(), 2);
-			panel1.add(new CentreUI3(), 3);
+			panel1.add(new CentreUI(4*width/5,4*height/5), 0);
+			panel1.add(new CentreUI1(4*width/5,4*height/5), 1);
+			panel1.add(new CentreUI2(4*width/5,4*height/5), 2);
+			panel1.add(new CentreUI3(4*width/5,4*height/5), 3);
 		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
 			panel1.add(new WarehouseUI1(), 0);
 			panel1.add(new WarehouseUI2(), 1);
 			panel1.add(new WarehouseUI3(), 2);
 			panel1.add(new WarehouseUI4(), 3);
-			panel1.add(new WarehouseUI5_SaveInfo(), 4);
-			panel1.add(new WarehouseUI5(), 5);
+	        panel1.add(new WarehouseUI5(), 4);
 		} else if (EmployeeMes.employeePosition.equals("财务员")) {
 			panel1.add(new FinanceUI1(), 0);
 			panel1.add(new FinanceUI2(), 1);
 			panel1.add(new FinanceUI3(), 2);
 			panel1.add(new FinanceUI4(), 3);
 		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-			panel1.add(new ManagerUI0(), 0);
-			panel1.add(new ManagerUI1(), 1);
+			panel1.add(new ManagerUI0(Card), 0);
+			panel1.add(new ManagerUI01(Card), 1);
+			panel1.add(new ManagerUI02(Card), 2);
+			panel1.add(new ManagerUI03(Card), 3);
+			
+			panel1.add(new ManagerUI1(Card), 4);
+			panel1.add(new ManagerUI11(Card), 5);
+			panel1.add(new ManagerUI12(Card), 6);
+			panel1.add(new ManagerUI13(Card), 7);
+			panel1.add(new ManagerUI14(Card), 8);
+			
 			panel1.add(new ManagerUI2(), 2);
 			panel1.add(new ManagerUI3(), 3);
-			panel1.add(new ManagerUI4(), 4);
+			panel1.add(new ManagerUI4(Card), 4);
+			panel1.add(new ManagerUI41(Card), 4);
 		} else if (EmployeeMes.employeePosition.equals("管理员")) {
-			panel1.add(new AdminUI1(), 0);
-			panel1.add(new AdminUI2(), 1);
-			panel1.add(new AdminUI3(), 2);
-			panel1.add(new AdminUI4(), 3);
+			panel1.add(new AdminUI1(4*width/5,4*height/5), 0);
+			panel1.add(new AdminUI2(4*width/5,4*height/5), 1);
+			panel1.add(new AdminUI3(4*width/5,4*height/5), 2);
+			panel1.add(new AdminUI4(4*width/5,4*height/5), 3);
 		}
 
 	}

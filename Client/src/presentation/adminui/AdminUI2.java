@@ -32,12 +32,18 @@ public class AdminUI2 extends JPanel{
 	private JButton button_2;
 
 	AdminListener2 adminlistener;
-	
+	private int width;
+	private int height;
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public AdminUI2() {
+	public AdminUI2(int i, int j) {
 		adminlistener = new AdminListener2(this);
+		width=i;
+		height=j;
+		
 		initialize();
 	}
 
