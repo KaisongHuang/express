@@ -8,9 +8,12 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JTextField;
 
+import _enum.Opera;
+import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI12;
+import vo.InstitutionVO;
 
 public class ManagerListener12 implements MouseListener, ActionListener {
 
@@ -28,7 +31,9 @@ public class ManagerListener12 implements MouseListener, ActionListener {
         if(e.getSource()==ui.getButton()){
 			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			
+			String id = ui.getTextField().getText();
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_11()){
 			
 		}else if(e.getSource()==ui.getBtnNewButton_12()){
@@ -38,11 +43,20 @@ public class ManagerListener12 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_14()){
 			
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
-			
+			ResultMessage rm;
+			String id = ui.getTextField().getText();
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			rm = manager.manageMember(vo, Opera.Institution_delete);
 		}else if(e.getSource()==ui.getBtnNewButton_17()){
 			delete(ui.getTextField());
 		}
 		
+	}
+
+	private void set(InstitutionVO vo) {
+		// TODO Auto-generated method stub
+		ui.getLblNewLabel_5().setText(vo.getOrganizationID());
+		ui.getLblNewLabel_8().setText(vo.getName());
 	}
 
 	private void delete(JTextField textField) {
