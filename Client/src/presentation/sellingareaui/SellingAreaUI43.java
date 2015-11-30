@@ -42,21 +42,21 @@ public class SellingAreaUI43 extends JPanel{
 
 
 	SellingAreaListener43 sellingarealistener;
-	
+	private int width;
+	private int height;
 
 	/**
 	 * Create the application.
 	 * @param card 
+	 * @param j 
+	 * @param i 
 	 */
-	public SellingAreaUI43(CardLayout card) {
+	public SellingAreaUI43(CardLayout card, int i, int j) {
 		sellingarealistener = new SellingAreaListener43(this,card);
+		width=i;
+		height=j;
 		initialize();
 	}
-
-	public SellingAreaUI43() {
-		// TODO Auto-generated constructor stub
-	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */

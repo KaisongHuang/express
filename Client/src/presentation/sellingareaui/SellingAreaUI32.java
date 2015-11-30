@@ -66,13 +66,18 @@ public class SellingAreaUI32 extends JPanel{
 	private JLabel lblNewLabel_1;
 
 	private JLabel lblNewLabel_7;
-	
+	private int width;
+	private int height;
 	/**
 	 * Create the application.
 	 * @param card 
+	 * @param j 
+	 * @param i 
 	 */
-	public SellingAreaUI32(CardLayout card) {
+	public SellingAreaUI32(CardLayout card, int i, int j) {
 		sellingarealistener = new SellingAreaListener32(this,card);
+		width=i;
+		height=j;
 		initialize();
 	}
 

@@ -2,6 +2,8 @@ package presentation.managerui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
+import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -52,9 +54,10 @@ public class ManagerUI02 extends JPanel{
 
 	/**
 	 * Create the application.
+	 * @param card 
 	 */
-	public ManagerUI02() {
-		managerlistener = new ManagerListener02(this);
+	public ManagerUI02(CardLayout card) {
+		managerlistener = new ManagerListener02(this,card);
 		initialize();
 	}
 

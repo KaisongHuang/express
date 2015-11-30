@@ -27,12 +27,17 @@ public class AdminUI4 extends JPanel{
 	private JButton btnNewButton_11;
 	
 	AdminListener4 adminlistener;
-
+	private int width;
+	private int height;
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public AdminUI4() {
+	public AdminUI4(int i, int j) {
 		adminlistener = new AdminListener4(this);
+		width=i;
+		height=j;
 		initialize();
 	}
 
