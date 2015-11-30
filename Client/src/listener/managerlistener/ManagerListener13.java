@@ -7,9 +7,12 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JTextField;
 
+import _enum.Opera;
+import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI13;
+import vo.InstitutionVO;
 
 public class ManagerListener13 implements MouseListener, ActionListener {
 
@@ -25,8 +28,6 @@ public class ManagerListener13 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
         if(e.getSource()==ui.getButton()){
 			
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			
 		}else if(e.getSource()==ui.getBtnNewButton_11()){
 			
 		}else if(e.getSource()==ui.getBtnNewButton_12()){
@@ -35,15 +36,25 @@ public class ManagerListener13 implements MouseListener, ActionListener {
 			
 		}else if(e.getSource()==ui.getBtnNewButton_14()){
 			
+		}else if(e.getSource()==ui.getBtnNewButton_15()){
+			ResultMessage rm;
+			InstitutionVO vo = this.read();
+			rm = manager.manageMember(vo, Opera.Institution_insert);
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			delete(ui.getTextField());
-			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
-			delete(ui.getTextField_3());
 		}
 		
 	}
 	
+	private InstitutionVO read() {
+		// TODO Auto-generated method stub
+		String oi = ui.getTextField().getText();
+		String name = ui.getTextField_2().getText();
+		InstitutionVO vo = new InstitutionVO(oi,name);
+		return vo;
+	}
+
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub
 		textField.setText("");
