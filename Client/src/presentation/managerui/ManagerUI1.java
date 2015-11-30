@@ -28,16 +28,13 @@ public class ManagerUI1 extends JPanel{
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
 	private JButton button;
+	private JButton button_1;
 	
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_3;
 	private JLabel lblNewLabel_4;
-	private JLabel lblNewLabel_5;
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_7;
-	private JLabel lblNewLabel_8;
-	private JLabel lblNewLabel_9;
 	private JLabel lblNewLabel_10;
 	
 	ManagerListener10 managerlistener;
@@ -108,7 +105,7 @@ public class ManagerUI1 extends JPanel{
 		btnNewButton_15.addActionListener(managerlistener);
 		
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(10, 122, 448, 172);
+		panel_6.setBounds(10, 122, 481, 84);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 	
@@ -116,37 +113,26 @@ public class ManagerUI1 extends JPanel{
 		lblNewLabel_2.setBounds(6, 35, 100, 18);
 		panel_6.add(lblNewLabel_2);
 		
-		lblNewLabel_3 = new JLabel("机构距离：");
-		lblNewLabel_3.setBounds(6, 97, 100, 18);
-		panel_6.add(lblNewLabel_3);
-		
-		lblNewLabel_4 = new JLabel("3");
+		lblNewLabel_4 = new JLabel("111");
 		lblNewLabel_4.setBounds(103, 35, 100, 18);
 		panel_6.add(lblNewLabel_4);
-		
-		lblNewLabel_5 = new JLabel("4");
-		lblNewLabel_5.setBounds(103, 97, 100, 18);
-		panel_6.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("机构名称：");
 		lblNewLabel_6.setBounds(244, 35, 100, 18);
 		panel_6.add(lblNewLabel_6);
 		
-		lblNewLabel_7 = new JLabel("6");
+		lblNewLabel_7 = new JLabel("");
 		lblNewLabel_7.setBounds(357, 35, 100, 18);
 		panel_6.add(lblNewLabel_7);
-		
-		lblNewLabel_8 = new JLabel("距离价格：");
-		lblNewLabel_8.setBounds(244, 97, 100, 18);
-		panel_6.add(lblNewLabel_8);
-		
-		lblNewLabel_9 = new JLabel("8");
-		lblNewLabel_9.setBounds(357, 97, 100, 18);
-		panel_6.add(lblNewLabel_9);
 		
 		lblNewLabel_10 = new JLabel("机构信息");
 		lblNewLabel_10.setBounds(186, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
+		
+		button_1 = new JButton("取消");
+		button_1.setBounds(452, 57, 100, 30);
+		add(button_1);
+		button_1.addActionListener(managerlistener);
 		
 	}
 
@@ -223,13 +209,6 @@ public class ManagerUI1 extends JPanel{
 		this.lblNewLabel_2 = lblNewLabel_2;
 	}
 
-	public JLabel getLblNewLabel_3() {
-		return lblNewLabel_3;
-	}
-
-	public void setLblNewLabel_3(JLabel lblNewLabel_3) {
-		this.lblNewLabel_3 = lblNewLabel_3;
-	}
 
 	public JLabel getLblNewLabel_4() {
 		return lblNewLabel_4;
@@ -237,14 +216,6 @@ public class ManagerUI1 extends JPanel{
 
 	public void setLblNewLabel_4(JLabel lblNewLabel_4) {
 		this.lblNewLabel_4 = lblNewLabel_4;
-	}
-
-	public JLabel getLblNewLabel_5() {
-		return lblNewLabel_5;
-	}
-
-	public void setLblNewLabel_5(JLabel lblNewLabel_5) {
-		this.lblNewLabel_5 = lblNewLabel_5;
 	}
 
 	public JLabel getLblNewLabel_6() {
@@ -263,21 +234,6 @@ public class ManagerUI1 extends JPanel{
 		this.lblNewLabel_7 = lblNewLabel_7;
 	}
 
-	public JLabel getLblNewLabel_8() {
-		return lblNewLabel_8;
-	}
-
-	public void setLblNewLabel_8(JLabel lblNewLabel_8) {
-		this.lblNewLabel_8 = lblNewLabel_8;
-	}
-
-	public JLabel getLblNewLabel_9() {
-		return lblNewLabel_9;
-	}
-
-	public void setLblNewLabel_9(JLabel lblNewLabel_9) {
-		this.lblNewLabel_9 = lblNewLabel_9;
-	}
 
 	public JLabel getLblNewLabel_10() {
 		return lblNewLabel_10;
@@ -285,6 +241,10 @@ public class ManagerUI1 extends JPanel{
 
 	public void setLblNewLabel_10(JLabel lblNewLabel_10) {
 		this.lblNewLabel_10 = lblNewLabel_10;
+	}
+
+	public JButton getButton_1() {
+		return button_1;
 	}
 	
 }

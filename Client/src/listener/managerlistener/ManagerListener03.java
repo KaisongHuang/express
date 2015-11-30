@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JTextField;
 
+import _enum.Opera;
 import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
@@ -34,7 +35,7 @@ public class ManagerListener03 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			ResultMessage rm;
 			EmployeeVO vo = this.read();
-			rm = manager.manageMember(vo);
+			rm = manager.manageMember(vo,Opera.Employee_insert);
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			delete(ui.getTextField());
 			delete(ui.getTextField_2());

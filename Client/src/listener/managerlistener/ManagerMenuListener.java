@@ -31,15 +31,15 @@ public class ManagerMenuListener implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getBtnNewButton_7()) {
+		if (e.getSource() == ui.getButton1()) {
 
-		} else if (e.getSource() == ui.getBtnNewButton_8()) {
+		} else if (e.getSource() == ui.getButton2()) {
 
-		} else if (e.getSource() == ui.getBtnNewButton_9()) {
+		} else if (e.getSource() == ui.getButton3()) {
 
-		} else if (e.getSource() == ui.getBtnNewButton_10()) {
+		} else if (e.getSource() == ui.getButton4()) {
 
-		} else if (e.getSource() == ui.getBtnNewButton_16()) {
+		} else if (e.getSource() == ui.getButton5()) {
 
 		}
 

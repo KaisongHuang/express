@@ -11,19 +11,19 @@ public class Test extends JFrame {
 	CardLayout card;
 	JPanel cardPanel;
 	public static void main(String[] args){
-		try {
-
-			UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//
+//			UIManager.setLookAndFeel("ch.randelshofer.quaqua.QuaquaLookAndFeel");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		new Test().init();
 	}
 	public void init(){
 		this.setLayout(null);
 		this.setSize(900, 700);
 		
-		JPanel panel=new ManagerUI14();
+		JPanel panel=new ManagerUI1();
 		
 		
 		

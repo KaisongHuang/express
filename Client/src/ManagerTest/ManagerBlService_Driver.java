@@ -19,7 +19,7 @@ public class ManagerBlService_Driver {
 			System.out.println("ERROR!");
 		}
 		
-		result=manager.manageMember(null);
+		result=manager.manageMember(null, null);
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}

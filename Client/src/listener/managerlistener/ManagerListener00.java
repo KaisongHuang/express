@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
 
+import _enum.Opera;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI0;
@@ -34,7 +35,7 @@ public class ManagerListener00 implements MouseListener, ActionListener {
 			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			String s = ui.getTextField().getText();
-			EmployeeVO vo = manager.findEmployee(s);
+			EmployeeVO vo = (EmployeeVO) manager.find(s,Opera.Employee_find);
 			setLabel(vo);
 		}
 		
