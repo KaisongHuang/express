@@ -66,38 +66,6 @@ public class WarehouseUI5 extends JPanel {
 	 */
 	private void initialize() {
 
-		// JPanel panel_3 = new JPanel();
-		// panel_3.setBounds(136, 58, 746, 58);
-		// panel_3.setLayout(null);
-		//
-		// JButton btnNewButton_7 = new JButton("出库入库");
-		// btnNewButton_7.setBackground(UIManager.getColor("Button.background"));
-		// btnNewButton_7.setBounds(0, 0, 137, 55);
-		// panel_3.add(btnNewButton_7);
-		//
-		// JButton btnNewButton_8 = new JButton("库存盘点");
-		// btnNewButton_8.setBackground(UIManager.getColor("Button.background"));
-		// btnNewButton_8.setBounds(135, 0, 137, 55);
-		// panel_3.add(btnNewButton_8);
-		//
-		// JButton btnNewButton_9 = new JButton("库存报警");
-		// btnNewButton_9.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent e) {
-		// }
-		// });
-		// btnNewButton_9.setBounds(271, 0, 130, 55);
-		// panel_3.add(btnNewButton_9);
-		//
-		// JButton btnNewButton_12 = new JButton("库区调整");
-		// btnNewButton_12.setBackground(UIManager.getColor("Button.background"));
-		// btnNewButton_12.setBounds(400, 0, 137, 55);
-		// panel_3.add(btnNewButton_12);
-		//
-		// JButton button = new JButton("库存信息初始化");
-		// button.setBackground(new Color(255, 248, 220));
-		// button.setBounds(536, 0, 130, 55);
-		// panel_3.add(button);
-
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 
@@ -201,7 +169,7 @@ public class WarehouseUI5 extends JPanel {
 		button_2.addActionListener(warehouseListener50);
 		this.add(button_2);
 
-		button_3 = new JButton("完成");
+		button_3 = new JButton("保存");
 		button_3.setBounds(630, 323, 65, 27);
 		button_3.addActionListener(warehouseListener50);
 		this.add(button_3);

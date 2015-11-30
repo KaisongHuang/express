@@ -86,7 +86,7 @@ public class ManagerUI14 extends JPanel{
 		this.add(btnNewButton_15);
 		
 		btnNewButton_16 = new JButton("清空");
-		btnNewButton_16.setBounds(493, 374, 100, 30);
+		btnNewButton_16.setBounds(477, 374, 100, 30);
 		this.add(btnNewButton_16);
 		
 		JScrollPane scrollPane = new JScrollPane();
