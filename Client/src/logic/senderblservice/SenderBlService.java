@@ -6,7 +6,7 @@ public interface SenderBlService {
 	
 	
 
-	public HistoryVO search(int id);
+	public HistoryVO search(String id);
 	
 
 }

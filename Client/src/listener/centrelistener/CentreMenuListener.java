@@ -6,58 +6,34 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import presentation.centreui.CentreMenuUI;
 import presentation.centreui.*;
 
-public class CentreMenuListener implements MouseListener, ActionListener {
-	
+public class CentreMenuListener implements ActionListener {
+	private CardLayout card;
 	private CentreMenuUI ui;
-	JPanel panel1;
-	JPanel panel2;
-	
-	public CentreMenuListener (CentreMenuUI ui){
-		
+	private JFrame frame;
+	public CentreMenuListener(CentreMenuUI centreMenuUI, CardLayout card, JFrame frame) {
 		super();
-		this.ui = ui;
+		this.ui = centreMenuUI;
+		this.card=card;
+		this.frame=frame;
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_8()){
+		if(e.getSource()==ui.getButton1()){
 					
-		}else if(e.getSource()==ui.getBtnNewButton_7()){
+		}else if(e.getSource()==ui.getButton2()){
+			
+		}else if(e.getSource()==ui.getButton3()){
+			
+		}else if(e.getSource()==ui.getButton4()){
 			
 		}
 		
 	}
-
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-
 }

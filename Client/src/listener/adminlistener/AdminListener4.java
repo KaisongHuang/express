@@ -31,7 +31,7 @@ public class AdminListener4 implements MouseListener, ActionListener {
 			delete(ui.getTextField());
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			ResultMessage rm;
-			int id = Integer.parseInt(ui.getTextField().getText());
+			String id = ui.getTextField().getText();
 			vo = admin.find(id);
 			rm = admin.manageCount(vo, Operation.delete);
 		}

@@ -40,12 +40,12 @@ public class SellingareaBlService_Stub implements SellingareaBlService{
 		return ResultMessage.Error;
 	}
 
-	public CarVO findCar(int id) {
+	public CarVO findCar(String id) {
 		// TODO Auto-generated method stub
 		return new CarVO();
 	}
 
-	public DriverVO findDriver(int id) {
+	public DriverVO findDriver(String id) {
 		// TODO Auto-generated method stub
 		return new DriverVO();
 	}

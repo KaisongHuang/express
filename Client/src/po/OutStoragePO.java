@@ -32,6 +32,14 @@ public class OutStoragePO extends WarehousePO {
 
 	}
 
+	public String getId(){
+		return id;
+	}
+	
+	public String getDestination(){
+		return destination;
+	}
+	
 	public String getOutdate() {
 		return outdate;
 	}

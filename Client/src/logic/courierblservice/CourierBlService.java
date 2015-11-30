@@ -8,6 +8,6 @@ import vo.SenderVO;
 public interface CourierBlService {
       public ResultMessage OrderInput(SenderVO vo,DistanceAndFee daf);
       public double getPrice(double fee,double packing);
-      public String getTime(int distance);
+      public String getTime(double distance);
       public ResultMessage ConsigneeinfoInput(CourierVO vo);
 }

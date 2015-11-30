@@ -12,7 +12,7 @@ public class AdminBlService_Stub implements AdminBlService {
 		return ResultMessage.Error;
 	}
 
-	public AdminVO find(int id) {
+	public AdminVO find(String id) {
 		// TODO Auto-generated method stub
 		return new AdminVO(null, null, null, null);
 	}

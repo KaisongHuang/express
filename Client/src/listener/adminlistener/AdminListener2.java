@@ -34,7 +34,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			delete(ui.getTextField_2());
 			ui.getComboBox_1().setSelectedIndex(0);
 		}else if(e.getSource()==ui.getButton_2()){
-			int id = Integer.parseInt(ui.getTextField_2().getText());
+			String id = ui.getTextField_2().getText();
 			vo = admin.find(id);
 			setAll(vo);
 		}else if(e.getSource()==ui.getButton()){

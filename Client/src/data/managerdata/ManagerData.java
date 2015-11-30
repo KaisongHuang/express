@@ -50,7 +50,7 @@ public class ManagerData implements ManagerDataService {
 		return null;
 	}
 
-	public ManagerPO find(int id) throws RemoteException {
+	public ManagerPO find(String id) throws RemoteException {
 		// TODO 自动生成的方法存根
 		return null;
 	}

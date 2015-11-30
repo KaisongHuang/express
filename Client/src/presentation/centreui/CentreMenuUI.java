@@ -1,83 +1,87 @@
 package presentation.centreui;
+
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import listener.centrelistener.CentreMenuListener;
 
+public class CentreMenuUI extends JPanel {
 
-public class CentreMenuUI extends JPanel{
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private CardLayout card;
-	private JButton btnNewButton_7;
-	private JButton btnNewButton_8;
+	private JButton button1;
+	private JButton button2;
+	private JButton button3;
+	private JButton button4;
 	private int width;
 	private int height;
 	CentreMenuListener centreMenuListener;
 
 	/**
 	 * Create the application.
+	 * @param width 
+	 * @param width 
+	 * @param frame 
 	 */
-	public CentreMenuUI(CardLayout card) {
-		centreMenuListener = new CentreMenuListener(this);
+	public CentreMenuUI(CardLayout card, int width, int hieght, JFrame frame) {
+		centreMenuListener = new CentreMenuListener(this, card,frame);
 		this.card = card;
-		width=this.getWidth();
-		height=this.getHeight();
+		width = width;
+		height = hieght;
+
 		initialize();
-	
-		
+
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-		
-		
-		
+        this.setSize(width,height);
 		this.setLayout(null);
+
+		button2 = new JButton("飞机装运");
+		button2.setBounds(0, height / 6, width, height/6);
+		button2.addActionListener(centreMenuListener);
+		this.add(button2);
+
+		button2 = new JButton("火车装运");
+		button2.setBounds(0, 2*height / 6, width, height/6);
+		button2.addActionListener(centreMenuListener);
+		this.add(button2);
 		
-		btnNewButton_8 = new JButton("\u88C5\u8FD0\u7BA1\u7406");
-		btnNewButton_8.setBounds(0, height/5, width, height);
-		this.add(btnNewButton_8);
-		btnNewButton_8.addActionListener(centreMenuListener);
+		button2 = new JButton("汽车装运");
+		button2.setBounds(0, 3*height / 6, width, height/6);
+		button2.addActionListener(centreMenuListener);
+		this.add(button2);
 		
-		
-		btnNewButton_7 = new JButton("\u63A5\u53D7\u5355");
-		btnNewButton_7.setBackground(new Color(255, 248, 220));
-		btnNewButton_7.setBounds(0, 0, width, height/5);
-		this.add(btnNewButton_7);
-		btnNewButton_7.addActionListener(centreMenuListener);
+		button1 = new JButton("接受单");
+		button1.setBackground(new Color(255, 248, 220));
+		button1.setBounds(0, 0, width, height / 6);
+		button1.addActionListener(centreMenuListener);
+		this.add(button1);
 		System.out.println("ok");
-		
+
 	}
 
-	public JButton getBtnNewButton_7() {
-		return btnNewButton_7;
+	public JButton getButton1() {
+		return button1;
 	}
-
-	public void setBtnNewButton_7(JButton btnNewButton_7) {
-		this.btnNewButton_7 = btnNewButton_7;
+	public JButton getButton2() {
+		return button2;
 	}
-
-	public JButton getBtnNewButton_8() {
-		return btnNewButton_8;
-	}
-
-	public void setBtnNewButton_8(JButton btnNewButton_8) {
-		this.btnNewButton_8 = btnNewButton_8;
-	}
+    public JButton getButton3(){
+    	return button3;
+    }
+    public JButton getButton4(){
+    	return button4;
+    }
 
 	public CardLayout getCard() {
 		return card;
@@ -87,7 +91,4 @@ public class CentreMenuUI extends JPanel{
 		this.card = card;
 	}
 
-	
-	
-	
 }

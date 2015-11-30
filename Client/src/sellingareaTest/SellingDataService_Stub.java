@@ -9,7 +9,7 @@ import data.sellingareadataservice.SellingareaDataService;
 
 public class SellingDataService_Stub implements SellingareaDataService {
 
-	public SellingareaPO find(int id) throws RemoteException {
+	public SellingareaPO find(String id) throws RemoteException {
 		System.out.println("find Succeed!");
 		return new SellingareaPO();
 	}
@@ -29,7 +29,7 @@ public class SellingDataService_Stub implements SellingareaDataService {
 		return ResultMessage.Success;
 	}
 
-	public SellingareaPO find(int id, Opera op) throws RemoteException {
+	public SellingareaPO find(String id, Opera op) throws RemoteException {
 		return null;
 	}
 

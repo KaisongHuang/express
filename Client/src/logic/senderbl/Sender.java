@@ -9,7 +9,7 @@ import logic.senderblservice.SenderBlService;
 
 public class Sender implements SenderBlService {
 
-	public HistoryVO search(int id) {
+	public HistoryVO search(String id) {
 		SenderData sd = new SenderData();
 		HistoryPO hispo;
 		try {

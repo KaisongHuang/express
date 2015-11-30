@@ -16,7 +16,7 @@ import data.senderdataservice.SenderDataService;
 public class SenderData implements SenderDataService{
 	TransformObject send;
     TransformObject acp;
-	public HistoryPO find(int id) throws RemoteException {
+	public HistoryPO find(String id) throws RemoteException {
 		send=new TransformObject(Opera.History_find,new Integer(id));
 		ClientAdapter.write(send);
 		acp=(TransformObject) ClientAdapter.readData();

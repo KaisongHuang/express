@@ -6,7 +6,7 @@ import logic.senderbl.Sender;
 
 public class SenderController implements SenderControllerService{
     Sender sender=new Sender();
-	public HistoryVO search(int id) {
+	public HistoryVO search(String id) {
 		
 		return sender.search(id);
 	}
