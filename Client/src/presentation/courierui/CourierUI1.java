@@ -26,13 +26,18 @@ public class CourierUI1 extends JPanel{
 	CourierListener1 courierlistener;
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
-
-
+    private int width;
+    private int height;
+    
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public CourierUI1() {
+	public CourierUI1(int i, int j) {
 		courierlistener = new CourierListener1(this);
+		this.width=i;
+		this.height=j;
 		initialize();
 	}
 

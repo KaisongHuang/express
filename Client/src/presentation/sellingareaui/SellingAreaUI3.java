@@ -50,13 +50,18 @@ public class SellingAreaUI3 extends JPanel{
 
 	SellingAreaListener30 sellingarealistener;
 	
-
+	private int width;
+	private int height;
 	/**
 	 * Create the application.
 	 * @param card 
+	 * @param j 
+	 * @param i 
 	 */
-	public SellingAreaUI3(CardLayout card) {
+	public SellingAreaUI3(CardLayout card, int i, int j) {
 		sellingarealistener = new SellingAreaListener30(this,card);
+		width=i;
+		height=j;
 		initialize();
 	}
 
