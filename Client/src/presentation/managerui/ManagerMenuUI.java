@@ -36,8 +36,8 @@ public class ManagerMenuUI extends JPanel{
 	public ManagerMenuUI(CardLayout card, int width, int height, JFrame frame) {
 		managermenulistener = new ManagerMenuListener(this,card,frame);
 		this.card = card;
-		width=width;
-		height=height;
+		this.width=width;
+		this.height=height;
 		initialize();
 	}
 
