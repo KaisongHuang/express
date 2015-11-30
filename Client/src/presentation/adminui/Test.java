@@ -31,7 +31,7 @@ public class Test extends JFrame {
 //		cardPanel.add(new CentreUI1(this), "2");
 		this.add(cardPanel);
 		
-		JPanel panel=new AdminMenuUI(card);
+		JPanel panel=new AdminUI1();
 		
 		
 		

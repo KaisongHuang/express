@@ -12,6 +12,7 @@ import data.sellingareadata.SellingAreaData;
 import data.warehousedata.WarehouseData;
 import logic.managerblservice.ManagerBlService;
 import po.AcceptPO;
+import po.CarPO;
 import po.CarPackPO;
 import po.CentreArrivalPO;
 import po.CentrePackPO;
@@ -275,24 +276,4 @@ public class Manager implements ManagerBlService {
 		return null;
 	}
 
-
-	public EmployeeVO findEmployee(String id) {
-		// TODO 自动生成的方法存根
-		return null;
-	}
-
-
-	public ResultMessage manageMember(Object vo) {
-		// TODO 自动生成的方法存根
-		return null;
-	}
-
-
-	public InstitutionVO findInstitution(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
 }

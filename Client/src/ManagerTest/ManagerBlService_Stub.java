@@ -2,8 +2,8 @@ package ManagerTest;
 
 import java.util.ArrayList;
 
+import _enum.Opera;
 import _enum.ResultMessage;
-import logic.managerbl.InstitutionVO;
 import logic.managerblservice.ManagerBlService;
 import vo.AcceptVO;
 import vo.AccountVO;
@@ -15,6 +15,7 @@ import vo.DeliverVO;
 import vo.DriverVO;
 import vo.EmployeeVO;
 import vo.InStorageVO;
+import vo.InstitutionVO;
 import vo.OutStorageVO;
 import vo.PackVO;
 import vo.PayVO;
@@ -83,6 +84,16 @@ public class ManagerBlService_Stub implements ManagerBlService {
 	}
 
 	public InstitutionVO findInstitution(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object find(String id, Opera op) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage manageMember(Object vo, Opera op) {
 		// TODO Auto-generated method stub
 		return null;
 	}
