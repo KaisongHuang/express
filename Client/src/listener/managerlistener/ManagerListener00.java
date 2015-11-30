@@ -1,5 +1,6 @@
 package listener.managerlistener;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -17,11 +18,11 @@ public class ManagerListener00 implements MouseListener, ActionListener {
 	
 	private ManagerUI0 ui;
 	ManagerBlService manager = new Manager();
-	
-	public ManagerListener00 (ManagerUI0 ui){
+	CardLayout card;
+	public ManagerListener00 (ManagerUI0 ui, CardLayout card){
 		super();
 		this.ui=ui;
-		
+		this.card=card;
 	}
 	
 

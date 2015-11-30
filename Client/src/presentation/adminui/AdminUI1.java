@@ -31,11 +31,16 @@ public class AdminUI1 extends JPanel{
 	private JComboBox comboBox;
 
 	AdminListener1 adminlistener;
-	
+	private int width;
+	private int height;
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public AdminUI1() {
+	public AdminUI1(int i, int j) {
+		width=i;
+		height=j;
 		adminlistener = new AdminListener1(this);
 		initialize();
 	}
@@ -47,9 +52,9 @@ public class AdminUI1 extends JPanel{
 		
 		
 		
-		this.setVerifyInputWhenFocusTarget(false);
-		this.setBounds(136, 115, 746, 438);
-		this.setBackground(Color.WHITE);
+	
+		
+		this.setBounds(0,0,480,320);
 		this.setLayout(null);
 		
 		JLabel label_3 = new JLabel("姓名：");

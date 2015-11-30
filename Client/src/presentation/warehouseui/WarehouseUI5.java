@@ -169,7 +169,7 @@ public class WarehouseUI5 extends JPanel {
 		button_2.addActionListener(warehouseListener50);
 		this.add(button_2);
 
-		button_3 = new JButton("完成");
+		button_3 = new JButton("保存");
 		button_3.setBounds(630, 323, 65, 27);
 		button_3.addActionListener(warehouseListener50);
 		this.add(button_3);

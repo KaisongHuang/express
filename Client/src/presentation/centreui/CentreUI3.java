@@ -33,16 +33,21 @@ public class CentreUI3 extends JPanel{
 	private JButton btnNewButton_11;
 	private JButton btnNewButton_12;
 	private JButton btnNewButton_13;
-
+	private int width;
+	private int height;
 	
 	CentreListener3 centrelistener;
 
 	/**
 	 * Create the application.
+	 * @param j 
+	 * @param i 
 	 */
-	public CentreUI3() {
+	public CentreUI3(int i, int j) {
 		
 		centrelistener = new CentreListener3(this);
+		width=i;
+		height=j;
 		initialize();
 	}
 
