@@ -8,9 +8,12 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JTextField;
 
+import _enum.Opera;
+import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI11;
+import vo.InstitutionVO;
 
 public class ManagerListener11 implements MouseListener, ActionListener {
 
@@ -34,19 +37,35 @@ public class ManagerListener11 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_14()){
 			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			
+			String id = ui.getTextField().getText();
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
-			
+			ResultMessage rm;
+			InstitutionVO vo = this.read();
+			rm = manager.manageMember(vo, Opera.Institution_update);
 		}else if(e.getSource()==ui.getBtnNewButton_17()){
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
-			delete(ui.getTextField_2());
 			delete(ui.getTextField_3());
-			delete(ui.getTextField_4());
 		}else if(e.getSource()==ui.getButton()){
 			
 		}
 		
+	}
+
+	private InstitutionVO read() {
+		// TODO Auto-generated method stub
+		String oi = ui.getTextField_1().getText();
+		String name = ui.getTextField_3().getText();
+		InstitutionVO vo = new InstitutionVO(oi,name);
+		return vo;
+	}
+
+	private void set(InstitutionVO vo) {
+		// TODO Auto-generated method stub
+		ui.getTextField_1().setText(vo.getOrganizationID());
+		ui.getTextField_3().setText(vo.getName());
 	}
 
 	private void delete(JTextField textField) {

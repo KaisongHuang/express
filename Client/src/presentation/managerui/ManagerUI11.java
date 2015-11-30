@@ -24,9 +24,7 @@ public class ManagerUI11 extends JPanel{
 
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
 	private JTextField textField_3;
-	private JTextField textField_4;
 	
 	private JButton btnNewButton_11;
 	private JButton btnNewButton_12;
@@ -106,7 +104,7 @@ public class ManagerUI11 extends JPanel{
 		btnNewButton_15.addActionListener(managerlistener);
 		
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(39, 138, 483, 179);
+		panel_6.setBounds(39, 138, 485, 111);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 		
@@ -118,45 +116,27 @@ public class ManagerUI11 extends JPanel{
 		lblNewLabel_3.setBounds(6, 43, 100, 18);
 		panel_6.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("机构距离：");
-		lblNewLabel_4.setBounds(6, 110, 100, 18);
-		panel_6.add(lblNewLabel_4);
-		
 		textField_1 = new JTextField();
 		textField_1.setBounds(83, 36, 122, 30);
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(83, 104, 122, 30);
-		panel_6.add(textField_2);
-		textField_2.setColumns(10);
-		
 		JLabel lblNewLabel_5 = new JLabel("机构编号：");
 		lblNewLabel_5.setBounds(258, 43, 100, 18);
 		panel_6.add(lblNewLabel_5);
-		
-		JLabel lblNewLabel_6 = new JLabel("距离价格：");
-		lblNewLabel_6.setBounds(258, 110, 100, 18);
-		panel_6.add(lblNewLabel_6);
 		
 		textField_3 = new JTextField();
 		textField_3.setBounds(332, 37, 122, 30);
 		panel_6.add(textField_3);
 		textField_3.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(332, 104, 122, 30);
-		panel_6.add(textField_4);
-		textField_4.setColumns(10);
-		
 		btnNewButton_16 = new JButton("更新");
-		btnNewButton_16.setBounds(49, 379, 100, 30);
+		btnNewButton_16.setBounds(39, 306, 100, 30);
 		this.add(btnNewButton_16);
 		btnNewButton_16.addActionListener(managerlistener);
 		
 		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(472, 379, 100, 30);
+		btnNewButton_17.setBounds(424, 306, 100, 30);
 		this.add(btnNewButton_17);
 		btnNewButton_17.addActionListener(managerlistener);
 		
@@ -179,13 +159,6 @@ public class ManagerUI11 extends JPanel{
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTextField_2() {
-		return textField_2;
-	}
-
-	public void setTextField_2(JTextField textField_2) {
-		this.textField_2 = textField_2;
-	}
 
 	public JTextField getTextField_3() {
 		return textField_3;
@@ -195,13 +168,6 @@ public class ManagerUI11 extends JPanel{
 		this.textField_3 = textField_3;
 	}
 
-	public JTextField getTextField_4() {
-		return textField_4;
-	}
-
-	public void setTextField_4(JTextField textField_4) {
-		this.textField_4 = textField_4;
-	}
 
 	public JButton getBtnNewButton_11() {
 		return btnNewButton_11;
