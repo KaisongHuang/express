@@ -55,4 +55,10 @@ public class FinanceDataService_Stub implements FinanceDataService{
 		return null;
 	}
 
+	public ArrayList<AccountPO> findInitInfo() throws RemoteException {
+		// TODO Auto-generated method stub
+		System.out.println("find Succeed");
+		return null;
+	}
+
 }
