@@ -38,7 +38,7 @@ public class FinanceBlService_Stub implements FinanceBlService{
 		return null;
 	}
 
-	public ResultMessage initAccount(String Account, double Money) {
+	public ResultMessage initAccount(AccountVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

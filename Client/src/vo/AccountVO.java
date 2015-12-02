@@ -7,6 +7,9 @@ public class AccountVO {
 		this.bankAccount=bankAccount;
 		this.balance=balance;
 	}
+	public AccountVO() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getBankAccount() {
 		return bankAccount;
 	}
