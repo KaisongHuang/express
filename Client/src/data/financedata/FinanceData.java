@@ -73,4 +73,14 @@ public class FinanceData implements FinanceDataService {
 
 		return (ArrayList<ReceiptPO>) acp.getOb();
 	}
+
+	@SuppressWarnings("unchecked")
+	public ArrayList<AccountPO> findInitInfo() throws RemoteException {
+		// TODO Auto-generated method stub
+		send = new TransformObject(Opera.InitInfo_find, null);
+		ClientAdapter.write(send);
+		acp = (TransformObject) ClientAdapter.readData();
+		
+		return (ArrayList<AccountPO>)acp.getOb();
+	}
 }

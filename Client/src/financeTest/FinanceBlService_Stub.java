@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.financeblservice.FinanceBlService;
+import po.AccountPO;
 import po.ReceiptPO;
 
 public class FinanceBlService_Stub implements FinanceBlService{
@@ -48,6 +49,11 @@ public class FinanceBlService_Stub implements FinanceBlService{
 	}
 
 	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<AccountPO> checkInitInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}

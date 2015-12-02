@@ -136,6 +136,17 @@ public class Finance implements FinanceBlService {
 		return null;
 	}
 
+	public ArrayList<AccountPO> checkInitInfo() {
+		ArrayList<AccountPO> po = new ArrayList<AccountPO>();
+		try {
+			po=fd.findInitInfo();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return po;
+	}
+
 	public int getCount() {
 		return count;
 	}
