@@ -19,6 +19,8 @@ public interface FinanceDataService {
 	public ResultMessage update(FinancePO po) throws RemoteException;
 
 	public ArrayList<AccountPO> findAccount() throws RemoteException;
+	
+	public ArrayList<AccountPO> findInitInfo() throws RemoteException;
 
 	public ArrayList<PayPO> findPay() throws RemoteException;
 

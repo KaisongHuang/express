@@ -1,13 +1,13 @@
 package logic.financeblservice;
 
 import vo.AccountVO;
-import vo.FinanceVO;
 import vo.PayVO;
 
 import java.util.ArrayList;
 
 import _enum.Operation;
 import _enum.ResultMessage;
+import po.AccountPO;
 import po.ReceiptPO;
 
 public interface FinanceBlService {
@@ -23,4 +23,6 @@ public interface FinanceBlService {
 	public AccountVO findAccount(String bankAccount);
 
 	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea);
+	
+	public ArrayList<AccountPO> checkInitInfo();
 }

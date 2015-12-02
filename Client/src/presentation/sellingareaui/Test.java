@@ -23,11 +23,11 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(900, 700);
 		
-		JPanel panel=new SellingAreaUI43();
-		
-		
-		panel.setBounds(136, 58, 746, 500);
-		this.add(panel);
+//		JPanel panel=new SellingAreaUI43();
+//		
+//		
+//		panel.setBounds(136, 58, 746, 500);
+//		this.add(panel);
 		
 //		cardPanel = new JPanel();
 //		cardPanel.setBounds(0,200,800,600);
