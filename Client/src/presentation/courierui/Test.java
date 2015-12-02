@@ -28,11 +28,11 @@ public class Test extends JFrame {
 //		card = new CardLayout(0,0);
 //		cardPanel.setLayout(card);
 //		
-		JPanel panel=new CourierUI4();
-		
-		
-		panel.setBounds(136, 58, 746, 500);
-		this.add(panel);
+//		JPanel panel=new CourierUI4();
+//		
+//		
+//		panel.setBounds(136, 58, 746, 500);
+//		this.add(panel);
 		
 //		cardPanel = new JPanel();
 //		cardPanel.setBounds(0,200,800,600);

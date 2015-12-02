@@ -31,12 +31,12 @@ public class Test extends JFrame {
 //		cardPanel.add(new CentreUI1(this), "2");
 		this.add(cardPanel);
 		
-		JPanel panel=new AdminUI1();
-		
-		
-		
-		panel.setBounds(136, 58, 746,800);
-		this.add(panel);
+//		JPanel panel=new AdminUI1();
+//		
+//		
+//		
+//		panel.setBounds(136, 58, 746,800);
+//		this.add(panel);
 		
 //		cardPanel = new JPanel();
 //		cardPanel.setBounds(0,200,800,600);
