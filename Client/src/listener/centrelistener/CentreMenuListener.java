@@ -26,13 +26,13 @@ public class CentreMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getButton1()){
-					
+				card.show(panel, "0");	
 		}else if(e.getSource()==ui.getButton2()){
-			
+			card.show(panel, "1");
 		}else if(e.getSource()==ui.getButton3()){
-			
+			card.show(panel, "2");
 		}else if(e.getSource()==ui.getButton4()){
-			
+			card.show(panel, "3");
 		}
 		
 	}

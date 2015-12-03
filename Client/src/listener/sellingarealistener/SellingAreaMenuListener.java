@@ -27,15 +27,15 @@ public class SellingAreaMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton()) {
-
+              card.show(panel, "7");
 		} else if (e.getSource() == ui.getBtnNewButton_7()) {
-
+			card.show(panel, "0");
 		} else if (e.getSource() == ui.getBtnNewButton_8()) {
-
+			card.show(panel, "1");
 		} else if (e.getSource() == ui.getBtnNewButton_9()) {
-
+			card.show(panel, "2");
 		} else if (e.getSource() == ui.getBtnNewButton_12()) {
-
+			card.show(panel, "3");
 		}
 
 	}

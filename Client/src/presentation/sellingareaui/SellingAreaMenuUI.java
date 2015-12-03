@@ -31,11 +31,11 @@ public class SellingAreaMenuUI extends JPanel{
 	 * Create the application.
 	 * @param panel1 
 	 */
-	public SellingAreaMenuUI(CardLayout card,int width,int hght, JPanel panel1) {
+	public SellingAreaMenuUI(CardLayout card,int width,int height, JPanel panel1) {
 		this.card=card;
 		sellingarealistener = new SellingAreaMenuListener(this,card,panel1);
-		width=width;
-		height=height;
+		this.width=width;
+		this.height=height;
 		
 		initialize();
 	}
@@ -58,20 +58,19 @@ public class SellingAreaMenuUI extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_9.setBounds(0, 2*height/6, 137, 55);
+		btnNewButton_9.setBounds(0, 2*height/6, width, height/6);
 		this.add(btnNewButton_9);
 		
 		btnNewButton_7 = new JButton("车辆装车管理");
-		btnNewButton_7.setBackground(new Color(255, 248, 220));
 		btnNewButton_7.setBounds(0, 0, width, height/6);
 		this.add(btnNewButton_7);
 		
 		btnNewButton_12 = new JButton("车辆信息管理");
-		btnNewButton_12.setBounds(0, 3*height/6, 137, 55);
+		btnNewButton_12.setBounds(0, 3*height/6, width,height/6);
 		this.add(btnNewButton_12);
 		
 		button = new JButton("司机信息管理");
-		button.setBounds(0, 4*height/65, width, height/6);
+		button.setBounds(0, 4*height/6, width, height/6);
 		this.add(button);
 		
 		btnNewButton_7.addActionListener(sellingarealistener);
