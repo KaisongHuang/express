@@ -121,11 +121,11 @@ public class Finance implements FinanceBlService {
 		return arr;
 	}
 
-	public ResultMessage initAccount(String Account, double Money) {
+	public ResultMessage initAccount(AccountVO vo) {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
 		ResultMessage rm;
-		AccountPO po = new AccountPO(Account, Money);
+		AccountPO po = new AccountPO(vo.getBankAccount(), vo.getBalance());
 		try {
 			rm = fd.insert(po);
 			return rm;
