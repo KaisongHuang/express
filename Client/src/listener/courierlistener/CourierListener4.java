@@ -25,13 +25,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_10()){
-			ui.getTextField().setText("");
-			ui.getLblNewLabel_4().setText("");
-			ui.getLblNewLabel_5().setText("");
-			ui.getTextArea_1().setText("");
-		}else if(e.getSource()==ui.getBtnNewButton_11()){
+		if(e.getSource()==ui.getButton()){
 			String id = ui.getTextField().getText();
 			HistoryVO vo = sender.search(id);
 			set(vo);

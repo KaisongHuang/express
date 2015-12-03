@@ -17,10 +17,10 @@ public class FinanceMenuUI extends JPanel{
 	FinanceMenuListener listener;
 	private int width;
 	private int height;
-	public FinanceMenuUI(CardLayout card, int width, int height, JFrame frame){
+	public FinanceMenuUI(CardLayout card, int width, int height, JPanel panel1){
 		width=width;
 		height=height;
-		listener=new FinanceMenuListener(this,card,frame);
+		listener=new FinanceMenuListener(this,card,panel1);
 		init();
 		
 				

@@ -31,10 +31,10 @@ public class ManagerMenuUI extends JPanel{
 	 * Create the application.
 	 * @param height 
 	 * @param width 
-	 * @param frame 
+	 * @param panel1 
 	 */
-	public ManagerMenuUI(CardLayout card, int width, int height, JFrame frame) {
-		managermenulistener = new ManagerMenuListener(this,card,frame);
+	public ManagerMenuUI(CardLayout card, int width, int height, JPanel panel1) {
+		managermenulistener = new ManagerMenuListener(this,card,panel1);
 		this.card = card;
 		this.width=width;
 		this.height=height;
