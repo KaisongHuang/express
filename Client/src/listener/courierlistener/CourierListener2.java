@@ -25,11 +25,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_11()){
-			delete(ui.getTextField());
-			delete(ui.getTextField_1());
-			delete(ui.getTextField_2());
-		}else if(e.getSource()==ui.getBtnNewButton_10()){
+		if(e.getSource()==ui.getButton()){
 			ResultMessage rm;
 			CourierVO vo = this.read();
 			rm = courier.ConsigneeinfoInput(vo);
@@ -45,11 +41,6 @@ public class CourierListener2 implements MouseListener, ActionListener {
 		CourierVO vo = new CourierVO(number,name,date);
 		
 		return vo;
-	}
-
-	private void delete(JTextField textField) {
-		// TODO Auto-generated method stub
-		textField.setText("");
 	}
 
 	public void mouseClicked(MouseEvent e) {

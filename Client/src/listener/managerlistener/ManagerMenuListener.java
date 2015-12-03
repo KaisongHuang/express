@@ -19,14 +19,14 @@ public class ManagerMenuListener implements ActionListener {
 	JPanel panel3;
 	JPanel panel4;
 	JPanel panel5;
-    private JFrame frame;
+    private JPanel panel;
 
-	public ManagerMenuListener(ManagerMenuUI managerMenuUI, CardLayout card, JFrame frame) {
+	public ManagerMenuListener(ManagerMenuUI managerMenuUI, CardLayout card, JPanel panel12) {
 		// TODO Auto-generated constructor stub
 		super();
 		this.ui = managerMenuUI;
 		this.card=card;
-		this.frame=frame;
+		this.panel=panel12;
 	}
 
 	public void actionPerformed(ActionEvent e) {

@@ -22,9 +22,9 @@ public class AdminMenuUI extends JPanel {
 	private int width;
 	private int height;
 
-	public AdminMenuUI(CardLayout card, int width, int height, JFrame frame) {
+	public AdminMenuUI(CardLayout card, int width, int height, JPanel panel1) {
 		this.card = card;
-		adminlistener = new AdminMenuListener(this, card,frame);
+		adminlistener = new AdminMenuListener(this, card,panel1);
 		width = width=120;
 		height = height=600;
 		initialize();

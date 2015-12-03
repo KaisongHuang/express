@@ -12,11 +12,11 @@ import presentation.warehouseui.WarehouseMenuUI;
 public class WarehouseMenuListener implements ActionListener{
     CardLayout card;
     WarehouseMenuUI panel;
-    private JFrame frame;
-	public WarehouseMenuListener(WarehouseMenuUI panel,CardLayout card, JFrame frame){
+    private JPanel panel1;
+	public WarehouseMenuListener(WarehouseMenuUI panel,CardLayout card, JPanel panel1){
 		this.panel=panel;
 		this.card=card;
-		this.frame=frame;
+		this.panel1=panel1;
 	}
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==panel.getButton1()){

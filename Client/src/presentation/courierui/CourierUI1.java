@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import listener.courierlistener.CourierListener1;
 
 import javax.swing.JComboBox;
-
+//报价与时间界面
 
 public class CourierUI1 extends JPanel{
 
@@ -24,8 +24,8 @@ public class CourierUI1 extends JPanel{
 	private JTextField textField_1;
 
 	CourierListener1 courierlistener;
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
+
+	private JButton button;
     private int width;
     private int height;
     
@@ -73,16 +73,10 @@ public class CourierUI1 extends JPanel{
 		this.add(textField_1);
 		textField_1.setColumns(10);
 		
-		btnNewButton_10 = new JButton("\u786E\u8BA4");
-		btnNewButton_10.setBounds(109, 382, 90, 30);
-		this.add(btnNewButton_10);
-		
-		btnNewButton_11 = new JButton("\u8FD4\u56DE");
-		btnNewButton_11.setBounds(485, 382, 90, 30);
-		this.add(btnNewButton_11);
-		
-		btnNewButton_10.addActionListener(courierlistener);
-		btnNewButton_11.addActionListener(courierlistener);
+		button = new JButton("返回");
+		button.setBounds(485, 382, 90, 30);
+		this.add(button);
+		button.addActionListener(courierlistener);
 	
 	}
 
@@ -102,19 +96,9 @@ public class CourierUI1 extends JPanel{
 		this.textField_1 = textField_1;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
+
+	public JButton getButton() {
+		return button;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
-
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
 }

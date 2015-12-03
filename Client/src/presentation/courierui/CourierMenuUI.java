@@ -24,12 +24,12 @@ public class CourierMenuUI extends JPanel {
 	CardLayout card;
 	CourierMenuListener cml;
 
-	public CourierMenuUI(CardLayout card, int width, int height, JFrame frame) {
+	public CourierMenuUI(CardLayout card, int width, int height, JPanel panel1) {
 		super();
 		this.card = card;
 		this.width = width;
 		this.height = height;
-		cml = new CourierMenuListener(this, card,frame);
+		cml = new CourierMenuListener(this, card,panel1);
 		initialize();
 
 	}
