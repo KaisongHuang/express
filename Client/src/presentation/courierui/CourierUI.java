@@ -61,7 +61,7 @@ public class CourierUI extends JPanel{
 	 */
 	private void initialize() {
 
-	
+		
 		this.setLayout(null);
 	
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");
