@@ -17,11 +17,11 @@ public class WarehouseMenuUI extends JPanel{
 	private int height;
 	WarehouseMenuListener listen;
 
-	public WarehouseMenuUI(CardLayout card, int width, int height, JFrame frame){
+	public WarehouseMenuUI(CardLayout card, int width, int height, JPanel panel1){
 		width=width;
 		height=height;
 		
-		listen=new WarehouseMenuListener(this,card,frame);
+		listen=new WarehouseMenuListener(this,card,panel1);
 		
 	}
 	public void init(){	

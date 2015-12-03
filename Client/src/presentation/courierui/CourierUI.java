@@ -16,7 +16,7 @@ import listener.courierlistener.CourierListener0;
 
 import javax.swing.JComboBox;
 
-
+//订单输入界面
 public class CourierUI extends JPanel{
 
 
