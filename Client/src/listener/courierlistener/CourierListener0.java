@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
@@ -12,6 +13,7 @@ import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
 import po.DistanceAndFee;
 import presentation.courierui.CourierUI;
+import presentation.courierui.CourierUI1;
 import vo.SenderVO;
 
 public class CourierListener0 implements MouseListener, ActionListener {
@@ -19,10 +21,13 @@ public class CourierListener0 implements MouseListener, ActionListener {
 	private CourierUI ui;
 	CourierBlService courier = new Courier();
 	private DistanceAndFee daf;
-	
+	CourierUI1 panel;
 	public CourierListener0 (CourierUI ui){
 		super();
 		this.ui=ui;
+		panel=new CourierUI1(ui.WIDTH,ui.HEIGHT);
+		ui.add(panel);
+		panel.setVisible(false);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -49,7 +54,9 @@ public class CourierListener0 implements MouseListener, ActionListener {
 			ResultMessage rm;
 			SenderVO vo = this.read();
 			rm = courier.OrderInput(vo, daf);
-			//跳转至CourierUI1
+			panel.setVisible(true);
+			
+		    
 		}
 	}
 

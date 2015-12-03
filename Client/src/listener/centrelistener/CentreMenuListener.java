@@ -15,12 +15,12 @@ import presentation.centreui.*;
 public class CentreMenuListener implements ActionListener {
 	private CardLayout card;
 	private CentreMenuUI ui;
-	private JFrame frame;
-	public CentreMenuListener(CentreMenuUI centreMenuUI, CardLayout card, JFrame frame) {
+	private JPanel panel;
+	public CentreMenuListener(CentreMenuUI centreMenuUI, CardLayout card, JPanel panel1) {
 		super();
 		this.ui = centreMenuUI;
 		this.card=card;
-		this.frame=frame;
+		this.panel=panel1;
 	}
 
 	public void actionPerformed(ActionEvent e) {

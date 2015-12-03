@@ -27,10 +27,10 @@ public class CentreMenuUI extends JPanel {
 	 * Create the application.
 	 * @param width 
 	 * @param width 
-	 * @param frame 
+	 * @param panel1 
 	 */
-	public CentreMenuUI(CardLayout card, int width, int hieght, JFrame frame) {
-		centreMenuListener = new CentreMenuListener(this, card,frame);
+	public CentreMenuUI(CardLayout card, int width, int hieght, JPanel panel1) {
+		centreMenuListener = new CentreMenuListener(this, card,panel1);
 		this.card = card;
 		width = width;
 		height = hieght;

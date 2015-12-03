@@ -29,11 +29,11 @@ public class SellingAreaMenuUI extends JPanel{
 
 	/**
 	 * Create the application.
-	 * @param frame 
+	 * @param panel1 
 	 */
-	public SellingAreaMenuUI(CardLayout card,int width,int hght, JFrame frame) {
+	public SellingAreaMenuUI(CardLayout card,int width,int hght, JPanel panel1) {
 		this.card=card;
-		sellingarealistener = new SellingAreaMenuListener(this,card,frame);
+		sellingarealistener = new SellingAreaMenuListener(this,card,panel1);
 		width=width;
 		height=height;
 		

@@ -21,10 +21,8 @@ public class CourierListener1 implements MouseListener, ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_10()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_11()){
-			
+		if(e.getSource()==ui.getButton()){
+			ui.setVisible(false);
 		}
 	}
 

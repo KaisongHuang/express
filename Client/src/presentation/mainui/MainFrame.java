@@ -53,11 +53,13 @@ public class MainFrame implements ActionListener {
        
 		panel1 = new JPanel();
 		panel2 = new JPanel();
-		getPanel3();
-
+		
 		Card = new CardLayout();
 		panel1.setLayout(Card);
+		
 		setCard();
+		getPanel3();
+
 		Card.show(panel1, "0");
 
 		panel2.setLayout(null);
@@ -142,10 +144,9 @@ public class MainFrame implements ActionListener {
 
 	public void setCard() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel1.add(new CourierUI(4*width/5,4*height/5), 0);
-			panel1.add(new CourierUI1(4*width/5,4*height/5), 1);
-			panel1.add(new CourierUI2(4*width/5,4*height/5), 2);
-			panel1.add(new CourierUI4(4*width/5,4*height/5), 3);
+			panel1.add(new CourierUI(4*width/5,4*height/5), "0");
+			panel1.add(new CourierUI2(4*width/5,4*height/5), "1");
+			panel1.add(new CourierUI4(4*width/5,4*height/5), "2");
 
 		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
 			panel1.add(new SellingAreaUI(4*width/5,4*height/5), 0);
@@ -202,19 +203,19 @@ public class MainFrame implements ActionListener {
 
 	public void getPanel3() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
-			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
-			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
-			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		} else if (EmployeeMes.employeePosition.equals("财务员")) {
-			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		} else if (EmployeeMes.employeePosition.equals("管理员")) {
-			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5,frame);
+			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		}
 	}
 
