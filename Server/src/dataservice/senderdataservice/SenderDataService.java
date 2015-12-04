@@ -1,12 +1,15 @@
 package dataservice.senderdataservice;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 import po.HistoryPO;
 import server.database.MySQLDataBase;
 
 
 
-public interface SenderDataService {
-      public HistoryPO find(MySQLDataBase db,String id,String tableName);
+public interface SenderDataService extends Remote{
+      public HistoryPO find(String id)throws RemoteException;
     	  
       
 }
