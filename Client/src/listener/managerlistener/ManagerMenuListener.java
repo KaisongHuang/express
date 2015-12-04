@@ -32,15 +32,15 @@ public class ManagerMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton1()) {
-
+              card.show(panel, "4");
 		} else if (e.getSource() == ui.getButton2()) {
-
+			card.show(panel, "0");
 		} else if (e.getSource() == ui.getButton3()) {
-
+			card.show(panel, "9");
 		} else if (e.getSource() == ui.getButton4()) {
-
+			card.show(panel, "10");
 		} else if (e.getSource() == ui.getButton5()) {
-
+			card.show(panel, "11");
 		}
 
 	}
