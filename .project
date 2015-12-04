@@ -20,4 +20,11 @@
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>mysql-connector-java-5.1.36-bin.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/%E9%81%A8%E6%B8%B8/mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
