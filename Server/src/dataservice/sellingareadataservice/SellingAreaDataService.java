@@ -1,14 +1,18 @@
 package dataservice.sellingareadataservice;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 import _enum.ResultMessage;
 import po.SellingareaPO;
 import server.database.MySQLDataBase;
 
 
-public interface SellingAreaDataService {
-       public SellingareaPO find(MySQLDataBase db,String id,String tableName);
-       public ResultMessage update(MySQLDataBase db,Object po,String tableName);
-       public ResultMessage delete(MySQLDataBase db,Object po,String tableName);
-       public ResultMessage insert(MySQLDataBase db,Object po,String tableName);
+public interface SellingAreaDataService extends Remote{
+       public SellingareaPO findCar(String id)throws RemoteException;
+       public SellingareaPO findDriver(String id)throws RemoteException;
+       public ResultMessage update(Object po)throws RemoteException;
+       public ResultMessage delete(Object po)throws RemoteException;
+       public ResultMessage insert(Object po)throws RemoteException;
        
 }
