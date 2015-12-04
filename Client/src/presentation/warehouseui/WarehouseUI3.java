@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
 
 public class WarehouseUI3 extends JPanel{
 
@@ -30,33 +31,25 @@ public class WarehouseUI3 extends JPanel{
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 		
-		JLabel label = new JLabel("当前警戒比例:");
-		label.setBounds(50, 89, 86, 15);
-		this.add(label);
-		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(148, 89, 57, 15);
+		lblNewLabel_1.setBounds(135, 40, 57, 15);
 		this.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("设置警戒比例:");
-		lblNewLabel_2.setBounds(50, 138, 86, 15);
+		lblNewLabel_2.setBounds(261, 40, 86, 15);
 		this.add(lblNewLabel_2);
 		
 		textField = new JTextField();
-		textField.setBounds(148, 132, 57, 27);
+		textField.setBounds(342, 34, 57, 27);
 		this.add(textField);
 		textField.setColumns(10);
 		
-		JLabel label_1 = new JLabel("当前商品比例:");
-		label_1.setBounds(50, 40, 86, 15);
+		JLabel label_1 = new JLabel("当前比例设置:");
+		label_1.setBounds(49, 40, 86, 15);
 		this.add(label_1);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(148, 40, 57, 15);
-		this.add(lblNewLabel_3);
-		
 		JButton btnNewButton_10 = new JButton("确认");
-		btnNewButton_10.setBounds(217, 132, 57, 27);
+		btnNewButton_10.setBounds(399, 34, 57, 27);
 		this.add(btnNewButton_10);
 	}
 }
