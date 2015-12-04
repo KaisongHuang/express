@@ -170,7 +170,6 @@ public class MainFrame implements ActionListener {
 			panel1.add(new WarehouseUI2(), "1");
 			panel1.add(new WarehouseUI3(), "2");
 			panel1.add(new WarehouseUI4(), "3");
-	        panel1.add(new WarehouseUI5(), "4");
 		} else if (EmployeeMes.employeePosition.equals("财务员")) {
 			panel1.add(new FinanceUI1(), 0);
 			panel1.add(new FinanceUI2(), 1);
