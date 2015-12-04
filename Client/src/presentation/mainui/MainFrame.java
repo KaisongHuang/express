@@ -44,7 +44,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "管理员";
+		EmployeeMes.employeePosition = "总经理";
 		frame = new JFrame();
 		frame.setLayout(null);
 		frame.setUndecorated(true);
@@ -177,21 +177,21 @@ public class MainFrame implements ActionListener {
 			panel1.add(new FinanceUI3(), 2);
 			panel1.add(new FinanceUI4(), 3);
 		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-			panel1.add(new ManagerUI0(Card), 0);
-			panel1.add(new ManagerUI01(Card), 1);
-			panel1.add(new ManagerUI02(Card), 2);
-			panel1.add(new ManagerUI03(Card), 3);
+			panel1.add(new ManagerUI0(Card), "0");
+			panel1.add(new ManagerUI01(Card), "1");
+			panel1.add(new ManagerUI02(Card), "2");
+			panel1.add(new ManagerUI03(Card), "3");
 			
-			panel1.add(new ManagerUI1(Card), 4);
-			panel1.add(new ManagerUI11(Card), 5);
-			panel1.add(new ManagerUI12(Card), 6);
-			panel1.add(new ManagerUI13(Card), 7);
-			panel1.add(new ManagerUI14(Card), 8);
+			panel1.add(new ManagerUI1(Card), "4");
+			panel1.add(new ManagerUI11(Card), "5");
+			panel1.add(new ManagerUI12(Card), "6");
+			panel1.add(new ManagerUI13(Card), "7");
+			panel1.add(new ManagerUI14(Card), "8");
 			
-			panel1.add(new ManagerUI2(), 2);
-			panel1.add(new ManagerUI3(), 3);
-			panel1.add(new ManagerUI4(Card), 4);
-			panel1.add(new ManagerUI41(Card), 4);
+			panel1.add(new ManagerUI2(), "9");
+			panel1.add(new ManagerUI3(), "10");
+			panel1.add(new ManagerUI4(Card), "11");
+			panel1.add(new ManagerUI41(Card), "12");
 		} else if (EmployeeMes.employeePosition.equals("管理员")) {
 			panel1.add(new AdminUI1(4*width/5,4*height/5), "0");
 			panel1.add(new AdminUI2(4*width/5,4*height/5), "1");
