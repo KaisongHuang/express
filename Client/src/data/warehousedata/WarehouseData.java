@@ -45,7 +45,6 @@ public class WarehouseData implements WarehouseDataService {
 		ClientAdapter.write(send);
 		acp=(TransformObject) ClientAdapter.readData();
 		return (ArrayList<InStoragePO>) acp.getOb();
-	
 	}
 	
 	public ArrayList<OutStoragePO> findOutStorage(){
@@ -69,6 +68,12 @@ public class WarehouseData implements WarehouseDataService {
 		return (ResultMessage) acp.getOb();
 	}
 
+	public ArrayList<InStoragePO> adjustInStorage(){
+		return null;
+	}
 	
+	public ArrayList<InStoragePO> findFreeSpace(){
+		return null;
+	}
 
 }

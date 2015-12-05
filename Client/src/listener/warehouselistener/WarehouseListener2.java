@@ -9,11 +9,11 @@ import logic.warehousebl.Warehouse;
 import po.InStoragePO;
 import presentation.warehouseui.WarehouseUI2;
 
-public class WarehouseListener20 implements ActionListener {
+public class WarehouseListener2 implements ActionListener {
 	private WarehouseUI2 ui;
 	Warehouse warehouse = new Warehouse();
 
-	public WarehouseListener20(WarehouseUI2 ui) {
+	public WarehouseListener2(WarehouseUI2 ui) {
 		super();
 		this.ui = ui;
 	}

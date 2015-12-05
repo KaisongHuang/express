@@ -15,11 +15,11 @@ import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI4;
 import vo.InStorageVO;
 
-public class WarehouseListener40 implements ActionListener {
+public class WarehouseListener4 implements ActionListener {
 	private WarehouseUI4 ui;
 	WarehouseBlService warehouseBl = new Warehouse();
 
-	public WarehouseListener40(WarehouseUI4 ui) {
+	public WarehouseListener4(WarehouseUI4 ui) {
 		super();
 		this.ui = ui;
 	}

@@ -10,17 +10,17 @@ import presentation.warehouseui.WarehouseUI1;
 import vo.InStorageVO;
 import vo.OutStorageVO;
 
-public class WarehouseListener10 implements ActionListener {
+public class WarehouseListener1 implements ActionListener {
 
 	private WarehouseUI1 ui;
 	WarehouseBlService warehouseBl = new Warehouse();
 
-	public WarehouseListener10(WarehouseUI1 ui) {
+	public WarehouseListener1(WarehouseUI1 ui) {
 		super();
 		this.ui = ui;
 	}
 
-	public WarehouseListener10() {
+	public WarehouseListener1() {
 
 	}
 
@@ -82,7 +82,7 @@ public class WarehouseListener10 implements ActionListener {
 		in.setPos_jia(ui.getPos_jia());// comboBox_9
 		in.setPos_wei(ui.getPos_wei());// comboBox_10
 		in.setWarehouseID(EmployeeMes.belongToWho);
-		in.setIsCheck(1);
+		in.setIsCheck(0);
 		return in;
 	}
 }

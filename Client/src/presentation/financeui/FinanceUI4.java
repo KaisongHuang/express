@@ -16,6 +16,7 @@ public class FinanceUI4 extends JPanel {
 	private FinanceUI4_1 ui1;
 	private FinanceUI4_2 ui2;
 	private FinanceListener4 financeListener4;
+
 	/**
 	 * Create the application.
 	 * 
@@ -23,28 +24,25 @@ public class FinanceUI4 extends JPanel {
 	 * @param width
 	 */
 	public FinanceUI4() {
-		financeListener4=new FinanceListener4(this);
-		
+		financeListener4 = new FinanceListener4(this);
+
 		initialize();
 	}
 
 	private void initialize() {
 		this.setBounds(136, 115, 746, 438);
-		
-		
 
-		ui1=new FinanceUI4_1(financeListener4);
-		ui2=new FinanceUI4_2(financeListener4);
-	
-		
-		
-		card=new CardLayout(0,0);
+		ui1 = new FinanceUI4_1(financeListener4);
+		ui2 = new FinanceUI4_2(financeListener4);
+		ui3 = new FinanceUI4_3(financeListener4);
+
+		card = new CardLayout(0, 0);
 		this.setLayout(card);
-		this.add(ui3,"0");
+		this.add(ui3, "0");
 		this.add(ui1, "1");
 		this.add(ui2, "2");
 		card.show(this, "0");
-		
+
 	}
 
 	public FinanceListener4 getFinanceListener4() {
