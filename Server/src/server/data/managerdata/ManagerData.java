@@ -9,11 +9,11 @@ import po.InstitutionPO;
 import po.ManagerPO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
-import dataservice.managerdataservice.ManagerDataService;
+import dataservice.managerdataservice.ManagerDataBaseService;
 
 
 
-public class ManagerData extends UnicastRemoteObject implements ManagerDataService{
+public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseService{
 	MySQLDataBase db;
 	public ManagerData(MySQLDataBase db) throws RemoteException{
 		super();

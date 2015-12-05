@@ -20,7 +20,7 @@ public class Courier implements CourierBlService {
 
 	public ResultMessage OrderInput(SenderVO vo,DistanceAndFee daf) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm = null;
 		double packing = 0.0;
 		if(vo.getBagging().equalsIgnoreCase("纸箱")){
 			packing = 5.0;			
@@ -35,7 +35,12 @@ public class Courier implements CourierBlService {
 				vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),this.getPrice(daf.getFee(),packing ),
 				vo.getBarCode(),vo.getType());
 		
-			rm= cd.OrderInput(po);
+			try {
+				rm= cd.OrderInput(po);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return rm;
 		
 		

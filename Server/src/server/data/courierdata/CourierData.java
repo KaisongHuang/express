@@ -8,9 +8,9 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import _enum.ResultMessage;
-import dataservice.courierdataservice.CourierDataService;
+import dataservice.courierdataservice.CourierDataBaseService;
 
-public class CourierData extends UnicastRemoteObject implements CourierDataService{
+public class CourierData extends UnicastRemoteObject implements CourierDataBaseService{
 	MySQLDataBase db;
 	public CourierData(MySQLDataBase db) throws RemoteException{
     	super();

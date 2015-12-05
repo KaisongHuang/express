@@ -5,13 +5,13 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
 
 import po.HistoryPO;
-import dataservice.senderdataservice.SenderDataService;
+import dataservice.senderdataservice.SenderDataBaseService;
 import server.database.MySQLDataBase;
 
 
 
 
-public class SenderData extends UnicastRemoteObject implements SenderDataService{
+public class SenderData extends UnicastRemoteObject implements SenderDataBaseService{
 	MySQLDataBase db;
 	public SenderData(MySQLDataBase db) throws RemoteException{
 		super();

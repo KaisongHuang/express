@@ -7,6 +7,6 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 
-public interface CourierDataService extends Remote{
+public interface CourierDataBaseService extends Remote{
        public ResultMessage insert( Object po)throws RemoteException;
 }

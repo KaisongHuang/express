@@ -8,7 +8,7 @@ import server.database.MySQLDataBase;
 
 
 
-public interface SenderDataService extends Remote{
+public interface SenderDataBaseService extends Remote{
       public HistoryPO find(String id)throws RemoteException;
     	  
       
