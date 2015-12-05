@@ -24,6 +24,7 @@ public class Login implements LoginBlService{
 		try {
 System.out.println("逻辑层执行正确");
 			ep=loginData.login(po);
+
 			ev=new EmployeeVO(ep.getEmployeeID(),ep.getEmployeeName(),ep.getEmployeeAging(),ep.getEmployeePosition(),ep.getTimeOfWorking(),ep.getBelongToWho());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block

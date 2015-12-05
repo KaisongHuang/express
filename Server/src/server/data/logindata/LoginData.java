@@ -17,16 +17,34 @@ public class LoginData extends UnicastRemoteObject implements LoginDataBaseServi
 		this.db=db;
 	}
 	public EmployeePO login(AdminPO po) throws RemoteException{
-
+System.out.println("远程方法调用成功");
 		String sql="select * from Admin where id='"+po.getId()+"' and password='"+po.getPassword()+"';";
 		ResultSet rs=db.find(sql);
+		
 		try {
-			
-				String sql2="select * from Employee where EmployeeID='"+po.getId()+"';";
+			if(!rs.wasNull()){
+				rs.last();
+System.out.println("密码正确");
+				String sql2="select * from employee where employeeID='141250046';";
 				ResultSet rs1=db.find(sql2);
-				rs1.first();
-			    return new EmployeePO(rs1.getString(0),rs1.getString(1),rs1.getInt(2),rs1.getString(3),rs1.getDouble(4),rs.getString(5));
-			
+				String id = null;
+				String name = null;
+				int age = 0;
+				String position = null;
+			    double time = 0;
+			    String belong = null;
+				while(rs1.next()){
+					id=rs1.getString(1);
+					name=rs1.getString(2);
+					age=rs1.getInt(3);
+					position=rs1.getString(4);
+					time=rs1.getDouble(5);
+					belong=rs1.getString(6);
+				}
+				rs1.last();
+             return new EmployeePO(id,name,age,position,time,belong);
+                
+	       }
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

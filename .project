@@ -22,7 +22,7 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>mysql-connector-java-5.1.36-bin.jar</name>
+			<name>Server/src/mysql-connector-java-5.1.36-bin.jar</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/%E9%81%A8%E6%B8%B8/mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar</locationURI>
 		</link>
