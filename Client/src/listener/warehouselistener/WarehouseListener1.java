@@ -82,7 +82,7 @@ public class WarehouseListener1 implements ActionListener {
 		in.setPos_jia(ui.getPos_jia());// comboBox_9
 		in.setPos_wei(ui.getPos_wei());// comboBox_10
 		in.setWarehouseID(EmployeeMes.belongToWho);
-		in.setIsCheck(1);
+		in.setIsCheck(0);
 		return in;
 	}
 }
