@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import _enum.ResultMessage;
 import server.database.MySQLDataBase;
 import po.*;
-import dataservice.sellingareadataservice.SellingAreaDataService;
+import dataservice.sellingareadataservice.SellingAreaDataBaseService;
 
-public class SellingAreaData extends UnicastRemoteObject implements SellingAreaDataService{
+public class SellingAreaData extends UnicastRemoteObject implements SellingAreaDataBaseService{
 	MySQLDataBase db;
 	public SellingAreaData(MySQLDataBase db) throws RemoteException{
 		super();

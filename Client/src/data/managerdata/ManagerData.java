@@ -36,6 +36,7 @@ public class ManagerData implements ManagerDataService {
 		return null;
 	}
 
+	
 	public ResultMessage update(ManagerPO po,Opera op) throws RemoteException {
 		if(po instanceof SalaryPO){
 		     send=new TransformObject(Opera.Manager_insert,po);
@@ -67,6 +68,11 @@ public class ManagerData implements ManagerDataService {
 
 	public ResultMessage update(ManagerPO po) throws RemoteException {
 		// TODO 自动生成的方法存根
+		return null;
+	}
+
+	public ResultMessage update(Object ob) throws RemoteException {
+		
 		return null;
 	}
 

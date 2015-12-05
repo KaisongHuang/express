@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.ManagerPO;
 
-public class EmployeePO extends ManagerPO {
+public class EmployeePO extends ManagerPO implements Serializable{
 
 	String employeeID;
 	String employeeName;

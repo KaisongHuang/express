@@ -31,10 +31,10 @@ import vo.*;
 public class Manager implements ManagerBlService {
 	
 	ManagerData md = new ManagerData();
-	SellingAreaData sad = new SellingAreaData();
-	CentreData cd = new CentreData();
-	WarehouseData wd = new WarehouseData();
-	FinanceData fd = new FinanceData();
+//	SellingAreaData sad = new SellingAreaData();
+//	CentreData cd = new CentreData();
+//	WarehouseData wd = new WarehouseData();
+//	FinanceData fd = new FinanceData();
 	
 
 	public Object find(String id,Opera op){		
@@ -114,7 +114,7 @@ public class Manager implements ManagerBlService {
 						vo1.getSupervisor(),vo1.getSupercargo(),vo1.getList(),vo1.getFee(),vo1.getIsCheck());
 	
 				try {
-					rm=sad.update(po1);
+					rm=md.update(po1);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -127,7 +127,7 @@ public class Manager implements ManagerBlService {
 				ReceiptPO po4 = new ReceiptPO(vo4.getMoney(),vo4.getDate(),vo4.getSellingArea(),vo4.getNumber(),vo4.getId(),vo4.getIsCheck());
 			
 				try {
-					rm=sad.update(po4);
+					rm=md.update(po4);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -141,7 +141,7 @@ public class Manager implements ManagerBlService {
 						vo5.getIsCheck());
 				
 				try {
-					rm=sad.update(po5);
+					rm=md.update(po5);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -154,7 +154,7 @@ public class Manager implements ManagerBlService {
 				DeliverPO po6 = new DeliverPO(vo6.getBarCode(),vo6.getDate(),vo6.getNumber(),vo6.getIsCheck());
 				
 				try {
-					rm=sad.update(po6);
+					rm=md.update(po6);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -168,7 +168,7 @@ public class Manager implements ManagerBlService {
 						vo7.getStart(),vo7.getExpressState(),vo7.getIsCheck());
 			
 				try {
-					rm=cd.update(po7);
+					rm=md.update(po7);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -183,7 +183,7 @@ public class Manager implements ManagerBlService {
 						vo8.getList(), vo8.getFee(),vo8.getIsCheck());
 			
 				try {
-					rm=cd.update(po8);
+					rm=md.update(po8);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -197,7 +197,7 @@ public class Manager implements ManagerBlService {
 						vo9.getJianZhuangYuan(),vo9.getYaYunYuan(),vo9.getList(),vo9.getFee(),vo9.getIsCheck());
 				vo9.setIsCheck(1);
 				try {
-					rm=cd.update(po9);
+					rm=md.update(po9);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -211,7 +211,7 @@ public class Manager implements ManagerBlService {
 						vo10.getPos_jia(),vo10.getPos_jia(),vo10.getPos_wei(),vo10.getIsCheck());
 			
 				try {
-					rm=wd.update(po10);
+					rm=md.update(po10);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -225,7 +225,7 @@ public class Manager implements ManagerBlService {
 						vo11.getTransportation(),vo11.getTrans_id(),vo11.getIsCheck());
 				
 				try {
-					rm=wd.update(po11);
+					rm=md.update(po11);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��
@@ -239,7 +239,7 @@ public class Manager implements ManagerBlService {
 						vo13.getComments(),vo13.getCost(),vo13.getIsCheck());
 				
 				try {
-					rm=fd.update(po13);
+					rm=md.update(po13);
 					return rm;
 				} catch (RemoteException e) {
 					// TODO �Զ���ɵ� catch ��

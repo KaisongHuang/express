@@ -9,9 +9,9 @@ import po.InStoragePO;
 import po.OutStoragePO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
-import dataservice.warehousedataservice.WareHouseDataService;
+import dataservice.warehousedataservice.WareHouseDataBaseService;
 
-public class WareHouseData extends UnicastRemoteObject implements WareHouseDataService{
+public class WareHouseData extends UnicastRemoteObject implements WareHouseDataBaseService{
 	MySQLDataBase db;
 	public WareHouseData(MySQLDataBase db) throws RemoteException{
 		super();

@@ -27,7 +27,7 @@ public class LoginUI extends JFrame {
 	public LoginUI() {
 		
         listener=new LoginListener(this);
-		setBounds(100, 100, 600, 400);
+		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
