@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import listener.warehouselistener.WarehouseListener40;
+import listener.warehouselistener.WarehouseListener4;
 
 import javax.swing.JComboBox;
 import java.util.Arrays;
@@ -51,13 +51,13 @@ public class WarehouseUI4 extends JPanel {
 	private JComboBox<?> comboBox_5;
 	private JComboBox<?> comboBox_6;
 	private DefaultTableModel model;
-	WarehouseListener40 warehouseListener50;
+	WarehouseListener4 warehouseListener;
 
 	/**
 	 * Create the application.
 	 */
 	public WarehouseUI4() {
-		warehouseListener50 = new WarehouseListener40(this);
+		warehouseListener = new WarehouseListener4(this);
 		initialize();
 	}
 
@@ -161,22 +161,22 @@ public class WarehouseUI4 extends JPanel {
 
 		button_1 = new JButton("新增");
 		button_1.setBounds(554, 284, 65, 27);
-		button_1.addActionListener(warehouseListener50);
+		button_1.addActionListener(warehouseListener);
 		this.add(button_1);
 
 		button_2 = new JButton("清空");
 		button_2.setBounds(630, 284, 65, 27);
-		button_2.addActionListener(warehouseListener50);
+		button_2.addActionListener(warehouseListener);
 		this.add(button_2);
 
 		button_3 = new JButton("保存");
 		button_3.setBounds(630, 323, 65, 27);
-		button_3.addActionListener(warehouseListener50);
+		button_3.addActionListener(warehouseListener);
 		this.add(button_3);
 
 		button = new JButton("删除");
 		button.setBounds(554, 323, 65, 27);
-		button.addActionListener(warehouseListener50);
+		button.addActionListener(warehouseListener);
 		add(button);
 	}
 
