@@ -20,15 +20,13 @@ public class WarehouseMenuListener implements ActionListener{
 	}
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==panel.getButton1()){
-			
+			card.show(panel1, "0");
 		}else if(e.getSource()==panel.getButton2()){
-			
+			card.show(panel1, "1");
 		}else if(e.getSource()==panel.getButton3()){
-			
+			card.show(panel1, "2");
 		}else if(e.getSource()==panel.getButton4()){
-			
-		}else if(e.getSource()==panel.getButton5()){
-			
+			card.show(panel1, "3");
 		}
 		
 	}

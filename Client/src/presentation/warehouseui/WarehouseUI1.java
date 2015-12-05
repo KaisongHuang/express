@@ -7,12 +7,12 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import listener.warehouselistener.WarehouseListener10;
+import listener.warehouselistener.WarehouseListener1;
 
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+//出库入库界面
 public class WarehouseUI1 extends JPanel {
 
 	/**
@@ -40,7 +40,7 @@ public class WarehouseUI1 extends JPanel {
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox_2;
 	private JComboBox<String> comboBox_3;
-	private WarehouseListener10 listener;
+	private WarehouseListener1 listener;
 	private CardLayout card;
 	private JPanel importPanel;
 	private JLabel label_7;
@@ -66,12 +66,12 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_16;
 	private JComboBox<Object> comboBox_10;
 	private JPanel panel;
-	WarehouseListener10 warehouseListener10;
+	WarehouseListener1 warehouseListener;
 	/**
 	 * Create the application.
 	 */
 	public WarehouseUI1() {
-		warehouseListener10 = new WarehouseListener10(this);
+		warehouseListener = new WarehouseListener1(this);
 		initialize();
 	}
 
@@ -79,9 +79,9 @@ public class WarehouseUI1 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		listener = new WarehouseListener10(this);
+		listener = new WarehouseListener1(this);
 		card = new CardLayout(0, 0);
-		this.setBounds(136, 115, 746, 438);
+		this.setBounds(0,0, 746, 438);
 		this.setLayout(null);
 
 		panel = new JPanel();
@@ -396,7 +396,7 @@ public class WarehouseUI1 extends JPanel {
 		return comboBox_3;
 	}
 
-	public WarehouseListener10 getListener() {
+	public WarehouseListener1 getListener() {
 		return listener;
 	}
 

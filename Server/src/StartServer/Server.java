@@ -20,31 +20,24 @@ public class Server {
 
 	public void init() {
 		db = new MySQLDataBase();
-		AdminStart();
-		CentreStart();
+		DataStart();
+		
 	}
 
-	public void AdminStart() {
+	public void DataStart() {
 		try {
 			AdminDataService ad = new AdminData(db);
+			CentreDataService cd=new CentreData(db);
 			LocateRegistry.createRegistry(8000);
 			Naming.rebind("rmi://" + ip + ":8000"  + "/PersonService", ad);
+			Naming.rebind("rmi://" + ip + ":8000"  + "/PersonService", cd);
 			System.out.println("AdminDataService Start");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void CentreStart(){
-		try{
-			CentreDataService cd=new CentreData(db);
-			LocateRegistry.createRegistry(8001);
-			Naming.rebind("rmi://" + ip + ":8001"  + "/PersonService", cd);
-			System.out.println(" CentreDataService Start");
-		}catch(Exception e){
-			
-		}
-	}
+	
 	
 	public void CourierStart(){
 		

@@ -18,11 +18,11 @@ public class WarehouseMenuUI extends JPanel {
 	WarehouseMenuListener listen;
 
 	public WarehouseMenuUI(CardLayout card, int width, int height, JPanel panel1) {
-		width = width;
-		height = height;
+		this.width = width;
+		this.height = height;
 
 		listen = new WarehouseMenuListener(this, card, panel1);
-
+        init();
 	}
 
 	public void init() {
