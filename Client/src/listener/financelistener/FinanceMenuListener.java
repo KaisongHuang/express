@@ -20,7 +20,15 @@ public class FinanceMenuListener implements ActionListener{
 		this.panel=panel1;
 	}
 	public void actionPerformed(ActionEvent e) {
-	
+	    if(e.getSource()==finance.getButton1()){
+	    	card.show(panel, "0");
+	    }else if(e.getSource()==finance.getButton1()){
+	    	card.show(panel, "1");
+	    }else if(e.getSource()==finance.getButton1()){
+	    	card.show(panel, "2");
+	    }else if(e.getSource()==finance.getButton1()){
+	    	card.show(panel, "3");
+	    }
 		
 	}
 

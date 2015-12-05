@@ -1,6 +1,8 @@
 package po;
 
-public class AdminPO {
+import java.io.Serializable;
+
+public class AdminPO implements Serializable{
 	
 	String id;
 	String name;
