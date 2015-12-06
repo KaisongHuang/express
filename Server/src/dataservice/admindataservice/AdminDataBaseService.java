@@ -7,7 +7,7 @@ import _enum.ResultMessage;
 import po.AdminPO;
 import server.database.MySQLDataBase;
 
-public interface AdminDataService extends Remote{
+public interface AdminDataBaseService extends Remote{
      public AdminPO find(String id)throws RemoteException;
      public ResultMessage update(Object po)throws RemoteException;
      public ResultMessage insert(Object po)throws RemoteException;

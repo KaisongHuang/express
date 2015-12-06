@@ -7,6 +7,6 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 
-public interface CentreDataService extends Remote{
+public interface CentreDataBaseService extends Remote{
        public ResultMessage insert(Object po)throws RemoteException;
 }

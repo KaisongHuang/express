@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import po.AdminPO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
-import dataservice.admindataservice.AdminDataService;
+import dataservice.admindataservice.AdminDataBaseService;
 
-public class AdminData extends UnicastRemoteObject implements AdminDataService{
+public class AdminData extends UnicastRemoteObject implements AdminDataBaseService{
     MySQLDataBase db;
 	public AdminData(MySQLDataBase db) throws RemoteException{
 		super();

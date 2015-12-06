@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 
-public interface ManagerDataService extends Remote{
+public interface ManagerDataBaseService extends Remote{
 	 public ResultMessage insert(Object po) throws RemoteException;
 	 public ManagerPO findEmployee(String id) throws RemoteException;
 	 public ManagerPO findInstitution(String id) throws RemoteException;

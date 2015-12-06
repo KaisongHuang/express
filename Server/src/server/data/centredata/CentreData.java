@@ -9,9 +9,9 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import _enum.ResultMessage;
-import dataservice.centredataservice.CentreDataService;
+import dataservice.centredataservice.CentreDataBaseService;
 
-public class CentreData extends UnicastRemoteObject implements CentreDataService{
+public class CentreData extends UnicastRemoteObject implements CentreDataBaseService{
 	MySQLDataBase db;
 	
 	public CentreData(MySQLDataBase db) throws RemoteException{

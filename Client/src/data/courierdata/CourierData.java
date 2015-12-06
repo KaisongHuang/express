@@ -1,5 +1,8 @@
 package data.courierdata;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 import Client.network.client.ClientAdapter;
@@ -7,52 +10,57 @@ import Client.network.client.TransformObject;
 import _enum.Opera;
 import _enum.ResultMessage;
 import data.courierdataservice.CourierDataService;
+import dataservice.courierdataservice.CourierDataBaseService;
+import dataservice.senderdataservice.SenderDataBaseService;
 import po.CourierPO;
+import po.HistoryPO;
 import po.SenderPO;
 import vo.CourierVO;
 import vo.SenderVO;
 
 public class CourierData implements CourierDataService {
-    TransformObject send;
-    TransformObject acp;
-	public CourierPO find(String id) throws RemoteException {
-		
-		return null;
+    CourierDataBaseService cd;
+    SenderDataBaseService sd;
+	public CourierData(){
+		try {
+			cd=(CourierDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/CourierDataService");
+			sd=(SenderDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SenderDataService");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public HistoryPO find(String id) throws RemoteException {
+		HistoryPO h=sd.find(id);
+		return h;
 	}
 
 	public ResultMessage insert(CourierPO po) throws RemoteException {
-		send=new TransformObject(Opera.Courier_insert,po);
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		return (ResultMessage) acp.getOb();
+		ResultMessage rm=cd.insert(po);
+		return rm;
 	}
 
-	public ResultMessage delete(CourierPO po) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+
+
+	public ResultMessage OrderInput(SenderPO po) throws RemoteException {
+		ResultMessage rm=cd.insert(po);
+		return rm;
 	}
 
-	public ResultMessage update(CourierPO po) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ResultMessage OrderInput(SenderPO po) {
-		
-		send=new TransformObject(Opera.Sender_insert,po);
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		return (ResultMessage) acp.getOb();
-	}
-
-	public double getPrice(double fee, double packing) {
+	public double getPrice(double fee, double packing) throws RemoteException {
 		
 		return 0;
 	}
 
-	public String getTime(int distance) {
-		// TODO Auto-generated method stub
+	public String getTime(int distance) throws RemoteException {
 		return null;
+		
 	}
 
 	
