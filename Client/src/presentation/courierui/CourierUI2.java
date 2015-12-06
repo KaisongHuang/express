@@ -16,7 +16,7 @@ import listener.courierlistener.CourierListener2;
 
 import javax.swing.JComboBox;
 
-
+//收件信息输入
 public class CourierUI2 extends JPanel{
 
 	private JTextField textField;
@@ -24,8 +24,7 @@ public class CourierUI2 extends JPanel{
 	private JTextField textField_2;
 	
 	CourierListener2 courierlistener;
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_10;
+	private JButton button;
 	private int width;
     private int height;
     
@@ -50,15 +49,11 @@ public class CourierUI2 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-
-		
-
-		this.setBackground(new Color(255, 255, 255));
 		this.setBounds(136, 118, 748, 436);
 	
 		this.setLayout(null);
 		
-		JLabel label = new JLabel("\u6536\u4EF6\u7F16\u53F7\uFF1A");
+		JLabel label = new JLabel("收件编号");
 		label.setBounds(116, 43, 100, 18);
 		this.add(label);
 		
@@ -67,7 +62,7 @@ public class CourierUI2 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 		
-		JLabel label_1 = new JLabel("\u6536\u4EF6\u4EBA\uFF1A");
+		JLabel label_1 = new JLabel("收件人");
 		label_1.setBounds(118, 109, 100, 18);
 		this.add(label_1);
 		
@@ -76,7 +71,7 @@ public class CourierUI2 extends JPanel{
 		this.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel label_2 = new JLabel("\u6536\u4EF6\u65E5\u671F\uFF1A");
+		JLabel label_2 = new JLabel("收件日期");
 		label_2.setBounds(115, 187, 100, 18);
 		this.add(label_2);
 		
@@ -85,16 +80,11 @@ public class CourierUI2 extends JPanel{
 		this.add(textField_2);
 		textField_2.setColumns(10);
 		
-		btnNewButton_10 = new JButton("\u786E\u8BA4");
-		btnNewButton_10.setBounds(74, 347, 100, 30);
-		this.add(btnNewButton_10);
-		
-		btnNewButton_11 = new JButton("\u6E05\u7A7A");
-		btnNewButton_11.setBounds(454, 348, 100, 30);
-		this.add(btnNewButton_11);
-		
-		btnNewButton_10.addActionListener(courierlistener);
-		btnNewButton_11.addActionListener(courierlistener);
+		button = new JButton("确认");
+		button.setBounds(374, 347, 100, 30);
+		this.add(button);
+	    button.addActionListener(courierlistener);
+
 	}
 
 	public JTextField getTextField() {
@@ -121,21 +111,11 @@ public class CourierUI2 extends JPanel{
 		this.textField_2 = textField_2;
 	}
 
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
+
+	public JButton getButton() {
+		return button;
 	}
 
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
 	
 	
 }

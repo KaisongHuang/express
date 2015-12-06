@@ -12,23 +12,21 @@ import presentation.warehouseui.WarehouseMenuUI;
 public class WarehouseMenuListener implements ActionListener{
     CardLayout card;
     WarehouseMenuUI panel;
-    private JFrame frame;
-	public WarehouseMenuListener(WarehouseMenuUI panel,CardLayout card, JFrame frame){
+    private JPanel panel1;
+	public WarehouseMenuListener(WarehouseMenuUI panel,CardLayout card, JPanel panel1){
 		this.panel=panel;
 		this.card=card;
-		this.frame=frame;
+		this.panel1=panel1;
 	}
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==panel.getButton1()){
-			
+			card.show(panel1, "0");
 		}else if(e.getSource()==panel.getButton2()){
-			
+			card.show(panel1, "1");
 		}else if(e.getSource()==panel.getButton3()){
-			
+			card.show(panel1, "2");
 		}else if(e.getSource()==panel.getButton4()){
-			
-		}else if(e.getSource()==panel.getButton5()){
-			
+			card.show(panel1, "3");
 		}
 		
 	}

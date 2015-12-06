@@ -15,18 +15,18 @@ public class AdminMenuUI extends JPanel {
 
 	private CardLayout card;
 	AdminMenuListener adminlistener;
-	private JButton btnNewButton_12;
-	private JButton btnNewButton_9;
-	private JButton btnNewButton_7;
-	private JButton btnNewButton_8;
+	private JButton button1;
+	private JButton button2;
+	private JButton button3;
+	private JButton button4;
 	private int width;
 	private int height;
 
-	public AdminMenuUI(CardLayout card, int width, int height, JFrame frame) {
+	public AdminMenuUI(CardLayout card, int width, int height, JPanel panel1) {
 		this.card = card;
-		adminlistener = new AdminMenuListener(this, card,frame);
-		width = width=120;
-		height = height=600;
+		adminlistener = new AdminMenuListener(this, card,panel1);
+		this.width = width;
+		this.height = height;
 		initialize();
 	}
 
@@ -35,25 +35,25 @@ public class AdminMenuUI extends JPanel {
         this.setSize(width,height);
 		this.setLayout(null);
 
-		btnNewButton_7 = new JButton("新增账户");
-		btnNewButton_7.setBounds(0, 0, width, height / 6);
-		btnNewButton_7.addActionListener(adminlistener);
-		this.add(btnNewButton_7);
+		button3 = new JButton("新增账户");
+		button3.setBounds(0, 0, width, height / 6);
+		button3.addActionListener(adminlistener);
+		this.add(button3);
 
-		btnNewButton_8 = new JButton("权限管理");
-		btnNewButton_8.setBounds(0, height / 6, width, height / 6);
-		btnNewButton_8.addActionListener(adminlistener);
-		this.add(btnNewButton_8);
+		button4 = new JButton("权限管理");
+		button4.setBounds(0, height / 6, width, height / 6);
+		button4.addActionListener(adminlistener);
+		this.add(button4);
 
-		btnNewButton_9 = new JButton("修改密码");
-		btnNewButton_9.setBounds(0, 2 * height / 6, width, height / 6);
-		btnNewButton_9.addActionListener(adminlistener);
-		this.add(btnNewButton_9);
+		button2 = new JButton("修改密码");
+		button2.setBounds(0, 2 * height / 6, width, height / 6);
+		button2.addActionListener(adminlistener);
+		this.add(button2);
 
-		btnNewButton_12 = new JButton("删除账户");
-		btnNewButton_12.setBounds(0, 3 * height / 6, width, height / 6);
-		btnNewButton_12.addActionListener(adminlistener);
-		this.add(btnNewButton_12);
+		button1 = new JButton("删除账户");
+		button1.setBounds(0, 3 * height / 6, width, height / 6);
+		button1.addActionListener(adminlistener);
+		this.add(button1);
 
 	}
 
@@ -61,20 +61,20 @@ public class AdminMenuUI extends JPanel {
 		return card;
 	}
 
-	public JButton getBtnNewButton_12() {
-		return btnNewButton_12;
+	public JButton getButton1() {
+		return button1;
 	}
 
-	public JButton getBtnNewButton_9() {
-		return btnNewButton_9;
+	public JButton getButton2() {
+		return button2;
 	}
 
-	public Component getBtnNewButton_7() {
-		return btnNewButton_7;
+	public Component getButton3() {
+		return button3;
 	}
 
-	public JButton getBtnNewButton_8() {
-		return btnNewButton_8;
+	public JButton getButton4() {
+		return button4;
 	}
 
 }

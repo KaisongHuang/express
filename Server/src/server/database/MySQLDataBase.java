@@ -16,8 +16,15 @@ import _enum.ResultMessage;
 public class MySQLDataBase {
     
 	   Connection con;
+	   Statement st;
 	  public MySQLDataBase(){
 		  con=getMySQL_Con(null, null, null, "express", "root",null);
+		  try {
+			st=(Statement) con.createStatement();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		  
 	  }
       public  Connection getMySQL_Con(String driverClassName,String serverHost,String serverPort,String dbName,String userName,
@@ -56,7 +63,7 @@ public class MySQLDataBase {
       
       public  ResultMessage insert(String sql){
     	  try {
-    		  Statement st=(Statement) con.createStatement();
+    		  
 			  int c=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
@@ -70,13 +77,14 @@ public class MySQLDataBase {
       public  ResultSet find(String sql){
     	  
     	  try {
-    		  Statement st=(Statement) con.createStatement();
+    		  
 			  ResultSet rs=((java.sql.Statement) st).executeQuery(sql);
+			 
+System.out.println("database ok");
 			  return rs;
 		} catch (SQLException e) {
-			// TODO 自动生成的 catch 块
-			e.printStackTrace();
-		
+			
+			e.printStackTrace();		
 		}
 
     	  return null;
@@ -84,7 +92,7 @@ public class MySQLDataBase {
       
       public  ResultMessage delete(String sql){
     	  try {
-    		  Statement st=(Statement) con.createStatement();
+    	
 			  int c=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
@@ -97,7 +105,7 @@ public class MySQLDataBase {
       
       public  ResultMessage update(String sql){
     	  try {
-    		  Statement st=(Statement) con.createStatement();
+    		
 			  int c=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块

@@ -16,7 +16,7 @@ public interface FinanceBlService {
 
 	public ArrayList<Object> getTotal(String begin, String end);
 
-	public ResultMessage initAccount(String Account, double Money);
+	public ResultMessage initAccount(AccountVO vo);
 
 	public ResultMessage manageAccount(AccountVO vo, Operation op);
 

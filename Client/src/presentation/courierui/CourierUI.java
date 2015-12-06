@@ -16,7 +16,7 @@ import listener.courierlistener.CourierListener0;
 
 import javax.swing.JComboBox;
 
-
+//订单输入界面
 public class CourierUI extends JPanel{
 
 
@@ -61,7 +61,7 @@ public class CourierUI extends JPanel{
 	 */
 	private void initialize() {
 
-	
+		
 		this.setLayout(null);
 	
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");

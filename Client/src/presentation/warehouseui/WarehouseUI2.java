@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 
-import listener.warehouselistener.WarehouseListener20;
+import listener.warehouselistener.WarehouseListener2;
 
 public class WarehouseUI2 extends JPanel {
 	private JLabel label_8;
@@ -39,10 +39,10 @@ public class WarehouseUI2 extends JPanel {
 	private Vector<String> name;
 	private Vector<Object> data;
 	private static final long serialVersionUID = 1L;
-	WarehouseListener20 warehouseListener20;
+	WarehouseListener2 warehouseListener;
 
 	public WarehouseUI2() {
-		warehouseListener20 = new WarehouseListener20(this);
+		warehouseListener = new WarehouseListener2(this);
 		initialize();
 	}
 
@@ -120,12 +120,12 @@ public class WarehouseUI2 extends JPanel {
 
 		button_1 = new JButton("查询");
 		button_1.setBounds(545, 170, 64, 27);
-		button_1.addActionListener(warehouseListener20);
+		button_1.addActionListener(warehouseListener);
 		this.add(button_1);
 
 		button_2 = new JButton("清空");
 		button_2.setBounds(657, 170, 64, 27);
-		button_2.addActionListener(warehouseListener20);
+		button_2.addActionListener(warehouseListener);
 		this.add(button_2);
 
 		label_17 = new JLabel("入库数量(件)：");
