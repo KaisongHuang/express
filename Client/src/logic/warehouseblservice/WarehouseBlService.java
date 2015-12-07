@@ -11,16 +11,18 @@ public interface WarehouseBlService {
 	public ResultMessage importGoods(InStorageVO vo);
 
 	public ResultMessage exportGoods(OutStorageVO vo);
-	
-	public ResultMessage adjustGoods(String id,String qu,int pai,int jia,int wei);
 
 	public ResultMessage setAlarm(double rate);
-	
+
 	public ResultMessage checkAlarm();
 
 	public ArrayList<Object> checkWarehouse(String begin, String end);
 
 	public ArrayList<Object> summarizeWarehouse();
+	
+	public ArrayList<Object> showAdjustGoods();
 
 	public ResultMessage initWarehouse(InStorageVO vo);
+	
+	
 }
