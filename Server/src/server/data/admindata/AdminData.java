@@ -3,6 +3,7 @@ package server.data.admindata;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import po.AdminPO;
 import server.database.MySQLDataBase;
@@ -19,7 +20,22 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 	    
 		String sql="select * from Admin where id='"+id+"';";
 		ResultSet rs=db.find(sql);
-		return null;
+		String i=null;
+		String n=null;
+		String p=null;
+		String r=null;
+		try {
+			while(rs.next()){
+				i=rs.getString(1);
+				n=rs.getString(2);
+				p=rs.getString(3);
+				r=rs.getString(4);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return new AdminPO(i,n,p,r);
 	}
 
 	public ResultMessage update(Object po) throws RemoteException{
@@ -31,7 +47,7 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 
 	public ResultMessage insert(Object po) throws RemoteException{
 		AdminPO po1=(AdminPO) po;
-		String sql="insert into Admin values('"+po1.getId()+"','"+po1.getName()+"','"+po1.getPassword()+"','"+po1.getRole()+"')";
+		String sql="insert into Admin values('"+po1.getId()+"','"+po1.getName()+"','"+po1.getPassword()+"','"+po1.getRole()+"');";
 		ResultMessage rm=db.insert(sql);
 		return rm;
 	}

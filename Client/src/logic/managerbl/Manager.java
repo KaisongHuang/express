@@ -42,11 +42,11 @@ public class Manager implements ManagerBlService {
 		InstitutionPO po;
 		try{
 			if(op==Opera.Employee_find){
-			     ep = (EmployeePO) md.find(id,op);
+			     ep = (EmployeePO) md.findEmployee(id);
 			     return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(),ep.getEmployeePosition(),
 					  ep.getTimeOfWorking(), ep.getBelongToWho());
 			}else{
-			     po=(InstitutionPO) md.find(id,op);
+			     po=(InstitutionPO) md.findInStitution(id);
 			     return new InstitutionPO(po.getName(),po.getOrganizationID());
 			}
 			
@@ -71,11 +71,11 @@ public class Manager implements ManagerBlService {
 					vo.getTimeOfWorking(), vo.getBelongToWho());			
 			try {
 				if(op==Opera.Employee_insert)
-				    rm=md.insert(po,op);
+				    rm=md.insert(po);
 				if(op==Opera.Employee_delete)
-				    rm=md.delete(po,op);
+				    rm=md.delete(po);
 				else
-				    rm=md.update(po,op);	
+				    rm=md.update(po);	
 				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
@@ -86,11 +86,11 @@ public class Manager implements ManagerBlService {
 			InstitutionPO po = new InstitutionPO(vo.getOrganizationID(),vo.getName());
 			try {
 			if(op==Opera.Institution_insert)
-			    rm=md.insert(po,op);
+			    rm=md.insert(po);
 			if(op==Opera.Institution_delete)
-			    rm=md.delete(po,op);
+			    rm=md.delete(po);
 			else
-			    rm=md.update(po,op);	
+			    rm=md.update(po);	
 			return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
@@ -165,7 +165,7 @@ public class Manager implements ManagerBlService {
 			CentreArrivalVO vo7 = (CentreArrivalVO) vo;
 			
 				CentreArrivalPO po7 = new CentreArrivalPO(vo7.getCentreID(),vo7.getGetDate(),vo7.getTransferID(),
-						vo7.getStart(),vo7.getExpressState(),vo7.getIsCheck());
+						vo7.getStart(),vo7.getExpressState(),vo7.getIsCheck(),0);
 			
 				try {
 					rm=md.update(po7);
@@ -180,7 +180,7 @@ public class Manager implements ManagerBlService {
 		
 				CentreTransforPO po8 = new CentreTransforPO(vo8.getTransferStyle(), vo8.getDataOfGetin(), vo8.getCentreTransferID(),
 						vo8.getBanHao(), vo8.getStart(), vo8.getArrival(),	vo8.getHuoGuiHao(), vo8.getJianZhuangYuan(), 
-						vo8.getList(), vo8.getFee(),vo8.getIsCheck());
+						vo8.getList(), vo8.getFee(),vo8.getIsCheck(),0);
 			
 				try {
 					rm=md.update(po8);
