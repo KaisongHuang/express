@@ -17,9 +17,10 @@ public class CentreTransforPO extends CentrePO {
 	ArrayList<String> list = new ArrayList<String>();
 	double fee;
     int isCheck;
+    int isOutStorage;
 	public CentreTransforPO(String ts, String dog, String cti, String bh,
 			String start, String arrival, String hgh, String jzy,
-			ArrayList<String> list, double fee,int isCheck) {
+			ArrayList<String> list, double fee,int isCheck,int isOutStorage) {
 		this.transforStyle = ts;
 		this.dataOfGetin = dog;
 		this.centreTransferID = cti;
@@ -31,6 +32,7 @@ public class CentreTransforPO extends CentrePO {
 		this.list = list;
 		this.fee = fee;
 		this.isCheck=isCheck;
+		this.isOutStorage=isOutStorage;
 	}
     public int getIsCheck(){
     	return isCheck;
@@ -115,6 +117,9 @@ public class CentreTransforPO extends CentrePO {
 		this.fee = fee;
 	}
 	
+	public int getIsOutStorage(){
+		return isOutStorage;
+	}
 	
 
 }

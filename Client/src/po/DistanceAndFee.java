@@ -31,7 +31,9 @@ public class DistanceAndFee extends ManagerPO{
 	public void setFee(int fee) {
 		this.fee = fee;
 	}
-	
+	public double getDistance(){
+		return distance;
+	}
 	
     
     
