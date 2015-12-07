@@ -34,4 +34,9 @@ public class ManagerDataService_Stub implements ManagerDataService {
 		
 	}
 
+	public ResultMessage update(Object ob) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

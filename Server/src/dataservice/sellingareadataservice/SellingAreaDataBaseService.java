@@ -8,7 +8,7 @@ import po.SellingareaPO;
 import server.database.MySQLDataBase;
 
 
-public interface SellingAreaDataService extends Remote{
+public interface SellingAreaDataBaseService extends Remote{
        public SellingareaPO findCar(String id)throws RemoteException;
        public SellingareaPO findDriver(String id)throws RemoteException;
        public ResultMessage update(Object po)throws RemoteException;

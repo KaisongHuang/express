@@ -9,7 +9,7 @@ import po.OutStoragePO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
 
-public interface WareHouseDataService extends Remote{
+public interface WareHouseDataBaseService extends Remote{
       public ResultMessage insert(Object po)throws RemoteException;
       public ArrayList<InStoragePO> findIn(String date)throws RemoteException;
       public ArrayList<OutStoragePO> findOut(String date)throws RemoteException;

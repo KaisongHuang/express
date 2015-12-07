@@ -10,9 +10,9 @@ import po.PayPO;
 import po.ReceiptPO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
-import dataservice.financedataservice.FinanceDataService;
+import dataservice.financedataservice.FinanceDataBaseService;
 
-public class FinanceData extends UnicastRemoteObject implements FinanceDataService{
+public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseService{
 	MySQLDataBase db;
 	public FinanceData(MySQLDataBase db) throws RemoteException{
            super();
@@ -52,6 +52,16 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataServi
 		ResultMessage rm=db.delete(sql);
 		
 		return rm;
+	}
+
+	public ArrayList<AccountPO> getInit() throws RemoteException {
+		
+		return null;
+	}
+
+	public ArrayList<PayPO> getPay() throws RemoteException {
+		
+		return null;
 	}
 
 }
