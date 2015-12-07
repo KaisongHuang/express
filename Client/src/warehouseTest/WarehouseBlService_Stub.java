@@ -49,5 +49,10 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public ArrayList<Object> showAdjustGoods() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

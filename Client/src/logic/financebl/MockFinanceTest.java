@@ -1,16 +1,12 @@
 package logic.financebl;
 
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 import _enum.ResultMessage;
 import po.ReceiptPO;
 import vo.AccountVO;
-import vo.FinanceVO;
 
 public class MockFinanceTest {
 

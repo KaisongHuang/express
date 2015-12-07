@@ -38,17 +38,27 @@ public class Finance implements FinanceBlService {
 		// TODO Auto-generated method stub
 		ArrayList<Object> arr = null;
 		this.count = 0;
-		for (int i = 0; i < fd.findPay().size(); i++) {
-			if (fd.findPay().get(i).getDate().compareTo(begin) >= 0
-					&& fd.findPay().get(i).getDate().compareTo(end) <= 0) {
-				arr.add(fd.findPay().get(i));
-				this.count++;
+		try {
+			for (int i = 0; i < fd.findPay().size(); i++) {
+				if (fd.findPay().get(i).getDate().compareTo(begin) >= 0
+						&& fd.findPay().get(i).getDate().compareTo(end) <= 0) {
+					arr.add(fd.findPay().get(i));
+					this.count++;
+				}
 			}
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		for (int i = 0; i < fd.findReceipt().size(); i++) {
-			if (fd.findReceipt().get(i).getDate().compareTo(begin) >= 0
-					&& fd.findReceipt().get(i).getDate().compareTo(end) <= 0)
-				arr.add(fd.findReceipt().get(i));
+		try {
+			for (int i = 0; i < fd.findReceipt().size(); i++) {
+				if (fd.findReceipt().get(i).getDate().compareTo(begin) >= 0
+						&& fd.findReceipt().get(i).getDate().compareTo(end) <= 0)
+					arr.add(fd.findReceipt().get(i));
+			}
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return arr;
 	}
@@ -112,11 +122,16 @@ public class Finance implements FinanceBlService {
 	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea) {
 		// TODO Auto-generated method stub
 		ArrayList<ReceiptPO> arr = null;
-		for (int i = 0; i < fd.findReceipt().size(); i++) {
-			if (fd.findReceipt().get(i).getDate().equals(date)
-					&& fd.findReceipt().get(i).getSellingArea().equals(sellingArea))
-				;
-			arr.add(fd.findReceipt().get(i));
+		try {
+			for (int i = 0; i < fd.findReceipt().size(); i++) {
+				if (fd.findReceipt().get(i).getDate().equals(date)
+						&& fd.findReceipt().get(i).getSellingArea().equals(sellingArea))
+					;
+				arr.add(fd.findReceipt().get(i));
+			}
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return arr;
 	}
