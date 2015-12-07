@@ -3,6 +3,7 @@ package po;
 import java.util.ArrayList;
 
 public class HistoryPO {
+	String id;
 	String state;
 	ArrayList<String> list;
 
@@ -18,4 +19,5 @@ public class HistoryPO {
 	public ArrayList<String> getList() {
 		return list;
 	}
+	
 }

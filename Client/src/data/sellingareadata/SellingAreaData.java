@@ -1,43 +1,53 @@
 package data.sellingareadata;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import po.CarPO;
+import po.DriverPO;
 import po.SellingareaPO;
 import Client.network.client.ClientAdapter;
 import Client.network.client.TransformObject;
 import _enum.Opera;
 import _enum.ResultMessage;
 import data.sellingareadataservice.SellingareaDataService;
+import dataservice.sellingareadataservice.SellingAreaDataBaseService;
 
 public class SellingAreaData implements SellingareaDataService{
-	TransformObject send;
-    TransformObject acp;
-	public SellingareaPO find(String id,Opera op) throws RemoteException {
-		send=new TransformObject(op,id);
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		return (SellingareaPO) acp.getOb();
+	SellingAreaDataBaseService sa;
+	public SellingAreaData(){
+		try {
+			sa=(SellingAreaDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SellingAreaDataService");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public CarPO findCar(String id) throws RemoteException {
+		return (CarPO) sa.findCar(id);
 	}
 
+	public DriverPO findDriver(String id)throws RemoteException{
+		return (DriverPO) sa.findDriver(id);
+	}
 	public ResultMessage insert(SellingareaPO po) throws RemoteException {
-	    send=new TransformObject(Opera.Sellingarea_insert,po);
-	    ClientAdapter.write(send);
-	    acp=(TransformObject) ClientAdapter.readData();
-		return (ResultMessage) acp.getOb();
+	   return sa.insert(po);
 	}
 
 	public ResultMessage delete(SellingareaPO po) throws RemoteException {
-		send=new TransformObject(Opera.Sellingarea_delete,po);
-	    ClientAdapter.write(send);
-	    acp=(TransformObject) ClientAdapter.readData();
-		return (ResultMessage) acp.getOb();
+		return sa.delete(po);
 	}
 
 	public ResultMessage update(SellingareaPO po) throws RemoteException {
-		send=new TransformObject(Opera.Sellingarea_update,po);
-	    ClientAdapter.write(send);
-	    acp=(TransformObject) ClientAdapter.readData();
-		return (ResultMessage) acp.getOb();
+		return sa.update(po);
 	
 	}
 

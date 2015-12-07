@@ -1,13 +1,29 @@
 package data.warehousedataservice;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
+import po.CentreArrivalPO;
+import po.CentreTransforPO;
+import po.InStoragePO;
+import po.OutStoragePO;
 import po.WarehousePO;
 import _enum.ResultMessage;
 
 public interface WarehouseDataService {
-	
+	public ArrayList<InStoragePO> findIn(String date) throws RemoteException;
+	public ArrayList<OutStoragePO> findOut( String date) throws RemoteException;
 	public ResultMessage insert(WarehousePO po) throws RemoteException;
-	public ResultMessage delete(WarehousePO po) throws RemoteException;
+	
+/**
+ * 仓库初始化时使用
+ * @param po
+ * @return
+ * @throws RemoteException
+ */
+	public ResultMessage clear()throws RemoteException ;
 	public ResultMessage update(WarehousePO po) throws RemoteException;
+	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException;
+	public ResultMessage setAlarm(double d) throws RemoteException ;
+	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException ; 
 }
