@@ -66,8 +66,8 @@ public class FinanceData implements FinanceDataService {
 	}
 
 	@SuppressWarnings("unchecked")
-	public ArrayList<ReceiptPO> findReceipt() throws RemoteException{
-		return fd.getReceipt();
+	public ArrayList<ReceiptPO> findReceipt(String date,String SellingAreaID) throws RemoteException{
+		return fd.getReceipt(date,SellingAreaID);
 	}
 
 	@SuppressWarnings("unchecked")
