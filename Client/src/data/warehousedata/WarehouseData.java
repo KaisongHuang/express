@@ -37,20 +37,17 @@ public class WarehouseData implements WarehouseDataService {
 		}
 	}
 	public ArrayList<InStoragePO> findIn(String date) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return wd.findIn(date, EmployeeMes.belongToWho);
 	}
-	public ArrayList<OutStoragePO> findOut(String date) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	public ResultMessage insert(WarehousePO po) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	public ResultMessage clear() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return wd.clear();
 	}
 	public ResultMessage update(WarehousePO po) throws RemoteException {
 		// TODO Auto-generated method stub
