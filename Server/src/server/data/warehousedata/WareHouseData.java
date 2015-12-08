@@ -40,13 +40,13 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		return rm;
 	}
 
-	public ArrayList<InStoragePO> findIn(String date,String WarehouseID) throws RemoteException{
+	public ArrayList<InStoragePO> summarize(String date,String WarehouseID) throws RemoteException{
 		String sql="select * from InStorage where Warehouse='"+WarehouseID+"' and indate='"+date+"';";
 		ResultSet rs=db.find(sql);
 		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
 	    try {
 			while(rs.next()){
-			     list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8)));
+			     list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),0));
 			}
 			return list;
 		} catch (SQLException e) {
@@ -86,24 +86,164 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		}
 		return list;
 	}
-	public ResultMessage setAlarm(double d) throws RemoteException {
-		
-		return null;
+	public ResultMessage setAlarm(double d,String WarehouseID) throws RemoteException {
+		String sql="update Warehouse set alarm="+d+" where WarehouseID='"+WarehouseID+"';";
+		ResultMessage rm=null;
+		rm=db.update(sql);
+		return rm;
 	}
-	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException {
-		String sql="select * from CentreTransfor where isCheck=1 and isOutStorage=0";
+	public ArrayList<CentreTransforPO> getTransfor(String start) throws RemoteException {
+		String sql="select * from CentreTransfor where isCheck=1 and isOutStorage=0 and start=start;";
 		ResultSet rs=db.find(sql);
 		ArrayList<CentreTransforPO> list=new ArrayList<CentreTransforPO>();
+		String id1=null;
+		String id2=null;
 		try {
 			while(rs.next()){
-				list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getDouble(10),rs.getInt(11),rs.getInt(12)));
+				id1=rs.getString(3);
+				ArrayList<String> l=new ArrayList<String>();
+				if(id1.equals(id2))
+					l.add(rs.getString(9));
+				else
+				     list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),l,rs.getDouble(10),rs.getInt(11),rs.getInt(12)));
+			    
+				id2=rs.getString(3);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return list;
+	}
+	public ArrayList<InStoragePO> findIn(String begin, String end, String WarehouseID) throws RemoteException {
+		
+		String sql="select * from InStorage where Warehouse='"+WarehouseID+"';";
+		ResultSet rs=db.find(sql);
+		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
+	    try {
+			while(rs.next()){
+				String date=rs.getString(2);
+				if(Integer.parseInt(date)>=Integer.parseInt(begin)&&Integer.parseInt(date)<=Integer.parseInt(end))
+			        list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),0));
+			}
+			return list;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    return list;
+	}
+	public ArrayList<OutStoragePO> findOut(String begin, String end, String WarehouseID) throws RemoteException {
+		String sql="select * from OutStorage where Warehouse='"+WarehouseID+"';";
+		ResultSet rs=db.find(sql);
+		ArrayList<OutStoragePO> list=new ArrayList<OutStoragePO>();
+	    try {
+			while(rs.next()){
+				String date=rs.getString(3);
+				if(Integer.parseInt(date)>=Integer.parseInt(begin)&&Integer.parseInt(date)<=Integer.parseInt(end))
+			        list.add(new OutStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(7),rs.getString(4),rs.getString(5),rs.getInt(6)));
+			}
+			return list;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    return list;
+	}
+	public ResultMessage checkAlarm(String WarehouseID) throws RemoteException {
+		String sql="select * from Warehouse where WarehouseID='"+WarehouseID+"';";
+		ResultSet rs=db.find(sql);
+		int size=0;
+		double alarm=0;
+		try {
+			alarm=rs.getDouble(14);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		double Size1=0;
+		double Size2=0;
+		double Size3=0;
+		
+		try {
+			Size1=rs.getInt(2)*rs.getInt(3)*rs.getInt(4);
+			Size2=rs.getInt(5)*rs.getInt(6)*rs.getInt(7);
+			Size3=rs.getInt(8)*rs.getInt(9)*rs.getInt(10);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String sql1="select * from InStorage where WarehouseID='"+WarehouseID+"' and isInStorage=0 ;";
+		ResultSet rs1=db.find(sql1);
+		int size1=0;
+		int size2=0;
+		int size3=0;
+		try {
+			while(rs1.next()){
+				if(rs1.getString(4).equals("Car"))
+					size1++;
+				else if(rs1.getString(4).equals("train"))
+					size2++;
+				else if(rs1.getString(4).equals("air"))
+					size3++;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ResultMessage rm=null;
+		if(size1/Size1>=alarm)
+			rm=ResultMessage.Alarm;
+		else if(size2/Size2>=alarm)
+			rm=ResultMessage.Alarm;
+		else if(size3/Size3>=alarm)
+			rm=ResultMessage.Alarm;
+		return rm;
+	}
+	public ArrayList<InStoragePO> adjust(String WarehouseID) throws RemoteException {
+		String sql="select * from InStorage";
 		return null;
 	}
+	public ArrayList<int[]> findFreeSpace(String WarehouseID) throws RemoteException {
+		int size=10;
+		String sql="select * from Warehouse where WarehouseID='"+WarehouseID+"';";
+		ResultSet rs=db.find(sql);
+		ArrayList<int[]> list=new ArrayList<int[]>();
+		int pai=0;
+		int jia=0;
+		int wei=0;
+		try {
+			pai=rs.getInt(11);
+		    jia=rs.getInt(12);
+			wei=rs.getInt(13);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	    for(int i=1;i<=pai;i++){
+	    	for(int m=1;m<=jia;m++){
+	    		for(int n=1;n<=wei;n++){
+	    			String sql1="select * from InStorage where isInStorage=0 and WarehouseID='"+WarehouseID+"',pai="+pai+",jia="+jia+",wei="+wei+";";
+	    			rs=db.find(sql);
+	    			try {
+						while(!rs.wasNull()&&list.size()<=size){
+							int[] a={pai,jia,wei};
+							list.add(a);
+						}
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	    				
+	    		}
+	    	}
+	    }
+		
+		return list;
+	}
+	
 	
 
       
