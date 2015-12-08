@@ -46,7 +46,7 @@ public class WarehouseData implements WarehouseDataService {
 
 	public ArrayList<InStoragePO> summarize(String date) throws RemoteException {
 
-		return wd.findIn(date, EmployeeMes.belongToWho);
+		return wd.summarize(date, EmployeeMes.belongToWho);
 	}
 
 	public ResultMessage insert(WarehousePO po) throws RemoteException {
@@ -89,7 +89,7 @@ public class WarehouseData implements WarehouseDataService {
 		return null;
 	}
 
-	public ArrayList<InStoragePO> findFreeSpace() throws RemoteException {
+	public ArrayList<int[]> findFreeSpace() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
