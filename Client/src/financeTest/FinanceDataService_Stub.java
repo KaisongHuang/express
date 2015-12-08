@@ -61,4 +61,9 @@ public class FinanceDataService_Stub implements FinanceDataService{
 		return null;
 	}
 
+	public ResultMessage clear() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

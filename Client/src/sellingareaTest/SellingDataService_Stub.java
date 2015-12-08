@@ -2,6 +2,8 @@ package sellingareaTest;
 
 import java.rmi.RemoteException;
 
+import po.CarPO;
+import po.DriverPO;
 import po.SellingareaPO;
 import _enum.Opera;
 import _enum.ResultMessage;
@@ -30,6 +32,16 @@ public class SellingDataService_Stub implements SellingareaDataService {
 	}
 
 	public SellingareaPO find(String id, Opera op) throws RemoteException {
+		return null;
+	}
+
+	public CarPO findCar(String id) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public DriverPO findDriver(String id) throws RemoteException {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

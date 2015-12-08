@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import _enum.ResultMessage;
 import logic.warehouseblservice.WarehouseBlService;
+import po.InStoragePO;
 
 public class WarehouseBlService_Stub implements WarehouseBlService{
 
@@ -40,7 +41,7 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		return null;
 	}
 
-	public ArrayList<Object> summarizeWarehouse() {
+	public ArrayList<InStoragePO> summarizeWarehouse() {
 		// TODO Auto-generated method stub
 		return null;
 	}

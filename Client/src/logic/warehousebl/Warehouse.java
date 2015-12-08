@@ -111,7 +111,7 @@ public class Warehouse implements WarehouseBlService {
 	}
 
 	@SuppressWarnings("null")
-	public ArrayList<Object> summarizeWarehouse() {
+	public ArrayList<InStoragePO> summarizeWarehouse() {
 		// 待修改
 		Calendar time = Calendar.getInstance();
 		int year = time.get(Calendar.YEAR);
@@ -119,13 +119,14 @@ public class Warehouse implements WarehouseBlService {
 		int date = time.get(Calendar.DATE);
 		String date1 = "" + year + month + date;
 		System.out.println("summarizeWarehouse()" + date1);
-		ArrayList<Object> arr = null;
-		ArrayList<InStoragePO> list = wd.findInStorage();
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getIndate().compareTo(date1) == 0 && list.get(i).getIndate().compareTo(date1) == 0)
-				arr.add(list.get(i));
+		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
+		try {
+			list = wd.findIn(date1);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return arr;
+		return list;
 	}
 
 	public ArrayList<Object> showAdjustGoods() {
