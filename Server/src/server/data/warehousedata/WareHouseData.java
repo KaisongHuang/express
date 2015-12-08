@@ -5,17 +5,23 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import History.History;
+import po.CentreArrivalPO;
+import po.CentreTransforPO;
 import po.InStoragePO;
 import po.OutStoragePO;
+import po.WarehousePO;
 import server.database.MySQLDataBase;
 import _enum.ResultMessage;
 import dataservice.warehousedataservice.WareHouseDataBaseService;
 
 public class WareHouseData extends UnicastRemoteObject implements WareHouseDataBaseService{
 	MySQLDataBase db;
+	History his;
 	public WareHouseData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
+		his=new History(db);
 	}
 	public ResultMessage insert( Object po) throws RemoteException{
 		String sql=null;
@@ -45,5 +51,31 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		return null;
 	
 	}
+	public ResultMessage insert(WarehousePO po) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public ResultMessage clear() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public ResultMessage update(WarehousePO po) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public ResultMessage setAlarm(double d) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
       
 }
