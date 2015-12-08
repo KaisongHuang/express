@@ -67,4 +67,34 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 		return null;
 	}
 
+	public ArrayList<InStoragePO> summarize(String date) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<InStoragePO> findIn(String begin, String end) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<OutStoragePO> findOut(String begin, String end) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage checkAlarm() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<InStoragePO> adjust() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<InStoragePO> findFreeSpace() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
