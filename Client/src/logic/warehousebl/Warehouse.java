@@ -73,7 +73,13 @@ public class Warehouse implements WarehouseBlService {
 	}
 
 	public ResultMessage setAlarm(double rate) {
-		return wd.setAlarm(rate);
+		try {
+			return wd.setAlarm(rate);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public ResultMessage checkAlarm() {
@@ -90,8 +96,8 @@ public class Warehouse implements WarehouseBlService {
 	public ArrayList<Object> checkWarehouse(String begin, String end) {
 		// TODO Auto-generated method stub
 		ArrayList<Object> arr = null;
-		ArrayList<InStoragePO> list = wd.findInStorage();
-		ArrayList<OutStoragePO> list1 = wd.findOutStorage();
+		ArrayList<InStoragePO> list = wd.findIn(begin,end);
+		ArrayList<OutStoragePO> list1 = wd.findOut(begin,end);
 		this.inNum = 0;
 		this.outNum = 0;
 		for (int i = 0; i < list.size(); i++) {
@@ -121,7 +127,7 @@ public class Warehouse implements WarehouseBlService {
 		System.out.println("summarizeWarehouse()" + date1);
 		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
 		try {
-			list = wd.findIn(date1);
+			list = wd.summarize(date1);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -131,8 +137,20 @@ public class Warehouse implements WarehouseBlService {
 
 	public ArrayList<Object> showAdjustGoods() {
 		ArrayList<Object> ob = new ArrayList<Object>();
-		ArrayList<InStoragePO> pre = wd.adjustInStorage();
-		ArrayList<InStoragePO> post = wd.findFreeSpace();
+		ArrayList<InStoragePO> pre=new ArrayList<InStoragePO>();
+		ArrayList<InStoragePO> post=new ArrayList<InStoragePO>();
+		try {
+			pre = wd.adjust();
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			post = wd.findFreeSpace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		for (int i = 0; i < pre.size(); i++) {
 			ob.add(pre.get(i));
