@@ -8,8 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>xiaochao</groupId>
-  <artifactId>Client</artifactId>
-  <name>Client</name>
+  <artifactId>Server</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Server</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,7 +19,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.10</version>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
