@@ -20,7 +20,7 @@ import po.WarehousePO;
 
 public class WarehouseData implements WarehouseDataService {
 	WareHouseDataBaseService wd;
-
+    String WarehouseID=EmployeeMes.belongToWho;
 	public WarehouseData() {
 		try {
 			wd = (WareHouseDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/WareHouseDataService");
@@ -37,21 +37,21 @@ public class WarehouseData implements WarehouseDataService {
 	}
 
 	public ArrayList<InStoragePO> findIn(String begin,String end) throws RemoteException {
-		return null;
+		return wd.findIn(begin, end, WarehouseID);
 	}
 	
 	public ArrayList<OutStoragePO> findOut(String begin,String end) throws RemoteException {
-		return null;
+		return wd.findOut(begin, end, WarehouseID);
 	}
 
 	public ArrayList<InStoragePO> summarize(String date) throws RemoteException {
 
-		return wd.findIn(date, EmployeeMes.belongToWho);
+		return wd.summarize(date, EmployeeMes.belongToWho);
 	}
 
 	public ResultMessage insert(WarehousePO po) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return wd.insert(po);
 	}
 
 	public ResultMessage clear() throws RemoteException {
@@ -60,38 +60,38 @@ public class WarehouseData implements WarehouseDataService {
 	}
 
 	public ResultMessage update(WarehousePO po) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return wd.update(po);
 	}
 
 	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.getArrival();
 	}
 
 	public ResultMessage setAlarm(double d) throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.setAlarm(d, WarehouseID);
 	}
 
 	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.getTransfor(WarehouseID);
 	}
 
 	public ResultMessage checkAlarm() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.checkAlarm(WarehouseID);
 	}
 
 	public ArrayList<InStoragePO> adjust() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.adjust(WarehouseID);
 	}
 
-	public ArrayList<InStoragePO> findFreeSpace() throws RemoteException {
+	public ArrayList<int[]> findFreeSpace() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.findFreeSpace(WarehouseID);
 	}
 
 }

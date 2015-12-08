@@ -13,9 +13,9 @@ public class InStoragePO extends WarehousePO {
 	private int pos_jia;
 	private int pos_wei;
 	private int isCheck;
-
+    private int isInStorage;
 	public InStoragePO(String id, String indate, String destination, String WarehouseID, String pos_qu, int pos_pai,
-			int pos_jia, int pos_wei, int isCheck) {
+			int pos_jia, int pos_wei, int isCheck,int isInStorage) {
 		this.id = id;
 		this.indate = indate;
 		this.destination = destination;
@@ -25,9 +25,12 @@ public class InStoragePO extends WarehousePO {
 		this.pos_jia = pos_jia;
 		this.pos_wei = pos_wei;
 		this.isCheck = isCheck;
-
+        this.isInStorage=isInStorage;
 	}
 
+	public int getIsInStorage(){
+		return isInStorage;
+	}
 	public int getIsCheck() {
 		return isCheck;
 	}
