@@ -74,4 +74,9 @@ public class FinanceData implements FinanceDataService {
 	public ArrayList<AccountPO> findInitInfo() throws RemoteException {
 		return fd.getInit();
 	}
+
+	public ResultMessage clear() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

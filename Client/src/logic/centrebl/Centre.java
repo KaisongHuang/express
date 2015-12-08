@@ -21,7 +21,7 @@ public class Centre implements CentreBlService {
 		ResultMessage rm;
 		CentreTransforPO po = new CentreTransforPO(vo.getTransferStyle(), vo.getDataOfGetin(), vo.getCentreTransferID(),
 				vo.getBanHao(), vo.getStart(), vo.getArrival(),	vo.getHuoGuiHao(), vo.getJianZhuangYuan(), 
-				vo.getList(), vo.getFee(),vo.getIsCheck());
+				vo.getList(), vo.getFee(),vo.getIsCheck(),0);
 		try{
 			rm=cd.insert(po);
 			return rm;
@@ -36,7 +36,7 @@ public class Centre implements CentreBlService {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
 		CentreArrivalPO po = new CentreArrivalPO(vo.getCentreID(),vo.getGetDate(),vo.getTransferID(),vo.getStart(),
-				vo.getExpressState(),vo.getIsCheck());
+				vo.getExpressState(),vo.getIsCheck(),0);
 		try {
 			rm = cd.insert(po);
 			return rm;

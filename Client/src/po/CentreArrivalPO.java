@@ -10,8 +10,8 @@ public class CentreArrivalPO extends CentrePO {
 	String start;
 	String expressState;
 	int isCheck;
-
-	public CentreArrivalPO(String ci, String gd, String transferID, String start, String es, int isCheck) {
+    int isInStorage;
+	public CentreArrivalPO(String ci, String gd, String transferID, String start, String es, int isCheck,int isInstorage) {
 
 		this.centreID = ci;
 		this.getDate = gd;
@@ -19,6 +19,7 @@ public class CentreArrivalPO extends CentrePO {
 		this.start = start;
 		this.expressState = es;
 		this.isCheck = isCheck;
+		this.isInStorage=isInstorage;
 	}
 
 	public String getTransforID() {
@@ -77,4 +78,7 @@ public class CentreArrivalPO extends CentrePO {
 		this.expressState = expressState;
 	}
 
+	public int getIsInstorage(){
+		return isInStorage;
+	}
 }

@@ -1,5 +1,8 @@
 package data.managerdata;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 import Client.network.client.ClientAdapter;
@@ -7,73 +10,62 @@ import Client.network.client.TransformObject;
 import _enum.Opera;
 import _enum.ResultMessage;
 import data.managerdataservice.ManagerDataService;
+import dataservice.managerdataservice.ManagerDataBaseService;
 import po.DistanceAndFee;
+import po.EmployeePO;
+import po.InstitutionPO;
 import po.ManagerPO;
 import po.SalaryPO;
 
 public class ManagerData implements ManagerDataService {
-	   TransformObject send;
-	    TransformObject acp;
-	public ManagerPO find(String id,Opera op) throws RemoteException {
-		send=new TransformObject(op,id);
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		
-		return (ManagerPO) acp.getOb();
-	}
-
-	public ResultMessage insert(ManagerPO po,Opera op) throws RemoteException {
-		send=new TransformObject(op,po);
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		return null;
-	}
-
-	public ResultMessage delete(ManagerPO po,Opera op) throws RemoteException {
-		send=new TransformObject(op,po);
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		return null;
-	}
-
-	
-	public ResultMessage update(ManagerPO po,Opera op) throws RemoteException {
-		if(po instanceof SalaryPO){
-		     send=new TransformObject(Opera.Manager_insert,po);
-		}else if(po instanceof DistanceAndFee){
-			  send=new TransformObject(Opera.Manager_insert,po);
-			
-		}else{
-			send=new TransformObject(op,po);
+	ManagerDataBaseService md;
+	public ManagerData(){
+		try {
+			md=(ManagerDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/ManagerDataService");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		ClientAdapter.write(send);
-		acp=(TransformObject) ClientAdapter.readData();
-		return null;
+	}
+	
+	
+	public EmployeePO findEmployee(String id) throws RemoteException {
+		
+		return md.findEmployee(id);
 	}
 
-	public ManagerPO find(String id) throws RemoteException {
-		// TODO 自动生成的方法存根
-		return null;
+	public InstitutionPO findInStitution(String id) throws RemoteException{
+		return md.findInstitution(id);
 	}
-
 	public ResultMessage insert(ManagerPO po) throws RemoteException {
-		// TODO 自动生成的方法存根
-		return null;
+		
+		return md.insert(po);
 	}
 
 	public ResultMessage delete(ManagerPO po) throws RemoteException {
-		// TODO 自动生成的方法存根
-		return null;
+	
+		return md.delete(po);
 	}
 
 	public ResultMessage update(ManagerPO po) throws RemoteException {
-		// TODO 自动生成的方法存根
-		return null;
+		return md.update(po);
+	
 	}
 
 	public ResultMessage update(Object ob) throws RemoteException {
-		
-		return null;
+	    
+		return md.update(ob);
 	}
+
+
+
+
+
 
 }
