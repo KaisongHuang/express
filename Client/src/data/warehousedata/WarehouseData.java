@@ -5,7 +5,6 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-
 import Client.network.client.ClientAdapter;
 import Client.network.client.TransformObject;
 import _enum.EmployeeMes;
@@ -19,12 +18,12 @@ import po.InStoragePO;
 import po.OutStoragePO;
 import po.WarehousePO;
 
-
 public class WarehouseData implements WarehouseDataService {
 	WareHouseDataBaseService wd;
-	public WarehouseData(){
+
+	public WarehouseData() {
 		try {
-			wd=(WareHouseDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/WareHouseDataService");
+			wd = (WareHouseDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/WareHouseDataService");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,37 +35,63 @@ public class WarehouseData implements WarehouseDataService {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<InStoragePO> findIn(String date) throws RemoteException {
-		
-		return wd.findIn(date, EmployeeMes.belongToWho);
+
+	public ArrayList<InStoragePO> findIn(String begin,String end) throws RemoteException {
+		return null;
 	}
 	
+	public ArrayList<OutStoragePO> findOut(String begin,String end) throws RemoteException {
+		return null;
+	}
+
+	public ArrayList<InStoragePO> summarize(String date) throws RemoteException {
+
+		return wd.findIn(date, EmployeeMes.belongToWho);
+	}
+
 	public ResultMessage insert(WarehousePO po) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public ResultMessage clear() throws RemoteException {
-		
+
 		return wd.clear();
 	}
+
 	public ResultMessage update(WarehousePO po) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public ResultMessage setAlarm(double d) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 
+	public ResultMessage checkAlarm() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	public ArrayList<InStoragePO> adjust() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<InStoragePO> findFreeSpace() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

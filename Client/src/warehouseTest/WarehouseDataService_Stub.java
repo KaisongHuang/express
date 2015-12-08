@@ -1,7 +1,12 @@
 package warehouseTest;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
+import po.CentreArrivalPO;
+import po.CentreTransforPO;
+import po.InStoragePO;
+import po.OutStoragePO;
 import po.WarehousePO;
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
@@ -30,6 +35,36 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 		// TODO Auto-generated method stub
 		System.out.println("update Succeed!");
 		return ResultMessage.Success;
+	}
+
+	public ArrayList<InStoragePO> findIn(String date) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<OutStoragePO> findOut(String date) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage clear() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage setAlarm(double d) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

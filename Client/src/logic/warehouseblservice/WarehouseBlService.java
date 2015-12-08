@@ -6,6 +6,7 @@ import vo.OutStorageVO;
 import java.util.ArrayList;
 
 import _enum.ResultMessage;
+import po.InStoragePO;
 
 public interface WarehouseBlService {
 	public ResultMessage importGoods(InStorageVO vo);
@@ -18,7 +19,7 @@ public interface WarehouseBlService {
 
 	public ArrayList<Object> checkWarehouse(String begin, String end);
 
-	public ArrayList<Object> summarizeWarehouse();
+	public ArrayList<InStoragePO> summarizeWarehouse();
 	
 	public ArrayList<Object> showAdjustGoods();
 
