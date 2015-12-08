@@ -50,6 +50,7 @@ public class WarehouseUI3_1 extends JFrame {
 
 		textArea = new JTextArea();
 		textArea.setBounds(160, 50, 65, 16);
+		textArea.setText("90");
 		textArea.setEditable(false);
 		contentPane.add(textArea);
 

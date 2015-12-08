@@ -30,21 +30,21 @@ public class WarehouseListener4 implements ActionListener {
 			Vector<Object> item = new Vector<Object>();
 			String id = ui.getTextField().getText();
 			String destination = ui.getTextField_1().getText();
-			// String year = (String) ui.getComboBox().getSelectedItem();
-			// String month = (String) ui.getComboBox_1().getSelectedItem();
-			// String date = (String) ui.getComboBox_2().getSelectedItem();
-			// String time = year + month + date;
-			// String qu = (String) ui.getComboBox_3().getSelectedItem();
-			// int pai = (Integer) ui.getComboBox_4().getSelectedItem();
-			// int jia = (Integer) ui.getComboBox_5().getSelectedItem();
-			// int wei = (Integer) ui.getComboBox_6().getSelectedItem();
+			String year = (String) ui.getComboBox().getSelectedItem();
+			String month = (String) ui.getComboBox_1().getSelectedItem();
+			String date = (String) ui.getComboBox_2().getSelectedItem();
+			String time = year + month + date;
+			String qu = (String) ui.getComboBox_3().getSelectedItem();
+			int pai = (Integer) ui.getComboBox_4().getSelectedItem();
+			int jia = (Integer) ui.getComboBox_5().getSelectedItem();
+			int wei = (Integer) ui.getComboBox_6().getSelectedItem();
 			item.add(id);
 			item.add(destination);
-			// item.add(time);
-			// item.add(qu);
-			// item.add(pai);
-			// item.add(jia);
-			// item.add(wei);
+			item.add(time);
+			item.add(qu);
+			item.add(pai);
+			item.add(jia);
+			item.add(wei);
 			ui.getModel().addRow(item);
 		}
 		// delete
