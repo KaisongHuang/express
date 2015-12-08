@@ -69,8 +69,10 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		return rm;
 	}
 	public ResultMessage update(WarehousePO po) throws RemoteException {
-		
-		return null;
+		InStoragePO po1=(InStoragePO) po;
+		String sql="update InStorage set qu="+po1.getPos_qu()+",pai="+po1.getPos_pai()+",jia="+po1.getPos_jia()+",wei="+po1.getPos_wei()+" where id='"+po1.getId()+"';";
+		ResultMessage rm=db.update(sql);
+		return rm;
 	}
 	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
 		String sql="select * from CentreArrival where isCheck=1 and isInStorage=0;";
@@ -153,7 +155,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	public ResultMessage checkAlarm(String WarehouseID) throws RemoteException {
 		String sql="select * from Warehouse where WarehouseID='"+WarehouseID+"';";
 		ResultSet rs=db.find(sql);
-		int size=0;
+	
 		double alarm=0;
 		try {
 			alarm=rs.getDouble(14);
@@ -201,9 +203,85 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			rm=ResultMessage.Alarm;
 		return rm;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * dataservice.warehousedataservice.WareHouseDataBaseService#adjust(java.
+	 * lang.String)
+	 */
 	public ArrayList<InStoragePO> adjust(String WarehouseID) throws RemoteException {
-		String sql="select * from InStorage";
-		return null;
+		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
+		String sql = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0;";
+		ResultSet rs = db.find(sql);
+		String sql1 = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
+		ResultSet rs1 = db.find(sql);
+
+		double alarm = 0;
+		try {
+			alarm = rs.getDouble(14);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		double Size1 = 0;
+		double Size2 = 0;
+		double Size3 = 0;
+
+		try {
+			Size1 = rs.getInt(2) * rs.getInt(3) * rs.getInt(4);
+			Size2 = rs.getInt(5) * rs.getInt(6) * rs.getInt(7);
+			Size3 = rs.getInt(8) * rs.getInt(9) * rs.getInt(10);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		String sql2 = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0 ;";
+		ResultSet rs2 = db.find(sql1);
+		int size1 = 0;
+		int size2 = 0;
+		int size3 = 0;
+		try {
+			while (rs1.next()) {
+				if (rs1.getString(4).equals("Car"))
+					size1++;
+				else if (rs1.getString(4).equals("train"))
+					size2++;
+				else if (rs1.getString(4).equals("air"))
+					size3++;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		int cout1=(int) (Size1*0.1);
+		int cout2=(int) (Size2*0.1);
+		int cout3=(int) (Size3*0.1);
+		
+		try {
+			while (rs.next()) {
+				if (size1 / Size1 >= alarm&&rs.getString(4).equals("Car")&&cout1==0) {
+                      cout1--;
+                      list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(10)));
+				}
+
+				if (size2 / Size2 >= alarm&&rs.getString(4).equals("train")&&cout2==0) {
+                     cout2--;
+                     list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(10)));
+				}
+
+				if (size3 / Size3 >= alarm&&rs.getString(4).equals("air")&&cout3==0) {
+                     cout3--;
+                     list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(10)));
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 	public ArrayList<int[]> findFreeSpace(String WarehouseID) throws RemoteException {
 		int size=10;
