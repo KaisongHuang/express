@@ -40,5 +40,5 @@ public interface WarehouseDataService {
 	
 	public ArrayList<InStoragePO> adjust() throws RemoteException;
 	
-	public ArrayList<InStoragePO> findFreeSpace() throws RemoteException;
+	public ArrayList<int[]> findFreeSpace() throws RemoteException;
 }
