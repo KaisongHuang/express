@@ -44,7 +44,7 @@ public class MainFrame implements ActionListener {
 //	}
 
 	public void init() {
-	//	EmployeeMes.employeePosition = "财务人员";
+		//EmployeeMes.employeePosition = "Centre";
 		frame = new JFrame();
 		frame.setLayout(null);
 		frame.setUndecorated(true);

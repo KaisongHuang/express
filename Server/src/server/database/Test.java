@@ -12,11 +12,11 @@ public class Test {
 	}
 	public void init(){
 		MySQLDataBase db=new MySQLDataBase();
-		ResultSet rs=db.find("select * from employee where employeeID='141250046';");
+		ResultSet rs=db.find("select * from Admin where id='141250049';");
 		try {
 			
 			while(rs.next())
-			System.out.println(rs.getString(4));
+			System.out.println(rs.getString(2));
 			System.out.println("ok");
 			
 		} catch (SQLException e) {
