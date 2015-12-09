@@ -33,7 +33,7 @@ public class Warehouse implements WarehouseBlService {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
-				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
+				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
 			return rm;
@@ -62,7 +62,7 @@ public class Warehouse implements WarehouseBlService {
 		/*********** needs to be modified when adding listener *********/
 		ResultMessage rm;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
-				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
+				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
 			return rm;
@@ -150,7 +150,7 @@ public class Warehouse implements WarehouseBlService {
 	public ArrayList<Object> showAdjustGoods() {
 		ArrayList<Object> ob = new ArrayList<Object>();
 		ArrayList<InStoragePO> pre = new ArrayList<InStoragePO>();
-		ArrayList<InStoragePO> post = new ArrayList<InStoragePO>();
+		ArrayList<int[]> post = new ArrayList<int[]>();
 		try {
 			pre = wd.adjust();
 		} catch (RemoteException e1) {

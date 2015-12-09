@@ -5,10 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-import Client.network.client.ClientAdapter;
-import Client.network.client.TransformObject;
 import _enum.EmployeeMes;
-import _enum.Opera;
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
 import dataservice.warehousedataservice.WareHouseDataBaseService;
@@ -20,7 +17,8 @@ import po.WarehousePO;
 
 public class WarehouseData implements WarehouseDataService {
 	WareHouseDataBaseService wd;
-    String WarehouseID=EmployeeMes.belongToWho;
+	String WarehouseID = EmployeeMes.belongToWho;
+
 	public WarehouseData() {
 		try {
 			wd = (WareHouseDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/WareHouseDataService");
@@ -36,11 +34,11 @@ public class WarehouseData implements WarehouseDataService {
 		}
 	}
 
-	public ArrayList<InStoragePO> findIn(String begin,String end) throws RemoteException {
+	public ArrayList<InStoragePO> findIn(String begin, String end) throws RemoteException {
 		return wd.findIn(begin, end, WarehouseID);
 	}
-	
-	public ArrayList<OutStoragePO> findOut(String begin,String end) throws RemoteException {
+
+	public ArrayList<OutStoragePO> findOut(String begin, String end) throws RemoteException {
 		return wd.findOut(begin, end, WarehouseID);
 	}
 
@@ -50,7 +48,7 @@ public class WarehouseData implements WarehouseDataService {
 	}
 
 	public ResultMessage insert(WarehousePO po) throws RemoteException {
-		
+
 		return wd.insert(po);
 	}
 
@@ -60,7 +58,7 @@ public class WarehouseData implements WarehouseDataService {
 	}
 
 	public ResultMessage update(WarehousePO po) throws RemoteException {
-		
+
 		return wd.update(po);
 	}
 

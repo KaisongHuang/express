@@ -66,4 +66,9 @@ public class FinanceDataService_Stub implements FinanceDataService{
 		return null;
 	}
 
+	public ArrayList<ReceiptPO> findReceipt(String date, String SellingAreaID) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

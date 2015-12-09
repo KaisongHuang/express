@@ -8,18 +8,16 @@ import java.rmi.RemoteException;
 import po.CarPO;
 import po.DriverPO;
 import po.SellingareaPO;
-import Client.network.client.ClientAdapter;
-import Client.network.client.TransformObject;
-import _enum.Opera;
 import _enum.ResultMessage;
 import data.sellingareadataservice.SellingareaDataService;
 import dataservice.sellingareadataservice.SellingAreaDataBaseService;
 
-public class SellingAreaData implements SellingareaDataService{
+public class SellingAreaData implements SellingareaDataService {
 	SellingAreaDataBaseService sa;
-	public SellingAreaData(){
+
+	public SellingAreaData() {
 		try {
-			sa=(SellingAreaDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SellingAreaDataService");
+			sa = (SellingAreaDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SellingAreaDataService");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -31,15 +29,17 @@ public class SellingAreaData implements SellingareaDataService{
 			e.printStackTrace();
 		}
 	}
+
 	public CarPO findCar(String id) throws RemoteException {
 		return (CarPO) sa.findCar(id);
 	}
 
-	public DriverPO findDriver(String id)throws RemoteException{
+	public DriverPO findDriver(String id) throws RemoteException {
 		return (DriverPO) sa.findDriver(id);
 	}
+
 	public ResultMessage insert(SellingareaPO po) throws RemoteException {
-	   return sa.insert(po);
+		return sa.insert(po);
 	}
 
 	public ResultMessage delete(SellingareaPO po) throws RemoteException {
@@ -48,7 +48,7 @@ public class SellingAreaData implements SellingareaDataService{
 
 	public ResultMessage update(SellingareaPO po) throws RemoteException {
 		return sa.update(po);
-	
+
 	}
 
 }
