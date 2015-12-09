@@ -1,27 +1,26 @@
-package presentation.sellingareaui;
-import java.awt.EventQueue;
-import java.awt.Window;
+/**
+ * SellingAreaUI32是SellingArea用户的车辆信息管理删除界面
+ */
 
-import javax.swing.JFrame;
+package presentation.sellingareaui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.sellingarealistener.SellingAreaListener32;
 
-import javax.swing.JComboBox;
-
 
 public class SellingAreaUI32 extends JPanel{
 
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private JTextField textField;
 
@@ -58,21 +57,23 @@ public class SellingAreaUI32 extends JPanel{
 	private JLabel lblNewLabel_5;
 
 	private JLabel lblNewLabel_4;
-	
+
 	private JLabel lblNewLabel_3;
-	
+
 	private JLabel lblNewLabel_2;
 
 	private JLabel lblNewLabel_1;
 
 	private JLabel lblNewLabel_7;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 	/**
 	 * Create the application.
-	 * @param card 
-	 * @param j 
-	 * @param i 
+	 * @param card
+	 * @param j
+	 * @param i
 	 */
 	public SellingAreaUI32(CardLayout card, int i, int j) {
 		sellingarealistener = new SellingAreaListener32(this,card);
@@ -85,110 +86,110 @@ public class SellingAreaUI32 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-	
+
+
+
 		this.setBackground(new Color(255, 255, 255));
 		this.setBounds(136, 114, 746, 439);
-	
+
 		this.setLayout(null);
-		
+
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(0, 0, 747, 44);
 		this.add(panel_5);
 		panel_5.setLayout(null);
-		
+
 		btnNewButton_10 = new JButton("\u67E5\u8BE2");
 		btnNewButton_10.setBounds(44, 8, 90, 30);
 		panel_5.add(btnNewButton_10);
-		
+
 		btnNewButton_11 = new JButton("\u66F4\u65B0");
 		btnNewButton_11.setBounds(194, 8, 90, 30);
 		panel_5.add(btnNewButton_11);
-		
+
 		btnNewButton_13 = new JButton("\u5220\u9664");
 		btnNewButton_13.setBackground(new Color(255, 248, 220));
 		btnNewButton_13.setBounds(348, 8, 90, 30);
 		panel_5.add(btnNewButton_13);
-		
+
 		btnNewButton_14 = new JButton("\u6DFB\u52A0");
 		btnNewButton_14.setBounds(525, 8, 90, 30);
 		panel_5.add(btnNewButton_14);
-		
+
 		lblNewLabel_1 = new JLabel("车辆编号：");
 		lblNewLabel_1.setBounds(51, 73, 100, 18);
 		this.add(lblNewLabel_1);
-		
+
 		textField = new JTextField();
 		textField.setBounds(158, 67, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		button_1 = new JButton("查询");
 		button_1.setBounds(348, 67, 100, 30);
 		this.add(button_1);
-		
+
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(51, 121, 587, 197);
 		this.add(panel_6);
 		panel_6.setLayout(null);
-		
+
 		lblNewLabel_2 = new JLabel("车辆编号：");
 		lblNewLabel_2.setBounds(16, 16, 100, 18);
 		panel_6.add(lblNewLabel_2);
-		
+
 		lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setBounds(118, 16, 100, 18);
 		panel_6.add(lblNewLabel_3);
-		
+
 		lblNewLabel_4 = new JLabel("车辆号：");
 		lblNewLabel_4.setBounds(16, 72, 100, 18);
 		panel_6.add(lblNewLabel_4);
-		
+
 		lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(118, 72, 100, 18);
 		panel_6.add(lblNewLabel_5);
-		
+
 		lblNewLabel_6 = new JLabel("购买时间：");
 		lblNewLabel_6.setBounds(16, 132, 100, 18);
 		panel_6.add(lblNewLabel_6);
-		
+
 		lblNewLabel_7 = new JLabel("");
 		lblNewLabel_7.setBounds(118, 132, 100, 18);
 		panel_6.add(lblNewLabel_7);
-		
+
 		lblNewLabel_8 = new JLabel("发动机号：");
 		lblNewLabel_8.setBounds(311, 16, 100, 18);
 		panel_6.add(lblNewLabel_8);
-		
+
 		lblNewLabel_9 = new JLabel("");
 		lblNewLabel_9.setBounds(435, 16, 100, 18);
 		panel_6.add(lblNewLabel_9);
-		
+
 		lblNewLabel_10 = new JLabel("底盘号：");
 		lblNewLabel_10.setBounds(311, 72, 100, 18);
 		panel_6.add(lblNewLabel_10);
-		
+
 		lblNewLabel_11 = new JLabel("");
 		lblNewLabel_11.setBounds(435, 72, 100, 18);
 		panel_6.add(lblNewLabel_11);
-		
+
 		lblNewLabel_12 = new JLabel("服役时间：");
 		lblNewLabel_12.setBounds(311, 132, 100, 18);
 		panel_6.add(lblNewLabel_12);
-		
+
 		lblNewLabel_13 = new JLabel("");
 		lblNewLabel_13.setBounds(435, 132, 100, 18);
 		panel_6.add(lblNewLabel_13);
-		
+
 		btnNewButton_15 = new JButton("\u5220\u9664");
 		btnNewButton_15.setBounds(106, 386, 100, 30);
 		this.add(btnNewButton_15);
-		
+
 		btnNewButton_16 = new JButton("\u53D6\u6D88");
 		btnNewButton_16.setBounds(474, 386, 100, 30);
 		this.add(btnNewButton_16);
-		
+
 		btnNewButton_10.addActionListener(sellingarealistener);
 		btnNewButton_11.addActionListener(sellingarealistener);
 		btnNewButton_13.addActionListener(sellingarealistener);
@@ -196,7 +197,7 @@ public class SellingAreaUI32 extends JPanel{
 		btnNewButton_15.addActionListener(sellingarealistener);
 		btnNewButton_16.addActionListener(sellingarealistener);
 		button_1.addActionListener(sellingarealistener);
-		
+
 	}
 
 	public JTextField getTextField() {
@@ -366,6 +367,6 @@ public class SellingAreaUI32 extends JPanel{
 	public void setLblNewLabel_7(JLabel lblNewLabel_7) {
 		this.lblNewLabel_7 = lblNewLabel_7;
 	}
-	
-	
+
+
 }

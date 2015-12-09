@@ -1,18 +1,22 @@
+/**
+ * AdminMenuUI是admin用户首页的界面
+ */
 package presentation.adminui;
 
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
 
 import listener.adminlistener.AdminMenuListener;
 
 public class AdminMenuUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private CardLayout card;
 	AdminMenuListener adminlistener;
 	private JButton button1;
@@ -22,6 +26,9 @@ public class AdminMenuUI extends JPanel {
 	private int width;
 	private int height;
 
+	/*
+	 * 构造
+	 */
 	public AdminMenuUI(CardLayout card, int width, int height, JPanel panel1) {
 		this.card = card;
 		adminlistener = new AdminMenuListener(this, card,panel1);
@@ -30,8 +37,11 @@ public class AdminMenuUI extends JPanel {
 		initialize();
 	}
 
+	/*
+	 * 初始化
+	 */
 	private void initialize() {
-		
+
         this.setSize(width,height);
 		this.setLayout(null);
 

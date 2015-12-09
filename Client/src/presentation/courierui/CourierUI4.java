@@ -1,24 +1,25 @@
+/**
+ * CourierUI4是courier用户的快递查询界面
+ */
+
 package presentation.courierui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener4;
 
-import javax.swing.JComboBox;
-
 //历史轨迹及货物状态
 public class CourierUI4 extends JPanel {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private JTextField textField;
 
@@ -31,12 +32,14 @@ public class CourierUI4 extends JPanel {
 	private JLabel lblNewLabel_5;
 
 	private JButton button;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param j
 	 * @param i
 	 */
