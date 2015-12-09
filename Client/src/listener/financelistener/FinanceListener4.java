@@ -118,6 +118,8 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 		} else if (e.getSource() == ui.getUi2().getButton_4()) {
 			System.out.println("返回");
 			ui.getCard().show(ui, "0");
+		} else if (e.getSource() == ui.getUi2().getButton_5()) {
+			finance.clearAccount();
 		} else if (e.getSource() == ui.getUi3().getButton_4()) {
 			// add new bankaccount
 			String account = ui.getUi3().getTextField_1().getText();

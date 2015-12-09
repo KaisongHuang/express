@@ -57,4 +57,9 @@ public class FinanceBlService_Stub implements FinanceBlService {
 		return null;
 	}
 
+	public ResultMessage clearAccount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
