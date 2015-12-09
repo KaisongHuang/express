@@ -18,14 +18,14 @@ public class LoginUI extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField1;
-	private JButton btnLogin;
+	private JButton Login;
     private LoginListener listener;
-	
+	private JButton logout;
 	/**
 	 * Create the frame.
 	 */
 	public LoginUI() {
-		
+		this.setUndecorated(true);
         listener=new LoginListener(this);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
@@ -57,10 +57,14 @@ public class LoginUI extends JFrame {
 		lblPic.setBounds(119, 83, 19, 16);
 		this.add(lblPic);
 		
-		btnLogin = new JButton("Login");
-		btnLogin.setBounds(434, 211, 134, 29);
-		contentPane.add(btnLogin);
-		btnLogin.addActionListener(listener);;
+		logout=new JButton("退出");
+		logout.setBounds(840,0,60,30);
+		contentPane.add(logout);
+		logout.addActionListener(listener);
+		Login = new JButton("Login");
+		Login.setBounds(434, 211, 134, 29);
+		contentPane.add(Login);
+		Login.addActionListener(listener);;
 		this.setVisible(true);
 	}
 	
@@ -69,5 +73,13 @@ public class LoginUI extends JFrame {
 	}
 	public JTextField getText1(){
 		return textField1;
+	}
+	
+	public JButton getLogout(){
+		return logout;
+		
+	}
+	public JButton getLogin(){
+		return Login;
 	}
 }
