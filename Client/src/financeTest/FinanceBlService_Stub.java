@@ -42,7 +42,7 @@ public class FinanceBlService_Stub implements FinanceBlService {
 		return null;
 	}
 
-	public AccountVO findAccount(String bankAccount) {
+	public ArrayList<AccountPO> findAccount(String bankAccount) {
 		// TODO Auto-generated method stub
 		return null;
 	}
