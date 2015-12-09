@@ -22,6 +22,7 @@ public class LoginListener implements ActionListener{
 		l=new Login();
 	}
 	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==frame.getLogin()){
 		JTextField text=frame.getText();
 		JTextField text1=frame.getText1();
 
@@ -34,6 +35,11 @@ public class LoginListener implements ActionListener{
 		EmployeeMes.timeOfWorking=vo.getTimeOfWorking();
 MainFrame frame1=new MainFrame();
 frame1.init();
+        frame.setVisible(false);
+		}
+		else if(e.getSource()==frame.getLogout()){
+			System.exit(0);
+		}
 	}
 
 }
