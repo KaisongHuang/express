@@ -160,4 +160,15 @@ public class Finance implements FinanceBlService {
 		return count;
 	}
 
+	public ResultMessage clearAccount() {
+		// TODO Auto-generated method stub
+		try {
+			fd.clear();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

@@ -15,6 +15,8 @@ public interface FinanceBlService {
 	public ResultMessage createCost(PayVO vo);
 
 	public ArrayList<Object> getTotal(String begin, String end);
+	
+	public ResultMessage clearAccount();
 
 	public ResultMessage initAccount(AccountVO vo);
 
