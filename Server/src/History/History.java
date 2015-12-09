@@ -17,19 +17,7 @@ public class History implements HistoryService{
 		
 	}
 
-	public void courier(String id) {
-		sql="select * from History where id='"+id+"';";
-		ResultSet rs=db.find(sql);
-		int courier=0;
-		try {
-			courier=rs.getInt(2)+1;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		sql="update History set courier="+courier+" where id='"+id+"';";
-		db.update(id);
-	}
+	
 
 	public void SellingArea(String id, String sellingAreaID, String state) {
 		sql="select * from History where id='"+id+"';";
@@ -66,23 +54,5 @@ public class History implements HistoryService{
 		db.update(sql);
 		
 	}
-
-	public void Warehouse(String id, String WarehouseID, String state) {
-	    
-		sql="select * from History where id='"+id+"';";
-		ResultSet rs=db.find(sql);
-		int warehouse=0;
-		String wid=null;
-		try {
-			warehouse=rs.getInt(7)+1;
-			if(!rs.getString(5).equals("0"))
-				wid=rs.getString(5);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		sql="update History set centreID='"+wid+WarehouseID+"' ,state="+state+",warehouse="+warehouse+" where id='"+id+"';";
-		db.update(sql);
-	}
-
 }
+

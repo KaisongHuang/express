@@ -18,11 +18,11 @@ import dataservice.warehousedataservice.WareHouseDataBaseService;
 
 public class WareHouseData extends UnicastRemoteObject implements WareHouseDataBaseService{
 	MySQLDataBase db;
-	History his;
+	
 	public WareHouseData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
-		his=new History(db);
+
 	}
 	public ResultMessage insert( Object po) throws RemoteException{
 		String sql=null;
@@ -31,12 +31,12 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			sql="insert into InStorage values("+po1.getId()+",'"+po1.getIndate()+"','"+po1.getDestination()+
 					"',"+po1.getPos_qu()+","+po1.getPos_pai()+","+po1.getPos_jia()+
 					","+po1.getPos_wei()+","+po1.getIsCheck()+",'"+po1.getWarehouseID()+"');";
-			his.Warehouse(po1.getId(), po1.getWarehouseID(), null);
+		
 		}else{
 			OutStoragePO po1=(OutStoragePO) po;
 			sql="insert into OutStorage values("+po1.getId()+",'"+po1.getDestination()+"','"+po1.getOutdate()+"','"+po1.getTransportation()+
 					"',"+po1.getTrans_id()+","+po1.getIsCheck()+",'"+po1.getWarehouseID()+"');";
-			his.Warehouse(po1.getId(), po1.getWarehouseID(), null);
+		
 		}
 		ResultMessage rm=db.insert(sql);
 		return rm;
