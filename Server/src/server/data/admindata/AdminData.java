@@ -40,7 +40,7 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 
 	public ResultMessage update(Object po) throws RemoteException{
 		AdminPO po1=(AdminPO) po;
-		String sql="update Admin set id='"+po1.getId()+"',name='"+po1.getName()+"',password='"+po1.getPassword()+"',role='"+po1.getRole()+"';";
+		String sql="update Admin set name='"+po1.getName()+"',password='"+po1.getPassword()+"',role='"+po1.getRole()+"' where id=;"+po1.getId()+"';";
 		ResultMessage rm=db.update(sql);
 		return rm;
 	}
@@ -49,6 +49,7 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 		AdminPO po1=(AdminPO) po;
 		String sql="insert into Admin values('"+po1.getId()+"','"+po1.getName()+"','"+po1.getPassword()+"','"+po1.getRole()+"');";
 		ResultMessage rm=db.insert(sql);
+	
 		return rm;
 	}
 
