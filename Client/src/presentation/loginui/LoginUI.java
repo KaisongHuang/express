@@ -85,7 +85,7 @@ public class LoginUI extends JFrame {
 
 		ImageIcon icon1 = new ImageIcon("image/蓝色背景.png");
 		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
-		ImageIcon icon2 = new ImageIcon("image/卡车装饰图.png");
+		ImageIcon icon2 = new ImageIcon("image/装饰图.png");
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
 
 		label1.setIcon(icon1);
