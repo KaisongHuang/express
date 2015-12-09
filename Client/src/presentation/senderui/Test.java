@@ -23,7 +23,7 @@ public class Test extends JFrame {
 		this.setLayout(null);
 		this.setSize(900, 700);
 		
-		SearchUI panel=new SearchUI(this);
+		SearchUI panel=new SearchUI();
 		
 		
 		
