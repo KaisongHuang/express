@@ -1,17 +1,12 @@
-package presentation.managerui;
-import java.awt.EventQueue;
+/**
+ * ManagerUI2是manager用户的单据审批界面
+ */
 
-import javax.swing.JFrame;
-import java.awt.Color;
+package presentation.managerui;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-
 import listener.managerlistener.ManagerListener20;
 
 import javax.swing.JComboBox;
@@ -38,13 +33,13 @@ public class ManagerUI2 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-		
+
+
+
 		this.setBounds(136, 115, 746, 443);
-	
+
 		this.setLayout(null);
-		
+
 		comboBox = new JComboBox();
 		comboBox.addItem("无");
 		comboBox.addItem("装车单");
@@ -60,21 +55,21 @@ public class ManagerUI2 extends JPanel{
 		comboBox.setSelectedIndex(0);
 		comboBox.setBounds(105, 5, 150, 28);
 		this.add(comboBox);
-		
+
 		button1 = new JButton("确认");
 		button1.setBounds(270, 5, 80, 28);
 		this.add(button1);
 		button1.addActionListener(managerlistener);
-		
+
 		button2 = new JButton("取消");
 		button2.setBounds(360, 5, 80, 28);
 		this.add(button2);
 		button2.addActionListener(managerlistener);
-		
+
 		JLabel label = new JLabel("\u6570\u636E\u7C7B\u578B：");
 		label.setBounds(38, 10, 100, 18);
 		this.add(label);
-		
+
 	}
 
 
@@ -101,6 +96,6 @@ public class ManagerUI2 extends JPanel{
 	public void setComboBox(JComboBox comboBox) {
 		this.comboBox = comboBox;
 	}
-	
+
 
 }

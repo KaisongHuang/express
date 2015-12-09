@@ -1,29 +1,24 @@
-package presentation.managerui;
-import java.awt.EventQueue;
+/**
+ * ManagerUI1是manager用户的机构管理的查询界面
+ */
 
-import javax.swing.JFrame;
+package presentation.managerui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener10;
 
-import javax.swing.JComboBox;
-
 
 public class ManagerUI1 extends JPanel{
 
-	
+
 	private JTextField textField;
-	
+
 	private JButton btnNewButton_11;
 	private JButton btnNewButton_12;
 	private JButton btnNewButton_13;
@@ -31,19 +26,19 @@ public class ManagerUI1 extends JPanel{
 	private JButton btnNewButton_15;
 	private JButton button;
 	private JButton button_1;
-	
+
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_4;
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_10;
-	
+
 	ManagerListener10 managerlistener;
 
 	/**
 	 * Create the application.
-	 * @param card 
+	 * @param card
 	 */
 	public ManagerUI1(CardLayout card) {
 		managerlistener = new ManagerListener10(this,card);
@@ -54,89 +49,89 @@ public class ManagerUI1 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-		
+
+
+
 		this.setBackground(new Color(255, 255, 255));
 		this.setBounds(136, 115, 748, 438);
-	
+
 		this.setLayout(null);
-		
+
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(0, 0, 748, 50);
 		this.add(panel_5);
 		panel_5.setLayout(null);
-		
+
 		btnNewButton_11 = new JButton("\u67E5\u8BE2");
 		btnNewButton_11.setBackground(new Color(255, 248, 220));
 		btnNewButton_11.setBounds(32, 6, 90, 30);
 		panel_5.add(btnNewButton_11);
 		btnNewButton_11.addActionListener(managerlistener);
-		
+
 		btnNewButton_12 = new JButton("\u66F4\u65B0");
 		btnNewButton_12.setBounds(168, 6, 90, 30);
 		panel_5.add(btnNewButton_12);
 		btnNewButton_12.addActionListener(managerlistener);
-		
+
 		btnNewButton_13 = new JButton("\u5220\u9664");
 		btnNewButton_13.setBounds(308, 6, 90, 30);
 		panel_5.add(btnNewButton_13);
 		btnNewButton_13.addActionListener(managerlistener);
-		
+
 		btnNewButton_14 = new JButton("\u6DFB\u52A0");
 		btnNewButton_14.setBounds(453, 6, 90, 30);
 		panel_5.add(btnNewButton_14);
 		btnNewButton_14.addActionListener(managerlistener);
-		
+
 		button = new JButton("\u65E5\u5FD7\u67E5\u770B");
 		button.setBounds(587, 6, 90, 30);
 		panel_5.add(button);
 		button.addActionListener(managerlistener);
-		
+
 		lblNewLabel_1 = new JLabel("机构编号：");
 		lblNewLabel_1.setBounds(10, 63, 100, 18);
 		this.add(lblNewLabel_1);
-		
+
 		textField = new JTextField();
 		textField.setBounds(117, 57, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		btnNewButton_15 = new JButton("查询");
 		btnNewButton_15.setBounds(312, 57, 100, 30);
 		this.add(btnNewButton_15);
 		btnNewButton_15.addActionListener(managerlistener);
-		
+
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(10, 122, 481, 84);
 		this.add(panel_6);
 		panel_6.setLayout(null);
-	
+
 		lblNewLabel_2 = new JLabel("机构编号：");
 		lblNewLabel_2.setBounds(6, 35, 100, 18);
 		panel_6.add(lblNewLabel_2);
-		
+
 		lblNewLabel_4 = new JLabel("111");
 		lblNewLabel_4.setBounds(103, 35, 100, 18);
 		panel_6.add(lblNewLabel_4);
-		
+
 		lblNewLabel_6 = new JLabel("机构名称：");
 		lblNewLabel_6.setBounds(244, 35, 100, 18);
 		panel_6.add(lblNewLabel_6);
-		
+
 		lblNewLabel_7 = new JLabel("");
 		lblNewLabel_7.setBounds(357, 35, 100, 18);
 		panel_6.add(lblNewLabel_7);
-		
+
 		lblNewLabel_10 = new JLabel("机构信息");
 		lblNewLabel_10.setBounds(186, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
-		
+
 		button_1 = new JButton("取消");
 		button_1.setBounds(452, 57, 100, 30);
 		add(button_1);
 		button_1.addActionListener(managerlistener);
-		
+
 	}
 
 
@@ -249,5 +244,5 @@ public class ManagerUI1 extends JPanel{
 	public JButton getButton_1() {
 		return button_1;
 	}
-	
+
 }

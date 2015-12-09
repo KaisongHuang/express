@@ -1,29 +1,23 @@
-package presentation.managerui;
-import java.awt.EventQueue;
+/**
+ * ManagerUI12是manager用户的机构管理的删除界面
+ */
 
-import javax.swing.JFrame;
+package presentation.managerui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.SwingConstants;
-
 import listener.managerlistener.ManagerListener12;
 
 
 public class ManagerUI12 extends JPanel{
 
-	
+
 	private JTextField textField;
-	
+
 	private JButton btnNewButton_11;
 	private JButton btnNewButton_12;
 	private JButton btnNewButton_13;
@@ -32,7 +26,7 @@ public class ManagerUI12 extends JPanel{
 	private JButton btnNewButton_16;
 	private JButton btnNewButton_17;
 	private JButton button;
-	
+
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
@@ -53,85 +47,85 @@ public class ManagerUI12 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
+
+
 		this.setBackground(new Color(255, 255, 255));
 		this.setBounds(136, 115, 748, 438);
-		
+
 		this.setLayout(null);
-		
+
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(0, 0, 748, 50);
 		this.add(panel_5);
 		panel_5.setLayout(null);
-		
+
 		btnNewButton_11 = new JButton("\u67E5\u8BE2");
 		btnNewButton_11.setBounds(32, 6, 90, 30);
 		panel_5.add(btnNewButton_11);
-		
+
 		btnNewButton_12 = new JButton("\u66F4\u65B0");
 		btnNewButton_12.setBounds(168, 6, 90, 30);
 		panel_5.add(btnNewButton_12);
-		
+
 		btnNewButton_13 = new JButton("\u5220\u9664");
 		btnNewButton_13.setBackground(new Color(255, 248, 220));
 		btnNewButton_13.setBounds(308, 6, 90, 30);
 		panel_5.add(btnNewButton_13);
-		
+
 		btnNewButton_14 = new JButton("\u6DFB\u52A0");
 		btnNewButton_14.setBounds(453, 6, 90, 30);
 		panel_5.add(btnNewButton_14);
-		
+
 		button = new JButton("\u65E5\u5FD7\u67E5\u770B");
 		button.setBounds(579, 6, 90, 30);
 		panel_5.add(button);
-		
+
 		lblNewLabel_1 = new JLabel("机构编号：");
 		lblNewLabel_1.setBounds(35, 63, 100, 18);
 		this.add(lblNewLabel_1);
-		
+
 		textField = new JTextField();
 		textField.setBounds(147, 57, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		btnNewButton_15 = new JButton("查询");
 		btnNewButton_15.setBounds(325, 57, 100, 30);
 		this.add(btnNewButton_15);
-		
+
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(37, 118, 477, 113);
 		this.add(panel_6);
 		panel_6.setLayout(null);
-		
+
 		lblNewLabel_2 = new JLabel("机构信息");
 		lblNewLabel_2.setBounds(199, 6, 100, 18);
 		panel_6.add(lblNewLabel_2);
-		
+
 		lblNewLabel_3 = new JLabel("机构编号：");
 		lblNewLabel_3.setBounds(25, 56, 100, 18);
 		panel_6.add(lblNewLabel_3);
-		
+
 		lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(116, 56, 100, 18);
 		panel_6.add(lblNewLabel_5);
-		
+
 		lblNewLabel_7 = new JLabel("机构编号：");
 		lblNewLabel_7.setBounds(241, 56, 100, 18);
 		panel_6.add(lblNewLabel_7);
-		
+
 		lblNewLabel_8 = new JLabel("");
 		lblNewLabel_8.setBounds(368, 56, 100, 18);
 		panel_6.add(lblNewLabel_8);
-		
+
 		btnNewButton_16 = new JButton("删除");
 		btnNewButton_16.setBounds(35, 284, 100, 30);
 		this.add(btnNewButton_16);
-		
+
 		btnNewButton_17 = new JButton("取消");
 		btnNewButton_17.setBounds(414, 284, 100, 30);
 		this.add(btnNewButton_17);
-		
+
 		btnNewButton_11.addActionListener(managerlistener);
 		btnNewButton_12.addActionListener(managerlistener);
 		btnNewButton_13.addActionListener(managerlistener);
@@ -140,7 +134,7 @@ public class ManagerUI12 extends JPanel{
 		btnNewButton_16.addActionListener(managerlistener);
 		btnNewButton_17.addActionListener(managerlistener);
 		button.addActionListener(managerlistener);
-		
+
 	}
 
 
@@ -265,5 +259,5 @@ public class ManagerUI12 extends JPanel{
 		this.lblNewLabel_8 = lblNewLabel_8;
 	}
 
-	
+
 }

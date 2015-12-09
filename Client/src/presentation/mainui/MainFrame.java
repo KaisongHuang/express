@@ -1,3 +1,7 @@
+/**
+ * 主界面
+ */
+
 package presentation.mainui;
 
 import java.awt.CardLayout;
@@ -50,13 +54,13 @@ public class MainFrame implements ActionListener {
 		frame.setUndecorated(true);
 		frame.setSize(width, height);
 		frame.setLocation(100, 100);
-       
+
 		panel1 = new JPanel();
 		panel2 = new JPanel();
-		
+
 		Card = new CardLayout();
 		panel1.setLayout(Card);
-		
+
 		setCard();
 		getPanel3();
 
@@ -116,7 +120,7 @@ public class MainFrame implements ActionListener {
 		panel1.setBounds(width / 5, height / 5, 4 * width / 5, 4 * height / 5);
 		panel2.setBounds(0, 0, width, height / 5);
 		panel3.setLocation(0, height/5);
-		
+
 		button3.addActionListener(this);
 
 		panel2.add(button1);
@@ -170,7 +174,7 @@ public class MainFrame implements ActionListener {
 			panel1.add(new WarehouseUI2(), "1");
 			panel1.add(new WarehouseUI3(), "2");
 			panel1.add(new WarehouseUI4(), "3");
-	     
+
 		} else if (EmployeeMes.employeePosition.equals("Finance")) {
 			panel1.add(new FinanceUI1(), "0");
 			panel1.add(new FinanceUI2(), "1");
@@ -181,13 +185,13 @@ public class MainFrame implements ActionListener {
 			panel1.add(new ManagerUI01(Card), "1");
 			panel1.add(new ManagerUI02(Card), "2");
 			panel1.add(new ManagerUI03(Card), "3");
-			
+
 			panel1.add(new ManagerUI1(Card), "4");
 			panel1.add(new ManagerUI11(Card), "5");
 			panel1.add(new ManagerUI12(Card), "6");
 			panel1.add(new ManagerUI13(Card), "7");
 			panel1.add(new ManagerUI14(Card), "8");
-			
+
 			panel1.add(new ManagerUI2(), "9");
 			panel1.add(new ManagerUI3(), "10");
 			panel1.add(new ManagerUI4(Card), "11");

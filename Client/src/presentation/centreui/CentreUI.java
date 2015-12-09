@@ -1,16 +1,13 @@
+/**
+ * CentreUI是centre用户中转转入的界面
+ */
+
 package presentation.centreui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener0;
@@ -31,8 +28,8 @@ public class CentreUI extends JPanel {
 	private int height;
 	/**
 	 * Create the application.
-	 * @param j 
-	 * @param i 
+	 * @param j
+	 * @param i
 	 */
 	public CentreUI(int i, int j) {
 

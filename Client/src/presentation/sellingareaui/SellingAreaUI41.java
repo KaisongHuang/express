@@ -1,25 +1,19 @@
+/**
+ * SellingAreaUI41是SellingArea用户的司机信息管理更新界面
+ */
+
 package presentation.sellingareaui;
+
 import java.awt.CardLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-
 import java.awt.Color;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.sellingarealistener.SellingAreaListener41;
-
-import javax.swing.JComboBox;
 
 
 public class SellingAreaUI41 extends JPanel{
@@ -46,9 +40,9 @@ public class SellingAreaUI41 extends JPanel{
 	private int height;
 	/**
 	 * Create the application.
-	 * @param card 
-	 * @param j 
-	 * @param i 
+	 * @param card
+	 * @param j
+	 * @param i
 	 */
 	public SellingAreaUI41(CardLayout card, int i, int j) {
 		sellingarealistener = new SellingAreaListener41(this,card);
@@ -64,121 +58,121 @@ public class SellingAreaUI41 extends JPanel{
 
 		this.setBackground(new Color(255, 255, 255));
 		this.setBounds(136, 114, 746, 439);
-		
+
 		this.setLayout(null);
-		
+
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(0, 0, 746, 45);
 		this.add(panel_5);
 		panel_5.setLayout(null);
-		
+
 		btnNewButton_10 = new JButton("\u67E5\u8BE2");
 		btnNewButton_10.setBounds(64, 6, 90, 30);
 		panel_5.add(btnNewButton_10);
-		
+
 		btnNewButton_11 = new JButton("\u66F4\u65B0");
 		btnNewButton_11.setBackground(new Color(255, 248, 220));
 		btnNewButton_11.setBounds(223, 6, 90, 30);
 		panel_5.add(btnNewButton_11);
-		
+
 		btnNewButton_13 = new JButton("\u5220\u9664");
 		btnNewButton_13.setBounds(371, 6, 90, 30);
 		panel_5.add(btnNewButton_13);
-		
+
 		btnNewButton_14 = new JButton("\u6DFB\u52A0");
 		btnNewButton_14.setBounds(540, 6, 90, 30);
 		panel_5.add(btnNewButton_14);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("司机编号：");
 		lblNewLabel_1.setBounds(24, 56, 100, 18);
 		this.add(lblNewLabel_1);
-		
+
 		textField = new JTextField();
 		textField.setBounds(142, 50, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		btnNewButton_15 = new JButton("查询");
 		btnNewButton_15.setBounds(343, 50, 100, 30);
 		this.add(btnNewButton_15);
-		
+
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(24, 105, 579, 209);
 		this.add(panel_6);
 		panel_6.setLayout(null);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("司机编号：");
 		lblNewLabel_2.setBounds(6, 6, 100, 18);
 		panel_6.add(lblNewLabel_2);
-		
+
 		textField_1 = new JTextField("3");
 		textField_1.setBounds(120, 6, 100, 30);
 		panel_6.add(textField_1);
-		
+
 		JLabel lblNewLabel_4 = new JLabel("出生日期：");
 		lblNewLabel_4.setBounds(6, 49, 100, 18);
 		panel_6.add(lblNewLabel_4);
-		
+
 		JLabel lblNewLabel_5 = new JLabel("性别：");
 		lblNewLabel_5.setBounds(6, 102, 100, 18);
 		panel_6.add(lblNewLabel_5);
-		
+
 		JLabel lblNewLabel_6 = new JLabel("车辆单位：");
 		lblNewLabel_6.setBounds(6, 152, 100, 18);
 		panel_6.add(lblNewLabel_6);
-		
+
 		textField_2 = new JTextField("7New label");
 		textField_2.setBounds(120, 49,100, 30);
 		panel_6.add(textField_2);
-		
+
 		textField_3 = new JTextField("8New label");
 		textField_3.setBounds(120, 102, 100, 30);
 		panel_6.add(textField_3);
-		
+
 		textField_4 = new JTextField("9New label");
 		textField_4.setBounds(120, 152, 100, 30);
 		panel_6.add(textField_4);
-		
+
 		JLabel lblNewLabel_10 = new JLabel("司机姓名：");
 		lblNewLabel_10.setBounds(304, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
-		
+
 		textField_5 = new JTextField("11New label");
 		textField_5.setBounds(431, 6, 100, 30);
 		panel_6.add(textField_5);
-		
+
 		JLabel lblNewLabel_12 = new JLabel("身份证号：");
 		lblNewLabel_12.setBounds(304, 49, 100, 18);
 		panel_6.add(lblNewLabel_12);
-		
+
 		textField_6 = new JTextField("13New label");
 		textField_6.setBounds(431, 49, 100, 30);
 		panel_6.add(textField_6);
-		
+
 		JLabel lblNewLabel_14 = new JLabel("手机号码：");
 		lblNewLabel_14.setBounds(304, 102, 100, 18);
 		panel_6.add(lblNewLabel_14);
-		
+
 		textField_7 = new JTextField("15New label");
 		textField_7.setBounds(431, 102, 100, 30);
 		panel_6.add(textField_7);
-		
+
 		JLabel lblNewLabel_16 = new JLabel("行驶证期限：");
 		lblNewLabel_16.setBounds(304, 152, 100, 18);
 		panel_6.add(lblNewLabel_16);
-		
+
 		textField_8 = new JTextField("17New label");
 		textField_8.setBounds(431, 152, 100, 30);
 		panel_6.add(textField_8);
-		
+
 		btnNewButton_16 = new JButton("\u66F4\u65B0");
 		btnNewButton_16.setBounds(83, 382, 90, 30);
 		this.add(btnNewButton_16);
-		
+
 		btnNewButton_17 = new JButton("\u53D6\u6D88");
 		btnNewButton_17.setBounds(431, 382, 90, 30);
 		this.add(btnNewButton_17);
-		
+
 		btnNewButton_10.addActionListener(sellingarealistener);
 		btnNewButton_11.addActionListener(sellingarealistener);
 		btnNewButton_13.addActionListener(sellingarealistener);
@@ -186,8 +180,8 @@ public class SellingAreaUI41 extends JPanel{
 		btnNewButton_15.addActionListener(sellingarealistener);
 		btnNewButton_16.addActionListener(sellingarealistener);
 		btnNewButton_17.addActionListener(sellingarealistener);
-		
-		
+
+
 	}
 
 	public JTextField getTextField() {
@@ -317,6 +311,6 @@ public class SellingAreaUI41 extends JPanel{
 	public void setBtnNewButton_10(JButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
 	}
-	
-	
+
+
 }

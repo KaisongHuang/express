@@ -1,3 +1,7 @@
+/**
+ * WarehouseUI3是Warehouse用户的库存报警界面
+ */
+
 package presentation.warehouseui;
 
 import javax.swing.JPanel;
@@ -13,7 +17,7 @@ import listener.warehouselistener.WarehouseListener3;
 public class WarehouseUI3 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;

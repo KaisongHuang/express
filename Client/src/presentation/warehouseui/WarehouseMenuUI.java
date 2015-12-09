@@ -1,3 +1,7 @@
+/**
+ * WarehouseMenuUI是Warehouse用户的主界面
+ */
+
 package presentation.warehouseui;
 
 import java.awt.CardLayout;

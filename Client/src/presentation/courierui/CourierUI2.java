@@ -1,20 +1,15 @@
-package presentation.courierui;
-import java.awt.EventQueue;
+/**
+ * CourierUI2是courier用户的快递接收界面
+ */
 
-import javax.swing.JFrame;
-import java.awt.Color;
+package presentation.courierui;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener2;
-
-import javax.swing.JComboBox;
 
 //收件信息输入
 public class CourierUI2 extends JPanel{
@@ -22,12 +17,12 @@ public class CourierUI2 extends JPanel{
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	
+
 	CourierListener2 courierlistener;
 	private JButton button;
 	private int width;
     private int height;
-    
+
 	/**
 	 * Launch the application.
 	 */
@@ -35,8 +30,8 @@ public class CourierUI2 extends JPanel{
 
 	/**
 	 * Create the application.
-	 * @param j 
-	 * @param i 
+	 * @param j
+	 * @param i
 	 */
 	public CourierUI2(int i, int j) {
 		courierlistener = new CourierListener2(this);
@@ -50,36 +45,36 @@ public class CourierUI2 extends JPanel{
 	 */
 	private void initialize() {
 		this.setBounds(136, 118, 748, 436);
-	
+
 		this.setLayout(null);
-		
+
 		JLabel label = new JLabel("收件编号");
 		label.setBounds(116, 43, 100, 18);
 		this.add(label);
-		
+
 		textField = new JTextField();
 		textField.setBounds(231, 34, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		JLabel label_1 = new JLabel("收件人");
 		label_1.setBounds(118, 109, 100, 18);
 		this.add(label_1);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setBounds(236, 105, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		JLabel label_2 = new JLabel("收件日期");
 		label_2.setBounds(115, 187, 100, 18);
 		this.add(label_2);
-		
+
 		textField_2 = new JTextField();
 		textField_2.setBounds(240, 182, 122, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
-		
+
 		button = new JButton("确认");
 		button.setBounds(374, 347, 100, 30);
 		this.add(button);
@@ -116,6 +111,6 @@ public class CourierUI2 extends JPanel{
 		return button;
 	}
 
-	
-	
+
+
 }
