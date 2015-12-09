@@ -6,9 +6,6 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-import Client.network.client.ClientAdapter;
-import Client.network.client.TransformObject;
-import _enum.Opera;
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
 import dataservice.financedataservice.FinanceDataBaseService;
@@ -55,22 +52,18 @@ public class FinanceData implements FinanceDataService {
 		return null;
 	}
 
-	@SuppressWarnings("unchecked")
 	public ArrayList<AccountPO> findAccount() throws RemoteException {
 		return fd.getAccount();
 	}
 
-	@SuppressWarnings("unchecked")
 	public ArrayList<PayPO> findPay() throws RemoteException{
 		return fd.getPay();
 	}
 
-	@SuppressWarnings("unchecked")
-	public ArrayList<ReceiptPO> findReceipt() throws RemoteException{
-		return fd.getReceipt();
+	public ArrayList<ReceiptPO> findReceipt(String date,String SellingAreaID) throws RemoteException{
+		return fd.getReceipt(date,SellingAreaID);
 	}
 
-	@SuppressWarnings("unchecked")
 	public ArrayList<AccountPO> findInitInfo() throws RemoteException {
 		return fd.getInit();
 	}

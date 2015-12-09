@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 
 
-public class main {
+public class courierui {
 
 	private JFrame frame;
 
@@ -21,7 +21,7 @@ public class main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					main window = new main();
+					courierui window = new courierui();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class main {
 	/**
 	 * Create the application.
 	 */
-	public main() {
+	public courierui() {
 		initialize();
 	}
 

@@ -33,11 +33,11 @@ public class Finance implements FinanceBlService {
 		return null;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<Object> getTotal(String begin, String end) {
 		// TODO Auto-generated method stub
-		ArrayList<Object> arr = null;
+		ArrayList<Object> arr = new ArrayList<Object>();
 		this.count = 0;
+		
 		try {
 			for (int i = 0; i < fd.findPay().size(); i++) {
 				if (fd.findPay().get(i).getDate().compareTo(begin) >= 0
@@ -50,16 +50,16 @@ public class Finance implements FinanceBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		try {
-			for (int i = 0; i < fd.findReceipt().size(); i++) {
-				if (fd.findReceipt().get(i).getDate().compareTo(begin) >= 0
-						&& fd.findReceipt().get(i).getDate().compareTo(end) <= 0)
-					arr.add(fd.findReceipt().get(i));
+			for (int i = 0; i < fd.findReceipt(begin, end).size(); i++) {
+				arr.add(fd.findReceipt(begin, end).get(i));
 			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		return arr;
 	}
 
@@ -154,7 +154,7 @@ public class Finance implements FinanceBlService {
 	public ArrayList<AccountPO> checkInitInfo() {
 		ArrayList<AccountPO> po = new ArrayList<AccountPO>();
 		try {
-			po=fd.findInitInfo();
+			po = fd.findInitInfo();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
