@@ -33,33 +33,33 @@ public class Finance implements FinanceBlService {
 		return null;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<Object> getTotal(String begin, String end) {
 		// TODO Auto-generated method stub
-		ArrayList<Object> arr = null;
-		this.count = 0;
+		ArrayList<Object> arr = new ArrayList<Object>();
+		ArrayList<PayPO> pay = new ArrayList<PayPO>();
+		ArrayList<ReceiptPO> receipt = new ArrayList<ReceiptPO>();
+
 		try {
-			for (int i = 0; i < fd.findPay().size(); i++) {
-				if (fd.findPay().get(i).getDate().compareTo(begin) >= 0
-						&& fd.findPay().get(i).getDate().compareTo(end) <= 0) {
-					arr.add(fd.findPay().get(i));
-					this.count++;
-				}
-			}
+			pay = fd.findPay(begin, end);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			for (int i = 0; i < fd.findReceipt().size(); i++) {
-				if (fd.findReceipt().get(i).getDate().compareTo(begin) >= 0
-						&& fd.findReceipt().get(i).getDate().compareTo(end) <= 0)
-					arr.add(fd.findReceipt().get(i));
-			}
+			receipt = fd.findReceipt(begin, end);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		this.count = pay.size();
+
+		for (int i = 0; i < pay.size(); i++)
+			arr.add(pay.get(i));
+
+		for (int i = 0; i < receipt.size(); i++)
+			arr.add(receipt.get(i));
+
 		return arr;
 	}
 
@@ -118,17 +118,11 @@ public class Finance implements FinanceBlService {
 		return null;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea) {
 		// TODO Auto-generated method stub
-		ArrayList<ReceiptPO> arr = null;
+		ArrayList<ReceiptPO> arr = new ArrayList<ReceiptPO>();
 		try {
-			for (int i = 0; i < fd.findReceipt().size(); i++) {
-				if (fd.findReceipt().get(i).getDate().equals(date)
-						&& fd.findReceipt().get(i).getSellingArea().equals(sellingArea))
-					;
-				arr.add(fd.findReceipt().get(i));
-			}
+			arr = fd.checkReceipt(date, sellingArea);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -154,7 +148,7 @@ public class Finance implements FinanceBlService {
 	public ArrayList<AccountPO> checkInitInfo() {
 		ArrayList<AccountPO> po = new ArrayList<AccountPO>();
 		try {
-			po=fd.findInitInfo();
+			po = fd.findInitInfo();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

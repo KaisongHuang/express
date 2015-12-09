@@ -24,7 +24,10 @@ public interface FinanceDataService {
 
 	public ResultMessage clear() throws RemoteException;
 	
-	public ArrayList<PayPO> findPay() throws RemoteException;
+	public ArrayList<PayPO> findPay(String begin,String end) throws RemoteException;
+	
+	public ArrayList<ReceiptPO> findReceipt(String begin,String end) throws RemoteException;
+	
+	public ArrayList<ReceiptPO> checkReceipt(String date,String SellingAreaID) throws RemoteException;
 
-	public ArrayList<ReceiptPO> findReceipt() throws RemoteException;
 }

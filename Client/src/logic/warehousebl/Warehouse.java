@@ -33,7 +33,7 @@ public class Warehouse implements WarehouseBlService {
 		// TODO Auto-generated method stub
 		ResultMessage rm;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
-				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
+				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
 			return rm;
@@ -62,7 +62,7 @@ public class Warehouse implements WarehouseBlService {
 		/*********** needs to be modified when adding listener *********/
 		ResultMessage rm;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
-				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck());
+				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
 			return rm;
@@ -73,7 +73,13 @@ public class Warehouse implements WarehouseBlService {
 	}
 
 	public ResultMessage setAlarm(double rate) {
-		return wd.setAlarm(rate);
+		try {
+			return wd.setAlarm(rate);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public ResultMessage checkAlarm() {
@@ -86,58 +92,81 @@ public class Warehouse implements WarehouseBlService {
 		return null;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<Object> checkWarehouse(String begin, String end) {
 		// TODO Auto-generated method stub
-		ArrayList<Object> arr = null;
-		ArrayList<InStoragePO> list = wd.findInStorage();
-		ArrayList<OutStoragePO> list1 = wd.findOutStorage();
-		this.inNum = 0;
-		this.outNum = 0;
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getIndate().compareTo(begin) >= 0 && list.get(i).getIndate().compareTo(end) <= 0) {
-				arr.add(list.get(i));
-				this.inNum++;
-			}
+		ArrayList<Object> arr = new ArrayList<Object>();
+		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
+		ArrayList<OutStoragePO> list1 = new ArrayList<OutStoragePO>();
+
+		try {
+			list = wd.findIn(begin, end);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		for (int i = 0; i < wd.findOutStorage().size(); i++) {
-			if (list1.get(i).getOutdate().compareTo(begin) >= 0 && list1.get(i).getOutdate().compareTo(end) <= 0) {
-				arr.add(list1.get(i));
-				this.outNum++;
-			}
+		try {
+			list1 = wd.findOut(begin, end);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		this.total = this.inNum - this.outNum;
+
+		// 计算该时间区间内的库存数量
+		inNum = list.size();
+		outNum = list1.size();
+		total = inNum - outNum;
+
+		for (int i = 0; i < list.size(); i++)
+			arr.add(list.get(i));
+
+		for (int i = 0; i < list1.size(); i++)
+			arr.add(list1.get(i));
+
 		return arr;
 	}
 
-	@SuppressWarnings("null")
-	public ArrayList<Object> summarizeWarehouse() {
-		// 待修改
+	public ArrayList<InStoragePO> summarizeWarehouse() {
 		Calendar time = Calendar.getInstance();
 		int year = time.get(Calendar.YEAR);
 		int month = time.get(Calendar.MONTH) + 1;
-		int date = time.get(Calendar.DATE);
-		String date1 = "" + year + month + date;
-		System.out.println("summarizeWarehouse()" + date1);
-		ArrayList<Object> arr = null;
-		ArrayList<InStoragePO> list = wd.findInStorage();
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getIndate().compareTo(date1) == 0 && list.get(i).getIndate().compareTo(date1) == 0)
-				arr.add(list.get(i));
+		int day = time.get(Calendar.DATE);
+
+		String date = "";
+		if (month >= 1 && month <= 9)
+			date = "" + year + "0" + month + day;
+		else
+			date = "" + year + month + day;
+
+		System.out.println("summarizeWarehouse()" + date);
+		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
+		try {
+			list = wd.summarize(date);
+		} catch (RemoteException e) {
+			e.printStackTrace();
 		}
-		return arr;
+		return list;
 	}
 
 	public ArrayList<Object> showAdjustGoods() {
 		ArrayList<Object> ob = new ArrayList<Object>();
-		ArrayList<InStoragePO> pre = wd.adjustInStorage();
-		ArrayList<InStoragePO> post = wd.findFreeSpace();
-		
+		ArrayList<InStoragePO> pre = new ArrayList<InStoragePO>();
+		ArrayList<int[]> post = new ArrayList<int[]>();
+		try {
+			pre = wd.adjust();
+		} catch (RemoteException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			post = wd.findFreeSpace();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
 		for (int i = 0; i < pre.size(); i++) {
 			ob.add(pre.get(i));
 			ob.add(post.get(i));
 		}
-		
+
 		return ob;
 	}
 

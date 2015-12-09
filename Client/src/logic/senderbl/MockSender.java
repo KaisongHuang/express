@@ -9,7 +9,7 @@ public class MockSender extends Sender{
 		
 	}
 	public HistoryVO search(int id) {
-		historyVO=new HistoryVO();
+		historyVO=new HistoryVO(null, null, null, null);
 		return historyVO;
 	}
 }

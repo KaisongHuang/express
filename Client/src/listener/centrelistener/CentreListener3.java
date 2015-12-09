@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
@@ -15,28 +14,27 @@ import presentation.centreui.*;
 import vo.CentreTransforVO;
 
 public class CentreListener3 implements MouseListener, ActionListener {
-	
-	
+
 	private CentreUI3 ui;
 	CentreBlService centre = new Centre();
 
-	public CentreListener3 (CentreUI3 ui){
+	public CentreListener3(CentreUI3 ui) {
 		super();
 		this.ui = ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-				
-		if(e.getSource()==ui.getBtnNewButton_9()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_10()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_12()){
+
+		if (e.getSource() == ui.getBtnNewButton_9()) {
+
+		} else if (e.getSource() == ui.getBtnNewButton_10()) {
+
+		} else if (e.getSource() == ui.getBtnNewButton_12()) {
 			ResultMessage rm;
 			CentreTransforVO vo = this.read();
 			rm = centre.manageTranfor(vo);
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
+		} else if (e.getSource() == ui.getBtnNewButton_13()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
@@ -47,7 +45,7 @@ public class CentreListener3 implements MouseListener, ActionListener {
 			delete(ui.getTextField_7());
 			delete(ui.getTextField_8());
 		}
-		
+
 	}
 
 	private void delete(JTextField textField) {
@@ -67,36 +65,36 @@ public class CentreListener3 implements MouseListener, ActionListener {
 		String JianZhuangYuan = ui.getTextField_6().getText();
 		String YaYunYuan = ui.getTextField_7().getText();
 		String fee = ui.getTextField_8().getText();
-		
-		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin, centreTransferID,banHao, start, arrival, 
-				JianZhuangYuan,YaYunYuan,null, Double.parseDouble(fee), 0);
-		
+
+		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin, centreTransferID, banHao, start, arrival,
+				JianZhuangYuan, YaYunYuan, null, Double.parseDouble(fee), 0);
+
 		return vo;
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

@@ -24,31 +24,12 @@ public class WarehouseListener3 implements ActionListener {
 	public WarehouseListener3(WarehouseUI3 ui) {
 		super();
 		this.ui = ui;
-
+		warehouse.setAlarm(90);
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getButton()) {// 刷新：从数据库中读取待调整的运单
-			ArrayList<Object> ob = warehouse.showAdjustGoods();
-			Vector<Object> data = new Vector<Object>();
-
-			for (int i = 0; i < ob.size(); i++) {
-				Vector<Object> item = new Vector<Object>();
-				InStoragePO po1 = (InStoragePO) ob.get(2 * i);
-				InStoragePO po2 = (InStoragePO) ob.get(2 * i + 1);
-				item.add(po1.getId());
-				item.add(po1.getPos_qu());
-				item.add(po1.getPos_pai());
-				item.add(po1.getPos_jia());
-				item.add(po1.getPos_wei());
-				item.add(po2.getPos_qu());
-				item.add(po2.getPos_pai());
-				item.add(po2.getPos_jia());
-				item.add(po2.getPos_wei());
-				data.add(item);
-			}
-
-			ui.setData(data);
+			this.refresh();
 		} else if (!hasUI2 && e.getSource() == ui.getButton_1()) {// 确认：提示是否确认修改，是则后台修改数据并允许button2可监听，否则不做任何修改并提示修改警戒比例
 			ui2 = new WarehouseUI3_2(this);
 			hasUI2 = true;
@@ -57,7 +38,6 @@ public class WarehouseListener3 implements ActionListener {
 		else if (hasUI2 && e.getSource() == ui2.getButton()) {// 确认：后台数据修改
 			hasUI2 = false;
 			ArrayList<Object> ob = warehouse.showAdjustGoods();
-			Vector<Object> data = new Vector<Object>();
 
 			for (int i = 0; i < ob.size(); i++) {
 				InStoragePO po1 = (InStoragePO) ob.get(2 * i);
@@ -94,10 +74,35 @@ public class WarehouseListener3 implements ActionListener {
 		else if (hasUI1 && e.getSource() == ui1.getButton()) {// 确认：修改报警比例
 			hasUI1 = false;
 			warehouse.setAlarm(Double.parseDouble(ui1.getTextArea_1().getText()));
+			ui1.getTextArea().setText(ui1.getTextArea_1().getText());
 			ui1.dispose();
+			this.refresh();
 		} else if (hasUI1 && e.getSource() == ui1.getButton_1()) {// 取消：不做任何修改
 			hasUI1 = false;
 			ui1.dispose();
 		}
+	}
+	
+	private void refresh(){
+		ArrayList<Object> ob = warehouse.showAdjustGoods();
+		Vector<Object> data = new Vector<Object>();
+
+		for (int i = 0; i < ob.size(); i++) {
+			Vector<Object> item = new Vector<Object>();
+			InStoragePO po1 = (InStoragePO) ob.get(2 * i);
+			InStoragePO po2 = (InStoragePO) ob.get(2 * i + 1);
+			item.add(po1.getId());
+			item.add(po1.getPos_qu());
+			item.add(po1.getPos_pai());
+			item.add(po1.getPos_jia());
+			item.add(po1.getPos_wei());
+			item.add(po2.getPos_qu());
+			item.add(po2.getPos_pai());
+			item.add(po2.getPos_jia());
+			item.add(po2.getPos_wei());
+			data.add(item);
+		}
+
+		ui.setData(data);
 	}
 }
