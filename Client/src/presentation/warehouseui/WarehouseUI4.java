@@ -17,8 +17,6 @@ import listener.warehouselistener.WarehouseListener4;
 import javax.swing.JComboBox;
 import java.util.Arrays;
 import java.util.Vector;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class WarehouseUI4 extends JPanel {
 

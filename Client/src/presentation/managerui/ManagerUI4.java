@@ -17,18 +17,22 @@ import javax.swing.JComboBox;
 public class ManagerUI4 extends JPanel{
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton btnNewButton_12;
 	private JButton btnNewButton_13;
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
 
-	private JComboBox comboBox;
-	private JComboBox comboBox_1;
-	private JComboBox comboBox_2;
-	private JComboBox comboBox_3;
-	private JComboBox comboBox_4;
-	private JComboBox comboBox_5;
-	private JComboBox comboBox_6;
+	private JComboBox<?> comboBox;
+	private JComboBox<?> comboBox_1;
+	private JComboBox<?> comboBox_2;
+	private JComboBox<?> comboBox_3;
+	private JComboBox<?> comboBox_4;
+	private JComboBox<?> comboBox_5;
+	private JComboBox<?> comboBox_6;
 
 	ManagerListener40 managerlistener;
 
@@ -74,7 +78,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_1.setBounds(48, 84, 100, 18);
 		this.add(lblNewLabel_1);
 
-		comboBox = new JComboBox();
+		comboBox = new JComboBox<Object>();
 		comboBox.setBounds(129, 79, 100, 28);
 		this.add(comboBox);
 
@@ -82,7 +86,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_2.setBounds(48, 152, 100, 18);
 		this.add(lblNewLabel_2);
 
-		comboBox_1 = new JComboBox();
+		comboBox_1 = new JComboBox<Object>();
 		comboBox_1.setBounds(129, 147, 100, 28);
 		this.add(comboBox_1);
 
@@ -90,7 +94,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_3.setBounds(48, 222, 100, 18);
 		this.add(lblNewLabel_3);
 
-		comboBox_2 = new JComboBox();
+		comboBox_2 = new JComboBox<Object>();
 		comboBox_2.setBounds(129, 217, 100, 28);
 		this.add(comboBox_2);
 
@@ -98,7 +102,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_4.setBounds(312, 84, 100, 18);
 		this.add(lblNewLabel_4);
 
-		comboBox_3 = new JComboBox();
+		comboBox_3 = new JComboBox<Object>();
 		comboBox_3.setBounds(402, 79, 100, 28);
 		this.add(comboBox_3);
 
@@ -106,7 +110,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_5.setBounds(312, 152, 110, 18);
 		this.add(lblNewLabel_5);
 
-		comboBox_4 = new JComboBox();
+		comboBox_4 = new JComboBox<Object>();
 		comboBox_4.setBounds(402, 147, 100, 28);
 		this.add(comboBox_4);
 
@@ -114,7 +118,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_6.setBounds(312, 222, 100, 18);
 		this.add(lblNewLabel_6);
 
-		comboBox_5 = new JComboBox();
+		comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(402, 217, 100, 28);
 		this.add(comboBox_5);
 
@@ -122,7 +126,7 @@ public class ManagerUI4 extends JPanel{
 		lblNewLabel_7.setBounds(48, 287, 100, 18);
 		this.add(lblNewLabel_7);
 
-		comboBox_6 = new JComboBox();
+		comboBox_6 = new JComboBox<Object>();
 		comboBox_6.setBounds(129, 282, 100, 28);
 		this.add(comboBox_6);
 
@@ -171,59 +175,59 @@ public class ManagerUI4 extends JPanel{
 		this.btnNewButton_15 = btnNewButton_15;
 	}
 
-	public JComboBox getComboBox() {
+	public JComboBox<?> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox comboBox) {
+	public void setComboBox(JComboBox<?> comboBox) {
 		this.comboBox = comboBox;
 	}
 
-	public JComboBox getComboBox_1() {
+	public JComboBox<?> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox comboBox_1) {
+	public void setComboBox_1(JComboBox<?> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JComboBox getComboBox_2() {
+	public JComboBox<?> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public void setComboBox_2(JComboBox comboBox_2) {
+	public void setComboBox_2(JComboBox<?> comboBox_2) {
 		this.comboBox_2 = comboBox_2;
 	}
 
-	public JComboBox getComboBox_3() {
+	public JComboBox<?> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public void setComboBox_3(JComboBox comboBox_3) {
+	public void setComboBox_3(JComboBox<?> comboBox_3) {
 		this.comboBox_3 = comboBox_3;
 	}
 
-	public JComboBox getComboBox_4() {
+	public JComboBox<?> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public void setComboBox_4(JComboBox comboBox_4) {
+	public void setComboBox_4(JComboBox<?> comboBox_4) {
 		this.comboBox_4 = comboBox_4;
 	}
 
-	public JComboBox getComboBox_5() {
+	public JComboBox<?> getComboBox_5() {
 		return comboBox_5;
 	}
 
-	public void setComboBox_5(JComboBox comboBox_5) {
+	public void setComboBox_5(JComboBox<?> comboBox_5) {
 		this.comboBox_5 = comboBox_5;
 	}
 
-	public JComboBox getComboBox_6() {
+	public JComboBox<?> getComboBox_6() {
 		return comboBox_6;
 	}
 
-	public void setComboBox_6(JComboBox comboBox_6) {
+	public void setComboBox_6(JComboBox<?> comboBox_6) {
 		this.comboBox_6 = comboBox_6;
 	}
 

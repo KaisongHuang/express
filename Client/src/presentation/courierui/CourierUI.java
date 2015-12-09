@@ -17,6 +17,10 @@ import javax.swing.JComboBox;
 public class CourierUI extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -35,12 +39,14 @@ public class CourierUI extends JPanel{
 
 
 	CourierListener0 courierlistener;
-	private JComboBox comboBox_1;
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox;
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
-    private int width;
-    private int height;
+    @SuppressWarnings("unused")
+	private int width;
+    @SuppressWarnings("unused")
+	private int height;
 	/**
 	 * Create the application.
 	 * @param width
@@ -212,7 +218,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_12.setBounds(14, 316, 65, 24);
 		this.add(lblNewLabel_12);
 
-		comboBox = new JComboBox();
+		comboBox = new JComboBox<String>();
 		comboBox.setBounds(81, 312, 102, 28);
 		comboBox.addItem("快递袋");
 		comboBox.addItem("纸箱");
@@ -224,7 +230,7 @@ public class CourierUI extends JPanel{
 		label_6.setBounds(216, 316, 65, 24);
 		this.add(label_6);
 
-		comboBox_1 = new JComboBox();
+		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(287, 311, 122, 29);
 		comboBox_1.addItem("经快");
 		comboBox_1.addItem("普快");
@@ -365,19 +371,19 @@ public class CourierUI extends JPanel{
 		this.textField_14 = textField_14;
 	}
 
-	public JComboBox getComboBox_1() {
+	public JComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox comboBox_1) {
+	public void setComboBox_1(JComboBox<String> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JComboBox getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox comboBox) {
+	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 

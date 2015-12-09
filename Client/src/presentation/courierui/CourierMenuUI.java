@@ -11,6 +11,10 @@ import listener.courierlistener.CourierMenuListener;
 
 public class CourierMenuUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton button1;
 	JButton button2;
 	JButton button3;

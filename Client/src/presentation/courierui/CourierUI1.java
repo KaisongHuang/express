@@ -14,14 +14,20 @@ import listener.courierlistener.CourierListener1;
 public class CourierUI1 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 
 	CourierListener1 courierlistener;
 
 	private JButton button;
-    private int width;
-    private int height;
+    @SuppressWarnings("unused")
+	private int width;
+    @SuppressWarnings("unused")
+	private int height;
 
 	/**
 	 * Create the application.

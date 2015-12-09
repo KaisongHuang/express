@@ -16,6 +16,11 @@ import listener.courierlistener.CourierListener4;
 //历史轨迹及货物状态
 public class CourierUI4 extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JTextField textField;
 
 	private JTextArea textArea_1;
@@ -27,7 +32,9 @@ public class CourierUI4 extends JPanel {
 	private JLabel lblNewLabel_5;
 
 	private JButton button;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 
 	/**

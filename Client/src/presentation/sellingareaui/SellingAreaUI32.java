@@ -17,6 +17,11 @@ import listener.sellingarealistener.SellingAreaListener32;
 public class SellingAreaUI32 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JTextField textField;
 
 	SellingAreaListener32 sellingarealistener;
@@ -60,7 +65,9 @@ public class SellingAreaUI32 extends JPanel{
 	private JLabel lblNewLabel_1;
 
 	private JLabel lblNewLabel_7;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 	/**
 	 * Create the application.

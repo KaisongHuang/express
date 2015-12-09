@@ -15,6 +15,10 @@ import javax.swing.JButton;
 public class SellingAreaUI31 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -40,7 +44,9 @@ public class SellingAreaUI31 extends JPanel{
 	private JButton btnNewButton_17;
 
 	SellingAreaListener31 sellingarealistener;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 
 	/**

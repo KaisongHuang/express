@@ -15,7 +15,11 @@ import javax.swing.JComboBox;
 public class ManagerUI2 extends JPanel{
 
 
-	private JComboBox comboBox;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JComboBox<String> comboBox;
 	private JButton button1;
 	private JButton button2;
 
@@ -40,7 +44,7 @@ public class ManagerUI2 extends JPanel{
 
 		this.setLayout(null);
 
-		comboBox = new JComboBox();
+		comboBox = new JComboBox<String>();
 		comboBox.addItem("无");
 		comboBox.addItem("装车单");
 		comboBox.addItem("快递费用");
@@ -89,11 +93,11 @@ public class ManagerUI2 extends JPanel{
 		this.button2 = button2;
 	}
 
-	public JComboBox getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox comboBox) {
+	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 

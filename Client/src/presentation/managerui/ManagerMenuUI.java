@@ -12,6 +12,10 @@ import listener.managerlistener.ManagerMenuListener;
 public class ManagerMenuUI extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private CardLayout card;
 	private JButton button1;
 	private JButton button2;

@@ -13,6 +13,10 @@ import listener.adminlistener.AdminMenuListener;
 
 public class AdminMenuUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private CardLayout card;
 	AdminMenuListener adminlistener;
 	private JButton button1;

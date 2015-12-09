@@ -14,6 +14,10 @@ import listener.adminlistener.AdminListener3;
 public class AdminUI3 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -22,7 +26,9 @@ public class AdminUI3 extends JPanel{
 	private JButton btnNewButton_11;
 
 	AdminListener3 adminlistener;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 	/**
 	 * Create the application.

@@ -13,6 +13,10 @@ import listener.financelistener.FinanceMenuListener;
 
 public class FinanceMenuUI extends JPanel{
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton button1;
 	JButton button2;
 	JButton button3;

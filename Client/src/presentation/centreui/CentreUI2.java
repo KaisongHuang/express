@@ -16,6 +16,10 @@ import listener.centrelistener.CentreListener2;
 public class CentreUI2 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -32,7 +36,9 @@ public class CentreUI2 extends JPanel{
 	private JButton btnNewButton_13;
 
 	CentreListener2 centrelistener;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 
 

@@ -16,15 +16,21 @@ import javax.swing.JComboBox;
 
 public class CentreUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox;
 	private JButton btnNewButton_9;
 	private JButton btnNewButton_10;
 	CentreListener0 centreListener;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 	/**
 	 * Create the application.
@@ -99,7 +105,7 @@ public class CentreUI extends JPanel {
 		lblNewLabel_5.setBounds(17, 155, 100, 18);
 		panel_5.add(lblNewLabel_5);
 
-		comboBox = new JComboBox();
+		comboBox = new JComboBox<String>();
 		comboBox.addItem("完整");
 		comboBox.addItem("损坏");
 		comboBox.addItem("丢失");
@@ -167,11 +173,11 @@ public class CentreUI extends JPanel {
 		this.textField_3 = textField_3;
 	}
 
-	public JComboBox getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox comboBox) {
+	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 

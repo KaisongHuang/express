@@ -14,13 +14,20 @@ import listener.adminlistener.AdminListener4;
 public class AdminUI4 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JTextField textField;
 
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
 
 	AdminListener4 adminlistener;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 	/**
 	 * Create the application.

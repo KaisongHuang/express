@@ -12,6 +12,10 @@ import listener.managerlistener.ManagerListener30;
 
 public class ManagerUI3 extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton button1;
 	private JButton button2;
 

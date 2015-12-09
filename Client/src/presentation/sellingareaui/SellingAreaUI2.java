@@ -15,9 +15,15 @@ import listener.sellingarealistener.SellingAreaListener20;
 public class SellingAreaUI2 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private JButton btnNewButton_10;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 	SellingAreaListener20 sellingarealistener;
 

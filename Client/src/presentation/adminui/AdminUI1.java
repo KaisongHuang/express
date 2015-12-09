@@ -15,6 +15,10 @@ import listener.adminlistener.AdminListener1;
 public class AdminUI1 extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_3;
@@ -22,10 +26,12 @@ public class AdminUI1 extends JPanel{
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
 
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox;
 
 	AdminListener1 adminlistener;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
 
 	/**
@@ -86,7 +92,7 @@ public class AdminUI1 extends JPanel{
 		lblNewLabel_1.setBounds(51, 195, 61, 16);
 		this.add(lblNewLabel_1);
 
-		comboBox = new JComboBox();
+		comboBox = new JComboBox<String>();
 		comboBox.setBounds(124, 195, 134, 27);
 	    comboBox.addItem("无");
 	    comboBox.addItem("总经理");
@@ -136,11 +142,11 @@ public class AdminUI1 extends JPanel{
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 
-	public JComboBox getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox comboBox) {
+	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
