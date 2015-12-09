@@ -25,7 +25,7 @@ public class History implements HistoryService{
 		int selling=0;
 	    String sid=null;
 		try {
-			selling=rs.getInt(6)+1;
+			selling=rs.getInt(5)+1;
 			if(!rs.getString(3).equals("0")){
 				sid=rs.getString(3);
 			}
@@ -43,7 +43,7 @@ public class History implements HistoryService{
 		int centre=0;
 		String cid=null;
 		try {
-			centre=rs.getInt(7)+1;
+			centre=rs.getInt(6)+1;
 			if(!rs.getString(4).equals("0"))
 				cid=rs.getString(4);
 		} catch (SQLException e) {

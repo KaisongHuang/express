@@ -3,6 +3,7 @@ package presentation.senderui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ import listener.senderlistener.SenderListener0;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
@@ -24,16 +26,22 @@ import listener.senderlistener.SenderListener0;
 public class SearchUI extends JPanel {
 
 	private JTextField textField;
-	JFrame frame;
-	JLabel lblNewLabel; 
+	JLabel label; 
 	JButton btnNewButton;
-	public SearchUI(JFrame frame) {
-		this.frame=frame;
+	private String path=System.getProperty("user.dir")+"\\Client\\";
+	
+	public SearchUI() {
+	    path.replaceAll("/", "\\");
+		this.setBounds(200,100,900,600);
 		this.setLayout(null);
-		lblNewLabel = new JLabel("快递编号:");
+		label = new JLabel("订单编号：");
+		label.setIcon(new ImageIcon("D:\\Java\\express\\Client\\image\\search.png"));
 
-		lblNewLabel.setBounds(152, 206, 87, 18);
-		this.add(lblNewLabel);
+		label.setBounds(152, 206, 200, 200);
+		ImageIcon icon1 = new ImageIcon(getClass().getResource("./image/search.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+		label.setIcon(icon1);
+		this.add(label);
 		
 		textField = new JTextField();
 		textField.setBounds(295, 203, 273, 24);
@@ -45,7 +53,8 @@ public class SearchUI extends JPanel {
 			
 	
 		btnNewButton.setBounds(650, 200, 113, 27);
-		this.add(btnNewButton);		
+		this.add(btnNewButton);
+		this.setBackground(new Color(30,30,30));
 	}
 	
 	public String gettextFieldContent(){
