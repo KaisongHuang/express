@@ -92,7 +92,7 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 		return null;
 	}
 
-	public ArrayList<InStoragePO> findFreeSpace() throws RemoteException {
+	public ArrayList<int[]> findFreeSpace() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}

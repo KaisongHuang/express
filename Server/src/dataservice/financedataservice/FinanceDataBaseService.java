@@ -16,5 +16,7 @@ public interface FinanceDataBaseService extends Remote{
        public ArrayList<ReceiptPO> getReceipt(String date,String SellingArea)throws RemoteException;
        public ResultMessage delete(Object po)throws RemoteException;
        public ArrayList<AccountPO> getInit()throws RemoteException;
-       public ArrayList<PayPO> getPay()throws RemoteException;
+       public ArrayList<PayPO> findPay(String begin,String end)throws RemoteException;
+       public ArrayList<ReceiptPO> findReceipt(String begin,String end)throws RemoteException;
+       
 }

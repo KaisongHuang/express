@@ -1,7 +1,6 @@
 package financeTest;
 
 import vo.AccountVO;
-import vo.FinanceVO;
 import vo.PayVO;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import logic.financeblservice.FinanceBlService;
 import po.AccountPO;
 import po.ReceiptPO;
 
-public class FinanceBlService_Stub implements FinanceBlService{
+public class FinanceBlService_Stub implements FinanceBlService {
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
 		return ResultMessage.Success;

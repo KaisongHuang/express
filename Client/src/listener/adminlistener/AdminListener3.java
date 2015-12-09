@@ -19,27 +19,26 @@ public class AdminListener3 implements MouseListener, ActionListener {
 	public AdminUI3 ui;
 	AdminVO vo;
 	AdminBlService admin = new Admin();
-	
-	public AdminListener3 (AdminUI3 ui){
+
+	public AdminListener3(AdminUI3 ui) {
 		super();
-		this.ui=ui;
+		this.ui = ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_11()){
+		if (e.getSource() == ui.getBtnNewButton_11()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
-		}else if(e.getSource()==ui.getBtnNewButton_10()){
+		} else if (e.getSource() == ui.getBtnNewButton_10()) {
 			ResultMessage rm;
 			String id = ui.getTextField_2().getText();
 			vo = admin.find(id);
 			vo.setPassword(ui.getTextField().getText());
-			rm=admin.manageCount(vo, Operation.update);
+			rm = admin.manageCount(vo, Operation.update);
 		}
 	}
-
 
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub
@@ -48,27 +47,27 @@ public class AdminListener3 implements MouseListener, ActionListener {
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

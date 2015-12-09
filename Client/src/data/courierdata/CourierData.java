@@ -5,9 +5,6 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import Client.network.client.ClientAdapter;
-import Client.network.client.TransformObject;
-import _enum.Opera;
 import _enum.ResultMessage;
 import data.courierdataservice.CourierDataService;
 import dataservice.courierdataservice.CourierDataBaseService;
@@ -15,8 +12,6 @@ import dataservice.senderdataservice.SenderDataBaseService;
 import po.CourierPO;
 import po.HistoryPO;
 import po.SenderPO;
-import vo.CourierVO;
-import vo.SenderVO;
 
 public class CourierData implements CourierDataService {
     CourierDataBaseService cd;
