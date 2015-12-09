@@ -10,7 +10,7 @@ public class MockSenderTest {
 	public void test() {
 		MockSender sender=new MockSender();
 		
-		assertEquals(new HistoryVO(),sender.search(1000000000));
+		assertEquals(new HistoryVO(null, null, null, null),sender.search(1000000000));
 	}
 
 }

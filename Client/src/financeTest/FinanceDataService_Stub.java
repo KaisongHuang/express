@@ -43,18 +43,6 @@ public class FinanceDataService_Stub implements FinanceDataService{
 		return null;
 	}
 
-	public ArrayList<PayPO> findPay() throws RemoteException {
-		// TODO Auto-generated method stub
-		System.out.println("find Succeed");
-		return null;
-	}
-
-	public ArrayList<ReceiptPO> findReceipt() throws RemoteException {
-		// TODO Auto-generated method stub
-		System.out.println("find Succeed");
-		return null;
-	}
-
 	public ArrayList<AccountPO> findInitInfo() throws RemoteException {
 		// TODO Auto-generated method stub
 		System.out.println("find Succeed");
@@ -67,6 +55,16 @@ public class FinanceDataService_Stub implements FinanceDataService{
 	}
 
 	public ArrayList<ReceiptPO> findReceipt(String date, String SellingAreaID) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<PayPO> findPay(String begin, String end) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<ReceiptPO> checkReceipt(String date, String SellingAreaID) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
