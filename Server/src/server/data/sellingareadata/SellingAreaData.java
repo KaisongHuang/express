@@ -141,7 +141,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			DeliverPO po1=(DeliverPO) po;
 			sql="insert into Deliver values('"+po1.getBarCode()+"','"+po1.getDate()+"','"+po1.getNumber()+"',"+po1.getIsCheck()+");";
 			rm=db.insert(sql);
-			
+			his.SellingArea(po1.getBarCode(), null, null);
 		}
 		
 		return rm;
