@@ -35,6 +35,7 @@ public class FinanceUI4_2 extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	FinanceListener4 financeListener4;
+	private JButton button_5;
 
 	/**
 	 * Create the panel.
@@ -96,6 +97,10 @@ public class FinanceUI4_2 extends JPanel {
 		button_4.setBounds(33, 46, 80, 29);
 		button_4.addActionListener(financeListener4);
 		add(button_4);
+
+		button_5 = new JButton("清空银行账户");
+		button_5.setBounds(553, 100, 117, 29);
+		add(button_5);
 	}
 
 	public JTable getTable() {
@@ -128,6 +133,10 @@ public class FinanceUI4_2 extends JPanel {
 
 	public JButton getButton_4() {
 		return button_4;
+	}
+
+	public JButton getButton_5() {
+		return button_5;
 	}
 
 	public DefaultTableModel getModel() {

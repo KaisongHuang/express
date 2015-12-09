@@ -45,6 +45,7 @@ public class WarehouseUI4 extends JPanel {
 	private JButton button_1;
 	private JButton button_2;
 	private JButton button_3;
+	private JButton button_4;
 	private JComboBox<?> comboBox;
 	private JComboBox<?> comboBox_1;
 	private JComboBox<?> comboBox_2;
@@ -180,6 +181,11 @@ public class WarehouseUI4 extends JPanel {
 		button.setBounds(554, 323, 65, 27);
 		button.addActionListener(warehouseListener);
 		add(button);
+
+		button_4 = new JButton("库存清空");
+		button_4.setBounds(29, 27, 117, 29);
+		button_4.addActionListener(warehouseListener);
+		add(button_4);
 	}
 
 	public JTextField getTextField() {
@@ -208,6 +214,10 @@ public class WarehouseUI4 extends JPanel {
 
 	public JButton getButton_3() {
 		return button_3;
+	}
+	
+	public JButton getButton_4(){
+		return button_4;
 	}
 
 	public JComboBox<?> getComboBox() {

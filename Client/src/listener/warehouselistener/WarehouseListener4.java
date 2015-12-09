@@ -116,6 +116,9 @@ public class WarehouseListener4 implements ActionListener {
 			JLabel label = new JLabel("是否保存新建的库存信息？");
 			label.setBounds(149, 47, 244, 16);
 			contentPane.add(label);
+		}else if(e.getSource()==ui.getButton_4()){
+			System.out.println("库存清空");
+			warehouseBl.clearWarehouse();
 		}
 	}
 

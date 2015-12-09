@@ -64,7 +64,7 @@ public class MySQLDataBase {
       public  ResultMessage insert(String sql){
     	  try {
     		  
-			  int c=((java.sql.Statement) st).executeUpdate(sql);
+			 ((java.sql.Statement) st).execute(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
