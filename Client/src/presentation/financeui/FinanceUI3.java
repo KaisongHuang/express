@@ -1,3 +1,7 @@
+/**
+ * FinanceUI3是finance用户的统计报表界面
+ */
+
 package presentation.financeui;
 
 import javax.swing.JPanel;

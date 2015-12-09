@@ -1,3 +1,7 @@
+/**
+ * WarehouseMenuUI是Warehouse用户的主界面
+ */
+
 package presentation.warehouseui;
 
 import java.awt.CardLayout;
@@ -8,6 +12,10 @@ import listener.warehouselistener.WarehouseMenuListener;
 
 public class WarehouseMenuUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton button1;
 	JButton button2;
 	JButton button3;

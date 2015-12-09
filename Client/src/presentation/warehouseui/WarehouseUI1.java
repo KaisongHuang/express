@@ -1,3 +1,7 @@
+/**
+ * WarehouseUI1是Warehouse用户的出库入库界面
+ */
+
 package presentation.warehouseui;
 
 import java.awt.CardLayout;
@@ -16,7 +20,7 @@ import java.awt.event.ActionEvent;
 public class WarehouseUI1 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;

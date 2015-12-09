@@ -1,21 +1,20 @@
+/**
+ * CourierMenuUI是courier用户的主界面
+ */
+
 package presentation.courierui;
 
 import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.EventQueue;
-
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-
 import listener.courierlistener.CourierMenuListener;
 
 public class CourierMenuUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton button1;
 	JButton button2;
 	JButton button3;

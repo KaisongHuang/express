@@ -1,3 +1,7 @@
+/**
+ * FinanceUI4是finance用户的账户管理的主界面
+ */
+
 package presentation.financeui;
 
 import java.awt.CardLayout;
@@ -8,7 +12,7 @@ import listener.financelistener.FinanceListener4;
 
 public class FinanceUI4 extends JPanel {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private CardLayout card;
@@ -19,7 +23,7 @@ public class FinanceUI4 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param width
 	 * @param width
 	 */

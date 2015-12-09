@@ -1,24 +1,21 @@
-package presentation.managerui;
-import java.awt.EventQueue;
+/**
+ * ManagerUI3是manager用户的查看统计分析的界面
+ */
 
-import javax.swing.JFrame;
-import java.awt.Color;
+package presentation.managerui;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-
 import listener.managerlistener.ManagerListener30;
-
-import javax.swing.JComboBox;
 
 
 public class ManagerUI3 extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton button1;
 	private JButton button2;
 
@@ -36,25 +33,25 @@ public class ManagerUI3 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+
 		this.setBounds(136, 115, 746, 443);
-		
+
 		this.setLayout(null);
-		
+
 		JLabel label = new JLabel("是否确认查看统计分析：");
 		label.setBounds(38, 10, 150, 18);
 		this.add(label);
-		
+
 		button1 = new JButton("确认");
 		button1.setBounds(200, 5, 80, 28);
 		this.add(button1);
 		button1.addActionListener(managerlistener);
-		
+
 		button2 = new JButton("取消");
 		button2.setBounds(300, 5, 80, 28);
 		this.add(button2);
 		button2.addActionListener(managerlistener);
-		
+
 	}
 
 	public JButton getButton1() {
@@ -72,6 +69,6 @@ public class ManagerUI3 extends JPanel {
 	public void setButton2(JButton button2) {
 		this.button2 = button2;
 	}
-	
+
 
 }

@@ -1,15 +1,12 @@
-package presentation.courierui;
-import java.awt.EventQueue;
+/**
+ * CourierUI是courier用户的订单输入界面
+ */
 
-import javax.swing.JFrame;
-import java.awt.Color;
+package presentation.courierui;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener0;
@@ -20,6 +17,10 @@ import javax.swing.JComboBox;
 public class CourierUI extends JPanel{
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -38,16 +39,18 @@ public class CourierUI extends JPanel{
 
 
 	CourierListener0 courierlistener;
-	private JComboBox comboBox_1;
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox;
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
-    private int width;
-    private int height;
+    @SuppressWarnings("unused")
+	private int width;
+    @SuppressWarnings("unused")
+	private int height;
 	/**
 	 * Create the application.
-	 * @param width 
-	 * @param width 
+	 * @param width
+	 * @param width
 	 */
 	public CourierUI(int width, int height) {
 		courierlistener = new CourierListener0(this);
@@ -61,191 +64,191 @@ public class CourierUI extends JPanel{
 	 */
 	private void initialize() {
 
-		
+
 		this.setLayout(null);
-	
+
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");
-		lblNewLabel_1.setBounds(300, 0, 100, 18);
+		lblNewLabel_1.setBounds(300, 0, 84, 30);
 		this.add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("寄件人姓名：");
-		lblNewLabel_2.setBounds(10, 13, 100, 30);
+		lblNewLabel_2.setBounds(10, 25, 72, 30);
 		this.add(lblNewLabel_2);
-		
+
 		textField = new JTextField();
-		textField.setBounds(83, 13, 122, 30);
+		textField.setBounds(83, 26, 100, 30);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("地址：");
-		lblNewLabel_3.setBounds(200, 19, 100, 18);
+		lblNewLabel_3.setBounds(216, 28, 65, 24);
 		this.add(lblNewLabel_3);
-		
+
 		textField_1 = new JTextField();
-		textField_1.setBounds(257, 13, 122, 30);
+		textField_1.setBounds(287, 26, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		JLabel label = new JLabel("单位：");
-		label.setBounds(434, 19,100, 18);
+		label.setBounds(434, 28,65, 27);
 		this.add(label);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(497, 15, 122, 30);
+		textField_2.setBounds(500, 26, 122, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
-		
+
 		JLabel lblNewLabel_4 = new JLabel("电话：");
-		lblNewLabel_4.setBounds(10, 60, 100, 18);
+		lblNewLabel_4.setBounds(10, 65, 72, 24);
 		this.add(lblNewLabel_4);
-		
+
 		textField_3 = new JTextField();
-		textField_3.setBounds(72, 54, 122, 30);
+		textField_3.setBounds(83, 62, 100, 31);
 		this.add(textField_3);
 		textField_3.setColumns(10);
-		
+
 		JLabel label_1 = new JLabel("手机：");
-		label_1.setBounds(232, 60, 100, 18);
+		label_1.setBounds(216, 67, 65, 21);
 		this.add(label_1);
-		
+
 		textField_4 = new JTextField();
-		textField_4.setBounds(322, 54, 122, 30);
+		textField_4.setBounds(287, 66, 122, 30);
 		this.add(textField_4);
 		textField_4.setColumns(10);
-		
+
 		JLabel lblNewLabel_5 = new JLabel("收件人信息");
-		lblNewLabel_5.setBounds(324, 96, 100, 18);
+		lblNewLabel_5.setBounds(300, 93, 84, 30);
 		this.add(lblNewLabel_5);
-		
+
 		JLabel lblNewLabel_6 = new JLabel("收件人姓名：");
-		lblNewLabel_6.setBounds(10, 117, 100, 18);
+		lblNewLabel_6.setBounds(10, 117, 72, 27);
 		this.add(lblNewLabel_6);
-		
+
 		textField_5 = new JTextField();
-		textField_5.setBounds(83, 114, 122, 30);
+		textField_5.setBounds(83, 114, 100, 30);
 		this.add(textField_5);
 		textField_5.setColumns(10);
-		
+
 		JLabel lblNewLabel_7 = new JLabel("地址：");
-		lblNewLabel_7.setBounds(200, 117, 100, 18);
+		lblNewLabel_7.setBounds(216, 117, 65, 27);
 		this.add(lblNewLabel_7);
-		
+
 		textField_6 = new JTextField();
-		textField_6.setBounds(257, 114, 122, 30);
+		textField_6.setBounds(287, 118, 122, 30);
 		this.add(textField_6);
 		textField_6.setColumns(10);
-		
+
 		JLabel label_2 = new JLabel("单位：");
-		label_2.setBounds(434, 120, 100, 18);
+		label_2.setBounds(434, 120, 65, 24);
 		this.add(label_2);
-		
+
 		textField_7 = new JTextField();
 		textField_7.setBounds(500, 112, 122, 30);
 		this.add(textField_7);
 		textField_7.setColumns(10);
-		
+
 		JLabel lblNewlabel = new JLabel("电话：");
-		lblNewlabel.setBounds(9, 163, 100, 18);
+		lblNewlabel.setBounds(9, 163, 73, 25);
 		this.add(lblNewlabel);
-		
+
 		textField_8 = new JTextField();
-		textField_8.setBounds(77, 156, 122, 30);
+		textField_8.setBounds(83, 158, 100, 30);
 		this.add(textField_8);
 		textField_8.setColumns(10);
-		
+
 		JLabel label_3 = new JLabel("手机：");
-		label_3.setBounds(233, 165, 100, 18);
+		label_3.setBounds(216, 166, 72, 22);
 		this.add(label_3);
-		
+
 		textField_9 = new JTextField();
-		textField_9.setBounds(329, 160, 122, 30);
+		textField_9.setBounds(287, 161, 122, 30);
 		this.add(textField_9);
 		textField_9.setColumns(10);
-		
+
 		JLabel label_4 = new JLabel("货物信息");
-		label_4.setBounds(329, 201, 100, 18);
+		label_4.setBounds(300, 186, 84, 30);
 		this.add(label_4);
-		
+
 		JLabel label_5 = new JLabel("原件数量：");
-		label_5.setBounds(10, 226, 100, 18);
+		label_5.setBounds(10, 226, 72, 24);
 		this.add(label_5);
-		
+
 		textField_10 = new JTextField();
-		textField_10.setBounds(83, 220, 122, 30);
+		textField_10.setBounds(83, 220, 100, 30);
 		this.add(textField_10);
 		textField_10.setColumns(10);
-		
+
 		JLabel lblNewLabel_8 = new JLabel("实际重量：");
-		lblNewLabel_8.setBounds(232, 226, 100, 18);
+		lblNewLabel_8.setBounds(216, 226, 72, 24);
 		this.add(lblNewLabel_8);
-		
+
 		textField_11 = new JTextField();
-		textField_11.setBounds(322, 220, 122, 30);
+		textField_11.setBounds(287, 224, 122, 30);
 		this.add(textField_11);
 		textField_11.setColumns(10);
-		
+
 		JLabel lblNewLabel_9 = new JLabel("体积：");
-		lblNewLabel_9.setBounds(471, 226, 100, 18);
+		lblNewLabel_9.setBounds(434, 229, 65, 21);
 		this.add(lblNewLabel_9);
-		
+
 		textField_12 = new JTextField();
-		textField_12.setBounds(528, 221, 122, 30);
+		textField_12.setBounds(500, 224, 122, 30);
 		this.add(textField_12);
 		textField_12.setColumns(10);
-		
+
 		JLabel lblNewLabel_10 = new JLabel("内件品名：");
-		lblNewLabel_10.setBounds(10, 265, 100, 18);
+		lblNewLabel_10.setBounds(10, 265, 72, 25);
 		this.add(lblNewLabel_10);
-		
+
 		textField_13 = new JTextField();
-		textField_13.setBounds(83, 259, 122, 30);
+		textField_13.setBounds(83, 259, 100, 31);
 		this.add(textField_13);
 		textField_13.setColumns(10);
-		
+
 		JLabel lblNewLabel_11 = new JLabel("尺寸：");
-		lblNewLabel_11.setBounds(232, 265, 100, 18);
+		lblNewLabel_11.setBounds(216, 268, 65, 22);
 		this.add(lblNewLabel_11);
-		
+
 		textField_14 = new JTextField();
-		textField_14.setBounds(325, 260, 122, 30);
+		textField_14.setBounds(287, 263, 122, 30);
 		this.add(textField_14);
 		textField_14.setColumns(10);
-		
+
 		JLabel lblNewLabel_12 = new JLabel("包装：");
-		lblNewLabel_12.setBounds(14, 316, 100, 18);
+		lblNewLabel_12.setBounds(14, 316, 65, 24);
 		this.add(lblNewLabel_12);
-		
-		comboBox = new JComboBox();
-		comboBox.setBounds(81, 312, 96, 28);
+
+		comboBox = new JComboBox<String>();
+		comboBox.setBounds(81, 312, 102, 28);
 		comboBox.addItem("快递袋");
 		comboBox.addItem("纸箱");
 		comboBox.addItem("木箱");
 		comboBox.setSelectedIndex(1);
 		this.add(comboBox);
-		
+
 		JLabel label_6 = new JLabel("快递方式：");
-		label_6.setBounds(240, 317, 100, 18);
+		label_6.setBounds(216, 316, 65, 24);
 		this.add(label_6);
-		
-		comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(329, 311, 84, 28);
+
+		comboBox_1 = new JComboBox<String>();
+		comboBox_1.setBounds(287, 311, 122, 29);
 		comboBox_1.addItem("经快");
 		comboBox_1.addItem("普快");
 		comboBox_1.addItem("特快");
 		comboBox_1.setSelectedIndex(1);
 		this.add(comboBox_1);
-		
+
 		btnNewButton_10 = new JButton("\u4FDD\u5B58");
 		btnNewButton_10.setBounds(138, 384, 100, 30);
 		this.add(btnNewButton_10);
-		
+
 		btnNewButton_11 = new JButton("\u6E05\u7A7A");
 		btnNewButton_11.setBounds(529, 384, 100, 30);
 		this.add(btnNewButton_11);
-		
+
 		btnNewButton_10.addActionListener(courierlistener);
 		btnNewButton_11.addActionListener(courierlistener);
-		
+
 	}
 
 	public JTextField getTextField() {
@@ -368,19 +371,19 @@ public class CourierUI extends JPanel{
 		this.textField_14 = textField_14;
 	}
 
-	public JComboBox getComboBox_1() {
+	public JComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox comboBox_1) {
+	public void setComboBox_1(JComboBox<String> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JComboBox getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox comboBox) {
+	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
@@ -399,6 +402,6 @@ public class CourierUI extends JPanel{
 	public void setBtnNewButton_11(JButton btnNewButton_11) {
 		this.btnNewButton_11 = btnNewButton_11;
 	}
-	
-	
+
+
 }
