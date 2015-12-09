@@ -1,12 +1,14 @@
+/**
+ * FinanceUI2是finance用户的成本管理界面
+ */
+
 package presentation.financeui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Vector;
-import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -17,7 +19,7 @@ import listener.financelistener.FinanceListener2;
 
 public class FinanceUI2 extends JPanel {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel_1;

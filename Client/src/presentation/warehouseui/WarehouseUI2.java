@@ -1,3 +1,7 @@
+/**
+ * WarehouseUI2是Warehouse用户的库存盘点界面
+ */
+
 package presentation.warehouseui;
 
 import javax.swing.JPanel;

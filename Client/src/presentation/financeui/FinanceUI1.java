@@ -1,3 +1,7 @@
+/**
+ * FinanceUI1是finance用户的结算界面
+ */
+
 package presentation.financeui;
 
 import javax.swing.JPanel;
@@ -15,7 +19,7 @@ import listener.financelistener.FinanceListener1;
 public class FinanceUI1 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel label;

@@ -1,15 +1,22 @@
+/**
+ * FinanceMenuUI是finance用户的主界面
+ */
+
 package presentation.financeui;
 
 import java.awt.CardLayout;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import listener.financelistener.FinanceMenuListener;
 
 public class FinanceMenuUI extends JPanel{
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton button1;
 	JButton button2;
 	JButton button3;
@@ -22,8 +29,8 @@ public class FinanceMenuUI extends JPanel{
 		this.height=height;
 		listener=new FinanceMenuListener(this,card,panel1);
 		init();
-		
-				
+
+
 	}
 	private void init(){
 		this.setSize(width,height);
@@ -44,7 +51,7 @@ public class FinanceMenuUI extends JPanel{
 		button4.setBounds(0,3*height/6,width,height/6);
 		this.add(button4);
 		button4.addActionListener(listener);
-		
+
 	}
 	public JButton getButton1(){
 		return button1;

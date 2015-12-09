@@ -1,3 +1,7 @@
+/**
+ * WarehouseUI4是Warehouse用户的库存初始化界面
+ */
+
 package presentation.warehouseui;
 
 import javax.swing.JPanel;
@@ -13,13 +17,11 @@ import listener.warehouselistener.WarehouseListener4;
 import javax.swing.JComboBox;
 import java.util.Arrays;
 import java.util.Vector;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class WarehouseUI4 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
