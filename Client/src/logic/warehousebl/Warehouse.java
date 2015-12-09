@@ -92,44 +92,56 @@ public class Warehouse implements WarehouseBlService {
 		return null;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<Object> checkWarehouse(String begin, String end) {
 		// TODO Auto-generated method stub
-		ArrayList<Object> arr = null;
-		ArrayList<InStoragePO> list = wd.findIn(begin,end);
-		ArrayList<OutStoragePO> list1 = wd.findOut(begin,end);
-		this.inNum = 0;
-		this.outNum = 0;
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getIndate().compareTo(begin) >= 0 && list.get(i).getIndate().compareTo(end) <= 0) {
-				arr.add(list.get(i));
-				this.inNum++;
-			}
+		ArrayList<Object> arr = new ArrayList<Object>();
+		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
+		ArrayList<OutStoragePO> list1 = new ArrayList<OutStoragePO>();
+
+		try {
+			list = wd.findIn(begin, end);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		for (int i = 0; i < wd.findOutStorage().size(); i++) {
-			if (list1.get(i).getOutdate().compareTo(begin) >= 0 && list1.get(i).getOutdate().compareTo(end) <= 0) {
-				arr.add(list1.get(i));
-				this.outNum++;
-			}
+		try {
+			list1 = wd.findOut(begin, end);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		this.total = this.inNum - this.outNum;
+
+		// 计算该时间区间内的库存数量
+		inNum = list.size();
+		outNum = list1.size();
+		total = inNum - outNum;
+
+		for (int i = 0; i < list.size(); i++)
+			arr.add(list.get(i));
+
+		for (int i = 0; i < list1.size(); i++)
+			arr.add(list1.get(i));
+
 		return arr;
 	}
 
-	@SuppressWarnings("null")
 	public ArrayList<InStoragePO> summarizeWarehouse() {
-		// 待修改
 		Calendar time = Calendar.getInstance();
 		int year = time.get(Calendar.YEAR);
 		int month = time.get(Calendar.MONTH) + 1;
-		int date = time.get(Calendar.DATE);
-		String date1 = "" + year + month + date;
-		System.out.println("summarizeWarehouse()" + date1);
-		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
+		int day = time.get(Calendar.DATE);
+
+		String date = "";
+		if (month >= 1 && month <= 9)
+			date = "" + year + "0" + month + day;
+		else
+			date = "" + year + month + day;
+
+		System.out.println("summarizeWarehouse()" + date);
+		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
 		try {
-			list = wd.summarize(date1);
+			list = wd.summarize(date);
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
@@ -137,26 +149,24 @@ public class Warehouse implements WarehouseBlService {
 
 	public ArrayList<Object> showAdjustGoods() {
 		ArrayList<Object> ob = new ArrayList<Object>();
-		ArrayList<InStoragePO> pre=new ArrayList<InStoragePO>();
-		ArrayList<InStoragePO> post=new ArrayList<InStoragePO>();
+		ArrayList<InStoragePO> pre = new ArrayList<InStoragePO>();
+		ArrayList<InStoragePO> post = new ArrayList<InStoragePO>();
 		try {
 			pre = wd.adjust();
 		} catch (RemoteException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
 			post = wd.findFreeSpace();
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		for (int i = 0; i < pre.size(); i++) {
 			ob.add(pre.get(i));
 			ob.add(post.get(i));
 		}
-		
+
 		return ob;
 	}
 
