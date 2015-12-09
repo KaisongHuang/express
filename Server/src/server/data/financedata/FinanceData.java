@@ -104,4 +104,39 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		return list;
 	}
 
+	public ArrayList<PayPO> findPay(String begin, String end) throws RemoteException {
+		// TODO Auto-generated method stub
+		ArrayList<PayPO> list=new ArrayList<PayPO>();
+		String sql="select * from Pay";
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+				/**
+				 * 加判断
+				 */
+				list.add(new PayPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDouble(6),rs.getInt(7)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
+		// TODO Auto-generated method stub
+//		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
+//		String sql="select * from Receipt";
+//		ResultSet rs=db.find(sql);
+//		try {
+//			while(rs.next()){
+//				list.add(new ReceiptPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDouble(6),rs.getInt(7)));
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		return null;
+	}
+
 }

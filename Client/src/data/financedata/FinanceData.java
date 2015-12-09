@@ -17,10 +17,10 @@ import po.ReceiptPO;
 public class FinanceData implements FinanceDataService {
 	FinanceDataBaseService fd;
 	ResultMessage rm;
-	
-	public FinanceData(){
+
+	public FinanceData() {
 		try {
-			fd=(FinanceDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/LoginDataService");
+			fd = (FinanceDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/LoginDataService");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,12 +39,12 @@ public class FinanceData implements FinanceDataService {
 	}
 
 	public ResultMessage insert(FinancePO po) throws RemoteException {
-		rm=fd.insert(po);
+		rm = fd.insert(po);
 		return rm;
 	}
 
 	public ResultMessage delete(FinancePO po) throws RemoteException {
-		rm=fd.delete(po);
+		rm = fd.delete(po);
 		return rm;
 	}
 
@@ -56,12 +56,16 @@ public class FinanceData implements FinanceDataService {
 		return fd.getAccount();
 	}
 
-	public ArrayList<PayPO> findPay() throws RemoteException{
-		return fd.getPay();
+	public ArrayList<PayPO> findPay(String begin, String end) throws RemoteException {
+		return fd.findPay(begin, end);
 	}
 
-	public ArrayList<ReceiptPO> findReceipt(String date,String SellingAreaID) throws RemoteException{
-		return fd.getReceipt(date,SellingAreaID);
+	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
+		return fd.findReceipt(begin, end);
+	}
+
+	public ArrayList<ReceiptPO> checkReceipt(String date, String SellingAreaID) throws RemoteException {
+		return fd.getReceipt(date, SellingAreaID);
 	}
 
 	public ArrayList<AccountPO> findInitInfo() throws RemoteException {
