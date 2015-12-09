@@ -20,7 +20,7 @@ public interface FinanceBlService {
 
 	public ResultMessage manageAccount(AccountVO vo, Operation op);
 
-	public AccountVO findAccount(String bankAccount);
+	public ArrayList<AccountPO> findAccount(String bankAccount);
 
 	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea);
 	

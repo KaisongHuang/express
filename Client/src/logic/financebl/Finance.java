@@ -99,23 +99,23 @@ public class Finance implements FinanceBlService {
 		return null;
 	}
 
-	public AccountVO findAccount(String bankAccount) {
+	public ArrayList<AccountPO> findAccount(String bankAccount) {
 		// TODO Auto-generated method stub
-		AccountPO po;
-		AccountVO vo;
+		ArrayList<AccountPO> po = new ArrayList<AccountPO>();
+		ArrayList<AccountPO> total = new ArrayList<AccountPO>();
 		try {
-			for (int i = 0; i < fd.findAccount().size(); i++) {
-				if (fd.findAccount().get(i).getBankAccount().contains(bankAccount)) {
-					po = fd.findAccount().get(i);
-					vo = new AccountVO(po.getBankAccount(), po.getBalance());
-					return vo;
-				}
-			}
+			total = fd.findAccount();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+
+		for (int i = 0; i < total.size(); i++) {
+			if(total.get(i).getBankAccount().contains(bankAccount))
+				po.add(total.get(i));
+		}
+
+		return po;
 	}
 
 	public ArrayList<ReceiptPO> checkReceipt(String date, String sellingArea) {
