@@ -170,4 +170,15 @@ public class Warehouse implements WarehouseBlService {
 		return ob;
 	}
 
+	public ResultMessage clearWarehouse() {
+		// TODO Auto-generated method stub
+		try {
+			return wd.clear();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

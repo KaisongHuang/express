@@ -25,5 +25,6 @@ public interface WarehouseBlService {
 
 	public ResultMessage initWarehouse(InStorageVO vo);
 	
+	public ResultMessage clearWarehouse();
 	
 }
