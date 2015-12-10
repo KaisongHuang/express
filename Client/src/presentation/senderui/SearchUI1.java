@@ -1,5 +1,6 @@
 package presentation.senderui;
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,6 +11,7 @@ import javax.swing.JTree;
 
 import listener.senderlistener.SenderListener1;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 
@@ -18,9 +20,14 @@ public class SearchUI1 extends JPanel{
     JLabel label2;
     JTextArea textArea;
     SenderListener1 listen;
+    private int width = 900;
+    private int height = 600;
+    private JLabel label3;
 	public SearchUI1() {
 		listen=new SenderListener1(this);
 		initialize();
+		this.setImage();
+		this.setVisible(true);
 	}
 
 	/**
@@ -66,6 +73,15 @@ public class SearchUI1 extends JPanel{
 	
 	public JTextArea getText(){
 		return textArea;
+	}
+	private void setImage() {
+		label3 = new JLabel();
+		label3.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+
+		label3.setIcon(icon1);
+		this.add(label3);
 	}
 	
 }
