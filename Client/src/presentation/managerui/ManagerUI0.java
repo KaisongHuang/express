@@ -5,7 +5,9 @@
 package presentation.managerui;
 
 import java.awt.CardLayout;
+
 import java.awt.Color;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -328,6 +330,14 @@ public class ManagerUI0 extends JPanel{
 	public void setLblNewLabel_1(JLabel lblNewLabel_1) {
 		this.lblNewLabel_1 = lblNewLabel_1;
 	}
-
+//	private void setImage() {
+//		label1 = new JLabel();
+//		label1.setBounds(0, 0, width,height);
+//		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+//		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+//
+//		label1.setIcon(icon1);
+//		this.add(label1);
+//	}
 
 }
