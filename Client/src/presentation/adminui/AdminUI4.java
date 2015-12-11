@@ -6,6 +6,10 @@ package presentation.adminui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener4;
@@ -25,10 +29,9 @@ public class AdminUI4 extends JPanel{
 	private JButton btnNewButton_11;
 
 	AdminListener4 adminlistener;
-	@SuppressWarnings("unused")
 	private int width;
-	@SuppressWarnings("unused")
 	private int height;
+	private JLabel label1;
 	/**
 	 * Create the application.
 	 * @param j
@@ -39,6 +42,9 @@ public class AdminUI4 extends JPanel{
 		width=i;
 		height=j;
 		initialize();
+		this.setImage();
+		this.setVisible(true);
+		
 	}
 
 	/**
@@ -119,6 +125,15 @@ public class AdminUI4 extends JPanel{
 
 	public void setBtnNewButton_11(JButton btnNewButton_11) {
 		this.btnNewButton_11 = btnNewButton_11;
+	}
+	private void setImage() {
+		label1 = new JLabel();
+		label1.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+
+		label1.setIcon(icon1);
+		this.add(label1);
 	}
 
 }

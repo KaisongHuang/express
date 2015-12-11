@@ -5,8 +5,11 @@
 package presentation.sellingareaui;
 
 import java.awt.Color;
+import java.awt.Image;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import listener.sellingarealistener.SellingAreaListener20;
@@ -21,10 +24,9 @@ public class SellingAreaUI2 extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private JButton btnNewButton_10;
-	@SuppressWarnings("unused")
 	private int width;
-	@SuppressWarnings("unused")
 	private int height;
+	private JLabel label1;
 	SellingAreaListener20 sellingarealistener;
 
 	/**
@@ -37,6 +39,8 @@ public class SellingAreaUI2 extends JPanel{
 		width=i;
 		height=j;
 		initialize();
+		this.setImage();
+		this.setVisible(true);
 	}
 
 	/**
@@ -182,6 +186,14 @@ public class SellingAreaUI2 extends JPanel{
 	public void setBtnNewButton_10(JButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
 	}
+	private void setImage() {
+		label1 = new JLabel();
+		label1.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
+		label1.setIcon(icon1);
+		this.add(label1);
+	}
 
 }

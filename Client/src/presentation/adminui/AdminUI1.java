@@ -6,14 +6,16 @@ package presentation.adminui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener1;
 
-
-public class AdminUI1 extends JPanel{
-
+public class AdminUI1 extends JPanel {
 
 	/**
 	 *
@@ -29,21 +31,24 @@ public class AdminUI1 extends JPanel{
 	private JComboBox<String> comboBox;
 
 	AdminListener1 adminlistener;
-	@SuppressWarnings("unused")
-	private int width;
-	@SuppressWarnings("unused")
+
+	private JLabel label1;
 	private int height;
+	private int width;
 
 	/**
 	 * Create the application.
+	 * 
 	 * @param j
 	 * @param i
 	 */
 	public AdminUI1(int i, int j) {
-		width=i;
-		height=j;
+		width = i;
+		height = j;
 		adminlistener = new AdminListener1(this);
 		initialize();
+		this.setImage();
+		this.setVisible(true);
 	}
 
 	/**
@@ -51,7 +56,7 @@ public class AdminUI1 extends JPanel{
 	 */
 	private void initialize() {
 
-		this.setBounds(0,0,480,320);
+		this.setBounds(0, 0, 480, 320);
 		this.setLayout(null);
 
 		JLabel label_3 = new JLabel("姓名：");
@@ -94,21 +99,20 @@ public class AdminUI1 extends JPanel{
 
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(124, 195, 134, 27);
-	    comboBox.addItem("无");
-	    comboBox.addItem("总经理");
-	    comboBox.addItem("财务人员");
-	    comboBox.addItem("中转中心业务员");
-	    comboBox.addItem("仓库管理人员");
-	    comboBox.addItem("营业厅业务员");
-	    comboBox.addItem("快递员");
-	    comboBox.setSelectedIndex(0);
+		comboBox.addItem("无");
+		comboBox.addItem("总经理");
+		comboBox.addItem("财务人员");
+		comboBox.addItem("中转中心业务员");
+		comboBox.addItem("仓库管理人员");
+		comboBox.addItem("营业厅业务员");
+		comboBox.addItem("快递员");
+		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
 
 		btnNewButton_10.addActionListener(adminlistener);
 		btnNewButton_11.addActionListener(adminlistener);
 
 	}
-
 
 	public JTextField getTextField() {
 		return textField;
@@ -158,5 +162,14 @@ public class AdminUI1 extends JPanel{
 		this.textField_3 = textField_3;
 	}
 
+	private void setImage() {
+		label1 = new JLabel();
+		label1.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+
+		label1.setIcon(icon1);
+		this.add(label1);
+	}
 
 }

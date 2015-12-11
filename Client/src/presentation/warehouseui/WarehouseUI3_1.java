@@ -8,12 +8,13 @@ import listener.warehouselistener.WarehouseListener3;
 
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+
 import javax.swing.JButton;
 
 public class WarehouseUI3_1 extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -26,6 +27,7 @@ public class WarehouseUI3_1 extends JFrame {
 	private JButton button;
 	private JButton button_1;
 	WarehouseListener3 warehouseListener;
+	//private int
 
 	public WarehouseUI3_1(WarehouseListener3 warehouseListener) {
 		this.warehouseListener = warehouseListener;
@@ -88,7 +90,7 @@ public class WarehouseUI3_1 extends JFrame {
 	public JTextArea getTextArea_1() {
 		return textArea_1;
 	}
-	
+
 	public JButton getButton() {
 		return button;
 	}
@@ -96,4 +98,13 @@ public class WarehouseUI3_1 extends JFrame {
 	public JButton getButton_1() {
 		return button_1;
 	}
+	//private void setImage() {
+		//label1 = new JLabel();
+		//label1.setBounds(0, 0, width,height);
+		//ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		//icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+
+		//label1.setIcon(icon1);
+		//this.add(label1);
+	//}
 }

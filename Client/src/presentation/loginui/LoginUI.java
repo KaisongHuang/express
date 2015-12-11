@@ -1,6 +1,7 @@
 package presentation.loginui;
 
 import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -10,15 +11,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import java.awt.Image;
-import java.awt.Insets;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class LoginUI extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -72,7 +71,7 @@ public class LoginUI extends JFrame {
 		logout.setBounds(840, 0, 30, 30);
 		contentPane.add(logout);
 		logout.addActionListener(listener);
-		
+
 		Login = new JButton();
 		Login.setBounds(345, 349, 134, 28);
 		contentPane.add(Login);
@@ -107,7 +106,7 @@ public class LoginUI extends JFrame {
 		icon4.setImage(icon4.getImage().getScaledInstance(logout.getWidth(), logout.getHeight(), Image.SCALE_DEFAULT));
 		logout.setIcon(icon4);
 		logout.setContentAreaFilled(false);
-		
+
 		contentPane.add(label1);
 		contentPane.add(label2);
 	}
