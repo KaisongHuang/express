@@ -6,7 +6,6 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import po.ReceiptPO;
 import vo.AccountVO;
-import vo.FinanceVO;
 import vo.PayVO;
 
 public class MockFinance extends Finance {

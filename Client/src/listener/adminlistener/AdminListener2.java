@@ -20,12 +20,12 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	private AdminUI2 ui;
 	AdminVO vo ;
 	AdminBlService admin = new Admin();
-	
+
 	public AdminListener2 (AdminUI2 ui){
 		super();
 		this.ui=ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getButton_1()){
@@ -42,7 +42,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			vo = this.update();
 			rm=admin.manageCount(vo, Operation.update);
 		}
-		
+
 	}
 
 	private void delete1(JLabel label1) {
@@ -56,7 +56,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		String name = ui.getTextField().getText();
 		String password = ui.getLabel1().getText();
 		String role = (String) ui.getComboBox_1().getSelectedItem();
-		
+
 		AdminVO vo1 = new AdminVO(id,name,password,role);
 		return vo1;
 	}
@@ -65,7 +65,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 		ui.setTextField(new JTextField(vo.getName()));
 		ui.setLabel1(new JLabel(vo.getPassword()));
-		
+
 	}
 
 	private void delete(JTextField textField) {
@@ -75,27 +75,27 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

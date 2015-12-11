@@ -15,7 +15,6 @@ import vo.CarVO;
 import vo.DeliverVO;
 import vo.DriverVO;
 import vo.ReceiptVO;
-import _enum.Opera;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.sellingareablservice.SellingareaBlService;
