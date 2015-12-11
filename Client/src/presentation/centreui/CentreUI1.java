@@ -6,9 +6,14 @@ package presentation.centreui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
+<<<<<<< HEAD
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+=======
+import java.awt.Color;
+
+>>>>>>> origin/hks
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -62,7 +67,7 @@ public class CentreUI1 extends JPanel{
 	private void initialize() {
 
 		this.setBounds(136, 116, 746, 437);
-
+		 this.setBackground(new Color(158,211,240));
 		this.setLayout(null);
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(75, 59, 476, 282);

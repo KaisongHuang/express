@@ -20,7 +20,7 @@ public class SenderData extends UnicastRemoteObject implements SenderDataBaseSer
 		this.db=db;
 	}
 	public HistoryPO find(String id) throws RemoteException{
-        String sql="select * from HistoryPO where id="+id;
+        String sql="select * from HistoryPO where id='"+id+"';";
         ResultSet rs=db.find(sql);
         HistoryPO po=null;
         try {

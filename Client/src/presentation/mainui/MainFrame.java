@@ -5,6 +5,7 @@
 package presentation.mainui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +33,6 @@ public class MainFrame implements ActionListener {
 	private JPanel panel1;
 	private JPanel panel2;
 	private JPanel panel3;
-	private JLabel label1;
 	private JLabel label2;
 	private int height = 600;
 	private int width = 900;
@@ -48,9 +48,13 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "Centre";
+<<<<<<< HEAD
+		EmployeeMes.employeePosition = "Admin";
+=======
+		EmployeeMes.employeePosition = "管理员";
+>>>>>>> origin/hks
 		frame = new JFrame();
-		frame.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
 		frame.setSize(width, height);
 		frame.setLocation(100, 100);
@@ -67,19 +71,20 @@ public class MainFrame implements ActionListener {
 		Card.show(panel1, "0");
 
 		panel2.setLayout(null);
-
-		label1 = new JLabel();
 		label2 = new JLabel();
 
-		label1.setBounds(0, 0, 4 * width / 5, 4 * height / 5);
 		label2.setBounds(0, 0, width, height / 5);
+<<<<<<< HEAD
 
 		ImageIcon icon1 = new ImageIcon("image/蓝色背景.png");
 		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
+		ImageIcon icon2 = new ImageIcon("image/EXPRESS1.png");
+=======
 		ImageIcon icon2 = new ImageIcon("image/装饰图.png");
+>>>>>>> origin/hks
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
+		
 		label2.setIcon(icon2);
 
 		button1 = new JButton();
@@ -88,13 +93,24 @@ public class MainFrame implements ActionListener {
 		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		button1.setIcon(bi1);
 		button1.setContentAreaFilled(false);
+		button1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setExtendedState(JFrame.ICONIFIED);
+			}
+		});
 		
 		button2 = new JButton();
 		button2.setBorderPainted(false);
 		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/绿色按钮.png"));
 		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		button2.setIcon(bi2);
+		button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			}
+		});
 		button2.setContentAreaFilled(false);
+
 		
 		button3 = new JButton();
 		button3.setBorderPainted(false);
@@ -102,18 +118,7 @@ public class MainFrame implements ActionListener {
 		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
-		button3.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent e) {
-				// button3.setIcon(bi2);
-
-			}
-
-			public void mouseExited(MouseEvent e) {
-				// button3.setIcon(bi3);
-
-			}
-		});
-
+	
 		button1.setBounds(width - 60, 0, 20, 20);
 		button2.setBounds(width - 40, 0, 20, 20);
 		button3.setBounds(width - 20, 0, 20, 20);
@@ -128,13 +133,19 @@ public class MainFrame implements ActionListener {
 		panel2.add(button2);
 		panel2.add(button3);
 
-		panel1.add(label1);
+		
 		panel2.add(label2);
 
+<<<<<<< HEAD
+		frame.getContentPane().add(panel1);
+		frame.getContentPane().add(panel2);
+		frame.getContentPane().add(panel3);
+
+=======
 		frame.add(panel1);
 		frame.add(panel2);
 		frame.add(panel3);
-
+>>>>>>> origin/hks
 		frame.setVisible(true);
 	}
 
@@ -148,12 +159,12 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void setCard() {
-		if (EmployeeMes.employeePosition.equals("Courier")) {
+		if (EmployeeMes.employeePosition.equals("快递员")) {
 			panel1.add(new CourierUI(4*width/5,4*height/5), "0");
 			panel1.add(new CourierUI2(4*width/5,4*height/5), "1");
 			panel1.add(new CourierUI4(4*width/5,4*height/5), "2");
 
-		} else if (EmployeeMes.employeePosition.equals("SellingArea")) {
+		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
 			panel1.add(new SellingAreaUI(4*width/5,4*height/5), "0");
 			panel1.add(new SellingAreaUI1(4*width/5,4*height/5), "1");
 			panel1.add(new SellingAreaUI2(4*width/5,4*height/5), "2");
@@ -165,23 +176,23 @@ public class MainFrame implements ActionListener {
 			panel1.add(new SellingAreaUI41(Card,4*width/5,4*height/5), "8");
 			panel1.add(new SellingAreaUI42(Card,4*width/5,4*height/5), "9");
 			panel1.add(new SellingAreaUI43(Card,4*width/5,4*height/5), "10");
-		} else if (EmployeeMes.employeePosition.equals("Centre")) {
+		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
 			panel1.add(new CentreUI(4*width/5,4*height/5), "0");
 			panel1.add(new CentreUI1(4*width/5,4*height/5), "1");
 			panel1.add(new CentreUI2(4*width/5,4*height/5), "2");
 			panel1.add(new CentreUI3(4*width/5,4*height/5), "3");
-		} else if (EmployeeMes.employeePosition.equals("Warehouse")) {
+		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
 			panel1.add(new WarehouseUI1(), "0");
 			panel1.add(new WarehouseUI2(), "1");
 			panel1.add(new WarehouseUI3(), "2");
 			panel1.add(new WarehouseUI4(), "3");
 
-		} else if (EmployeeMes.employeePosition.equals("Finance")) {
+		} else if (EmployeeMes.employeePosition.equals("财务人员")) {
 			panel1.add(new FinanceUI1(), "0");
 			panel1.add(new FinanceUI2(), "1");
 			panel1.add(new FinanceUI3(), "2");
 			panel1.add(new FinanceUI4(), "3");
-		} else if (EmployeeMes.employeePosition.equals("Manager")) {
+		} else if (EmployeeMes.employeePosition.equals("总经理")) {
 			panel1.add(new ManagerUI0(Card), "0");
 			panel1.add(new ManagerUI01(Card), "1");
 			panel1.add(new ManagerUI02(Card), "2");
@@ -197,29 +208,29 @@ public class MainFrame implements ActionListener {
 			panel1.add(new ManagerUI3(), "10");
 			panel1.add(new ManagerUI4(Card), "11");
 			panel1.add(new ManagerUI41(Card), "12");
-		} else if (EmployeeMes.employeePosition.equals("Admin")) {
+		} else if (EmployeeMes.employeePosition.equals("管理员")) {
 			panel1.add(new AdminUI1(4*width/5,4*height/5), "0");
 			panel1.add(new AdminUI2(4*width/5,4*height/5), "1");
 			panel1.add(new AdminUI3(4*width/5,4*height/5), "2");
 			panel1.add(new AdminUI4(4*width/5,4*height/5), "3");
 		}
-
+        panel1.setOpaque(false);
 	}
 
 	public void getPanel3() {
-		if (EmployeeMes.employeePosition.equals("Courier")) {
+		if (EmployeeMes.employeePosition.equals("快递员")) {
 			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5,panel1);
-		} else if (EmployeeMes.employeePosition.equals("SellingArea")) {
+		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
 			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5,panel1);
-		} else if (EmployeeMes.employeePosition.equals("Centre")) {
+		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
 			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5,panel1);
-		} else if (EmployeeMes.employeePosition.equals("Warehouse")) {
+		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
 			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5,panel1);
-		} else if (EmployeeMes.employeePosition.equals("Finance")) {
+		} else if (EmployeeMes.employeePosition.equals("财务人员")) {
 			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5,panel1);
-		} else if (EmployeeMes.employeePosition.equals("Manager")) {
+		} else if (EmployeeMes.employeePosition.equals("总经理")) {
 			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5,panel1);
-		} else if (EmployeeMes.employeePosition.equals("Admin")) {
+		} else if (EmployeeMes.employeePosition.equals("管理员")) {
 			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5,panel1);
 		}
 	}
