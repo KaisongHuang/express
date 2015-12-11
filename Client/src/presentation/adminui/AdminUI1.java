@@ -6,6 +6,9 @@ package presentation.adminui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -53,7 +56,7 @@ public class AdminUI1 extends JPanel{
 
 		this.setBounds(0,0,480,320);
 		this.setLayout(null);
-
+        this.setBackground(new Color(158,211,240));
 		JLabel label_3 = new JLabel("姓名：");
 		label_3.setBounds(51, 41, 61, 16);
 		this.add(label_3);

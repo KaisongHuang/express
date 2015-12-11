@@ -6,6 +6,9 @@ package presentation.adminui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener4;
@@ -74,7 +77,7 @@ public class AdminUI4 extends JPanel{
 /**--------------------------------------Navigation Code--------------------------------------------**/
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		JLabel label = new JLabel("删除账户名:");
 		label.setBounds(54, 43, 80, 16);
 		this.add(label);
