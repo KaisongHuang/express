@@ -18,12 +18,12 @@ public class AdminListener1 implements MouseListener, ActionListener {
 
 	private AdminUI1 ui;
 	AdminBlService admin = new Admin();
-	
+
 	public AdminListener1 (AdminUI1 ui){
 		super();
 		this.ui=ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getBtnNewButton_11()){
@@ -35,7 +35,7 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			AdminVO vo = this.read();
 			rm=admin.manageCount(vo, Operation.insert);
 		}
-		
+
 	}
 
 	private AdminVO read() {
@@ -44,9 +44,13 @@ public class AdminListener1 implements MouseListener, ActionListener {
 		String id = ui.getTextField().getText();
 		String password = ui.getTextField_1().getText();
 		String role = (String) ui.getComboBox().getSelectedItem();
+<<<<<<< HEAD
+role="Sender";
+=======
 
+>>>>>>> origin/hks
 		AdminVO vo = new AdminVO(id,name,password,role);
-		
+
 		return vo;
 	}
 
@@ -57,27 +61,27 @@ public class AdminListener1 implements MouseListener, ActionListener {
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

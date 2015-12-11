@@ -40,6 +40,7 @@ public class FinanceUI1 extends JPanel {
 	private Vector<Object> data;
 	private JTable table;
 	private JScrollPane JSP;
+	private 
 	FinanceListener1 financeListener1;
 
 	public FinanceUI1() {

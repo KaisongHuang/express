@@ -6,8 +6,11 @@ package presentation.sellingareaui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Image;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import javax.swing.JTextField;
@@ -48,10 +51,10 @@ public class SellingAreaUI3 extends JPanel{
 
 	SellingAreaListener30 sellingarealistener;
 
-	@SuppressWarnings("unused")
 	private int width;
-	@SuppressWarnings("unused")
 	private int height;
+	private JLabel label1;
+	
 	/**
 	 * Create the application.
 	 * @param card
@@ -63,6 +66,9 @@ public class SellingAreaUI3 extends JPanel{
 		width=i;
 		height=j;
 		initialize();
+		this.setImage();
+		this.setVisible(true);
+		
 	}
 
 	/**
@@ -338,5 +344,13 @@ public class SellingAreaUI3 extends JPanel{
 		this.button_2 = button_2;
 	}
 
+	private void setImage() {
+		label1 = new JLabel();
+		label1.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
+		label1.setIcon(icon1);
+		this.add(label1);
+	}
 }

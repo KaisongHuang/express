@@ -7,8 +7,14 @@ package presentation.courierui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
+<<<<<<< HEAD
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+=======
 import java.awt.Color;
 
+>>>>>>> origin/hks
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -27,11 +33,9 @@ public class CourierUI1 extends JPanel{
 	CourierListener1 courierlistener;
 
 	private JButton button;
-    @SuppressWarnings("unused")
 	private int width;
-    @SuppressWarnings("unused")
 	private int height;
-
+    private JLabel label1;
 	/**
 	 * Create the application.
 	 * @param j
@@ -42,6 +46,8 @@ public class CourierUI1 extends JPanel{
 		this.width=i;
 		this.height=j;
 		initialize();
+		this.setImage();
+		this.setVisible(true);
 	}
 
 	/**
@@ -103,5 +109,13 @@ public class CourierUI1 extends JPanel{
 	public JButton getButton() {
 		return button;
 	}
+	private void setImage() {
+		label1 = new JLabel();
+		label1.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
+		label1.setIcon(icon1);
+		this.add(label1);
+	}
 }

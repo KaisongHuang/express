@@ -5,13 +5,20 @@
 package presentation.warehouseui;
 
 import javax.swing.JPanel;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
 
+<<<<<<< HEAD
+import java.awt.Image;
+=======
 import java.awt.Color;
+>>>>>>> origin/hks
 import java.util.Arrays;
 import java.util.Vector;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
@@ -46,10 +53,15 @@ public class WarehouseUI2 extends JPanel {
 	private Vector<Object> data;
 	private static final long serialVersionUID = 1L;
 	WarehouseListener2 warehouseListener;
+	private JLabel label1;
+	private int width = 900;
+	private int height = 600;
 
 	public WarehouseUI2() {
 		warehouseListener = new WarehouseListener2(this);
 		initialize();
+		this.setImage();
+		this.setVisible(true);
 	}
 
 	private void initialize() {
@@ -266,5 +278,14 @@ public class WarehouseUI2 extends JPanel {
 
 	public JTextArea getTextArea_2() {
 		return textArea_2;
+	}
+	private void setImage() {
+		label1 = new JLabel();
+		label1.setBounds(0, 0, width,height);
+		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+
+		label1.setIcon(icon1);
+		this.add(label1);
 	}
 }

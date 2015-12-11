@@ -1,14 +1,9 @@
 package presentation.senderui;
 
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.Image;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
 import listener.senderlistener.SenderListener0;
 
 import javax.swing.JTextField;
@@ -16,20 +11,25 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Color;
-
-import listener.senderlistener.SenderListener0;
 
 
 public class SearchUI extends JPanel {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-	JLabel label; 
+	JLabel label;
 	JButton btnNewButton;
+<<<<<<< HEAD
+	private String path=System.getProperty("user.dir")+"\\Client\\";
+
+=======
 	
 	
+>>>>>>> origin/hks
 	public SearchUI() {
 	   
 		this.setBounds(200,100,900,600);
@@ -42,21 +42,21 @@ public class SearchUI extends JPanel {
 		icon1.setImage(icon1.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
 		label.setIcon(icon1);
 		this.add(label);
-		
+
 		textField = new JTextField();
 		textField.setBounds(295, 203, 273, 24);
 		this.add(textField);
 		textField.setColumns(10);
-		
+
 		btnNewButton = new JButton("查询");
 		btnNewButton.addActionListener(new SenderListener0(this));
-			
-	
+
+
 		btnNewButton.setBounds(650, 200, 113, 27);
 		this.add(btnNewButton);
 		this.setBackground(new Color(30,30,30));
 	}
-	
+
 	public String gettextFieldContent(){
 		return textField.getText();
 	}
