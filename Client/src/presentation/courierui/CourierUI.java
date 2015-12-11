@@ -6,6 +6,9 @@ package presentation.courierui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -66,7 +69,7 @@ public class CourierUI extends JPanel{
 
 
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");
 		lblNewLabel_1.setBounds(300, 0, 84, 30);
 		this.add(lblNewLabel_1);

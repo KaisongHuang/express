@@ -5,6 +5,7 @@
 package presentation.mainui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +33,6 @@ public class MainFrame implements ActionListener {
 	private JPanel panel1;
 	private JPanel panel2;
 	private JPanel panel3;
-	private JLabel label1;
 	private JLabel label2;
 	private int height = 600;
 	private int width = 900;
@@ -48,7 +48,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "Centre";
+		EmployeeMes.employeePosition = "管理员";
 		frame = new JFrame();
 		frame.setLayout(null);
 		frame.setUndecorated(true);
@@ -67,19 +67,13 @@ public class MainFrame implements ActionListener {
 		Card.show(panel1, "0");
 
 		panel2.setLayout(null);
-
-		label1 = new JLabel();
 		label2 = new JLabel();
 
-		label1.setBounds(0, 0, 4 * width / 5, 4 * height / 5);
 		label2.setBounds(0, 0, width, height / 5);
-
-		ImageIcon icon1 = new ImageIcon("image/蓝色背景.png");
-		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
 		ImageIcon icon2 = new ImageIcon("image/装饰图.png");
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
+		
 		label2.setIcon(icon2);
 
 		button1 = new JButton();
@@ -102,18 +96,7 @@ public class MainFrame implements ActionListener {
 		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
-		button3.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent e) {
-				// button3.setIcon(bi2);
-
-			}
-
-			public void mouseExited(MouseEvent e) {
-				// button3.setIcon(bi3);
-
-			}
-		});
-
+	
 		button1.setBounds(width - 60, 0, 20, 20);
 		button2.setBounds(width - 40, 0, 20, 20);
 		button3.setBounds(width - 20, 0, 20, 20);
@@ -128,13 +111,12 @@ public class MainFrame implements ActionListener {
 		panel2.add(button2);
 		panel2.add(button3);
 
-		panel1.add(label1);
+		
 		panel2.add(label2);
 
 		frame.add(panel1);
 		frame.add(panel2);
 		frame.add(panel3);
-
 		frame.setVisible(true);
 	}
 
@@ -203,7 +185,7 @@ public class MainFrame implements ActionListener {
 			panel1.add(new AdminUI3(4*width/5,4*height/5), "2");
 			panel1.add(new AdminUI4(4*width/5,4*height/5), "3");
 		}
-
+        panel1.setOpaque(false);
 	}
 
 	public void getPanel3() {

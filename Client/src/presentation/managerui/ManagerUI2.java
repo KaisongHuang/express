@@ -6,6 +6,9 @@ package presentation.managerui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.Color;
+
 import javax.swing.JButton;
 import listener.managerlistener.ManagerListener20;
 
@@ -41,7 +44,7 @@ public class ManagerUI2 extends JPanel{
 
 
 		this.setBounds(136, 115, 746, 443);
-
+		 this.setBackground(new Color(158,211,240));
 		this.setLayout(null);
 
 		comboBox = new JComboBox<String>();

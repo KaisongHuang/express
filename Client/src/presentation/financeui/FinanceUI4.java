@@ -5,6 +5,7 @@
 package presentation.financeui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 
 import javax.swing.JPanel;
 
@@ -35,7 +36,7 @@ public class FinanceUI4 extends JPanel {
 
 	private void initialize() {
 		this.setBounds(136, 115, 746, 438);
-
+		 this.setBackground(new Color(158,211,240));
 		ui1 = new FinanceUI4_1(financeListener4);
 		ui2 = new FinanceUI4_2(financeListener4);
 		ui3 = new FinanceUI4_3(financeListener4);
