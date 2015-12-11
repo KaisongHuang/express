@@ -67,7 +67,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public EmployeePO findEmployee(String id) throws RemoteException{
 		String sql;
 		ResultSet rs;
-		sql="select * from Employee where "+"employeeID="+id;
+		sql="select * from Employee where "+"id="+id;
 	    rs=db.find(sql);
 	    
 		return null;
@@ -141,11 +141,11 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultMessage rm;
 		if(po instanceof EmployeePO){
 			EmployeePO po1=(EmployeePO) po;
-			sql="delete from Employee where employeeID='"+po1.getEmployeeID()+"');";
+			sql="delete from Employee where id='"+po1.getEmployeeID()+"');";
 			rm=db.delete(sql);
 		}else{
 			InstitutionPO po1=(InstitutionPO) po;
-			sql="delete from Institution where organizationID='"+po1.getOrganizationID()+"');";
+			sql="delete from Institution where id='"+po1.getOrganizationID()+"');";
 			rm=db.delete(sql);
 		}
 		return rm;
