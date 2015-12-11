@@ -13,7 +13,7 @@ public class LoginData implements LoginDataService {
 
 	public LoginData() {
 		try {
-			p = (LoginDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/LoginDataService");
+			p = (LoginDataBaseService) Naming.lookup("rmi://192.168.43.233:8000/LoginDataService");
 			System.out.println("成功连接服务器");
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -52,7 +52,7 @@ public class ManagerUI13 extends JPanel{
 
 
 
-		this.setBackground(new Color(255, 255, 255));
+		 this.setBackground(new Color(158,211,240));
 		this.setBounds(136, 115, 748, 438);
 
 		this.setLayout(null);

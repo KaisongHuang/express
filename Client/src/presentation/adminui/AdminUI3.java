@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener3;
@@ -55,7 +57,7 @@ public class AdminUI3 extends JPanel{
 
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		JLabel label = new JLabel("账户名:");
 		label.setBounds(53, 35, 61, 16);
 		this.add(label);
