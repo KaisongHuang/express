@@ -7,9 +7,14 @@ package presentation.courierui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
+<<<<<<< HEAD
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+=======
+import java.awt.Color;
+
+>>>>>>> origin/hks
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -57,7 +62,7 @@ public class CourierUI2 extends JPanel{
 		this.setBounds(136, 118, 748, 436);
 
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		JLabel label = new JLabel("收件编号");
 		label.setBounds(116, 43, 100, 18);
 		this.add(label);

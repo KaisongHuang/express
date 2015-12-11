@@ -7,6 +7,8 @@ package presentation.financeui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JScrollPane;
@@ -60,7 +62,7 @@ public class FinanceUI2 extends JPanel {
 
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		String names[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);

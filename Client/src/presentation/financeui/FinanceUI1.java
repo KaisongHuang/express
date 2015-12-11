@@ -7,6 +7,8 @@ package presentation.financeui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JTextArea;
@@ -47,7 +49,7 @@ public class FinanceUI1 extends JPanel {
 	}
 
 	private void initialize() {
-
+		 this.setBackground(new Color(158,211,240));
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 

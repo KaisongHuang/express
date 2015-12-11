@@ -33,6 +33,7 @@ public class LoginListener implements ActionListener{
 		EmployeeMes.employeeName=vo.getEmployeeName();
 		EmployeeMes.employeePosition=vo.getEmployeePosition();
 		EmployeeMes.timeOfWorking=vo.getTimeOfWorking();
+System.out.println(EmployeeMes.employeePosition);
 MainFrame frame1=new MainFrame();
 frame1.init();
         frame.setVisible(false);
