@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JButton;
@@ -54,7 +56,7 @@ public class WarehouseUI2 extends JPanel {
 
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		String names[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);
