@@ -10,11 +10,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
 
-<<<<<<< HEAD
 import java.awt.Image;
-=======
 import java.awt.Color;
->>>>>>> origin/hks
 import java.util.Arrays;
 import java.util.Vector;
 
