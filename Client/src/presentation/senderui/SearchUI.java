@@ -23,13 +23,6 @@ public class SearchUI extends JPanel {
 	private JTextField textField;
 	JLabel label;
 	JButton btnNewButton;
-<<<<<<< HEAD
-	private String path=System.getProperty("user.dir")+"\\Client\\";
-
-=======
-	
-	
->>>>>>> origin/hks
 	public SearchUI() {
 	   
 		this.setBounds(200,100,900,600);
