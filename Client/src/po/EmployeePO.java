@@ -6,6 +6,10 @@ import po.ManagerPO;
 
 public class EmployeePO extends ManagerPO implements Serializable{
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	String employeeID;
 	String employeeName;
 	String employeePosition;

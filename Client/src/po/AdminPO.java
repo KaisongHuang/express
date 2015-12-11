@@ -3,19 +3,23 @@ package po;
 import java.io.Serializable;
 
 public class AdminPO implements Serializable{
-	
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	String id;
 	String name;
 	String password;
 	String role;
-	
+
 	public AdminPO(String id,String name,String password,String role){
-		
+
 		this.id=id;
 		this.name=name;
 		this.password=password;
 		this.role=role;
-		
+
 	}
 
 	public String getId() {
@@ -50,5 +54,5 @@ public class AdminPO implements Serializable{
 		this.role = role;
 	}
 
-	
+
 }

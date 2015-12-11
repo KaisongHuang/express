@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.Vector;
 
 import javax.swing.JButton;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
@@ -47,16 +46,16 @@ public class FinanceUI4_3 extends JPanel {
 
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-		
+
 		table = new JTable(data, name);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.addMouseListener(financeListener4);
-		
+
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(82, 176, 340, 200);
 		this.add(JSP);
-		
+
 		label = new JLabel("请输入银行账号关键字段:");
 		label.setBounds(82, 113, 153, 15);
 		this.add(label);
@@ -95,20 +94,20 @@ public class FinanceUI4_3 extends JPanel {
 		button_2.setBounds(82, 53, 94, 27);
 		button_2.addActionListener(financeListener4);
 		this.add(button_2);
-		
+
 		JLabel label_1 = new JLabel("账户：");
 		label_1.setBounds(434, 177, 44, 16);
 		add(label_1);
-		
+
 		JLabel label_2 = new JLabel("余额：");
 		label_2.setBounds(434, 217, 44, 16);
 		add(label_2);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setBounds(473, 171, 175, 28);
 		add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		textField_2 = new JTextField();
 		textField_2.setBounds(475, 211, 173, 28);
 		add(textField_2);
