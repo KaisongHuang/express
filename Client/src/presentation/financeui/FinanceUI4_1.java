@@ -1,5 +1,6 @@
 package presentation.financeui;
 
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JPanel;
@@ -42,7 +43,7 @@ public class FinanceUI4_1 extends JPanel {
 
 	private void initialize() {
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);

@@ -23,14 +23,12 @@ public class SearchUI extends JPanel {
 	private JTextField textField;
 	JLabel label;
 	JButton btnNewButton;
-	private String path=System.getProperty("user.dir")+"\\Client\\";
-
 	public SearchUI() {
-	    path.replaceAll("/", "\\");
+	   
 		this.setBounds(200,100,900,600);
 		this.setLayout(null);
 		label = new JLabel("订单编号：");
-		label.setIcon(new ImageIcon("D:\\Java\\express\\Client\\image\\search.png"));
+	
 
 		label.setBounds(152, 206, 200, 200);
 		ImageIcon icon1 = new ImageIcon(getClass().getResource("./image/search.png"));

@@ -12,7 +12,7 @@ public class Test {
 	}
 	public void init(){
 		MySQLDataBase db=new MySQLDataBase();
-		ResultSet rs=db.find("select * from Admin where id='141250049';");
+		ResultSet rs=db.find("select * from Employee where id='1000000001';");
 		try {
 			
 			while(rs.next())

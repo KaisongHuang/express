@@ -52,7 +52,7 @@ public class ManagerUI4 extends JPanel{
 
 
 
-		this.setBackground(new Color(255, 255, 255));
+		 this.setBackground(new Color(158,211,240));
 		this.setBounds(137, 115, 745, 440);
 
 		this.setLayout(null);

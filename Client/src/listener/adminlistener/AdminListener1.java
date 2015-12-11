@@ -44,7 +44,6 @@ public class AdminListener1 implements MouseListener, ActionListener {
 		String id = ui.getTextField().getText();
 		String password = ui.getTextField_1().getText();
 		String role = (String) ui.getComboBox().getSelectedItem();
-role="Sender";
 		AdminVO vo = new AdminVO(id,name,password,role);
 
 		return vo;
