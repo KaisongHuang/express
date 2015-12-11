@@ -48,9 +48,9 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "Centre";
+		EmployeeMes.employeePosition = "Admin";
 		frame = new JFrame();
-		frame.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
 		frame.setSize(width, height);
 		frame.setLocation(100, 100);
@@ -76,7 +76,7 @@ public class MainFrame implements ActionListener {
 
 		ImageIcon icon1 = new ImageIcon("image/蓝色背景.png");
 		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
-		ImageIcon icon2 = new ImageIcon("image/装饰图.png");
+		ImageIcon icon2 = new ImageIcon("image/EXPRESS1.png");
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
 
 		label1.setIcon(icon1);
@@ -88,13 +88,24 @@ public class MainFrame implements ActionListener {
 		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		button1.setIcon(bi1);
 		button1.setContentAreaFilled(false);
+		button1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setExtendedState(JFrame.ICONIFIED);
+			}
+		});
 		
 		button2 = new JButton();
 		button2.setBorderPainted(false);
 		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/绿色按钮.png"));
 		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		button2.setIcon(bi2);
+		button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			}
+		});
 		button2.setContentAreaFilled(false);
+
 		
 		button3 = new JButton();
 		button3.setBorderPainted(false);
@@ -131,9 +142,9 @@ public class MainFrame implements ActionListener {
 		panel1.add(label1);
 		panel2.add(label2);
 
-		frame.add(panel1);
-		frame.add(panel2);
-		frame.add(panel3);
+		frame.getContentPane().add(panel1);
+		frame.getContentPane().add(panel2);
+		frame.getContentPane().add(panel3);
 
 		frame.setVisible(true);
 	}
