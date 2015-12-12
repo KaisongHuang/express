@@ -6,7 +6,11 @@ package presentation.financeui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
+import java.awt.Color;
+import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JTextArea;
@@ -38,16 +42,20 @@ public class FinanceUI1 extends JPanel {
 	private Vector<Object> data;
 	private JTable table;
 	private JScrollPane JSP;
-	private 
+	private int height = 900;
+	private int width = 600;
+	private JLabel label1;
 	FinanceListener1 financeListener1;
 
 	public FinanceUI1() {
 		financeListener1 = new FinanceListener1(this);
 		initialize();
+		//this.setImage();
+		this.setVisible(true);
 	}
 
 	private void initialize() {
-
+		setBackground(new Color(158, 211, 238));
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 
@@ -176,4 +184,8 @@ public class FinanceUI1 extends JPanel {
 	public void setTable(JTable table) {
 		this.table = table;
 	}
+	private void setImage() {
+		
+	}
+	
 }

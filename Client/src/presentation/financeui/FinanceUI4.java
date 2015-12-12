@@ -5,7 +5,9 @@
 package presentation.financeui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import listener.financelistener.FinanceListener4;
@@ -21,6 +23,7 @@ public class FinanceUI4 extends JPanel {
 	private FinanceUI4_2 ui2;
 	private FinanceListener4 financeListener4;
 
+
 	/**
 	 * Create the application.
 	 *
@@ -31,11 +34,14 @@ public class FinanceUI4 extends JPanel {
 		financeListener4 = new FinanceListener4(this);
 
 		initialize();
+		//this.setImage();
+		this.setVisible(true);
 	}
 
 	private void initialize() {
 		this.setBounds(136, 115, 746, 438);
-
+		setBackground(new Color(158, 211, 238));
+		
 		ui1 = new FinanceUI4_1(financeListener4);
 		ui2 = new FinanceUI4_2(financeListener4);
 		ui3 = new FinanceUI4_3(financeListener4);
@@ -67,5 +73,8 @@ public class FinanceUI4 extends JPanel {
 
 	public FinanceUI4_2 getUi2() {
 		return ui2;
+	}
+	private void setImage() {
+
 	}
 }

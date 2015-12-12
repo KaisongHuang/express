@@ -49,7 +49,7 @@ public class CourierUI4 extends JPanel {
 		width = i;
 		height = j;
 		initialize();
-		this.setImage();
+		//this.setImage();
 		this.setVisible(true);
 	}
 
@@ -58,7 +58,7 @@ public class CourierUI4 extends JPanel {
 	 */
 	private void initialize() {
 
-		this.setBackground(new Color(255, 255, 255));
+		this.setBackground(new Color(158, 211, 238));
 		this.setBounds(136, 115, 746, 437);
 		setLayout(null);
 
@@ -139,12 +139,6 @@ public class CourierUI4 extends JPanel {
 		return lblNewLabel_5;
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 }

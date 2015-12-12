@@ -7,6 +7,7 @@ package presentation.courierui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
+import java.awt.Color;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
@@ -41,7 +42,7 @@ public class CourierUI1 extends JPanel{
 		this.width=i;
 		this.height=j;
 		initialize();
-		this.setImage();
+		//this.setImage();
 		this.setVisible(true);
 	}
 
@@ -50,7 +51,7 @@ public class CourierUI1 extends JPanel{
 	 */
 	private void initialize() {
 
-
+		setBackground(new Color(158, 211, 238));
 		this.setBounds(136, 113, 746, 440);
 
 		this.setLayout(null);
@@ -105,12 +106,6 @@ public class CourierUI1 extends JPanel{
 		return button;
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 }

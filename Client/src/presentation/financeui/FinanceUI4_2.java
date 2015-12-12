@@ -1,5 +1,7 @@
 package presentation.financeui;
 
+import java.awt.Color;
+import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 
@@ -12,6 +14,7 @@ import listener.financelistener.FinanceListener4;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class FinanceUI4_2 extends JPanel {
@@ -36,6 +39,9 @@ public class FinanceUI4_2 extends JPanel {
 	private JTextField textField_1;
 	FinanceListener4 financeListener4;
 	private JButton button_5;
+	private int height = 600;
+	private int width = 900;
+	private JLabel label1;
 
 	/**
 	 * Create the panel.
@@ -43,9 +49,12 @@ public class FinanceUI4_2 extends JPanel {
 	public FinanceUI4_2(FinanceListener4 financeListener4) {
 		this.financeListener4 = financeListener4;
 		initialize();
+		//this.setImage();
+		this.setVisible(true);
 	}
 
 	private void initialize() {
+		setBackground(new Color(158, 211, 238));
 		this.setLayout(null);
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
@@ -145,5 +154,8 @@ public class FinanceUI4_2 extends JPanel {
 
 	public void setData(Vector<Object> data) {
 		this.data = data;
+	}
+	private void setImage() {
+
 	}
 }

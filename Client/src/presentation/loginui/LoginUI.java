@@ -10,6 +10,7 @@ import listener.mainlistener.LoginListener;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Insets;
 
@@ -39,6 +40,7 @@ public class LoginUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginUI() {
+		setBackground(new Color(158, 211, 238));
 		this.setUndecorated(true);
 
 		label1 = new JLabel();
@@ -89,14 +91,12 @@ public class LoginUI extends JFrame {
 		label1.setBounds(0, height / 5, width, 4 * height / 5);
 		label2.setBounds(0, 0, width, height / 5);
 
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
+		
 		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/装饰图.png"));
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
 		ImageIcon icon3 = new ImageIcon(this.getClass().getResource("/绿色圆角大按钮.png"));
 		icon3.setImage(icon3.getImage().getScaledInstance(Login.getWidth(), Login.getHeight(), Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
 		label2.setIcon(icon2);
 
 		Login.setIcon(icon3);
