@@ -9,6 +9,8 @@ import listener.warehouselistener.WarehouseListener3;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class WarehouseUI3_1 extends JFrame {
