@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -58,7 +59,7 @@ public class CourierUI2 extends JPanel{
 		this.setBounds(136, 118, 748, 436);
 		setBackground(new Color(158, 211, 238));
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		JLabel label = new JLabel("收件编号");
 		label.setBounds(116, 43, 100, 18);
 		this.add(label);

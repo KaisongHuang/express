@@ -11,7 +11,6 @@ import listener.financelistener.FinanceListener3;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 
@@ -60,7 +59,7 @@ public class FinanceUI3 extends JPanel {
 		setBackground(new Color(158, 211, 238));
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new JTable(data1, name1);

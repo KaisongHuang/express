@@ -38,7 +38,7 @@ public class MySQLDataBase {
     	  if(serverPort==null){
     		  serverPort="3306";
     	  }
-    	  String dbURL="jdbc:mysql://"+serverHost+":"+serverPort+"/"+dbName;
+    	  String dbURL="jdbc:mysql://"+serverHost+":"+serverPort+"/"+dbName+"?useUnicode=true&characterEncoding=utf8";
     	  return getConnection(driverClassName,dbURL,userName,password);
       }
       
@@ -64,7 +64,7 @@ public class MySQLDataBase {
       public  ResultMessage insert(String sql){
     	  try {
     		  
-			 ((java.sql.Statement) st).execute(sql);
+			 ((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();

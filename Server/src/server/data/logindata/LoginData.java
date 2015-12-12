@@ -25,7 +25,7 @@ System.out.println("远程方法调用成功");
 			if(!rs.wasNull()){
 				rs.last();
 System.out.println("密码正确");
-				String sql2="select * from employee where employeeID="+po.getId();
+				String sql2="select * from employee where id='"+po.getId()+"';";
 				ResultSet rs1=db.find(sql2);
 				String id = null;
 				String name = null;

@@ -59,6 +59,7 @@ public class CourierUI4 extends JPanel {
 	private void initialize() {
 
 		this.setBackground(new Color(158, 211, 238));
+
 		this.setBounds(136, 115, 746, 437);
 		setLayout(null);
 

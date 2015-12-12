@@ -9,15 +9,12 @@ import listener.warehouselistener.WarehouseListener3;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class WarehouseUI3_1 extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -30,7 +27,7 @@ public class WarehouseUI3_1 extends JFrame {
 	private JButton button;
 	private JButton button_1;
 	WarehouseListener3 warehouseListener;
-	//private int 
+	//private int
 
 	public WarehouseUI3_1(WarehouseListener3 warehouseListener) {
 		this.warehouseListener = warehouseListener;
@@ -93,7 +90,7 @@ public class WarehouseUI3_1 extends JFrame {
 	public JTextArea getTextArea_1() {
 		return textArea_1;
 	}
-	
+
 	public JButton getButton() {
 		return button;
 	}

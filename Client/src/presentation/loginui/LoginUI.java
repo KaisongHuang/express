@@ -12,15 +12,13 @@ import javax.swing.JTextField;
 
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.Insets;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class LoginUI extends JFrame {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -31,8 +29,7 @@ public class LoginUI extends JFrame {
 	private JButton logout;
 	private JLabel lblUserName;
 	private JLabel lblPassword;
-	private JLabel label1;
-	private JLabel label2;
+	private JLabel label;
 	private int height = 600;
 	private int width = 900;
 
@@ -42,9 +39,7 @@ public class LoginUI extends JFrame {
 	public LoginUI() {
 		setBackground(new Color(158, 211, 238));
 		this.setUndecorated(true);
-
-		label1 = new JLabel();
-		label2 = new JLabel();
+		label = new JLabel();
 
 		listener = new LoginListener(this);
 		setBounds(100, 100, 900, 600);
@@ -52,7 +47,7 @@ public class LoginUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+        contentPane.setBackground(new Color(158,211,240));
 		lblUserName = new JLabel("User Name:");
 		lblUserName.setBounds(254, 233, 79, 16);
 		contentPane.add(lblUserName);
@@ -76,41 +71,32 @@ public class LoginUI extends JFrame {
 		contentPane.add(logout);
 		logout.addActionListener(listener);
 		
-		Login = new JButton();
+		Login = new JButton("登录");
 		Login.setBounds(345, 349, 134, 28);
 		contentPane.add(Login);
 		Login.addActionListener(listener);
-		;
-
-		this.setImage();
+		setImage();
 		this.setVisible(true);
 	}
 
 	private void setImage() {
 
-		label1.setBounds(0, height / 5, width, 4 * height / 5);
-		label2.setBounds(0, 0, width, height / 5);
+		label.setBounds(0, 0, width, height / 5);
 
 		
 		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/装饰图.png"));
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
-		ImageIcon icon3 = new ImageIcon(this.getClass().getResource("/绿色圆角大按钮.png"));
-		icon3.setImage(icon3.getImage().getScaledInstance(Login.getWidth(), Login.getHeight(), Image.SCALE_DEFAULT));
+		label.setIcon(icon2);
 
-		label2.setIcon(icon2);
+		Login.setBackground(new Color(207,248,240));
 
-		Login.setIcon(icon3);
-		Login.setContentAreaFilled(false);
-		Login.setBorderPainted(false);
 
 		logout.setBorderPainted(false);
 		ImageIcon icon4 = new ImageIcon(this.getClass().getResource("/红色按钮.png"));
 		icon4.setImage(icon4.getImage().getScaledInstance(logout.getWidth(), logout.getHeight(), Image.SCALE_DEFAULT));
 		logout.setIcon(icon4);
 		logout.setContentAreaFilled(false);
-		
-		contentPane.add(label1);
-		contentPane.add(label2);
+		contentPane.add(label);
 	}
 
 	public JTextField getText() {

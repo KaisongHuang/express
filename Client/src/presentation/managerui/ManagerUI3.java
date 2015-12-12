@@ -40,7 +40,7 @@ public class ManagerUI3 extends JPanel {
 		this.setBounds(136, 115, 746, 443);
 
 		this.setLayout(null);
-
+		 this.setBackground(new Color(158,211,240));
 		JLabel label = new JLabel("是否确认查看统计分析：");
 		label.setBounds(38, 10, 150, 18);
 		this.add(label);

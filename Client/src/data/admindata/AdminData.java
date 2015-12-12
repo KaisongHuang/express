@@ -14,7 +14,7 @@ public class AdminData implements AdminDataService {
     AdminDataBaseService ad;
 	public AdminData(){
 		try {
-			ad=(AdminDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/AdminDataService");
+			ad=(AdminDataBaseService) Naming.lookup("rmi://192.168.43.233:8000/AdminDataService");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -5,7 +5,9 @@ package presentation.adminui;
 
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -45,8 +47,14 @@ public class AdminMenuUI extends JPanel {
         this.setSize(width,height);
 		this.setLayout(null);
 
-		button3 = new JButton("新增账户");
-		button3.setBounds(0, 0, width, height / 6);
+		
+		button3 = new JButton();
+		button3.setBounds(0, 0, width, height / 10);
+		ImageIcon icon1 = new ImageIcon("image/新增账户.png");
+		icon1.setImage(icon1.getImage().getScaledInstance(width, height / 10, Image.SCALE_DEFAULT));
+		button3.setIcon(icon1);
+		button3.setBorderPainted(false);
+		button3.setContentAreaFilled(false);
 		button3.addActionListener(adminlistener);
 		this.add(button3);
 
