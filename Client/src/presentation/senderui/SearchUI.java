@@ -24,7 +24,7 @@ public class SearchUI extends JPanel {
 	JLabel label;
 	JButton btnNewButton;
 	public SearchUI() {
-	   
+		this.setBackground(new Color(158,211,238));
 		this.setBounds(200,100,900,600);
 		this.setLayout(null);
 		label = new JLabel("订单编号：");

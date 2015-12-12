@@ -1,4 +1,5 @@
 package presentation.senderui;
+import java.awt.Color;
 import java.awt.Image;
 
 import javax.swing.JPanel;
@@ -19,9 +20,6 @@ public class SearchUI1 extends JPanel{
     JLabel label2;
     JTextArea textArea;
     SenderListener1 listen;
-    private int width = 900;
-    private int height = 600;
-    private JLabel label3;
 	public SearchUI1() {
 		listen=new SenderListener1(this);
 		initialize();
@@ -33,6 +31,8 @@ public class SearchUI1 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		this.setBackground(new Color(158,211,238));
 		this.setLayout(null);
 		this.setBounds(100,100,900,600);
 		JLabel lblNewLabel = new JLabel("货运状态:");
@@ -74,13 +74,6 @@ public class SearchUI1 extends JPanel{
 		return textArea;
 	}
 	private void setImage() {
-		label3 = new JLabel();
-		label3.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-
-		label3.setIcon(icon1);
-		this.add(label3);
 	}
 
 }
