@@ -50,9 +50,6 @@ public class WarehouseUI2 extends JPanel {
 	private Vector<Object> data;
 	private static final long serialVersionUID = 1L;
 	WarehouseListener2 warehouseListener;
-	private JLabel label1;
-	private int width = 900;
-	private int height = 600;
 
 	public WarehouseUI2() {
 		warehouseListener = new WarehouseListener2(this);
@@ -65,7 +62,7 @@ public class WarehouseUI2 extends JPanel {
 
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(new Color(158,211,238));
 		String names[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);
@@ -277,12 +274,5 @@ public class WarehouseUI2 extends JPanel {
 		return textArea_2;
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 }

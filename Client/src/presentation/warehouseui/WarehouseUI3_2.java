@@ -29,6 +29,7 @@ public class WarehouseUI3_2 extends JFrame {
 	 * initialize the frame.
 	 */
 	private void initialize() {
+		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 360, 240);
