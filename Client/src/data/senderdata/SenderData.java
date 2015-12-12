@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import po.HistoryPO;
 import data.senderdataservice.SenderDataService;
 import dataservice.senderdataservice.SenderDataBaseService;
@@ -14,7 +15,7 @@ public class SenderData implements SenderDataService {
 
 	public SenderData() {
 		try {
-			sd = (SenderDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SenderDataService");
+			sd = RMIHelper.getSenderService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

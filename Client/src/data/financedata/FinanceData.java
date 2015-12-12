@@ -6,6 +6,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+import RMI.RMIHelper;
 import _enum.ResultMessage;
 import data.financedataservice.FinanceDataService;
 import dataservice.financedataservice.FinanceDataBaseService;
@@ -20,7 +21,7 @@ public class FinanceData implements FinanceDataService {
 
 	public FinanceData() {
 		try {
-			fd = (FinanceDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/LoginDataService");
+			fd = RMIHelper.getFinanceService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
