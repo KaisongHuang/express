@@ -57,7 +57,7 @@ public class AdminUI2 extends JPanel{
 	private void initialize() {
 
 		this.setBounds(136, 115, 746, 438);
-		
+		this.setBackground(new Color(158,211,238));
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));
 		JLabel label_2 = new JLabel("账户名:");
@@ -176,12 +176,6 @@ public class AdminUI2 extends JPanel{
 	}
 
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-
-		label1.setIcon(icon1);
-		this.add(label1);
+		
 	}
 }

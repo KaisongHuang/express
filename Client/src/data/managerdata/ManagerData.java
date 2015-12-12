@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import _enum.ResultMessage;
 import data.managerdataservice.ManagerDataService;
 import dataservice.managerdataservice.ManagerDataBaseService;
@@ -17,7 +18,7 @@ public class ManagerData implements ManagerDataService {
 
 	public ManagerData() {
 		try {
-			md = (ManagerDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/ManagerDataService");
+			md = RMIHelper.getManagerService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

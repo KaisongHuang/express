@@ -5,6 +5,8 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+
+import RMI.RMIHelper;
 import _enum.EmployeeMes;
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
@@ -21,7 +23,7 @@ public class WarehouseData implements WarehouseDataService {
 
 	public WarehouseData() {
 		try {
-			wd = (WareHouseDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/WareHouseDataService");
+			wd = RMIHelper.getWareHouseService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

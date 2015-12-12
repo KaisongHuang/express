@@ -52,7 +52,6 @@ public class SellingAreaUI4 extends JPanel{
 	private JLabel lblNewLabel_9;
 	private int width;
 	private int height;
-    private JLabel label1;
 	/**
 	 * Create the application.
 	 * @param card
@@ -73,7 +72,7 @@ public class SellingAreaUI4 extends JPanel{
 	 */
 	private void initialize() {
 
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(new Color(158,211,238));
 		this.setBounds(136, 114, 746, 439);
 
 		this.setLayout(null);
@@ -315,13 +314,6 @@ public class SellingAreaUI4 extends JPanel{
 		this.lblNewLabel_9 = lblNewLabel_9;
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 
 }

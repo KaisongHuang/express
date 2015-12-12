@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import _enum.ResultMessage;
 import data.admindataservice.AdminDataService;
 import dataservice.admindataservice.AdminDataBaseService;
@@ -14,12 +15,12 @@ public class AdminData implements AdminDataService {
     AdminDataBaseService ad;
 	public AdminData(){
 		try {
-			ad=(AdminDataBaseService) Naming.lookup("rmi://192.168.43.233:8000/AdminDataService");
+			ad=RMIHelper.getAdminService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (NotBoundException e) {
 			// TODO Auto-generated catch block

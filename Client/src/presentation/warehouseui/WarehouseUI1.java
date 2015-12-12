@@ -74,9 +74,6 @@ public class WarehouseUI1 extends JPanel {
 	private JComboBox<Object> comboBox_10;
 	private JPanel panel;
 	WarehouseListener1 warehouseListener;
-	private int width = 900;
-	private int height = 600;
-	private JLabel label1;
 	/**
 	 * Create the application.
 	 */
@@ -91,11 +88,11 @@ public class WarehouseUI1 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		this.setBackground(new Color(158,211,238));
 		listener = new WarehouseListener1(this);
 		card = new CardLayout(0, 0);
 		this.setBounds(0,0, 746, 438);
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
 		panel = new JPanel();
 		panel.setBounds(6, 45, 532, 334);
 		panel.setLayout(card);
@@ -566,12 +563,6 @@ public class WarehouseUI1 extends JPanel {
 		return (String) comboBox_3.getSelectedItem();
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-
-		label1.setIcon(icon1);
-		this.add(label1);
+	
 	}
 }
