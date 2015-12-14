@@ -66,7 +66,7 @@ public class CentreUI extends JPanel {
 		label.setBounds(184, 6, 109, 18);
 		panel_5.add(label);
 
-		JLabel lblNewLabel_1 = new JLabel("中转中心编号：");
+		JLabel lblNewLabel_1 = new JLabel("托运单号：");
 		lblNewLabel_1.setBounds(17, 39, 100, 18);
 		panel_5.add(lblNewLabel_1);
 

@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
@@ -43,14 +45,18 @@ public class FinanceUI3 extends JPanel {
 	private JTable table2;
 	private JScrollPane JSP2;
 	FinanceListener3 financeListener3;
-
+    private JLabel label1;
+    private int height = 600;
+    private int width = 900;
 	public FinanceUI3() {
 		financeListener3 = new FinanceListener3(this);
 		initialize();
+		//this.setImage();
+		this.setVisible(true);
 	}
 
 	private void initialize() {
-
+		setBackground(new Color(158, 211, 238));
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));
@@ -172,5 +178,8 @@ public class FinanceUI3 extends JPanel {
 
 	public JButton getButton() {
 		return button;
+	}
+	private void setImage() {
+
 	}
 }

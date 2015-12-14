@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import po.CarPO;
 import po.DriverPO;
 import po.SellingareaPO;
@@ -17,7 +18,7 @@ public class SellingAreaData implements SellingareaDataService {
 
 	public SellingAreaData() {
 		try {
-			sa = (SellingAreaDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SellingAreaDataService");
+			sa = RMIHelper.getSellingService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

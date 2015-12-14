@@ -107,7 +107,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof CentreArrivalPO){
 			CentreArrivalPO centre=(CentreArrivalPO) po;
-			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getCentreID()+"';";
+			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getID()+"';";
 		    rm=db.update(sql);
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO centre=(CentreTransforPO) po;

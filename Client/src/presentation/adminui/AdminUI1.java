@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener1;
+import java.awt.Color;
 
 public class AdminUI1 extends JPanel {
 
@@ -44,11 +45,12 @@ public class AdminUI1 extends JPanel {
 	 * @param i
 	 */
 	public AdminUI1(int i, int j) {
+		
 		width = i;
 		height = j;
 		adminlistener = new AdminListener1(this);
 		initialize();
-		this.setImage();
+//		this.setImage();
 		this.setVisible(true);
 	}
 
@@ -56,7 +58,7 @@ public class AdminUI1 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-
+		setBackground(new Color(158, 211, 238));
 		this.setBounds(0, 0, 480, 320);
 		this.setLayout(null);
         this.setBackground(new Color(158,211,240));
@@ -164,13 +166,7 @@ public class AdminUI1 extends JPanel {
 	}
 
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 
 }

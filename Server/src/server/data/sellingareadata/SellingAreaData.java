@@ -42,7 +42,10 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new CarPO(number,en,CarNumber,ChassisNumber,purchase,st);
+	    if(number!=null)
+		   return new CarPO(number,en,CarNumber,ChassisNumber,purchase,st);
+	    else
+	    	return null;
 	}
 
 	public DriverPO findDriver( String id) throws RemoteException {
@@ -71,7 +74,10 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new DriverPO(number,name,birthday,ID,phone,CarCompany,sex,LicenceTime);
+	    if(number!=null)
+		    return new DriverPO(number,name,birthday,ID,phone,CarCompany,sex,LicenceTime);
+	    else 
+	    	return null;
 	}
 	public ResultMessage update( Object po)  throws RemoteException{
 		String sql;

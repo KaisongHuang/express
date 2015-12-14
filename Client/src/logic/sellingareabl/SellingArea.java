@@ -33,9 +33,10 @@ public class SellingArea implements SellingareaBlService {
 			return rs;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
+			
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
-		return null;
 	}
 
 	public ResultMessage createReceiving(AcceptVO vo) {
@@ -46,8 +47,8 @@ public class SellingArea implements SellingareaBlService {
 			return rs;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
-		return null;
 	}
 
 	public ResultMessage createDelivery(DeliverVO vo) {
@@ -59,9 +60,9 @@ public class SellingArea implements SellingareaBlService {
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
 
-		return null;
 	}
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
@@ -73,9 +74,9 @@ public class SellingArea implements SellingareaBlService {
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
 
-		return null;
 	}
 
 	public ResultMessage manageCarinfo(CarVO vo, Operation op) {
@@ -98,6 +99,7 @@ public class SellingArea implements SellingareaBlService {
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				return ResultMessage.FunctionError;
 			}
 		} else {
 			try {
@@ -106,11 +108,12 @@ public class SellingArea implements SellingareaBlService {
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				return ResultMessage.FunctionError;
 			}
 
 		}
-
 		return null;
+
 	}
 
 	public CarVO findCar(String id) {
@@ -124,6 +127,7 @@ public class SellingArea implements SellingareaBlService {
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			
 		}
 		return null;
 	}
