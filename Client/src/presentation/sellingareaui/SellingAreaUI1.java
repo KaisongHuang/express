@@ -40,7 +40,6 @@ public class SellingAreaUI1 extends JPanel{
 
 	private int width;
 	private int height;
-	private JLabel label1;
 
 	/**
 	 * Create the application.
@@ -63,7 +62,7 @@ public class SellingAreaUI1 extends JPanel{
 
 
 
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(new Color(158,211,238));
 		this.setBounds(136, 114, 711, 439);
 
 		this.setLayout(null);
@@ -240,12 +239,6 @@ public class SellingAreaUI1 extends JPanel{
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 }

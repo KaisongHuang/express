@@ -5,16 +5,15 @@
 package presentation.courierui;
 
 import javax.swing.JPanel;
+
 import javax.swing.JLabel;
 
-<<<<<<< HEAD
+import java.awt.Color;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-=======
 import java.awt.Color;
 
->>>>>>> origin/hks
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -52,9 +51,11 @@ public class CourierUI extends JPanel{
 	private JComboBox<String> comboBox;
 	private JButton btnNewButton_10;
 	private JButton btnNewButton_11;
+	@SuppressWarnings("unused")
 	private int width;
+	@SuppressWarnings("unused")
 	private int height;
-    private JLabel label1;
+	
 	/**
 	 * Create the application.
 	 * @param width
@@ -65,7 +66,7 @@ public class CourierUI extends JPanel{
 		this.width=width;
 		this.height=height;
 		initialize();
-		this.setImage();
+		//this.setImage();
 		this.setVisible(true);
 	}
 
@@ -73,7 +74,7 @@ public class CourierUI extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-
+		setBackground(new Color(158, 211, 238));
 
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));
@@ -413,13 +414,8 @@ public class CourierUI extends JPanel{
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 
+	@SuppressWarnings("unused")
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-
-		label1.setIcon(icon1);
-		this.add(label1);
+		
 	}
 }

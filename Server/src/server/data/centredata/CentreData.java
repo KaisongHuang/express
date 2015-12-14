@@ -26,9 +26,9 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		String sql=null;
 		if(po instanceof CentreArrivalPO){
 			CentreArrivalPO po1=(CentreArrivalPO) po;
-			sql="insert into CentreArrival values("+po1.getCentreID()+",'"+po1.getGetDate()+"',"+po1.getTransferID()+",'"+po1.getStart()+"','"+po1.getExpressState()+"',"+po1.getIsCheck()+"',"+po1.getIsInstorage()+")";
+			sql="insert into CentreArrival values("+po1.getID()+",'"+po1.getGetDate()+"',"+po1.getTransferID()+",'"+po1.getStart()+"','"+po1.getExpressState()+"',"+po1.getIsCheck()+"',"+po1.getIsInstorage()+")";
 		    rm=db.insert(sql);
-		    his.Centre(po1.getTransforID(), po1.getCentreID(), po1.getExpressState());
+		    his.Centre(po1.getID(), po1.getID(), po1.getExpressState());
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO po1=(CentreTransforPO) po;
 			for(int i=0;i<po1.getList().size();i++){

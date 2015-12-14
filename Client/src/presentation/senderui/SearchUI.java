@@ -23,15 +23,8 @@ public class SearchUI extends JPanel {
 	private JTextField textField;
 	JLabel label;
 	JButton btnNewButton;
-<<<<<<< HEAD
-	private String path=System.getProperty("user.dir")+"\\Client\\";
-
-=======
-	
-	
->>>>>>> origin/hks
 	public SearchUI() {
-	   
+		this.setBackground(new Color(158,211,238));
 		this.setBounds(200,100,900,600);
 		this.setLayout(null);
 		label = new JLabel("订单编号：");

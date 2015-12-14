@@ -48,11 +48,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-<<<<<<< HEAD
-		EmployeeMes.employeePosition = "Admin";
-=======
 		EmployeeMes.employeePosition = "管理员";
->>>>>>> origin/hks
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
@@ -74,15 +70,12 @@ public class MainFrame implements ActionListener {
 		label2 = new JLabel();
 
 		label2.setBounds(0, 0, width, height / 5);
-<<<<<<< HEAD
 
 		ImageIcon icon1 = new ImageIcon("image/蓝色背景.png");
 		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
 		ImageIcon icon2 = new ImageIcon("image/EXPRESS1.png");
-=======
-		ImageIcon icon2 = new ImageIcon("image/装饰图.png");
->>>>>>> origin/hks
-		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
+
+		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_SMOOTH));
 
 		
 		label2.setIcon(icon2);
@@ -90,7 +83,7 @@ public class MainFrame implements ActionListener {
 		button1 = new JButton();
 		button1.setBorderPainted(false);
 		ImageIcon bi1 = new ImageIcon(this.getClass().getResource("/黄色按钮.png"));
-		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button1.setIcon(bi1);
 		button1.setContentAreaFilled(false);
 		button1.addActionListener(new ActionListener() {
@@ -102,7 +95,7 @@ public class MainFrame implements ActionListener {
 		button2 = new JButton();
 		button2.setBorderPainted(false);
 		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/绿色按钮.png"));
-		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button2.setIcon(bi2);
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,12 +103,10 @@ public class MainFrame implements ActionListener {
 			}
 		});
 		button2.setContentAreaFilled(false);
-
-		
 		button3 = new JButton();
 		button3.setBorderPainted(false);
 		ImageIcon bi3 = new ImageIcon(this.getClass().getResource("/红色按钮.png"));
-		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
 	
@@ -136,16 +127,10 @@ public class MainFrame implements ActionListener {
 		
 		panel2.add(label2);
 
-<<<<<<< HEAD
 		frame.getContentPane().add(panel1);
 		frame.getContentPane().add(panel2);
 		frame.getContentPane().add(panel3);
 
-=======
-		frame.add(panel1);
-		frame.add(panel2);
-		frame.add(panel3);
->>>>>>> origin/hks
 		frame.setVisible(true);
 	}
 

@@ -3,6 +3,7 @@ package data.logindata;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import data.logindataservice.LoginDataService;
 import dataservice.logindataservice.LoginDataBaseService;
 import po.AdminPO;
@@ -13,7 +14,7 @@ public class LoginData implements LoginDataService {
 
 	public LoginData() {
 		try {
-			p = (LoginDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/LoginDataService");
+			p = RMIHelper.getLoginService();
 			System.out.println("成功连接服务器");
 		} catch (Exception e) {
 			e.printStackTrace();

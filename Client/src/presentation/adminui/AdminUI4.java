@@ -7,14 +7,11 @@ package presentation.adminui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
-<<<<<<< HEAD
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-=======
 import java.awt.Color;
 
->>>>>>> origin/hks
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener4;
@@ -36,7 +33,6 @@ public class AdminUI4 extends JPanel{
 	AdminListener4 adminlistener;
 	private int width;
 	private int height;
-	private JLabel label1;
 	/**
 	 * Create the application.
 	 * @param j
@@ -85,7 +81,7 @@ public class AdminUI4 extends JPanel{
 /**--------------------------------------Navigation Code--------------------------------------------**/
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(new Color(158,211,238));
 		JLabel label = new JLabel("删除账户名:");
 		label.setBounds(54, 43, 80, 16);
 		this.add(label);
@@ -132,13 +128,7 @@ public class AdminUI4 extends JPanel{
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 	private void setImage() {
-		label1 = new JLabel();
-		label1.setBounds(0, 0, width,height);
-		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
 
-		label1.setIcon(icon1);
-		this.add(label1);
 	}
 
 }

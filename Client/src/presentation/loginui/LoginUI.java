@@ -37,6 +37,7 @@ public class LoginUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginUI() {
+		setBackground(new Color(158, 211, 238));
 		this.setUndecorated(true);
 		label = new JLabel();
 
@@ -69,13 +70,8 @@ public class LoginUI extends JFrame {
 		logout.setBounds(840, 0, 30, 30);
 		contentPane.add(logout);
 		logout.addActionListener(listener);
-<<<<<<< HEAD
-
-		Login = new JButton();
-=======
 		
 		Login = new JButton("登录");
->>>>>>> origin/hks
 		Login.setBounds(345, 349, 134, 28);
 		contentPane.add(Login);
 		Login.addActionListener(listener);
@@ -100,13 +96,7 @@ public class LoginUI extends JFrame {
 		icon4.setImage(icon4.getImage().getScaledInstance(logout.getWidth(), logout.getHeight(), Image.SCALE_DEFAULT));
 		logout.setIcon(icon4);
 		logout.setContentAreaFilled(false);
-<<<<<<< HEAD
-
-		contentPane.add(label1);
-		contentPane.add(label2);
-=======
 		contentPane.add(label);
->>>>>>> origin/hks
 	}
 
 	public JTextField getText() {
