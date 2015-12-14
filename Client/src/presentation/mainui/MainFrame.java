@@ -48,7 +48,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "总经理";
+		EmployeeMes.employeePosition = "快递员";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
@@ -75,16 +75,15 @@ public class MainFrame implements ActionListener {
 		icon1.setImage(icon1.getImage().getScaledInstance(width, 4 * height / 5, Image.SCALE_DEFAULT));
 		ImageIcon icon2 = new ImageIcon("image/EXPRESS1.png");
 
-		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
+		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_SMOOTH));
 
 		
 		label2.setIcon(icon2);
 
 		button1 = new JButton();
 		button1.setBorderPainted(false);
-
-		ImageIcon bi1 = new ImageIcon("image/黄色按钮.png");
-		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		ImageIcon bi1 = new ImageIcon(this.getClass().getResource("/黄色按钮.png"));
+		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button1.setIcon(bi1);
 		button1.setContentAreaFilled(false);
 		button1.addActionListener(new ActionListener() {
@@ -95,8 +94,8 @@ public class MainFrame implements ActionListener {
 		
 		button2 = new JButton();
 		button2.setBorderPainted(false);
-		ImageIcon bi2 = new ImageIcon("image/绿色按钮.png");
-		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/绿色按钮.png"));
+		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button2.setIcon(bi2);
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -106,8 +105,8 @@ public class MainFrame implements ActionListener {
 		button2.setContentAreaFilled(false);
 		button3 = new JButton();
 		button3.setBorderPainted(false);
-		ImageIcon bi3 = new ImageIcon("image/红色按钮.png");
-		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		ImageIcon bi3 = new ImageIcon(this.getClass().getResource("/红色按钮.png"));
+		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
 	
