@@ -5,6 +5,7 @@
 package presentation.warehouseui;
 
 import java.awt.CardLayout;
+import java.awt.Image;
 
 import javax.swing.*;
 
@@ -23,6 +24,8 @@ public class WarehouseMenuUI extends JPanel {
 	JButton button5;
 	private int width;
 	private int height;
+	private ImageIcon icon1;
+	
 	WarehouseMenuListener listen;
 
 	public WarehouseMenuUI(CardLayout card, int width, int height, JPanel panel1) {
@@ -30,6 +33,7 @@ public class WarehouseMenuUI extends JPanel {
 		this.height = height;
 
 		listen = new WarehouseMenuListener(this, card, panel1);
+		getImage();
         init();
 	}
 
@@ -40,6 +44,7 @@ public class WarehouseMenuUI extends JPanel {
 		button1 = new JButton("出库入库");
 		button1.setBounds(0, 0, width, height / 6);
 		button1.addActionListener(listen);
+		button1.setIcon(icon1);
 		this.add(button1);
 
 		button2 = new JButton("库存盘点");
@@ -76,5 +81,11 @@ public class WarehouseMenuUI extends JPanel {
 
 	public JButton getButton5() {
 		return button5;
+	}
+	
+	private void getImage(){
+		icon1 = new ImageIcon(this.getClass().getResource("/出库入库.png"));
+//		icon1.setImage(icon1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		
 	}
 }
