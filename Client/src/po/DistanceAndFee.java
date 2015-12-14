@@ -7,6 +7,7 @@ public class DistanceAndFee extends ManagerPO{
     ArrayList<String> city2;
     double distance;
     double fee;
+    
     public DistanceAndFee(ArrayList<String> city1,ArrayList<String> city2,double distance,double fee){
     	this.city1=city1;
     	this.city2=city2;

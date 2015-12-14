@@ -36,6 +36,7 @@ public class FinanceMenuUI extends JPanel{
 		
 		button1=new MyButton();//"结算管理"
 		button1.setBounds(0,0,width,height/6);
+		button1.setClicked(true);
 		button1.addActionListener(listener);
 		button1.addMouseListener(listener);
 		this.add(button1);

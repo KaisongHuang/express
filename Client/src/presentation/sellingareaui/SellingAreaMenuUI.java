@@ -60,6 +60,7 @@ public class SellingAreaMenuUI extends JPanel{
 
 		button1 = new MyButton();//"车辆装车管理"
 		button1.setBounds(0, 0, width, height/6);
+		button1.setClicked(true);
 		this.add(button1);
 
 		button4 = new MyButton();//"车辆信息管理"

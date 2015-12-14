@@ -56,6 +56,7 @@ public class AdminMenuUI extends JPanel {
 		button3.setIcon(icon1);
 		button3.setBorderPainted(false);
 		button3.setContentAreaFilled(false);
+		button3.setClicked(true);
 		button3.addActionListener(adminlistener);
 		button3.addMouseListener(adminlistener);
 		this.add(button3);
