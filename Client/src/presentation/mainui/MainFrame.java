@@ -82,14 +82,8 @@ public class MainFrame implements ActionListener {
 
 		button1 = new JButton();
 		button1.setBorderPainted(false);
-<<<<<<< HEAD
 		ImageIcon bi1 = new ImageIcon(this.getClass().getResource("/黄色按钮.png"));
 		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
-=======
-
-		ImageIcon bi1 = new ImageIcon("image/黄色按钮.png");
-		bi1.setImage(bi1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
->>>>>>> master
 		button1.setIcon(bi1);
 		button1.setContentAreaFilled(false);
 		button1.addActionListener(new ActionListener() {
@@ -100,13 +94,8 @@ public class MainFrame implements ActionListener {
 		
 		button2 = new JButton();
 		button2.setBorderPainted(false);
-<<<<<<< HEAD
 		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/绿色按钮.png"));
 		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
-=======
-		ImageIcon bi2 = new ImageIcon("image/绿色按钮.png");
-		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
->>>>>>> master
 		button2.setIcon(bi2);
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -116,13 +105,8 @@ public class MainFrame implements ActionListener {
 		button2.setContentAreaFilled(false);
 		button3 = new JButton();
 		button3.setBorderPainted(false);
-<<<<<<< HEAD
 		ImageIcon bi3 = new ImageIcon(this.getClass().getResource("/红色按钮.png"));
 		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
-=======
-		ImageIcon bi3 = new ImageIcon("image/红色按钮.png");
-		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
->>>>>>> master
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
 	
