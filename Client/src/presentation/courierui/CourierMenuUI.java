@@ -9,9 +9,9 @@ import java.awt.Color;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 import listener.courierlistener.CourierMenuListener;
+import presentation.button.MyButton;
 
 public class CourierMenuUI extends JPanel {
 
@@ -19,9 +19,9 @@ public class CourierMenuUI extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton button1;
-	JButton button2;
-	JButton button3;
+	MyButton button1;
+	MyButton button2;
+	MyButton button3;
 	private int width;
 	private int height;
 	private ImageIcon icon1;
@@ -42,37 +42,37 @@ public class CourierMenuUI extends JPanel {
 	private void initialize() {
 		this.setSize(width,height);
 		this.setLayout(null);
-		button1 = new JButton("订单输入");
+		
+		button1 = new MyButton();//"订单输入"
 		button1.setBounds(0, 0, width, height / 6);
 		button1.setBackground(Color.BLUE);
 		button1.addActionListener(cml);
-//		button1.setIcon(icon1);
-//		button1.setBorderPainted(false);
-		
-//		button1.paintComponent();
+		button1.addMouseListener(cml);
 		this.add(button1);
 
-		button2 = new JButton("收件信息输入");
+		button2 = new MyButton();//"收件信息输入"
 		button2.setBounds(0, height / 6, width, height / 6);
 		button2.addActionListener(cml);
+		button2.addMouseListener(cml);
 		this.add(button2);
 
-		button3 = new JButton("订单查询");
+		button3 = new MyButton();//"订单查询"
 		button3.setBounds(0, 2 * height / 6, width, height / 6);
 		button3.addActionListener(cml);
+		button3.addMouseListener(cml);
 		this.add(button3);
 
 	}
 
-	public JButton getButton1() {
+	public MyButton getButton1() {
 		return button1;
 	}
 
-	public JButton getButton2() {
+	public MyButton getButton2() {
 		return button2;
 	}
 
-	public JButton getButton3() {
+	public MyButton getButton3() {
 		return button3;
 	}
 
