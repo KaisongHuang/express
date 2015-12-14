@@ -34,4 +34,20 @@ public class MyButton extends JButton {
 		}
 	}
 
+	public boolean isClicked() {
+		return clicked;
+	}
+
+	public boolean isEntered() {
+		return entered;
+	}
+
+	public void setClicked(boolean clicked) {
+		this.clicked = clicked;
+	}
+
+	public void setEntered(boolean entered) {
+		this.entered = entered;
+	}
+
 }

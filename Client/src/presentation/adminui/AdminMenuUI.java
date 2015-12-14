@@ -84,19 +84,19 @@ public class AdminMenuUI extends JPanel {
 		return card;
 	}
 
-	public JButton getButton1() {
+	public MyButton getButton1() {
 		return button1;
 	}
 
-	public JButton getButton2() {
+	public MyButton getButton2() {
 		return button2;
 	}
 
-	public Component getButton3() {
+	public MyButton getButton3() {
 		return button3;
 	}
 
-	public JButton getButton4() {
+	public MyButton getButton4() {
 		return button4;
 	}
 
