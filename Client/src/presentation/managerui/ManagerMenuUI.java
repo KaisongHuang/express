@@ -4,9 +4,9 @@
 
 package presentation.managerui;
 import java.awt.CardLayout;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 import listener.managerlistener.ManagerMenuListener;
+import presentation.button.MyButton;
 
 
 public class ManagerMenuUI extends JPanel{
@@ -17,11 +17,11 @@ public class ManagerMenuUI extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	private CardLayout card;
-	private JButton button1;
-	private JButton button2;
-	private JButton button3;
-	private JButton button4;
-	private JButton button5;
+	private MyButton button1;
+	private MyButton button2;
+	private MyButton button3;
+	private MyButton button4;
+	private MyButton button5;
 	private int width;
 	private int height;
 	ManagerMenuListener managermenulistener;
@@ -47,31 +47,36 @@ public class ManagerMenuUI extends JPanel{
 		this.setSize(width,height);
 		this.setLayout(null);
 
-		button1 = new JButton("机构管理");
+		button1 = new MyButton();//"机构管理"
 		button1.setBounds(0, 0, width, height/5);
 		button1.addActionListener(managermenulistener);
+		button1.addMouseListener(managermenulistener);
 		this.add(button1);
 
-		button2 = new JButton("人员管理");
+		button2 = new MyButton();//"人员管理"
 
 		button2.setBounds(0, height/5, width, height/5);
 		button2.addActionListener(managermenulistener);
+		button2.addMouseListener(managermenulistener);
 		this.add(button2);
 
-		button3 = new JButton("审批单据");
+		button3 = new MyButton();//"审批单据"
 		button3.setBounds(0, 2*height/5, width, height/5);
 		button3.addActionListener(managermenulistener);
+		button3.addMouseListener(managermenulistener);
 		this.add(button3);
 
-		button4 = new JButton("查看统计分析");
+		button4 = new MyButton();//"查看统计分析"
 		button4.setBounds(0, 3*height/5, width, height/5);
 		button4.addActionListener(managermenulistener);
+		button4.addMouseListener(managermenulistener);
 		this.add(button4);
 
 
-		button5 = new JButton("制定");
+		button5 = new MyButton();//"制定"
 		button5.setBounds(0, 4*height/5, width, height/5);
 		button5.addActionListener(managermenulistener);
+		button5.addMouseListener(managermenulistener);
 		this.add(button5);
 
 	}
@@ -83,23 +88,23 @@ public class ManagerMenuUI extends JPanel{
 		this.card = card;
 	}
 
-	public JButton getButton1() {
+	public MyButton getButton1() {
 		return button1;
 	}
 
 
-	public JButton getButton2() {
+	public MyButton getButton2() {
 		return button2;
 	}
 
-	public JButton getButton3() {
+	public MyButton getButton3() {
 		return button3;
 	}
-	public JButton getButton4() {
+	public MyButton getButton4() {
 		return button4;
 	}
 
-	public JButton getButton5() {
+	public MyButton getButton5() {
 		return button5;
 	}
 
