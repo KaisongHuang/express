@@ -5,8 +5,6 @@
 package presentation.sellingareaui;
 
 import java.awt.CardLayout;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import listener.sellingarealistener.SellingAreaMenuListener;
 import presentation.button.MyButton;
@@ -86,7 +84,7 @@ public class SellingAreaMenuUI extends JPanel{
 	}
 
 
-	public MyButton getbutton1() {
+	public MyButton getButton1() {
 		return button1;
 	}
 
@@ -94,7 +92,7 @@ public class SellingAreaMenuUI extends JPanel{
 		this.button1 = button1;
 	}
 
-	public MyButton getbutton2() {
+	public MyButton getButton2() {
 		return button2;
 	}
 
@@ -102,7 +100,7 @@ public class SellingAreaMenuUI extends JPanel{
 		this.button2 = button2;
 	}
 
-	public MyButton getbutton3() {
+	public MyButton getButton3() {
 		return button3;
 	}
 
@@ -110,7 +108,7 @@ public class SellingAreaMenuUI extends JPanel{
 		this.button3 = button3;
 	}
 
-	public MyButton getbutton4() {
+	public MyButton getButton4() {
 		return button4;
 	}
 
