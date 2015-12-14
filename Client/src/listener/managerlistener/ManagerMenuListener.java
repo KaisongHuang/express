@@ -6,20 +6,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import presentation.managerui.*;
 
-public class ManagerMenuListener implements ActionListener {
+public class ManagerMenuListener implements ActionListener,MouseListener {
 	private CardLayout card;
 	private ManagerMenuUI ui;
-	JPanel panel1;
-	JPanel panel2;
-	JPanel panel3;
-	JPanel panel4;
-	JPanel panel5;
+	private JPanel panel1;
+	private JPanel panel2;
+	private JPanel panel3;
+	private JPanel panel4;
+	private JPanel panel5;
     private JPanel panel;
+    private boolean button1_clicked=true;
+	private boolean button2_clicked=false;
+	private boolean button3_clicked=false;
+	private boolean button4_clicked=false;
+	private boolean button5_clicked=false;
 
 	public ManagerMenuListener(ManagerMenuUI managerMenuUI, CardLayout card, JPanel panel12) {
 		// TODO Auto-generated constructor stub
@@ -42,6 +46,31 @@ public class ManagerMenuListener implements ActionListener {
 		} else if (e.getSource() == ui.getButton5()) {
 			card.show(panel, "11");
 		}
+
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
