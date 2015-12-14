@@ -5,11 +5,11 @@
 package presentation.sellingareaui;
 
 import java.awt.CardLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import listener.sellingarealistener.SellingAreaMenuListener;
+import presentation.button.MyButton;
 
 
 public class SellingAreaMenuUI extends JPanel{
@@ -21,11 +21,11 @@ public class SellingAreaMenuUI extends JPanel{
 
 	private CardLayout card;
 
-	private JButton btnNewButton_7;
-	private JButton btnNewButton_8;
-	private JButton btnNewButton_9;
-	private JButton btnNewButton_12;
-	private JButton button;
+	private MyButton button1;
+	private MyButton button2;
+	private MyButton button3;
+	private MyButton button4;
+	private MyButton button;
 	private int width;
 	private int height;
 	SellingAreaMenuListener sellingarealistener;
@@ -52,76 +52,77 @@ public class SellingAreaMenuUI extends JPanel{
 	    this.setSize(width,height);
 		this.setLayout(null);
 
-		btnNewButton_8 = new JButton("接受与派件");
-		btnNewButton_8.setBounds(0, height/6, width, height/6);
-		this.add(btnNewButton_8);
+		button2 = new MyButton();//"接受与派件"
+		button2.setBounds(0, height/6, width, height/6);
+		this.add(button2);
 
-		btnNewButton_9 = new JButton("收款");
-		btnNewButton_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_9.setBounds(0, 2*height/6, width, height/6);
-		this.add(btnNewButton_9);
+		button3 = new MyButton();//"收款"
+		button3.setBounds(0, 2*height/6, width, height/6);
+		this.add(button3);
 
-		btnNewButton_7 = new JButton("车辆装车管理");
-		btnNewButton_7.setBounds(0, 0, width, height/6);
-		this.add(btnNewButton_7);
+		button1 = new MyButton();//"车辆装车管理"
+		button1.setBounds(0, 0, width, height/6);
+		this.add(button1);
 
-		btnNewButton_12 = new JButton("车辆信息管理");
-		btnNewButton_12.setBounds(0, 3*height/6, width,height/6);
-		this.add(btnNewButton_12);
+		button4 = new MyButton();//"车辆信息管理"
+		button4.setBounds(0, 3*height/6, width,height/6);
+		this.add(button4);
 
-		button = new JButton("司机信息管理");
+		button = new MyButton();//"司机信息管理"
 		button.setBounds(0, 4*height/6, width, height/6);
 		this.add(button);
 
-		btnNewButton_7.addActionListener(sellingarealistener);
-		btnNewButton_8.addActionListener(sellingarealistener);
-		btnNewButton_9.addActionListener(sellingarealistener);
-		btnNewButton_12.addActionListener(sellingarealistener);
+		button1.addActionListener(sellingarealistener);
+		button2.addActionListener(sellingarealistener);
+		button3.addActionListener(sellingarealistener);
+		button4.addActionListener(sellingarealistener);
 		button.addActionListener(sellingarealistener);
+		button1.addMouseListener(sellingarealistener);
+		button2.addMouseListener(sellingarealistener);
+		button3.addMouseListener(sellingarealistener);
+		button4.addMouseListener(sellingarealistener);
+		button.addMouseListener(sellingarealistener);
 
 	}
 
 
-	public JButton getBtnNewButton_7() {
-		return btnNewButton_7;
+	public MyButton getbutton1() {
+		return button1;
 	}
 
-	public void setBtnNewButton_7(JButton btnNewButton_7) {
-		this.btnNewButton_7 = btnNewButton_7;
+	public void setbutton1(MyButton button1) {
+		this.button1 = button1;
 	}
 
-	public JButton getBtnNewButton_8() {
-		return btnNewButton_8;
+	public MyButton getbutton2() {
+		return button2;
 	}
 
-	public void setBtnNewButton_8(JButton btnNewButton_8) {
-		this.btnNewButton_8 = btnNewButton_8;
+	public void setbutton2(MyButton button2) {
+		this.button2 = button2;
 	}
 
-	public JButton getBtnNewButton_9() {
-		return btnNewButton_9;
+	public MyButton getbutton3() {
+		return button3;
 	}
 
-	public void setBtnNewButton_9(JButton btnNewButton_9) {
-		this.btnNewButton_9 = btnNewButton_9;
+	public void setbutton3(MyButton button3) {
+		this.button3 = button3;
 	}
 
-	public JButton getBtnNewButton_12() {
-		return btnNewButton_12;
+	public MyButton getbutton4() {
+		return button4;
 	}
 
-	public void setBtnNewButton_12(JButton btnNewButton_12) {
-		this.btnNewButton_12 = btnNewButton_12;
+	public void setbutton4(MyButton button4) {
+		this.button4 = button4;
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 
-	public void setButton(JButton button) {
+	public void setButton(MyButton button) {
 		this.button = button;
 	}
 
