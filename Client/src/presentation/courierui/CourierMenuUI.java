@@ -5,6 +5,10 @@
 package presentation.courierui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import listener.courierlistener.CourierMenuListener;
@@ -20,6 +24,7 @@ public class CourierMenuUI extends JPanel {
 	JButton button3;
 	private int width;
 	private int height;
+	private ImageIcon icon1;
 	CardLayout card;
 	CourierMenuListener cml;
 
@@ -29,6 +34,7 @@ public class CourierMenuUI extends JPanel {
 		this.width = width;
 		this.height = height;
 		cml = new CourierMenuListener(this, card,panel1);
+		getImage();
 		initialize();
 
 	}
@@ -38,7 +44,12 @@ public class CourierMenuUI extends JPanel {
 		this.setLayout(null);
 		button1 = new JButton("订单输入");
 		button1.setBounds(0, 0, width, height / 6);
+		button1.setBackground(Color.BLUE);
 		button1.addActionListener(cml);
+//		button1.setIcon(icon1);
+//		button1.setBorderPainted(false);
+		
+//		button1.paintComponent();
 		this.add(button1);
 
 		button2 = new JButton("收件信息输入");
@@ -67,5 +78,11 @@ public class CourierMenuUI extends JPanel {
 
 	public CardLayout getCard() {
 		return card;
+	}
+	
+	private void getImage(){
+		icon1 = new ImageIcon(this.getClass().getResource("/出库入库.png"));
+		icon1.setImage(icon1.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		
 	}
 }
