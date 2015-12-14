@@ -18,17 +18,26 @@ public class CourierBlService_Stub implements CourierBlService{
 
 	public String getTime(double distance) {
 		
-		return "2��3Сʱ";
+		return "00:00:00";
 	}
 
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
-		// TODO �Զ���ɵķ������
 		return ResultMessage.Success;
 	}
 
 	public ResultMessage OrderInput(SenderVO vo, DistanceAndFee daf) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public double getPrice(String type, String city1, String city2, double packing) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public double getTime(String start, String end) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
     
 	

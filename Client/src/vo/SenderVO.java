@@ -2,8 +2,8 @@ package vo;
 
 public class SenderVO {
 
-	String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone;
-	String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone;
+	String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone,SenderCity;
+	String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone,RecipientCity;
 	int pcs, weight, volume;
 	String commodity;
 	String size = "";
@@ -181,5 +181,21 @@ public class SenderVO {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public void setSenderCity(String senderCity){
+		SenderCity=senderCity;
+	}
+	
+	public void setRecipientCity(String recipientCity){
+		RecipientCity=recipientCity;
+	}
+
+	public String getSenderCity() {
+		return SenderCity;
+	}
+
+	public String getRecipientCity() {
+		return RecipientCity;
 	}
 }
