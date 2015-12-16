@@ -49,7 +49,7 @@ public class ManagerMenuUI extends JPanel{
 		this.setSize(width,height);
 		this.setLayout(null);
 
-		button1 = new MyButton("机构管理","导航/manager/机构管理.png");//"机构管理"
+		button1 = new MyButton("机构管理","/导航/manager/机构管理.png");//"机构管理"
 		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.setClicked(true);
 		button1.addActionListener(managermenulistener);
