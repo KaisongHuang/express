@@ -18,6 +18,7 @@ public class MyButton extends JButton {
 	private boolean entered = false;
 
 	public MyButton() {
+		this.setBorderPainted(false);
 	}
 
 	public MyButton(String text){
