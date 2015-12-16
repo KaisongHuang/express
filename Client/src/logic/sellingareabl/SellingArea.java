@@ -23,33 +23,33 @@ public class SellingArea implements SellingareaBlService {
 	SellingAreaData sd = new SellingAreaData();
 
 	public ResultMessage manageCarPack(CarPackVO vo) {
-		ResultMessage rs;
+		ResultMessage rm=null;
 
 		CarPackPO po = new CarPackPO(vo.getDate(), vo.getNumber(), vo.getStart(), vo.getDestination(),
 				vo.getSupervisor(), vo.getSupercargo(), vo.getList(), vo.getFee(), vo.getIsCheck());
 
 		try {
-			rs = sd.insert(po);
-			return rs;
+			rm = sd.insert(po);
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 
 			e.printStackTrace();
-			return ResultMessage.FunctionError;
+			rm=ResultMessage.FunctionError;
 		}
+		return rm;
 	}
 
 	public ResultMessage createReceiving(AcceptVO vo) {
-		ResultMessage rs;
+		ResultMessage rm=null;
 		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getStart(),
 				vo.getIsCheck());
 		try {
-			rs = sd.insert(po);
-			return rs;
+			rm = sd.insert(po);
 		} catch (RemoteException e) {
 			e.printStackTrace();
-			return ResultMessage.FunctionError;
+			rm=ResultMessage.FunctionError;
 		}
+		return rm;
 	}
 
 	public ResultMessage createDelivery(DeliverVO vo) {
