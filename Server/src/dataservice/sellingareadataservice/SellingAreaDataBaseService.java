@@ -14,5 +14,6 @@ public interface SellingAreaDataBaseService extends Remote{
        public ResultMessage update(Object po)throws RemoteException;
        public ResultMessage delete(Object po)throws RemoteException;
        public ResultMessage insert(Object po)throws RemoteException;
+       public double getDistance(String city1,String city2) throws RemoteException;
        
 }
