@@ -34,7 +34,6 @@ public class CourierMenuUI extends JPanel {
 		this.width = width;
 		this.height = height;
 		cml = new CourierMenuListener(this, card,panel1);
-		getImage();
 		initialize();
 
 	}
@@ -81,9 +80,4 @@ public class CourierMenuUI extends JPanel {
 		return card;
 	}
 	
-	private void getImage(){
-		icon1 = new ImageIcon(this.getClass().getResource("/出库入库.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
-		
-	}
 }
