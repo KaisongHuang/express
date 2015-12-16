@@ -51,5 +51,9 @@ public class SellingAreaData implements SellingareaDataService {
 		return sa.update(po);
 
 	}
+	
+	public double getDistance(String city1,String city2) throws RemoteException{
+		return sa.getDistance(city1, city2);
+	}
 
 }

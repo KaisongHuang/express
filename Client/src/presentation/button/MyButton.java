@@ -2,7 +2,11 @@ package presentation.button;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class MyButton extends JButton {
 
@@ -16,6 +20,23 @@ public class MyButton extends JButton {
 	public MyButton() {
 	}
 
+	public MyButton(String text){
+		JLabel label=new JLabel();
+		label.setText(text);
+		label.setAlignmentX(CENTER_ALIGNMENT);
+		this.add(label);
+	}
+	
+	public MyButton(String text,String path){
+		JLabel label=new JLabel();
+		ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
+		icon.setImage(icon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH));
+		label.setText(text);
+		label.setIcon(icon);
+		label.setAlignmentX(CENTER_ALIGNMENT);
+		this.add(label);
+	}
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		if (clicked) {

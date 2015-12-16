@@ -49,16 +49,15 @@ public class CourierData implements CourierDataService {
 		return rm;
 	}
 
-	public double getPrice(double fee, double packing) throws RemoteException {
+	public double[] getDistanceAndFee(String city1, String city2) throws RemoteException {
 		
-		return 0;
+		return cd.getDistanceAndFee(city1,city2);
 	}
 
-	public String getTime(int distance) throws RemoteException {
-		return null;
+	public double getTime(String start, String end) throws RemoteException {
+		return cd.getTime(start,end);
 		
 	}
-
 	
 
 }
