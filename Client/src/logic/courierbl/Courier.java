@@ -83,14 +83,14 @@ public class Courier implements CourierBlService {
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
 		// TODO Auto-generated method stub
 
-		ResultMessage rm;
+		ResultMessage rm=null;
 		CourierPO po = new CourierPO(vo.getNumber(),vo.getName(),vo.getDate());
 		try {
 			rm=cd.insert(po);
-			return rm;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
 
 		return null;

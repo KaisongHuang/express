@@ -54,7 +54,7 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage manageMember(Object tempvo, Opera op) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 
 		if (tempvo instanceof EmployeeVO) {
 			EmployeeVO vo = (EmployeeVO) tempvo;
@@ -67,10 +67,10 @@ public class Manager implements ManagerBlService {
 					rm = md.delete(po);
 				else
 					rm = md.update(po);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		} else if (tempvo instanceof InstitutionVO) {
 			InstitutionVO vo = (InstitutionVO) tempvo;
@@ -82,19 +82,20 @@ public class Manager implements ManagerBlService {
 					rm = md.delete(po);
 				else
 					rm = md.update(po);
-				return rm;
+				
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		}
 
-		return null;
+		return rm;
 	}
 
 	public ResultMessage checkDocument(Object vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 
 		if (vo instanceof CarPackVO) {
 			CarPackVO vo1 = (CarPackVO) vo;
@@ -104,10 +105,11 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po1);
-				return rm;
+				
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof ReceiptVO) {
@@ -118,11 +120,11 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po4);
-				return rm;
+		
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
-
+				rm=ResultMessage.FunctionError;
 			}
 		} else if (vo instanceof AcceptVO) {
 			AcceptVO vo5 = (AcceptVO) vo;
@@ -132,10 +134,11 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po5);
-				return rm;
+		
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof DeliverVO) {
@@ -145,10 +148,11 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po6);
-				return rm;
+			
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof CentreArrivalVO) {
@@ -159,10 +163,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po7);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof CentreTransforVO) {
@@ -174,10 +178,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po8);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof PackVO) {
@@ -189,10 +193,10 @@ public class Manager implements ManagerBlService {
 			vo9.setIsCheck(1);
 			try {
 				rm = md.update(po9);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof InStorageVO) {
@@ -204,10 +208,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po10);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof OutStorageVO) {
@@ -218,10 +222,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po11);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof PayVO) {
@@ -232,34 +236,35 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po13);
-				return rm;
+
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 
 		}
 
-		return null;
+		return rm;
 	}
 
 	public ResultMessage checkStatistics(Object tempvo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 
 		if (tempvo instanceof SalaryVO) {
 			SalaryVO vo = (SalaryVO) tempvo;
 			SalaryPO po = new SalaryPO(vo.getEmployeeName(), vo.getSalaryMethod());
 			try {
 				rm = md.update(po);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		}
 
-		return null;
+		return rm;
 	}
 
 	public ArrayList<String> checkLogging(Object vo) {
