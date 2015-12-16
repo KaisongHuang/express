@@ -25,6 +25,7 @@ public class MyButton extends JButton {
 		JLabel label=new JLabel();
 		label.setText(text);
 		label.setAlignmentX(CENTER_ALIGNMENT);
+		this.setBorderPainted(false);
 		this.add(label);
 	}
 	
@@ -35,6 +36,7 @@ public class MyButton extends JButton {
 		label.setText(text);
 		label.setIcon(icon);
 		label.setAlignmentX(CENTER_ALIGNMENT);
+		this.setBorderPainted(false);
 		this.add(label);
 	}
 	
