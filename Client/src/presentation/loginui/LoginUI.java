@@ -84,7 +84,7 @@ public class LoginUI extends JFrame {
 		label.setBounds(0, 0, width, height / 5);
 
 		
-		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/装饰图.png"));
+		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/背景/装饰图.png"));
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_DEFAULT));
 		label.setIcon(icon2);
 
@@ -92,7 +92,7 @@ public class LoginUI extends JFrame {
 
 
 		logout.setBorderPainted(false);
-		ImageIcon icon4 = new ImageIcon(this.getClass().getResource("/红色按钮.png"));
+		ImageIcon icon4 = new ImageIcon(this.getClass().getResource("/按钮/红色按钮.png"));
 		icon4.setImage(icon4.getImage().getScaledInstance(logout.getWidth(), logout.getHeight(), Image.SCALE_DEFAULT));
 		logout.setIcon(icon4);
 		logout.setContentAreaFilled(false);
