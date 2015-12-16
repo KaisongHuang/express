@@ -30,10 +30,10 @@ public class MyButton extends JButton {
 	public MyButton(String text,String path){
 		JLabel label=new JLabel();
 		ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
-		icon.setImage(icon.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+		icon.setImage(icon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH));
 		label.setText(text);
 		label.setIcon(icon);
-		label.setAlignmentX(CENTER_ALIGNMENT/2);
+		label.setAlignmentX(CENTER_ALIGNMENT);
 		this.add(label);
 	}
 	
