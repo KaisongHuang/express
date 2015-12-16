@@ -5,12 +5,9 @@
 package presentation.mainui;
 
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -48,7 +45,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "管理员";
+		EmployeeMes.employeePosition = "营业厅业务员";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);

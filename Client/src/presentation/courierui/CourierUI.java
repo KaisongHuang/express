@@ -44,7 +44,25 @@ public class CourierUI extends JPanel{
 	private JTextField textField_12;
 	private JTextField textField_13;
 	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	public JTextField getTextField_15() {
+		return textField_15;
+	}
 
+	public JTextField getTextField_16() {
+		return textField_16;
+	}
+
+	public JTextField getTextField_17() {
+		return textField_17;
+	}
+
+	public JTextField getTextField_18() {
+		return textField_18;
+	}
 
 	CourierListener0 courierlistener;
 	private JComboBox<String> comboBox_1;
@@ -55,6 +73,7 @@ public class CourierUI extends JPanel{
 	private int width;
 	@SuppressWarnings("unused")
 	private int height;
+
 	
 	/**
 	 * Create the application.
@@ -83,11 +102,11 @@ public class CourierUI extends JPanel{
 		this.add(lblNewLabel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("寄件人姓名：");
-		lblNewLabel_2.setBounds(10, 25, 72, 30);
+		lblNewLabel_2.setBounds(10, 25, 84, 30);
 		this.add(lblNewLabel_2);
 
 		textField = new JTextField();
-		textField.setBounds(83, 26, 100, 30);
+		textField.setBounds(83, 26, 121, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
@@ -96,34 +115,34 @@ public class CourierUI extends JPanel{
 		this.add(lblNewLabel_3);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(287, 26, 122, 30);
+		textField_1.setBounds(253, 25, 65, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
 		JLabel label = new JLabel("单位：");
-		label.setBounds(434, 28,65, 27);
+		label.setBounds(9, 63,65, 27);
 		this.add(label);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(500, 26, 122, 30);
+		textField_2.setBounds(83, 61, 121, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
 		JLabel lblNewLabel_4 = new JLabel("电话：");
-		lblNewLabel_4.setBounds(10, 65, 72, 24);
+		lblNewLabel_4.setBounds(216, 64, 72, 24);
 		this.add(lblNewLabel_4);
 
 		textField_3 = new JTextField();
-		textField_3.setBounds(83, 62, 100, 31);
+		textField_3.setBounds(253, 62, 122, 29);
 		this.add(textField_3);
 		textField_3.setColumns(10);
 
 		JLabel label_1 = new JLabel("手机：");
-		label_1.setBounds(216, 67, 65, 21);
+		label_1.setBounds(387, 66, 65, 21);
 		this.add(label_1);
 
 		textField_4 = new JTextField();
-		textField_4.setBounds(287, 66, 122, 30);
+		textField_4.setBounds(429, 61, 154, 30);
 		this.add(textField_4);
 		textField_4.setColumns(10);
 
@@ -132,11 +151,11 @@ public class CourierUI extends JPanel{
 		this.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_6 = new JLabel("收件人姓名：");
-		lblNewLabel_6.setBounds(10, 117, 72, 27);
+		lblNewLabel_6.setBounds(10, 117, 84, 27);
 		this.add(lblNewLabel_6);
 
 		textField_5 = new JTextField();
-		textField_5.setBounds(83, 114, 100, 30);
+		textField_5.setBounds(83, 114, 121, 30);
 		this.add(textField_5);
 		textField_5.setColumns(10);
 
@@ -145,34 +164,34 @@ public class CourierUI extends JPanel{
 		this.add(lblNewLabel_7);
 
 		textField_6 = new JTextField();
-		textField_6.setBounds(287, 118, 122, 30);
+		textField_6.setBounds(253, 115, 65, 30);
 		this.add(textField_6);
 		textField_6.setColumns(10);
 
 		JLabel label_2 = new JLabel("单位：");
-		label_2.setBounds(434, 120, 65, 24);
+		label_2.setBounds(10, 163, 65, 24);
 		this.add(label_2);
 
 		textField_7 = new JTextField();
-		textField_7.setBounds(500, 112, 122, 30);
+		textField_7.setBounds(83, 160, 122, 30);
 		this.add(textField_7);
 		textField_7.setColumns(10);
 
 		JLabel lblNewlabel = new JLabel("电话：");
-		lblNewlabel.setBounds(9, 163, 73, 25);
+		lblNewlabel.setBounds(216, 163, 73, 25);
 		this.add(lblNewlabel);
 
 		textField_8 = new JTextField();
-		textField_8.setBounds(83, 158, 100, 30);
+		textField_8.setBounds(253, 160, 122, 30);
 		this.add(textField_8);
 		textField_8.setColumns(10);
 
 		JLabel label_3 = new JLabel("手机：");
-		label_3.setBounds(216, 166, 72, 22);
+		label_3.setBounds(387, 164, 72, 22);
 		this.add(label_3);
 
 		textField_9 = new JTextField();
-		textField_9.setBounds(287, 161, 122, 30);
+		textField_9.setBounds(429, 160, 154, 30);
 		this.add(textField_9);
 		textField_9.setColumns(10);
 
@@ -185,7 +204,7 @@ public class CourierUI extends JPanel{
 		this.add(label_5);
 
 		textField_10 = new JTextField();
-		textField_10.setBounds(83, 220, 100, 30);
+		textField_10.setBounds(83, 220, 121, 30);
 		this.add(textField_10);
 		textField_10.setColumns(10);
 
@@ -199,11 +218,11 @@ public class CourierUI extends JPanel{
 		textField_11.setColumns(10);
 
 		JLabel lblNewLabel_9 = new JLabel("体积：");
-		lblNewLabel_9.setBounds(434, 229, 65, 21);
+		lblNewLabel_9.setBounds(461, 228, 65, 21);
 		this.add(lblNewLabel_9);
 
 		textField_12 = new JTextField();
-		textField_12.setBounds(500, 224, 122, 30);
+		textField_12.setBounds(511, 223, 122, 30);
 		this.add(textField_12);
 		textField_12.setColumns(10);
 
@@ -212,7 +231,7 @@ public class CourierUI extends JPanel{
 		this.add(lblNewLabel_10);
 
 		textField_13 = new JTextField();
-		textField_13.setBounds(83, 259, 100, 31);
+		textField_13.setBounds(83, 259, 121, 31);
 		this.add(textField_13);
 		textField_13.setColumns(10);
 
@@ -230,7 +249,7 @@ public class CourierUI extends JPanel{
 		this.add(lblNewLabel_12);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(81, 312, 102, 28);
+		comboBox.setBounds(81, 312, 123, 28);
 		comboBox.addItem("快递袋");
 		comboBox.addItem("纸箱");
 		comboBox.addItem("木箱");
@@ -256,6 +275,42 @@ public class CourierUI extends JPanel{
 		btnNewButton_11 = new JButton("\u6E05\u7A7A");
 		btnNewButton_11.setBounds(529, 384, 100, 30);
 		this.add(btnNewButton_11);
+		
+		textField_15 = new JTextField();
+		textField_15.setColumns(10);
+		textField_15.setBounds(396, 25, 65, 30);
+		add(textField_15);
+		
+		textField_16 = new JTextField();
+		textField_16.setColumns(10);
+		textField_16.setBounds(520, 25, 154, 30);
+		add(textField_16);
+		
+		textField_17 = new JTextField();
+		textField_17.setColumns(10);
+		textField_17.setBounds(396, 115, 65, 30);
+		add(textField_17);
+		
+		textField_18 = new JTextField();
+		textField_18.setColumns(10);
+		textField_18.setBounds(520, 115, 154, 30);
+		add(textField_18);
+		
+		JLabel label_7 = new JLabel("省（直辖市）");
+		label_7.setBounds(320, 32, 84, 16);
+		add(label_7);
+		
+		JLabel label_9 = new JLabel("市（区）");
+		label_9.setBounds(461, 32, 52, 16);
+		add(label_9);
+		
+		JLabel label_8 = new JLabel("省（直辖市）");
+		label_8.setBounds(320, 122, 83, 16);
+		add(label_8);
+		
+		JLabel label_10 = new JLabel("市（区）");
+		label_10.setBounds(461, 122, 52, 16);
+		add(label_10);
 
 		btnNewButton_10.addActionListener(courierlistener);
 		btnNewButton_11.addActionListener(courierlistener);

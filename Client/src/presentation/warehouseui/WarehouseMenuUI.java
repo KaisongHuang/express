@@ -42,6 +42,7 @@ public class WarehouseMenuUI extends JPanel {
 
 		button1 = new MyButton();//"出库入库"
 		button1.setBounds(0, 0, width, height / 6);
+		button1.setClicked(true);
 		button1.addActionListener(listen);
 		button1.addMouseListener(listen);
 		button1.setIcon(icon1);
