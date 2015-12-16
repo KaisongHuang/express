@@ -51,7 +51,7 @@ public class MainFrame implements ActionListener {
 		frame.setUndecorated(true);
 		frame.setSize(width, height);
 		frame.setLocation(100, 100);
-
+        frame.setDefaultLookAndFeelDecorated(false);
 		panel1 = new JPanel();
 		panel2 = new JPanel();
 

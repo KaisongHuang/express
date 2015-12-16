@@ -38,6 +38,15 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public ArrayList<AccountPO> getAccount() throws RemoteException{
 		String sql="select * from Account";
 		ResultSet rs=db.find(sql);
+		ArrayList<AccountPO> list=new ArrayList<AccountPO>();
+		try {
+			while(rs.next()){
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

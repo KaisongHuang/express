@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Operation;
@@ -12,16 +13,17 @@ import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
 import presentation.adminui.AdminUI1;
+
 import vo.AdminVO;
 
 public class AdminListener1 implements MouseListener, ActionListener {
 
 	private AdminUI1 ui;
 	AdminBlService admin = new Admin();
-
 	public AdminListener1 (AdminUI1 ui){
 		super();
 		this.ui=ui;
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -34,6 +36,7 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			ResultMessage rm;
 			AdminVO vo = this.read();
 			rm=admin.manageCount(vo, Operation.insert);
+			check(rm);
 		}
 
 	}
@@ -45,8 +48,20 @@ public class AdminListener1 implements MouseListener, ActionListener {
 		String password = ui.getTextField_1().getText();
 		String role = (String) ui.getComboBox().getSelectedItem();
 		AdminVO vo = new AdminVO(id,name,password,role);
+        return vo;
+	}
 
-		return vo;
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}
+		if(dialog!=null)
+			JOptionPane.showConfirmDialog(ui, dialog);
 	}
 
 	private void delete(JTextField textField) {
