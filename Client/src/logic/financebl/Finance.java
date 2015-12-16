@@ -21,16 +21,16 @@ public class Finance implements FinanceBlService {
 
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 		PayPO po = new PayPO(vo.getDate(), vo.getPayer(), vo.getPayAccount(), vo.getEntry(), vo.getComments(),
 				vo.getCost(), vo.getIsCheck());
 		try {
 			rm = fd.insert(po);
-			return rm;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
-		return null;
+		return rm;
 	}
 
 	public ArrayList<Object> getTotal(String begin, String end) {
@@ -65,28 +65,28 @@ public class Finance implements FinanceBlService {
 
 	public ResultMessage manageAccount(AccountVO vo, Operation op) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 		AccountPO po = new AccountPO(vo.getBankAccount(), vo.getBalance());
 		if (op == Operation.insert) {
 			try {
 				rm = fd.insert(po);
-				return rm;
 			} catch (RemoteException e) {
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		} else if (op == Operation.delete) {
 			try {
 				rm = fd.delete(po);
-				return rm;
 			} catch (RemoteException e) {
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		} else if (op == Operation.update) {
 			try {
 				rm = fd.update(po);
-				return rm;
 			} catch (RemoteException e) {
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		} else {
 			// try {
@@ -96,7 +96,7 @@ public class Finance implements FinanceBlService {
 			// e.printStackTrace();
 			// }
 		}
-		return null;
+		return rm;
 	}
 
 	public ArrayList<AccountPO> findAccount(String bankAccount) {
@@ -133,16 +133,17 @@ public class Finance implements FinanceBlService {
 	public ResultMessage initAccount(AccountVO vo) {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
-		ResultMessage rm;
+		ResultMessage rm=null;
 		AccountPO po = new AccountPO(vo.getBankAccount(), vo.getBalance());
 		try {
 			rm = fd.insert(po);
-			return rm;
+	
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
-		return null;
+		return rm;
 	}
 
 	public ArrayList<AccountPO> checkInitInfo() {
