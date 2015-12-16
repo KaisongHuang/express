@@ -44,4 +44,14 @@ public class CourierDataService_Stub implements CourierDataService{
 		return null;
 	}
 
+	public double[] getDistanceAndFee(String city1, String city2) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public double getTime(String start, String end) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
