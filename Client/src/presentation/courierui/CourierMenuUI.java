@@ -46,6 +46,7 @@ public class CourierMenuUI extends JPanel {
 		button1 = new MyButton();//"订单输入"
 		button1.setBounds(0, 0, width, height / 6);
 		button1.setBackground(Color.BLUE);
+		button1.setClicked(true);
 		button1.addActionListener(cml);
 		button1.addMouseListener(cml);
 		this.add(button1);

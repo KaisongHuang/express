@@ -71,6 +71,7 @@ public class CentreMenuUI extends JPanel {
 		button1.setBounds(0, 0, width, height / 6);
 		button1.addActionListener(centreMenuListener);
 		button1.addMouseListener(centreMenuListener);
+		button1.setClicked(true);
 		this.add(button1);
 
 	}
