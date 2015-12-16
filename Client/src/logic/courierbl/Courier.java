@@ -4,7 +4,9 @@ import java.rmi.RemoteException;
 
 import _enum.ResultMessage;
 import data.courierdata.CourierData;
+import data.courierdataservice.CourierDataService;
 import data.senderdata.SenderData;
+import data.senderdataservice.SenderDataService;
 import logic.courierblservice.CourierBlService;
 import po.CourierPO;
 import po.DistanceAndFee;
@@ -14,8 +16,8 @@ import vo.SenderVO;
 
 public class Courier implements CourierBlService {
 
-	CourierData cd = new CourierData();
-	SenderData sd = new SenderData();
+	CourierDataService cd = new CourierData();
+	SenderDataService sd = new SenderData();
 
 	public ResultMessage OrderInput(SenderVO vo,DistanceAndFee daf) {
 		// TODO Auto-generated method stub
@@ -46,30 +48,54 @@ public class Courier implements CourierBlService {
 
 	}
 
+	public double getPrice(String type,String city1,String city2,double packing) {
+	    double[] d=new double[2];
+	    double fee=0;
+	    try {
+			d=cd.getDistanceAndFee(city1, city2);
+		} catch (RemoteException e) {
+		
+			e.printStackTrace();
+			return -1;
+		}
+	    if(type.equals("经快")){
+	    	fee=d[0]/1000*d[1]+packing;
+	    }else if(type.equals("普快")){
+	    	fee=d[0]/1000*d[1]*18/23+packing;
+	    }else {
+	    	fee=d[0]/1000*d[1]*18/25+packing;
+	    }
+		return  fee;
+	}
+
+	public double getTime(String start,String end) {
+		try {
+			return cd.getTime(start, end);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return 0;
+
+		
+	}
+
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
 		// TODO Auto-generated method stub
 
-		ResultMessage rm;
+		ResultMessage rm=null;
 		CourierPO po = new CourierPO(vo.getNumber(),vo.getName(),vo.getDate());
 		try {
 			rm=cd.insert(po);
-			return rm;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
 
 		return null;
 	}
 
-	public double getPrice(String type, String city1, String city2, double packing) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	public double getTime(String start, String end) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }

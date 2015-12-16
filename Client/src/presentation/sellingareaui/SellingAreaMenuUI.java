@@ -26,6 +26,7 @@ public class SellingAreaMenuUI extends JPanel{
 	private MyButton button;
 	private int width;
 	private int height;
+	private int label_height;
 	SellingAreaMenuListener sellingarealistener;
 
 	/**
@@ -37,7 +38,7 @@ public class SellingAreaMenuUI extends JPanel{
 		sellingarealistener = new SellingAreaMenuListener(this,card,panel1);
 		this.width=width;
 		this.height=height;
-
+		this.label_height = height / 10;
 		initialize();
 	}
 
@@ -50,25 +51,25 @@ public class SellingAreaMenuUI extends JPanel{
 	    this.setSize(width,height);
 		this.setLayout(null);
 
-		button2 = new MyButton();//"接受与派件"
-		button2.setBounds(0, height/6, width, height/6);
+		button2 = new MyButton("接受与派件","/导航/sellingarea/接受与派件.png");//"接受与派件"
+		button2.setBounds(0, label_height * 3, width, label_height);
 		this.add(button2);
 
-		button3 = new MyButton();//"收款"
-		button3.setBounds(0, 2*height/6, width, height/6);
+		button3 = new MyButton("录入收款单","/导航/sellingarea/录入收款单.png");//"收款"
+		button3.setBounds(0, label_height * 4, width, label_height);
 		this.add(button3);
 
-		button1 = new MyButton();//"车辆装车管理"
-		button1.setBounds(0, 0, width, height/6);
+		button1 = new MyButton("快件装车管理","/导航/sellingarea/快件装车管理.png");//"车辆装车管理"
+		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.setClicked(true);
 		this.add(button1);
 
-		button4 = new MyButton();//"车辆信息管理"
-		button4.setBounds(0, 3*height/6, width,height/6);
+		button4 = new MyButton("车辆信息管理","/导航/sellingarea/车辆信息管理.png");//"车辆信息管理"
+		button4.setBounds(0, label_height * 5, width, label_height);
 		this.add(button4);
 
-		button = new MyButton();//"司机信息管理"
-		button.setBounds(0, 4*height/6, width, height/6);
+		button = new MyButton("司机信息管理","/导航/sellingarea/司机信息管理.png");//"司机信息管理"
+		button.setBounds(0, label_height * 6, width, label_height);
 		this.add(button);
 
 		button1.addActionListener(sellingarealistener);
