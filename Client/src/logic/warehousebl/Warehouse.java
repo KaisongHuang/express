@@ -31,45 +31,45 @@ public class Warehouse implements WarehouseBlService {
 
 	public ResultMessage importGoods(InStorageVO vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
 				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
-			return rm;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
-		return null;
+		return rm;
 	}
 
 	public ResultMessage exportGoods(OutStorageVO vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm;
+		ResultMessage rm=null;
 		OutStoragePO po = new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(), vo.getWarehouseID(),
 				vo.getTransportation(), vo.getTrans_id(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
-			return rm;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
-		return null;
+		return rm;
 	}
 
 	public ResultMessage initWarehouse(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
-		ResultMessage rm;
+		ResultMessage rm=null;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
 				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
-			return rm;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			rm=ResultMessage.FunctionError;
 		}
-		return null;
+		return rm;
 	}
 
 	public ResultMessage setAlarm(double rate) {
@@ -79,7 +79,7 @@ public class Warehouse implements WarehouseBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return ResultMessage.FunctionError;
 	}
 
 	public ResultMessage checkAlarm() {
@@ -89,7 +89,7 @@ public class Warehouse implements WarehouseBlService {
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return ResultMessage.FunctionError;
 	}
 
 	public ArrayList<Object> checkWarehouse(String begin, String end) {
@@ -178,7 +178,7 @@ public class Warehouse implements WarehouseBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return ResultMessage.FunctionError;
 	}
 
 }
