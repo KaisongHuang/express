@@ -52,6 +52,7 @@ public class SellingAreaMenuUI extends JPanel{
 		this.setLayout(null);
 
 		button2 = new MyButton("接收与派件","/导航/sellingarea/接收与派件.png");//"接收与派件"
+
 		button2.setBounds(0, label_height * 3, width, label_height);
 		this.add(button2);
 
