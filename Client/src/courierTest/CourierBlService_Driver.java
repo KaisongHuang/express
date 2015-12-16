@@ -7,8 +7,8 @@ import logic.courierblservice.CourierBlService;
 
 public class CourierBlService_Driver {
 	public void drive(CourierBlService courierBlService) {
-		System.out.println(courierBlService.getPrice(10, 20));
-		System.out.println(courierBlService.getTime(1000));
+		System.out.println(courierBlService.getPrice("特快","南京","北京",12.0));
+		System.out.println(courierBlService.getTime("南京","北京"));
 		ResultMessage result;
 		result = courierBlService.OrderInput(new SenderVO(), null);
 		if (result == ResultMessage.Success)

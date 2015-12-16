@@ -31,7 +31,7 @@ public class Courier implements CourierBlService {
 
 		SenderPO po = new SenderPO(vo.getSenderName(),vo.getSenderAddress(),vo.getSenderCompany(),vo.getSenderCall(),vo.getSenderPhone(),
 				vo.getRecipientName(),vo.getRecipientAddress(),vo.getRecipientCompany(),vo.getRecipientCall(),vo.getRecipientPhone(),
-				vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),this.getPrice(daf.getFee(),packing ),
+				vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),this.getPrice(vo.getType(), vo.getSenderCity(), vo.getRecipientCity(),packing),
 				vo.getBarCode(),vo.getType());
 
 			try {
@@ -44,18 +44,6 @@ public class Courier implements CourierBlService {
 
 
 
-	}
-
-	public double getPrice(double fee, double packing) {
-		// TODO Auto-generated method stub
-		return fee+packing;
-	}
-
-	public String getTime(double distance) {
-		// TODO Auto-generated method stub
-
-
-		return null;
 	}
 
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
@@ -72,6 +60,16 @@ public class Courier implements CourierBlService {
 		}
 
 		return null;
+	}
+
+	public double getPrice(String type, String city1, String city2, double packing) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public double getTime(String start, String end) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

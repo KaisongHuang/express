@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import _enum.ResultMessage;
 import data.courierdataservice.CourierDataService;
 import dataservice.courierdataservice.CourierDataBaseService;
@@ -18,8 +19,8 @@ public class CourierData implements CourierDataService {
     SenderDataBaseService sd;
 	public CourierData(){
 		try {
-			cd=(CourierDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/CourierDataService");
-			sd=(SenderDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SenderDataService");
+			cd=RMIHelper.getCourierService();
+			sd=RMIHelper.getSenderService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

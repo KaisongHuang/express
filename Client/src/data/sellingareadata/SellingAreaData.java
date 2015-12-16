@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import po.CarPO;
 import po.DriverPO;
 import po.SellingareaPO;
@@ -17,7 +18,7 @@ public class SellingAreaData implements SellingareaDataService {
 
 	public SellingAreaData() {
 		try {
-			sa = (SellingAreaDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/SellingAreaDataService");
+			sa = RMIHelper.getSellingService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,6 +50,10 @@ public class SellingAreaData implements SellingareaDataService {
 	public ResultMessage update(SellingareaPO po) throws RemoteException {
 		return sa.update(po);
 
+	}
+	
+	public double getDistance(String city1,String city2) throws RemoteException{
+		return sa.getDistance(city1, city2);
 	}
 
 }

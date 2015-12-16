@@ -25,57 +25,59 @@ public class SellingArea implements SellingareaBlService {
 	public ResultMessage manageCarPack(CarPackVO vo) {
 		ResultMessage rs;
 
-		CarPackPO po=new CarPackPO(vo.getDate(),vo.getNumber(),vo.getStart(),vo.getDestination(),vo.getSupervisor(),vo.getSupercargo(),
-				vo.getList(),vo.getFee(),vo.getIsCheck());
+		CarPackPO po = new CarPackPO(vo.getDate(), vo.getNumber(), vo.getStart(), vo.getDestination(),
+				vo.getSupervisor(), vo.getSupercargo(), vo.getList(), vo.getFee(), vo.getIsCheck());
 
 		try {
 			rs = sd.insert(po);
 			return rs;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
+
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
-		return null;
 	}
 
 	public ResultMessage createReceiving(AcceptVO vo) {
 		ResultMessage rs;
-		AcceptPO po=new AcceptPO(vo.getBarCode(),vo.getDate(),vo.getNumber(),vo.getStart(),vo.getStart(),vo.getIsCheck());
+		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getStart(),
+				vo.getIsCheck());
 		try {
 			rs = sd.insert(po);
 			return rs;
 		} catch (RemoteException e) {
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
-		return null;
 	}
 
 	public ResultMessage createDelivery(DeliverVO vo) {
 		ResultMessage rs;
-		DeliverPO po=new DeliverPO(vo.getBarCode(),vo.getDate(),vo.getNumber(),vo.getIsCheck());
+		DeliverPO po = new DeliverPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), 0);
 		try {
 			rs = sd.insert(po);
 			return rs;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
 
-		return null;
 	}
 
 	public ResultMessage createDebitnote(ReceiptVO vo) {
 		ResultMessage rs;
-		ReceiptPO po=new ReceiptPO(vo.getMoney(),vo.getDate(),vo.getSellingArea(), vo.getNumber(),vo.getId(),vo.getIsCheck());
+		ReceiptPO po = new ReceiptPO(vo.getMoney(), vo.getDate(), vo.getSellingArea(), vo.getNumber(), vo.getId(), 0);
 		try {
 			rs = sd.insert(po);
 			return rs;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+			return ResultMessage.FunctionError;
 		}
 
-		return null;
 	}
 
 	public ResultMessage manageCarinfo(CarVO vo, Operation op) {
@@ -98,6 +100,7 @@ public class SellingArea implements SellingareaBlService {
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				return ResultMessage.FunctionError;
 			}
 		} else {
 			try {
@@ -106,24 +109,26 @@ public class SellingArea implements SellingareaBlService {
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				return ResultMessage.FunctionError;
 			}
 
 		}
-
 		return null;
+
 	}
 
 	public CarVO findCar(String id) {
 		CarPO po;
 		CarVO vo;
 		try {
-			po =  sd.findCar(id);
+			po = sd.findCar(id);
 			vo = new CarVO(po.getNumber(), po.getEngineNumber(), po.getCarNumber(), po.getChassisNumber(),
 					po.getPurchase(), po.getServiceTime());
 			return vo;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
+
 		}
 		return null;
 	}
@@ -166,7 +171,7 @@ public class SellingArea implements SellingareaBlService {
 	public DriverVO findDriver(String id) {
 		DriverPO po;
 		try {
-			po =  sd.findDriver(id);
+			po = sd.findDriver(id);
 			DriverVO vo = new DriverVO(po.getNumber(), po.getName(), po.getBirthday(), po.getID(), po.getPhone(),
 					po.getCarCompany(), po.getSex(), po.getLicenceTime());
 			return vo;
@@ -175,6 +180,26 @@ public class SellingArea implements SellingareaBlService {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public double getFee(String city1,String city2,String type,int count){
+		double distance=0;
+		double fee=0;
+		try {
+			distance=sd.getDistance(city1, city2);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        if(type.equals("汽车")){
+        	fee=distance*20*count/1000.0;
+        }else if(type.equals("火车")){
+        	fee=distance*40000*count/200000.0;
+        }else if(type.equals("飞机")){
+        	fee=distance*1000*count/5000.0;
+        }
+		return fee;
+		
 	}
 
 }

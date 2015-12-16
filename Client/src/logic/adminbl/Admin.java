@@ -22,7 +22,7 @@ public class Admin implements AdminBlService {
 			return new AdminVO(""+id,ap.getName(),ap.getPassword(),ap.getRole());
 		}catch(RemoteException e){
 
-			e.printStackTrace();
+			
 
 		}
 
@@ -32,39 +32,39 @@ public class Admin implements AdminBlService {
 	public ResultMessage manageCount(AdminVO vo, Operation op) {
 		// TODO Auto-generated method stub
 
-		ResultMessage rm;
+		ResultMessage rm=null;
 		AdminPO po;
 
 		if(op==Operation.insert){
 			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
 			try {
 				rm=ad.insert(po);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		}else if(op==Operation.delete){
 			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
 			try {
 				rm=ad.delete(po);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		}else if(op==Operation.update){
 			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
 			try {
 				rm=ad.update(po);
-				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 		}
 
-		return null;
+		return rm;
 	}
 
 }

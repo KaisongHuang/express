@@ -5,11 +5,9 @@
 package presentation.financeui;
 
 import java.awt.CardLayout;
-
-import javax.swing.JButton;
 import javax.swing.JPanel;
-
 import listener.financelistener.FinanceMenuListener;
+import presentation.button.MyButton;
 
 public class FinanceMenuUI extends JPanel{
 
@@ -17,10 +15,10 @@ public class FinanceMenuUI extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton button1;
-	JButton button2;
-	JButton button3;
-	JButton button4;
+	MyButton button1;
+	MyButton button2;
+	MyButton button3;
+	MyButton button4;
 	FinanceMenuListener listener;
 	private int width;
 	private int height;
@@ -35,34 +33,43 @@ public class FinanceMenuUI extends JPanel{
 	private void init(){
 		this.setSize(width,height);
 		this.setLayout(null);
-		button1=new JButton("结算管理");
+		
+		button1=new MyButton();//"结算管理"
 		button1.setBounds(0,0,width,height/6);
-		this.add(button1);
+		button1.setClicked(true);
 		button1.addActionListener(listener);
-		button2=new JButton("成本管理");
+		button1.addMouseListener(listener);
+		this.add(button1);
+		
+		button2=new MyButton();//"成本管理"
 		button2.setBounds(0,height/6,width,height/6);
-		this.add(button2);
 		button2.addActionListener(listener);
-		button3=new JButton("统计报表");
+		button2.addMouseListener(listener);
+		this.add(button2);
+		
+		button3=new MyButton();//"统计报表"
 		button3.setBounds(0,2*height/6,width,height/6);
-		this.add(button3);
 		button3.addActionListener(listener);
-		button4=new JButton("账户管理");
+		button3.addMouseListener(listener);
+		this.add(button3);
+		
+		button4=new MyButton();//"账户管理"
 		button4.setBounds(0,3*height/6,width,height/6);
-		this.add(button4);
 		button4.addActionListener(listener);
+		button4.addMouseListener(listener);
+		this.add(button4);
 
 	}
-	public JButton getButton1(){
+	public MyButton getButton1(){
 		return button1;
 	}
-	public JButton getButton2(){
+	public MyButton getButton2(){
 		return button2;
 	}
-	public JButton getButton3(){
+	public MyButton getButton3(){
 		return button3;
 	}
-	public JButton getButton4(){
+	public MyButton getButton4(){
 		return button4;
 	}
 }

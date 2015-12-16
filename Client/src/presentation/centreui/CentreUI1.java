@@ -74,7 +74,7 @@ public class CentreUI1 extends JPanel{
 		lblNewLabel_1.setBounds(202, 6, 100, 18);
 		panel_6.add(lblNewLabel_1);
 
-		JLabel lblNewLabel_2 = new JLabel("到达日期：");
+		JLabel lblNewLabel_2 = new JLabel("装车日期：");
 		lblNewLabel_2.setBounds(19, 44, 100, 18);
 		panel_6.add(lblNewLabel_2);
 

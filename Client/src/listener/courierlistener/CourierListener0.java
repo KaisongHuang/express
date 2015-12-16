@@ -62,15 +62,34 @@ public class CourierListener0 implements ActionListener {
 	private SenderVO read() {
 		// TODO Auto-generated method stub
 		String SenderName = ui.getTextField().getText();
-		String SenderAddress = ui.getTextField_1().getText();
+		String SenderCity = "";
+		
+		if (ui.getTextField_1().getText().equals("北京") || ui.getTextField_1().getText().equals("天津")
+				|| ui.getTextField_1().getText().equals("上海") || ui.getTextField_1().getText().equals("重庆"))
+			SenderCity = ui.getTextField_1().getText();
+		else
+			SenderCity = ui.getTextField_15().getText();
+		
+		String SenderAddress = ui.getTextField_1().getText() + ui.getTextField_15().getText()
+				+ ui.getTextField_16().getText();
 		String SenderCompany = ui.getTextField_2().getText();
 		String SenderCall = ui.getTextField_3().getText();
 		String SenderPhone = ui.getTextField_4().getText();
+
 		String RecipientName = ui.getTextField_5().getText();
-		String RecipientAddress = ui.getTextField_6().getText();
+		String RecipientCity = "";
+		if (ui.getTextField_6().getText().equals("北京") || ui.getTextField_6().getText().equals("天津")
+				|| ui.getTextField_6().getText().equals("上海") || ui.getTextField_6().getText().equals("重庆"))
+			RecipientCity = ui.getTextField_6().getText();
+		else
+			RecipientCity = ui.getTextField_17().getText();
+		
+		String RecipientAddress = ui.getTextField_6().getText() + ui.getTextField_17().getText()
+				+ ui.getTextField_18().getText();
 		String RecipientCompany = ui.getTextField_7().getText();
 		String RecipientCall = ui.getTextField_8().getText();
 		String RecipientPhone = ui.getTextField_9().getText();
+
 		String pcs = ui.getTextField_10().getText();
 		String weight = ui.getTextField_11().getText();
 		String volume = ui.getTextField_12().getText();
@@ -83,7 +102,8 @@ public class CourierListener0 implements ActionListener {
 		SenderVO vo = new SenderVO(SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone, RecipientName,
 				RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone, Integer.parseInt(pcs),
 				Integer.parseInt(weight), Integer.parseInt(volume), commodity, size, bagging, BarCode, type);
-
+		vo.setSenderCity(SenderCity);
+		vo.setRecipientCity(RecipientCity);
 		return vo;
 	}
 
@@ -91,6 +111,5 @@ public class CourierListener0 implements ActionListener {
 		// TODO Auto-generated method stub
 		textField.setText("");
 	}
-
 
 }

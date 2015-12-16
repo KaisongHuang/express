@@ -68,22 +68,22 @@ public class FinanceUI1 extends JPanel {
 
 		comboBox = new JComboBox<Object>();
 		comboBox.setBounds(127, 34, 61, 25);
-		comboBox.setSelectedIndex(0);
+//		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
 
 		comboBox_1 = new JComboBox<Object>();
 		comboBox_1.setBounds(200, 34, 61, 25);
-		comboBox_1.setSelectedIndex(0);
+//		comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 
 		comboBox_2 = new JComboBox<Object>();
 		comboBox_2.setBounds(273, 34, 61, 25);
-		comboBox_2.setSelectedIndex(0);
+//		comboBox_2.setSelectedIndex(0);
 		this.add(comboBox_2);
 
 		comboBox_3 = new JComboBox<Object>();
 		comboBox_3.setBounds(408, 34, 85, 25);
-		comboBox_3.setSelectedIndex(0);
+//		comboBox_3.setSelectedIndex(0);
 		this.add(comboBox_3);
 
 		label = new JLabel("营业厅:");

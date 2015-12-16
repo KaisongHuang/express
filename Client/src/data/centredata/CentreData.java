@@ -5,6 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
+import RMI.RMIHelper;
 import _enum.ResultMessage;
 import data.centredataservice.CentreDataService;
 import dataservice.centredataservice.CentreDataBaseService;
@@ -15,7 +16,7 @@ public class CentreData implements CentreDataService {
 	ResultMessage rm;
 	public CentreData(){
 		try {
-			cd=(CentreDataBaseService) Naming.lookup("rmi://127.0.0.1:8000/CentreDataService");
+			cd=RMIHelper.getCentreService();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

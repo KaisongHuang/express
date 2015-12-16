@@ -2,16 +2,16 @@ package vo;
 
 public class CentreArrivalVO {
 
-	String centreID;
+	String ID;
 	String getDate;
 	String transferID;
 	String start;
 	String expressState;
 	int isCheck;
 
-	public CentreArrivalVO(String ci, String gd, String ti, String start, String es, int isCheck) {
+	public CentreArrivalVO(String id, String gd, String ti, String start, String es, int isCheck) {
 
-		this.centreID = ci;
+		this.ID = id;
 		this.getDate = gd;
 		this.transferID = ti;
 		this.start = start;
@@ -29,12 +29,10 @@ public class CentreArrivalVO {
 	}
 
 	public String getCentreID() {
-		return centreID;
+		return ID;
 	}
 
-	public void setCentreID(String centreID) {
-		this.centreID = centreID;
-	}
+	
 
 	public String getGetDate() {
 		return getDate;
