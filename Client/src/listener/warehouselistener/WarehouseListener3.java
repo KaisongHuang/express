@@ -24,7 +24,7 @@ public class WarehouseListener3 implements ActionListener {
 	public WarehouseListener3(WarehouseUI3 ui) {
 		super();
 		this.ui = ui;
-		warehouse.setAlarm(90);
+//		warehouse.setAlarm(90);
 	}
 
 	public void actionPerformed(ActionEvent e) {
