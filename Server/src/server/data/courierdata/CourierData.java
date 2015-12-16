@@ -68,4 +68,55 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 
 	}
 
+	public double[] getDistanceAndFee(String city1,String city2) throws RemoteException {
+		String sql1="select * from DistanceAndFee where city1='"+city1+"' and city2='"+city2+"';";
+		ResultSet rs=null;
+		rs=db.find(sql1);
+		double[] distance=new double[2];
+
+		try {
+			if(rs.wasNull()){
+				sql1="select * from DistanceAndFee where city1='"+city2+"' and city2='"+city1+"';";
+			}
+			distance[0]=rs.getDouble(4);
+			distance[1]=rs.getDouble(3);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return distance;
+		
+	}
+	
+	public double getTime(String start,String end) throws RemoteException{
+		int i=0;
+		double time=0;
+		int time1=0;
+		int time2=0;
+		String sql=null;
+		ResultSet rs1=null;
+		ResultSet rs2=null;
+	    String code=null;
+	    sql="select * from CarPack where start='"+start+"' and destination='"+end+"';";
+	    rs1=db.find(sql);
+	    try {
+			while(rs1.next()&&i<1000){
+				code=rs1.getString(7);
+				time1=Integer.parseInt(rs1.getString(0));
+				sql="select * from Courier where number='"+code+"';";
+				rs2=db.find(sql);
+				time2=Integer.parseInt(rs2.getString(3));
+				if(time1/100==time2/100){
+					i++;
+					time+=(time2-time1);
+				}
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    time/=1000;
+		return time;
+	}
 }
