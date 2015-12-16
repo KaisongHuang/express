@@ -28,7 +28,7 @@ public class AdminMenuUI extends JPanel {
 	private MyButton button4;
 	private int width;
 	private int height;
-
+	private int label_height;
 	/*
 	 * 构造
 	 */
@@ -37,6 +37,7 @@ public class AdminMenuUI extends JPanel {
 		adminlistener = new AdminMenuListener(this, card,panel1);
 		this.width = width;
 		this.height = height;
+		this.label_height=height/10;
 		initialize();
 	}
 
@@ -49,32 +50,27 @@ public class AdminMenuUI extends JPanel {
 		this.setLayout(null);
 
 		
-		button3 = new MyButton();//"新增账户"
-		button3.setBounds(0, 0, width, height / 10);
-		ImageIcon icon1 = new ImageIcon("image/新增账户.png");
-		icon1.setImage(icon1.getImage().getScaledInstance(width, height / 10, Image.SCALE_DEFAULT));
-		button3.setIcon(icon1);
-		button3.setBorderPainted(false);
-		button3.setContentAreaFilled(false);
+		button3 = new MyButton("新增账户","/导航/admin/新增账户.png");//"新增账户"
+		button3.setBounds(0, label_height * 2, width, label_height);
 		button3.setClicked(true);
 		button3.addActionListener(adminlistener);
 		button3.addMouseListener(adminlistener);
 		this.add(button3);
 
-		button4 = new MyButton();//"权限管理"
-		button4.setBounds(0, height / 6, width, height / 6);
+		button4 = new MyButton("权限管理","/导航/admin/权限管理.png");//"权限管理"
+		button4.setBounds(0, label_height * 3, width, label_height);
 		button4.addActionListener(adminlistener);
 		button4.addMouseListener(adminlistener);
 		this.add(button4);
 
-		button2 = new MyButton();//"修改密码"
-		button2.setBounds(0, 2 * height / 6, width, height / 6);
+		button2 = new MyButton("修改密码","/导航/admin/修改密码.png");//"修改密码"
+		button2.setBounds(0, label_height * 4, width, label_height);
 		button2.addActionListener(adminlistener);
 		button2.addMouseListener(adminlistener);
 		this.add(button2);
 
-		button1 = new MyButton();//"删除账户"
-		button1.setBounds(0, 3 * height / 6, width, height / 6);
+		button1 = new MyButton("删除账户","/导航/admin/删除账户.png");//"删除账户"
+		button1.setBounds(0, label_height * 5, width, label_height);
 		button1.addActionListener(adminlistener);
 		button1.addMouseListener(adminlistener);
 		this.add(button1);

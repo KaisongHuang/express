@@ -23,6 +23,7 @@ public class CentreMenuUI extends JPanel {
 	private MyButton button4;
 	private int width;
 	private int height;
+	private int label_height;
 	CentreMenuListener centreMenuListener;
 
 	/**
@@ -37,7 +38,7 @@ public class CentreMenuUI extends JPanel {
 		this.card = card;
 		this.width = width;
 		this.height = height;
-
+		this.label_height = height / 10;
 		initialize();
 
 	}
@@ -48,31 +49,33 @@ public class CentreMenuUI extends JPanel {
 	private void initialize() {
 		this.setSize(width, height);
 		this.setLayout(null);
-
-		button2 = new MyButton();// "飞机装运"
-		button2.setBounds(0, height / 6, width, height / 6);
-		button2.addActionListener(centreMenuListener);
-		button2.addMouseListener(centreMenuListener);
-		this.add(button2);
-
-		button3 = new MyButton();// "火车装运"
-		button3.setBounds(0, 2 * height / 6, width, height / 6);
-		button3.addActionListener(centreMenuListener);
-		button3.addMouseListener(centreMenuListener);
-		this.add(button3);
-
-		button4 = new MyButton();// "汽车装运"
-		button4.setBounds(0, 3 * height / 6, width, height / 6);
-		button4.addActionListener(centreMenuListener);
-		button4.addMouseListener(centreMenuListener);
-		this.add(button4);
-
-		button1 = new MyButton();// "接受单"
-		button1.setBounds(0, 0, width, height / 6);
+		
+		button1 = new MyButton("运单管理","/导航/centre/运单管理.png");// "接受单"
+		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.addActionListener(centreMenuListener);
 		button1.addMouseListener(centreMenuListener);
 		button1.setClicked(true);
 		this.add(button1);
+
+		button2 = new MyButton("飞机装运","/导航/centre/飞机装运.png");// "飞机装运"
+		button2.setBounds(0, label_height * 3, width, label_height);
+		button2.addActionListener(centreMenuListener);
+		button2.addMouseListener(centreMenuListener);
+		this.add(button2);
+
+		button3 = new MyButton("火车装运","/导航/centre/火车装运.png");// "火车装运"
+		button3.setBounds(0, label_height * 4, width, label_height);
+		button3.addActionListener(centreMenuListener);
+		button3.addMouseListener(centreMenuListener);
+		this.add(button3);
+
+		button4 = new MyButton("汽车装运","/导航/centre/汽车装运.png");// "汽车装运"
+		button4.setBounds(0, label_height * 5, width, label_height);
+		button4.addActionListener(centreMenuListener);
+		button4.addMouseListener(centreMenuListener);
+		this.add(button4);
+
+		
 
 	}
 
