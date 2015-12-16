@@ -45,7 +45,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "仓库管理员";
+		EmployeeMes.employeePosition = "管理员";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
@@ -68,7 +68,7 @@ public class MainFrame implements ActionListener {
 
 		label2.setBounds(0, 0, width, height / 5);
 
-		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/背景/EXPRESS1.png"));
+		ImageIcon icon2 = new ImageIcon(this.getClass().getResource("/背景/卡车装饰图.png"));
 
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_SMOOTH));
 
