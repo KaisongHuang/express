@@ -148,11 +148,11 @@ public class MainFrame implements ActionListener {
 			panel1.add(new SellingAreaUI(4*width/5,4*height/5), "0");
 			panel1.add(new SellingAreaUI1(4*width/5,4*height/5), "1");
 			panel1.add(new SellingAreaUI2(4*width/5,4*height/5), "2");
-			panel1.add(new SellingAreaUI30(4*width/5,4*height/5), "3");
-			panel1.add(new SellingAreaUI4(Card,4*width/5,4*height/5), "7");
-			panel1.add(new SellingAreaUI41(Card,4*width/5,4*height/5), "8");
-			panel1.add(new SellingAreaUI42(Card,4*width/5,4*height/5), "9");
-			panel1.add(new SellingAreaUI43(Card,4*width/5,4*height/5), "10");
+			panel1.add(new SellingAreaUI3(4*width/5,4*height/5), "3");
+			panel1.add(new SellingAreaUI4_1(Card,4*width/5,4*height/5), "7");
+			panel1.add(new SellingAreaUI4_2(Card,4*width/5,4*height/5), "8");
+			panel1.add(new SellingAreaUI4_3(Card,4*width/5,4*height/5), "9");
+			panel1.add(new SellingAreaUI4_4(Card,4*width/5,4*height/5), "10");
 		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
 			panel1.add(new CentreUI(4*width/5,4*height/5), "0");
 			panel1.add(new CentreUI1(4*width/5,4*height/5), "1");
@@ -170,21 +170,21 @@ public class MainFrame implements ActionListener {
 			panel1.add(new FinanceUI3(), "2");
 			panel1.add(new FinanceUI4(), "3");
 		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-			panel1.add(new ManagerUI0(Card), "0");
-			panel1.add(new ManagerUI01(Card), "1");
-			panel1.add(new ManagerUI02(Card), "2");
-			panel1.add(new ManagerUI03(Card), "3");
+			panel1.add(new ManagerUI0_1(Card), "0");
+			panel1.add(new ManagerUI0_2(Card), "1");
+			panel1.add(new ManagerUI0_3(Card), "2");
+			panel1.add(new ManagerUI0_4(Card), "3");
 
-			panel1.add(new ManagerUI1(Card), "4");
-			panel1.add(new ManagerUI11(Card), "5");
-			panel1.add(new ManagerUI12(Card), "6");
-			panel1.add(new ManagerUI13(Card), "7");
-			panel1.add(new ManagerUI14(Card), "8");
+			panel1.add(new ManagerUI1_1(Card), "4");
+			panel1.add(new ManagerUI1_2(Card), "5");
+			panel1.add(new ManagerUI1_3(Card), "6");
+			panel1.add(new ManagerUI1_4(Card), "7");
+			panel1.add(new ManagerUI1_5(Card), "8");
 
 			panel1.add(new ManagerUI2(), "9");
 			panel1.add(new ManagerUI3(), "10");
-			panel1.add(new ManagerUI4(Card), "11");
-			panel1.add(new ManagerUI41(Card), "12");
+			panel1.add(new ManagerUI4_1(Card), "11");
+			panel1.add(new ManagerUI4_2(Card), "12");
 		} else if (EmployeeMes.employeePosition.equals("管理员")) {
 			panel1.add(new AdminUI1(4*width/5,4*height/5), "0");
 			panel1.add(new AdminUI2(4*width/5,4*height/5), "1");
