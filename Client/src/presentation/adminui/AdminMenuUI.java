@@ -69,7 +69,7 @@ public class AdminMenuUI extends JPanel {
 		button2.addMouseListener(adminlistener);
 		this.add(button2);
 
-		button1 = new MyButton("删除账户","/导航/admin/删除账户.png");//"删除账户"
+		button1 = new MyButton("删除账户","/导航/admin/删除帐户.png");//"删除账户"
 		button1.setBounds(0, label_height * 5, width, label_height);
 		button1.addActionListener(adminlistener);
 		button1.addMouseListener(adminlistener);

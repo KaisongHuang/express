@@ -23,13 +23,13 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_10()){
-			String n = ui.getTable().getToolTipText();
-			System.out.println(n);
-			ResultMessage rm;
-			ReceiptVO vo = this.read();
-			rm = sellingarea.createDebitnote(vo);
-		}
+//		if(e.getSource()==ui.getBtnNewButton_10()){
+//			String n = ui.getTable().getToolTipText();
+//			System.out.println(n);
+//			ResultMessage rm;
+//			ReceiptVO vo = this.read();
+//			rm = sellingarea.createDebitnote(vo);
+//		}
 		
 	}
 

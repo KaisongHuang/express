@@ -41,6 +41,7 @@ public class Courier implements CourierBlService {
 			} catch (RemoteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 			return rm;
 

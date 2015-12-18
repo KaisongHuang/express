@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Operation;
@@ -36,6 +37,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getButton_2()){
 			String id = ui.getTextField_2().getText();
 			vo = admin.find(id);
+			
 			setAll(vo);
 		}else if(e.getSource()==ui.getButton()){
 			ResultMessage rm;
@@ -44,6 +46,20 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		}
 
 	}
+	
+	private void checkResultMessage(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}
+		if(dialog!=null)
+			JOptionPane.showConfirmDialog(ui, dialog);
+	}
+	
 
 	private void delete1(JLabel label1) {
 		// TODO Auto-generated method stub
