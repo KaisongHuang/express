@@ -17,6 +17,11 @@ public class AcceptVO {
 		this.isCheck = isCheck;
 	}
 
+	public int chackBarCode(){
+		if(BarCode.length()!=10)
+		  return 0;
+		return 0;
+	}
 	public int getIsCheck() {
 		return isCheck;
 	}
