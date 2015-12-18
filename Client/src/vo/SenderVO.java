@@ -10,7 +10,7 @@ public class SenderVO {
 	String bagging;
 	String BarCode;
 	String type;
-
+    Check c;
 	public SenderVO(String SenderName, String SenderAddress, String SenderCompany, String SenderCall,
 			String SenderPhone, String RecipientName, String RecipientAddress, String RecipientCompany,
 			String RecipientCall, String RecipientPhone, int pcs, int weight, int volume, String commodity, String size,
@@ -33,8 +33,27 @@ public class SenderVO {
 		this.bagging = bagging;
 		this.BarCode = BarCode;
 		this.type = type;
+		c=new Check();
 	}
 
+
+	public int checkIsNull(){
+		if(SenderName.length()==0||SenderAddress.length()==0||SenderAddress.length()==0||(SenderCall.length()==0&&SenderPhone.length()==0)||
+				RecipientName.length()==0||RecipientAddress.length()==0||RecipientCompany.length()==0||(RecipientCall.length()==0&&RecipientPhone.length()==0)||
+				commodity.length()==0||size.length()==0||bagging.length()==0||type.length()==0)
+			return 0;
+		return 1;
+	}
+    public int checkSenderPhone(){
+    	if(SenderPhone.startsWith("1")&&SenderPhone.length()==11)
+    		return 1;
+    	return 0;
+    }
+    public int checkRecipientPhone(){
+    	if(RecipientPhone.startsWith("1")&&RecipientPhone.length()==11)
+    		return 1;
+    	return 0;
+    }
 	public SenderVO() {
 	}
 
