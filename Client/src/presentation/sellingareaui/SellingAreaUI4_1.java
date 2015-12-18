@@ -34,14 +34,6 @@ public class SellingAreaUI4_1 extends JPanel{
 
 	private JButton btnNewButton_16;
 
-	private JButton btnNewButton_14;
-
-	private JButton btnNewButton_13;
-
-	private JButton btnNewButton_11;
-
-	private JButton btnNewButton_10;
-
 	private JLabel lblNewLabel_17;
 	private JLabel lblNewLabel_15;
 	private JLabel lblNewLabel_13;
@@ -58,8 +50,8 @@ public class SellingAreaUI4_1 extends JPanel{
 	 * @param j
 	 * @param i
 	 */
-	public SellingAreaUI4_1(CardLayout card, int i, int j) {
-		sellingarealistener = new SellingAreaListener4_1(this,card);
+	public SellingAreaUI4_1( int i, int j) {
+		sellingarealistener = new SellingAreaListener4_1(this);
 		width=i;
 		height=j;
 		initialize();
@@ -77,27 +69,7 @@ public class SellingAreaUI4_1 extends JPanel{
 
 		this.setLayout(null);
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 746, 45);
-		this.add(panel_5);
-		panel_5.setLayout(null);
 
-		btnNewButton_10 = new JButton("\u67E5\u8BE2");
-		btnNewButton_10.setBackground(new Color(255, 248, 220));
-		btnNewButton_10.setBounds(64, 6, 90, 30);
-		panel_5.add(btnNewButton_10);
-
-		btnNewButton_11 = new JButton("\u66F4\u65B0");
-		btnNewButton_11.setBounds(223, 6, 90, 30);
-		panel_5.add(btnNewButton_11);
-
-		btnNewButton_13 = new JButton("\u5220\u9664");
-		btnNewButton_13.setBounds(371, 6, 90, 30);
-		panel_5.add(btnNewButton_13);
-
-		btnNewButton_14 = new JButton("\u6DFB\u52A0");
-		btnNewButton_14.setBounds(540, 6, 90, 30);
-		panel_5.add(btnNewButton_14);
 
 		JLabel lblNewLabel_1 = new JLabel("司机编号：");
 		lblNewLabel_1.setBounds(24, 56, 100, 18);
@@ -185,10 +157,6 @@ public class SellingAreaUI4_1 extends JPanel{
 		lblNewLabel_17.setBounds(431, 152, 100, 18);
 		panel_6.add(lblNewLabel_17);
 
-		btnNewButton_10.addActionListener(sellingarealistener);
-		btnNewButton_11.addActionListener(sellingarealistener);
-		btnNewButton_13.addActionListener(sellingarealistener);
-		btnNewButton_14.addActionListener(sellingarealistener);
 		btnNewButton_15.addActionListener(sellingarealistener);
 		btnNewButton_16.addActionListener(sellingarealistener);
 
@@ -218,37 +186,6 @@ public class SellingAreaUI4_1 extends JPanel{
 		this.btnNewButton_16 = btnNewButton_16;
 	}
 
-	public JButton getBtnNewButton_14() {
-		return btnNewButton_14;
-	}
-
-	public void setBtnNewButton_14(JButton btnNewButton_14) {
-		this.btnNewButton_14 = btnNewButton_14;
-	}
-
-	public JButton getBtnNewButton_13() {
-		return btnNewButton_13;
-	}
-
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
-		this.btnNewButton_13 = btnNewButton_13;
-	}
-
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
 
 	public JLabel getLblNewLabel_17() {
 		return lblNewLabel_17;

@@ -19,22 +19,14 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 	
 	private ManagerUI0_2 ui;
 	ManagerBlService manager = new Manager();
-	CardLayout card;
-	public ManagerListener0_2 (ManagerUI0_2 ui, CardLayout card){
+	public ManagerListener0_2 (ManagerUI0_2 ui){
 		super();
 		this.ui=ui;
-		this.card=card;
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-        if(e.getSource()==ui.getBtnNewButton_12()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_14()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
+       if(e.getSource()==ui.getBtnNewButton_15()){
 			String s = ui.getTextField().getText();
 			EmployeeVO vo = (EmployeeVO) manager.find(s,Opera.Employee_find);
 			setLabel(vo);

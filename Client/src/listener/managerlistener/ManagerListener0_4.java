@@ -1,6 +1,5 @@
 package listener.managerlistener;
 
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -19,26 +18,19 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 
 	private ManagerUI0_4 ui;
 	ManagerBlService manager = new Manager();
-	CardLayout card;
-	public ManagerListener0_4 (ManagerUI0_4 ui, CardLayout card) {
+
+	public ManagerListener0_4(ManagerUI0_4 ui) {
 		super();
-		this.ui=ui;
-		this.card=card;
+		this.ui = ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_11()){
-				
-		}else if(e.getSource()==ui.getBtnNewButton_12()){
-				
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
-				
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
+		if (e.getSource() == ui.getBtnNewButton_15()) {
 			ResultMessage rm;
 			EmployeeVO vo = this.read();
-			rm = manager.manageMember(vo,Opera.Employee_insert);
-		}else if(e.getSource()==ui.getBtnNewButton_16()){
+			rm = manager.manageMember(vo, Opera.Employee_insert);
+		} else if (e.getSource() == ui.getBtnNewButton_16()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_2());
 			delete(ui.getTextField_3());
@@ -46,7 +38,7 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 			delete(ui.getTextField_5());
 			delete(ui.getTextField_1());
 		}
-		
+
 	}
 
 	private void delete(JTextField textField) {
@@ -62,36 +54,36 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 		String belongToWho = ui.getTextField_4().getText();
 		String employeeAging = ui.getTextField_3().getText();
 		String timeOfWorking = ui.getTextField_5().getText();
-		
-		EmployeeVO vo = new EmployeeVO(employeeID, employeeName, Integer.parseInt(employeeAging),
-				employeePosition, Integer.parseInt(timeOfWorking), belongToWho);
-		
+
+		EmployeeVO vo = new EmployeeVO(employeeID, employeeName, Integer.parseInt(employeeAging), employeePosition,
+				Integer.parseInt(timeOfWorking), belongToWho);
+
 		return vo;
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
