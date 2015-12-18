@@ -48,8 +48,8 @@ public class SellingAreaUI33 extends JPanel{
 	 * @param j
 	 * @param i
 	 */
-	public SellingAreaUI33(CardLayout card, int i, int j) {
-		sellingarealistener = new SellingAreaListener33(this,card);
+	public SellingAreaUI33(int i, int j) {
+		sellingarealistener = new SellingAreaListener33(this);
 		width=i;
 		height=j;
 		initialize();
@@ -63,31 +63,9 @@ public class SellingAreaUI33 extends JPanel{
 	private void initialize() {
 
 		this.setBackground(new Color(158,211,238));
-		this.setBounds(136, 114, 746, 439);
+		this.setBounds(136, 114, 746, 394);
 
 		this.setLayout(null);
-
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 745, 45);
-		this.add(panel_5);
-		panel_5.setLayout(null);
-
-		btnNewButton_10 = new JButton("\u67E5\u8BE2");
-		btnNewButton_10.setBounds(44, 8, 90, 30);
-		panel_5.add(btnNewButton_10);
-
-		btnNewButton_11 = new JButton("\u66F4\u65B0");
-		btnNewButton_11.setBounds(194, 8, 90, 30);
-		panel_5.add(btnNewButton_11);
-
-		btnNewButton_13 = new JButton("\u5220\u9664");
-		btnNewButton_13.setBounds(348, 8, 90, 30);
-		panel_5.add(btnNewButton_13);
-
-		btnNewButton_14 = new JButton("\u6DFB\u52A0");
-		btnNewButton_14.setBackground(new Color(255, 248, 220));
-		btnNewButton_14.setBounds(525, 8, 90, 30);
-		panel_5.add(btnNewButton_14);
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(35, 97, 634, 187);
@@ -149,17 +127,13 @@ public class SellingAreaUI33 extends JPanel{
 		textField_5.setColumns(10);
 
 		btnNewButton_15 = new JButton("\u6DFB\u52A0");
-		btnNewButton_15.setBounds(107, 377, 100, 30);
+		btnNewButton_15.setBounds(252, 296, 100, 30);
 		this.add(btnNewButton_15);
 
 		btnNewButton_16 = new JButton("\u53D6\u6D88");
-		btnNewButton_16.setBounds(491, 377, 100, 30);
+		btnNewButton_16.setBounds(364, 296, 100, 30);
 		this.add(btnNewButton_16);
 
-		btnNewButton_10.addActionListener(sellingarealistener);
-		btnNewButton_11.addActionListener(sellingarealistener);
-		btnNewButton_13.addActionListener(sellingarealistener);
-		btnNewButton_14.addActionListener(sellingarealistener);
 		btnNewButton_15.addActionListener(sellingarealistener);
 		btnNewButton_16.addActionListener(sellingarealistener);
 

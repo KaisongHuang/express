@@ -34,7 +34,6 @@ public class FinanceUI4 extends JPanel {
 		financeListener4 = new FinanceListener4(this);
 
 		initialize();
-		//this.setImage();
 		this.setVisible(true);
 	}
 
@@ -72,8 +71,5 @@ public class FinanceUI4 extends JPanel {
 
 	public FinanceUI4_2 getUi2() {
 		return ui2;
-	}
-	private void setImage() {
-
 	}
 }
