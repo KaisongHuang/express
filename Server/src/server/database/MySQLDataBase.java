@@ -62,14 +62,17 @@ public class MySQLDataBase {
       }
       
       public  ResultMessage insert(String sql){
+    	  int i=0;
     	  try {
     		  
-			 ((java.sql.Statement) st).executeUpdate(sql);
+			 i=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 			return ResultMessage.Fail;
 		}
+    	  if(i==0)
+    		  return ResultMessage.UpdateFail;
     	  return ResultMessage.Success;
       }
       
@@ -91,27 +94,33 @@ System.out.println("database ok");
       }
       
       public  ResultMessage delete(String sql){
+    	  int i=0;
     	  try {
     	
-			  int c=((java.sql.Statement) st).executeUpdate(sql);
+			  i=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 			return ResultMessage.Fail;
 		}
+    	  if(i==0)
+    		  return ResultMessage.UpdateFail;
     	  return ResultMessage.Success;
     	  
       }
       
       public  ResultMessage update(String sql){
+    	  int i=0;
     	  try {
     		
-			  int c=((java.sql.Statement) st).executeUpdate(sql);
+			  i=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 			return ResultMessage.Fail;
 		}
+    	  if(i==0)
+    		  return ResultMessage.UpdateFail;
     	  return ResultMessage.Success;
     	  
       }
