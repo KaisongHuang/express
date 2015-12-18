@@ -26,68 +26,61 @@ public class WarehousePO {
 
 	}
 
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
-
-	public void setWarehouseID(String warehouseID) {
-		WarehouseID = warehouseID;
-	}
-
-	public void setCarpai(int carpai) {
-		this.carpai = carpai;
-	}
-
-	public void setCarjia(int carjia) {
-		this.carjia = carjia;
-	}
-
-	public void setCarwei(int carwei) {
-		this.carwei = carwei;
-	}
-
-	public void setTrainpai(int trainpai) {
-		this.trainpai = trainpai;
-	}
-
-	public void setTrainjia(int trainjia) {
-		this.trainjia = trainjia;
-	}
-
-	public void setTrainwei(int trainwei) {
-		this.trainwei = trainwei;
-	}
-
-	public void setAirpai(int airpai) {
-		this.airpai = airpai;
-	}
-
-	public void setAirjia(int airjia) {
-		this.airjia = airjia;
-	}
-
-	public void setAirwei(int airwei) {
-		this.airwei = airwei;
-	}
-
-	public void setPai(int pai) {
-		this.pai = pai;
-	}
-
-	public void setJia(int jia) {
-		this.jia = jia;
-	}
-
-	public void setWei(int wei) {
-		this.wei = wei;
-	}
-
-	public void setAlarmRate(double rate) {
-		this.rate = rate;
-	}
-
-	public double getAlarmRate() {
+	public double getRate() {
 		return rate;
 	}
+
+	public String getWarehouseID() {
+		return WarehouseID;
+	}
+
+	public int getCarpai() {
+		return carpai;
+	}
+
+	public int getCarjia() {
+		return carjia;
+	}
+
+	public int getCarwei() {
+		return carwei;
+	}
+
+	public int getTrainpai() {
+		return trainpai;
+	}
+
+	public int getTrainjia() {
+		return trainjia;
+	}
+
+	public int getTrainwei() {
+		return trainwei;
+	}
+
+	public int getAirpai() {
+		return airpai;
+	}
+
+	public int getAirjia() {
+		return airjia;
+	}
+
+	public int getAirwei() {
+		return airwei;
+	}
+
+	public int getPai() {
+		return pai;
+	}
+
+	public int getJia() {
+		return jia;
+	}
+
+	public int getWei() {
+		return wei;
+	}
+
 
 }

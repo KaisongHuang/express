@@ -35,12 +35,24 @@ public class AdminListener1 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			ResultMessage rm;
 			AdminVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm=admin.manageCount(vo, Operation.insert);
 			check(rm);
 		}
 
 	}
 
+	private boolean check(AdminVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+			return false;
+		}
+		if(true){
+			
+		}
+			return true;
+	}
 	private AdminVO read() {
 		// TODO Auto-generated method stub
 		String name = ui.getTextField_3().getText();

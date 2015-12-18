@@ -21,6 +21,17 @@ public class WarehouseVO {
 		this.WarehouseID = WarehouseID;
 	}
 
+	
+	public int checkID(){
+		if(WarehouseID.length()!=6)
+   		 return 0;
+   	 try{
+   		 Integer.parseInt(WarehouseID);
+   	 }catch(NumberFormatException e){
+   		 return 0;
+   	 }
+   	 return 1;
+	}
 
 	public void setRate(double rate) {
 		this.rate = rate;

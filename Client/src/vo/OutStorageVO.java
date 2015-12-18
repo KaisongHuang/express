@@ -1,6 +1,6 @@
 package vo;
 
-public class OutStorageVO extends WarehouseVO {
+public class OutStorageVO {
 	String id;
 	String destination;
 	String WarehouseID;
@@ -38,6 +38,15 @@ public class OutStorageVO extends WarehouseVO {
     	return 1;
     }
     
+	public String getId() {
+		return id;
+	}
+	public String getDestination() {
+		return destination;
+	}
+	public Check getC() {
+		return c;
+	}
 	public OutStorageVO() {
 	}
 
@@ -79,5 +88,13 @@ public class OutStorageVO extends WarehouseVO {
 
 	public String getWarehouseID(){
 		return WarehouseID;
+	}
+	public void setId(String exportID) {
+		id=exportID;
+		
+	}
+	public void setDestination(String Destination) {
+		destination=Destination;
+		
 	}
 }
