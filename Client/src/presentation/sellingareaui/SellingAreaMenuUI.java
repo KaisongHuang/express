@@ -5,9 +5,11 @@
 package presentation.sellingareaui;
 
 import java.awt.CardLayout;
+import java.awt.Color;
+
 import javax.swing.JPanel;
 import listener.sellingarealistener.SellingAreaMenuListener;
-import presentation.button.MyButton;
+import presentation.button.NaviButton;
 
 
 public class SellingAreaMenuUI extends JPanel{
@@ -19,11 +21,11 @@ public class SellingAreaMenuUI extends JPanel{
 
 	private CardLayout card;
 
-	private MyButton button1;
-	private MyButton button2;
-	private MyButton button3;
-	private MyButton button4;
-	private MyButton button;
+	private NaviButton button1;
+	private NaviButton button2;
+	private NaviButton button3;
+	private NaviButton button4;
+	private NaviButton button;
 	private int width;
 	private int height;
 	private int label_height;
@@ -39,6 +41,7 @@ public class SellingAreaMenuUI extends JPanel{
 		this.width=width;
 		this.height=height;
 		this.label_height = height / 10;
+		this.setBackground(new Color(246,246,246));
 		initialize();
 	}
 
@@ -51,24 +54,25 @@ public class SellingAreaMenuUI extends JPanel{
 	    this.setSize(width,height);
 		this.setLayout(null);
 
-		button2 = new MyButton("接受与派件","/导航/sellingarea/接收与派件.png");//"接受与派件"
+		button2 = new NaviButton("接收与派件","/导航/sellingarea/接收与派件.png");//"接收与派件"
+
 		button2.setBounds(0, label_height * 3, width, label_height);
 		this.add(button2);
 
-		button3 = new MyButton("录入收款单","/导航/sellingarea/录入收款单.png");//"收款"
+		button3 = new NaviButton("录入收款单","/导航/sellingarea/录入收款单.png");//"收款"
 		button3.setBounds(0, label_height * 4, width, label_height);
 		this.add(button3);
 
-		button1 = new MyButton("快件装车管理","/导航/sellingarea/快件装车管理.png");//"车辆装车管理"
+		button1 = new NaviButton("快件装车管理","/导航/sellingarea/快件装车管理.png");//"车辆装车管理"
 		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.setClicked(true);
 		this.add(button1);
 
-		button4 = new MyButton("车辆信息管理","/导航/sellingarea/车辆信息管理.png");//"车辆信息管理"
+		button4 = new NaviButton("车辆信息管理","/导航/sellingarea/车辆信息管理.png");//"车辆信息管理"
 		button4.setBounds(0, label_height * 5, width, label_height);
 		this.add(button4);
 
-		button = new MyButton("司机信息管理","/导航/sellingarea/司机信息管理.png");//"司机信息管理"
+		button = new NaviButton("司机信息管理","/导航/sellingarea/司机信息管理.png");//"司机信息管理"
 		button.setBounds(0, label_height * 6, width, label_height);
 		this.add(button);
 
@@ -86,43 +90,43 @@ public class SellingAreaMenuUI extends JPanel{
 	}
 
 
-	public MyButton getButton1() {
+	public NaviButton getButton1() {
 		return button1;
 	}
 
-	public void setbutton1(MyButton button1) {
+	public void setbutton1(NaviButton button1) {
 		this.button1 = button1;
 	}
 
-	public MyButton getButton2() {
+	public NaviButton getButton2() {
 		return button2;
 	}
 
-	public void setbutton2(MyButton button2) {
+	public void setbutton2(NaviButton button2) {
 		this.button2 = button2;
 	}
 
-	public MyButton getButton3() {
+	public NaviButton getButton3() {
 		return button3;
 	}
 
-	public void setbutton3(MyButton button3) {
+	public void setbutton3(NaviButton button3) {
 		this.button3 = button3;
 	}
 
-	public MyButton getButton4() {
+	public NaviButton getButton4() {
 		return button4;
 	}
 
-	public void setbutton4(MyButton button4) {
+	public void setbutton4(NaviButton button4) {
 		this.button4 = button4;
 	}
 
-	public MyButton getButton() {
+	public NaviButton getButton() {
 		return button;
 	}
 
-	public void setButton(MyButton button) {
+	public void setButton(NaviButton button) {
 		this.button = button;
 	}
 

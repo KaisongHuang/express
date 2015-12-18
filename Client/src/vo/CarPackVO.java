@@ -12,6 +12,7 @@ public class CarPackVO {
       ArrayList<String> list=new ArrayList<String>();
       double fee;
       int isCheck;
+      Check c;
       public CarPackVO(String date,String number,String start,String destination,String supervisor,String supercargo,
     		  ArrayList<String> list,double fee,int isCheck){
     	  this.date=date;
@@ -24,7 +25,43 @@ public class CarPackVO {
     	  this.supercargo=supercargo;
     	  this.fee=fee;
     	  this.isCheck=isCheck;
+    	  c=new Check();
       }
+    
+    public int checkIsNull(){
+    	if(date.length()==0||number.length()==0||start.length()==0||destination.length()==0||supervisor.length()==0||
+    			supercargo.length()==0||list.size()==0)
+    		return 0;
+    	return 1;
+    }
+    public int checkDate(){
+    	return c.checkDate(date);
+    }
+    
+    public int checkNumber(){
+    	return c.checkID(number, 19);
+    }
+    public int checkSupervisor(){
+    	return c.checkID(supervisor, 10);
+    }
+    public int checkSupercargo(){
+    	return c.checkID(supercargo, 10);
+
+    }
+    
+    public int checkList(){
+    	for(int i=0;i<list.size();i++){
+    		if(c.checkID(list.get(i), 10)==0)
+    			return 0;
+    	}
+    	return 1;
+    }
+    
+    public int checkFee(){
+    	if(fee<=0)
+    		return 0;
+    	return 1;
+    }
 	public int getIsCheck() {
 		return isCheck;
 	}

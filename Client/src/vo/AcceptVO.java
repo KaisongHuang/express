@@ -7,7 +7,7 @@ public class AcceptVO {
 	String start;
 	String state;
 	int isCheck;
-
+    Check c;
 	public AcceptVO(String BarCode, String date, String number, String start, String state, int isCheck) {
 		this.BarCode = BarCode;
 		this.date = date;
@@ -15,8 +15,26 @@ public class AcceptVO {
 		this.start = start;
 		this.state = state;
 		this.isCheck = isCheck;
+		c=new Check();
 	}
 
+	public int checkIsNull(){
+		if(BarCode.length()==0||date.length()==0||number.length()==0||start.length()==0||state.length()==0)
+			return 0;
+		return 1;
+		
+	}
+	public int chackBarCode(){
+		return c.checkID(BarCode,10);
+		
+	}
+	public int checkData(){
+		return c.checkDate(date);
+	}
+	
+	public int checkNumber(){
+		return 1;
+	}
 	public int getIsCheck() {
 		return isCheck;
 	}

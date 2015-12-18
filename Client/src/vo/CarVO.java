@@ -7,7 +7,7 @@ public class CarVO {
 	String ChassisNumber;
 	String purchase;
 	int ServiceTime;
-
+    Check c;
 	public CarVO(String number, String EngineNumber, String CarNumber, String ChassisNumber, String purchase,
 			int ServiceTime) {
 		this.number = number;
@@ -16,8 +16,32 @@ public class CarVO {
 		this.ChassisNumber = ChassisNumber;
 		this.purchase = purchase;
 		this.ServiceTime = ServiceTime;
+		c=new Check();
 	}
 
+	public int checkIsNull(){
+		if(number.length()==0||EngineNumber.length()==0||CarNumber.length()==0||ChassisNumber.length()==0||purchase.length()==0)
+			return 0;
+		return 1;
+	}
+	
+	public int checkNumber(){
+		return c.checkID(number, 10);
+	}
+	public int checkEngine(){
+		return c.checkID(EngineNumber, 10);
+	}
+	public int checkCarNumber(){
+		return c.checkID(CarNumber, 10);
+	}
+    public int checkPurchase(){
+    	return 1;
+    }
+    public int checkService(){
+    	if(ServiceTime>30||ServiceTime<0)
+    		return 0;
+    	return 1;
+    }
 	public CarVO() {
 		// TODO �Զ���ɵĹ��캯����
 	}

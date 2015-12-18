@@ -4,7 +4,7 @@ public class InstitutionVO {
 
 	String organizationID;
 	String name;
-
+    
 	public InstitutionVO(String oi, String n) {
 
 		this.organizationID = oi;
@@ -13,6 +13,16 @@ public class InstitutionVO {
 
 	}
 
+	public int checkID(){
+		 if(organizationID.length()!=6)
+    		 return 0;
+    	 try{
+    		 Integer.parseInt(organizationID);
+    	 }catch(NumberFormatException e){
+    		 return 0;
+    	 }
+    	 return 1;
+	}
 	public String getOrganizationID() {
 		return organizationID;
 	}

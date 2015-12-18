@@ -9,6 +9,7 @@ public class ReceiptVO {
     String sellingArea;
     ArrayList<String> id;
     int isCheck;
+    Check c;
     public ReceiptVO(double money,String date, String sellingArea, String number,ArrayList<String> id,int isCheck){
   	  this.number=number;
   	  this.money=money;
@@ -16,6 +17,28 @@ public class ReceiptVO {
   	  this.isCheck=isCheck;
   	  this.sellingArea=sellingArea;
   	  this.id=id;
+  	  c=new Check();
+    }
+    public int checkIsNull(){
+    	if(number.length()==0||date.length()==0||sellingArea.length()==0||id.size()==0)
+    		return 0;
+    	return 1;
+    }
+    public int checkNumber(){
+    	return c.checkID(number, 10);
+    }
+    public int checkDate(){
+    	return c.checkDate(date);
+    }
+    public int checkSelling(){
+    	return c.checkID(sellingArea, 6);
+    }
+    public int checkID(){
+    	for(int i=0;i<id.size();i++)
+    		if(c.checkID(id.get(i), 10)==0)
+    			return 0;
+    		return 1;
+    	
     }
 	public ArrayList<String> getId() {
 		return id;

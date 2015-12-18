@@ -80,11 +80,12 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 			}
 			distance[0]=rs.getDouble(4);
 			distance[1]=rs.getDouble(3);
+			return distance;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return distance;
+		return null;
 		
 	}
 	

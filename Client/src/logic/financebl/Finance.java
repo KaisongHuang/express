@@ -38,7 +38,7 @@ public class Finance implements FinanceBlService {
 		ArrayList<Object> arr = new ArrayList<Object>();
 		ArrayList<PayPO> pay = new ArrayList<PayPO>();
 		ArrayList<ReceiptPO> receipt = new ArrayList<ReceiptPO>();
-
+        arr=null;
 		try {
 			pay = fd.findPay(begin, end);
 		} catch (RemoteException e) {
@@ -103,6 +103,7 @@ public class Finance implements FinanceBlService {
 		// TODO Auto-generated method stub
 		ArrayList<AccountPO> po = new ArrayList<AccountPO>();
 		ArrayList<AccountPO> total = new ArrayList<AccountPO>();
+		po=null;
 		try {
 			total = fd.findAccount();
 		} catch (RemoteException e) {
@@ -148,6 +149,7 @@ public class Finance implements FinanceBlService {
 
 	public ArrayList<AccountPO> checkInitInfo() {
 		ArrayList<AccountPO> po = new ArrayList<AccountPO>();
+		po=null;
 		try {
 			po = fd.findInitInfo();
 		} catch (RemoteException e) {
@@ -163,13 +165,15 @@ public class Finance implements FinanceBlService {
 
 	public ResultMessage clearAccount() {
 		// TODO Auto-generated method stub
+		ResultMessage rm=null;
 		try {
-			fd.clear();
+			rm=fd.clear();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			rm= ResultMessage.FunctionError;
 		}
-		return null;
+		return rm;
 	}
 
 }

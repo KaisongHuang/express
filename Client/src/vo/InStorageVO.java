@@ -1,6 +1,9 @@
 package vo;
 
 public class InStorageVO extends WarehouseVO {
+	String id;
+	String destination;
+	String WarehouseID;
 	private String indate;
 	private String pos_qu;
 	private int pos_pai;
@@ -8,22 +11,43 @@ public class InStorageVO extends WarehouseVO {
 	private int pos_wei;
 	private int isCheck;
 	// ArrayList<ArrivalPO>
-
+    private Check c;
 	public InStorageVO() {
 	}
 
 	public InStorageVO(String id, String indate, String destination, String WarehouseID, String pos_qu, int pos_pai,
 			int pos_jia, int pos_wei, int isCheck) {
-		super(id, destination, WarehouseID);
+		this.id=id;
+		this.destination=destination;
+		this.WarehouseID=WarehouseID;
 		this.indate = indate;
 		this.pos_qu = pos_qu;
 		this.pos_pai = pos_pai;
 		this.pos_jia = pos_jia;
 		this.pos_wei = pos_wei;
 		this.isCheck = isCheck;
+		c=new Check();
 		// TODO Auto-generated constructor stub
 	}
 
+	public int checkDate(){
+		return c.checkDate(indate);
+	}
+	public int checkPai(){
+		if(pos_pai<=0||pos_pai>1000)
+			return 0;
+		return 1;
+	}
+	public int checkJia(){
+		if(pos_jia<=0||pos_jia>100)
+			return 0;
+		return 1;
+	}
+	public int checkWei(){
+		if(pos_wei<=0||pos_wei>100)
+			return 0;
+		return 1;
+	}
 	public int getIsCheck() {
 		return isCheck;
 	}

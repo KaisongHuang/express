@@ -9,7 +9,7 @@ public class DriverVO {
     String CarCompany;
     String sex;
     String LicenceTime;
-    
+    Check c;
     public DriverVO(String number,String name,String birthday,String ID,String phone,String CarCompany,String sex,String LicenceTime){
     	this.number=number;
     	this.name=name;
@@ -19,8 +19,30 @@ public class DriverVO {
     	this.CarCompany=CarCompany;
     	this.sex=sex;
     	this.LicenceTime=LicenceTime;
+    	c=new Check();
     }
 
+    public int checkNumber(){
+    	return c.checkID(number,10);
+    }
+    public int checkBirthday(){
+    	return c.checkDate(birthday);
+    }
+    public int checkID(){
+    	return c.checkID(ID, 18);
+    }
+    public int checkPhone(){
+        if(phone.startsWith("1")&&phone.length()==11)
+        	return 1;
+        return 0;
+    }
+ 
+    public int checkIsNull(){
+    	if(number.length()==0||name.length()==0||birthday.length()==0||ID.length()==0||phone.length()==0||CarCompany.length()==0||
+    			sex.length()==0||LicenceTime.length()==0)
+    		return 0;
+    	return 1;
+    }
 	public DriverVO() {
 		// TODO �Զ���ɵĹ��캯����
 	}
