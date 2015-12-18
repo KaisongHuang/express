@@ -119,11 +119,12 @@ public class SellingArea implements SellingareaBlService {
 
 	public CarVO findCar(String id) {
 		CarPO po;
-		CarVO vo;
+		CarVO vo=null;;
 		try {
 			po = sd.findCar(id);
-			vo = new CarVO(po.getNumber(), po.getEngineNumber(), po.getCarNumber(), po.getChassisNumber(),
-					po.getPurchase(), po.getServiceTime());
+			if(po!=null)
+			     vo = new CarVO(po.getNumber(), po.getEngineNumber(), po.getCarNumber(), po.getChassisNumber(),
+					  po.getPurchase(), po.getServiceTime());
 			return vo;
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
@@ -170,9 +171,11 @@ public class SellingArea implements SellingareaBlService {
 
 	public DriverVO findDriver(String id) {
 		DriverPO po;
+		DriverVO vo=null ;
 		try {
 			po = sd.findDriver(id);
-			DriverVO vo = new DriverVO(po.getNumber(), po.getName(), po.getBirthday(), po.getID(), po.getPhone(),
+			if(po!=null)
+			     vo = new DriverVO(po.getNumber(), po.getName(), po.getBirthday(), po.getID(), po.getPhone(),
 					po.getCarCompany(), po.getSex(), po.getLicenceTime());
 			return vo;
 		} catch (RemoteException e) {

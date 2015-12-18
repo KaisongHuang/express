@@ -285,42 +285,44 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		}
 		return list;
 	}
+
 	public ArrayList<int[]> findFreeSpace(String WarehouseID) throws RemoteException {
-		int size=10;
-		String sql="select * from Warehouse where WarehouseID='"+WarehouseID+"';";
-		ResultSet rs=db.find(sql);
-		ArrayList<int[]> list=new ArrayList<int[]>();
-		int pai=0;
-		int jia=0;
-		int wei=0;
+		int size = 10;
+		String sql = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
+		ResultSet rs = db.find(sql);
+		ArrayList<int[]> list = new ArrayList<int[]>();
+		int pai = 0;
+		int jia = 0;
+		int wei = 0;
 		try {
-			pai=rs.getInt(11);
-		    jia=rs.getInt(12);
-			wei=rs.getInt(13);
+			pai = rs.getInt(11);
+			jia = rs.getInt(12);
+			wei = rs.getInt(13);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	    for(int i=1;i<=pai;i++){
-	    	for(int m=1;m<=jia;m++){
-	    		for(int n=1;n<=wei;n++){
-	    			String sql1="select * from InStorage where isInStorage=0 and WarehouseID='"+WarehouseID+"',pai="+pai+",jia="+jia+",wei="+wei+";";
-	    			rs=db.find(sql);
-	    			try {
-						while(!rs.wasNull()&&list.size()<=size){
-							int[] a={pai,jia,wei};
+
+		for (int i = 1; i <= pai; i++) {
+			for (int m = 1; m <= jia; m++) {
+				for (int n = 1; n <= wei; n++) {
+					String sql1 = "select * from InStorage where isInStorage=0 and WarehouseID='" + WarehouseID
+							+ "',pai=" + pai + ",jia=" + jia + ",wei=" + wei + ";";
+					rs = db.find(sql);
+					try {
+						while (!rs.wasNull() && list.size() <= size) {
+							int[] a = { pai, jia, wei };
 							list.add(a);
 						}
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-	    				
-	    		}
-	    	}
-	    }
-		
+
+				}
+			}
+		}
+
 		return list;
 	}
 	

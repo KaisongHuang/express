@@ -3,6 +3,7 @@ package server.data.managerdata;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import po.AcceptPO;
@@ -19,6 +20,7 @@ import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
+import po.WarehousePO;
 import server.database.MySQLDataBase;
 import vo.AcceptVO;
 import vo.CarPackVO;
@@ -67,22 +69,51 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public EmployeePO findEmployee(String id) throws RemoteException{
 		String sql;
 		ResultSet rs;
-		sql="select * from Employee where "+"id="+id;
+		sql="select * from Employee where id='"+id+"';";
 	    rs=db.find(sql);
-	    
+	    try {
+			if(rs.next()){
+				return new EmployeePO(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getDouble(5),rs.getString(6));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	
 	}
 	public InstitutionPO findInstitution(String id) throws RemoteException{
 		String sql;
 		ResultSet rs;
-		sql="select * from Institution where "+"InstitutionID="+id;
+		sql="select * from Institution where id='"+id+"';";
 	    rs=db.find(sql);
-	    
+	    try {
+			if(rs.next()){
+				return new InstitutionPO(rs.getString(1),rs.getString(2));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public WarehousePO findWarehouse(String id) throws RemoteException{
+		String sql;
+		ResultSet rs;
+		sql="select * from Warehouse where WarehouseID='"+id+"';";
+	    rs=db.find(sql);
+	    try {
+			if(rs.next()){
+				return new WarehousePO(rs.getString(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(9),rs.getInt(10),rs.getInt(11),rs.getInt(12),rs.getInt(13),rs.getDouble(14));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 	public Object find() throws RemoteException{
-	
+	    
 		return null;
 	}
 
@@ -134,6 +165,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	}
 
 	public ResultMessage update(ManagerPO po)throws RemoteException{
+		
 		return null;
 	}
 	public ResultMessage delete( Object po) throws RemoteException{
