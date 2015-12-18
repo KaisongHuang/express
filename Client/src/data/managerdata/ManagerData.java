@@ -12,6 +12,7 @@ import dataservice.managerdataservice.ManagerDataBaseService;
 import po.EmployeePO;
 import po.InstitutionPO;
 import po.ManagerPO;
+import po.WarehousePO;
 
 public class ManagerData implements ManagerDataService {
 	ManagerDataBaseService md;
@@ -40,6 +41,9 @@ public class ManagerData implements ManagerDataService {
 		return md.findInstitution(id);
 	}
 
+	public WarehousePO findWarehouse(String id) throws RemoteException{
+		return null;
+	}
 	public ResultMessage insert(ManagerPO po) throws RemoteException {
 
 		return md.insert(po);

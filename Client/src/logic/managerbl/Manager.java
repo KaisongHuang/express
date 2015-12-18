@@ -35,11 +35,17 @@ public class Manager implements ManagerBlService {
 		try {
 			if (op == Opera.Employee_find) {
 				ep = (EmployeePO) md.findEmployee(id);
-				return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(), ep.getEmployeePosition(),
-						ep.getTimeOfWorking(), ep.getBelongToWho());
+				if(ep!=null)
+				     return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(), ep.getEmployeePosition(),
+						   ep.getTimeOfWorking(), ep.getBelongToWho());
+				else
+					 return null;
 			} else {
 				po = (InstitutionPO) md.findInStitution(id);
-				return new InstitutionPO(po.getName(), po.getOrganizationID());
+				if(po!=null)
+				     return new InstitutionPO(po.getName(), po.getOrganizationID());
+				else
+					return null;
 			}
 
 		} catch (RemoteException e) {
