@@ -45,7 +45,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "管理员";
+		EmployeeMes.employeePosition = "营业厅业务员";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
@@ -148,10 +148,7 @@ public class MainFrame implements ActionListener {
 			panel1.add(new SellingAreaUI(4*width/5,4*height/5), "0");
 			panel1.add(new SellingAreaUI1(4*width/5,4*height/5), "1");
 			panel1.add(new SellingAreaUI2(4*width/5,4*height/5), "2");
-			panel1.add(new SellingAreaUI3(Card,4*width/5,4*height/5), "3");
-			panel1.add(new SellingAreaUI31(Card,4*width/5,4*height/5), "4");
-			panel1.add(new SellingAreaUI32(Card,4*width/5,4*height/5), "5");
-			panel1.add(new SellingAreaUI33(Card,4*width/5,4*height/5), "6");
+			panel1.add(new SellingAreaUI30(4*width/5,4*height/5), "3");
 			panel1.add(new SellingAreaUI4(Card,4*width/5,4*height/5), "7");
 			panel1.add(new SellingAreaUI41(Card,4*width/5,4*height/5), "8");
 			panel1.add(new SellingAreaUI42(Card,4*width/5,4*height/5), "9");

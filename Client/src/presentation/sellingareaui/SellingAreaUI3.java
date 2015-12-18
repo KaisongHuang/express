@@ -4,13 +4,10 @@
 
 package presentation.sellingareaui;
 
-import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Image;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import javax.swing.JTextField;
@@ -42,13 +39,10 @@ public class SellingAreaUI3 extends JPanel{
 	private JLabel lblNewLabel_12;
 	private JLabel lblNewLabel_13;
 
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_13;
-	private JButton btnNewButton_14;
 	private JButton button_1;
 	private JButton button_2;
 
+	private JPanel panel_6;
 	SellingAreaListener30 sellingarealistener;
 
 	private int width;
@@ -60,14 +54,12 @@ public class SellingAreaUI3 extends JPanel{
 	 * @param j
 	 * @param i
 	 */
-	public SellingAreaUI3(CardLayout card, int i, int j) {
-		sellingarealistener = new SellingAreaListener30(this,card);
+	public SellingAreaUI3(int i, int j) {
+		sellingarealistener = new SellingAreaListener30(this);
 		width=i;
 		height=j;
 		initialize();
-		this.setImage();
-		this.setVisible(true);
-		
+		setVisible(true);
 	}
 
 	/**
@@ -78,32 +70,10 @@ public class SellingAreaUI3 extends JPanel{
 
 
 		this.setBackground(new Color(158,211,238));
-		this.setBounds(136, 114, 746, 439);
-
+		this.setBounds(0, 0, 745, 394);
 		this.setLayout(null);
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 748, 44);
-		this.add(panel_5);
-		panel_5.setLayout(null);
-
-		btnNewButton_10 = new JButton("\u67E5\u8BE2");
-		btnNewButton_10.setBackground(new Color(255, 248, 220));
-		btnNewButton_10.setBounds(44, 8, 90, 30);
-		panel_5.add(btnNewButton_10);
-
-		btnNewButton_11 = new JButton("\u66F4\u65B0");
-		btnNewButton_11.setBounds(194, 8, 90, 30);
-		panel_5.add(btnNewButton_11);
-
-		btnNewButton_13 = new JButton("\u5220\u9664");
-		btnNewButton_13.setBounds(348, 8, 90, 30);
-		panel_5.add(btnNewButton_13);
-
-		btnNewButton_14 = new JButton("\u6DFB\u52A0");
-		btnNewButton_14.setBounds(525, 8, 90, 30);
-		panel_5.add(btnNewButton_14);
-
+		
 		lblNewLabel_1 = new JLabel("车辆编号：");
 		lblNewLabel_1.setBounds(44, 62, 100, 18);
 		this.add(lblNewLabel_1);
@@ -113,7 +83,7 @@ public class SellingAreaUI3 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 
-		button_1 = new JButton("\u67E5\u8BE2");
+		button_1 = new JButton("查询");
 		button_1.setBounds(360, 56,100, 30);
 		this.add(button_1);
 
@@ -121,7 +91,7 @@ public class SellingAreaUI3 extends JPanel{
 		button_2.setBounds(470, 56,100, 30);
 		this.add(button_2);
 
-		JPanel panel_6 = new JPanel();
+		panel_6 = new JPanel();
 		panel_6.setBounds(34, 115, 641, 199);
 		this.add(panel_6);
 		panel_6.setLayout(null);
@@ -174,10 +144,6 @@ public class SellingAreaUI3 extends JPanel{
 		lblNewLabel_13.setBounds(466, 130, 100, 18);
 		panel_6.add(lblNewLabel_13);
 
-		btnNewButton_10.addActionListener(sellingarealistener);
-		btnNewButton_11.addActionListener(sellingarealistener);
-		btnNewButton_13.addActionListener(sellingarealistener);
-		btnNewButton_14.addActionListener(sellingarealistener);
 		button_1.addActionListener(sellingarealistener);
 		button_2.addActionListener(sellingarealistener);
 	}
@@ -295,38 +261,6 @@ public class SellingAreaUI3 extends JPanel{
 		this.lblNewLabel_13 = lblNewLabel_13;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
-
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_13() {
-		return btnNewButton_13;
-	}
-
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
-		this.btnNewButton_13 = btnNewButton_13;
-	}
-
-	public JButton getBtnNewButton_14() {
-		return btnNewButton_14;
-	}
-
-	public void setBtnNewButton_14(JButton btnNewButton_14) {
-		this.btnNewButton_14 = btnNewButton_14;
-	}
-
 	public JButton getButton_1() {
 		return button_1;
 	}
@@ -341,8 +275,5 @@ public class SellingAreaUI3 extends JPanel{
 
 	public void setButton_2(JButton button_2) {
 		this.button_2 = button_2;
-	}
-
-	private void setImage() {
 	}
 }

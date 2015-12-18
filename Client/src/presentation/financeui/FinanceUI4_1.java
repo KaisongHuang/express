@@ -100,7 +100,4 @@ public class FinanceUI4_1 extends JPanel {
 	public DefaultTableModel getModel() {
 		return model;
 	}
-	private void setImage() {
-		
-	}
 }

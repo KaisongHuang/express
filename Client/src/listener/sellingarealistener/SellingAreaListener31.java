@@ -1,6 +1,5 @@
 package listener.sellingarealistener;
 
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,10 +16,8 @@ public class SellingAreaListener31 implements ActionListener {
 
 	private SellingAreaUI31 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-    CardLayout card;
-	public SellingAreaListener31(SellingAreaUI31 ui,CardLayout card) {
+	public SellingAreaListener31(SellingAreaUI31 ui) {
 		super();
-		this.card=card;
 		this.ui = ui;
 	}
 
@@ -42,15 +39,7 @@ public class SellingAreaListener31 implements ActionListener {
 			String id = ui.getTextField().getText();
 			CarVO vo = sellingarea.findCar(id);
 			set(vo);
-		} else if (e.getSource() == ui.getBtnNewButton_10()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_11()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_13()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_14()) {
-
-		}
+		} 
 	}
 
 	private void set(CarVO vo) {
