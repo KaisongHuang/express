@@ -4,7 +4,6 @@
 
 package presentation.managerui;
 
-import java.awt.CardLayout;
 
 import java.awt.Color;
 
@@ -24,10 +23,6 @@ public class ManagerUI0_1 extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_12;
-	private JButton btnNewButton_13;
-	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
@@ -55,8 +50,8 @@ public class ManagerUI0_1 extends JPanel{
 	 * Create the application.
 	 * @param card
 	 */
-	public ManagerUI0_1(CardLayout card) {
-		managerlistener = new ManagerListener0_1(this,card);
+	public ManagerUI0_1() {
+		managerlistener = new ManagerListener0_1(this);
 		initialize();
 	}
 
@@ -72,31 +67,7 @@ public class ManagerUI0_1 extends JPanel{
 
 		this.setLayout(null);
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 748, 50);
-		this.add(panel_5);
-		panel_5.setLayout(null);
-
-		btnNewButton_11 = new JButton("\u67E5\u8BE2");
-		btnNewButton_11.setBackground(new Color(255, 248, 220));
-		btnNewButton_11.setBounds(32, 6, 100, 30);
-		panel_5.add(btnNewButton_11);
-		btnNewButton_11.addActionListener(managerlistener);
-
-		btnNewButton_12 = new JButton("\u66F4\u65B0");
-		btnNewButton_12.setBounds(158, 6, 100, 30);
-		panel_5.add(btnNewButton_12);
-		btnNewButton_12.addActionListener(managerlistener);
-
-		btnNewButton_13 = new JButton("\u5220\u9664");
-		btnNewButton_13.setBounds(290, 6, 100, 30);
-		panel_5.add(btnNewButton_13);
-		btnNewButton_13.addActionListener(managerlistener);
-
-		btnNewButton_14 = new JButton("\u6DFB\u52A0");
-		btnNewButton_14.setBounds(453, 6, 100, 30);
-		panel_5.add(btnNewButton_14);
-		btnNewButton_14.addActionListener(managerlistener);
+		
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(94, 120, 566, 212);
@@ -179,37 +150,6 @@ public class ManagerUI0_1 extends JPanel{
 		this.textField = textField;
 	}
 
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_12() {
-		return btnNewButton_12;
-	}
-
-	public void setBtnNewButton_12(JButton btnNewButton_12) {
-		this.btnNewButton_12 = btnNewButton_12;
-	}
-
-	public JButton getBtnNewButton_13() {
-		return btnNewButton_13;
-	}
-
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
-		this.btnNewButton_13 = btnNewButton_13;
-	}
-
-	public JButton getBtnNewButton_14() {
-		return btnNewButton_14;
-	}
-
-	public void setBtnNewButton_14(JButton btnNewButton_14) {
-		this.btnNewButton_14 = btnNewButton_14;
-	}
 
 	public JButton getBtnNewButton_15() {
 		return btnNewButton_15;
@@ -330,14 +270,5 @@ public class ManagerUI0_1 extends JPanel{
 	public void setLblNewLabel_1(JLabel lblNewLabel_1) {
 		this.lblNewLabel_1 = lblNewLabel_1;
 	}
-//	private void setImage() {
-//		label1 = new JLabel();
-//		label1.setBounds(0, 0, width,height);
-//		ImageIcon icon1 = new ImageIcon(this.getClass().getResource("/蓝色背景.png"));
-//		icon1.setImage(icon1.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
-//
-//		label1.setIcon(icon1);
-//		this.add(label1);
-//	}
 
 }

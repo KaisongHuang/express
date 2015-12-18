@@ -40,8 +40,8 @@ public class ManagerUI4_1 extends JPanel{
 	 * Create the application.
 	 * @param card
 	 */
-	public ManagerUI4_1(CardLayout card) {
-		managerlistener = new ManagerListener4_1(this,card);
+	public ManagerUI4_1() {
+		managerlistener = new ManagerListener4_1(this);
 		initialize();
 	}
 

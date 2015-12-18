@@ -1,6 +1,5 @@
 package listener.sellingarealistener;
 
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -19,10 +18,8 @@ public class SellingAreaListener4_2 implements MouseListener, ActionListener {
 
 	private SellingAreaUI4_2 ui;
 	SellingareaBlService sellingarea = new SellingArea();
-	CardLayout card;
-	public SellingAreaListener4_2(SellingAreaUI4_2 ui, CardLayout card) {
+	public SellingAreaListener4_2(SellingAreaUI4_2 ui) {
 		super();
-		this.card=card;
 		this.ui = ui;
 	}
 
@@ -46,14 +43,6 @@ public class SellingAreaListener4_2 implements MouseListener, ActionListener {
 			String id = ui.getTextField().getText();
 			DriverVO vo = sellingarea.findDriver(id);
 			set(vo);
-		} else if (e.getSource() == ui.getBtnNewButton_10()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_11()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_13()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_14()) {
-
 		}
 	}
 

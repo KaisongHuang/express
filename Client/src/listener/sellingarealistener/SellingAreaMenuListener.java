@@ -31,7 +31,7 @@ public class SellingAreaMenuListener implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton()) {
-			card.show(panel, "7");
+			card.show(panel, "4");
 			setClicked(false, false, false, false, true);
 			repaint();
 		} else if (e.getSource() == ui.getButton1()) {
