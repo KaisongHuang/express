@@ -41,6 +41,7 @@ public class Courier implements CourierBlService {
 			} catch (RemoteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				rm=ResultMessage.FunctionError;
 			}
 			return rm;
 
@@ -54,7 +55,7 @@ public class Courier implements CourierBlService {
 	    try {
 			d=cd.getDistanceAndFee(city1, city2);
 		} catch (RemoteException e) {
-		
+
 			e.printStackTrace();
 			return -1;
 		}
@@ -77,7 +78,7 @@ public class Courier implements CourierBlService {
 		}
         return 0;
 
-		
+
 	}
 
 	public ResultMessage ConsigneeinfoInput(CourierVO vo) {
@@ -93,7 +94,7 @@ public class Courier implements CourierBlService {
 			rm=ResultMessage.FunctionError;
 		}
 
-		return null;
+		return rm;
 	}
 
 
