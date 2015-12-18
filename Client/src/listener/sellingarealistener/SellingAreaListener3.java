@@ -5,16 +5,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import presentation.sellingareaui.SellingAreaUI30;
+import presentation.sellingareaui.SellingAreaUI3;
 
 public class SellingAreaListener3 implements ActionListener, MouseListener {
-	private SellingAreaUI30 ui;
+	private SellingAreaUI3 ui;
 	private boolean button1_clicked = true;
 	private boolean button2_clicked = false;
 	private boolean button3_clicked = false;
 	private boolean button4_clicked = false;
 
-	public SellingAreaListener3(SellingAreaUI30 ui) {
+	public SellingAreaListener3(SellingAreaUI3 ui) {
 		super();
 		this.ui = ui;
 	}
