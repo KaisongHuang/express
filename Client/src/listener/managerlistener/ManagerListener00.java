@@ -1,81 +1,112 @@
 package listener.managerlistener;
 
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.JLabel;
-
-import _enum.Opera;
-import logic.managerbl.Manager;
-import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI0;
-import vo.EmployeeVO;
 
-public class ManagerListener00 implements MouseListener, ActionListener {
-	
+public class ManagerListener00 implements ActionListener,MouseListener{
 	private ManagerUI0 ui;
-	ManagerBlService manager = new Manager();
-	CardLayout card;
-	public ManagerListener00 (ManagerUI0 ui, CardLayout card){
+	private boolean button1_clicked = true;
+	private boolean button2_clicked = false;
+	private boolean button3_clicked = false;
+	private boolean button4_clicked = false;
+
+	public ManagerListener00(ManagerUI0 ui) {
 		super();
-		this.ui=ui;
-		this.card=card;
+		this.ui = ui;
 	}
-	
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getBtnNewButton_12()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_14()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
-			String s = ui.getTextField().getText();
-			EmployeeVO vo = (EmployeeVO) manager.find(s,Opera.Employee_find);
-			setLabel(vo);
+		if (e.getSource() == ui.getButton1()) {
+			ui.getCard().show(ui.getPanel(), "1");
+			setClicked(true, false, false, false);
+			repaint();
+		} else if (e.getSource() == ui.getButton2()) {
+			ui.getCard().show(ui.getPanel(), "2");
+			setClicked(false, true, false, false);
+			repaint();
+		} else if (e.getSource() == ui.getButton3()) {
+			ui.getCard().show(ui.getPanel(), "3");
+			setClicked(false, false, true, false);
+			repaint();
+		} else if (e.getSource() == ui.getButton4()) {
+			ui.getCard().show(ui.getPanel(), "4");
+			setClicked(false, false, false, true);
+			repaint();
 		}
-		
 	}
-
-	private void setLabel(EmployeeVO vo) {
-		// TODO Auto-generated method stub
-		ui.setLblNewLabel_4(new JLabel(vo.getEmployeeName()));
-		ui.setLblNewLabel_10(new JLabel(""+vo.getEmployeeID()));
-		ui.setLblNewLabel_7(new JLabel(vo.getEmployeePosition()));
-		ui.setLblNewLabel_13(new JLabel(""+vo.getEmployeeAging()));
-		ui.setLblNewLabel_8(new JLabel(vo.getBelongToWho()));
-		ui.setLblNewLabel_14(new JLabel(""+vo.getTimeOfWorking()));
-	}
-
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		if (e.getSource() == ui.getButton1()) {
+			ui.getButton1().setEntered(true);
+			setUnclicked();
+			repaint();
+		} else if (e.getSource() == ui.getButton2()) {
+			ui.getButton2().setEntered(true);
+			setUnclicked();
+			repaint();
+		} else if (e.getSource() == ui.getButton3()) {
+			ui.getButton3().setEntered(true);
+			setUnclicked();
+			repaint();
+		} else if (e.getSource() == ui.getButton4()) {
+			ui.getButton4().setEntered(true);
+			setUnclicked();
+			repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		ui.getButton1().setEntered(false);
+		ui.getButton2().setEntered(false);
+		ui.getButton3().setEntered(false);
+		ui.getButton4().setEntered(false);
+		ui.getButton1().setClicked(button1_clicked);
+		ui.getButton2().setClicked(button2_clicked);
+		ui.getButton3().setClicked(button3_clicked);
+		ui.getButton4().setClicked(button4_clicked);
+		repaint();
+	}
+	
+	private void setClicked(boolean b1,boolean b2,boolean b3,boolean b4){
+		button1_clicked=b1;
+		button2_clicked=b2;
+		button3_clicked=b3;
+		button4_clicked=b4;
 	}
 
+	private void setUnclicked(){
+		ui.getButton1().setClicked(false);
+		ui.getButton2().setClicked(false);
+		ui.getButton3().setClicked(false);
+		ui.getButton4().setClicked(false);
+	}
+
+	private void repaint() {
+		ui.getButton1().repaint();
+		ui.getButton2().repaint();
+		ui.getButton3().repaint();
+		ui.getButton4().repaint();
+	}
 }

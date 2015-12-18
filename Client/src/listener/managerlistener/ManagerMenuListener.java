@@ -31,7 +31,7 @@ public class ManagerMenuListener implements ActionListener,MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton1()) {
-            card.show(panel, "4");
+            card.show(panel, "1");
             setClicked(true,false,false,false,false);
             repaint();
 		} else if (e.getSource() == ui.getButton2()) {
@@ -39,15 +39,15 @@ public class ManagerMenuListener implements ActionListener,MouseListener {
 			setClicked(false,true,false,false,false);
 			repaint();
 		} else if (e.getSource() == ui.getButton3()) {
-			card.show(panel, "9");
+			card.show(panel, "2");
 			setClicked(false,false,true,false,false);
 			repaint();
 		} else if (e.getSource() == ui.getButton4()) {
-			card.show(panel, "10");
+			card.show(panel, "3");
 			setClicked(false,false,false,true,false);
 			repaint();
 		} else if (e.getSource() == ui.getButton5()) {
-			card.show(panel, "11");
+			card.show(panel, "4");
 			setClicked(false,false,false,false,true);
 			repaint();
 		}

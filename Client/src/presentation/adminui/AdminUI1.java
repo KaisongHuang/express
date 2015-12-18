@@ -165,8 +165,5 @@ public class AdminUI1 extends JPanel {
 		this.textField_3 = textField_3;
 	}
 
-	private void setImage() {
-
-	}
 
 }
