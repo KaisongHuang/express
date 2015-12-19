@@ -8,37 +8,44 @@ public class OutStorageVO extends WarehouseVO {
 	String transportation;
 	String trans_id;
 	int isCheck;
-    Check c;
+	Check c;
+
+	public OutStorageVO() {
+	}
+
 	public OutStorageVO(String id, String destination, String outdate, String WarehouseID, String transportation,
 			String trans_id, int isCheck) {
-		this.id=id;
-		this.destination=destination;
-		this.WarehouseID=WarehouseID;
+		this.id = id;
+		this.destination = destination;
+		this.WarehouseID = WarehouseID;
 		this.outdate = outdate;
 		this.transportation = transportation;
 		this.trans_id = trans_id;
 		this.isCheck = isCheck;
-		c=new Check();
+		c = new Check();
 	}
-	public int checkID(){
+
+	public int checkID() {
 		return c.checkID(id, 10);
 	}
-	public int checkDate(){
+
+	public int checkDate() {
 		return c.checkDate(outdate);
 	}
-    public int checkWarehouseID(){
-    	return c.checkID(WarehouseID, 6);
-    }
-    public int checkTransID(){
-    	return c.checkID(trans_id, 21);
-    }
-    public int checkIsNUll(){
-    	if(id.length()==0||destination.length()==0||outdate.length()==0||WarehouseID.length()==0||trans_id.length()==0)
-    		return 0;
-    	return 1;
-    }
-    
-	public OutStorageVO() {
+
+	public int checkWarehouseID() {
+		return c.checkID(WarehouseID, 6);
+	}
+
+	public int checkTransID() {
+		return c.checkID(trans_id, 21);
+	}
+
+	public int checkIsNUll() {
+		if (id.length() == 0 || destination.length() == 0 || outdate.length() == 0 || WarehouseID.length() == 0
+				|| trans_id.length() == 0)
+			return 0;
+		return 1;
 	}
 
 	public int getIsCheck() {
@@ -77,7 +84,24 @@ public class OutStorageVO extends WarehouseVO {
 		WarehouseID = warehouseID;
 	}
 
-	public String getWarehouseID(){
+	public String getWarehouseID() {
 		return WarehouseID;
 	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
 }
