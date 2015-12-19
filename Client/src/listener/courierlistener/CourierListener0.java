@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
@@ -14,7 +15,11 @@ import po.DistanceAndFee;
 import presentation.courierui.CourierUI;
 import presentation.courierui.CourierUI1;
 import vo.SenderVO;
-
+/**
+ * 订单输入界面监听
+ * @author john
+ *
+ */
 public class CourierListener0 implements ActionListener {
 
 	private CourierUI ui;
@@ -53,12 +58,43 @@ public class CourierListener0 implements ActionListener {
 		} else if (e.getSource() == ui.getBtnNewButton_10()) {
 			ResultMessage rm;
 			SenderVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = courier.OrderInput(vo, daf);
+			check(rm);
 			panel.setVisible(true);
 
 		}
 	}
-
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
+    private boolean check(SenderVO vo){
+    	if(vo.checkIsNull()==0){
+    		JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+			return false;
+    	}
+    	if(vo.checkRecipientPhone()==0){
+    		JOptionPane.showMessageDialog(ui,"请检查收件人的手机号格式！");
+			return false;
+    	}
+    	if(vo.checkSenderPhone()==0){
+    		JOptionPane.showMessageDialog(ui,"请检查寄件人的手机号格式！");
+			return false;
+    	}
+    	return true;
+    }
 	private SenderVO read() {
 		// TODO Auto-generated method stub
 		String SenderName = ui.getTextField().getText();

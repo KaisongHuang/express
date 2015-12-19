@@ -39,13 +39,13 @@ public class MainFrame implements ActionListener {
 
 	private CardLayout Card;
 
-	public static void main(String[] args) {
-		new MainFrame().init();
-
-	}
+//	public static void main(String[] args) {
+//		new MainFrame().init();
+//
+//	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "营业厅业务员";
+		//EmployeeMes.employeePosition = "营业厅业务员";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);

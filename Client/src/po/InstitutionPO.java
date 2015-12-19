@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.ManagerPO;
 
-public class InstitutionPO extends ManagerPO {
+public class InstitutionPO extends ManagerPO  implements Serializable{
 
 	String organizationID;
 	String name;

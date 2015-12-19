@@ -37,17 +37,25 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getButton_2()){
 			String id = ui.getTextField_2().getText();
 			vo = admin.find(id);
-			
+			if(!checkReturn(vo))
+				return;
 			setAll(vo);
 		}else if(e.getSource()==ui.getButton()){
 			ResultMessage rm;
 			vo = this.update();
 			rm=admin.manageCount(vo, Operation.update);
+			check(rm);
 		}
 
 	}
-	
-	private void checkResultMessage(ResultMessage rm){
+	private boolean checkReturn(AdminVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui,"系统中不存在此编号！");
+	   	    return false;
+		}
+		return true;
+	}
+	private void check(ResultMessage rm){
 		String dialog=null;
 		if(rm==ResultMessage.FunctionError){
 			dialog="网络连接出现了问题，请检查您的网络！";
@@ -55,9 +63,11 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showConfirmDialog(ui, dialog);
+			JOptionPane.showMessageDialog(ui, dialog);
 	}
 	
 

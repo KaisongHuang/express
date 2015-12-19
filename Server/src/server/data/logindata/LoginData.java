@@ -45,6 +45,8 @@ System.out.println("密码正确");
 				//rs1.last();
 				
 				System.out.println(id);
+			if(id==null)
+				return null;
              return new EmployeePO(id,name,age,position,time,belong);
                 
 	       }

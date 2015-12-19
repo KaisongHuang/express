@@ -3,6 +3,7 @@ package listener.sellingarealistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Operation;
@@ -33,7 +34,10 @@ public class SellingAreaListener3_4 implements ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			ResultMessage rm;
 			CarVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = sellingarea.manageCarinfo(vo, Operation.insert);
+			check(rm);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			
 		}else if(e.getSource()==ui.getBtnNewButton_11()){
@@ -44,7 +48,33 @@ public class SellingAreaListener3_4 implements ActionListener {
 			
 		}
 	}
-
+    private boolean check(CarVO vo){
+    	if(vo.checkIsNull()==0){
+    		JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+    	}
+    	if(vo.checkCarNumber()==0){
+    		JOptionPane.showMessageDialog(ui, "请检查车辆代号格式是否正确！");
+			return false;
+    	}
+    	if(vo.checkNumber()==0){
+    		JOptionPane.showMessageDialog(ui, "请检查车辆好格式是否正确！");
+			return false;
+    	}
+    	if(vo.checkPurchase()==0){
+    		JOptionPane.showMessageDialog(ui, "请检查车辆购买时间是否合理！");
+			return false;
+    	}
+    	if(vo.checkService()==0){
+    		JOptionPane.showMessageDialog(ui, "请检查车辆服役时间是否合理！");
+			return false;
+    	}
+    	
+    	return true;
+    }
+    private void check(ResultMessage rm){
+    	
+    }
 	private CarVO read() {
 		// TODO Auto-generated method stub
 		String number = ui.getTextField().getText();
