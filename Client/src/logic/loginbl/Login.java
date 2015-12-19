@@ -22,7 +22,6 @@ public class Login implements LoginBlService{
 		EmployeePO ep=null;
 		EmployeeVO ev=null;
 		try {
-System.out.println("逻辑层执行正确");
 			ep=loginData.login(po);
             if(ep!=null)
 			  ev=new EmployeeVO(ep.getEmployeeID(),ep.getEmployeeName(),ep.getEmployeeAging(),ep.getEmployeePosition(),ep.getTimeOfWorking(),ep.getBelongToWho());

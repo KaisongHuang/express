@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.EmployeeMes;
@@ -27,6 +28,10 @@ public class LoginListener implements ActionListener{
 		JTextField text1=frame.getText1();
 
 		EmployeeVO vo=l.login(new AdminVO(text.getText(),null,text1.getText(),null));
+		if(vo==null){
+			JOptionPane.showMessageDialog(frame,"用户名或密码不正确！");
+			return ;
+		}
 		EmployeeMes.employeeID=vo.getEmployeeID();
 		EmployeeMes.belongToWho=vo.getBelongToWho();
 		EmployeeMes.employeeAging=vo.getEmployeeAging();

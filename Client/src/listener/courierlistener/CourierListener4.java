@@ -15,7 +15,11 @@ import logic.senderbl.Sender;
 import logic.senderblservice.SenderBlService;
 import presentation.courierui.CourierUI4;
 import vo.HistoryVO;
-
+/**
+ * 历史信息展示界面监听
+ * @author john
+ *
+ */
 public class CourierListener4 implements MouseListener, ActionListener {
 
 	private CourierUI4 ui;

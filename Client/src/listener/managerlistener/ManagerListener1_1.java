@@ -6,12 +6,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Opera;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI1_1;
+import vo.EmployeeVO;
 import vo.InstitutionVO;
 
 public class ManagerListener1_1 implements MouseListener, ActionListener {
@@ -29,7 +31,11 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return ;
 			InstitutionVO vo = (InstitutionVO) manager.find(id,Opera.Institution_find);
+			if(!check(vo))
+				return ;
 			set(vo);			
 		}else if(e.getSource()==ui.getButton_1()){
 			ui.getTextField().setText("");;
@@ -47,7 +53,26 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 		}
 		
 	}
-
+	private boolean check(InstitutionVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "机构编号不存在！");
+   		    return false;	
+		}
+		return true;
+	}
+	private boolean check(String id){
+	   	 if(id.length()!=6){
+	   		 JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+	   		 return false;
+	   	 }
+	   	 try{
+	   		 Integer.parseInt(id);
+	   	 }catch(NumberFormatException e){
+	   		 JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+	   		 return false;
+	   	 }
+	   	 return true;
+	   }
 	private void delete(JLabel jLabel) {
 		// TODO Auto-generated method stub
 		jLabel.setText("");;

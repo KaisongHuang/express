@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
@@ -40,13 +41,72 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			ResultMessage rm1,rm2;
 			AcceptVO vo1 = this.read1();
+			if(!check(vo1))
+				return;
 			DeliverVO vo2 = this.read2();
+			if(!check(vo2))
+				return ;
 			rm1=sellingarea.createReceiving(vo1);
+			check(rm1);
+			
 			rm2=sellingarea.createDelivery(vo2);
+			check(rm2);
 		}
 		
 	}
 
+	private  boolean check(AcceptVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkData()==0){
+			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			return false;
+		}
+		if(vo.checkNumber()==0){
+			JOptionPane.showMessageDialog(ui, "请检查中转单格式是否正确！");
+			return false;
+		}
+		if(vo.checkBarCode()==0){
+			JOptionPane.showMessageDialog(ui, "请检查订单编号格式是否正确！");
+			return false;
+		}
+		return true;
+	}
+	private boolean check(DeliverVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
+			return false;
+		}
+		if(vo.checkCode()==0){
+			JOptionPane.showMessageDialog(ui, "请检查订单编号格式是否正确！");
+			return false;
+		}
+		if(vo.checkDate()==0){
+			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			return false;
+		}
+		if(vo.checkNumber()==0){
+			JOptionPane.showMessageDialog(ui, "请检查中转单格式是否正确！");
+			return false;
+		}
+		return true;
+	}
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
 	private DeliverVO read2() {
 		// TODO Auto-generated method stub
 		String BarCode = ui.getTextField_3().getText();

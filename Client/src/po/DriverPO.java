@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.SellingareaPO;
 
-public class DriverPO extends SellingareaPO{
+public class DriverPO extends SellingareaPO  implements Serializable{ 
     String number;
     String name;
     String birthday;

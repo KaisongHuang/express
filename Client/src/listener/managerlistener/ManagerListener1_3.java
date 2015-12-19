@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Opera;
@@ -12,6 +13,7 @@ import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI1_3;
+import vo.EmployeeVO;
 import vo.InstitutionVO;
 
 public class ManagerListener1_3 implements MouseListener, ActionListener {
@@ -29,7 +31,11 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return ;
 			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			if(!check(vo))
+				return ;
 			set(vo);
 		}else if(e.getSource()==ui.getBtnNewButton_11()){
 			
@@ -42,14 +48,53 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			ResultMessage rm;
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return ;
 			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			if(!check(vo))
+				return ;
 			rm = manager.manageMember(vo, Opera.Institution_delete);
+			check(rm);
 		}else if(e.getSource()==ui.getBtnNewButton_17()){
 			delete(ui.getTextField());
 		}
 		
 	}
-
+	
+	private boolean check(InstitutionVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "员工编号不存在！");
+   		    return false;	
+		}
+		return true;
+	}
+	private boolean check(String id){
+	   	 if(id.length()!=6){
+	   		 JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+	   		 return false;
+	   	 }
+	   	 try{
+	   		 Integer.parseInt(id);
+	   	 }catch(NumberFormatException e){
+	   		 JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+	   		 return false;
+	   	 }
+	   	 return true;
+	   }
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
 	private void set(InstitutionVO vo) {
 		// TODO Auto-generated method stub
 		ui.getLblNewLabel_5().setText(vo.getOrganizationID());

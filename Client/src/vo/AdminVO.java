@@ -16,7 +16,7 @@ public class AdminVO {
 		c=new Check();
 		
 	}
-	public int chackId(){
+	public int checkId(){
 		return c.checkID(id, 10);
 		
 	}

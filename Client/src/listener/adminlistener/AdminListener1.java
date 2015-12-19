@@ -35,12 +35,25 @@ public class AdminListener1 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			ResultMessage rm;
 			AdminVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm=admin.manageCount(vo, Operation.insert);
 			check(rm);
 		}
 
 	}
 
+	private boolean check(AdminVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkId()==0){
+			JOptionPane.showMessageDialog(ui,"请检查编号格式是否正确。");
+			return false;
+		}
+			return true;
+	}
 	private AdminVO read() {
 		// TODO Auto-generated method stub
 		String name = ui.getTextField_3().getText();
@@ -59,9 +72,11 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showConfirmDialog(ui, dialog);
+			JOptionPane.showMessageDialog(ui, dialog);
 	}
 
 	private void delete(JTextField textField) {

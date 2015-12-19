@@ -6,12 +6,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI4_3;
+import vo.CarVO;
 import vo.DriverVO;
 
 public class SellingAreaListener4_3 implements MouseListener, ActionListener {
@@ -39,13 +41,56 @@ public class SellingAreaListener4_3 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			ResultMessage rm;
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return ;
 			rm = sellingarea.manageDriverinfo(sellingarea.findDriver(id), Operation.delete);
+			check(rm);
+				
+			
 		}else if(e.getSource()==ui.getBtnNewButton_15()){
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return ;
 			DriverVO vo = sellingarea.findDriver(id);
+			if(!check(vo))
+				return ;
 			set(vo);
 		}
 	}
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
+	private boolean check(DriverVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "车辆编号不存在！");
+   		    return false;	
+		}
+		return true;
+	}
+	private boolean check(String id){
+   	 if(id.length()!=10){
+   		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+   		 return false;
+   	 }
+   	 try{
+   		 Integer.parseInt(id);
+   	 }catch(NumberFormatException e){
+   		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+   		 return false;
+   	 }
+   	 return true;
+   }
 	
 	private void set(DriverVO vo) {
 		// TODO Auto-generated method stub

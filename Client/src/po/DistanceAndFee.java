@@ -1,8 +1,9 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DistanceAndFee extends ManagerPO{
+public class DistanceAndFee extends ManagerPO   implements Serializable{
     ArrayList<String> city1;
     ArrayList<String> city2;
     double distance;

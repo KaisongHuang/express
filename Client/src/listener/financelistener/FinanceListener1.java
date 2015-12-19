@@ -29,6 +29,7 @@ public class FinanceListener1 implements ActionListener {
 
 			ArrayList<ReceiptVO> vo = finance.checkReceipt(date, sellingArea);
 
+
 			Vector<Object> data = new Vector<Object>();
 			double sum = 0;
 
@@ -46,5 +47,5 @@ public class FinanceListener1 implements ActionListener {
 			ui.getTextArea().setText("" + sum);
 		}
 	}
-
+	
 }
