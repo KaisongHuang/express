@@ -8,7 +8,7 @@ public class PayVO {
 	String entry;
 	String comments;
 	int isCheck;
-
+    Check c;
 	public PayVO(String date, String payer, String payAccount, String entry, String comments, double cost,
 			int isCheck) {
 		this.date = date;
@@ -18,8 +18,29 @@ public class PayVO {
 		this.entry = entry;
 		this.comments = comments;
 		this.isCheck = isCheck;
+		c=new Check();
 	}
 
+	public int checkDate(){
+		return c.checkDate(date);
+	}
+	public int checkCost(){
+		if(cost<=0)
+			return 0;
+		return 1;
+	}
+	public int checkPayer(){
+		return c.checkID(payer, 10);
+	}
+	public int checkAccount(){
+		return c.checkID(payAccount,19);
+	}
+
+	public int checkIsNull(){
+		if(date.length()==0||payer.length()==0||payAccount.length()==0||entry.length()==0||comments.length()==0)
+			return 0;
+		return 1;
+	}
 	public PayVO() {
 	}
 
