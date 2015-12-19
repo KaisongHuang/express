@@ -29,10 +29,6 @@ public class ReceiptPO extends SellingareaPO  implements Serializable{
 		this.id = id;
 	}
 
-	public int getIsChenk() {
-		return isCheck;
-	}
-
 	public void setIsChenk(int isChenk) {
 		this.isCheck = isChenk;
 	}

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.financeblservice.FinanceBlService;
-import po.AccountPO;
 
 public class FinanceBlService_Driver {
 	public void drive(FinanceBlService finance) {
@@ -25,7 +24,7 @@ public class FinanceBlService_Driver {
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
 		
-		ArrayList<AccountPO> res=finance.findAccount(null);
+		ArrayList<AccountVO> res=finance.findAccount(null);
 		if(res==null)
 			System.out.println("Not Found!");
 		

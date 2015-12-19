@@ -145,7 +145,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 		} else if (po instanceof ReceiptPO) {
 			ReceiptPO po1 = (ReceiptPO) po;
 			sql = "insert into Receipt values(" + po1.getMoney() + ",'" + po1.getDate() + "','" + po1.getNumber() + "',"
-					+ po1.getIsChenk() + ",'" + po1.getId() + "','" + po1.getSellingArea() + "');";
+					+ po1.getIsCheck() + ",'" + po1.getId() + "','" + po1.getSellingArea() + "');";
 			rm = db.insert(sql);
 		} else if (po instanceof AcceptPO) {
 			AcceptPO po1 = (AcceptPO) po;
