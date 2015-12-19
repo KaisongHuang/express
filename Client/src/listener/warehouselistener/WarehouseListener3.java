@@ -7,7 +7,6 @@ import java.util.Vector;
 
 import _enum.EmployeeMes;
 import logic.warehousebl.Warehouse;
-import po.InStoragePO;
 import presentation.warehouseui.WarehouseUI3;
 import presentation.warehouseui.WarehouseUI3_1;
 import presentation.warehouseui.WarehouseUI3_2;
@@ -40,16 +39,16 @@ public class WarehouseListener3 implements ActionListener {
 			ArrayList<Object> ob = warehouse.showAdjustGoods();
 
 			for (int i = 0; i < ob.size(); i++) {
-				InStoragePO po1 = (InStoragePO) ob.get(2 * i);
-				InStoragePO po2 = (InStoragePO) ob.get(2 * i + 1);
+				InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
+				InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
 				InStorageVO vo = new InStorageVO();
-				vo.setId(po1.getId());// textField_3
-				vo.setDestination(po1.getDestination());// textField_4
-				vo.setIndate(po1.getIndate());// comboBox_4comboBox_5comboBox_6
-				vo.setPos_qu(po2.getPos_qu());// comboBox_7
-				vo.setPos_pai(po2.getPos_pai());// comboBox_8
-				vo.setPos_jia(po2.getPos_jia());// comboBox_9
-				vo.setPos_wei(po2.getPos_wei());// comboBox_10
+				vo.setId(vo1.getId());// textField_3
+				vo.setDestination(vo1.getDestination());// textField_4
+				vo.setIndate(vo1.getIndate());// comboBox_4comboBox_5comboBox_6
+				vo.setPos_qu(vo2.getPos_qu());// comboBox_7
+				vo.setPos_pai(vo2.getPos_pai());// comboBox_8
+				vo.setPos_jia(vo2.getPos_jia());// comboBox_9
+				vo.setPos_wei(vo2.getPos_wei());// comboBox_10
 				vo.setWarehouseID(EmployeeMes.belongToWho);
 				vo.setIsCheck(0);
 
@@ -89,17 +88,17 @@ public class WarehouseListener3 implements ActionListener {
 
 		for (int i = 0; i < ob.size(); i++) {
 			Vector<Object> item = new Vector<Object>();
-			InStoragePO po1 = (InStoragePO) ob.get(2 * i);
-			InStoragePO po2 = (InStoragePO) ob.get(2 * i + 1);
-			item.add(po1.getId());
-			item.add(po1.getPos_qu());
-			item.add(po1.getPos_pai());
-			item.add(po1.getPos_jia());
-			item.add(po1.getPos_wei());
-			item.add(po2.getPos_qu());
-			item.add(po2.getPos_pai());
-			item.add(po2.getPos_jia());
-			item.add(po2.getPos_wei());
+			InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
+			InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
+			item.add(vo1.getId());
+			item.add(vo1.getPos_qu());
+			item.add(vo1.getPos_pai());
+			item.add(vo1.getPos_jia());
+			item.add(vo1.getPos_wei());
+			item.add(vo2.getPos_qu());
+			item.add(vo2.getPos_pai());
+			item.add(vo2.getPos_jia());
+			item.add(vo2.getPos_wei());
 			data.add(item);
 		}
 
