@@ -4,6 +4,9 @@ public class WarehouseVO {
 	double rate;
 	String WarehouseID;
     int carpai,carjia,carwei,trainpai,trainjia,trainwei,airpai,airjia,airwei,pai,jia,wei;
+    public WarehouseVO(){
+    	
+    }
 	public WarehouseVO( String WarehouseID,int carpai,int carjia,int carwei,int trainpai,int trainjia,int trainwei,int airpai,int qirjia,int airwei,int pai,int jia,int wei,double rate) {
          this.carpai=carpai;
          this.carjia=carjia;
