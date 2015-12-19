@@ -26,9 +26,8 @@ public class FinanceListener1 implements ActionListener {
 
 			String date = year + month + day;
 			String sellingArea = (String) ui.getComboBox_3().getSelectedItem();
-
 			ArrayList<ReceiptPO> po = finance.checkReceipt(date, sellingArea);
-
+ 
 			Vector<Object> data = new Vector<Object>();
 			double sum = 0;
 
@@ -46,5 +45,5 @@ public class FinanceListener1 implements ActionListener {
 			ui.getTextArea().setText("" + sum);
 		}
 	}
-
+	
 }

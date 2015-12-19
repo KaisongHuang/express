@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -14,7 +15,11 @@ import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI;
 import vo.CarPackVO;
-
+/**
+ * 汽车装运管理界面监听
+ * @author john
+ *
+ */
 public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	private SellingAreaUI ui;
@@ -40,11 +45,61 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
 			ResultMessage rm;
 			CarPackVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = sellingarea.manageCarPack(vo);
+			check(rm);
 		}
 		
 	}
 
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
+	private boolean check(CarPackVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkDate()==0){
+			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			return false;
+		}
+		if(vo.checkFee()==0){
+			JOptionPane.showMessageDialog(ui, "请检查费用是否合理！");
+			return false;
+		}
+		if(vo.checkList()==0){
+			JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
+			return false;
+		}
+		if(vo.checkNumber()==0){
+			JOptionPane.showMessageDialog(ui, "请检查汽运编号格式是否正确！");
+			return false;
+		}
+		
+		if(vo.checkSupercargo()==0){
+			JOptionPane.showMessageDialog(ui, "请检查押运员编号格式是否正确！");
+			return false;
+		}
+		if(vo.checkSupervisor()==0){
+			JOptionPane.showMessageDialog(ui, "请检查监装员编号格式是否正确！");
+			return false;
+		}
+		
+		return true;
+	}
 	private CarPackVO read() {
 		// TODO Auto-generated method stub
 		String date = ui.getTextField().getText();

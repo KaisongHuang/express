@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Operation;
@@ -38,6 +39,8 @@ public class SellingAreaListener4_2 implements MouseListener, ActionListener {
 		} else if (e.getSource() == ui.getBtnNewButton_16()) {
 			ResultMessage rm;
 			DriverVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = sellingarea.manageDriverinfo(vo, Operation.update);
 		} else if (e.getSource() == ui.getBtnNewButton_15()) {
 			String id = ui.getTextField().getText();
@@ -46,6 +49,29 @@ public class SellingAreaListener4_2 implements MouseListener, ActionListener {
 		}
 	}
 
+	private boolean check(DriverVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkBirthday()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机生日格式是否正确！");
+			return false;
+		}
+		if(vo.checkID()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机身份证号是否正确！");
+			return false;
+		}
+		if(vo.checkNumber()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机编号！");
+			return false;
+		}
+		if(vo.checkPhone()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机手机号格式是否正确！");
+			return false;
+		}
+		return true;
+	}
 	private void set(DriverVO vo) {
 		// TODO Auto-generated method stub
 		ui.getTextField_5().setText(vo.getName());

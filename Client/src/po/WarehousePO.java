@@ -1,6 +1,8 @@
 package po;
 
-public class WarehousePO {
+import java.io.Serializable;
+
+public class WarehousePO  implements Serializable{
 
 	double rate;
 	String WarehouseID;

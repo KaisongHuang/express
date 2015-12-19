@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Operation;
@@ -37,10 +38,49 @@ public class SellingAreaListener4_4 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			ResultMessage rm;
 			DriverVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = sellingarea.manageDriverinfo(vo, Operation.insert);
+			check(rm);
 		}
 	}
-	
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
+	private boolean check(DriverVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkBirthday()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机生日格式是否正确！");
+			return false;
+		}
+		if(vo.checkID()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机身份证号是否正确！");
+			return false;
+		}
+		if(vo.checkNumber()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机编号！");
+			return false;
+		}
+		if(vo.checkPhone()==0){
+			JOptionPane.showMessageDialog(ui, "请检查司机手机号格式是否正确！");
+			return false;
+		}
+		return true;
+	}
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub
 		textField.setText("");

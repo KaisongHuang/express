@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Opera;
@@ -29,7 +30,10 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 		if (e.getSource() == ui.getBtnNewButton_15()) {
 			ResultMessage rm;
 			EmployeeVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = manager.manageMember(vo, Opera.Employee_insert);
+			check(rm);
 		} else if (e.getSource() == ui.getBtnNewButton_16()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_2());
@@ -39,6 +43,43 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 			delete(ui.getTextField_1());
 		}
 
+	}
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
+	private boolean check(EmployeeVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+   		    return false;	
+		}
+		if(vo.checkAge()==0){
+			JOptionPane.showMessageDialog(ui, "请检查员工年龄格式是否正确！");
+   		    return false;
+		}
+		if(vo.checkBelong()==0){
+			JOptionPane.showMessageDialog(ui, "请检查员工附属单位格式是否正确！");
+   		    return false;
+		}
+		if(vo.checkID()==0){
+			JOptionPane.showMessageDialog(ui, "请检查员工编号格式是否正确！");
+   		    return false;
+		}
+		if(vo.checkTime()==0){
+			JOptionPane.showMessageDialog(ui, "请检查员工工作时间是否合理！");
+   		    return false;
+		}
+		return true;
 	}
 
 	private void delete(JTextField textField) {

@@ -48,8 +48,9 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
 			return false;
 		}
-		if(true){
-			
+		if(vo.checkId()==0){
+			JOptionPane.showMessageDialog(ui,"请检查编号格式是否正确。");
+			return false;
 		}
 			return true;
 	}
@@ -71,9 +72,11 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showConfirmDialog(ui, dialog);
+			JOptionPane.showMessageDialog(ui, dialog);
 	}
 
 	private void delete(JTextField textField) {

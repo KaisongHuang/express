@@ -1,8 +1,9 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ReceiptPO extends SellingareaPO {
+public class ReceiptPO extends SellingareaPO  implements Serializable{
 
 	private String number;
 	private double money;

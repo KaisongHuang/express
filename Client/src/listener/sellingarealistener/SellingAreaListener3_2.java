@@ -3,6 +3,7 @@ package listener.sellingarealistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Operation;
@@ -34,14 +35,54 @@ public class SellingAreaListener3_2 implements ActionListener {
 		} else if (e.getSource() == ui.getBtnNewButton_16()) {
 			ResultMessage rm;
 			CarVO vo = this.read();
+			
 			rm = sellingarea.manageCarinfo(vo, Operation.update);
+			
+			check(rm);
 		} else if (e.getSource() == ui.getBtnNewButton_15()) {
 			String id = ui.getTextField().getText();
-			CarVO vo = sellingarea.findCar(id);
+			if(!check(id))
+				return ;
+			CarVO vo = sellingarea.findCar(id);	
+			if(!check(vo))
+				return ;
 			set(vo);
 		} 
 	}
-
+	private boolean check(CarVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "车辆编号不存在！");
+   		    return false;	
+		}
+		return true;
+	}
+	  private boolean check(String id){
+	    	 if(id.length()!=10){
+	    		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+	    		 return false;
+	    	 }
+	    	 try{
+	    		 Integer.parseInt(id);
+	    	 }catch(NumberFormatException e){
+	    		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+	    		 return false;
+	    	 }
+	    	 return true;
+	    }
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
 	private void set(CarVO vo) {
 		// TODO Auto-generated method stub
 		ui.getTextField_1().setText("" + vo.getNumber());

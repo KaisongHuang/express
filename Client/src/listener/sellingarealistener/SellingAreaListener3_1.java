@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
@@ -31,13 +32,36 @@ public class SellingAreaListener3_1 implements ActionListener {
 			delete(ui.getLblNewLabel_13());
 		}else if(e.getSource()==ui.getButton_1()){
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return ;
 			CarVO vo = sellingarea.findCar(id);
+			if(!check(vo))
+				return;
 			set(vo);
 		}
 		
 		
 	}
-
+	private boolean check(CarVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "车辆编号不存在！");
+   		    return false;	
+		}
+		return true;
+	}
+    private boolean check(String id){
+    	 if(id.length()!=10){
+    		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+    		 return false;
+    	 }
+    	 try{
+    		 Integer.parseInt(id);
+    	 }catch(NumberFormatException e){
+    		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+    		 return false;
+    	 }
+    	 return true;
+    }
 	private void set(CarVO vo) {
 		// TODO Auto-generated method stub
 		ui.setLblNewLabel_3(new JLabel(""+vo.getCarNumber()));
