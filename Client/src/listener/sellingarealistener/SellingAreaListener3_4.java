@@ -21,7 +21,7 @@ public class SellingAreaListener3_4 implements ActionListener {
 		super();
 		this.ui=ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getBtnNewButton_16()){
@@ -39,13 +39,13 @@ public class SellingAreaListener3_4 implements ActionListener {
 			rm = sellingarea.manageCarinfo(vo, Operation.insert);
 			check(rm);
 		}else if(e.getSource()==ui.getBtnNewButton_10()){
-			
+
 		}else if(e.getSource()==ui.getBtnNewButton_11()){
-			
+
 		}else if(e.getSource()==ui.getBtnNewButton_13()){
-			
+
 		}else if(e.getSource()==ui.getBtnNewButton_14()){
-			
+
 		}
 	}
     private boolean check(CarVO vo){
@@ -69,11 +69,23 @@ public class SellingAreaListener3_4 implements ActionListener {
     		JOptionPane.showMessageDialog(ui, "请检查车辆服役时间是否合理！");
 			return false;
     	}
-    	
+
     	return true;
     }
     private void check(ResultMessage rm){
-    	
+    	String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+
     }
 	private CarVO read() {
 		// TODO Auto-generated method stub
@@ -83,10 +95,10 @@ public class SellingAreaListener3_4 implements ActionListener {
 		String ChassisNumber = ui.getTextField_3().getText();
 		String purchase = ui.getTextField_4().getText();
 		String ServiceTime = ui.getTextField_5().getText();
-		
+
 		CarVO vo = new CarVO(number,EngineNumber,CarNumber,
 				ChassisNumber,purchase,Integer.parseInt(ServiceTime));
-		
+
 		return vo;
 	}
 

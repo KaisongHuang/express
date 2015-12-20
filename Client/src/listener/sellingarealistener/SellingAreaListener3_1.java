@@ -19,7 +19,7 @@ public class SellingAreaListener3_1 implements ActionListener {
 		super();
 		this.ui=ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getButton_2()){
@@ -39,13 +39,13 @@ public class SellingAreaListener3_1 implements ActionListener {
 				return;
 			set(vo);
 		}
-		
-		
+
+
 	}
 	private boolean check(CarVO vo){
 		if(vo==null){
 			JOptionPane.showMessageDialog(ui, "车辆编号不存在！");
-   		    return false;	
+   		    return false;
 		}
 		return true;
 	}
@@ -64,12 +64,20 @@ public class SellingAreaListener3_1 implements ActionListener {
     }
 	private void set(CarVO vo) {
 		// TODO Auto-generated method stub
+		ui.getLblNewLabel_3().setText(""+vo.getCarNumber());
+		ui.getLblNewLabel_5().setText(""+vo.getEngineNumber());
+		ui.getLblNewLabel_7().setText(""+vo.getNumber());
+		ui.getLblNewLabel_9().setText(vo.getPurchase());
+		ui.getLblNewLabel_12().setText(""+vo.getChassisNumber());
+		ui.getLblNewLabel_13().setText(""+vo.getServiceTime());
+		/*
 		ui.setLblNewLabel_3(new JLabel(""+vo.getCarNumber()));
 		ui.setLblNewLabel_5(new JLabel(""+vo.getEngineNumber()));
 		ui.setLblNewLabel_7(new JLabel(""+vo.getNumber()));
 		ui.setLblNewLabel_9(new JLabel(vo.getPurchase()));
 		ui.setLblNewLabel_12(new JLabel(""+vo.getChassisNumber()));
 		ui.setLblNewLabel_13(new JLabel(""+vo.getServiceTime()));
+		*/
 	}
 
 	private void delete(JLabel label) {
