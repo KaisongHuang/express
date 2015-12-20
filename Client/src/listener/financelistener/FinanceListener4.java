@@ -14,7 +14,6 @@ import javax.swing.border.EmptyBorder;
 
 import _enum.Operation;
 import logic.financebl.Finance;
-import po.AccountPO;
 import presentation.financeui.FinanceUI4;
 import vo.AccountVO;
 
@@ -33,13 +32,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 			ui.getCard().show(ui, "1");
 
-			ArrayList<AccountPO> po = finance.checkInitInfo();
+			ArrayList<AccountVO> vo = finance.checkInitInfo();
 			Vector<Object> data = new Vector<Object>();
 
-			for (int i = 0; i < po.size(); i++) {
+			for (int i = 0; i < vo.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
-				item.add(po.get(i).getBankAccount());
-				item.add(po.get(i).getBalance());
+				item.add(vo.get(i).getBankAccount());
+				item.add(vo.get(i).getBalance());
 				data.add(item);
 			}
 
@@ -151,13 +150,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 		} else if (e.getSource() == ui.getUi3().getButton_3()) {
 			// find account by key string
 			String key = ui.getUi3().getTextField().getText();
-			ArrayList<AccountPO> po = finance.findAccount(key);
+			ArrayList<AccountVO> vo = finance.findAccount(key);
 			Vector<Object> data = new Vector<Object>();
 
-			for (int i = 0; i < po.size(); i++) {
+			for (int i = 0; i < vo.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
-				item.add(po.get(i).getBankAccount());
-				item.add(po.get(i).getBalance());
+				item.add(vo.get(i).getBankAccount());
+				item.add(vo.get(i).getBalance());
 				data.add(item);
 			}
 

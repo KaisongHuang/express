@@ -39,7 +39,7 @@ public class AccountVO {
 	public double getBalance() {
 		return balance;
 	}
-	
+
 	public void setBalance(Double double1) {
 		balance=double1;
 		

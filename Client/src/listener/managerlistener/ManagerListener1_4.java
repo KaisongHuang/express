@@ -26,17 +26,7 @@ public class ManagerListener1_4 implements MouseListener, ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-        if(e.getSource()==ui.getButton()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_11()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_12()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_14()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
+        if(e.getSource()==ui.getBtnNewButton_15()){
 			ResultMessage rm;
 			InstitutionVO vo = this.read();
 			if(!check(vo.getOrganizationID()))
