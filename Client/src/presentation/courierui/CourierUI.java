@@ -93,7 +93,7 @@ public class CourierUI extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));
