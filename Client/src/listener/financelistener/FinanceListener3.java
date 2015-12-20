@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.JOptionPane;
+
 import logic.financebl.Finance;
 import po.PayPO;
 import po.ReceiptPO;
@@ -34,6 +36,8 @@ public class FinanceListener3 implements ActionListener {
 
 			ArrayList<Object> ob = finance.getTotal(begin, end);
 
+			if(!check(ob))
+				return ;
 			ArrayList<PayPO> pay = new ArrayList<PayPO>();
 			ArrayList<ReceiptPO> receipt = new ArrayList<ReceiptPO>();
 			int count = finance.getCount();
@@ -72,6 +76,13 @@ public class FinanceListener3 implements ActionListener {
 			ui.setData1(data1);
 			ui.setData2(data2);
 		}
+	}
+	private boolean check(ArrayList<Object> ob){
+		if(ob==null){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		return true;
 	}
 
 }

@@ -6,10 +6,12 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import _enum.EmployeeMes;
+import _enum.ResultMessage;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI4;
@@ -97,6 +99,8 @@ public class WarehouseListener4 implements ActionListener {
 						vo.setPos_wei((Integer) rowData.get(6));
 						vo.setWarehouseID(EmployeeMes.belongToWho);
 						vo.setIsCheck(0);
+						if(!check(vo))
+							return ;
 						warehouseBl.initWarehouse(vo);
 					}
 
@@ -117,9 +121,44 @@ public class WarehouseListener4 implements ActionListener {
 			label.setBounds(149, 47, 244, 16);
 			contentPane.add(label);
 		}else if(e.getSource()==ui.getButton_4()){
+			ResultMessage rm=null;
 			System.out.println("库存清空");
-			warehouseBl.clearWarehouse();
+			rm=warehouseBl.clearWarehouse();
+			check(rm);
 		}
 	}
 
+	private boolean check(InStorageVO vo){
+		if(vo.checkDate()==0){
+			JOptionPane.showMessageDialog(ui, "请检查入库日期是否正确！");
+			return false;
+		}
+		if(vo.checkJia()==0){
+			JOptionPane.showMessageDialog(ui, "请检查仓库架号是否正确！");
+			return false;
+		}
+		if(vo.checkPai()==0){
+			JOptionPane.showMessageDialog(ui, "请检查仓库排号是否正确！");
+			return false;
+		}
+		if(vo.checkWei()==0){
+			JOptionPane.showMessageDialog(ui, "请检查仓库位号是否正确！");
+			return false;
+		}
+		return true;
+	}
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
 }
