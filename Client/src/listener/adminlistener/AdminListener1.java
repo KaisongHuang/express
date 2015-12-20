@@ -29,6 +29,7 @@ public class AdminListener1 implements MouseListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getBtnNewButton_11()){
+			delete(ui.getTextField_3());
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			ui.getComboBox().setSelectedIndex(0);

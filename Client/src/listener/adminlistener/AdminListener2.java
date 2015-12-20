@@ -89,8 +89,8 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	private void setAll(AdminVO vo) {
 		// TODO Auto-generated method stub
-		ui.setTextField(new JTextField(vo.getName()));
-		ui.setLabel1(new JLabel(vo.getPassword()));
+		ui.setTextField(vo.getName());
+		ui.setLabel1(vo.getPassword());
 
 	}
 
