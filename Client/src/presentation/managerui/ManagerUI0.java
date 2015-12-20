@@ -84,6 +84,7 @@ public class ManagerUI0 extends JPanel {
 		button4.addMouseListener(listener);
 		navi_panel.add(button4);
 
+//		navi_panel.setBackground(new Color(158, 211, 240));
 		add(navi_panel);
 
 	}

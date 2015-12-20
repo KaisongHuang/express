@@ -13,9 +13,7 @@ import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener4_2;
 
-
-public class ManagerUI4_2 extends JPanel{
-
+public class ManagerUI4_2 extends JPanel {
 
 	/**
 	 *
@@ -28,8 +26,6 @@ public class ManagerUI4_2 extends JPanel{
 	private JTextField textField_8;
 	private JTextField textField_1;
 
-	private JButton btnNewButton_12;
-	private JButton btnNewButton_13;
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
 	private JButton btnNewButton_16;
@@ -39,6 +35,7 @@ public class ManagerUI4_2 extends JPanel{
 
 	/**
 	 * Create the application.
+	 * 
 	 * @param card
 	 */
 	public ManagerUI4_2() {
@@ -52,29 +49,12 @@ public class ManagerUI4_2 extends JPanel{
 	private void initialize() {
 
 		setBackground(new Color(158, 211, 238));
-		this.setBounds(137, 115, 745, 440);
+		this.setBounds(0, 44, 790, 433);
 
 		this.setLayout(null);
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(192, 192, 192));
-		panel_5.setBounds(0, 0, 743, 49);
-		this.add(panel_5);
-		panel_5.setLayout(null);
-
-		btnNewButton_12 = new JButton("\u5236\u5B9A\u85AA\u6C34\u7B56\u7565");
-		btnNewButton_12.setBounds(25, 11, 150, 30);
-		panel_5.add(btnNewButton_12);
-		btnNewButton_12.addActionListener(managerlistener);
-
-		btnNewButton_13 = new JButton("\u5236\u5B9A\u8DDD\u79BB\u4EF7\u683C");
-		btnNewButton_13.setBackground(new Color(255, 248, 220));
-		btnNewButton_13.setBounds(182, 11, 150, 30);
-		panel_5.add(btnNewButton_13);
-		btnNewButton_13.addActionListener(managerlistener);
-
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(0, 106, 743, 282);
+		panel_6.setBounds(23, 79, 743, 282);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -168,11 +148,11 @@ public class ManagerUI4_2 extends JPanel{
 		btnNewButton_17.addActionListener(managerlistener);
 
 		JLabel label = new JLabel("\u4EF7\u683C\uFF08\u6BCF\u5343\u516C\u91CC\uFF09");
-		label.setBounds(0, 81, 150, 18);
+		label.setBounds(86, 49, 150, 18);
 		add(label);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(103, 75, 122, 30);
+		textField_1.setBounds(217, 43, 122, 30);
 		add(textField_1);
 		textField_1.setColumns(10);
 
