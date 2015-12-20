@@ -38,7 +38,7 @@ public class LoginUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginUI() {
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setUndecorated(true);
 		
 		

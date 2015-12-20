@@ -57,7 +57,7 @@ public class CourierUI2 extends JPanel{
 	 */
 	private void initialize() {
 		this.setBounds(136, 118, 748, 436);
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));
 		JLabel label = new JLabel("收件编号");

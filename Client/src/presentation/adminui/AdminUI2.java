@@ -57,7 +57,7 @@ public class AdminUI2 extends JPanel{
 	private void initialize() {
 
 		this.setBounds(136, 115, 746, 438);
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(Color.white);
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));
 		JLabel label_2 = new JLabel("账户名:");

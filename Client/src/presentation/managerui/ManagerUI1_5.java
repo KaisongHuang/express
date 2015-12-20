@@ -43,7 +43,7 @@ public class ManagerUI1_5 extends JPanel{
 	 */
 	private void initialize() {
 
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setBounds(0, 44, 746, 394);
 
 		this.setLayout(null);
