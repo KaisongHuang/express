@@ -72,7 +72,7 @@ public class SellingAreaUI4_4 extends JPanel{
 		lblNewLabel_2.setBounds(6, 6, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
-		textField_1 = new JTextField("3");
+		textField_1 = new JTextField("");
 		textField_1.setBounds(120, 6, 100, 30);
 		panel_6.add(textField_1);
 
@@ -88,15 +88,15 @@ public class SellingAreaUI4_4 extends JPanel{
 		lblNewLabel_6.setBounds(6, 152, 100, 18);
 		panel_6.add(lblNewLabel_6);
 
-		textField_2 = new JTextField("7New label");
+		textField_2 = new JTextField("");
 		textField_2.setBounds(120, 49,100, 30);
 		panel_6.add(textField_2);
 
-		textField_3 = new JTextField("8New label");
+		textField_3 = new JTextField("");
 		textField_3.setBounds(120, 102, 100, 30);
 		panel_6.add(textField_3);
 
-		textField_4 = new JTextField("9New label");
+		textField_4 = new JTextField("");
 		textField_4.setBounds(120, 152, 100, 30);
 		panel_6.add(textField_4);
 
@@ -104,7 +104,7 @@ public class SellingAreaUI4_4 extends JPanel{
 		lblNewLabel_10.setBounds(304, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
 
-		textField_5 = new JTextField("11New label");
+		textField_5 = new JTextField("");
 		textField_5.setBounds(431, 6, 100, 30);
 		panel_6.add(textField_5);
 
@@ -112,7 +112,7 @@ public class SellingAreaUI4_4 extends JPanel{
 		lblNewLabel_12.setBounds(304, 49, 100, 18);
 		panel_6.add(lblNewLabel_12);
 
-		textField_6 = new JTextField("13New label");
+		textField_6 = new JTextField("");
 		textField_6.setBounds(431, 49, 100, 30);
 		panel_6.add(textField_6);
 
@@ -120,7 +120,7 @@ public class SellingAreaUI4_4 extends JPanel{
 		lblNewLabel_14.setBounds(304, 102, 100, 18);
 		panel_6.add(lblNewLabel_14);
 
-		textField_7 = new JTextField("15New label");
+		textField_7 = new JTextField("");
 		textField_7.setBounds(431, 102, 100, 30);
 		panel_6.add(textField_7);
 
@@ -128,7 +128,7 @@ public class SellingAreaUI4_4 extends JPanel{
 		lblNewLabel_16.setBounds(304, 152, 100, 18);
 		panel_6.add(lblNewLabel_16);
 
-		textField_8 = new JTextField("17New label");
+		textField_8 = new JTextField("");
 		textField_8.setBounds(431, 152, 100, 30);
 		panel_6.add(textField_8);
 
