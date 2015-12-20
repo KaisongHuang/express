@@ -18,7 +18,8 @@ public class Courier implements CourierBlService {
 
 	CourierDataService cd = new CourierData();
 	SenderDataService sd = new SenderData();
-
+    double time;
+    double money;
 	public ResultMessage OrderInput(SenderVO vo,DistanceAndFee daf) {
 		// TODO Auto-generated method stub
 		ResultMessage rm = null;
@@ -31,6 +32,7 @@ public class Courier implements CourierBlService {
 			packing = 2.0;
 		}
 
+		
 		SenderPO po = new SenderPO(vo.getSenderName(),vo.getSenderAddress(),vo.getSenderCompany(),vo.getSenderCall(),vo.getSenderPhone(),
 				vo.getRecipientName(),vo.getRecipientAddress(),vo.getRecipientCompany(),vo.getRecipientCall(),vo.getRecipientPhone(),
 				vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),this.getPrice(vo.getType(), vo.getSenderCity(), vo.getRecipientCity(),packing),
@@ -53,6 +55,7 @@ public class Courier implements CourierBlService {
 	    double[] d=new double[2];
 	    double fee=0;
 	    try {
+System.out.println(city1+city2);
 			d=cd.getDistanceAndFee(city1, city2);
 		} catch (RemoteException e) {
 
@@ -66,17 +69,18 @@ public class Courier implements CourierBlService {
 	    }else {
 	    	fee=d[0]/1000*d[1]*18/25+packing;
 	    }
+	    money=fee;
 		return  fee;
 	}
 
 	public double getTime(String start,String end) {
 		try {
-			return cd.getTime(start, end);
+			return time=cd.getTime(start, end);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return 0;
+        return time=0;
 
 
 	}
@@ -95,6 +99,16 @@ public class Courier implements CourierBlService {
 		}
 
 		return rm;
+	}
+
+	public double getTime() {
+		// TODO Auto-generated method stub
+		return time;
+	}
+
+	public double getMoney() {
+		// TODO Auto-generated method stub
+		return money;
 	}
 
 

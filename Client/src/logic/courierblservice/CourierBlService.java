@@ -10,4 +10,6 @@ public interface CourierBlService {
       public double getPrice(String type,String city1,String city2,double packing);
       public double getTime(String start,String end);
       public ResultMessage ConsigneeinfoInput(CourierVO vo);
+      public double getTime();
+      public double getMoney();
 }
