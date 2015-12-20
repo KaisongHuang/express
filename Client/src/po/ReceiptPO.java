@@ -3,7 +3,7 @@ package po;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ReceiptPO extends SellingareaPO  implements Serializable{
+public class ReceiptPO extends SellingareaPO implements Serializable {
 
 	private String number;
 	private double money;
@@ -12,13 +12,13 @@ public class ReceiptPO extends SellingareaPO  implements Serializable{
 	private String sellingArea;
 	private ArrayList<String> id;
 
-	public ReceiptPO(double money, String date, String sellingArea, String number,ArrayList<String> id, int isCheck) {
+	public ReceiptPO(double money, String date, String sellingArea, String number, ArrayList<String> id, int isCheck) {
 		this.number = number;
 		this.money = money;
 		this.date = date;
 		this.isCheck = isCheck;
 		this.sellingArea = sellingArea;
-		this.id=id;
+		this.id = id;
 	}
 
 	public ArrayList<String> getId() {

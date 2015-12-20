@@ -4,14 +4,25 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 import RMI.RMIHelper;
 import _enum.ResultMessage;
 import data.managerdataservice.ManagerDataService;
 import dataservice.managerdataservice.ManagerDataBaseService;
+import po.AcceptPO;
+import po.CarPackPO;
+import po.CentreArrivalPO;
+import po.CentrePackPO;
+import po.CentreTransforPO;
+import po.DeliverPO;
 import po.EmployeePO;
+import po.InStoragePO;
 import po.InstitutionPO;
 import po.ManagerPO;
+import po.OutStoragePO;
+import po.PayPO;
+import po.ReceiptPO;
 import po.WarehousePO;
 
 public class ManagerData implements ManagerDataService {
@@ -62,6 +73,59 @@ public class ManagerData implements ManagerDataService {
 	public ResultMessage update(Object ob) throws RemoteException {
 
 		return md.update(ob);
+	}
+
+	/**
+	 * 新增以下接口
+	 */
+	public ArrayList<CarPackPO> findPack() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<ReceiptPO> findReceipt() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<AcceptPO> findAccept() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<DeliverPO> findDeliver() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreArrivalPO> findArrival() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreTransforPO> findTrans() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentrePackPO> findCentrePack() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<InStoragePO> findImport() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<OutStoragePO> findExport() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<PayPO> findPay() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

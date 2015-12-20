@@ -45,13 +45,14 @@ public class FinanceUI3 extends JPanel {
 	private JTable table2;
 	private JScrollPane JSP2;
 	FinanceListener3 financeListener3;
-    private JLabel label1;
-    private int height = 600;
-    private int width = 900;
+	private JLabel label1;
+	private int height = 600;
+	private int width = 900;
+
 	public FinanceUI3() {
 		financeListener3 = new FinanceListener3(this);
 		initialize();
-		//this.setImage();
+		// this.setImage();
 		this.setVisible(true);
 	}
 
@@ -59,7 +60,7 @@ public class FinanceUI3 extends JPanel {
 		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(Color.WHITE);
 		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new JTable(data1, name1);
@@ -131,7 +132,7 @@ public class FinanceUI3 extends JPanel {
 		this.add(label_3);
 
 		button = new JButton("查看");
-		button.setBounds(526, 33, 94, 27);
+		button.setBounds(526, 20, 94, 27);
 		button.addActionListener(financeListener3);
 		this.add(button);
 	}
@@ -179,6 +180,7 @@ public class FinanceUI3 extends JPanel {
 	public JButton getButton() {
 		return button;
 	}
+
 	private void setImage() {
 
 	}

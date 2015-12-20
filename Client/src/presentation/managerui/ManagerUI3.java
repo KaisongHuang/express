@@ -12,7 +12,6 @@ import java.awt.Color;
 import javax.swing.JButton;
 import listener.managerlistener.ManagerListener30;
 
-
 public class ManagerUI3 extends JPanel {
 
 	/**
@@ -40,7 +39,7 @@ public class ManagerUI3 extends JPanel {
 		this.setBounds(136, 115, 746, 443);
 
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(Color.WHITE);
 		JLabel label = new JLabel("是否确认查看统计分析：");
 		label.setBounds(38, 10, 150, 18);
 		this.add(label);
@@ -72,6 +71,5 @@ public class ManagerUI3 extends JPanel {
 	public void setButton2(JButton button2) {
 		this.button2 = button2;
 	}
-
 
 }

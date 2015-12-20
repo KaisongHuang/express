@@ -113,7 +113,6 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po1);
 				
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -128,7 +127,6 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po4);
 		
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -142,7 +140,6 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po5);
 		
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -156,7 +153,6 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po6);
 			
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -170,7 +166,6 @@ public class Manager implements ManagerBlService {
 			try {
 				rm = md.update(po7);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -185,7 +180,6 @@ public class Manager implements ManagerBlService {
 			try {
 				rm = md.update(po8);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -200,7 +194,6 @@ public class Manager implements ManagerBlService {
 			try {
 				rm = md.update(po9);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -215,7 +208,6 @@ public class Manager implements ManagerBlService {
 			try {
 				rm = md.update(po10);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -229,7 +221,6 @@ public class Manager implements ManagerBlService {
 			try {
 				rm = md.update(po11);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -244,7 +235,6 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po13);
 
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
@@ -264,7 +254,6 @@ public class Manager implements ManagerBlService {
 			try {
 				rm = md.update(po);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
 			}
