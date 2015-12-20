@@ -24,7 +24,7 @@ import server.data.warehousedata.WareHouseData;
 import server.database.MySQLDataBase;
 
 public class Server {
-	String ip = "127.0.0.1";
+	String ip = "172.25.133.3";
 	int port=8000;
 	MySQLDataBase db;
 

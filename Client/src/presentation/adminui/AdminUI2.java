@@ -122,8 +122,8 @@ public class AdminUI2 extends JPanel{
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
-		this.textField_2 = textField_2;
+	public void setTextField_2(String s) {
+		this.textField_2.setText(s);;
 	}
 
 	public JComboBox<String> getComboBox_1() {
@@ -138,9 +138,7 @@ public class AdminUI2 extends JPanel{
 		return button;
 	}
 
-	public void setButton(JButton button) {
-		this.button = button;
-	}
+	
 
 	public JButton getButton_1() {
 		return button_1;
@@ -154,8 +152,8 @@ public class AdminUI2 extends JPanel{
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
-		this.textField = textField;
+	public void setTextField(String s) {
+		this.textField.setText(s);
 	}
 
 
@@ -163,9 +161,7 @@ public class AdminUI2 extends JPanel{
 		return label1;
 	}
 
-	public void setLabel1(JLabel label1) {
-		this.label1 = label1;
-	}
+	
 
 	public JButton getButton_2() {
 		return button_2;
@@ -177,5 +173,10 @@ public class AdminUI2 extends JPanel{
 
 	private void setImage() {
 		
+	}
+
+	public void setLabel1(String password) {
+	   
+		label1.setText(password);
 	}
 }
