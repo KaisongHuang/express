@@ -19,6 +19,7 @@ import listener.warehouselistener.WarehouseListener1;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 //出库入库界面
 public class WarehouseUI1 extends JPanel {
 
@@ -32,8 +33,9 @@ public class WarehouseUI1 extends JPanel {
 	private JButton exportButton;
 	private JButton importButton;
 	private JButton button_3;
-	private JButton button_4;
 	private JButton button_5;
+	private JButton button_1;
+	private JButton button_2;
 	private JPanel exportPanel;
 	private JLabel label;
 	private JLabel label_1;
@@ -63,7 +65,6 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_12;
 	private JButton button;
 	private JButton button_6;
-	private JButton button_7;
 	private JLabel label_13;
 	private JComboBox<Object> comboBox_7;
 	private JLabel label_14;
@@ -73,7 +74,9 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_16;
 	private JComboBox<Object> comboBox_10;
 	private JPanel panel;
+	
 	WarehouseListener1 warehouseListener;
+
 	/**
 	 * Create the application.
 	 */
@@ -88,103 +91,102 @@ public class WarehouseUI1 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(new Color(158, 211, 238));
 		listener = new WarehouseListener1(this);
 		card = new CardLayout(0, 0);
-		this.setBounds(0,0, 746, 438);
+		this.setBounds(0, 0, 746, 438);
 		this.setLayout(null);
 		panel = new JPanel();
-		panel.setBounds(6, 45, 532, 334);
+		panel.setBounds(100, 50, 532, 334);
 		panel.setLayout(card);
 		add(panel);
 
 		exportPanel = new JPanel();
-		panel.add(exportPanel, "export");
+
 		exportPanel.setBackground(Color.WHITE);
 		exportPanel.setLayout(null);
 
 		label = new JLabel("快递编号:");
-		label.setBounds(6, 6, 57, 15);
+		label.setBounds(6, 20, 57, 15);
 		exportPanel.add(label);
 
 		textField = new JTextField();
-		textField.setBounds(75, 0, 122, 27);
+		textField.setBounds(75, 13, 122, 27);
 		exportPanel.add(textField);
 		textField.setColumns(10);
 
 		label_1 = new JLabel("出库日期:");
-		label_1.setBounds(209, 6, 57, 15);
+		label_1.setBounds(6, 138, 57, 15);
 		exportPanel.add(label_1);
 
 		label_2 = new JLabel("目的地:");
-		label_2.setBounds(6, 33, 57, 15);
+		label_2.setBounds(6, 58, 57, 15);
 		exportPanel.add(label_2);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(75, 27, 122, 27);
+		textField_1.setBounds(75, 52, 122, 27);
 		exportPanel.add(textField_1);
 		textField_1.setColumns(10);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(278, 1, 70, 25);
+		comboBox.setBounds(75, 134, 70, 25);
 		exportPanel.add(comboBox);
 
 		label_3 = new JLabel("年");
-		label_3.setBounds(349, 6, 12, 15);
+		label_3.setBounds(144, 138, 23, 15);
 		exportPanel.add(label_3);
 
 		comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(360, 1, 70, 25);
+		comboBox_1.setBounds(157, 134, 70, 25);
 		exportPanel.add(comboBox_1);
 
 		label_4 = new JLabel("月");
-		label_4.setBounds(430, 6, 13, 15);
+		label_4.setBounds(225, 138, 13, 15);
 		exportPanel.add(label_4);
 
 		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(442, 1, 57, 25);
+		comboBox_2.setBounds(239, 134, 70, 25);
 		exportPanel.add(comboBox_2);
 
 		label_5 = new JLabel("日");
-		label_5.setBounds(499, 6, 57, 15);
+		label_5.setBounds(306, 138, 23, 15);
 		exportPanel.add(label_5);
 
 		label_6 = new JLabel("装运形式:");
-		label_6.setBounds(209, 33, 57, 15);
+		label_6.setBounds(6, 179, 57, 15);
 		exportPanel.add(label_6);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(278, 28, 70, 25);
+		comboBox_3.setBounds(75, 175, 70, 25);
 		exportPanel.add(comboBox_3);
 
 		lblNewLabel_1 = new JLabel("中转单编号:");
-		lblNewLabel_1.setBounds(6, 60, 70, 15);
+		lblNewLabel_1.setBounds(6, 98, 70, 15);
 		exportPanel.add(lblNewLabel_1);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(75, 54, 122, 27);
+		textField_2.setBounds(75, 91, 122, 27);
 		exportPanel.add(textField_2);
 		textField_2.setColumns(10);
 
 		button_5 = new JButton("确认");
-		button_5.setBounds(75, 93, 94, 27);
+		button_5.setBounds(51, 249, 94, 27);
 		button_5.addActionListener(listener);
 		exportPanel.add(button_5);
 
 		button_3 = new JButton("清空");
-		button_3.setBounds(209, 93, 94, 27);
+		button_3.setBounds(144, 249, 94, 27);
 		button_3.addActionListener(listener);
 		exportPanel.add(button_3);
 
-		button_4 = new JButton("返回");
-		button_4.setBounds(349, 93, 94, 27);
-		button_4.addActionListener(listener);
-		exportPanel.add(button_4);
+		button_2 = new JButton("导入");
+		button_2.setBounds(239, 248, 94, 29);
+		button_2.addActionListener(warehouseListener);
+		exportPanel.add(button_2);
 
 		importPanel = new JPanel();
 		importPanel.setLayout(null);
 		importPanel.setBackground(Color.WHITE);
-		panel.add(importPanel, "import");
 
 		label_7 = new JLabel("快递编号:");
 		label_7.setBounds(6, 12, 57, 15);
@@ -233,16 +235,12 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_12);
 
 		button = new JButton("确认");
-		button.setBounds(75, 126, 94, 27);
+		button.setBounds(198, 126, 94, 27);
 		importPanel.add(button);
 
 		button_6 = new JButton("清空");
-		button_6.setBounds(200, 126, 94, 27);
+		button_6.setBounds(305, 126, 94, 27);
 		importPanel.add(button_6);
-
-		button_7 = new JButton("返回");
-		button_7.setBounds(328, 126, 94, 27);
-		importPanel.add(button_7);
 
 		label_13 = new JLabel("区号:");
 		label_13.setBounds(32, 85, 31, 16);
@@ -276,6 +274,14 @@ public class WarehouseUI1 extends JPanel {
 		comboBox_10.setBounds(435, 79, 70, 27);
 		importPanel.add(comboBox_10);
 
+		button_1 = new JButton("导入");
+		button_1.setBounds(85, 126, 94, 27);
+		button_1.addActionListener(warehouseListener);
+		importPanel.add(button_1);
+
+		panel.add(importPanel, "import");
+		panel.add(exportPanel, "export");
+
 		exportButton = new JButton("新建出库单");
 		exportButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -283,7 +289,7 @@ public class WarehouseUI1 extends JPanel {
 			}
 		});
 		exportButton.setBackground(new Color(255, 248, 220));
-		exportButton.setBounds(6, 6, 94, 27);
+		exportButton.setBounds(206, 11, 94, 27);
 		this.add(exportButton);
 
 		importButton = new JButton("新建入库单");
@@ -292,9 +298,17 @@ public class WarehouseUI1 extends JPanel {
 				card.show(panel, "import");
 			}
 		});
-		importButton.setBounds(112, 6, 94, 27);
+		importButton.setBounds(100, 11, 94, 27);
 		this.add(importButton);
 
+	}
+
+	public JButton getButton_1() {
+		return button_1;
+	}
+
+	public JButton getButton_2() {
+		return button_2;
 	}
 
 	public JButton getExportButton() {
@@ -311,10 +325,6 @@ public class WarehouseUI1 extends JPanel {
 
 	public JButton getImportClearButton() {
 		return this.button_6;
-	}
-
-	public JButton getBackButton() {
-		return this.button_4;
 	}
 
 	public JButton getExportConfirmButton() {
@@ -343,10 +353,6 @@ public class WarehouseUI1 extends JPanel {
 
 	public JButton getButton_3() {
 		return button_3;
-	}
-
-	public JButton getButton_4() {
-		return button_4;
 	}
 
 	public JButton getButton_5() {
@@ -469,10 +475,6 @@ public class WarehouseUI1 extends JPanel {
 		return button_6;
 	}
 
-	public JButton getButton_7() {
-		return button_7;
-	}
-
 	public JLabel getLabel_13() {
 		return label_13;
 	}
@@ -562,7 +564,8 @@ public class WarehouseUI1 extends JPanel {
 	public String getTransportation() {
 		return (String) comboBox_3.getSelectedItem();
 	}
+
 	private void setImage() {
-	
+
 	}
 }

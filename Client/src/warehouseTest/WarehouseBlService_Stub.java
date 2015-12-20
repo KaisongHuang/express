@@ -1,7 +1,10 @@
 package warehouseTest;
 
+import vo.CentreArrivalVO;
+import vo.CentreTransforVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
+import vo.SenderVO;
 
 import java.util.ArrayList;
 
@@ -59,5 +62,21 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public ArrayList<CentreArrivalVO> getImport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreTransforVO> getExport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getSenderDestination(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }
