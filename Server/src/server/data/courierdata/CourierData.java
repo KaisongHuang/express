@@ -28,7 +28,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 		if (po instanceof CourierPO) {
 
 			CourierPO po1 = (CourierPO) po;
-			ResultSet rs = db.find("select * from Sender where BarCode='" + po1.getNumber() + "';");
+			ResultSet rs = db.find("insert into  Sender where BarCode='" + po1.getNumber() + "';");
 			try {
 				if (!rs.wasNull()) {
 					sql = "insert into Courier values(" + po1.getNumber() + ",'" + po1.getName() + "','" + po1.getDate()

@@ -29,14 +29,18 @@ public class DriverVO {
     	return c.checkDate(birthday);
     }
     public int checkID(){
-    	return c.checkID(ID, 18);
+    	int a=ID.length();
+    	if(a==18)
+    		return 1;
+    	else
+    		return 0;
     }
     public int checkPhone(){
         if(phone.startsWith("1")&&phone.length()==11)
         	return 1;
         return 0;
     }
- 
+
     public int checkIsNull(){
     	if(number.length()==0||name.length()==0||birthday.length()==0||ID.length()==0||phone.length()==0||CarCompany.length()==0||
     			sex.length()==0||LicenceTime.length()==0)
@@ -110,5 +114,5 @@ public class DriverVO {
 	public void setLicenceTime(String licenceTime) {
 		LicenceTime = licenceTime;
 	}
-  
+
 }
