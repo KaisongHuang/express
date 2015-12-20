@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.SellingareaPO;
 
-public class CarPO extends SellingareaPO {
+public class CarPO extends SellingareaPO  implements Serializable{
 	String number;
 	String EngineNumber;
 	String CarNumber;

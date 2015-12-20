@@ -6,40 +6,65 @@ package presentation.sellingareaui;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.util.Arrays;
+import java.util.Vector;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
 import listener.sellingarealistener.SellingAreaListener20;
+import javax.swing.JComboBox;
 
-
-public class SellingAreaUI2 extends JPanel{
-
+public class SellingAreaUI2 extends JPanel {
 
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTable table;
-	private JButton btnNewButton_10;
 	private int width;
 	private int height;
+	private JTable table;
+	private JScrollPane JSP;
+	private Vector<String> name;
+	private Vector<Object> data;
+	private DefaultTableModel model;
+	private JTable table1;
+	private JScrollPane JSP1;
+	private Vector<String> name1;
+	private Vector<Object> data1;
+	private DefaultTableModel model1;
+
 	SellingAreaListener20 sellingarealistener;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
+	private JButton button_3;
+	private JButton button_4;
+	private JButton button_5;
+	private JButton button_6;
 
 	/**
 	 * Create the application.
+	 * 
 	 * @param j
 	 * @param i
 	 */
 	public SellingAreaUI2(int i, int j) {
 		sellingarealistener = new SellingAreaListener20(this);
-		width=i;
-		height=j;
+		width = i;
+		height = j;
 		initialize();
-		this.setImage();
-		this.setVisible(true);
 	}
 
 	/**
@@ -47,146 +72,179 @@ public class SellingAreaUI2 extends JPanel{
 	 */
 	private void initialize() {
 
-		this.setBackground(new Color(158,211,238));
-		this.setBounds(136, 114, 711, 439);
-
+		this.setBackground(new Color(158, 211, 238));
+		this.setBounds(136, 114, 742, 533);
 		this.setLayout(null);
 
-//		JPanel panel = new JPanel();
-//		panel.setBounds(0, 0, 137, 109);
-//		this.add(panel);
-//
-//		JLabel lblPic = new JLabel("pic");
-//		panel.add(lblPic);
-//
-//		JPanel panel_1 = new JPanel();
-//		panel_1.setBounds(136, 0, 746, 58);
-//		this.add(panel_1);
-//		panel_1.setLayout(null);
-//
-//		JLabel lblNewLabel = new JLabel("\u67D0\u67D0\u90E8\u95E8 XXX \u6B22\u8FCE\u4F7F\u7528XXXXX\u7CFB\u7EDF");
-//		lblNewLabel.setBounds(14, 13, 309, 32);
-//		panel_1.add(lblNewLabel);
-//
-//		JPanel panel_2 = new JPanel();
-//		panel_2.setBounds(0, 60, 137, 493);
-//		this.add(panel_2);
-//		panel_2.setLayout(null);
-//
-//		JButton btnNewButton_1 = new JButton("\u8425\u4E1A\u5385");
-//		btnNewButton_1.setBackground(new Color(255, 248, 220));
-//		btnNewButton_1.setBounds(0, 105, 137, 55);
-//		panel_2.add(btnNewButton_1);
-//
-//		JButton btnNewButton_2 = new JButton("\u4E2D\u8F6C\u4E2D\u5FC3");
-//		btnNewButton_2.setBounds(0, 160, 137, 55);
-//		panel_2.add(btnNewButton_2);
-//
-//		JButton btnNewButton_3 = new JButton("\u4ED3\u5E93\u7BA1\u7406");
-//		btnNewButton_3.setBounds(0, 215, 137, 55);
-//		panel_2.add(btnNewButton_3);
-//
-//		JButton btnNewButton_4 = new JButton("\u8D22\u52A1");
-//		btnNewButton_4.setBounds(0, 270, 137, 55);
-//		panel_2.add(btnNewButton_4);
-//
-//		JButton btnNewButton_5 = new JButton("\u603B\u7ECF\u7406");
-//		btnNewButton_5.setBounds(0, 325, 137, 55);
-//		panel_2.add(btnNewButton_5);
-//
-//		JButton btnNewButton_6 = new JButton("\u7BA1\u7406\u5458");
-//		btnNewButton_6.setBounds(0, 380, 137, 55);
-//		panel_2.add(btnNewButton_6);
-//
-//		JButton btnNewButton = new JButton("\u5FEB\u9012\u5458");
-//		btnNewButton.setBounds(0, 50, 137, 55);
-//		panel_2.add(btnNewButton);
-//
-//		JPanel panel_3 = new JPanel();
-//		panel_3.setBounds(136, 58, 746, 58);
-//		this.add(panel_3);
-//		panel_3.setLayout(null);
-//
-//		JButton btnNewButton_8 = new JButton("\u63A5\u6536\u4E0E\u6D3E\u4EF6");
-//		btnNewButton_8.setBounds(137, 0, 137, 55);
-//		panel_3.add(btnNewButton_8);
-//
-//		JButton btnNewButton_9 = new JButton("\u6536\u6B3E\u5355");
-//		btnNewButton_9.setBackground(new Color(255, 248, 220));
-//		btnNewButton_9.setBounds(271, 0, 137, 55);
-//		panel_3.add(btnNewButton_9);
-//
-//		JButton btnNewButton_7 = new JButton("\u8F66\u8F86\u88C5\u8F66\u7BA1\u7406");
-//		btnNewButton_7.setBounds(0, 0, 137, 55);
-//		panel_3.add(btnNewButton_7);
-//
-//		JButton btnNewButton_12 = new JButton("\u8F66\u8F86\u4FE1\u606F\u7BA1\u7406");
-//		btnNewButton_12.setBounds(405, 0, 137, 55);
-//		panel_3.add(btnNewButton_12);
-//
-//		JButton button = new JButton("\u53F8\u673A\u4FE1\u606F\u7BA1\u7406");
-//		button.setBounds(540, 0, 137, 55);
-//		panel_3.add(button);
+		String names[] = { "收款日期", "收款金额", "收款快递员" };
+		name = new Vector<String>(Arrays.asList(names));
+		table = new JTable(data, name);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.addMouseListener(sellingarealistener);
+		model = (DefaultTableModel) table.getModel();
+		JSP = new JScrollPane(table);
+		JSP.setBounds(28, 58, 370, 298);
+		this.add(JSP);
 
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(255, 255, 255));
-		panel_4.setBounds(69, 35, 746, 439);
-		this.add(panel_4);
-		panel_4.setLayout(null);
+		String names1[] = { "快递订单条形码号" };
+		name1 = new Vector<String>(Arrays.asList(names1));
+		table1 = new JTable(data1, name1);
+		table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table1.addMouseListener(sellingarealistener);
+		model1 = (DefaultTableModel) table1.getModel();
+		JSP1 = new JScrollPane(table1);
+		JSP1.setBounds(398, 58, 236, 298);
+		this.add(JSP1);
 
-		JLabel lblNewLabel_1 = new JLabel("收款单");
-		lblNewLabel_1.setBounds(48, 21, 100, 18);
-		panel_4.add(lblNewLabel_1);
+		JLabel label = new JLabel("收款日期：");
+		label.setBounds(28, 368, 79, 16);
+		add(label);
 
-		table = new JTable(new Object[][]{{null, null},{null, null},{null, null},{null, null},{null,null}},new String[] {"666", "���"});
-		table.setToolTipText("");
+		textField = new JTextField();
+		textField.setBounds(100, 362, 108, 28);
+		add(textField);
+		textField.setColumns(10);
 
-//		table.setModel(new DefaultTableModel(
-//			new Object[][] {
-//				{null, null},
-//				{null, null},
-//				{null, null},
-//				{null, null},
-//			},
-//			new String[] {
-//				"���Ա���", "���"
-//			}
-//		));
-		table.setBounds(48, 72, 408, 164);
-		panel_4.add(table);
+		JLabel label_1 = new JLabel("收款金额：");
+		label_1.setBounds(28, 401, 73, 16);
+		add(label_1);
 
-		btnNewButton_10 = new JButton("\u786E\u8BA4");
-		btnNewButton_10.setBounds(360, 250, 90, 30);
-		panel_4.add(btnNewButton_10);
-		btnNewButton_10.addActionListener(sellingarealistener);
+		textField_1 = new JTextField();
+		textField_1.setBounds(100, 396, 108, 28);
+		add(textField_1);
+		textField_1.setColumns(10);
 
-		JLabel lblNewLabel_2 = new JLabel("\u5FEB\u9012\u5458\u7F16\u53F7");
-		lblNewLabel_2.setBounds(48, 51, 209, 18);
-		panel_4.add(lblNewLabel_2);
+		JLabel label_2 = new JLabel("收款快递员：");
+		label_2.setBounds(28, 436, 88, 16);
+		add(label_2);
 
-		JLabel lblNewLabel_3 = new JLabel("\u91D1\u989D");
-		lblNewLabel_3.setBounds(269, 51, 187, 18);
-		panel_4.add(lblNewLabel_3);
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(100, 430, 108, 28);
+		add(textField_2);
+
+		JLabel label_3 = new JLabel("条形码号：");
+		label_3.setBounds(338, 368, 79, 16);
+		add(label_3);
+
+		textField_3 = new JTextField();
+		textField_3.setBounds(398, 362, 134, 28);
+		add(textField_3);
+		textField_3.setColumns(10);
+
+		button = new JButton("新增收款单");
+		button.setBounds(220, 363, 93, 29);
+		button.addActionListener(sellingarealistener);
+		add(button);
+
+		button_1 = new JButton("修改收款单");
+		button_1.setBounds(220, 396, 93, 29);
+		button_1.addActionListener(sellingarealistener);
+		add(button_1);
+
+		button_2 = new JButton("删除收款单");
+		button_2.setBounds(220, 431, 93, 29);
+		button_2.addActionListener(sellingarealistener);
+		add(button_2);
+
+		button_3 = new JButton("添加");
+		button_3.setBounds(527, 363, 60, 29);
+		button_3.addActionListener(sellingarealistener);
+		add(button_3);
+
+		button_4 = new JButton("删除");
+		button_4.setBounds(582, 363, 60, 29);
+		button_4.addActionListener(sellingarealistener);
+		add(button_4);
+
+		button_5 = new JButton("保存");
+		button_5.setBounds(28, 30, 60, 29);
+		button_5.addActionListener(sellingarealistener);
+		add(button_5);
+
+		button_6 = new JButton("清空");
+		button_6.setBounds(89, 30, 60, 29);
+		button_6.addActionListener(sellingarealistener);
+		add(button_6);
 	}
 
+	public void setData(Vector<Object> data) {
+		this.data = data;
+	}
+	
+	public void setData1(Vector<Object> data1) {
+		this.data1 = data1;
+	}
 
 	public JTable getTable() {
 		return table;
 	}
 
-	public void setTable(JTable table) {
-		this.table = table;
+	public Vector<Object> getData() {
+		return data;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
+	public DefaultTableModel getModel() {
+		return model;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
-	private void setImage() {
-	
+	public JTable getTable1() {
+		return table1;
 	}
 
+	public Vector<String> getName1() {
+		return name1;
+	}
+
+	public Vector<Object> getData1() {
+		return data1;
+	}
+
+	public DefaultTableModel getModel1() {
+		return model1;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public JTextField getTextField_2() {
+		return textField_2;
+	}
+
+	public JTextField getTextField_3() {
+		return textField_3;
+	}
+
+	public JButton getButton() {
+		return button;
+	}
+
+	public JButton getButton_1() {
+		return button_1;
+	}
+
+	public JButton getButton_2() {
+		return button_2;
+	}
+
+	public JButton getButton_3() {
+		return button_3;
+	}
+
+	public JButton getButton_4() {
+		return button_4;
+	}
+
+	public JButton getButton_5() {
+		return button_5;
+	}
+
+	public JButton getButton_6() {
+		return button_6;
+	}
 }

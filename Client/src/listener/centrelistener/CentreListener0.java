@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
@@ -29,7 +30,10 @@ public class CentreListener0 implements MouseListener, ActionListener {
 			ResultMessage rm;
 
 			CentreArrivalVO vo = this.read();
+			if(!check(vo))
+				return ;
 			rm = centre.createReceive(vo);
+			check(rm);
 		} else if (e.getSource() == ui.getBtnNewButton_10()) {
 
 			delete(ui.getTextField());
@@ -39,7 +43,39 @@ public class CentreListener0 implements MouseListener, ActionListener {
 		}
 
 	}
-
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
+	private boolean check(CentreArrivalVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkID()==0){
+			JOptionPane.showMessageDialog(ui,"请检查中转中心编号格式是否正确。");
+			return false;
+		}
+		if(vo.checkDate()==0){
+			JOptionPane.showMessageDialog(ui,"请检查日期格式是否正确！");
+			return false;
+		}
+		if(vo.checkTransfer()==0){
+			JOptionPane.showMessageDialog(ui,"请检查中转单编号格式是否正确！");
+			return false;
+		}	
+		return true;
+	}
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub
 		textField.setText("");

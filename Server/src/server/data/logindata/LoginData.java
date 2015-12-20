@@ -20,12 +20,12 @@ public class LoginData extends UnicastRemoteObject implements LoginDataBaseServi
 System.out.println("远程方法调用成功");
 		String sql="select * from Admin where id='"+po.getId()+"' and password='"+po.getPassword()+"';";
 		ResultSet rs=db.find(sql);
-		
+System.out.println(po.getId());		
 		try {
 			if(!rs.wasNull()){
 				rs.last();
 System.out.println("密码正确");
-				String sql2="select * from employee where id='"+po.getId()+"';";
+				String sql2="select * from Employee where id='"+po.getId()+"';";
 				ResultSet rs1=db.find(sql2);
 				String id = null;
 				String name = null;
@@ -40,8 +40,13 @@ System.out.println("密码正确");
 					position=rs1.getString(4);
 					time=rs1.getDouble(5);
 					belong=rs1.getString(6);
+					System.out.println(id);
 				}
-				rs1.last();
+				//rs1.last();
+				
+				System.out.println(id);
+			if(id==null)
+				return null;
              return new EmployeePO(id,name,age,position,time,belong);
                 
 	       }

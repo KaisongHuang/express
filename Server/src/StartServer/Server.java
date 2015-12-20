@@ -25,7 +25,7 @@ import server.database.MySQLDataBase;
 
 public class Server {
 	String ip = "127.0.0.1";
-	int port;
+	int port=8000;
 	MySQLDataBase db;
 
 	public static void main(String[] args) {
@@ -50,15 +50,15 @@ public class Server {
 			SenderDataBaseService sender=new SenderData(db);
 			WareHouseDataBaseService WareHouse=new WareHouseData(db);
 			LocateRegistry.createRegistry(8000);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/AdminDataService", ad);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/CentreDataService", cd);
-			Naming.rebind("rmi://"+ip+":8000"+"/LoginDataService", ld);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/CourierDataService", courier);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/FinanceDataService", finance);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/ManagerDataService", manager);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/SellingAreaDataService", sellingarea);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/SenderDataService", sender);
-			Naming.rebind("rmi://" + ip + ":8000"  + "/WareHouseDataService", WareHouse);
+			Naming.rebind("rmi://" + ip + ":"+port + "/AdminDataService", ad);
+			Naming.rebind("rmi://" + ip + ":"+port  + "/CentreDataService", cd);
+			Naming.rebind("rmi://"+ip+":"+port+"/LoginDataService", ld);
+			Naming.rebind("rmi://" + ip + ":"+port  + "/CourierDataService", courier);
+			Naming.rebind("rmi://" + ip + ":"+port  + "/FinanceDataService", finance);
+			Naming.rebind("rmi://" + ip + ":"+port  + "/ManagerDataService", manager);
+			Naming.rebind("rmi://" + ip + ":"+port  + "/SellingAreaDataService", sellingarea);
+			Naming.rebind("rmi://" + ip + ":"+port + "/SenderDataService", sender);
+			Naming.rebind("rmi://" + ip + ":"+port + "/WareHouseDataService", WareHouse);
 			System.out.println("AdminDataService Start");
 		} catch (Exception e) {
 			e.printStackTrace();

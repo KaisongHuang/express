@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.SellingareaPO;
 
-public class AcceptPO extends SellingareaPO{
+public class AcceptPO extends SellingareaPO implements Serializable{
      String BarCode;
      String date;
      String number;

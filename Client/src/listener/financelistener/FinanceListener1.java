@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 import logic.financebl.Finance;
-import po.ReceiptPO;
 import presentation.financeui.FinanceUI1;
+import vo.ReceiptVO;
 
 public class FinanceListener1 implements ActionListener {
 	private FinanceUI1 ui;
@@ -27,24 +27,25 @@ public class FinanceListener1 implements ActionListener {
 			String date = year + month + day;
 			String sellingArea = (String) ui.getComboBox_3().getSelectedItem();
 
-			ArrayList<ReceiptPO> po = finance.checkReceipt(date, sellingArea);
+			ArrayList<ReceiptVO> vo = finance.checkReceipt(date, sellingArea);
+
 
 			Vector<Object> data = new Vector<Object>();
 			double sum = 0;
 
-			for (int i = 0; i < po.size(); i++) {
+			for (int i = 0; i < vo.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
-				item.add(po.get(i).getDate());
-				item.add(po.get(i).getSellingArea());
-				item.add(po.get(i).getNumber());
-				item.add(po.get(i).getMoney());
+				item.add(vo.get(i).getDate());
+				item.add(vo.get(i).getSellingArea());
+				item.add(vo.get(i).getNumber());
+				item.add(vo.get(i).getMoney());
 				data.add(item);
-				sum = sum + po.get(i).getMoney();
+				sum = sum + vo.get(i).getMoney();
 			}
 
 			ui.setData(data);
 			ui.getTextArea().setText("" + sum);
 		}
 	}
-
+	
 }

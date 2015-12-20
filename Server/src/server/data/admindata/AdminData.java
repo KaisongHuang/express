@@ -25,22 +25,23 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 		String p=null;
 		String r=null;
 		try {
-			while(rs.next()){
+			if(rs.next()){
 				i=rs.getString(1);
 				n=rs.getString(2);
 				p=rs.getString(3);
 				r=rs.getString(4);
+				return new AdminPO(i,n,p,r);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new AdminPO(i,n,p,r);
+		return null;
 	}
 
 	public ResultMessage update(Object po) throws RemoteException{
 		AdminPO po1=(AdminPO) po;
-		String sql="update Admin set name='"+po1.getName()+"',password='"+po1.getPassword()+"',role='"+po1.getRole()+"' where id=;"+po1.getId()+"';";
+		String sql="update Admin set name='"+po1.getName()+"',password='"+po1.getPassword()+"',role='"+po1.getRole()+"' where id='"+po1.getId()+"';";
 		ResultMessage rm=db.update(sql);
 		return rm;
 	}

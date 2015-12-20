@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.WarehousePO;
 
-public class InStoragePO extends WarehousePO {
+public class InStoragePO extends WarehousePO  implements Serializable{
 
 	private String id;
 	private String indate;

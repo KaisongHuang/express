@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.FinancePO;
 
-public class AccountPO extends FinancePO{
+public class AccountPO extends FinancePO  implements Serializable{
 	private String bankAccount;
 	private double balance;
 	public AccountPO(String bankAccount,double balance){

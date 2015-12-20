@@ -19,11 +19,12 @@ public class Admin implements AdminBlService {
 
 		try{
 			ap = ad.find(id);
-			return new AdminVO(""+id,ap.getName(),ap.getPassword(),ap.getRole());
+			if(ap!=null)
+			      return new AdminVO(""+id,ap.getName(),ap.getPassword(),ap.getRole());
+			else
+				return null;
 		}catch(RemoteException e){
-
-			
-
+             e.printStackTrace();
 		}
 
 		return null;

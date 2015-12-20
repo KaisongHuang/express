@@ -14,7 +14,10 @@ public class Sender implements SenderBlService {
 		HistoryPO hispo;
 		try {
 			hispo = sd.find(id);
-			return new HistoryVO(hispo.getID(),hispo.getState(), hispo.getList1(),hispo.getList2());
+			if(hispo!=null)
+			    return new HistoryVO(hispo.getID(),hispo.getState(), hispo.getList1(),hispo.getList2());
+			else
+				return null;
 		} catch (RemoteException e) {
 
 			e.printStackTrace();
