@@ -12,9 +12,7 @@ import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener1_2;
 
-
-public class ManagerUI1_2 extends JPanel{
-
+public class ManagerUI1_2 extends JPanel {
 
 	/**
 	 * 
@@ -24,10 +22,6 @@ public class ManagerUI1_2 extends JPanel{
 	private JTextField textField_1;
 	private JTextField textField_3;
 
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_12;
-	private JButton btnNewButton_13;
-	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
 	private JButton btnNewButton_16;
 	private JButton btnNewButton_17;
@@ -35,9 +29,9 @@ public class ManagerUI1_2 extends JPanel{
 
 	ManagerListener1_2 managerlistener;
 
-
 	/**
 	 * Create the application.
+	 * 
 	 * @param card
 	 */
 	public ManagerUI1_2() {
@@ -50,58 +44,27 @@ public class ManagerUI1_2 extends JPanel{
 	 */
 	private void initialize() {
 
-		setBackground(new Color(158, 211, 238));
-		this.setBounds(136, 115, 748, 438);
+		setBackground(Color.white);
+		this.setBounds(0, 44, 746, 394);
 
 		this.setLayout(null);
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(0, 0, 748, 50);
-		this.add(panel_5);
-		panel_5.setLayout(null);
-
-		btnNewButton_11 = new JButton("\u67E5\u8BE2");
-		btnNewButton_11.setBounds(32, 6, 90, 30);
-		panel_5.add(btnNewButton_11);
-		btnNewButton_11.addActionListener(managerlistener);
-
-		btnNewButton_12 = new JButton("\u66F4\u65B0");
-		btnNewButton_12.setBackground(new Color(255, 248, 220));
-		btnNewButton_12.setBounds(168, 6, 90, 30);
-		panel_5.add(btnNewButton_12);
-		btnNewButton_12.addActionListener(managerlistener);
-
-		btnNewButton_13 = new JButton("\u5220\u9664");
-		btnNewButton_13.setBounds(308, 6, 90, 30);
-		panel_5.add(btnNewButton_13);
-		btnNewButton_13.addActionListener(managerlistener);
-
-		btnNewButton_14 = new JButton("\u6DFB\u52A0");
-		btnNewButton_14.setBounds(453, 6, 90, 30);
-		panel_5.add(btnNewButton_14);
-		btnNewButton_14.addActionListener(managerlistener);
-
-		button = new JButton("\u65E5\u5FD7\u67E5\u770B");
-		button.setBounds(573, 6, 90, 30);
-		panel_5.add(button);
-		button.addActionListener(managerlistener);
-
 		JLabel lblNewLabel_1 = new JLabel("机构编号：");
-		lblNewLabel_1.setBounds(39, 72, 100, 18);
+		lblNewLabel_1.setBounds(128, 72, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new JTextField();
-		textField.setBounds(157, 66, 122, 30);
+		textField.setBounds(240, 66, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
 		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(345, 66, 100, 30);
+		btnNewButton_15.setBounds(411, 67, 100, 30);
 		this.add(btnNewButton_15);
 		btnNewButton_15.addActionListener(managerlistener);
 
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(39, 138, 485, 111);
+		panel_6.setBounds(128, 124, 485, 111);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -128,17 +91,16 @@ public class ManagerUI1_2 extends JPanel{
 		textField_3.setColumns(10);
 
 		btnNewButton_16 = new JButton("更新");
-		btnNewButton_16.setBounds(39, 306, 100, 30);
+		btnNewButton_16.setBounds(262, 247, 100, 30);
 		this.add(btnNewButton_16);
 		btnNewButton_16.addActionListener(managerlistener);
 
 		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(424, 306, 100, 30);
+		btnNewButton_17.setBounds(411, 247, 100, 30);
 		this.add(btnNewButton_17);
 		btnNewButton_17.addActionListener(managerlistener);
 
 	}
-
 
 	public JTextField getTextField() {
 		return textField;
@@ -156,46 +118,12 @@ public class ManagerUI1_2 extends JPanel{
 		this.textField_1 = textField_1;
 	}
 
-
 	public JTextField getTextField_3() {
 		return textField_3;
 	}
 
 	public void setTextField_3(JTextField textField_3) {
 		this.textField_3 = textField_3;
-	}
-
-
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_12() {
-		return btnNewButton_12;
-	}
-
-	public void setBtnNewButton_12(JButton btnNewButton_12) {
-		this.btnNewButton_12 = btnNewButton_12;
-	}
-
-	public JButton getBtnNewButton_13() {
-		return btnNewButton_13;
-	}
-
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
-		this.btnNewButton_13 = btnNewButton_13;
-	}
-
-	public JButton getBtnNewButton_14() {
-		return btnNewButton_14;
-	}
-
-	public void setBtnNewButton_14(JButton btnNewButton_14) {
-		this.btnNewButton_14 = btnNewButton_14;
 	}
 
 	public JButton getBtnNewButton_15() {
@@ -229,6 +157,5 @@ public class ManagerUI1_2 extends JPanel{
 	public void setButton(JButton button) {
 		this.button = button;
 	}
-
 
 }

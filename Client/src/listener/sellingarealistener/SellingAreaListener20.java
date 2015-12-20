@@ -10,6 +10,7 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -155,6 +156,8 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 						vo.setId(id);
 						vo.setSellingArea(EmployeeMes.belongToWho);
 						vo.setIsCheck(0);
+						if(!check(vo))
+							return ;
 						sellingarea.createDebitnote(vo);
 					}
 				}
@@ -187,6 +190,28 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 
 	}
 
+	private boolean check(ReceiptVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
+			return false;
+		}
+		if(vo.checkDate()==0){
+			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			return false;
+		}
+		if(vo.checkID()==0){
+			JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
+			return false;
+		}
+		if(vo.checkNumber()==0){
+			JOptionPane.showMessageDialog(ui, "请检查收款人编号格式是否正确！");
+			return false;
+		}
+		if(vo.checkSelling()==0){
+			
+		}
+		return true;
+	}
 	@SuppressWarnings("unchecked")
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

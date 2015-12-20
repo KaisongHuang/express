@@ -1,8 +1,9 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class HistoryPO {
+public class HistoryPO  implements Serializable{
 	String id;
 	String state;
 	ArrayList<String> list1;

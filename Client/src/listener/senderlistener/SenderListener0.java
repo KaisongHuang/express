@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -33,11 +34,32 @@ public class SenderListener0 implements ActionListener{
 	}
 	public void actionPerformed(ActionEvent e) {
 		String s=search.gettextFieldContent();
+     	if(!check(s))
+     		return ;
 		HistoryVO h= sender.search(s);
+		if(!check(h))
+			return ;
 		set(h);
 		search1.setVisible(true);
 	}
 
+	private boolean check(HistoryVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(search,"系统中不存在此快递编号！");
+			return false;
+		}
+		return true;
+	}
+	private boolean check(String id){
+		 if(id.length()!=10)
+    		 return false;
+    	 try{
+    		 Integer.parseInt(id);
+    	 }catch(NumberFormatException e){
+    		 return false;
+    	 }
+    	 return true;
+	}
 	private void set(HistoryVO vo) {
 		// TODO Auto-generated method stub
 

@@ -9,19 +9,20 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import _enum.Operation;
+import _enum.ResultMessage;
 import logic.financebl.Finance;
-import po.AccountPO;
 import presentation.financeui.FinanceUI4;
 import vo.AccountVO;
 
 public class FinanceListener4 implements ActionListener, MouseListener {
 	private FinanceUI4 ui;
 	Finance finance = new Finance();
-
+    ResultMessage rm=null;
 	public FinanceListener4(FinanceUI4 ui) {
 		super();
 		this.ui = ui;
@@ -33,13 +34,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 			ui.getCard().show(ui, "1");
 
-			ArrayList<AccountPO> po = finance.checkInitInfo();
+			ArrayList<AccountVO> vo = finance.checkInitInfo();
 			Vector<Object> data = new Vector<Object>();
 
-			for (int i = 0; i < po.size(); i++) {
+			for (int i = 0; i < vo.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
-				item.add(po.get(i).getBankAccount());
-				item.add(po.get(i).getBalance());
+				item.add(vo.get(i).getBankAccount());
+				item.add(vo.get(i).getBalance());
 				data.add(item);
 			}
 
@@ -96,7 +97,8 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 						}
 						vo.setBankAccount((String) rowData.get(0));
 						vo.setBalance((Double) rowData.get(1));
-						finance.initAccount(vo);
+						rm=finance.initAccount(vo);
+						check(rm);
 					}
 
 				}
@@ -119,14 +121,19 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			System.out.println("返回");
 			ui.getCard().show(ui, "0");
 		} else if (e.getSource() == ui.getUi2().getButton_5()) {
-			finance.clearAccount();
+			rm=finance.clearAccount();
+			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_4()) {
 			// add new bankaccount
 			String account = ui.getUi3().getTextField_1().getText();
 			double money = Double.parseDouble(ui.getUi3().getTextField_2().getText());
 			Object rowData[] = { account, money };
 			ui.getUi3().getModel().addRow(rowData);
-			finance.manageAccount(new AccountVO(account, money), Operation.insert);
+			AccountVO vo=new AccountVO(account, money);
+			if(!check(vo))
+				return ;
+			rm=finance.manageAccount(vo, Operation.insert);
+			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_6()) {
 			// delete selected account
 			int selectedRow = ui.getUi3().getTable().getSelectedRow();// 获得选中行的索引
@@ -134,7 +141,8 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			double money = (Double) ui.getUi3().getTable().getValueAt(selectedRow, 1);
 			if (selectedRow != -1) // 存在选中行
 				ui.getUi3().getModel().removeRow(selectedRow); // 删除行
-			finance.manageAccount(new AccountVO(account, money), Operation.delete);
+			rm=finance.manageAccount(new AccountVO(account, money), Operation.delete);
+			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_5()) {
 			// edit selected account
 			String account = ui.getUi3().getTextField_1().getText();
@@ -147,17 +155,20 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 				ui.getUi3().getModel().setValueAt(money, selectedRow, 1);
 				// table.setValueAt(arg0, arg1, arg2)
 			}
-			finance.manageAccount(new AccountVO(account, money), Operation.update);
+			rm=finance.manageAccount(new AccountVO(account, money), Operation.update);
+			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_3()) {
 			// find account by key string
 			String key = ui.getUi3().getTextField().getText();
-			ArrayList<AccountPO> po = finance.findAccount(key);
+			ArrayList<AccountVO> vo = finance.findAccount(key);
+			if(!check(vo))
+				return ;
 			Vector<Object> data = new Vector<Object>();
 
-			for (int i = 0; i < po.size(); i++) {
+			for (int i = 0; i < vo.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
-				item.add(po.get(i).getBankAccount());
-				item.add(po.get(i).getBalance());
+				item.add(vo.get(i).getBankAccount());
+				item.add(vo.get(i).getBalance());
 				data.add(item);
 			}
 
@@ -166,6 +177,29 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	}
 
+	private boolean check(AccountVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkAccount()==0){
+			JOptionPane.showMessageDialog(ui, "请检查账户格式是否正确！");
+			return false;
+		}
+		if(vo.checkBalance()==0){
+			JOptionPane.showMessageDialog(ui, "请检查账户余额是否为正！");
+			return false;
+		}
+		return true;
+	}
+	private boolean check(ArrayList<AccountVO> vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "查询的信息系统中不存在！");
+			return false;
+		}
+		return true;
+	}
+	
 	public void mouseClicked(java.awt.event.MouseEvent e) {
 		// TODO Auto-generated method stub
 		int selectedRow = ui.getUi3().getTable().getSelectedRow(); // 获得选中行索引
@@ -175,7 +209,20 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 		ui.getUi3().getTextField_2().setText(String.valueOf(money));
 
 	}
-
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 

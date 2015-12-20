@@ -56,7 +56,7 @@ public class FinanceUI3 extends JPanel {
 	}
 
 	private void initialize() {
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 		 this.setBackground(new Color(158,211,240));

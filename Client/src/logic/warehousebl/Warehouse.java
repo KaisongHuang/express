@@ -31,28 +31,28 @@ public class Warehouse implements WarehouseBlService {
 
 	public ResultMessage importGoods(InStorageVO vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
 				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
 		} catch (RemoteException e) {
 			e.printStackTrace();
-			rm=ResultMessage.FunctionError;
+			rm = ResultMessage.FunctionError;
 		}
 		return rm;
 	}
 
 	public ResultMessage exportGoods(OutStorageVO vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 		OutStoragePO po = new OutStoragePO(vo.getId(), vo.getDestination(), vo.getOutdate(), vo.getWarehouseID(),
 				vo.getTransportation(), vo.getTrans_id(), vo.getIsCheck());
 		try {
 			rm = wd.insert(po);
 		} catch (RemoteException e) {
 			e.printStackTrace();
-			rm=ResultMessage.FunctionError;
+			rm = ResultMessage.FunctionError;
 		}
 		return rm;
 	}
@@ -60,14 +60,14 @@ public class Warehouse implements WarehouseBlService {
 	public ResultMessage initWarehouse(InStorageVO vo) {
 		// TODO Auto-generated method stub
 		/*********** needs to be modified when adding listener *********/
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
 				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
 		try {
 			rm = wd.insert(po);
 		} catch (RemoteException e) {
 			e.printStackTrace();
-			rm=ResultMessage.FunctionError;
+			rm = ResultMessage.FunctionError;
 		}
 		return rm;
 	}
@@ -117,15 +117,19 @@ public class Warehouse implements WarehouseBlService {
 		total = inNum - outNum;
 
 		for (int i = 0; i < list.size(); i++)
-			arr.add(list.get(i));
+			arr.add(new InStorageVO(list.get(i).getId(), list.get(i).getIndate(), list.get(i).getDestination(),
+					list.get(i).getWarehouseID(), list.get(i).getPos_qu(), list.get(i).getPos_pai(),
+					list.get(i).getPos_jia(), list.get(i).getPos_wei(), list.get(i).getIsCheck()));
 
 		for (int i = 0; i < list1.size(); i++)
-			arr.add(list1.get(i));
+			arr.add(new OutStorageVO(list1.get(i).getId(), list1.get(i).getDestination(), list1.get(i).getOutdate(),
+					list1.get(i).getWarehouseID(), list1.get(i).getTransportation(), list1.get(i).getTrans_id(),
+					list1.get(i).getIsCheck()));
 
 		return arr;
 	}
 
-	public ArrayList<InStoragePO> summarizeWarehouse() {
+	public ArrayList<InStorageVO> summarizeWarehouse() {
 		Calendar time = Calendar.getInstance();
 		int year = time.get(Calendar.YEAR);
 		int month = time.get(Calendar.MONTH) + 1;
@@ -139,20 +143,27 @@ public class Warehouse implements WarehouseBlService {
 
 		System.out.println("summarizeWarehouse()" + date);
 		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
+		ArrayList<InStorageVO> vo = new ArrayList<InStorageVO>();
 		try {
 			list = wd.summarize(date);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
-		return list;
+
+		for (int i = 0; i < list.size(); i++) {
+			vo.add(new InStorageVO(list.get(i).getId(), list.get(i).getIndate(), list.get(i).getDestination(),
+					list.get(i).getWarehouseID(), list.get(i).getPos_qu(), list.get(i).getPos_pai(),
+					list.get(i).getPos_jia(), list.get(i).getPos_wei(), list.get(i).getIsCheck()));
+		}
+		return vo;
 	}
 
 	public ArrayList<Object> showAdjustGoods() {
 		ArrayList<Object> ob = new ArrayList<Object>();
-		ArrayList<InStoragePO> pre = new ArrayList<InStoragePO>();
+		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
 		ArrayList<int[]> post = new ArrayList<int[]>();
 		try {
-			pre = wd.adjust();
+			list = wd.adjust();
 		} catch (RemoteException e1) {
 			e1.printStackTrace();
 		}
@@ -162,8 +173,10 @@ public class Warehouse implements WarehouseBlService {
 			e.printStackTrace();
 		}
 
-		for (int i = 0; i < pre.size(); i++) {
-			ob.add(pre.get(i));
+		for (int i = 0; i < list.size(); i++) {
+			ob.add(new InStorageVO(list.get(i).getId(), list.get(i).getIndate(), list.get(i).getDestination(),
+					list.get(i).getWarehouseID(), list.get(i).getPos_qu(), list.get(i).getPos_pai(),
+					list.get(i).getPos_jia(), list.get(i).getPos_wei(), list.get(i).getIsCheck()));
 			ob.add(post.get(i));
 		}
 

@@ -56,27 +56,27 @@ public class ManagerUI0_3 extends JPanel {
 	 */
 	private void initialize() {
 
-		setBackground(new Color(158, 211, 238));
-		this.setBounds(136, 115, 748, 438);
+		setBackground(Color.white);
+		this.setBounds(0, 44, 734, 394);
 
 		this.setLayout(null);
 
 		lblNewLabel_1 = new JLabel("员工编号：");
-		lblNewLabel_1.setBounds(19, 68, 100, 18);
+		lblNewLabel_1.setBounds(66, 48, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new JTextField();
-		textField.setBounds(117, 65, 122, 30);
+		textField.setBounds(140, 42, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
 		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(280, 66, 100, 30);
+		btnNewButton_15.setBounds(274, 43, 100, 30);
 		this.add(btnNewButton_15);
 		btnNewButton_15.addActionListener(managerlistener);
 
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(30, 122, 492, 205);
+		panel_6.setBounds(66, 78, 492, 205);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -129,12 +129,12 @@ public class ManagerUI0_3 extends JPanel {
 		panel_6.add(lblNewLabel_13);
 
 		btnNewButton_16 = new JButton("删除");
-		btnNewButton_16.setBounds(86, 381, 100, 30);
+		btnNewButton_16.setBounds(162, 307, 100, 30);
 		this.add(btnNewButton_16);
 		btnNewButton_16.addActionListener(managerlistener);
 
 		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(487, 381, 100, 30);
+		btnNewButton_17.setBounds(274, 307, 100, 30);
 		this.add(btnNewButton_17);
 		btnNewButton_17.addActionListener(managerlistener);
 

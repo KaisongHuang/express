@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import po.CentrePO;
 
-public class CentreTransforPO extends CentrePO {
+public class CentreTransforPO extends CentrePO  implements Serializable{
 
 	String transforStyle;
 	String dataOfGetin;

@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.FinancePO;
 
-public class PayPO extends FinancePO {
+public class PayPO extends FinancePO  implements Serializable{
 
 	String date;
 	double cost;

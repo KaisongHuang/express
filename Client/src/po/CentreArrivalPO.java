@@ -1,8 +1,10 @@
 package po;
 
+import java.io.Serializable;
+
 import po.CentrePO;
 
-public class CentreArrivalPO extends CentrePO {
+public class CentreArrivalPO extends CentrePO  implements Serializable{
 
 	String ID;
 	String getDate;

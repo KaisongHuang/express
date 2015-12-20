@@ -81,7 +81,7 @@ public class AdminUI4 extends JPanel{
 /**--------------------------------------Navigation Code--------------------------------------------**/
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(Color.white);
 		JLabel label = new JLabel("删除账户名:");
 		label.setBounds(54, 43, 80, 16);
 		this.add(label);

@@ -22,21 +22,23 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	
 	public ResultMessage insert(Object po) throws RemoteException{
 		String sql=null;
+		ResultMessage rm=null;
 		if(po instanceof AccountPO){
 			AccountPO po1=(AccountPO) po;
-			sql="insert into Account values("+po1.getBankAccount()+","+po1.getBalance()+")";
-			
+			sql="insert into Account values("+po1.getBankAccount()+","+po1.getBalance()+",0);";
+			rm=db.insert(sql);
+			String sql1="insert into Account values("+po1.getBankAccount()+","+po1.getBalance()+",1);";
+		    rm=db.insert(sql1);
 		}else if(po instanceof PayPO){
 			PayPO po1=(PayPO) po;
-			sql="insert into Pay values("+"'"+po1.getDate()+"',"+po1.getPayer()+",'"+po1.getPayAccount()+"','"+po1.getEntry()+"',"+po1.getComments()+","+po1.getCost()+","+po1.getIsCheck()+")";
-			
+			sql="insert into Pay values("+"'"+po1.getDate()+"',"+po1.getPayer()+",'"+po1.getPayAccount()+"','"+po1.getEntry()+"',"+po1.getComments()+","+po1.getCost()+","+po1.getIsCheck()+");";
+			rm=db.insert(sql);
 		}
-		ResultMessage rm=db.insert(sql);
 		return rm;
 	}
 
 	public ArrayList<AccountPO> getAccount() throws RemoteException{
-		String sql="select * from Account";
+		String sql="select * from Account where isInit=1;";
 		ResultSet rs=db.find(sql);
 		ArrayList<AccountPO> list=new ArrayList<AccountPO>();
 		list=null;
@@ -78,7 +80,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public ResultMessage delete( Object po) throws RemoteException{
 		String sql="delete from Account where ";
 		AccountPO po1=(AccountPO) po;
-		sql=sql+"bankAccount="+po1.getBankAccount();
+		sql=sql+"bankAccount="+po1.getBankAccount()+";";
 		ResultMessage rm=db.delete(sql);
 		
 		return rm;

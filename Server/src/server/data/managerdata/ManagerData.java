@@ -49,11 +49,11 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultMessage rm=null;
 		if(po instanceof EmployeePO){
 			EmployeePO po1=(EmployeePO) po;
-			sql="insert into Employee values('"+po1.getEmployeeID()+"','"+po1.getEmployeeName()+"',"+po1.getEmployeeAging()+",'"+po1.getEmployeePosition()+"',"+po1.getTimeOfWorking()+",'"+po1.getBelongToWho()+"')";
+			sql="insert into Employee values('"+po1.getEmployeeID()+"','"+po1.getEmployeeName()+"',"+po1.getEmployeeAging()+",'"+po1.getEmployeePosition()+"',"+po1.getTimeOfWorking()+",'"+po1.getBelongToWho()+"');";
 			rm=db.insert(sql);
 		}else if(po instanceof InstitutionPO){
 			InstitutionPO po1=(InstitutionPO) po;
-			sql="insert into Institution values('"+po1.getOrganizationID()+"','"+po1.getName()+"')";
+			sql="insert into Institution values('"+po1.getOrganizationID()+"','"+po1.getName()+"');";
 			rm=db.delete(sql);
 		}else {
 			DistanceAndFee po1=(DistanceAndFee) po;

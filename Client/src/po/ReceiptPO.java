@@ -1,8 +1,9 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ReceiptPO extends SellingareaPO {
+public class ReceiptPO extends SellingareaPO  implements Serializable{
 
 	private String number;
 	private double money;
@@ -26,10 +27,6 @@ public class ReceiptPO extends SellingareaPO {
 
 	public void setId(ArrayList<String> id) {
 		this.id = id;
-	}
-
-	public int getIsChenk() {
-		return isCheck;
 	}
 
 	public void setIsChenk(int isChenk) {

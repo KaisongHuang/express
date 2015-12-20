@@ -36,7 +36,7 @@ public class ManagerUI3 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 443);
 
 		this.setLayout(null);

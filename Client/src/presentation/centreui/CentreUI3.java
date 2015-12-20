@@ -63,7 +63,7 @@ public class CentreUI3 extends JPanel{
 
 
 
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(Color.white);
 		this.setBounds(136, 116, 746, 437);
 
 		this.setLayout(null);

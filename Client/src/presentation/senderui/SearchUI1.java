@@ -32,7 +32,7 @@ public class SearchUI1 extends JPanel{
 	 */
 	private void initialize() {
 		
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(Color.white);
 		this.setLayout(null);
 		this.setBounds(100,100,900,600);
 		JLabel lblNewLabel = new JLabel("货运状态:");

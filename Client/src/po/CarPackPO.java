@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import po.SellingareaPO;
 
-public class CarPackPO extends SellingareaPO {
+public class CarPackPO extends SellingareaPO  implements Serializable{
 	String date;
 	String number;
 	String start;

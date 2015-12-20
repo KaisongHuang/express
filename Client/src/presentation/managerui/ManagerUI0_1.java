@@ -62,8 +62,8 @@ public class ManagerUI0_1 extends JPanel{
 
 
 		
-		this.setBackground(new Color(158, 211, 238));
-		this.setBounds(136, 115, 748, 438);
+		this.setBackground(Color.white);
+		this.setBounds(0, 44, 746, 394);
 
 		this.setLayout(null);
 
@@ -127,16 +127,16 @@ public class ManagerUI0_1 extends JPanel{
 		panel_6.add(lblNewLabel_14);
 
 		lblNewLabel_1 = new JLabel("员工编号：");
-		lblNewLabel_1.setBounds(21, 69, 100, 18);
+		lblNewLabel_1.setBounds(94, 69, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new JTextField();
-		textField.setBounds(106, 67, 122, 30);
+		textField.setBounds(170, 63, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
 		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(308, 67, 120, 30);
+		btnNewButton_15.setBounds(304, 64, 120, 30);
 		this.add(btnNewButton_15);
 		btnNewButton_15.addActionListener(managerlistener);
 

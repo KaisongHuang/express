@@ -1,10 +1,11 @@
 package po;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import po.CentrePO;
 
-public class CentrePackPO extends CentrePO {
+public class CentrePackPO extends CentrePO  implements Serializable{
 
 	String dataOfGetin;
 	String centreTransferID;

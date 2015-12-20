@@ -45,7 +45,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		EmployeeMes.employeePosition = "营业厅业务员";
+		EmployeeMes.employeePosition = "总经理";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
@@ -166,8 +166,8 @@ public class MainFrame implements ActionListener {
 			panel1.add(new FinanceUI3(), "2");
 			panel1.add(new FinanceUI4(), "3");
 		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-			panel1.add(new ManagerUI0(), "0");
-			panel1.add(new ManagerUI1(), "1");
+			panel1.add(new ManagerUI1(), "0");
+			panel1.add(new ManagerUI0(), "1");
 			panel1.add(new ManagerUI2(), "2");
 			panel1.add(new ManagerUI3(), "3");
 			panel1.add(new ManagerUI4(), "4");

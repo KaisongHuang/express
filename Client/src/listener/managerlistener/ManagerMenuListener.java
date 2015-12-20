@@ -31,11 +31,11 @@ public class ManagerMenuListener implements ActionListener,MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton1()) {
-            card.show(panel, "1");
+            card.show(panel, "0");
             setClicked(true,false,false,false,false);
             repaint();
 		} else if (e.getSource() == ui.getButton2()) {
-			card.show(panel, "0");
+			card.show(panel, "1");
 			setClicked(false,true,false,false,false);
 			repaint();
 		} else if (e.getSource() == ui.getButton3()) {

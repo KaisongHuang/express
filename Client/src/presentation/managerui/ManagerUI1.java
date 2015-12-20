@@ -36,7 +36,7 @@ public class ManagerUI1 extends JPanel{
 	private void initialize() {
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		ui1 = new ManagerUI1_1();
 		ui2 = new ManagerUI1_2();
 		ui3 = new ManagerUI1_3();
@@ -70,25 +70,25 @@ public class ManagerUI1 extends JPanel{
 		navi_panel.add(button1);
 
 		button2 = new SubNaviButton("更新");
-		button2.setBounds(194, 8, 90, 44);
+		button2.setBounds(157, 8, 90, 44);
 		button2.addActionListener(listener);
 		button2.addMouseListener(listener);
 		navi_panel.add(button2);
 
 		button3 = new SubNaviButton("删除");
-		button3.setBounds(348, 8, 90, 44);
+		button3.setBounds(259, 8, 90, 44);
 		button3.addActionListener(listener);
 		button3.addMouseListener(listener);
 		navi_panel.add(button3);
 
 		button4 = new SubNaviButton("添加");
-		button4.setBounds(525, 8, 90, 44);
+		button4.setBounds(361, 8, 90, 44);
 		button4.addActionListener(listener);
 		button4.addMouseListener(listener);
 		navi_panel.add(button4);
 
 		button5 = new SubNaviButton("日志查看");
-		button5.setBounds(587, 6, 90, 30);
+		button5.setBounds(463, 8, 90, 44);
 		button5.addActionListener(listener);
 		button5.addMouseListener(listener);
 		navi_panel.add(button5);

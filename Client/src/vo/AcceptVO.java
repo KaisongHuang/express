@@ -24,7 +24,7 @@ public class AcceptVO {
 		return 1;
 		
 	}
-	public int chackBarCode(){
+	public int checkBarCode(){
 		return c.checkID(BarCode,10);
 		
 	}

@@ -5,9 +5,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.JOptionPane;
+
 import logic.warehousebl.Warehouse;
-import po.InStoragePO;
 import presentation.warehouseui.WarehouseUI2;
+import vo.InStorageVO;
 
 public class WarehouseListener2 implements ActionListener {
 	private WarehouseUI2 ui;
@@ -23,28 +25,34 @@ public class WarehouseListener2 implements ActionListener {
 		if (e.getSource() == ui.getButton_1()) {
 			// 快递编号，入库日期，目的地，区号，排号，架号，位号
 			// 库存查看(设定一个时间段，查看此时间段内的出／入库数量，存储位置，库存数量要有合计)
-			ArrayList<Object> arr = warehouse.checkWarehouse(ui.getBeginDate(), ui.getEndDate());
-			ArrayList<InStoragePO> po = new ArrayList<InStoragePO>();
+			String begin=ui.getBeginDate();
+			if(!check(begin))
+				return ;
+			String end= ui.getEndDate();
+			if(!check(end))
+				return ;
+			ArrayList<Object> arr = warehouse.checkWarehouse(begin,end);
+			ArrayList<InStorageVO> vo = new ArrayList<InStorageVO>();
 			String inNum = "" + warehouse.getInNum();
 			String outNum = "" + warehouse.getOutNum();
 			String total = "" + warehouse.getTotal();
 			Vector<Object> data = new Vector<Object>();
-
+            
 			ui.getTextArea().setText(inNum);
 			ui.getTextArea_1().setText(outNum);
 			ui.getTextArea_2().setText(total);
 			for (int i = 0; i < warehouse.getInNum(); i++) {
-				po.add((InStoragePO) arr.get(i));
+				vo.add((InStorageVO) arr.get(i));
 			}
 			for (int i = 0; i < warehouse.getInNum(); i++) {
 				Vector<Object> item = new Vector<Object>();
-				item.add(po.get(i).getId());
-				item.add(po.get(i).getIndate());
-				item.add(po.get(i).getDestination());
-				item.add(po.get(i).getPos_qu());
-				item.add(po.get(i).getPos_pai());
-				item.add(po.get(i).getPos_jia());
-				item.add(po.get(i).getPos_wei());
+				item.add(vo.get(i).getId());
+				item.add(vo.get(i).getIndate());
+				item.add(vo.get(i).getDestination());
+				item.add(vo.get(i).getPos_qu());
+				item.add(vo.get(i).getPos_pai());
+				item.add(vo.get(i).getPos_jia());
+				item.add(vo.get(i).getPos_wei());
 				data.add(item);
 
 			}
@@ -60,6 +68,20 @@ public class WarehouseListener2 implements ActionListener {
 			ui.getComboBox_4().setSelectedIndex(0);
 			ui.getComboBox_5().setSelectedIndex(0);
 		}
+	}
+	
+	private boolean check(String date){
+		 if(date.length()!=8){
+			 JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+    		 return false;
+		 }
+         try{
+        		 Integer.parseInt(date);
+        	 }catch(NumberFormatException e){
+        		 JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+        		 return false;
+         }
+         return true;
 	}
 
 }

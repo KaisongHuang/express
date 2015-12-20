@@ -40,7 +40,7 @@ public class ManagerListener10 implements ActionListener,MouseListener{
 			repaint();
 		} else if (e.getSource() == ui.getButton5()) {
 			ui.getCard().show(ui.getPanel(), "5");
-			setClicked(false, false, false, true, false);
+			setClicked(false, false, false, false, true);
 			repaint();
 		}
 	}

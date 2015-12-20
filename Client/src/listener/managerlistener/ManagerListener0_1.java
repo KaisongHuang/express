@@ -6,11 +6,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import _enum.Opera;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI0_1;
+import vo.DriverVO;
 import vo.EmployeeVO;
 
 public class ManagerListener0_1 implements MouseListener, ActionListener {
@@ -27,12 +29,35 @@ public class ManagerListener0_1 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getBtnNewButton_15()){
 			String s = ui.getTextField().getText();
+			if(!check(s))
+				return ;
 			EmployeeVO vo = (EmployeeVO) manager.find(s,Opera.Employee_find);
+			if(!check(vo))
+				return ;
 			setLabel(vo);
 		}
 		
 	}
-
+	private boolean check(EmployeeVO vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "员工编号不存在！");
+   		    return false;	
+		}
+		return true;
+	}
+	private boolean check(String id){
+	   	 if(id.length()!=10){
+	   		 JOptionPane.showMessageDialog(ui, "请确认员工编号格式是否正确！");
+	   		 return false;
+	   	 }
+	   	 try{
+	   		 Integer.parseInt(id);
+	   	 }catch(NumberFormatException e){
+	   		 JOptionPane.showMessageDialog(ui, "请确认员工编号格式是否正确！");
+	   		 return false;
+	   	 }
+	   	 return true;
+	   }
 	private void setLabel(EmployeeVO vo) {
 		// TODO Auto-generated method stub
 		ui.setLblNewLabel_4(new JLabel(vo.getEmployeeName()));

@@ -1,5 +1,7 @@
 package po;
 
-public class ManagerPO {
+import java.io.Serializable;
+
+public class ManagerPO  implements Serializable{
 
 }
