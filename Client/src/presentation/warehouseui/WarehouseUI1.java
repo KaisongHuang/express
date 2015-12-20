@@ -88,7 +88,7 @@ public class WarehouseUI1 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(Color.white);
 		listener = new WarehouseListener1(this);
 		card = new CardLayout(0, 0);
 		this.setBounds(0,0, 746, 438);

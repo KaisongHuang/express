@@ -39,7 +39,7 @@ public class FinanceUI4 extends JPanel {
 
 	private void initialize() {
 		this.setBounds(136, 115, 746, 438);
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		ui1 = new FinanceUI4_1(financeListener4);
 		ui2 = new FinanceUI4_2(financeListener4);
 		ui3 = new FinanceUI4_3(financeListener4);
