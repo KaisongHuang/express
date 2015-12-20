@@ -97,7 +97,7 @@ public class SellingAreaUI4_3 extends JPanel{
 		lblNewLabel_2.setBounds(6, 6, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
-		lblNewLabel_3 = new JLabel("3");
+		lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setBounds(120, 6, 100, 18);
 		panel_6.add(lblNewLabel_3);
 
@@ -113,15 +113,15 @@ public class SellingAreaUI4_3 extends JPanel{
 		lblNewLabel_6.setBounds(6, 152, 100, 18);
 		panel_6.add(lblNewLabel_6);
 
-		lblNewLabel_7 = new JLabel("7New label");
+		lblNewLabel_7 = new JLabel("");
 		lblNewLabel_7.setBounds(120, 49,100, 18);
 		panel_6.add(lblNewLabel_7);
 
-		lblNewLabel_8 = new JLabel("8New label");
+		lblNewLabel_8 = new JLabel("");
 		lblNewLabel_8.setBounds(120, 102, 100, 18);
 		panel_6.add(lblNewLabel_8);
 
-		lblNewLabel_9 = new JLabel("9New label");
+		lblNewLabel_9 = new JLabel("");
 		lblNewLabel_9.setBounds(120, 152, 100, 18);
 		panel_6.add(lblNewLabel_9);
 
@@ -129,7 +129,7 @@ public class SellingAreaUI4_3 extends JPanel{
 		lblNewLabel_10.setBounds(304, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
 
-		lblNewLabel_11 = new JLabel("11New label");
+		lblNewLabel_11 = new JLabel("");
 		lblNewLabel_11.setBounds(431, 6, 100, 18);
 		panel_6.add(lblNewLabel_11);
 
@@ -137,7 +137,7 @@ public class SellingAreaUI4_3 extends JPanel{
 		lblNewLabel_12.setBounds(304, 49, 100, 18);
 		panel_6.add(lblNewLabel_12);
 
-		lblNewLabel_13 = new JLabel("13New label");
+		lblNewLabel_13 = new JLabel("");
 		lblNewLabel_13.setBounds(431, 49, 100, 18);
 		panel_6.add(lblNewLabel_13);
 
@@ -145,7 +145,7 @@ public class SellingAreaUI4_3 extends JPanel{
 		lblNewLabel_14.setBounds(304, 102, 100, 18);
 		panel_6.add(lblNewLabel_14);
 
-		lblNewLabel_15 = new JLabel("15New label");
+		lblNewLabel_15 = new JLabel("");
 		lblNewLabel_15.setBounds(431, 102, 100, 18);
 		panel_6.add(lblNewLabel_15);
 
@@ -153,7 +153,7 @@ public class SellingAreaUI4_3 extends JPanel{
 		lblNewLabel_16.setBounds(304, 152, 100, 18);
 		panel_6.add(lblNewLabel_16);
 
-		lblNewLabel_17 = new JLabel("17New label");
+		lblNewLabel_17 = new JLabel("");
 		lblNewLabel_17.setBounds(431, 152, 100, 18);
 		panel_6.add(lblNewLabel_17);
 
