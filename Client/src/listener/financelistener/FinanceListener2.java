@@ -6,8 +6,11 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import _enum.ResultMessage;
 import logic.financebl.Finance;
 import logic.financeblservice.FinanceBlService;
 import presentation.financeui.FinanceUI2;
@@ -84,6 +87,7 @@ public class FinanceListener2 implements ActionListener {
 			button.setBounds(86, 75, 117, 29);
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					ResultMessage rm=null;
 					for (int i = 0; i < ui.getTable().getRowCount(); i++) {
 						PayVO vo = new PayVO();
 						Vector<Object> rowData = new Vector<Object>();
@@ -97,7 +101,10 @@ public class FinanceListener2 implements ActionListener {
 						vo.setEntry((String) rowData.get(4));
 						vo.setComments((String) rowData.get(5));
 						vo.setIsCheck(0);
-						financeBl.createCost(vo);
+						if(!check(vo))
+							continue ;
+						rm=financeBl.createCost(vo);
+						check(rm);
 					}
 
 				}
@@ -119,4 +126,41 @@ public class FinanceListener2 implements ActionListener {
 		}
 	}
 
+	private boolean check(PayVO vo){
+		if(vo.checkIsNull()==0){
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			return false;
+		}
+		if(vo.checkAccount()==0){
+			JOptionPane.showMessageDialog(ui, "请检查账户格式是否正确！");
+			return false;
+		}
+		if(vo.checkCost()==0){
+			JOptionPane.showMessageDialog(ui, "请检查金额是否正确！");
+			return false;
+		}
+		if(vo.checkDate()==0){
+			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			return false;
+		}
+		if(vo.checkPayer()==0){
+			JOptionPane.showMessageDialog(ui, "请检查付款人编号是否正确！");
+			return false;
+		}
+		return true;
+	}
+	private void check(ResultMessage rm){
+		String dialog=null;
+		if(rm==ResultMessage.FunctionError){
+			dialog="网络连接出现了问题，请检查您的网络！";
+		}else if(rm==ResultMessage.Fail)
+			dialog="数据更新失败！";
+		else if(rm==ResultMessage.Success){
+			dialog="数据更新成功！";
+		}else if(rm==ResultMessage.UpdateFail){
+			dialog="请不要重复创建单据";
+		}
+		if(dialog!=null)
+			JOptionPane.showMessageDialog(ui, dialog);
+	}
 }
