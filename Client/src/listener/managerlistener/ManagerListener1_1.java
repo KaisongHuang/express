@@ -20,62 +20,60 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private ManagerUI1_1 ui;
 	ManagerBlService manager = new Manager();
-	public ManagerListener1_1 (ManagerUI1_1 ui){
+
+	public ManagerListener1_1(ManagerUI1_1 ui) {
 		super();
-		this.ui=ui;
+		this.ui = ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getButton()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_15()){
+		if (e.getSource() == ui.getButton()) {
+
+		} else if (e.getSource() == ui.getBtnNewButton_15()) {
 			String id = ui.getTextField().getText();
-			if(!check(id))
-				return ;
-			InstitutionVO vo = (InstitutionVO) manager.find(id,Opera.Institution_find);
-			if(!check(vo))
-				return ;
-			set(vo);			
-		}else if(e.getSource()==ui.getButton_1()){
-			ui.getTextField().setText("");;
+			if (!check(id))
+				return;
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			if (!check(vo))
+				return;
+			set(vo);
+		} else if (e.getSource() == ui.getButton_1()) {
+			ui.getTextField().setText("");
+			;
 			delete(ui.getLblNewLabel_4());
 			delete(ui.getLblNewLabel_7());
-			
-		}else if(e.getSource()==ui.getBtnNewButton_11()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_12()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_13()){
-			
-		}else if(e.getSource()==ui.getBtnNewButton_14()){
-			
+
 		}
-		
+
 	}
-	private boolean check(InstitutionVO vo){
-		if(vo==null){
+
+	private boolean check(InstitutionVO vo) {
+		if (vo == null) {
 			JOptionPane.showMessageDialog(ui, "机构编号不存在！");
-   		    return false;	
+			return false;
 		}
 		return true;
 	}
-	private boolean check(String id){
-	   	 if(id.length()!=6){
-	   		 JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
-	   		 return false;
-	   	 }
-	   	 try{
-	   		 Integer.parseInt(id);
-	   	 }catch(NumberFormatException e){
-	   		 JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
-	   		 return false;
-	   	 }
-	   	 return true;
-	   }
+
+	private boolean check(String id) {
+		if (id.length() != 6) {
+			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			return false;
+		}
+		try {
+			Integer.parseInt(id);
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			return false;
+		}
+		return true;
+	}
+
 	private void delete(JLabel jLabel) {
 		// TODO Auto-generated method stub
-		jLabel.setText("");;
+		jLabel.setText("");
+		;
 	}
 
 	private void set(InstitutionVO vo) {
@@ -86,27 +84,27 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

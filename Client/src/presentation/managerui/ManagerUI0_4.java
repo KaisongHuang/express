@@ -57,13 +57,13 @@ public class ManagerUI0_4 extends JPanel{
 
 		setBackground(new Color(158, 211, 238));
 
-		this.setBounds(136, 115, 748, 438);
+		this.setBounds(0, 44, 746, 394);
 
 		this.setLayout(null);
 
 		
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(44, 92, 473, 208);
+		panel_6.setBounds(130, 60, 473, 208);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -122,12 +122,12 @@ public class ManagerUI0_4 extends JPanel{
 		textField_5.setColumns(10);
 
 		btnNewButton_15 = new JButton("添加");
-		btnNewButton_15.setBounds(92, 377, 100, 30);
+		btnNewButton_15.setBounds(219, 298, 100, 30);
 		this.add(btnNewButton_15);
 		btnNewButton_15.addActionListener(managerlistener);
 
 		btnNewButton_16 = new JButton("取消");
-		btnNewButton_16.setBounds(480, 377, 100, 30);
+		btnNewButton_16.setBounds(399, 298, 100, 30);
 		this.add(btnNewButton_16);
 		btnNewButton_16.addActionListener(managerlistener);
 
