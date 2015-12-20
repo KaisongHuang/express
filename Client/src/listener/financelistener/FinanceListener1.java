@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.JOptionPane;
+
 import logic.financebl.Finance;
 import presentation.financeui.FinanceUI1;
 import vo.ReceiptVO;
@@ -28,7 +30,8 @@ public class FinanceListener1 implements ActionListener {
 			String sellingArea = (String) ui.getComboBox_3().getSelectedItem();
 
 			ArrayList<ReceiptVO> vo = finance.checkReceipt(date, sellingArea);
-
+            if(!check(vo))
+            	return ;
 
 			Vector<Object> data = new Vector<Object>();
 			double sum = 0;
@@ -46,6 +49,15 @@ public class FinanceListener1 implements ActionListener {
 			ui.setData(data);
 			ui.getTextArea().setText("" + sum);
 		}
+	}
+	
+	private boolean check(ArrayList<ReceiptVO> vo){
+		if(vo==null){
+			JOptionPane.showMessageDialog(ui, "查询的信息不存在！");
+			return false;
+		}
+		return true;
+			
 	}
 	
 }
