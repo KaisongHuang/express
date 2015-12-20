@@ -23,7 +23,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 	}
 
 	public CarPO findCar(String id) throws RemoteException {
-		String sql = "select * from Car where number=" + id;
+		String sql = "select * from Car where number=" + id+";";
 		ResultSet rs = db.find(sql);
 		String number = null;
 		String en = null;
