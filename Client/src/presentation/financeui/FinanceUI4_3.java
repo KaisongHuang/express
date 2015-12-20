@@ -38,11 +38,10 @@ public class FinanceUI4_3 extends JPanel {
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-
 	public FinanceUI4_3(FinanceListener4 financeListener4) {
-		this.financeListener4=financeListener4;
+		this.financeListener4 = financeListener4;
 		initialize();
-		//this.setImage();
+		// this.setImage();
 		this.setVisible(true);
 	}
 
@@ -50,14 +49,12 @@ public class FinanceUI4_3 extends JPanel {
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 		setBackground(Color.white);
-		
+
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-
 		table = new JTable(data, name);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.addMouseListener(financeListener4);
-
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(82, 176, 340, 200);
@@ -169,7 +166,8 @@ public class FinanceUI4_3 extends JPanel {
 	public JButton getButton_6() {
 		return button_6;
 	}
+
 	private void setImage() {
-		
+
 	}
 }

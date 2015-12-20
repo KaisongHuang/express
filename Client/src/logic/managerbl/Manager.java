@@ -267,4 +267,54 @@ public class Manager implements ManagerBlService {
 		return null;
 	}
 
+	public ArrayList<CarPackVO> checkPack() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<ReceiptVO> checkReceipt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<AcceptVO> checkAccept() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<DeliverVO> checkDeliver() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreArrivalVO> checkArrival() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<CentreTransforVO> checkTrans() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<PackVO> checkCentrePack() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<InStorageVO> checkImport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<OutStorageVO> checkExport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<PayVO> checkPay() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
