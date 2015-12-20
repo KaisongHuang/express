@@ -58,7 +58,7 @@ public class SellingAreaUI4_4 extends JPanel{
 	 */
 	private void initialize() {
 
-		this.setBackground(new Color(158,211,238));
+		this.setBackground(Color.white);
 		this.setBounds(136, 114, 746, 439);
 
 		this.setLayout(null);

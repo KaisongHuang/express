@@ -58,7 +58,7 @@ public class AdminUI1 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setBounds(0, 0, 480, 320);
 		this.setLayout(null);
         this.setBackground(new Color(158,211,240));

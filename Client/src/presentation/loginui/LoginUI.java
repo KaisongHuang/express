@@ -3,6 +3,7 @@ package presentation.loginui;
 import javax.swing.JFrame;
 
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import listener.mainlistener.LoginListener;
@@ -23,7 +24,7 @@ public class LoginUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField1;
+	private JPasswordField textField1;
 	private JButton Login;
 	private LoginListener listener;
 	private JButton logout;
@@ -32,13 +33,16 @@ public class LoginUI extends JFrame {
 	private JLabel label;
 	private int height = 600;
 	private int width = 900;
-
+    private JLabel label1;
 	/**
 	 * Create the frame.
 	 */
 	public LoginUI() {
-		setBackground(new Color(158, 211, 238));
+		setBackground(Color.white);
 		this.setUndecorated(true);
+		
+		
+		
 		label = new JLabel();
 
 		listener = new LoginListener(this);
@@ -48,34 +52,42 @@ public class LoginUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
         contentPane.setBackground(new Color(158,211,240));
-		lblUserName = new JLabel("User Name:");
-		lblUserName.setBounds(254, 233, 79, 16);
+		lblUserName = new JLabel("用户名");
+		lblUserName.setBounds(500, 233, 50, 16);
 		contentPane.add(lblUserName);
-
-		lblPassword = new JLabel("Password:");
-		lblPassword.setBounds(264, 296, 79, 16);
+		
+		
+	
+		lblPassword = new JLabel("密码");
+		lblPassword.setBounds(500, 300, 50, 16);
 		contentPane.add(lblPassword);
 
 		textField = new JTextField();
-		textField.setBounds(345, 227, 134, 28);
+		textField.setBounds(550, 227, 134, 28);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
-		textField1 = new JTextField();
-		textField1.setBounds(345, 290, 134, 28);
+		textField1 = new JPasswordField();
+		textField1.setBounds(550,295, 134, 28);
 		contentPane.add(textField1);
 		textField1.setColumns(10);
 
 		logout = new JButton();
-		logout.setBounds(840, 0, 30, 30);
+		logout.setBounds(870, 0, 30, 30);
 		contentPane.add(logout);
 		logout.addActionListener(listener);
 		
 		Login = new JButton("登录");
-		Login.setBounds(345, 349, 134, 28);
+		Login.setBounds(560, 348, 100, 28);
 		contentPane.add(Login);
 		Login.addActionListener(listener);
 		setImage();
+		label1=new JLabel();
+		contentPane.add(label1);
+		label1.setBounds(244, 222, 196, 172);
+		ImageIcon icon = new ImageIcon(this.getClass().getResource("/人物/登录图标.png"));
+		icon.setImage(icon.getImage().getScaledInstance(label1.WIDTH, label1.HEIGHT, Image.SCALE_DEFAULT));
+		label1.setIcon(icon);
 		this.setVisible(true);
 	}
 
