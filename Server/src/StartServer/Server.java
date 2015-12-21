@@ -1,7 +1,11 @@
 package StartServer;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
+import java.rmi.server.RMISocketFactory;
 
 import dataservice.admindataservice.AdminDataBaseService;
 import dataservice.centredataservice.CentreDataBaseService;
@@ -25,6 +29,7 @@ import server.database.MySQLDataBase;
 
 public class Server {
 	String ip = "172.16.95.6";
+	String ip1="";
 	int port=3333;
 	MySQLDataBase db;
 
@@ -40,6 +45,12 @@ public class Server {
 
 	public void DataStart() {
 		try {
+			
+			
+			//解决不能外网访问问题			
+			System.setProperty("java.rmi.server.hostname",ip1);
+			LocateRegistry.createRegistry(port);
+			
 			AdminDataBaseService ad = new AdminData(db);
 			CentreDataBaseService cd=new CentreData(db);
 			LoginDataBaseService ld=new LoginData(db);
@@ -49,7 +60,8 @@ public class Server {
 			SellingAreaDataBaseService sellingarea=new SellingAreaData(db);
 			SenderDataBaseService sender=new SenderData(db);
 			WareHouseDataBaseService WareHouse=new WareHouseData(db);
-			LocateRegistry.createRegistry(3333);
+			
+            RMISocketFactory.setSocketFactory(new SMRMISocket());
 			Naming.rebind("rmi://" + ip + ":"+port + "/AdminDataService", ad);
 			Naming.rebind("rmi://" + ip + ":"+port  + "/CentreDataService", cd);
 			Naming.rebind("rmi://"+ip+":"+port+"/LoginDataService", ld);
@@ -59,15 +71,24 @@ public class Server {
 			Naming.rebind("rmi://" + ip + ":"+port  + "/SellingAreaDataService", sellingarea);
 			Naming.rebind("rmi://" + ip + ":"+port + "/SenderDataService", sender);
 			Naming.rebind("rmi://" + ip + ":"+port + "/WareHouseDataService", WareHouse);
-			System.out.println("AdminDataService Start");
+			System.out.println("Server Start");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	public void CourierStart(){
-		
-	}
+}
+class SMRMISocket  extends RMISocketFactory {
+
+public Socket createSocket(String host, int port) throws IOException {
+       return new Socket(host, port);
+}
+
+public ServerSocket createServerSocket(int port) throws IOException {
+     if (port == 0)
+           port = 8500;
+
+       System.out.println("RMI服务器的注册与数据传输端口 ="+port);
+     return new ServerSocket(port);
+}
+
 }
