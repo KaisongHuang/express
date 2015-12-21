@@ -51,16 +51,21 @@ public class History implements HistoryService{
 		sql="select * from History where id='"+id+"';";
 		ResultSet rs=db.find(sql);
 		int centre=0;
-		String cid=null;
+		String cid="";
 		try {
-			centre=rs.getInt(6)+1;
-			if(!rs.getString(4).equals("0"))
-				cid=rs.getString(4);
+			if(rs.next()){
+			    centre=rs.getInt(6)+1;
+			    if(!rs.getString(4).equals("0"))
+				   cid=rs.getString(4);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="update History set centreID='"+cid+centreID+"' ,state="+state+",centre="+centre+" where id='"+id+"';";
+		if(state!=null&&centreID!=null)
+		     sql="update History set centreID='"+cid+centreID+"' ,state="+state+",centre="+centre+" where id='"+id+"';";
+		else
+			 sql="update History set centre="+centre+" where id='"+id+"';";
 		db.update(sql);
 		
 	}
