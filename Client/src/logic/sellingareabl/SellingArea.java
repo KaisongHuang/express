@@ -41,7 +41,7 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createReceiving(AcceptVO vo) {
 		ResultMessage rm=null;
-		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getStart(),
+		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getState(),
 				vo.getIsCheck());
 		try {
 			rm = sd.insert(po);
