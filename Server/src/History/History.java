@@ -13,7 +13,7 @@ public class History implements HistoryService{
 		this.db=db;
 	}
 	public void init(String id) {
-		sql="insert into History values('"+id+"',0,'0','0','0',0,0,0,0);";
+		sql="insert into History values('"+id+"','完整','0','0',0,0);";
 		
 	}
 
@@ -23,17 +23,27 @@ public class History implements HistoryService{
 		sql="select * from History where id='"+id+"';";
 		ResultSet rs=db.find(sql);
 		int selling=0;
-	    String sid=null;
+	    String sid="";
 		try {
+			if(rs.next()){
 			selling=rs.getInt(5)+1;
-			if(!rs.getString(3).equals("0")){
+			if(rs.getString(3).equals(sellingAreaID))
+				sid="";
+			
+			else if(!rs.getString(3).equals("0"))
 				sid=rs.getString(3);
+			
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="update History set sellingAreaID='"+sid+sellingAreaID+"' ,state="+state+",selling="+selling+" where id='"+id+"';";
+		if(state!=null&&sellingAreaID!=null)
+			sql="update History set sellingAreaID='"+sid+sellingAreaID+"' ,state='"+state+"',selling="+selling+" where id='"+id+"';";
+		
+		else if(state==null&&sellingAreaID==null)
+			sql="update History set sellingAreaID='"+sid+"',selling="+selling+" where id='"+id+"';";
 		db.update(sql);
 	}
 
