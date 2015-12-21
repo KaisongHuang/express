@@ -30,7 +30,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 			CourierPO po1 = (CourierPO) po;
 			ResultSet rs = db.find("select * from Sender where BarCode='" + po1.getNumber() + "';");
 			try {
-				if (!rs.wasNull()) {
+				if (rs.next()) {
 					sql = "insert into Courier values(" + po1.getNumber() + ",'" + po1.getName() + "','" + po1.getDate()
 							+ "')";
 					rm = db.insert(sql);
@@ -55,13 +55,13 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 			}
 
 			SenderPO po1 = (SenderPO) po;
-			sql = "insert into Sender values('" + po1.getSenderName() + "'," + "'" + po1.getSenderAddress() + "'," + "'"
+			sql = "insert into Sender values('" + po1.getSenderName() + "'," + "'" + po1.getSenderAddress() + "','"
 					+ po1.getSenderCompany() + "'," + "'" + po1.getSenderCall() + "'," + "'" + po1.getSenderPhone()
 					+ "'," + "'" + po1.getRecipientName() + "'," + "'" + po1.getRecipientAddress() + "'," + "'"
 					+ po1.getRecipientCompany() + "'," + "'" + po1.getRecipientCall() + "'," + "'"
-					+ po1.getRecipientPhone() + "," + po1.getPcs() + "," + po1.getWeight() + "," + po1.getVolume()
+					+ po1.getRecipientPhone() + "'," + po1.getPcs() + "," + po1.getWeight() + "," + po1.getVolume()
 					+ ",'" + po1.getCommodity() + "','" + po1.getSize() + "','" + po1.getBagging() + "',"
-					+ po1.getTotal() + ",'" + barcode + "','" + po1.getType() + ");";
+					+ po1.getTotal() + ",'" + barcode + "','" + po1.getType() + "');";
 			rm = db.insert(sql);
 			return rm;
 		}
@@ -75,7 +75,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 		double[] distance=new double[2];
 
 		try {
-			if(rs.wasNull()){
+			if(rs.next()){
 				sql1="select * from DistanceAndFee where city1='"+city2+"' and city2='"+city1+"';";
 			}
 			distance[0]=rs.getDouble(4);

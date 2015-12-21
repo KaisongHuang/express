@@ -19,7 +19,7 @@ public class Courier implements CourierBlService {
 	CourierDataService cd = new CourierData();
 	SenderDataService sd = new SenderData();
 
-	public ResultMessage OrderInput(SenderVO vo,DistanceAndFee daf) {
+	public ResultMessage OrderInput(SenderVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm = null;
 		double packing = 0.0;
@@ -34,7 +34,7 @@ public class Courier implements CourierBlService {
 		SenderPO po = new SenderPO(vo.getSenderName(),vo.getSenderAddress(),vo.getSenderCompany(),vo.getSenderCall(),vo.getSenderPhone(),
 				vo.getRecipientName(),vo.getRecipientAddress(),vo.getRecipientCompany(),vo.getRecipientCall(),vo.getRecipientPhone(),
 				vo.getPcs(),vo.getWeight(),vo.getVolume(),vo.getCommodity(),vo.getSize(),vo.getBagging(),this.getPrice(vo.getType(), vo.getSenderCity(), vo.getRecipientCity(),packing),
-				vo.getBarCode(),vo.getType());
+			null,vo.getType());
 
 			try {
 				rm= cd.OrderInput(po);

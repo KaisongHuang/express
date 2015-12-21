@@ -6,7 +6,7 @@ import vo.CourierVO;
 import vo.SenderVO;
 
 public interface CourierBlService {
-      public ResultMessage OrderInput(SenderVO vo,DistanceAndFee daf);
+      public ResultMessage OrderInput(SenderVO vo);
       public double getPrice(String type,String city1,String city2,double packing);
       public double getTime(String start,String end);
       public ResultMessage ConsigneeinfoInput(CourierVO vo);
