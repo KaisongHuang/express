@@ -9,6 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import javax.swing.JLabel;
 
 import java.awt.CardLayout;
@@ -21,6 +22,7 @@ import listener.managerlistener.ManagerListener20;
 import presentation.MySwing.MyTable;
 
 import javax.swing.JComboBox;
+import javax.swing.ScrollPaneConstants;
 
 public class ManagerUI2 extends JPanel {
 
@@ -44,6 +46,7 @@ public class ManagerUI2 extends JPanel {
 	private JPanel panel10;
 	private JPanel panel11;
 	private MyTable table2;
+
 	private MyTable table3;
 	private MyTable table4;
 	private MyTable table5;
@@ -115,6 +118,10 @@ public class ManagerUI2 extends JPanel {
 		this.setBackground(Color.WHITE);
 		this.setLayout(null);
 
+		card = new CardLayout();
+		panel = new JPanel();
+		panel.setBounds(0, 40, 715, 400);
+		panel.setLayout(card);
 		comboBox = new JComboBox<String>();
 		comboBox.addItem("无");
 		comboBox.addItem("付款单");
@@ -149,159 +156,196 @@ public class ManagerUI2 extends JPanel {
 		String names2[] = { "付款日期", "付款金额", "付款人", "付款账号", "条目", "备注", "审批通过" };
 		name2 = new Vector<String>(Arrays.asList(names2));
 		table2 = new MyTable(data2, name2);
+		TableColumn tc2 = table2.getColumnModel().getColumn(6);
+		tc2.setCellEditor(table2.getDefaultEditor(Boolean.class));
+		tc2.setCellRenderer(table2.getDefaultRenderer(Boolean.class));
 		table2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table2.addMouseListener(managerlistener);
 		model2 = (DefaultTableModel) table2.getModel();
 		table2.setSelectionForeground(Color.BLACK);
 		table2.setSelectionBackground(null);
-		// table2.setEditableColumn(2);
+		table2.setEditableColumn(6);
 		table2.setFocusable(false);
 		JSP2 = new JScrollPane(table2);
-		JSP2.setBounds(82, 176, 340, 200);
+		JSP2.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names3[] = { "收款日期", "收款金额", "收款快递员", "审批通过" };
 		name3 = new Vector<String>(Arrays.asList(names3));
 		table3 = new MyTable(data3, name3);
+		TableColumn tc3 = table3.getColumnModel().getColumn(3);
+		tc3.setCellEditor(table3.getDefaultEditor(Boolean.class));
+		tc3.setCellRenderer(table3.getDefaultRenderer(Boolean.class));
 		table3.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table3.addMouseListener(managerlistener);
 		model3 = (DefaultTableModel) table3.getModel();
 		table3.setSelectionForeground(Color.BLACK);
 		table3.setSelectionBackground(null);
-		// table3.setEditableColumn(2);
+		table3.setEditableColumn(3);
 		table3.setFocusable(false);
 		JSP3 = new JScrollPane(table3);
-		JSP3.setBounds(82, 176, 340, 200);
-
+		JSP3.setBounds(0, 0, panel.getWidth(), panel.getHeight());
+		
 		String names4[] = { "到达日期", "订单号", "派送员", "审批通过" };
 		name4 = new Vector<String>(Arrays.asList(names4));
 		table4 = new MyTable(data4, name4);
+		TableColumn tc4 = table4.getColumnModel().getColumn(3);
+		tc4.setCellEditor(table4.getDefaultEditor(Boolean.class));
+		tc4.setCellRenderer(table4.getDefaultRenderer(Boolean.class));
 		table4.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table4.addMouseListener(managerlistener);
 		model4 = (DefaultTableModel) table4.getModel();
 		table4.setSelectionForeground(Color.BLACK);
 		table4.setSelectionBackground(null);
-		// table4.setEditableColumn(2);
+		table4.setEditableColumn(3);
 		table4.setFocusable(false);
 		JSP4 = new JScrollPane(table4);
-		JSP4.setBounds(82, 176, 340, 200);
+		JSP4.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "运费", "审批通过" };
 		name5 = new Vector<String>(Arrays.asList(names5));
 		table5 = new MyTable(data5, name5);
+		TableColumn tc5 = table5.getColumnModel().getColumn(8);
+		tc5.setCellEditor(table5.getDefaultEditor(Boolean.class));
+		tc5.setCellRenderer(table5.getDefaultRenderer(Boolean.class));
 		table5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table5.addMouseListener(managerlistener);
 		model5 = (DefaultTableModel) table5.getModel();
 		table5.setSelectionForeground(Color.BLACK);
 		table5.setSelectionBackground(null);
-		// table5.setEditableColumn(2);
+		table5.setEditableColumn(8);
 		table5.setFocusable(false);
 		JSP5 = new JScrollPane(table5);
-		JSP5.setBounds(82, 176, 340, 200);
+		JSP5.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names6[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号", "审批通过" };
 		name6 = new Vector<String>(Arrays.asList(names6));
 		table6 = new MyTable(data6, name6);
+		TableColumn tc6 = table6.getColumnModel().getColumn(7);
+		tc6.setCellEditor(table6.getDefaultEditor(Boolean.class));
+		tc6.setCellRenderer(table6.getDefaultRenderer(Boolean.class));
 		table6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table6.addMouseListener(managerlistener);
 		model6 = (DefaultTableModel) table6.getModel();
 		table6.setSelectionForeground(Color.BLACK);
 		table6.setSelectionBackground(null);
-		// table6.setEditableColumn(2);
+		table6.setEditableColumn(7);
 		table6.setFocusable(false);
 		JSP6 = new JScrollPane(table6);
-		JSP6.setBounds(82, 176, 340, 200);
+		JSP6.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names7[] = { "快递编号", "出库日期", "目的地", "装运形式", "中转单号", "审批通过" };
 		name7 = new Vector<String>(Arrays.asList(names7));
 		table7 = new MyTable(data7, name7);
+		TableColumn tc7 = table7.getColumnModel().getColumn(5);
+		tc7.setCellEditor(table7.getDefaultEditor(Boolean.class));
+		tc7.setCellRenderer(table7.getDefaultRenderer(Boolean.class));
 		table7.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table7.addMouseListener(managerlistener);
 		model7 = (DefaultTableModel) table7.getModel();
 		table7.setSelectionForeground(Color.BLACK);
 		table7.setSelectionBackground(null);
-		// table7.setEditableColumn(2);
+		table7.setEditableColumn(5);
 		table7.setFocusable(false);
 		JSP7 = new JScrollPane(table7);
-		JSP7.setBounds(82, 176, 340, 200);
+		JSP7.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员", "审批通过" };
 		name8 = new Vector<String>(Arrays.asList(names8));
 		table8 = new MyTable(data8, name8);
+		TableColumn tc8 = table8.getColumnModel().getColumn(7);
+		tc8.setCellEditor(table8.getDefaultEditor(Boolean.class));
+		tc8.setCellRenderer(table8.getDefaultRenderer(Boolean.class));
 		table8.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table8.addMouseListener(managerlistener);
 		model8 = (DefaultTableModel) table8.getModel();
 		table8.setSelectionForeground(Color.BLACK);
 		table8.setSelectionBackground(null);
-		// table8.setEditableColumn(2);
+		table8.setEditableColumn(7);
 		table8.setFocusable(false);
 		JSP8 = new JScrollPane(table8);
-		JSP8.setBounds(82, 176, 340, 200);
+		JSP8.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names9[] = { "到达日期", "中转单编号", "出发地", "货物到达状态", "审批通过" };
 		name9 = new Vector<String>(Arrays.asList(names9));
 		table9 = new MyTable(data9, name9);
+		TableColumn tc9 = table9.getColumnModel().getColumn(4);
+		tc9.setCellEditor(table9.getDefaultEditor(Boolean.class));
+		tc9.setCellRenderer(table9.getDefaultRenderer(Boolean.class));
 		table9.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table9.addMouseListener(managerlistener);
 		model9 = (DefaultTableModel) table9.getModel();
 		table9.setSelectionForeground(Color.BLACK);
 		table9.setSelectionBackground(null);
-		// table9.setEditableColumn(2);
+		table9.setEditableColumn(4);
 		table9.setFocusable(false);
 		JSP9 = new JScrollPane(table9);
-		JSP9.setBounds(82, 176, 340, 200);
+		JSP9.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names10[] = { "中转中心编号", "到达日期", "中转单编号", "出发地", "货物到达状态", "审批通过" };
 		name10 = new Vector<String>(Arrays.asList(names10));
 		table10 = new MyTable(data10, name10);
+		TableColumn tc10 = table10.getColumnModel().getColumn(5);
+		tc10.setCellEditor(table10.getDefaultEditor(Boolean.class));
+		tc10.setCellRenderer(table10.getDefaultRenderer(Boolean.class));
 		table10.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table10.addMouseListener(managerlistener);
 		model10 = (DefaultTableModel) table10.getModel();
 		table10.setSelectionForeground(Color.BLACK);
 		table10.setSelectionBackground(null);
-		// table10.setEditableColumn(2);
+		table10.setEditableColumn(5);
 		table10.setFocusable(false);
 		JSP10 = new JScrollPane(table10);
-		JSP10.setBounds(82, 176, 340, 200);
+		JSP10.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		String names11[] = { "装车日期", "中转中心汽运编号", "到达地", "车辆代号", "监装员", "押运员", "运费", "审批通过" };
 		name11 = new Vector<String>(Arrays.asList(names11));
 		table11 = new MyTable(data11, name11);
+		TableColumn tc11 = table11.getColumnModel().getColumn(7);
+		tc11.setCellEditor(table11.getDefaultEditor(Boolean.class));
+		tc11.setCellRenderer(table11.getDefaultRenderer(Boolean.class));
 		table11.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table11.addMouseListener(managerlistener);
 		model11 = (DefaultTableModel) table11.getModel();
 		table11.setSelectionForeground(Color.BLACK);
 		table11.setSelectionBackground(null);
-		// table11.setEditableColumn(2);
+		table11.setEditableColumn(7);
 		table11.setFocusable(false);
 		JSP11 = new JScrollPane(table11);
-		JSP11.setBounds(82, 176, 340, 200);
+		JSP11.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		panel1 = new JPanel();
 		panel2 = new JPanel();
+		panel2.setLayout(null);
 		panel2.add(JSP2);
 		panel3 = new JPanel();
+		panel3.setLayout(null);
 		panel3.add(JSP3);
 		panel4 = new JPanel();
+		panel4.setLayout(null);
 		panel4.add(JSP4);
 		panel5 = new JPanel();
+		panel5.setLayout(null);
 		panel5.add(JSP5);
 		panel6 = new JPanel();
+		panel6.setLayout(null);
 		panel6.add(JSP6);
 		panel7 = new JPanel();
+		panel7.setLayout(null);
 		panel7.add(JSP7);
 		panel8 = new JPanel();
+		panel8.setLayout(null);
 		panel8.add(JSP8);
 		panel9 = new JPanel();
+		panel9.setLayout(null);
 		panel9.add(JSP9);
 		panel10 = new JPanel();
+		panel10.setLayout(null);
 		panel10.add(JSP10);
 		panel11 = new JPanel();
+		panel11.setLayout(null);
 		panel11.add(JSP11);
 
-		card = new CardLayout();
-		panel = new JPanel();
-		panel.setBounds(0, 40, 746, 403);
-		panel.setLayout(card);
+		
 		panel.add(panel1, "0");
 		panel.add(panel2, "1");
 		panel.add(panel3, "2");
@@ -315,6 +359,50 @@ public class ManagerUI2 extends JPanel {
 		panel.add(panel11, "10");
 		add(panel);
 
+	}
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+	public DefaultTableModel getModel2() {
+		return model2;
+	}
+
+	public DefaultTableModel getModel3() {
+		return model3;
+	}
+
+	public DefaultTableModel getModel4() {
+		return model4;
+	}
+
+	public DefaultTableModel getModel5() {
+		return model5;
+	}
+
+	public DefaultTableModel getModel6() {
+		return model6;
+	}
+
+	public DefaultTableModel getModel7() {
+		return model7;
+	}
+
+	public DefaultTableModel getModel8() {
+		return model8;
+	}
+
+	public DefaultTableModel getModel9() {
+		return model9;
+	}
+
+	public DefaultTableModel getModel10() {
+		return model10;
+	}
+
+	public DefaultTableModel getModel11() {
+		return model11;
 	}
 
 	public void setData2(Vector<Object> data2) {
@@ -379,5 +467,9 @@ public class ManagerUI2 extends JPanel {
 
 	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
+	}
+
+	public CardLayout getCard() {
+		return card;
 	}
 }
