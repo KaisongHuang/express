@@ -5,18 +5,23 @@
 package presentation.managerui;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.util.Arrays;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import listener.managerlistener.ManagerListener20;
 
 import javax.swing.JComboBox;
 
-
-public class ManagerUI2 extends JPanel{
-
+public class ManagerUI2 extends JPanel {
 
 	/**
 	 * 
@@ -25,7 +30,69 @@ public class ManagerUI2 extends JPanel{
 	private JComboBox<String> comboBox;
 	private JButton button1;
 	private JButton button2;
-
+	private JPanel panel;
+	private JPanel panel1;
+	private JPanel panel2;
+	private JPanel panel3;
+	private JPanel panel4;
+	private JPanel panel5;
+	private JPanel panel6;
+	private JPanel panel7;
+	private JPanel panel8;
+	private JPanel panel9;
+	private JPanel panel10;
+	private JPanel panel11;
+	private JTable table2;
+	private JTable table3;
+	private JTable table4;
+	private JTable table5;
+	private JTable table6;
+	private JTable table7;
+	private JTable table8;
+	private JTable table9;
+	private JTable table10;
+	private JTable table11;
+	private JScrollPane JSP2;
+	private JScrollPane JSP3;
+	private JScrollPane JSP4;
+	private JScrollPane JSP5;
+	private JScrollPane JSP6;
+	private JScrollPane JSP7;
+	private JScrollPane JSP8;
+	private JScrollPane JSP9;
+	private JScrollPane JSP10;
+	private JScrollPane JSP11;
+	private Vector<String> name2;
+	private Vector<String> name3;
+	private Vector<String> name4;
+	private Vector<String> name5;
+	private Vector<String> name6;
+	private Vector<String> name7;
+	private Vector<String> name8;
+	private Vector<String> name9;
+	private Vector<String> name10;
+	private Vector<String> name11;
+	private Vector<Object> data2;
+	private Vector<Object> data3;
+	private Vector<Object> data4;
+	private Vector<Object> data5;
+	private Vector<Object> data6;
+	private Vector<Object> data7;
+	private Vector<Object> data8;
+	private Vector<Object> data9;
+	private Vector<Object> data10;
+	private Vector<Object> data11;
+	private DefaultTableModel model2;
+	private DefaultTableModel model3;
+	private DefaultTableModel model4;
+	private DefaultTableModel model5;
+	private DefaultTableModel model6;
+	private DefaultTableModel model7;
+	private DefaultTableModel model8;
+	private DefaultTableModel model9;
+	private DefaultTableModel model10;
+	private DefaultTableModel model11;
+	private CardLayout card;
 	ManagerListener20 managerlistener;
 
 	/**
@@ -44,21 +111,22 @@ public class ManagerUI2 extends JPanel{
 		setBackground(Color.white);
 
 		this.setBounds(136, 115, 746, 443);
-		 this.setBackground(new Color(158,211,240));
+		this.setBackground(Color.WHITE);
 		this.setLayout(null);
 
 		comboBox = new JComboBox<String>();
 		comboBox.addItem("无");
-		comboBox.addItem("装车单");
-		comboBox.addItem("快递费用");
-		comboBox.addItem("到达单");
+		comboBox.addItem("付款单");
+		comboBox.addItem("收款单");
 		comboBox.addItem("派件单");
-		comboBox.addItem("中转中心到达单");
 		comboBox.addItem("中转单");
-		comboBox.addItem("中转中心装车单");
 		comboBox.addItem("入库单");
 		comboBox.addItem("出库单");
-		comboBox.addItem("支出");
+		comboBox.addItem("营业厅装车单");
+		comboBox.addItem("营业厅到达单");
+		comboBox.addItem("中转中心到达单");
+		comboBox.addItem("中转中心装车单");
+
 		comboBox.setSelectedIndex(0);
 		comboBox.setBounds(105, 5, 150, 28);
 		this.add(comboBox);
@@ -73,12 +141,140 @@ public class ManagerUI2 extends JPanel{
 		this.add(button2);
 		button2.addActionListener(managerlistener);
 
-		JLabel label = new JLabel("\u6570\u636E\u7C7B\u578B：");
+		JLabel label = new JLabel("数据类型：");
 		label.setBounds(38, 10, 100, 18);
 		this.add(label);
 
-	}
+		String names2[] = { "付款日期", "付款金额", "付款人", "付款账号", "条目", "备注" };
+		name2 = new Vector<String>(Arrays.asList(names2));
+		table2 = new JTable(data2, name2);
+		table2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table2.addMouseListener(managerlistener);
+		model2 = (DefaultTableModel) table2.getModel();
+		JSP2 = new JScrollPane(table2);
+		JSP2.setBounds(82, 176, 340, 200);
 
+		String names3[] = { "收款日期", "收款金额", "收款快递员" };
+		name3 = new Vector<String>(Arrays.asList(names3));
+		table3 = new JTable(data3, name3);
+		table3.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table3.addMouseListener(managerlistener);
+		model3 = (DefaultTableModel) table3.getModel();
+		JSP3 = new JScrollPane(table3);
+		JSP3.setBounds(82, 176, 340, 200);
+
+		String names4[] = { "到达日期", "订单号", "派送员" };
+		name4 = new Vector<String>(Arrays.asList(names4));
+		table4 = new JTable(data4, name4);
+		table4.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table4.addMouseListener(managerlistener);
+		model4 = (DefaultTableModel) table4.getModel();
+		JSP4 = new JScrollPane(table4);
+		JSP4.setBounds(82, 176, 340, 200);
+
+		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "运费" };
+		name5 = new Vector<String>(Arrays.asList(names5));
+		table5 = new JTable(data5, name5);
+		table5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table5.addMouseListener(managerlistener);
+		model5 = (DefaultTableModel) table5.getModel();
+		JSP5 = new JScrollPane(table5);
+		JSP5.setBounds(82, 176, 340, 200);
+
+		String names6[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
+		name6 = new Vector<String>(Arrays.asList(names6));
+		table6 = new JTable(data6, name6);
+		table6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table6.addMouseListener(managerlistener);
+		model6 = (DefaultTableModel) table6.getModel();
+		JSP6 = new JScrollPane(table6);
+		JSP6.setBounds(82, 176, 340, 200);
+
+		String names7[] = { "快递编号", "出库日期", "目的地", "装运形式", "中转单号" };
+		name7 = new Vector<String>(Arrays.asList(names7));
+		table7 = new JTable(data7, name7);
+		table7.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table7.addMouseListener(managerlistener);
+		model7 = (DefaultTableModel) table7.getModel();
+		JSP7 = new JScrollPane(table7);
+		JSP7.setBounds(82, 176, 340, 200);
+
+		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员" };
+		name8 = new Vector<String>(Arrays.asList(names8));
+		table8 = new JTable(data8, name8);
+		table8.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table8.addMouseListener(managerlistener);
+		model8 = (DefaultTableModel) table8.getModel();
+		JSP8 = new JScrollPane(table8);
+		JSP8.setBounds(82, 176, 340, 200);
+
+		String names9[] = { "到达日期", "中转单编号", "出发地", "货物到达状态" };
+		name9 = new Vector<String>(Arrays.asList(names9));
+		table9 = new JTable(data9, name9);
+		table9.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table9.addMouseListener(managerlistener);
+		model9 = (DefaultTableModel) table9.getModel();
+		JSP9 = new JScrollPane(table9);
+		JSP9.setBounds(82, 176, 340, 200);
+
+		String names10[] = { "中转中心编号", "到达日期", "中转单编号", "出发地", "货物到达状态" };
+		name10 = new Vector<String>(Arrays.asList(names10));
+		table10 = new JTable(data10, name10);
+		table10.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table10.addMouseListener(managerlistener);
+		model10 = (DefaultTableModel) table10.getModel();
+		JSP10 = new JScrollPane(table10);
+		JSP10.setBounds(82, 176, 340, 200);
+
+		String names11[] = { "装车日期", "中转中心汽运编号", "到达地", "车辆代号", "监装员", "押运员", "运费" };
+		name11 = new Vector<String>(Arrays.asList(names11));
+		table11 = new JTable(data11, name11);
+		table11.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table11.addMouseListener(managerlistener);
+		model11 = (DefaultTableModel) table11.getModel();
+		JSP11 = new JScrollPane(table11);
+		JSP11.setBounds(82, 176, 340, 200);
+
+		panel1 = new JPanel();
+		panel2 = new JPanel();
+		panel2.add(JSP2);
+		panel3 = new JPanel();
+		panel3.add(JSP3);
+		panel4 = new JPanel();
+		panel4.add(JSP4);
+		panel5 = new JPanel();
+		panel5.add(JSP5);
+		panel6 = new JPanel();
+		panel6.add(JSP6);
+		panel7 = new JPanel();
+		panel7.add(JSP7);
+		panel8 = new JPanel();
+		panel8.add(JSP8);
+		panel9 = new JPanel();
+		panel9.add(JSP9);
+		panel10 = new JPanel();
+		panel10.add(JSP10);
+		panel11 = new JPanel();
+		panel11.add(JSP11);
+
+		card = new CardLayout();
+		panel = new JPanel();
+		panel.setBounds(0, 40, 746, 403);
+		panel.setLayout(card);
+		panel.add(panel1, "0");
+		panel.add(panel2, "1");
+		panel.add(panel3, "2");
+		panel.add(panel4, "3");
+		panel.add(panel5, "4");
+		panel.add(panel6, "5");
+		panel.add(panel7, "6");
+		panel.add(panel8, "7");
+		panel.add(panel9, "8");
+		panel.add(panel10, "9");
+		panel.add(panel11, "10");
+		add(panel);
+
+	}
 
 	public JButton getButton1() {
 		return button1;
@@ -103,6 +299,4 @@ public class ManagerUI2 extends JPanel{
 	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
-
-
 }

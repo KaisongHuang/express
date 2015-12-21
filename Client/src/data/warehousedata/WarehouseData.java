@@ -15,6 +15,7 @@ import po.CentreArrivalPO;
 import po.CentreTransforPO;
 import po.InStoragePO;
 import po.OutStoragePO;
+import po.SenderPO;
 import po.WarehousePO;
 
 public class WarehouseData implements WarehouseDataService {
@@ -92,6 +93,11 @@ public class WarehouseData implements WarehouseDataService {
 	public ArrayList<int[]> findFreeSpace() throws RemoteException {
 		// TODO Auto-generated method stub
 		return wd.findFreeSpace(WarehouseID);
+	}
+
+	public SenderPO getSender(String id) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

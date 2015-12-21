@@ -7,6 +7,7 @@ import po.CentreArrivalPO;
 import po.CentreTransforPO;
 import po.InStoragePO;
 import po.OutStoragePO;
+import po.SenderPO;
 import po.WarehousePO;
 import _enum.ResultMessage;
 
@@ -41,4 +42,6 @@ public interface WarehouseDataService {
 	public ArrayList<InStoragePO> adjust() throws RemoteException;
 	
 	public ArrayList<int[]> findFreeSpace() throws RemoteException;
+	
+	public SenderPO getSender(String id) throws RemoteException;
 }

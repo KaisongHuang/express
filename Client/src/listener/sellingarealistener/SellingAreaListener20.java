@@ -147,17 +147,18 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 
 						rowData1 = (Vector<Object>) ((Vector<Object>) vec.get(i)).get(3);
 						for (int k = 0; k < rowData1.size(); k++) {
-							id.add((String) rowData1.get(k));
+							id.add((String)((Vector<Object>) rowData1.get(k)).get(0));
 						}
 
 						vo.setDate((String) rowData.get(0));
+//						System.out.println(vo.getDate());
 						vo.setMoney((Double) rowData.get(1));
 						vo.setNumber((String) rowData.get(2));
 						vo.setId(id);
 						vo.setSellingArea(EmployeeMes.belongToWho);
 						vo.setIsCheck(0);
-						if(!check(vo))
-							return ;
+//						if(!check(vo))
+//							return ;
 						sellingarea.createDebitnote(vo);
 					}
 				}
@@ -190,28 +191,28 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 
 	}
 
-	private boolean check(ReceiptVO vo){
-		if(vo.checkIsNull()==0){
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
-			return false;
-		}
-		if(vo.checkDate()==0){
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
-			return false;
-		}
-		if(vo.checkID()==0){
-			JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
-			return false;
-		}
-		if(vo.checkNumber()==0){
-			JOptionPane.showMessageDialog(ui, "请检查收款人编号格式是否正确！");
-			return false;
-		}
-		if(vo.checkSelling()==0){
-			
-		}
-		return true;
-	}
+//	private boolean check(ReceiptVO vo){
+//		if(vo.checkIsNull()==0){
+//			JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
+//			return false;
+//		}
+//		if(vo.checkDate()==0){
+//			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+//			return false;
+//		}
+//		if(vo.checkID()==0){
+//			JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
+//			return false;
+//		}
+//		if(vo.checkNumber()==0){
+//			JOptionPane.showMessageDialog(ui, "请检查收款人编号格式是否正确！");
+//			return false;
+//		}
+//		if(vo.checkSelling()==0){
+//
+//		}
+//		return true;
+//	}
 	@SuppressWarnings("unchecked")
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

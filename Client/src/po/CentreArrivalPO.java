@@ -24,10 +24,6 @@ public class CentreArrivalPO extends CentrePO  implements Serializable{
 		this.isInStorage=isInstorage;
 	}
 
-	public String getTransforID() {
-		return transferID;
-	}
-
 	public void setTransforID(String transforID) {
 		this.transferID = transforID;
 	}

@@ -7,6 +7,7 @@ import po.CentreArrivalPO;
 import po.CentreTransforPO;
 import po.InStoragePO;
 import po.OutStoragePO;
+import po.SenderPO;
 import po.WarehousePO;
 import _enum.ResultMessage;
 import data.warehousedataservice.WarehouseDataService;
@@ -93,6 +94,11 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 	}
 
 	public ArrayList<int[]> findFreeSpace() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public SenderPO getSender(String id) throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}

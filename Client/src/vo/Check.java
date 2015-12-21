@@ -15,12 +15,14 @@ public class Check {
     	 if(id.length()!=i)
     		 return 0;
     	 try{
-    		 Integer.parseInt(id);
+    		 if(i<=10){
+    		    Integer.parseInt(id);
+    		 }
     	 }catch(NumberFormatException e){
     		 return 0;
     	 }
     	 return 1;
      }
-    
-    
+
+
 }
