@@ -25,7 +25,7 @@ import server.database.MySQLDataBase;
 
 public class Server {
 	String ip = "172.16.95.6";
-	int port=8000;
+	int port=3333;
 	MySQLDataBase db;
 
 	public static void main(String[] args) {
@@ -49,7 +49,7 @@ public class Server {
 			SellingAreaDataBaseService sellingarea=new SellingAreaData(db);
 			SenderDataBaseService sender=new SenderData(db);
 			WareHouseDataBaseService WareHouse=new WareHouseData(db);
-			LocateRegistry.createRegistry(8000);
+			LocateRegistry.createRegistry(3333);
 			Naming.rebind("rmi://" + ip + ":"+port + "/AdminDataService", ad);
 			Naming.rebind("rmi://" + ip + ":"+port  + "/CentreDataService", cd);
 			Naming.rebind("rmi://"+ip+":"+port+"/LoginDataService", ld);
