@@ -6,10 +6,15 @@ import java.util.Calendar;
 import _enum.ResultMessage;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
+import po.CentreArrivalPO;
+import po.CentreTransforPO;
 import po.InStoragePO;
 import po.OutStoragePO;
+import vo.CentreArrivalVO;
+import vo.CentreTransforVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
+import vo.SenderVO;
 
 public class Warehouse implements WarehouseBlService {
 	WarehouseData wd = new WarehouseData();
@@ -192,6 +197,55 @@ public class Warehouse implements WarehouseBlService {
 			e.printStackTrace();
 		}
 		return ResultMessage.FunctionError;
+	}
+
+	public ArrayList<CentreArrivalVO> getImport() {
+		// TODO Auto-generated method stub
+		ArrayList<CentreArrivalVO> vo = new ArrayList<CentreArrivalVO>();
+		ArrayList<CentreArrivalPO> po = new ArrayList<CentreArrivalPO>();
+		try {
+			po = wd.getArrival();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new CentreArrivalVO(po.get(i).getID(), po.get(i).getGetDate(), po.get(i).getTransferID(),
+					po.get(i).getStart(), po.get(i).getExpressState(), po.get(i).getIsCheck()));
+		}
+		return vo;
+	}
+
+	public ArrayList<CentreTransforVO> getExport() {
+		// TODO Auto-generated method stub
+		ArrayList<CentreTransforVO> vo = new ArrayList<CentreTransforVO>();
+		ArrayList<CentreTransforPO> po = new ArrayList<CentreTransforPO>();
+		try {
+			po = wd.getTransfor();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new CentreTransforVO(po.get(i).getTransferStyle(), po.get(i).getDataOfGetin(),
+					po.get(i).getCentreTransferID(), po.get(i).getBanHao(), po.get(i).getStart(),
+					po.get(i).getArrival(), po.get(i).getHuoGuiHao(), po.get(i).getJianZhuangYuan(),
+					po.get(i).getList(), po.get(i).getFee(), po.get(i).getIsCheck()));
+		}
+
+		return vo;
+	}
+
+	public String getSenderDestination(String id) {
+		// TODO Auto-generated method stub
+		String destination = null;
+		try {
+			destination = wd.getSender(id).getRecipientAddress();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return destination;
 	}
 
 }

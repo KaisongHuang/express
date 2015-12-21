@@ -1,7 +1,10 @@
 package logic.warehouseblservice;
 
+import vo.CentreArrivalVO;
+import vo.CentreTransforVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
+import vo.SenderVO;
 
 import java.util.ArrayList;
 
@@ -26,4 +29,9 @@ public interface WarehouseBlService {
 	
 	public ResultMessage clearWarehouse();
 	
+	public ArrayList<CentreArrivalVO> getImport();
+	
+	public ArrayList<CentreTransforVO> getExport();
+	
+	public String getSenderDestination(String id);
 }
