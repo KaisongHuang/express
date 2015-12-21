@@ -24,15 +24,15 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	private SellingAreaUI ui;
 	SellingareaBlService sellingarea = new SellingArea();
-	
+
 	public SellingAreaListener00 (SellingAreaUI ui){
 		super();
 		this.ui=ui;
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 		if(e.getSource()==ui.getBtnNewButton_11()){
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
@@ -50,7 +50,7 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			rm = sellingarea.manageCarPack(vo);
 			check(rm);
 		}
-		
+
 	}
 
 	private void check(ResultMessage rm){
@@ -88,7 +88,7 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			JOptionPane.showMessageDialog(ui, "请检查汽运编号格式是否正确！");
 			return false;
 		}
-		
+
 		if(vo.checkSupercargo()==0){
 			JOptionPane.showMessageDialog(ui, "请检查押运员编号格式是否正确！");
 			return false;
@@ -97,7 +97,7 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			JOptionPane.showMessageDialog(ui, "请检查监装员编号格式是否正确！");
 			return false;
 		}
-		
+
 		return true;
 	}
 	private CarPackVO read() {
@@ -112,17 +112,17 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 //		int count = ui.getTextArea().getLineCount();
 //		System.out.println(count);
 		ArrayList<String> list = new ArrayList<String>();
-		String templist = ui.getTextArea().getText();
-		String a[] = templist.split("[\\t \\n]+");
-		for(int i=0;i<a.length;i++){
-			list.add(a[i]);
-//			System.out.println(a[i]);
-		}
+//		String templist = ui.getTextArea().getText();
+//		String a[] = templist.split("[\\t \\n]+");
+//		for(int i=0;i<a.length;i++){
+//			list.add(a[i]);
+////			System.out.println(a[i]);
+//		}
 //		System.out.println(list);
-		
+		list.add("1000000001");
 		CarPackVO vo = new CarPackVO(date,number,start,destination,supervisor,
 				supercargo,list,Double.parseDouble(fee),0);
-		
+
 		return vo;
 	}
 
@@ -138,27 +138,27 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
