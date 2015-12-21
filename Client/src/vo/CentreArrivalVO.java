@@ -2,13 +2,17 @@ package vo;
 
 public class CentreArrivalVO {
 
-	String ID;
-	String getDate;
-	String transferID;
-	String start;
-	String expressState;
-	int isCheck;
-    Check c;
+	private String ID;
+	private String getDate;
+	private String transferID;
+	private String start;
+	private String expressState;
+	private int isCheck;
+    private Check c;
+	public String getID() {
+		return ID;
+	}
+
 	public CentreArrivalVO(String id, String gd, String ti, String start, String es, int isCheck) {
 
 		this.ID = id;

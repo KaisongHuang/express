@@ -58,7 +58,7 @@ public class ManagerUI1 extends JPanel{
 
 		navi_panel = new JPanel();
 		navi_panel.setBounds(0, 0, 746, 44);
-		navi_panel.setBackground(new Color(246, 246, 246));
+		navi_panel.setBackground(Color.WHITE);
 		this.add(navi_panel);
 		navi_panel.setLayout(null);
 
