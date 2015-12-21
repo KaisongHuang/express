@@ -18,6 +18,7 @@ import java.util.Vector;
 
 import javax.swing.JButton;
 import listener.managerlistener.ManagerListener20;
+import presentation.MySwing.MyTable;
 
 import javax.swing.JComboBox;
 
@@ -42,16 +43,16 @@ public class ManagerUI2 extends JPanel {
 	private JPanel panel9;
 	private JPanel panel10;
 	private JPanel panel11;
-	private JTable table2;
-	private JTable table3;
-	private JTable table4;
-	private JTable table5;
-	private JTable table6;
-	private JTable table7;
-	private JTable table8;
-	private JTable table9;
-	private JTable table10;
-	private JTable table11;
+	private MyTable table2;
+	private MyTable table3;
+	private MyTable table4;
+	private MyTable table5;
+	private MyTable table6;
+	private MyTable table7;
+	private MyTable table8;
+	private MyTable table9;
+	private MyTable table10;
+	private MyTable table11;
 	private JScrollPane JSP2;
 	private JScrollPane JSP3;
 	private JScrollPane JSP4;
@@ -145,93 +146,133 @@ public class ManagerUI2 extends JPanel {
 		label.setBounds(38, 10, 100, 18);
 		this.add(label);
 
-		String names2[] = { "付款日期", "付款金额", "付款人", "付款账号", "条目", "备注" };
+		String names2[] = { "付款日期", "付款金额", "付款人", "付款账号", "条目", "备注", "审批通过" };
 		name2 = new Vector<String>(Arrays.asList(names2));
-		table2 = new JTable(data2, name2);
+		table2 = new MyTable(data2, name2);
 		table2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table2.addMouseListener(managerlistener);
 		model2 = (DefaultTableModel) table2.getModel();
+		table2.setSelectionForeground(Color.BLACK);
+		table2.setSelectionBackground(null);
+		// table2.setEditableColumn(2);
+		table2.setFocusable(false);
 		JSP2 = new JScrollPane(table2);
 		JSP2.setBounds(82, 176, 340, 200);
 
-		String names3[] = { "收款日期", "收款金额", "收款快递员" };
+		String names3[] = { "收款日期", "收款金额", "收款快递员", "审批通过" };
 		name3 = new Vector<String>(Arrays.asList(names3));
-		table3 = new JTable(data3, name3);
+		table3 = new MyTable(data3, name3);
 		table3.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table3.addMouseListener(managerlistener);
 		model3 = (DefaultTableModel) table3.getModel();
+		table3.setSelectionForeground(Color.BLACK);
+		table3.setSelectionBackground(null);
+		// table3.setEditableColumn(2);
+		table3.setFocusable(false);
 		JSP3 = new JScrollPane(table3);
 		JSP3.setBounds(82, 176, 340, 200);
 
-		String names4[] = { "到达日期", "订单号", "派送员" };
+		String names4[] = { "到达日期", "订单号", "派送员", "审批通过" };
 		name4 = new Vector<String>(Arrays.asList(names4));
-		table4 = new JTable(data4, name4);
+		table4 = new MyTable(data4, name4);
 		table4.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table4.addMouseListener(managerlistener);
 		model4 = (DefaultTableModel) table4.getModel();
+		table4.setSelectionForeground(Color.BLACK);
+		table4.setSelectionBackground(null);
+		// table4.setEditableColumn(2);
+		table4.setFocusable(false);
 		JSP4 = new JScrollPane(table4);
 		JSP4.setBounds(82, 176, 340, 200);
 
-		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "运费" };
+		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "运费", "审批通过" };
 		name5 = new Vector<String>(Arrays.asList(names5));
-		table5 = new JTable(data5, name5);
+		table5 = new MyTable(data5, name5);
 		table5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table5.addMouseListener(managerlistener);
 		model5 = (DefaultTableModel) table5.getModel();
+		table5.setSelectionForeground(Color.BLACK);
+		table5.setSelectionBackground(null);
+		// table5.setEditableColumn(2);
+		table5.setFocusable(false);
 		JSP5 = new JScrollPane(table5);
 		JSP5.setBounds(82, 176, 340, 200);
 
-		String names6[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
+		String names6[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号", "审批通过" };
 		name6 = new Vector<String>(Arrays.asList(names6));
-		table6 = new JTable(data6, name6);
+		table6 = new MyTable(data6, name6);
 		table6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table6.addMouseListener(managerlistener);
 		model6 = (DefaultTableModel) table6.getModel();
+		table6.setSelectionForeground(Color.BLACK);
+		table6.setSelectionBackground(null);
+		// table6.setEditableColumn(2);
+		table6.setFocusable(false);
 		JSP6 = new JScrollPane(table6);
 		JSP6.setBounds(82, 176, 340, 200);
 
-		String names7[] = { "快递编号", "出库日期", "目的地", "装运形式", "中转单号" };
+		String names7[] = { "快递编号", "出库日期", "目的地", "装运形式", "中转单号", "审批通过" };
 		name7 = new Vector<String>(Arrays.asList(names7));
-		table7 = new JTable(data7, name7);
+		table7 = new MyTable(data7, name7);
 		table7.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table7.addMouseListener(managerlistener);
 		model7 = (DefaultTableModel) table7.getModel();
+		table7.setSelectionForeground(Color.BLACK);
+		table7.setSelectionBackground(null);
+		// table7.setEditableColumn(2);
+		table7.setFocusable(false);
 		JSP7 = new JScrollPane(table7);
 		JSP7.setBounds(82, 176, 340, 200);
 
-		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员" };
+		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员", "审批通过" };
 		name8 = new Vector<String>(Arrays.asList(names8));
-		table8 = new JTable(data8, name8);
+		table8 = new MyTable(data8, name8);
 		table8.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table8.addMouseListener(managerlistener);
 		model8 = (DefaultTableModel) table8.getModel();
+		table8.setSelectionForeground(Color.BLACK);
+		table8.setSelectionBackground(null);
+		// table8.setEditableColumn(2);
+		table8.setFocusable(false);
 		JSP8 = new JScrollPane(table8);
 		JSP8.setBounds(82, 176, 340, 200);
 
-		String names9[] = { "到达日期", "中转单编号", "出发地", "货物到达状态" };
+		String names9[] = { "到达日期", "中转单编号", "出发地", "货物到达状态", "审批通过" };
 		name9 = new Vector<String>(Arrays.asList(names9));
-		table9 = new JTable(data9, name9);
+		table9 = new MyTable(data9, name9);
 		table9.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table9.addMouseListener(managerlistener);
 		model9 = (DefaultTableModel) table9.getModel();
+		table9.setSelectionForeground(Color.BLACK);
+		table9.setSelectionBackground(null);
+		// table9.setEditableColumn(2);
+		table9.setFocusable(false);
 		JSP9 = new JScrollPane(table9);
 		JSP9.setBounds(82, 176, 340, 200);
 
-		String names10[] = { "中转中心编号", "到达日期", "中转单编号", "出发地", "货物到达状态" };
+		String names10[] = { "中转中心编号", "到达日期", "中转单编号", "出发地", "货物到达状态", "审批通过" };
 		name10 = new Vector<String>(Arrays.asList(names10));
-		table10 = new JTable(data10, name10);
+		table10 = new MyTable(data10, name10);
 		table10.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table10.addMouseListener(managerlistener);
 		model10 = (DefaultTableModel) table10.getModel();
+		table10.setSelectionForeground(Color.BLACK);
+		table10.setSelectionBackground(null);
+		// table10.setEditableColumn(2);
+		table10.setFocusable(false);
 		JSP10 = new JScrollPane(table10);
 		JSP10.setBounds(82, 176, 340, 200);
 
-		String names11[] = { "装车日期", "中转中心汽运编号", "到达地", "车辆代号", "监装员", "押运员", "运费" };
+		String names11[] = { "装车日期", "中转中心汽运编号", "到达地", "车辆代号", "监装员", "押运员", "运费", "审批通过" };
 		name11 = new Vector<String>(Arrays.asList(names11));
-		table11 = new JTable(data11, name11);
+		table11 = new MyTable(data11, name11);
 		table11.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table11.addMouseListener(managerlistener);
 		model11 = (DefaultTableModel) table11.getModel();
+		table11.setSelectionForeground(Color.BLACK);
+		table11.setSelectionBackground(null);
+		// table11.setEditableColumn(2);
+		table11.setFocusable(false);
 		JSP11 = new JScrollPane(table11);
 		JSP11.setBounds(82, 176, 340, 200);
 
@@ -274,6 +315,46 @@ public class ManagerUI2 extends JPanel {
 		panel.add(panel11, "10");
 		add(panel);
 
+	}
+
+	public void setData2(Vector<Object> data2) {
+		this.data2 = data2;
+	}
+
+	public void setData3(Vector<Object> data3) {
+		this.data3 = data3;
+	}
+
+	public void setData4(Vector<Object> data4) {
+		this.data4 = data4;
+	}
+
+	public void setData5(Vector<Object> data5) {
+		this.data5 = data5;
+	}
+
+	public void setData6(Vector<Object> data6) {
+		this.data6 = data6;
+	}
+
+	public void setData7(Vector<Object> data7) {
+		this.data7 = data7;
+	}
+
+	public void setData8(Vector<Object> data8) {
+		this.data8 = data8;
+	}
+
+	public void setData9(Vector<Object> data9) {
+		this.data9 = data9;
+	}
+
+	public void setData10(Vector<Object> data10) {
+		this.data10 = data10;
+	}
+
+	public void setData11(Vector<Object> data11) {
+		this.data11 = data11;
 	}
 
 	public JButton getButton1() {

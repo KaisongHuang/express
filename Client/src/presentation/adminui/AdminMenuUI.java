@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import listener.adminlistener.AdminMenuListener;
-import presentation.button.NaviButton;
+import presentation.MySwing.NaviButton;
 
 public class AdminMenuUI extends JPanel {
 
