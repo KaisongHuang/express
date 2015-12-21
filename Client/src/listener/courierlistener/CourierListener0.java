@@ -26,7 +26,7 @@ public class CourierListener0 implements ActionListener {
 	CourierBlService courier = new Courier();
 	private DistanceAndFee daf;
 	CourierUI1 panel;
-
+    double[] d=new double[2];
 	public CourierListener0(CourierUI ui) {
 		super();
 		this.ui = ui;
@@ -62,6 +62,8 @@ public class CourierListener0 implements ActionListener {
 				return ;
 			rm = courier.OrderInput(vo, daf);
 			check(rm);
+			panel.getTextField().setText(courier.getTime()+"");
+			panel.getTextField_1().setText(courier.getMoney()+"");
 			panel.setVisible(true);
 
 		}
