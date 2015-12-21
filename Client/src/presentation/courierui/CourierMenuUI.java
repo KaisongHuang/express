@@ -11,7 +11,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import listener.courierlistener.CourierMenuListener;
-import presentation.button.NaviButton;
+import presentation.MySwing.NaviButton;
 
 public class CourierMenuUI extends JPanel {
 

@@ -10,7 +10,7 @@ import java.awt.Color;
 import javax.swing.*;
 
 import listener.warehouselistener.WarehouseMenuListener;
-import presentation.button.NaviButton;
+import presentation.MySwing.NaviButton;
 
 public class WarehouseMenuUI extends JPanel {
 

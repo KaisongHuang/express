@@ -1,4 +1,4 @@
-package presentation.button;
+package presentation.MySwing;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -8,7 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-public class SubNaviButton extends JButton{
+public class NaviButton extends JButton {
+
 	/**
 	 * 
 	 */
@@ -16,11 +17,11 @@ public class SubNaviButton extends JButton{
 	private boolean clicked = false;
 	private boolean entered = false;
 
-	public SubNaviButton() {
+	public NaviButton() {
 		this.setBorderPainted(false);
 	}
 
-	public SubNaviButton(String text){
+	public NaviButton(String text){
 		JLabel label=new JLabel();
 		label.setText(text);
 		label.setAlignmentX(CENTER_ALIGNMENT);
@@ -28,7 +29,7 @@ public class SubNaviButton extends JButton{
 		this.add(label);
 	}
 	
-	public SubNaviButton(String text,String path){
+	public NaviButton(String text,String path){
 		JLabel label=new JLabel();
 		ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
 		icon.setImage(icon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH));
@@ -43,9 +44,9 @@ public class SubNaviButton extends JButton{
 	protected void paintComponent(Graphics g) {
 		if (clicked) {
 			g.setColor(new Color(158, 211, 240));
-			g.fillRect(0, 0, this.getWidth(), this.getHeight()/10);
+			g.fillRect(0, 0, this.getWidth() / 20, this.getHeight());
 			g.setColor(new Color(228, 228, 228));
-			g.fillRect(0, this.getHeight()/10, this.getWidth(), this.getHeight()-this.getHeight()/10);
+			g.fillRect(this.getWidth() / 20, 0, this.getWidth() - this.getWidth() / 20, this.getHeight());
 		} else if (!clicked) {
 			g.setColor(new Color(246, 246, 246));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
@@ -72,4 +73,5 @@ public class SubNaviButton extends JButton{
 	public void setEntered(boolean entered) {
 		this.entered = entered;
 	}
+
 }
