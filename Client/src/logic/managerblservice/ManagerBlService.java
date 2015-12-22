@@ -11,7 +11,7 @@ import vo.CentreTransforVO;
 import vo.DeliverVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
-import vo.PackVO;
+import vo.CentrePackVO;
 import vo.PayVO;
 import vo.ReceiptVO;
 
@@ -39,7 +39,7 @@ public interface ManagerBlService {
 
 	public ArrayList<CentreTransforVO> checkTrans();
 
-	public ArrayList<PackVO> checkCentrePack();
+	public ArrayList<CentrePackVO> checkCentrePack();
 
 	public ArrayList<InStorageVO> checkImport();
 

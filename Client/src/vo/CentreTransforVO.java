@@ -3,65 +3,74 @@ package vo;
 import java.util.ArrayList;
 
 public class CentreTransforVO {
-	
-	String transferStyle;
-	String dataOfGetin;
-	String centreTransferID;
-	String banHao;
-	String start;
-	String arrival;
-	String huoGuiHao;
-	String jianZhuangYuan;
-    ArrayList<String> list=new ArrayList<String>();
-    double fee;
-    int isCheck;
-    Check c;
-    public CentreTransforVO(String ts,String dog,String cti,String bh,String start,String arrival,String hgh,
-    		String jzy,ArrayList<String> list,double fee,int isCheck){
-    	this.transferStyle=ts;
-    	this.dataOfGetin=dog;
-    	this.centreTransferID=cti;
-    	this.banHao=bh;
-    	this.start=start;
-    	this.arrival=arrival;
-    	this.huoGuiHao=hgh;
-    	this.jianZhuangYuan=jzy;
-    	this.list=list;
-    	this.fee=fee;
-    	this.isCheck=isCheck;
-    	c=new Check();
-    }
 
-    public int checkIsNull(){
-    	if(transferStyle.length()==0||dataOfGetin.length()==0||centreTransferID.length()==0||banHao.length()==0||start.length()==0||
-    			arrival.length()==0||huoGuiHao.length()==0||jianZhuangYuan.length()==0||list.size()==0)
-    		return 0;
-        return 1;
-    }
-    public int checkDate(){
-    	return c.checkDate(dataOfGetin);
-    }
-    public int centreTransferID(){
-    	return c.checkID(centreTransferID, 21);
-    }
-    public int checkBanHao(){
-    	return c.checkID(banHao,10);
-    }
-    public int checkJian(){
-    	return c.checkID(jianZhuangYuan, 10);
-    }
-    public int checkList(){
-    	for(int i=0;i<list.size();i++){
-    		if(c.checkID(list.get(i), 10)==0)
-    			return 0;
-    	}
-    	return 1;
-    }
-    public int checkFee(){
-    	if(fee<=0||fee>10000000)
-    		return 0;
-    	return 1;
-    }
+	private String transferStyle;
+	private String dateOfGetin;
+	private String centreTransferID;
+	private String banHao;
+	private String start;
+	private String arrival;
+	private String huoGuiHao;
+	private String jianZhuangYuan;
+	private ArrayList<String> list = new ArrayList<String>();
+	private double fee;
+	private int isCheck;
+	private Check c;
+
+	public CentreTransforVO(String ts, String dog, String cti, String bh, String start, String arrival, String hgh,
+			String jzy, ArrayList<String> list, double fee, int isCheck) {
+		this.transferStyle = ts;
+		this.dateOfGetin = dog;
+		this.centreTransferID = cti;
+		this.banHao = bh;
+		this.start = start;
+		this.arrival = arrival;
+		this.huoGuiHao = hgh;
+		this.jianZhuangYuan = jzy;
+		this.list = list;
+		this.fee = fee;
+		this.isCheck = isCheck;
+		c = new Check();
+	}
+
+	public int checkIsNull() {
+		if (transferStyle.length() == 0 || dateOfGetin.length() == 0 || centreTransferID.length() == 0
+				|| banHao.length() == 0 || start.length() == 0 || arrival.length() == 0 || huoGuiHao.length() == 0
+				|| jianZhuangYuan.length() == 0 || list.size() == 0)
+			return 0;
+		return 1;
+	}
+
+	public int checkDate() {
+		return c.checkDate(dateOfGetin);
+	}
+
+	public int centreTransferID() {
+		return c.checkID(centreTransferID, 21);
+	}
+
+	public int checkBanHao() {
+		return c.checkID(banHao, 10);
+	}
+
+	public int checkJian() {
+		return c.checkID(jianZhuangYuan, 10);
+	}
+
+	public int checkList() {
+		for (int i = 0; i < list.size(); i++) {
+			if (c.checkID(list.get(i), 10) == 0)
+				return 0;
+		}
+		return 1;
+	}
+
+	public int checkFee() {
+		if (fee <= 0 || fee > 10000000)
+			return 0;
+		return 1;
+	}
+
 	public int getIsCheck() {
 		return isCheck;
 	}
@@ -82,12 +91,12 @@ public class CentreTransforVO {
 		this.transferStyle = transferStyle;
 	}
 
-	public String getDataOfGetin() {
-		return dataOfGetin;
+	public String getDateOfGetin() {
+		return dateOfGetin;
 	}
 
-	public void setDataOfGetin(String dataOfGetin) {
-		this.dataOfGetin = dataOfGetin;
+	public void setDateOfGetin(String dataOfGetin) {
+		this.dateOfGetin = dataOfGetin;
 	}
 
 	public String getCentreTransferID() {
@@ -149,8 +158,5 @@ public class CentreTransforVO {
 	public void setFee(double fee) {
 		this.fee = fee;
 	}
-    
-    
-
 
 }
