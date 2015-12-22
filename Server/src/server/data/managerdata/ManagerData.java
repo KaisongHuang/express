@@ -29,7 +29,7 @@ import vo.CentreTransforVO;
 import vo.DeliverVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
-import vo.PackVO;
+import vo.CentrePackVO;
 import vo.PayVO;
 import vo.ReceiptVO;
 import _enum.ResultMessage;
