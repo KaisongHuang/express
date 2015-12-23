@@ -202,7 +202,8 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 				   list1.add(rs.getString(7));
 				}
 				else{
-					list.add(new CarPackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+					list.add(new CarPackPO(rs.getString(1),rs.getString(10),rs.getString(2),rs.getString(3),rs.getString(4),
+							rs.getString(11),rs.getString(5),rs.getString(6),
 						list1,rs.getDouble(8),rs.getInt(9)));
 					list1.clear();
 					list1.add(rs.getString(7));
@@ -221,7 +222,191 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		String sql="select * from Receipt where isCheck=0;";
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
 		list=null;
+		ArrayList<String> list1=new ArrayList<String>();
+		ResultSet rs=db.find(sql);
+		String id1="";
+		String id2="";
+		int count=0;
+		try {
+			while(rs.next()){
+				id1=rs.getString(3);
+				if(count==0)
+					id2=id1;
+				if(id1.equals(id2))
+					list1.add(rs.getString(5));
+				else{
+					list.add(new ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),list1,rs.getInt(4)));
+					list1.clear();
+					list1.add(rs.getString(5));
+				}
+				id2=rs.getString(3);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public ArrayList<AcceptPO> getAccept(){
+		String sql="select * from Accept where isCheck=0;";
+		ArrayList<AcceptPO> list=new ArrayList<AcceptPO>();
+		list=null;
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+			    list.add(new AcceptPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6)));	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return list;
 	}
 
+	public ArrayList<DeliverPO> getDeliver(){
+		String sql="select * from Deliver where isCheck=0;";
+		ArrayList<DeliverPO> list=new ArrayList<DeliverPO>();
+		list=null;
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+			     list.add(new DeliverPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4)));	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public ArrayList<CentreArrivalPO> getCentreArrival(){
+		String sql="select * from CentreArrival where isCheck=0;";
+		ArrayList<CentreArrivalPO> list=new ArrayList<CentreArrivalPO>();
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+			    list.add(new CentreArrivalPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getInt(7)));
+			    
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public ArrayList<CentrePackPO> getCentrePack(){
+		String sql="select * from CentrePack where isCheck=0;";
+		ArrayList<CentrePackPO> list=new ArrayList<CentrePackPO>();
+		list=null;
+		ArrayList<String> list1=new ArrayList<String>();
+		int count=0;
+		String id1="";
+		String id2="";
+	    ResultSet rs=db.find(sql);
+	    try {
+			while(rs.next()){
+			   id1=rs.getString(2);
+			   if(count==0)
+				   id2=id1;
+			   if(id1.equals(id2))
+				   list1.add(rs.getString(7));
+			   else{
+				   list.add(new CentrePackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
+						   rs.getString(6),list1,rs.getDouble(8),rs.getInt(9)));
+				   list.clear();
+				   list1.add(rs.getString(7));
+			   }
+			   id2=rs.getString(2);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    return list;
+	}
+	
+	public ArrayList<CentreTransforPO> getCentreTransfor(){
+		String sql="select * from CentreTransfor where isCheck=0;";
+		ArrayList<CentreTransforPO> list=new ArrayList<CentreTransforPO>();
+		list=null;
+		ArrayList<String> list1=new ArrayList<String>();
+		String id1="";
+		String id2="";
+		int count=0;
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+			    id1=rs.getString(3);
+			    if(count==0)
+			    	id2=id1;
+			    if(id1.equals(id2))
+			    	list1.add(rs.getString(9));
+			    else{
+			    	list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),list1,rs.getDouble(10),
+			    			rs.getInt(11),rs.getInt(12)));
+			    	list1.clear();
+			    	list1.add(rs.getString(9));
+			    }
+			    id2=rs.getString(3);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public ArrayList<InStoragePO> getInStorage(){
+		String sql="select * from InStorage where isCheck=0;";
+		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
+		list=null;
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+			     list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),
+			    		 rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(10)));
+			     
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public ArrayList<OutStoragePO> getOutStorage(){
+		String sql="select * from OutStorage where isCheck=0;";
+		ArrayList<OutStoragePO> list=new ArrayList<OutStoragePO>();
+		list=null;
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+			    list.add(new OutStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(7),rs.getString(4),rs.getString(5),rs.getInt(6)));	
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;	
+	}
+	
+	public ArrayList<PayPO> getPay(){
+	   String sql="select * from Pay where isCheck=0;";
+	   ArrayList<PayPO> list=new ArrayList<PayPO>();
+	   list=null;
+	   ResultSet rs=db.find(sql);
+	   try {
+		while(rs.next()){
+			   list.add(new PayPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
+					   rs.getDouble(6),rs.getInt(7)));
+		   }
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	   return list;
+	}
+	
 }
