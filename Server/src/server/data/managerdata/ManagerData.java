@@ -182,5 +182,46 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return rm;
 	}
+	
+	public ArrayList<CarPackPO> getCarPack(){
+		ArrayList<CarPackPO> list=new ArrayList<CarPackPO>();
+		list=null;
+		String sql="select * from CarPack where isCheck=0;";
+		ResultSet rs=db.find(sql);
+		String id1=null;
+		String id2=null;
+		ArrayList<String> list1=new ArrayList<String>();
+		try {
+			int count=0;
+			while(rs.next()){
+				id1=rs.getString(2);
+				if(count==0)
+					id2=id1;
+				count++;
+				if(id1.equals(id2)){
+				   list1.add(rs.getString(7));
+				}
+				else{
+					list.add(new CarPackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+						list1,rs.getDouble(8),rs.getInt(9)));
+					list1.clear();
+					list1.add(rs.getString(7));
+				}
+				id2=rs.getString(2);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
+	
+	public ArrayList<ReceiptPO> getReceipt(){
+		String sql="select * from Receipt where isCheck=0;";
+		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
+		list=null;
+		return list;
+	}
 
 }

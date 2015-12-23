@@ -25,20 +25,34 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ResultMessage rm=null;
 		if(po instanceof AccountPO){
 			AccountPO po1=(AccountPO) po;
-			sql="insert into Account values("+po1.getBankAccount()+","+po1.getBalance()+",0);";
+			sql="insert into Account values('"+po1.getBankAccount()+"',"+po1.getBalance()+",0);";
 			rm=db.insert(sql);
-			String sql1="insert into Account values("+po1.getBankAccount()+","+po1.getBalance()+",1);";
+			String sql1="insert into Account values('"+po1.getBankAccount()+"',"+po1.getBalance()+",1);";
 		    rm=db.insert(sql1);
 		}else if(po instanceof PayPO){
 			PayPO po1=(PayPO) po;
-			sql="insert into Pay values("+"'"+po1.getDate()+"',"+po1.getPayer()+",'"+po1.getPayAccount()+"','"+po1.getEntry()+"',"+po1.getComments()+","+po1.getCost()+","+po1.getIsCheck()+");";
-			rm=db.insert(sql);
+			sql="insert into Pay values('"+po1.getDate()+"','"+po1.getPayer()+"','"+po1.getPayAccount()+"','"+po1.getEntry()+"','"+po1.getComments()+"',"+po1.getCost()+","+po1.getIsCheck()+");";
+			String sql1="select * from Account where bankAccount='"+po1.getPayAccount()+"' and isInit=0";
+			ResultSet rs=db.find(sql);
+			double balance=0;
+			try {
+				if(rs.next())
+				    balance=rs.getDouble(2)-po1.getCost();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(balance>=0){
+				String sql2="update Account set balance="+balance+" where bankAccount='"+po1.getPayAccount()+"';";
+				db.update(sql2);
+			    rm=db.insert(sql);
+			}
 		}
 		return rm;
 	}
 
 	public ArrayList<AccountPO> getAccount() throws RemoteException{
-		String sql="select * from Account where isInit=1;";
+		String sql="select * from Account where isInit=0;";
 		ResultSet rs=db.find(sql);
 		ArrayList<AccountPO> list=new ArrayList<AccountPO>();
 		list=null;
@@ -80,7 +94,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public ResultMessage delete( Object po) throws RemoteException{
 		String sql="delete from Account where ";
 		AccountPO po1=(AccountPO) po;
-		sql=sql+"bankAccount="+po1.getBankAccount()+";";
+		sql=sql+"bankAccount='"+po1.getBankAccount()+"' and isInit=0;";
 		ResultMessage rm=db.delete(sql);
 		
 		return rm;
@@ -89,7 +103,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public ArrayList<AccountPO> getInit() throws RemoteException {
 		ArrayList<AccountPO> list=new ArrayList<AccountPO>();
 		list=null;
-		String sql="select * from Account where isInit=0;";
+		String sql="select * from Account where isInit=1;";
 	    ResultSet rs=db.find(sql);
 	    try {
 			while(rs.next()){
