@@ -10,7 +10,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import listener.centrelistener.CentreMenuListener;
-import presentation.button.NaviButton;
+import presentation.MySwing.NaviButton;
 
 public class CentreMenuUI extends JPanel {
 

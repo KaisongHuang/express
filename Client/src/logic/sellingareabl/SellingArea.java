@@ -25,8 +25,8 @@ public class SellingArea implements SellingareaBlService {
 	public ResultMessage manageCarPack(CarPackVO vo) {
 		ResultMessage rm=null;
 
-		CarPackPO po = new CarPackPO(vo.getDate(), vo.getNumber(), vo.getStart(), vo.getDestination(),
-				vo.getSupervisor(), vo.getSupercargo(), vo.getList(), vo.getFee(), vo.getIsCheck());
+		CarPackPO po = new CarPackPO(vo.getDate(), vo.getSellingArea(),vo.getNumber(), vo.getStart(), vo.getDestination(),
+				vo.getCarID(),vo.getSupervisor(), vo.getSupercargo(), vo.getList(), vo.getFee(), vo.getIsCheck());
 
 		try {
 			rm = sd.insert(po);
@@ -41,7 +41,7 @@ public class SellingArea implements SellingareaBlService {
 
 	public ResultMessage createReceiving(AcceptVO vo) {
 		ResultMessage rm=null;
-		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getStart(),
+		AcceptPO po = new AcceptPO(vo.getBarCode(), vo.getDate(), vo.getNumber(), vo.getStart(), vo.getState(),
 				vo.getIsCheck());
 		try {
 			rm = sd.insert(po);

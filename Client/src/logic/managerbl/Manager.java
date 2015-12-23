@@ -35,15 +35,15 @@ public class Manager implements ManagerBlService {
 		try {
 			if (op == Opera.Employee_find) {
 				ep = (EmployeePO) md.findEmployee(id);
-				if(ep!=null)
-				     return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(), ep.getEmployeePosition(),
-						   ep.getTimeOfWorking(), ep.getBelongToWho());
+				if (ep != null)
+					return new EmployeeVO(id, ep.getEmployeeName(), ep.getEmployeeAging(), ep.getEmployeePosition(),
+							ep.getTimeOfWorking(), ep.getBelongToWho());
 				else
-					 return null;
+					return null;
 			} else {
 				po = (InstitutionPO) md.findInStitution(id);
-				if(po!=null)
-				     return new InstitutionPO(po.getName(), po.getOrganizationID());
+				if (po != null)
+					return new InstitutionPO(po.getName(), po.getOrganizationID());
 				else
 					return null;
 			}
@@ -60,7 +60,7 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage manageMember(Object tempvo, Opera op) {
 		// TODO Auto-generated method stub
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 
 		if (tempvo instanceof EmployeeVO) {
 			EmployeeVO vo = (EmployeeVO) tempvo;
@@ -76,7 +76,7 @@ public class Manager implements ManagerBlService {
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 		} else if (tempvo instanceof InstitutionVO) {
 			InstitutionVO vo = (InstitutionVO) tempvo;
@@ -88,11 +88,11 @@ public class Manager implements ManagerBlService {
 					rm = md.delete(po);
 				else
 					rm = md.update(po);
-				
+
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 		}
 
@@ -101,20 +101,21 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage checkDocument(Object vo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 
 		if (vo instanceof CarPackVO) {
 			CarPackVO vo1 = (CarPackVO) vo;
 
-			CarPackPO po1 = new CarPackPO(vo1.getDate(), vo1.getNumber(), vo1.getStart(), vo1.getDestination(),
-					vo1.getSupervisor(), vo1.getSupercargo(), vo1.getList(), vo1.getFee(), vo1.getIsCheck());
+			CarPackPO po1 = new CarPackPO(vo1.getDate(), vo1.getSellingArea(), vo1.getNumber(), vo1.getStart(),
+					vo1.getDestination(), vo1.getCarID(), vo1.getSupervisor(), vo1.getSupercargo(), vo1.getList(),
+					vo1.getFee(), vo1.getIsCheck());
 
 			try {
 				rm = md.update(po1);
-				
+
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof ReceiptVO) {
@@ -125,10 +126,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po4);
-		
+
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 		} else if (vo instanceof AcceptVO) {
 			AcceptVO vo5 = (AcceptVO) vo;
@@ -138,10 +139,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po5);
-		
+
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof DeliverVO) {
@@ -151,10 +152,10 @@ public class Manager implements ManagerBlService {
 
 			try {
 				rm = md.update(po6);
-			
+
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof CentreArrivalVO) {
@@ -167,13 +168,13 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po7);
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof CentreTransforVO) {
 			CentreTransforVO vo8 = (CentreTransforVO) vo;
 
-			CentreTransforPO po8 = new CentreTransforPO(vo8.getTransferStyle(), vo8.getDataOfGetin(),
+			CentreTransforPO po8 = new CentreTransforPO(vo8.getTransferStyle(), vo8.getDateOfGetin(),
 					vo8.getCentreTransferID(), vo8.getBanHao(), vo8.getStart(), vo8.getArrival(), vo8.getHuoGuiHao(),
 					vo8.getJianZhuangYuan(), vo8.getList(), vo8.getFee(), vo8.getIsCheck(), 0);
 
@@ -181,11 +182,11 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po8);
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
-		} else if (vo instanceof PackVO) {
-			PackVO vo9 = (PackVO) vo;
+		} else if (vo instanceof CentrePackVO) {
+			CentrePackVO vo9 = (CentrePackVO) vo;
 
 			CentrePackPO po9 = new CentrePackPO(vo9.getDataOfGetin(), vo9.getCentreTransferID(), vo9.getArrival(),
 					vo9.getCarID(), vo9.getJianZhuangYuan(), vo9.getYaYunYuan(), vo9.getList(), vo9.getFee(),
@@ -195,7 +196,7 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po9);
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof InStorageVO) {
@@ -209,7 +210,7 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po10);
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof OutStorageVO) {
@@ -222,7 +223,7 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po11);
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		} else if (vo instanceof PayVO) {
@@ -236,7 +237,7 @@ public class Manager implements ManagerBlService {
 
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 
 		}
@@ -246,7 +247,7 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage checkStatistics(Object tempvo) {
 		// TODO Auto-generated method stub
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 
 		if (tempvo instanceof SalaryVO) {
 			SalaryVO vo = (SalaryVO) tempvo;
@@ -255,7 +256,7 @@ public class Manager implements ManagerBlService {
 				rm = md.update(po);
 			} catch (RemoteException e) {
 				e.printStackTrace();
-				rm=ResultMessage.FunctionError;
+				rm = ResultMessage.FunctionError;
 			}
 		}
 
@@ -297,7 +298,7 @@ public class Manager implements ManagerBlService {
 		return null;
 	}
 
-	public ArrayList<PackVO> checkCentrePack() {
+	public ArrayList<CentrePackVO> checkCentrePack() {
 		// TODO Auto-generated method stub
 		return null;
 	}

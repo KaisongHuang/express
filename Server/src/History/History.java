@@ -13,7 +13,7 @@ public class History implements HistoryService{
 		this.db=db;
 	}
 	public void init(String id) {
-		sql="insert into History values('"+id+"',0,'0','0','0',0,0,0,0);";
+		sql="insert into History values('"+id+"','完整','0','0',0,0);";
 		
 	}
 
@@ -23,17 +23,27 @@ public class History implements HistoryService{
 		sql="select * from History where id='"+id+"';";
 		ResultSet rs=db.find(sql);
 		int selling=0;
-	    String sid=null;
+	    String sid="";
 		try {
+			if(rs.next()){
 			selling=rs.getInt(5)+1;
-			if(!rs.getString(3).equals("0")){
+			if(rs.getString(3).equals(sellingAreaID))
+				sid="";
+			
+			else if(!rs.getString(3).equals("0"))
 				sid=rs.getString(3);
+			
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="update History set sellingAreaID='"+sid+sellingAreaID+"' ,state="+state+",selling="+selling+" where id='"+id+"';";
+		if(state!=null&&sellingAreaID!=null)
+			sql="update History set sellingAreaID='"+sid+sellingAreaID+"' ,state='"+state+"',selling="+selling+" where id='"+id+"';";
+		
+		else if(state==null&&sellingAreaID==null)
+			sql="update History set sellingAreaID='"+sid+"',selling="+selling+" where id='"+id+"';";
 		db.update(sql);
 	}
 
@@ -41,16 +51,21 @@ public class History implements HistoryService{
 		sql="select * from History where id='"+id+"';";
 		ResultSet rs=db.find(sql);
 		int centre=0;
-		String cid=null;
+		String cid="";
 		try {
-			centre=rs.getInt(6)+1;
-			if(!rs.getString(4).equals("0"))
-				cid=rs.getString(4);
+			if(rs.next()){
+			    centre=rs.getInt(6)+1;
+			    if(!rs.getString(4).equals("0"))
+				   cid=rs.getString(4);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="update History set centreID='"+cid+centreID+"' ,state="+state+",centre="+centre+" where id='"+id+"';";
+		if(state!=null&&centreID!=null)
+		     sql="update History set centreID='"+cid+centreID+"' ,state="+state+",centre="+centre+" where id='"+id+"';";
+		else
+			 sql="update History set centre="+centre+" where id='"+id+"';";
 		db.update(sql);
 		
 	}

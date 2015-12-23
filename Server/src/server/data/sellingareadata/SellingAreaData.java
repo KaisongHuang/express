@@ -23,7 +23,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 	}
 
 	public CarPO findCar(String id) throws RemoteException {
-		String sql = "select * from Car where number=" + id+";";
+		String sql = "select * from Car where number='" + id+"';";
 		ResultSet rs = db.find(sql);
 		String number = null;
 		String en = null;
@@ -51,7 +51,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 	}
 
 	public DriverPO findDriver(String id) throws RemoteException {
-		String sql = "select * from Driver where number=" + id;
+		String sql = "select * from Driver where number='" + id+"';";
 		ResultSet rs = db.find(sql);
 		String number = null;
 		String name = null;
@@ -88,16 +88,16 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 		ResultMessage rm;
 		if (po instanceof CarPO) {
 			CarPO po1 = (CarPO) po;
-			sql = "update Car set EngineNumber=" + po1.getEngineNumber() + ",CarNumber=" + po1.getCarNumber()
-					+ ",ChassisNumber=" + po1.getChassisNumber() + ",purchase=" + po1.getPurchase() + ",ServiceTime="
-					+ po1.getServiceTime() + " where number=" + po1.getNumber();
+			sql = "update Car set EngineNumber='" + po1.getEngineNumber() + "',CarNumber='" + po1.getCarNumber()
+					+ "',ChassisNumber='" + po1.getChassisNumber() + "',purchase='" + po1.getPurchase() + "',ServiceTime="
+					+ po1.getServiceTime() + " where number='" + po1.getNumber()+"';";
 			rm = db.update(sql);
 			return rm;
 		} else if (po instanceof DriverPO) {
 			DriverPO po1 = (DriverPO) po;
-			sql = "update Driver set name=" + po1.getName() + ",birthday=" + po1.getBirthday() + ",ID=" + po1.getID()
-					+ ",phone=" + po1.getPhone() + ",CarCompany=" + po1.getCarCompany() + ",sex=" + po1.getSex()
-					+ ",LicenceTime=" + po1.getSex() + " where number=" + po1.getNumber();
+			sql = "update Driver set name='" + po1.getName() + "',birthday='" + po1.getBirthday() + "',ID='" + po1.getID()
+					+ "',phone='" + po1.getPhone() + "',CarCompany='" + po1.getCarCompany() + "',sex='" + po1.getSex()
+					+ "',LicenceTime='" + po1.getLicenceTime() + "' where number='" + po1.getNumber()+"';";
 			rm = db.update(sql);
 			return rm;
 		}
@@ -108,9 +108,9 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 	public ResultMessage delete(Object po) throws RemoteException {
 		String sql = null;
 		if (po instanceof CarPO) {
-			sql = "delete from Car where number=" + ((CarPO) po).getNumber();
+			sql = "delete from Car where number='" + ((CarPO) po).getNumber()+"';";
 		} else if (po instanceof DriverPO) {
-			sql = "delete from Driver where number=" + ((DriverPO) po).getNumber();
+			sql = "delete from Driver where number='" + ((DriverPO) po).getNumber()+"';";
 		}
 		ResultMessage rm = db.delete(sql);
 
@@ -150,7 +150,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 		} else if (po instanceof AcceptPO) {
 			AcceptPO po1 = (AcceptPO) po;
 			sql = "insert into Accept values('" + po1.getBarCode() + "','" + po1.getDate() + "','" + po1.getNumber()
-					+ "','" + po1.getStart() + "'," + po1.getState() + "," + po1.getIsCheck() + ");";
+					+ "','" + po1.getStart() + "','" + po1.getState() + "'," + po1.getIsCheck() + ");";
 			rm = db.insert(sql);
 			his.SellingArea(po1.getBarCode(), po1.getStart(), po1.getState());
 		} else if (po instanceof DeliverPO) {

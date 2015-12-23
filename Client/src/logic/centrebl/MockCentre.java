@@ -4,7 +4,7 @@ import _enum.ResultMessage;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
 import vo.DeliverVO;
-import vo.PackVO;
+import vo.CentrePackVO;
 
 public class MockCentre extends Centre {
 	
@@ -25,7 +25,7 @@ public class MockCentre extends Centre {
 		
 	}
 	
-	public ResultMessage createPack(PackVO vo){
+	public ResultMessage createPack(CentrePackVO vo){
 		
 		return ResultMessage.Correct;
 		

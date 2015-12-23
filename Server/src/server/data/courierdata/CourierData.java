@@ -10,16 +10,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import History.History;
+import HistoryService.HistoryService;
 import _enum.ResultMessage;
 import dataservice.courierdataservice.CourierDataBaseService;
 
 public class CourierData extends UnicastRemoteObject implements CourierDataBaseService{
 	MySQLDataBase db;
-	
+	HistoryService his;
 	public CourierData(MySQLDataBase db) throws RemoteException{
     	super();
     	this.db=db;
-    
+        his=new History(db);
     }
 
 	public ResultMessage insert(Object po) throws RemoteException {
@@ -28,12 +29,13 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 		if (po instanceof CourierPO) {
 
 			CourierPO po1 = (CourierPO) po;
-			ResultSet rs = db.find("insert into  Sender where BarCode='" + po1.getNumber() + "';");
+			ResultSet rs = db.find("select * from Sender where BarCode='" + po1.getNumber() + "';");
 			try {
 				if (rs.next()) {
-					sql = "insert into Courier values(" + po1.getNumber() + ",'" + po1.getName() + "','" + po1.getDate()
-							+ "')";
+					sql = "insert into Courier values('" + po1.getNumber() + "','" + po1.getName() + "','" + po1.getDate()
+							+ "');";
 					rm = db.insert(sql);
+					
 				} else
 					return rm = ResultMessage.Fail;
 			} catch (SQLException e) {
@@ -47,7 +49,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 			String barcode = "1000000000";
 			try {
 				if (rs.next()) {
-					barcode = 1 + rs.getString(18);
+					barcode = ""+1 + Integer.parseInt(rs.getString(18));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -63,6 +65,8 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 					+ ",'" + po1.getCommodity() + "','" + po1.getSize() + "','" + po1.getBagging() + "',"
 					+ po1.getTotal() + ",'" + barcode + "','" + po1.getType() + "');";
 			rm = db.insert(sql);
+			if(rm==ResultMessage.Success)
+				his.init(barcode);
 			return rm;
 		}
 
