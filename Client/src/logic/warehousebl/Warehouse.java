@@ -240,7 +240,7 @@ public class Warehouse implements WarehouseBlService {
 		// TODO Auto-generated method stub
 		String destination = null;
 		try {
-			destination = wd.getSender(id).getRecipientAddress();
+			destination = wd.getDestination(id);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

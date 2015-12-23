@@ -183,7 +183,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		return rm;
 	}
 	
-	public ArrayList<CarPackPO> getCarPack(){
+	public ArrayList<CarPackPO> getCarPack() throws RemoteException{
 		ArrayList<CarPackPO> list=new ArrayList<CarPackPO>();
 		list=null;
 		String sql="select * from CarPack where isCheck=0;";
@@ -218,7 +218,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		
 	}
 	
-	public ArrayList<ReceiptPO> getReceipt(){
+	public ArrayList<ReceiptPO> getReceipt() throws RemoteException{
 		String sql="select * from Receipt where isCheck=0;";
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
 		list=null;
@@ -249,7 +249,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		return list;
 	}
 	
-	public ArrayList<AcceptPO> getAccept(){
+	public ArrayList<AcceptPO> getAccept() throws RemoteException{
 		String sql="select * from Accept where isCheck=0;";
 		ArrayList<AcceptPO> list=new ArrayList<AcceptPO>();
 		list=null;
@@ -265,7 +265,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		return list;
 	}
 
-	public ArrayList<DeliverPO> getDeliver(){
+	public ArrayList<DeliverPO> getDeliver() throws RemoteException{
 		String sql="select * from Deliver where isCheck=0;";
 		ArrayList<DeliverPO> list=new ArrayList<DeliverPO>();
 		list=null;
@@ -280,7 +280,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return list;
 	}
-	public ArrayList<CentreArrivalPO> getCentreArrival(){
+	public ArrayList<CentreArrivalPO> getCentreArrival() throws RemoteException{
 		String sql="select * from CentreArrival where isCheck=0;";
 		ArrayList<CentreArrivalPO> list=new ArrayList<CentreArrivalPO>();
 		ResultSet rs=db.find(sql);
@@ -296,7 +296,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		return list;
 	}
 	
-	public ArrayList<CentrePackPO> getCentrePack(){
+	public ArrayList<CentrePackPO> getCentrePack() throws RemoteException{
 		String sql="select * from CentrePack where isCheck=0;";
 		ArrayList<CentrePackPO> list=new ArrayList<CentrePackPO>();
 		list=null;
@@ -327,7 +327,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	    return list;
 	}
 	
-	public ArrayList<CentreTransforPO> getCentreTransfor(){
+	public ArrayList<CentreTransforPO> getCentreTransfor() throws RemoteException{
 		String sql="select * from CentreTransfor where isCheck=0;";
 		ArrayList<CentreTransforPO> list=new ArrayList<CentreTransforPO>();
 		list=null;
@@ -358,7 +358,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return list;
 	}
-	public ArrayList<InStoragePO> getInStorage(){
+	public ArrayList<InStoragePO> getInStorage() throws RemoteException{
 		String sql="select * from InStorage where isCheck=0;";
 		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
 		list=null;
@@ -376,23 +376,24 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		return list;
 	}
 	
-	public ArrayList<OutStoragePO> getOutStorage(){
-		String sql="select * from OutStorage where isCheck=0;";
-		ArrayList<OutStoragePO> list=new ArrayList<OutStoragePO>();
-		list=null;
-		ResultSet rs=db.find(sql);
+	public ArrayList<OutStoragePO> getOutStorage() throws RemoteException{
+		String sql = "select * from OutStorage where isCheck=0;";
+		ArrayList<OutStoragePO> list = new ArrayList<OutStoragePO>();
+		list = null;
+		ResultSet rs = db.find(sql);
 		try {
-			while(rs.next()){
-			    list.add(new OutStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(7),rs.getString(4),rs.getString(5),rs.getInt(6)));	
+			while (rs.next()) {
+				list.add(new OutStoragePO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(7),
+						rs.getString(4), rs.getString(5), rs.getInt(6)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return list;	
+		return list;
 	}
 	
-	public ArrayList<PayPO> getPay(){
+	public ArrayList<PayPO> getPay() throws RemoteException{
 	   String sql="select * from Pay where isCheck=0;";
 	   ArrayList<PayPO> list=new ArrayList<PayPO>();
 	   list=null;
