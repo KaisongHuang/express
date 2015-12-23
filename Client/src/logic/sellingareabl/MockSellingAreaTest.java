@@ -17,7 +17,7 @@ public class MockSellingAreaTest {
 		ArrayList<String> list=new ArrayList();
 		list.add("1000000000");
 		list.add("1000000001");
-		CarPackVO vo = new CarPackVO("20151220","0250000000000000001","1","2","0250000001","0250000002",list,12.0,0);
+		CarPackVO vo = new CarPackVO("20151220","025000","0250000000000000001","1","2","0250000001","0250000001","0250000002",list,12.0,0);
 //	    assertEquals(ResultMessage.Correct,sellingArea.createDebitnote(null));
 //	    assertEquals(ResultMessage.Correct,sellingArea.createDelivery(null));
 //	    assertEquals(ResultMessage.Correct,sellingArea.createReceiving(null));

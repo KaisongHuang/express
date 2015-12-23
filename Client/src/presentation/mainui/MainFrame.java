@@ -42,13 +42,14 @@ public class MainFrame implements ActionListener {
 	private JButton button3;
 	private CardLayout Card;
 	static Point origin = new Point();
+
 	public static void main(String[] args) {
 		new MainFrame().init();
 
 	}
 
 	public void init() {
-//		EmployeeMes.employeePosition = "总经理";
+		// EmployeeMes.employeePosition = "总经理";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
@@ -69,7 +70,7 @@ public class MainFrame implements ActionListener {
 				Point p = frame.getLocation();
 				// 设置窗口的位置
 				// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
-				frame.setLocation(p.x + e.getX() - origin.x, p.y + e.getY()- origin.y);
+				frame.setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
 			}
 		});
 
@@ -93,7 +94,6 @@ public class MainFrame implements ActionListener {
 
 		icon2.setImage(icon2.getImage().getScaledInstance(width, height / 5, Image.SCALE_SMOOTH));
 
-		
 		label2.setIcon(icon2);
 
 		button1 = new JButton();
@@ -107,7 +107,7 @@ public class MainFrame implements ActionListener {
 				frame.setExtendedState(JFrame.ICONIFIED);
 			}
 		});
-		
+
 		button2 = new JButton();
 		button2.setBorderPainted(false);
 		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/按钮/绿色按钮.png"));
@@ -125,14 +125,14 @@ public class MainFrame implements ActionListener {
 		bi3.setImage(bi3.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
-	
+
 		button1.setBounds(width - 60, 0, 20, 20);
 		button2.setBounds(width - 40, 0, 20, 20);
 		button3.setBounds(width - 20, 0, 20, 20);
 
 		panel1.setBounds(width / 5, height / 5, 4 * width / 5, 4 * height / 5);
 		panel2.setBounds(0, 0, width, height / 5);
-		panel3.setLocation(0, height/5);
+		panel3.setLocation(0, height / 5);
 
 		button3.addActionListener(this);
 
@@ -140,7 +140,6 @@ public class MainFrame implements ActionListener {
 		panel2.add(button2);
 		panel2.add(button3);
 
-		
 		panel2.add(label2);
 
 		frame.getContentPane().add(panel1);
@@ -161,21 +160,21 @@ public class MainFrame implements ActionListener {
 
 	public void setCard() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel1.add(new CourierUI(4*width/5,4*height/5), "0");
-			panel1.add(new CourierUI2(4*width/5,4*height/5), "1");
-			panel1.add(new CourierUI4(4*width/5,4*height/5), "2");
+			panel1.add(new CourierUI(4 * width / 5, 4 * height / 5), "0");
+			panel1.add(new CourierUI2(4 * width / 5, 4 * height / 5), "1");
+			panel1.add(new CourierUI4(4 * width / 5, 4 * height / 5), "2");
 
 		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
-			panel1.add(new SellingAreaUI(4*width/5,4*height/5), "0");
-			panel1.add(new SellingAreaUI1(4*width/5,4*height/5), "1");
-			panel1.add(new SellingAreaUI2(4*width/5,4*height/5), "2");
-			panel1.add(new SellingAreaUI3(4*width/5,4*height/5), "3");
-			panel1.add(new SellingAreaUI4(4*width/5,4*height/5), "4");
+			panel1.add(new SellingAreaUI(4 * width / 5, 4 * height / 5), "0");
+			panel1.add(new SellingAreaUI1(4 * width / 5, 4 * height / 5), "1");
+			panel1.add(new SellingAreaUI2(4 * width / 5, 4 * height / 5), "2");
+			panel1.add(new SellingAreaUI3(4 * width / 5, 4 * height / 5), "3");
+			panel1.add(new SellingAreaUI4(4 * width / 5, 4 * height / 5), "4");
 		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
-			panel1.add(new CentreUI(4*width/5,4*height/5), "0");
-			panel1.add(new CentreUI1(4*width/5,4*height/5), "1");
-			panel1.add(new CentreUI2(4*width/5,4*height/5), "2");
-			panel1.add(new CentreUI3(4*width/5,4*height/5), "3");
+			panel1.add(new CentreUI(4 * width / 5, 4 * height / 5), "0");
+			panel1.add(new CentreUI1(4 * width / 5, 4 * height / 5), "1");
+			panel1.add(new CentreUI2(4 * width / 5, 4 * height / 5), "2");
+			panel1.add(new CentreUI3(4 * width / 5, 4 * height / 5), "3");
 		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
 			panel1.add(new WarehouseUI1(), "0");
 			panel1.add(new WarehouseUI2(), "1");
@@ -194,29 +193,29 @@ public class MainFrame implements ActionListener {
 			panel1.add(new ManagerUI3(), "3");
 			panel1.add(new ManagerUI4(), "4");
 		} else if (EmployeeMes.employeePosition.equals("管理员")) {
-			panel1.add(new AdminUI1(4*width/5,4*height/5), "0");
-			panel1.add(new AdminUI2(4*width/5,4*height/5), "1");
-			panel1.add(new AdminUI3(4*width/5,4*height/5), "2");
-			panel1.add(new AdminUI4(4*width/5,4*height/5), "3");
+			panel1.add(new AdminUI1(4 * width / 5, 4 * height / 5), "0");
+			panel1.add(new AdminUI2(4 * width / 5, 4 * height / 5), "1");
+			panel1.add(new AdminUI3(4 * width / 5, 4 * height / 5), "2");
+			panel1.add(new AdminUI4(4 * width / 5, 4 * height / 5), "3");
 		}
-        panel1.setOpaque(false);
+		panel1.setOpaque(false);
 	}
 
 	public void getPanel3() {
 		if (EmployeeMes.employeePosition.equals("快递员")) {
-			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new CourierMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		} else if (EmployeeMes.employeePosition.equals("营业厅业务员")) {
-			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new SellingAreaMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		} else if (EmployeeMes.employeePosition.equals("中转中心业务员")) {
-			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new CentreMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		} else if (EmployeeMes.employeePosition.equals("仓库管理员")) {
-			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new WarehouseMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		} else if (EmployeeMes.employeePosition.equals("财务人员")) {
-			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new FinanceMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		} else if (EmployeeMes.employeePosition.equals("总经理")) {
-			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new ManagerMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		} else if (EmployeeMes.employeePosition.equals("管理员")) {
-			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5,panel1);
+			panel3 = new AdminMenuUI(Card, width / 5, 4 * height / 5, panel1);
 		}
 	}
 
