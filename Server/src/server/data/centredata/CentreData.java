@@ -13,6 +13,10 @@ import _enum.ResultMessage;
 import dataservice.centredataservice.CentreDataBaseService;
 
 public class CentreData extends UnicastRemoteObject implements CentreDataBaseService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	History his;
 	public CentreData(MySQLDataBase db) throws RemoteException{

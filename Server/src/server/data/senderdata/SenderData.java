@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import HistoryService.HistoryService;
 import po.HistoryPO;
 import dataservice.senderdataservice.SenderDataBaseService;
 import server.database.MySQLDataBase;
@@ -15,6 +14,10 @@ import server.database.MySQLDataBase;
 
 
 public class SenderData extends UnicastRemoteObject implements SenderDataBaseService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 
 	public SenderData(MySQLDataBase db) throws RemoteException{
@@ -23,7 +26,7 @@ public class SenderData extends UnicastRemoteObject implements SenderDataBaseSer
 
 	}
 	public HistoryPO find(String id) throws RemoteException{
-        String sql="select * from HistoryPO where id='"+id+"';";
+        String sql="select * from History where id='"+id+"';";
         ResultSet rs=db.find(sql);
         HistoryPO po=null;
         try {
@@ -33,12 +36,10 @@ public class SenderData extends UnicastRemoteObject implements SenderDataBaseSer
 				ArrayList<String> list1=new ArrayList<String>();
 				list1.add(rs.getString(3));
 				list1.add(rs.getString(4));
-				list1.add(rs.getString(5));
+			
 				ArrayList<Integer> list2=new ArrayList<Integer>();
+				list2.add(rs.getInt(5));
 				list2.add(rs.getInt(6));
-				list2.add(rs.getInt(7));
-				list2.add(rs.getInt(8));
-				list2.add(rs.getInt(9));
 				po=new HistoryPO(ID,state,list1,list2);
 			}
 		} catch (SQLException e) {
