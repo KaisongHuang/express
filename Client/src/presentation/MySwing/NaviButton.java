@@ -21,16 +21,16 @@ public class NaviButton extends JButton {
 		this.setBorderPainted(false);
 	}
 
-	public NaviButton(String text){
-		JLabel label=new JLabel();
+	public NaviButton(String text) {
+		JLabel label = new JLabel();
 		label.setText(text);
 		label.setAlignmentX(CENTER_ALIGNMENT);
 		this.setBorderPainted(false);
 		this.add(label);
 	}
-	
-	public NaviButton(String text,String path){
-		JLabel label=new JLabel();
+
+	public NaviButton(String text, String path) {
+		JLabel label = new JLabel();
 		ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
 		icon.setImage(icon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH));
 		label.setText(text);
@@ -39,7 +39,7 @@ public class NaviButton extends JButton {
 		this.setBorderPainted(false);
 		this.add(label);
 	}
-	
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		if (clicked) {
