@@ -6,6 +6,7 @@ import po.CentreArrivalPO;
 import po.CentrePackPO;
 import po.CentreTransforPO;
 import po.DeliverPO;
+import po.DistanceAndFee;
 import po.EmployeePO;
 import po.InStoragePO;
 import po.InstitutionPO;
@@ -13,6 +14,7 @@ import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
+import po.SalaryPO;
 import server.database.MySQLDataBase;
 
 import java.rmi.Remote;
@@ -39,4 +41,7 @@ public interface ManagerDataBaseService extends Remote{
 	 public ArrayList<InStoragePO> getInStorage() throws RemoteException;
 	 public ArrayList<OutStoragePO> getOutStorage() throws RemoteException;
 	 public ArrayList<PayPO> getPay() throws RemoteException;
+	 public ArrayList<SalaryPO> getSalary() throws RemoteException;
+	 public ArrayList<DistanceAndFee> getDistanceAndFee() throws RemoteException;
+	
 }

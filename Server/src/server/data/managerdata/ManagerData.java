@@ -20,6 +20,7 @@ import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
+import po.SalaryPO;
 import po.WarehousePO;
 import server.database.MySQLDataBase;
 import vo.AcceptVO;
@@ -57,11 +58,10 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.delete(sql);
 		}else {
 			DistanceAndFee po1=(DistanceAndFee) po;
-			ArrayList<String> list1=po1.getCity1();
-			ArrayList<String> list2=po1.getCity2();
-			for(int i=0;i<list1.size();i++){
-				sql="insert into DistanceAndFee values('"+list1.get(i)+"','"+list2.get(i)+","+po1.getFee()+","+po1.getDistance()+");";
-			}
+			String list1=po1.getCity1();
+			String list2=po1.getCity2();
+			
+				sql="insert into DistanceAndFee values('"+list1+"','"+list2+","+po1.getFee()+","+po1.getDistance()+");";
 		}
 		return rm;
 	}
@@ -160,6 +160,15 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			PayPO pay=(PayPO) po;
 			sql="update PayPO set isCheck="+pay.getIsCheck()+" where date='"+pay.getDate()+"' and payer='"+pay.getPayer()+"' and payAccount='"+pay.getPayAccount()+"' and entry='"+pay.getEntry()+"' and comments='"+pay.getComments()+"' and cost='"+pay.getCost()+"';";
 		    rm=db.update(sql);
+		}else if(po instanceof SalaryPO){
+			SalaryPO salary=(SalaryPO) po;
+			sql="update Salary set salaryMethod='"+salary.getSalaryMethod()+"' where employeeName='"+salary.getEmployeeName()+"';";
+			rm=db.update(sql);
+		}else if(po instanceof DistanceAndFee){
+			DistanceAndFee po1=(DistanceAndFee) po;
+			sql="update Salary set fee="+po1.getFee()+",distance="+po1.getDistance()+" where city1='"+po1.getCity1()+
+					"';";
+			rm=db.update(sql);
 		}
 		return rm;
 	}
@@ -408,6 +417,35 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		e.printStackTrace();
 	}
 	   return list;
+	}
+	public ArrayList<SalaryPO> getSalary() throws RemoteException {
+		ArrayList<SalaryPO> list=new ArrayList<SalaryPO>();
+		String sql="select * from Salary;";
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+				list.add(new SalaryPO(rs.getString(1),rs.getString(2)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public ArrayList<DistanceAndFee> getDistanceAndFee() throws RemoteException {
+		// TODO Auto-generated method stub
+		ArrayList<DistanceAndFee> list=new ArrayList<DistanceAndFee>();
+		String sql="select * from DistanceAndFee;";
+		ResultSet rs=db.find(sql);
+		try {
+			while(rs.next()){
+				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(3),rs.getDouble(4)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 }
