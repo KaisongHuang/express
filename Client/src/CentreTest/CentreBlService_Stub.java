@@ -5,7 +5,7 @@ import logic.centreblservice.CentreBlService;
 import po.DeliverPO;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
-import vo.PackVO;
+import vo.CentrePackVO;
 
 public class CentreBlService_Stub implements CentreBlService {
 	
@@ -21,7 +21,7 @@ public class CentreBlService_Stub implements CentreBlService {
 		
 	}
 	
-	public ResultMessage createPack(PackVO vo){
+	public ResultMessage createPack(CentrePackVO vo){
 		
 		return ResultMessage.Success;
 		

@@ -4,7 +4,7 @@ import _enum.ResultMessage;
 import logic.centreblservice.CentreBlService;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
-import vo.PackVO;
+import vo.CentrePackVO;
 
 public class CentreBlService_Driver {
 	
@@ -13,7 +13,7 @@ public class CentreBlService_Driver {
 		ResultMessage result;
 		
 		
-		result=centre.createPack(new PackVO(null, null, null, null, null, null, null, 0, 0));
+		result=centre.createPack(new CentrePackVO(null, null, null, null, null, null, null, 0, 0));
 		if(result==ResultMessage.Error){
 			System.out.println("ERROR!");
 		}

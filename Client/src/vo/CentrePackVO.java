@@ -2,62 +2,69 @@ package vo;
 
 import java.util.ArrayList;
 
-public class PackVO {
-	
-	String dateOfGetin;
-	String centreTransferID;
-	String arrival;
-	String carID;
-	String jianZhuangYuan;
-	String yaYunYuan;
-	ArrayList<String> list=new ArrayList<String>();
-	double fee;
-	int isCheck;
-	Check c;
-	public PackVO(String dog,String cti,String arrival,String ci, String jzy,String yyy,ArrayList<String> list,double fee,int isCheck){
-		
-		this.dateOfGetin=dog;
-		this.carID=ci;
-		this.centreTransferID=cti;
-		this.arrival=arrival;
-		this.jianZhuangYuan=jzy;
-		this.yaYunYuan=yyy;
-		this.list=list;
-		this.fee=fee;
-		this.isCheck=isCheck;
-		c=new Check();
+public class CentrePackVO {
+
+	private String dateOfGetin;
+	private String centreTransferID;
+	private String arrival;
+	private String carID;
+	private String jianZhuangYuan;
+	private String yaYunYuan;
+	private ArrayList<String> list = new ArrayList<String>();
+	private double fee;
+	private int isCheck;
+	private Check c;
+
+	public CentrePackVO(String dog, String cti, String arrival, String ci, String jzy, String yyy,
+			ArrayList<String> list, double fee, int isCheck) {
+
+		this.dateOfGetin = dog;
+		this.carID = ci;
+		this.centreTransferID = cti;
+		this.arrival = arrival;
+		this.jianZhuangYuan = jzy;
+		this.yaYunYuan = yyy;
+		this.list = list;
+		this.fee = fee;
+		this.isCheck = isCheck;
+		c = new Check();
 	}
 
-	public int checkDate(){
+	public int checkDate() {
 		return c.checkDate(dateOfGetin);
 	}
-	public int checkcentreID(){
+
+	public int checkcentreID() {
 		return c.checkID(centreTransferID, 21);
 	}
-	public int checkCarID(){
+
+	public int checkCarID() {
 		return c.checkID(carID, 10);
 	}
-	public int checkJian(){
+
+	public int checkJian() {
 		return c.checkID(jianZhuangYuan, 10);
 	}
-	public int checkYa(){
+
+	public int checkYa() {
 		return c.checkID(jianZhuangYuan, 10);
 	}
-	public int checkList(){
-		for(int i=0;i<list.size();i++)
-			if(c.checkID(list.get(i), 10)==0)
+
+	public int checkList() {
+		for (int i = 0; i < list.size(); i++)
+			if (c.checkID(list.get(i), 10) == 0)
 				return 0;
 		return 1;
 	}
-	
-	
-	public int checkIsNull(){
-		if(dateOfGetin.length()==0||carID.length()==0||centreTransferID.length()==0||arrival.length()==0||jianZhuangYuan.length()==0||
-				yaYunYuan.length()==0||list.size()==0)
+
+	public int checkIsNull() {
+		if (dateOfGetin.length() == 0 || carID.length() == 0 || centreTransferID.length() == 0 || arrival.length() == 0
+				|| jianZhuangYuan.length() == 0 || yaYunYuan.length() == 0 || list.size() == 0)
 			return 0;
 		return 1;
-			
+
 	}
+
 	public int getIsCheck() {
 		return isCheck;
 	}
@@ -129,9 +136,5 @@ public class PackVO {
 	public void setFee(double fee) {
 		this.fee = fee;
 	}
-	
-	
-	
-
 
 }
