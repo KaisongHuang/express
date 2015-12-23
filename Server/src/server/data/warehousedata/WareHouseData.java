@@ -26,22 +26,41 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	}
 	public ResultMessage insert( Object po) throws RemoteException{
 		String sql=null;
+		ResultMessage rm=null;
 		if(po instanceof InStoragePO){
 			InStoragePO po1=(InStoragePO) po;
-			sql="insert into InStorage values("+po1.getId()+",'"+po1.getIndate()+"','"+po1.getDestination()+
+			sql="insert into InStorage values('"+po1.getId()+"','"+po1.getIndate()+"','"+po1.getDestination()+
 					"',"+po1.getPos_qu()+","+po1.getPos_pai()+","+po1.getPos_jia()+
 					","+po1.getPos_wei()+","+po1.getIsCheck()+",'"+po1.getWarehouseID()+"');";
-		
+			rm=db.insert(sql);
 		}else{
 			OutStoragePO po1=(OutStoragePO) po;
-			sql="insert into OutStorage values("+po1.getId()+",'"+po1.getDestination()+"','"+po1.getOutdate()+"','"+po1.getTransportation()+
-					"',"+po1.getTrans_id()+","+po1.getIsCheck()+",'"+po1.getWarehouseID()+"');";
-		
+			sql="insert into OutStorage values('"+po1.getId()+"','"+po1.getDestination()+"','"+po1.getOutdate()+"','"+po1.getTransportation()+
+					"','"+po1.getTrans_id()+"',"+po1.getIsCheck()+",'"+po1.getWarehouseID()+"');";
+			rm=db.insert(sql);
+			if(rm==ResultMessage.Success){
+				String sql1="update InStorage set isInStorage=0 where id='"+po1.getId()+"';";
+				db.update(sql);
+			}
 		}
-		ResultMessage rm=db.insert(sql);
+
 		return rm;
 	}
 
+	public String findDestination(String id) throws RemoteException{
+		String destination=null;
+		String sql="select * from Sender where BarCode='"+id+"';";
+		ResultSet rs=db.find(sql);
+		try {
+			if(rs.next())
+				destination=rs.getString(7);
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return destination;
+	}
 	public ArrayList<InStoragePO> summarize(String date,String WarehouseID) throws RemoteException{
 		String sql="select * from InStorage where Warehouse='"+WarehouseID+"' and indate='"+date+"';";
 		ResultSet rs=db.find(sql);
@@ -103,14 +122,21 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		String id1=null;
 		String id2=null;
 		try {
+			int count=0;
 			while(rs.next()){
 				id1=rs.getString(3);
+				if(count==0)
+					id2=id1;
+				count++;
 				ArrayList<String> l=new ArrayList<String>();
 				if(id1.equals(id2))
 					l.add(rs.getString(9));
-				else
+				
+				else{
 				     list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),l,rs.getDouble(10),rs.getInt(11),rs.getInt(12)));
-			    
+				     l.clear();
+				     l.add(rs.getString(9));
+				}
 				id2=rs.getString(3);
 			}
 		} catch (SQLException e) {
