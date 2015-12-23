@@ -23,22 +23,16 @@ import po.ReceiptPO;
 import po.SalaryPO;
 import po.WarehousePO;
 import server.database.MySQLDataBase;
-import vo.AcceptVO;
-import vo.CarPackVO;
-import vo.CentreArrivalVO;
-import vo.CentreTransforVO;
-import vo.DeliverVO;
-import vo.InStorageVO;
-import vo.OutStorageVO;
-import vo.CentrePackVO;
-import vo.PayVO;
-import vo.ReceiptVO;
 import _enum.ResultMessage;
 import dataservice.managerdataservice.ManagerDataBaseService;
 
 
 
 public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	public ManagerData(MySQLDataBase db) throws RemoteException{
 		super();
@@ -194,7 +188,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	
 	public ArrayList<CarPackPO> getCarPack() throws RemoteException{
 		ArrayList<CarPackPO> list=new ArrayList<CarPackPO>();
-		list=null;
 		String sql="select * from CarPack where isCheck=0;";
 		ResultSet rs=db.find(sql);
 		String id1=null;
@@ -230,7 +223,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<ReceiptPO> getReceipt() throws RemoteException{
 		String sql="select * from Receipt where isCheck=0;";
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
-		list=null;
 		ArrayList<String> list1=new ArrayList<String>();
 		ResultSet rs=db.find(sql);
 		String id1="";
@@ -261,7 +253,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<AcceptPO> getAccept() throws RemoteException{
 		String sql="select * from Accept where isCheck=0;";
 		ArrayList<AcceptPO> list=new ArrayList<AcceptPO>();
-		list=null;
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
@@ -277,7 +268,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<DeliverPO> getDeliver() throws RemoteException{
 		String sql="select * from Deliver where isCheck=0;";
 		ArrayList<DeliverPO> list=new ArrayList<DeliverPO>();
-		list=null;
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
@@ -308,7 +298,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<CentrePackPO> getCentrePack() throws RemoteException{
 		String sql="select * from CentrePack where isCheck=0;";
 		ArrayList<CentrePackPO> list=new ArrayList<CentrePackPO>();
-		list=null;
 		ArrayList<String> list1=new ArrayList<String>();
 		int count=0;
 		String id1="";
@@ -339,7 +328,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<CentreTransforPO> getCentreTransfor() throws RemoteException{
 		String sql="select * from CentreTransfor where isCheck=0;";
 		ArrayList<CentreTransforPO> list=new ArrayList<CentreTransforPO>();
-		list=null;
 		ArrayList<String> list1=new ArrayList<String>();
 		String id1="";
 		String id2="";
@@ -370,7 +358,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<InStoragePO> getInStorage() throws RemoteException{
 		String sql="select * from InStorage where isCheck=0;";
 		ArrayList<InStoragePO> list=new ArrayList<InStoragePO>();
-		list=null;
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
@@ -388,7 +375,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<OutStoragePO> getOutStorage() throws RemoteException{
 		String sql = "select * from OutStorage where isCheck=0;";
 		ArrayList<OutStoragePO> list = new ArrayList<OutStoragePO>();
-		list = null;
 		ResultSet rs = db.find(sql);
 		try {
 			while (rs.next()) {
@@ -405,7 +391,6 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ArrayList<PayPO> getPay() throws RemoteException{
 	   String sql="select * from Pay where isCheck=0;";
 	   ArrayList<PayPO> list=new ArrayList<PayPO>();
-	   list=null;
 	   ResultSet rs=db.find(sql);
 	   try {
 		while(rs.next()){

@@ -11,7 +11,11 @@ import _enum.ResultMessage;
 import dataservice.admindataservice.AdminDataBaseService;
 
 public class AdminData extends UnicastRemoteObject implements AdminDataBaseService{
-    MySQLDataBase db;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	MySQLDataBase db;
 	public AdminData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
