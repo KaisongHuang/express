@@ -6,6 +6,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import listener.sellingarealistener.SellingAreaListener3;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.SubNaviButton;
 
 public class SellingAreaUI3 extends JPanel{
@@ -23,6 +24,7 @@ public class SellingAreaUI3 extends JPanel{
 	private SubNaviButton button2;
 	private SubNaviButton button3;
 	private SubNaviButton button4;
+	private MySeperator line;
 	private int width;
 	private int height;
 	
@@ -40,14 +42,15 @@ public class SellingAreaUI3 extends JPanel{
 	private void initialize(){
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		setBackground(Color.white);
+		setBackground(Color.WHITE);
 		ui1 = new SellingAreaUI3_1(width,height);
 		ui2 = new SellingAreaUI3_2(width,height);
 		ui3 = new SellingAreaUI3_3(width,height);
 		ui4 = new SellingAreaUI3_4(width,height);
 
 		panel=new JPanel();
-		panel.setBounds(0,44, 746, 394);
+		panel.setBounds(0,50, 746, 394);
+		panel.setBackground(Color.blue);
 		add(panel);
 		card = new CardLayout(0, 0);
 		panel.setLayout(card);
@@ -61,35 +64,38 @@ public class SellingAreaUI3 extends JPanel{
 		
 		navi_panel = new JPanel();
 		navi_panel.setBounds(0, 0, 746, 44);
-		navi_panel.setBackground(new Color(246,246,246));
+		navi_panel.setBackground(Color.WHITE);
 		this.add(navi_panel);
 		navi_panel.setLayout(null);
 
 		button1 = new SubNaviButton("查询");
-		button1.setBounds(44, 8, 90, 44);
+		button1.setBounds(44, 0, 90, 44);
 		button1.addActionListener(listener);
 		button1.addMouseListener(listener);
 		button1.setClicked(true);
 		navi_panel.add(button1);
 
 		button2 = new SubNaviButton("更新");
-		button2.setBounds(194, 8, 90, 44);
+		button2.setBounds(134, 0, 90, 44);
 		button2.addActionListener(listener);
 		button2.addMouseListener(listener);
 		navi_panel.add(button2);
 
 		button3 = new SubNaviButton("删除");
-		button3.setBounds(348, 8, 90, 44);
+		button3.setBounds(224, 0, 90, 44);
 		button3.addActionListener(listener);
 		button3.addMouseListener(listener);
 		navi_panel.add(button3);
 
 		button4 = new SubNaviButton("添加");
-		button4.setBounds(525, 8, 90, 44);
+		button4.setBounds(314, 0, 90, 44);
 		button4.addActionListener(listener);
 		button4.addMouseListener(listener);
 		navi_panel.add(button4);
 		
+		line=new MySeperator();
+		line.setBounds(44, 44, 630, 10);
+		add(line);
 		add(navi_panel);
 		
 		

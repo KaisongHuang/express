@@ -43,5 +43,5 @@ public interface WarehouseDataService {
 	
 	public ArrayList<int[]> findFreeSpace() throws RemoteException;
 	
-	public SenderPO getSender(String id) throws RemoteException;
+	public String getDestination(String id) throws RemoteException;
 }
