@@ -98,14 +98,23 @@ public class CentreListener1 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 		String transferStyle = "飞机";
 		String dataOfGetin = ui.getTextField().getText();
+		System.out.println(dataOfGetin);
 		String centreTransferID = ui.getTextField_1().getText();
+		System.out.println(centreTransferID);
 		String banHao = ui.getTextField_2().getText();
+		System.out.println(banHao);
 		String huoGuiHao = ui.getTextField_3().getText();
+		System.out.println(huoGuiHao);
 		String start = ui.getTextField_4().getText();
+		System.out.println(start);
 		String arrival = ui.getTextField_5().getText();
+		System.out.println(arrival);
 		String JianZhuangYuan = ui.getTextField_6().getText();
+		System.out.println(JianZhuangYuan);
 		String YaYunYuan = ui.getTextField_7().getText();
+		System.out.println(YaYunYuan);
 		String fee = ui.getTextField_8().getText();
+		System.out.println(fee);
 
 		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin, centreTransferID, banHao, start, arrival,
 				JianZhuangYuan, YaYunYuan, null, Double.parseDouble(fee), 0);

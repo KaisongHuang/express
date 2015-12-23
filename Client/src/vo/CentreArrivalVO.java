@@ -50,7 +50,7 @@ public class CentreArrivalVO {
 		return ID;
 	}
 
-	
+
 
 	public String getGetDate() {
 		return getDate;
