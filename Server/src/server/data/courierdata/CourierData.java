@@ -15,6 +15,13 @@ import _enum.ResultMessage;
 import dataservice.courierdataservice.CourierDataBaseService;
 
 public class CourierData extends UnicastRemoteObject implements CourierDataBaseService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	MySQLDataBase db;
 	HistoryService his;
 	public CourierData(MySQLDataBase db) throws RemoteException{
@@ -44,12 +51,12 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 			}
 			return rm;
 		} else {
-			String sql1 = "select * from Sender limit 0";
+			String sql1 = "select * from Sender limit 1";
 			ResultSet rs = db.find(sql1);
 			String barcode = "1000000000";
 			try {
 				if (rs.next()) {
-					barcode = ""+1 + Integer.parseInt(rs.getString(18));
+					barcode = (1 + Integer.parseInt(rs.getString(18)))+"";
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

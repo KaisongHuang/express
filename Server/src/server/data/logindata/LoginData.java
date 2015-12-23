@@ -11,7 +11,11 @@ import po.EmployeePO;
 import server.database.MySQLDataBase;
 
 public class LoginData extends UnicastRemoteObject implements LoginDataBaseService{
-    MySQLDataBase db;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	MySQLDataBase db;
 	public LoginData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
