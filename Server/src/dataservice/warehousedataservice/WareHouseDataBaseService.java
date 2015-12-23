@@ -25,4 +25,5 @@ public interface WareHouseDataBaseService extends Remote{
 	public ResultMessage checkAlarm(String WarehouseID) throws RemoteException ;
 	public ArrayList<InStoragePO> adjust(String WarehouseID) throws RemoteException;
 	public ArrayList<int[]> findFreeSpace(String WarehouseID) throws RemoteException;
+	public String findDestination(String id) throws RemoteException;
 }

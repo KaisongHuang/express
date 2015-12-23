@@ -6,8 +6,12 @@ package presentation.mainui;
 
 import java.awt.CardLayout;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -36,21 +40,39 @@ public class MainFrame implements ActionListener {
 	private JButton button1;
 	private JButton button2;
 	private JButton button3;
-
 	private CardLayout Card;
-
+	static Point origin = new Point();
 	public static void main(String[] args) {
 		new MainFrame().init();
 
 	}
 
 	public void init() {
-		//EmployeeMes.employeePosition = "总经理";
+//		EmployeeMes.employeePosition = "总经理";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
 		frame.setSize(width, height);
 		frame.setLocation(100, 100);
+		frame.addMouseListener(new MouseAdapter() {
+			// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
+			public void mousePressed(MouseEvent e) {
+				// 当鼠标按下的时候获得窗口当前的位置
+				origin.x = e.getX();
+				origin.y = e.getY();
+			}
+		});
+		frame.addMouseMotionListener(new MouseMotionAdapter() {
+			// 拖动（mouseDragged 指的不是鼠标在窗口中移动，而是用鼠标拖动）
+			public void mouseDragged(MouseEvent e) {
+				// 当鼠标拖动时获取窗口当前位置
+				Point p = frame.getLocation();
+				// 设置窗口的位置
+				// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
+				frame.setLocation(p.x + e.getX() - origin.x, p.y + e.getY()- origin.y);
+			}
+		});
+
 		panel1 = new JPanel();
 		panel2 = new JPanel();
 

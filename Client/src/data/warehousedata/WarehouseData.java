@@ -95,9 +95,9 @@ public class WarehouseData implements WarehouseDataService {
 		return wd.findFreeSpace(WarehouseID);
 	}
 
-	public SenderPO getSender(String id) throws RemoteException {
+	public String getDestination(String id) throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return wd.findDestination(id);
 	}
 
 }
