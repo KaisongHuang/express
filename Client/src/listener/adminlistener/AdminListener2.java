@@ -13,6 +13,7 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
+import presentation.MySwing.Button;
 import presentation.adminui.AdminUI2;
 import vo.AdminVO;
 
@@ -29,18 +30,18 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getButton_1()){
+		if(e.getSource()==ui.getCancle()){
 			delete1(ui.getLabel1());
 			delete(ui.getTextField());
 			delete(ui.getTextField_2());
 			ui.getComboBox_1().setSelectedIndex(0);
-		}else if(e.getSource()==ui.getButton_2()){
+		}else if(e.getSource()==ui.getSearch()){
 			String id = ui.getTextField_2().getText();
 			vo = admin.find(id);
 			if(!checkReturn(vo))
 				return;
 			setAll(vo);
-		}else if(e.getSource()==ui.getButton()){
+		}else if(e.getSource()==ui.getConfirm()){
 			ResultMessage rm;
 			vo = this.update();
 			rm=admin.manageCount(vo, Operation.update);
@@ -106,22 +107,73 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			ui.getSearch().setEntered(false);
+			ui.getSearch().setPressed(true);
+			ui.getSearch().repaint();
+		} else if (e.getSource() == ui.getConfirm()) {
+			ui.getConfirm().setEntered(false);
+			ui.getConfirm().setPressed(true);
+			ui.getConfirm().repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			ui.getCancle().setEntered(false);
+			ui.getCancle().setPressed(true);
+			ui.getCancle().repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			Button button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getConfirm()) {
+			Button button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			ui.getSearch().setEntered(true);
+			ui.getSearch().setPressed(false);
+			ui.getSearch().repaint();
+		} else if (e.getSource() == ui.getConfirm()) {
+			ui.getConfirm().setEntered(true);
+			ui.getConfirm().setPressed(false);
+			ui.getConfirm().repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			ui.getCancle().setEntered(true);
+			ui.getCancle().setPressed(false);
+			ui.getCancle().repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getSearch()){
+			Button button=ui.getSearch();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getConfirm()){
+			Button button=ui.getSearch();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getConfirm()){
+			Button button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }
