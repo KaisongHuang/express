@@ -20,11 +20,11 @@ public class Centre implements CentreBlService {
 		// TODO Auto-generated method stub
 		ResultMessage rm=null;
 		CentreTransforPO po = new CentreTransforPO(vo.getTransferStyle(), vo.getDateOfGetin(), vo.getCentreTransferID(),
-				vo.getBanHao(), vo.getStart(), vo.getArrival(),	vo.getHuoGuiHao(), vo.getJianZhuangYuan(), 
+				vo.getBanHao(), vo.getStart(), vo.getArrival(),	vo.getHuoGuiHao(), vo.getJianZhuangYuan(),
 				vo.getList(), vo.getFee(),vo.getIsCheck(),0);
 		try{
 			rm=cd.insert(po);
-	
+
 		}catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			rm=ResultMessage.FunctionError;;
@@ -37,9 +37,10 @@ public class Centre implements CentreBlService {
 		ResultMessage rm=null;
 		CentreArrivalPO po = new CentreArrivalPO(vo.getCentreID(),vo.getGetDate(),vo.getTransferID(),vo.getStart(),
 				vo.getExpressState(),vo.getIsCheck(),0);
+//		CentreArrivalPO po = new CentreArrivalPO("025001","20151223","025000000000000000001","南京","完整",0,0);
 		try {
 			rm = cd.insert(po);
-		
+
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
@@ -55,7 +56,7 @@ public class Centre implements CentreBlService {
 				vo.getJianZhuangYuan(),vo.getYaYunYuan(),vo.getList(),vo.getFee(),vo.getIsCheck());
 		try {
 			rm = cd.insert(po);
-		
+
 		} catch (RemoteException e) {
 			// TODO �Զ���ɵ� catch ��
 			e.printStackTrace();
