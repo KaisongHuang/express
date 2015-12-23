@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import History.History;
 import po.CentreArrivalPO;
 import po.CentreTransforPO;
 import po.InStoragePO;
@@ -17,6 +16,10 @@ import _enum.ResultMessage;
 import dataservice.warehousedataservice.WareHouseDataBaseService;
 
 public class WareHouseData extends UnicastRemoteObject implements WareHouseDataBaseService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	
 	public WareHouseData(MySQLDataBase db) throws RemoteException{
@@ -40,7 +43,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			rm=db.insert(sql);
 			if(rm==ResultMessage.Success){
 				String sql1="update InStorage set isInStorage=0 where id='"+po1.getId()+"';";
-				db.update(sql);
+				db.update(sql1);
 			}
 		}
 
@@ -244,7 +247,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		String sql = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0;";
 		ResultSet rs = db.find(sql);
 		String sql1 = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
-		ResultSet rs1 = db.find(sql);
+		ResultSet rs1 = db.find(sql1);
 
 		double alarm = 0;
 		try {
@@ -258,26 +261,26 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		double Size3 = 0;
 
 		try {
-			Size1 = rs.getInt(2) * rs.getInt(3) * rs.getInt(4);
-			Size2 = rs.getInt(5) * rs.getInt(6) * rs.getInt(7);
-			Size3 = rs.getInt(8) * rs.getInt(9) * rs.getInt(10);
+			Size1 = rs1.getInt(2) * rs1.getInt(3) * rs1.getInt(4);
+			Size2 = rs1.getInt(5) * rs1.getInt(6) * rs1.getInt(7);
+			Size3 = rs1.getInt(8) * rs1.getInt(9) * rs1.getInt(10);
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
 		String sql2 = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0 ;";
-		ResultSet rs2 = db.find(sql1);
+		ResultSet rs2 = db.find(sql2);
 		int size1 = 0;
 		int size2 = 0;
 		int size3 = 0;
 		try {
-			while (rs1.next()) {
-				if (rs1.getString(4).equals("Car"))
+			while (rs2.next()) {
+				if (rs2.getString(4).equals("Car"))
 					size1++;
-				else if (rs1.getString(4).equals("train"))
+				else if (rs2.getString(4).equals("train"))
 					size2++;
-				else if (rs1.getString(4).equals("air"))
+				else if (rs2.getString(4).equals("air"))
 					size3++;
 			}
 		} catch (SQLException e) {
@@ -334,7 +337,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 				for (int n = 1; n <= wei; n++) {
 					String sql1 = "select * from InStorage where isInStorage=0 and WarehouseID='" + WarehouseID
 							+ "',pai=" + pai + ",jia=" + jia + ",wei=" + wei + ";";
-					rs = db.find(sql);
+					rs = db.find(sql1);
 					try {
 						while (!rs.wasNull() && list.size() <= size) {
 							int[] a = { pai, jia, wei };
