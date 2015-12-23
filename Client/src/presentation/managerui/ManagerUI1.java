@@ -6,7 +6,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import listener.managerlistener.ManagerListener10;
-import presentation.button.SubNaviButton;
+import presentation.MySwing.SubNaviButton;
 
 public class ManagerUI1 extends JPanel{
 	/**

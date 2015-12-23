@@ -17,9 +17,7 @@ import javax.swing.JTextField;
 
 import listener.sellingarealistener.SellingAreaListener00;
 
-
-public class SellingAreaUI extends JPanel{
-
+public class SellingAreaUI extends JPanel {
 
 	/**
 	 *
@@ -40,27 +38,35 @@ public class SellingAreaUI extends JPanel{
 	SellingAreaListener00 sellingarealistener;
 	private int width;
 	private int height;
-	
+	private JTextField textField_7;
+	private JTextField textField_8;
 
 	/**
 	 * Create the application.
+	 * 
 	 * @param j
 	 * @param i
 	 */
 	public SellingAreaUI(int i, int j) {
 		sellingarealistener = new SellingAreaListener00(this);
-		width=i;
-		height=j;
+		width = i;
+		height = j;
 		initialize();
-		this.setImage();
 		this.setVisible(true);
+	}
+
+	public JTextField getTextField_7() {
+		return textField_7;
+	}
+
+	public JTextField getTextField_8() {
+		return textField_8;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-
 
 		this.setBackground(Color.white);
 		this.setBounds(136, 114, 711, 439);
@@ -77,52 +83,52 @@ public class SellingAreaUI extends JPanel{
 		textField.setColumns(10);
 
 		JLabel label_1 = new JLabel("\u8D27\u8FD0\u7F16\u53F7\uFF1A");
-		label_1.setBounds(362, 35, 100, 18);
+		label_1.setBounds(69, 102, 100, 18);
 		this.add(label_1);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(465, 29, 122, 30);
+		textField_1.setBounds(149, 96, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
 		JLabel lblNewLabel_1 = new JLabel("\u51FA\u53D1\u5730\uFF1A");
-		lblNewLabel_1.setBounds(68, 102, 100, 18);
+		lblNewLabel_1.setBounds(362, 102, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(147, 96, 122, 30);
+		textField_2.setBounds(476, 96, 122, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
 		JLabel lblNewLabel_2 = new JLabel("\u5230\u8FBE\u5730\uFF1A");
-		lblNewLabel_2.setBounds(362, 103, 100, 18);
+		lblNewLabel_2.setBounds(68, 174, 100, 18);
 		this.add(lblNewLabel_2);
 
 		textField_3 = new JTextField();
-		textField_3.setBounds(464, 95, 122, 30);
+		textField_3.setBounds(149, 168, 122, 30);
 		this.add(textField_3);
 		textField_3.setColumns(10);
 
 		JLabel lblNewLabel_3 = new JLabel("\u76D1\u88C5\u5458\uFF1A");
-		lblNewLabel_3.setBounds(67, 175, 100, 18);
+		lblNewLabel_3.setBounds(69, 240, 100, 18);
 		this.add(lblNewLabel_3);
 
 		textField_4 = new JTextField();
-		textField_4.setBounds(148, 168, 122, 30);
+		textField_4.setBounds(149, 234, 122, 30);
 		this.add(textField_4);
 		textField_4.setColumns(10);
 
 		JLabel lblNewLabel_4 = new JLabel("\u62BC\u8FD0\u5458\uFF1A");
-		lblNewLabel_4.setBounds(356, 168, 100, 18);
+		lblNewLabel_4.setBounds(69, 299, 100, 18);
 		this.add(lblNewLabel_4);
 
 		textField_5 = new JTextField();
-		textField_5.setBounds(470, 164, 122, 30);
+		textField_5.setBounds(149, 293, 122, 30);
 		this.add(textField_5);
 		textField_5.setColumns(10);
 
 		JLabel label_2 = new JLabel("\u6240\u6709\u6258\u8FD0\u5355\u53F7\uFF1A");
-		label_2.setBounds(67, 239, 110, 18);
+		label_2.setBounds(356, 240, 110, 18);
 		this.add(label_2);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -130,35 +136,52 @@ public class SellingAreaUI extends JPanel{
 		this.add(scrollPane);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(159, 240, 132, 128);
+		scrollPane_1.setBounds(476, 240, 132, 128);
 		this.add(scrollPane_1);
 
-		textArea = new JTextArea();
-		scrollPane_1.setViewportView(textArea);
-
 		JLabel lblNewLabel_5 = new JLabel("\u8FD0\u8D39\uFF1A");
-		lblNewLabel_5.setBounds(359, 240, 100, 18);
+		lblNewLabel_5.setBounds(69, 350, 100, 18);
 		this.add(lblNewLabel_5);
 
 		textField_6 = new JTextField();
-		textField_6.setBounds(470, 233, 122, 30);
+		textField_6.setBounds(149, 344, 122, 30);
 		this.add(textField_6);
 		textField_6.setColumns(10);
 
 		btnNewButton_10 = new JButton("\u786E\u8BA4");
-		btnNewButton_10.setBounds(87, 380, 100, 30);
+		btnNewButton_10.setBounds(431, 403, 100, 30);
 		this.add(btnNewButton_10);
 
 		btnNewButton_11 = new JButton("\u6E05\u7A7A");
-		btnNewButton_11.setBounds(455, 380, 100, 30);
+		btnNewButton_11.setBounds(543, 403, 100, 30);
 		this.add(btnNewButton_11);
+
+		textArea = new JTextArea();
+		textArea.setBounds(480, 240, 128, 124);
+		add(textArea);
+
+		JLabel label_3 = new JLabel("本营业厅编号：");
+		label_3.setBounds(362, 36, 104, 16);
+		add(label_3);
+
+		textField_7 = new JTextField();
+		textField_7.setBounds(476, 30, 120, 28);
+		add(textField_7);
+		textField_7.setColumns(10);
+
+		JLabel label_4 = new JLabel("车辆代号：");
+		label_4.setBounds(362, 175, 82, 16);
+		add(label_4);
+
+		textField_8 = new JTextField();
+		textField_8.setBounds(476, 169, 120, 28);
+		add(textField_8);
+		textField_8.setColumns(10);
 
 		btnNewButton_10.addActionListener(sellingarealistener);
 		btnNewButton_11.addActionListener(sellingarealistener);
 
-
 	}
-
 
 	public JTextField getTextField() {
 		return textField;
@@ -240,7 +263,4 @@ public class SellingAreaUI extends JPanel{
 		this.textArea = textArea;
 	}
 
-	private void setImage() {
-
-	}
 }

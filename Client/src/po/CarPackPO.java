@@ -5,29 +5,40 @@ import java.util.ArrayList;
 
 import po.SellingareaPO;
 
-public class CarPackPO extends SellingareaPO  implements Serializable{
-	String date;
-	String number;
-	String start;
-	String destination;
-	String supervisor;
-	String supercargo;
+public class CarPackPO extends SellingareaPO implements Serializable {
+	private String date;
+	private String sellingArea;
+	private String number;
+	private String start;
+	private String destination;
+	private String carID;
+	private String supervisor;
+	private String supercargo;
 	ArrayList<String> list = new ArrayList<String>();
 	double fee;
 	int isCheck;
 
-	public CarPackPO(String date, String number, String start, String destination, String supervisor, String supercargo,
-			ArrayList<String> list, double fee, int isCheck) {
+	public CarPackPO(String date, String sellingArea, String number, String start, String destination, String carID,
+			String supervisor, String supercargo, ArrayList<String> list, double fee, int isCheck) {
 		this.date = date;
+		this.sellingArea=sellingArea;
 		this.start = start;
 		this.number = number;
 		this.destination = destination;
+		this.carID=carID;
 		this.supervisor = supervisor;
 		this.supercargo = supercargo;
 		this.list = list;
-		this.supercargo = supercargo;
 		this.fee = fee;
 		this.isCheck = isCheck;
+	}
+
+	public String getSellingArea() {
+		return sellingArea;
+	}
+
+	public String getCarID() {
+		return carID;
 	}
 
 	public int getIsCheck() {

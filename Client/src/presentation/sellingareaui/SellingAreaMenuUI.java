@@ -9,7 +9,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 import listener.sellingarealistener.SellingAreaMenuListener;
-import presentation.button.NaviButton;
+import presentation.MySwing.NaviButton;
 
 
 public class SellingAreaMenuUI extends JPanel{

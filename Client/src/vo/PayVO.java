@@ -1,14 +1,15 @@
 package vo;
 
 public class PayVO {
-	String date;
-	double cost;
-	String payer;
-	String payAccount;
-	String entry;
-	String comments;
-	int isCheck;
-    Check c;
+	private String date;
+	private double cost;
+	private String payer;
+	private String payAccount;
+	private String entry;
+	private String comments;
+	private int isCheck;
+	private Check c;
+
 	public PayVO(String date, String payer, String payAccount, String entry, String comments, double cost,
 			int isCheck) {
 		this.date = date;
@@ -18,29 +19,34 @@ public class PayVO {
 		this.entry = entry;
 		this.comments = comments;
 		this.isCheck = isCheck;
-		c=new Check();
+		c = new Check();
 	}
 
-	public int checkDate(){
+	public int checkDate() {
 		return c.checkDate(date);
 	}
-	public int checkCost(){
-		if(cost<=0)
+
+	public int checkCost() {
+		if (cost <= 0)
 			return 0;
 		return 1;
-	}
-	public int checkPayer(){
-		return c.checkID(payer, 10);
-	}
-	public int checkAccount(){
-		return c.checkID(payAccount,19);
 	}
 
-	public int checkIsNull(){
-		if(date.length()==0||payer.length()==0||payAccount.length()==0||entry.length()==0||comments.length()==0)
+	public int checkPayer() {
+		return c.checkID(payer, 10);
+	}
+
+	public int checkAccount() {
+		return c.checkID(payAccount, 19);
+	}
+
+	public int checkIsNull() {
+		if (date.length() == 0 || payer.length() == 0 || payAccount.length() == 0 || entry.length() == 0
+				|| comments.length() == 0)
 			return 0;
 		return 1;
 	}
+
 	public PayVO() {
 	}
 

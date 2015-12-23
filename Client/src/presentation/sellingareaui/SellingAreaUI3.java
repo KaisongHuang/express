@@ -6,7 +6,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import listener.sellingarealistener.SellingAreaListener3;
-import presentation.button.SubNaviButton;
+import presentation.MySwing.SubNaviButton;
 
 public class SellingAreaUI3 extends JPanel{
 	
