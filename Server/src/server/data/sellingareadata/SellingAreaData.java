@@ -13,6 +13,10 @@ import po.*;
 import dataservice.sellingareadataservice.SellingAreaDataBaseService;
 
 public class SellingAreaData extends UnicastRemoteObject implements SellingAreaDataBaseService {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	History his;
 
@@ -124,7 +128,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			CarPackPO po1 = (CarPackPO) po;
 			ArrayList<String> list = po1.getList();
 			for (int i = 0; i < list.size(); i++) {
-				sql = "insert into  values('" + po1.getDate() + "','" + po1.getNumber() + "','" + po1.getStart() + "','"
+				sql = "insert into CarPack values('" + po1.getDate() + "','" + po1.getNumber() + "','" + po1.getStart() + "','"
 						+ po1.getDestination() + "','" + po1.getSupervisor() + "','" + po1.getSupercargo() + "','"
 						+ list.get(i) + "'," + po1.getFee() + "," + po1.getIsCheck() + ");";
 				rm = db.insert(sql);

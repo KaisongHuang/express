@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import presentation.MySwing.Button;
 import presentation.centreui.CentreUI;
 import vo.*;
 
@@ -26,7 +27,7 @@ public class CentreListener0 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getBtnNewButton_9()) {
+		if (e.getSource() == ui.getConfirm()) {
 			ResultMessage rm;
 
 			CentreArrivalVO vo = this.read();
@@ -34,7 +35,7 @@ public class CentreListener0 implements MouseListener, ActionListener {
 				return ;
 			rm = centre.createReceive(vo);
 			check(rm);
-		} else if (e.getSource() == ui.getBtnNewButton_10()) {
+		} else if (e.getSource() == ui.getCancle()) {
 
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
@@ -89,22 +90,60 @@ public class CentreListener0 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			Button button=ui.getConfirm();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
+		 if (e.getSource() == ui.getConfirm()) {
+			Button button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		 if (e.getSource() == ui.getConfirm()) {
+			Button button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getConfirm()){
+			Button button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 	public CentreArrivalVO read() {

@@ -60,7 +60,7 @@ public class FinanceUI3 extends JPanel {
 		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		this.setBackground(Color.WHITE);
+
 		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new JTable(data1, name1);

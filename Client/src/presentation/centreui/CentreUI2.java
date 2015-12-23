@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener2;
+import presentation.MySwing.Button;
 
 
 public class CentreUI2 extends JPanel{
@@ -32,11 +33,9 @@ public class CentreUI2 extends JPanel{
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
-	private JButton btnNewButton_9;
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_12;
-	private JButton btnNewButton_13;
+	
+	private Button confirm;
+	private Button cancle;
 
 	CentreListener2 centrelistener;
 	private int width;
@@ -74,19 +73,7 @@ public class CentreUI2 extends JPanel{
 		this.add(panel_5);
 		panel_5.setLayout(null);
 
-		btnNewButton_9 = new JButton("\u98DE\u673A");
-		btnNewButton_9.setBounds(68, 6, 90, 30);
-		panel_5.add(btnNewButton_9);
-
-		btnNewButton_10 = new JButton("\u706B\u8F66");
-		btnNewButton_10.setBackground(new Color(255, 248, 220));
-		btnNewButton_10.setBounds(221, 6, 90, 30);
-		panel_5.add(btnNewButton_10);
-
-		btnNewButton_11 = new JButton("\u6C7D\u8F66");
-		btnNewButton_11.setBounds(374, 6, 90, 30);
-		panel_5.add(btnNewButton_11);
-
+		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(75, 59, 476, 282);
 		this.add(panel_6);
@@ -178,13 +165,13 @@ public class CentreUI2 extends JPanel{
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
 
-		btnNewButton_12 = new JButton("\u786E\u8BA4");
-		btnNewButton_12.setBounds(83, 379, 90, 30);
-	    this.add(btnNewButton_12);
+		confirm = new Button("确认");
+		confirm.setBounds(83, 379, 90, 30);
+	    this.add(confirm);
 
-		btnNewButton_13 = new JButton("\u53D6\u6D88");
-		btnNewButton_13.setBounds(401, 379, 90, 30);
-		this.add(btnNewButton_13);
+		cancle = new Button("取消");
+		cancle.setBounds(401, 379, 90, 30);
+		this.add(cancle);
 
 	}
 
@@ -261,45 +248,19 @@ public class CentreUI2 extends JPanel{
 		this.textField_8 = textField_8;
 	}
 
-	public JButton getBtnNewButton_9() {
-		return btnNewButton_9;
+	
+
+	public Button getConfirm() {
+		return confirm;
 	}
 
-	public void setBtnNewButton_9(JButton btnNewButton_9) {
-		this.btnNewButton_9 = btnNewButton_9;
+
+
+	public Button getCancle() {
+		return cancle;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
-
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_12() {
-		return btnNewButton_12;
-	}
-
-	public void setBtnNewButton_12(JButton btnNewButton_12) {
-		this.btnNewButton_12 = btnNewButton_12;
-	}
-
-	public JButton getBtnNewButton_13() {
-		return btnNewButton_13;
-	}
-
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
-		this.btnNewButton_13 = btnNewButton_13;
-	}
+	
 
 	private void setImage() {
 

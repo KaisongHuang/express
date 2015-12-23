@@ -13,6 +13,7 @@ import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
 import logic.senderbl.Sender;
 import logic.senderblservice.SenderBlService;
+import presentation.MySwing.Button;
 import presentation.courierui.CourierUI4;
 import vo.HistoryVO;
 /**
@@ -37,7 +38,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == ui.getButton()) {
+		if (e.getSource() == ui.getSearch()) {
 			String id = ui.getTextField().getText();
 			HistoryVO vo = sender.search(id);
 			set(vo);
@@ -92,24 +93,44 @@ public class CourierListener4 implements MouseListener, ActionListener {
 
 	}
 
+
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			Button button=ui.getSearch();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			Button button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			Button button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getSearch()){
+			Button button=ui.getSearch();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

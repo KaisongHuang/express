@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener2;
+import presentation.MySwing.Button;
 
 
 public class AdminUI2 extends JPanel{
@@ -23,15 +24,39 @@ public class AdminUI2 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
+	public Button getSearch() {
+		return search;
+	}
+
+	public void setSearch(Button search) {
+		this.search = search;
+	}
+
+	public Button getConfirm() {
+		return confirm;
+	}
+
+	public void setConfirm(Button confirm) {
+		this.confirm = confirm;
+	}
+
+	public Button getCancle() {
+		return cancle;
+	}
+
+	public void setCancle(Button cancle) {
+		this.cancle = cancle;
+	}
+
 	private JTextField textField;
 	private JLabel label1;
 	private JTextField textField_2;
 
 	private JComboBox<String> comboBox_1;
 
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
+	private Button search;
+	private Button confirm;
+	private Button cancle;
 
 	AdminListener2 adminlistener;
 	private int width;
@@ -59,7 +84,7 @@ public class AdminUI2 extends JPanel{
 		this.setBounds(136, 115, 746, 438);
 		this.setBackground(Color.white);
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+		
 		JLabel label_2 = new JLabel("账户名:");
 		label_2.setBounds(66, 34, 61, 16);
 		this.add(label_2);
@@ -69,9 +94,9 @@ public class AdminUI2 extends JPanel{
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
-		button_2 = new JButton("查询");
-		button_2.setBounds(300, 28, 61, 29);
-		this.add(button_2);
+		search = new Button("查询");
+		search.setBounds(300, 28, 61, 29);
+		this.add(search);
 
 		JLabel label_4 = new JLabel("姓名：");
 		label_4.setBounds(66, 74, 61, 16);
@@ -105,17 +130,17 @@ public class AdminUI2 extends JPanel{
 	    comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 
-		button = new JButton("确认");
-		button.setBounds(139, 228, 61, 29);
-		this.add(button);
+		confirm = new Button("确认");
+		confirm.setBounds(139, 228, 61, 29);
+		this.add(confirm);
 
-		button_1 = new JButton("取消");
-		button_1.setBounds(212, 228, 61, 29);
-		this.add(button_1);
+		cancle = new Button("取消");
+		cancle.setBounds(212, 228, 61, 29);
+		this.add(cancle);
 
-		button.addActionListener(adminlistener);
-		button_1.addActionListener(adminlistener);
-		button_2.addActionListener(adminlistener);
+		search.addActionListener(adminlistener);
+		confirm.addActionListener(adminlistener);
+		cancle.addActionListener(adminlistener);
 	}
 
 	public JTextField getTextField_2() {
@@ -134,43 +159,6 @@ public class AdminUI2 extends JPanel{
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JButton getButton() {
-		return button;
-	}
-
-	
-
-	public JButton getButton_1() {
-		return button_1;
-	}
-
-	public void setButton_1(JButton button_1) {
-		this.button_1 = button_1;
-	}
-
-	public JTextField getTextField() {
-		return textField;
-	}
-
-	public void setTextField(String s) {
-		this.textField.setText(s);
-	}
-
-
-	public JLabel getLabel1() {
-		return label1;
-	}
-
-	
-
-	public JButton getButton_2() {
-		return button_2;
-	}
-
-	public void setButton_2(JButton button_2) {
-		this.button_2 = button_2;
-	}
-
 	private void setImage() {
 		
 	}
@@ -179,4 +167,32 @@ public class AdminUI2 extends JPanel{
 	   
 		label1.setText(password);
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(String text){
+		textField.setText(text);
+	}
+	public JLabel getLabel1() {
+		return label1;
+	}
+
+	public AdminListener2 getAdminlistener() {
+		return adminlistener;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+	
 }

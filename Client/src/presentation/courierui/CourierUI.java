@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener0;
+import presentation.MySwing.Button;
 
 import javax.swing.JComboBox;
 
@@ -48,27 +49,13 @@ public class CourierUI extends JPanel{
 	private JTextField textField_16;
 	private JTextField textField_17;
 	private JTextField textField_18;
-	public JTextField getTextField_15() {
-		return textField_15;
-	}
-
-	public JTextField getTextField_16() {
-		return textField_16;
-	}
-
-	public JTextField getTextField_17() {
-		return textField_17;
-	}
-
-	public JTextField getTextField_18() {
-		return textField_18;
-	}
+	
 
 	CourierListener0 courierlistener;
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox;
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
+	private Button confirm;
+	private Button cancle;
 	@SuppressWarnings("unused")
 	private int width;
 	@SuppressWarnings("unused")
@@ -96,7 +83,7 @@ public class CourierUI extends JPanel{
 		setBackground(Color.white);
 
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+		
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");
 		lblNewLabel_1.setBounds(300, 0, 84, 30);
 		this.add(lblNewLabel_1);
@@ -268,13 +255,13 @@ public class CourierUI extends JPanel{
 		comboBox_1.setSelectedIndex(1);
 		this.add(comboBox_1);
 
-		btnNewButton_10 = new JButton("\u4FDD\u5B58");
-		btnNewButton_10.setBounds(138, 384, 100, 30);
-		this.add(btnNewButton_10);
+		confirm = new Button("确认");
+		confirm.setBounds(138, 384, 100, 30);
+		this.add(confirm);
 
-		btnNewButton_11 = new JButton("\u6E05\u7A7A");
-		btnNewButton_11.setBounds(529, 384, 100, 30);
-		this.add(btnNewButton_11);
+		cancle = new Button("取消");
+		cancle.setBounds(529, 384, 100, 30);
+		this.add(cancle);
 		
 		textField_15 = new JTextField();
 		textField_15.setColumns(10);
@@ -312,8 +299,8 @@ public class CourierUI extends JPanel{
 		label_10.setBounds(461, 122, 52, 16);
 		add(label_10);
 
-		btnNewButton_10.addActionListener(courierlistener);
-		btnNewButton_11.addActionListener(courierlistener);
+		cancle.addActionListener(courierlistener);
+		confirm.addActionListener(courierlistener);
 
 	}
 
@@ -408,7 +395,21 @@ public class CourierUI extends JPanel{
 	public JTextField getTextField_11() {
 		return textField_11;
 	}
+	public JTextField getTextField_15() {
+		return textField_15;
+	}
 
+	public JTextField getTextField_16() {
+		return textField_16;
+	}
+
+	public JTextField getTextField_17() {
+		return textField_17;
+	}
+
+	public JTextField getTextField_18() {
+		return textField_18;
+	}
 	public void setTextField_11(JTextField textField_11) {
 		this.textField_11 = textField_11;
 	}
@@ -453,20 +454,14 @@ public class CourierUI extends JPanel{
 		this.comboBox = comboBox;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
+	public Button getConfirm() {
+		return confirm;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
+	
 
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
+	public Button getCancle() {
+		return cancle;
 	}
 
 	@SuppressWarnings("unused")

@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener0;
+import presentation.MySwing.Button;
 
 import javax.swing.JComboBox;
 
@@ -28,8 +29,8 @@ public class CentreUI extends JPanel {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JComboBox<String> comboBox;
-	private JButton btnNewButton_9;
-	private JButton btnNewButton_10;
+	private Button confirm;
+	private Button cancle;
 	CentreListener0 centreListener;
 	private int width;
 	private int height;
@@ -114,33 +115,30 @@ public class CentreUI extends JPanel {
 		comboBox.setBounds(99, 150, 122, 28);
 		panel_5.add(comboBox);
 
-		btnNewButton_9 = new JButton("\u786E\u8BA4");
-		btnNewButton_9.setBounds(89, 340, 90, 30);
-		this.add(btnNewButton_9);
-		btnNewButton_9.addActionListener(centreListener);
+		confirm = new Button("确认");
+		confirm.setBounds(89, 340, 90, 30);
+		this.add(confirm);
+		confirm.addActionListener(centreListener);
 
-		btnNewButton_10 = new JButton("\u53D6\u6D88");
-		btnNewButton_10.setBounds(493, 340, 90, 30);
-		this.add(btnNewButton_10);
-		btnNewButton_10.addActionListener(centreListener);
+		cancle = new Button("取消");
+		cancle.setBounds(493, 340, 90, 30);
+		this.add(cancle);
+		confirm.addActionListener(centreListener);
+		cancle.addActionListener(centreListener);
 
 	}
 
-	public JButton getBtnNewButton_9() {
-		return btnNewButton_9;
+	public Button getConfirm() {
+		return confirm;
 	}
 
-	public void setBtnNewButton_9(JButton btnNewButton_9) {
-		this.btnNewButton_9 = btnNewButton_9;
+	
+
+	public Button getCancle() {
+		return cancle;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
+	
 
 	public JTextField getTextField() {
 		return textField;

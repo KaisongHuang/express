@@ -56,7 +56,7 @@ public class FinanceUI4_2 extends JPanel {
 	private void initialize() {
 		setBackground(Color.white);
 		this.setLayout(null);
-		 this.setBackground(new Color(158,211,240));
+	
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new JTable(data, name);

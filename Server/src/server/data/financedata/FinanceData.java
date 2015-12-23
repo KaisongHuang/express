@@ -14,6 +14,10 @@ import _enum.ResultMessage;
 import dataservice.financedataservice.FinanceDataBaseService;
 
 public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	public FinanceData(MySQLDataBase db) throws RemoteException{
            super();
@@ -33,7 +37,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			PayPO po1=(PayPO) po;
 			sql="insert into Pay values('"+po1.getDate()+"','"+po1.getPayer()+"','"+po1.getPayAccount()+"','"+po1.getEntry()+"','"+po1.getComments()+"',"+po1.getCost()+","+po1.getIsCheck()+");";
 			String sql1="select * from Account where bankAccount='"+po1.getPayAccount()+"' and isInit=0";
-			ResultSet rs=db.find(sql);
+			ResultSet rs=db.find(sql1);
 			double balance=0;
 			try {
 				if(rs.next())
@@ -55,7 +59,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		String sql="select * from Account where isInit=0;";
 		ResultSet rs=db.find(sql);
 		ArrayList<AccountPO> list=new ArrayList<AccountPO>();
-		list=null;
 		try {
 			while(rs.next()){
 				list.add(new AccountPO(rs.getString(1),rs.getDouble(2)));
@@ -69,7 +72,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 
 	public ArrayList<ReceiptPO> getReceipt(String date,String SellingAreaID)throws RemoteException{
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
-		list=null;
 		String sql="select * from Receipt where date='"+date+"' and sellingarea='"+SellingAreaID+"';";
 		ResultSet rs=db.find(sql);
 		String number1=null;
@@ -102,7 +104,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 
 	public ArrayList<AccountPO> getInit() throws RemoteException {
 		ArrayList<AccountPO> list=new ArrayList<AccountPO>();
-		list=null;
 		String sql="select * from Account where isInit=1;";
 	    ResultSet rs=db.find(sql);
 	    try {
@@ -118,7 +119,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 
 	public ArrayList<PayPO> getPay() throws RemoteException {
 		ArrayList<PayPO> list=new ArrayList<PayPO>();
-		list=null;
 		String sql="select * from Pay";
 		ResultSet rs=db.find(sql);
 		try {
@@ -135,7 +135,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public ArrayList<PayPO> findPay(String begin, String end) throws RemoteException {
 		// TODO Auto-generated method stub
 		ArrayList<PayPO> list=new ArrayList<PayPO>();
-		list=null;
 		String sql="select * from Pay";
 		ResultSet rs=db.find(sql);
 		try {
@@ -153,7 +152,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
 		// TODO Auto-generated method stub
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
-		list=null;
 		String sql="select * from Receipt;";
 		ResultSet rs=db.find(sql);
 		String number1=null;
