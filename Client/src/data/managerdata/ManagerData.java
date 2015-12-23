@@ -80,52 +80,52 @@ public class ManagerData implements ManagerDataService {
 	 */
 	public ArrayList<CarPackPO> findPack() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getCarPack();
 	}
 
 	public ArrayList<ReceiptPO> findReceipt() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getReceipt();
 	}
 
 	public ArrayList<AcceptPO> findAccept() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getAccept();
 	}
 
 	public ArrayList<DeliverPO> findDeliver() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getDeliver();
 	}
 
 	public ArrayList<CentreArrivalPO> findArrival() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getCentreArrival();
 	}
 
 	public ArrayList<CentreTransforPO> findTrans() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getCentreTransfor();
 	}
 
 	public ArrayList<CentrePackPO> findCentrePack() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getCentrePack();
 	}
 
 	public ArrayList<InStoragePO> findImport() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getInStorage();
 	}
 
 	public ArrayList<OutStoragePO> findExport() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getOutStorage();
 	}
 
 	public ArrayList<PayPO> findPay() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return md.getPay();
 	}
 
 }
