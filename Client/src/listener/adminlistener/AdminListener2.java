@@ -108,17 +108,20 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			ui.getSearch().setEntered(false);
-			ui.getSearch().setPressed(true);
-			ui.getSearch().repaint();
+			Button button=ui.getSearch();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
 		} else if (e.getSource() == ui.getConfirm()) {
-			ui.getConfirm().setEntered(false);
-			ui.getConfirm().setPressed(true);
-			ui.getConfirm().repaint();
+			Button button=ui.getConfirm();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			ui.getCancle().setEntered(false);
-			ui.getCancle().setPressed(true);
-			ui.getCancle().repaint();
+			Button button=ui.getCancle();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
 		}
 	}
 
@@ -145,17 +148,20 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			ui.getSearch().setEntered(true);
-			ui.getSearch().setPressed(false);
-			ui.getSearch().repaint();
+			Button button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
 		} else if (e.getSource() == ui.getConfirm()) {
-			ui.getConfirm().setEntered(true);
-			ui.getConfirm().setPressed(false);
-			ui.getConfirm().repaint();
+			Button button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			ui.getCancle().setEntered(true);
-			ui.getCancle().setPressed(false);
-			ui.getCancle().repaint();
+			Button button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
 		}
 	}
 
@@ -166,11 +172,11 @@ public class AdminListener2 implements MouseListener, ActionListener {
 		    button.setEntered(false);
 		    button.repaint();
 		}else if(e.getSource()==ui.getConfirm()){
-			Button button=ui.getSearch();
+			Button button=ui.getConfirm();
 		    button.setEntered(false);
 		    button.repaint();
-		}else if(e.getSource()==ui.getConfirm()){
-			Button button=ui.getConfirm();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
 		    button.setEntered(false);
 		    button.repaint();
 		}

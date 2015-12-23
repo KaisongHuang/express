@@ -12,6 +12,7 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
+import presentation.MySwing.Button;
 import presentation.adminui.AdminUI3;
 import vo.AdminVO;
 
@@ -28,11 +29,11 @@ public class AdminListener3 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getBtnNewButton_11()) {
+		if (e.getSource() == ui.getCancle()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
-		} else if (e.getSource() == ui.getBtnNewButton_10()) {
+		} else if (e.getSource() == ui.getConfirm()) {
 			ResultMessage rm;
 			String id = ui.getTextField_2().getText();
 			if(!check(id))
@@ -92,22 +93,57 @@ public class AdminListener3 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		 if (e.getSource() == ui.getConfirm()) {
+			ui.getConfirm().setEntered(false);
+			ui.getConfirm().setPressed(true);
+			ui.getConfirm().repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			ui.getCancle().setEntered(false);
+			ui.getCancle().setPressed(true);
+			ui.getCancle().repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		
+		if (e.getSource() == ui.getConfirm()) {
+			Button button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+	 if (e.getSource() == ui.getConfirm()) {
+			ui.getConfirm().setEntered(true);
+			ui.getConfirm().setPressed(false);
+			ui.getConfirm().repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			ui.getCancle().setEntered(true);
+			ui.getCancle().setPressed(false);
+			ui.getCancle().repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getConfirm()){
+			Button button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			Button button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

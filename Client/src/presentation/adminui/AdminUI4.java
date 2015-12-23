@@ -15,6 +15,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener4;
+import presentation.MySwing.Button;
 
 
 public class AdminUI4 extends JPanel{
@@ -27,8 +28,8 @@ public class AdminUI4 extends JPanel{
 
 	private JTextField textField;
 
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
+	private Button confirm;
+	private Button cancle;
 
 	AdminListener4 adminlistener;
 	private int width;
@@ -86,21 +87,21 @@ public class AdminUI4 extends JPanel{
 		label.setBounds(54, 43, 80, 16);
 		this.add(label);
 
-		btnNewButton_10 = new JButton("确认");
-		btnNewButton_10.setBounds(135, 90, 61, 29);
-		this.add(btnNewButton_10);
+		confirm = new Button("确认");
+		confirm.setBounds(135, 90, 61, 29);
+		this.add(confirm);
 
-		btnNewButton_11 = new JButton("取消");
-		btnNewButton_11.setBounds(208, 90, 61, 29);
-		this.add(btnNewButton_11);
+		cancle = new Button("取消");
+		cancle.setBounds(208, 90, 61, 29);
+		this.add(cancle);
 
 		textField = new JTextField();
 		textField.setBounds(135, 37, 134, 28);
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_10.addActionListener(adminlistener);
-		btnNewButton_11.addActionListener(adminlistener);
+		confirm.addActionListener(adminlistener);
+		cancle.addActionListener(adminlistener);
 	}
 
 
@@ -112,21 +113,17 @@ public class AdminUI4 extends JPanel{
 		this.textField = textField;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
+	public Button getConfirm() {
+		return confirm;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
+	
+
+	public Button getCancle() {
+		return cancle;
 	}
 
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
+	
 	private void setImage() {
 
 	}
