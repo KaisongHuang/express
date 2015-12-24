@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener4;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 //历史轨迹及货物状态
 public class CourierUI4 extends JPanel {
@@ -35,7 +35,7 @@ public class CourierUI4 extends JPanel {
 
 	private JLabel lblNewLabel_5;
 
-	private Button search;
+	private MyButton search;
 	private int width;
 	private int height;
     private JLabel label1;
@@ -98,10 +98,11 @@ public class CourierUI4 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
-		search = new Button("查询");
+		search = new MyButton("查询");
 		search.setBounds(442, 73, 100, 30);
 		this.add(search);
 		search.addActionListener(courierlistener);
+		search.addMouseListener(courierlistener);
 
 	}
 
@@ -113,7 +114,7 @@ public class CourierUI4 extends JPanel {
 		return textField;
 	}
 
-	public Button getSearch() {
+	public MyButton getSearch() {
 		return search;
 	}
 

@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener0;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 import javax.swing.JComboBox;
 
@@ -29,8 +29,8 @@ public class CentreUI extends JPanel {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JComboBox<String> comboBox;
-	private Button confirm;
-	private Button cancle;
+	private MyButton confirm;
+	private MyButton cancle;
 	CentreListener0 centreListener;
 	private int width;
 	private int height;
@@ -115,26 +115,28 @@ public class CentreUI extends JPanel {
 		comboBox.setBounds(99, 150, 122, 28);
 		panel_5.add(comboBox);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(89, 340, 90, 30);
 		this.add(confirm);
 		confirm.addActionListener(centreListener);
 
-		cancle = new Button("取消");
+		cancle = new MyButton("清空");
 		cancle.setBounds(493, 340, 90, 30);
 		this.add(cancle);
 		confirm.addActionListener(centreListener);
+		confirm.addMouseListener(centreListener);
 		cancle.addActionListener(centreListener);
+		cancle.addMouseListener(centreListener);
 
 	}
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 
 	
 
-	public Button getCancle() {
+	public MyButton getCancle() {
 		return cancle;
 	}
 

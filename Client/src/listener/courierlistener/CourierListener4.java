@@ -13,7 +13,7 @@ import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
 import logic.senderbl.Sender;
 import logic.senderblservice.SenderBlService;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI4;
 import vo.HistoryVO;
 /**
@@ -97,7 +97,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
@@ -107,7 +107,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -117,7 +117,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -127,7 +127,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getSearch()){
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 		    button.setEntered(false);
 		    button.repaint();
 		}

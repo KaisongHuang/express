@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import _enum.ResultMessage;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI2;
 import vo.CourierVO;
 /**
@@ -89,7 +89,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
@@ -99,7 +99,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -109,7 +109,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -119,7 +119,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getConfirm()){
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 		    button.setEntered(false);
 		    button.repaint();
 		}

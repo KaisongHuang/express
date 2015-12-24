@@ -15,7 +15,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener4;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 
 public class AdminUI4 extends JPanel{
@@ -28,8 +28,8 @@ public class AdminUI4 extends JPanel{
 
 	private JTextField textField;
 
-	private Button confirm;
-	private Button cancle;
+	private MyButton confirm;
+	private MyButton cancle;
 
 	AdminListener4 adminlistener;
 	private int width;
@@ -53,33 +53,7 @@ public class AdminUI4 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-/**--------------------------------------Navigation Code--------------------------------------------**/
-//		JPanel panel_3 = new JPanel();
-//		panel_3.setBounds(136, 58, 746, 58);
-//		panel_3.setLayout(null);
-//
-//		JButton btnNewButton_7 = new JButton("新增账户");
-//		btnNewButton_7.setBackground(UIManager.getColor("Button.background"));
-//		btnNewButton_7.setBounds(0, 0, 137, 55);
-//		panel_3.add(btnNewButton_7);
-//
-//		JButton btnNewButton_8 = new JButton("权限管理");
-//		btnNewButton_8.setBounds(137, 0, 137, 55);
-//		panel_3.add(btnNewButton_8);
-//
-//		JButton btnNewButton_9 = new JButton("修改密码");
-//		btnNewButton_9.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//			}
-//		});
-//		btnNewButton_9.setBounds(271, 0, 130, 55);
-//		panel_3.add(btnNewButton_9);
-//
-//		JButton btnNewButton_12 = new JButton("删除账户");
-//		btnNewButton_12.setBackground(new Color(255, 248, 220));
-//		btnNewButton_12.setBounds(400, 0, 137, 55);
-//		panel_3.add(btnNewButton_12);
-/**--------------------------------------Navigation Code--------------------------------------------**/
+
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 		this.setBackground(Color.white);
@@ -87,11 +61,11 @@ public class AdminUI4 extends JPanel{
 		label.setBounds(54, 43, 80, 16);
 		this.add(label);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(135, 90, 61, 29);
 		this.add(confirm);
 
-		cancle = new Button("取消");
+		cancle = new MyButton("清空");
 		cancle.setBounds(208, 90, 61, 29);
 		this.add(cancle);
 
@@ -101,7 +75,9 @@ public class AdminUI4 extends JPanel{
 		textField.setColumns(10);
 
 		confirm.addActionListener(adminlistener);
+		confirm.addMouseListener(adminlistener);
 		cancle.addActionListener(adminlistener);
+		cancle.addMouseListener(adminlistener);
 	}
 
 
@@ -113,13 +89,13 @@ public class AdminUI4 extends JPanel{
 		this.textField = textField;
 	}
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 
 	
 
-	public Button getCancle() {
+	public MyButton getCancle() {
 		return cancle;
 	}
 
