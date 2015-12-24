@@ -41,6 +41,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 				Vector<Object> item = new Vector<Object>();
 				item.add(vo.get(i).getBankAccount());
 				item.add(vo.get(i).getBalance());
+				ui.getUi1().getModel().addRow(item);
 				data.add(item);
 			}
 
@@ -169,6 +170,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 				Vector<Object> item = new Vector<Object>();
 				item.add(vo.get(i).getBankAccount());
 				item.add(vo.get(i).getBalance());
+				ui.getUi3().getModel().addRow(item);
 				data.add(item);
 			}
 
@@ -199,7 +201,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 		}
 		return true;
 	}
-	
+
 	public void mouseClicked(java.awt.event.MouseEvent e) {
 		// TODO Auto-generated method stub
 		int selectedRow = ui.getUi3().getTable().getSelectedRow(); // 获得选中行索引
