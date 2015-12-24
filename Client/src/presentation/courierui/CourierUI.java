@@ -18,7 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener0;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 import javax.swing.JComboBox;
 
@@ -54,8 +54,8 @@ public class CourierUI extends JPanel{
 	CourierListener0 courierlistener;
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox;
-	private Button confirm;
-	private Button cancle;
+	private MyButton confirm;
+	private MyButton cancle;
 	@SuppressWarnings("unused")
 	private int width;
 	@SuppressWarnings("unused")
@@ -255,11 +255,11 @@ public class CourierUI extends JPanel{
 		comboBox_1.setSelectedIndex(1);
 		this.add(comboBox_1);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(138, 384, 100, 30);
 		this.add(confirm);
 
-		cancle = new Button("取消");
+		cancle = new MyButton("清空");
 		cancle.setBounds(529, 384, 100, 30);
 		this.add(cancle);
 		
@@ -300,7 +300,9 @@ public class CourierUI extends JPanel{
 		add(label_10);
 
 		cancle.addActionListener(courierlistener);
+		cancle.addMouseListener(courierlistener);
 		confirm.addActionListener(courierlistener);
+		confirm.addMouseListener(courierlistener);
 
 	}
 
@@ -454,13 +456,13 @@ public class CourierUI extends JPanel{
 		this.comboBox = comboBox;
 	}
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 
 	
 
-	public Button getCancle() {
+	public MyButton getCancle() {
 		return cancle;
 	}
 

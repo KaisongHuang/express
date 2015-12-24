@@ -12,7 +12,7 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 import presentation.adminui.AdminUI4;
 import vo.AdminVO;
 
@@ -104,12 +104,12 @@ public class AdminListener4 implements MouseListener, ActionListener {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		 if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			Button button=ui.getCancle();
+			MyButton button=ui.getCancle();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -132,11 +132,11 @@ public class AdminListener4 implements MouseListener, ActionListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 	  if(e.getSource()==ui.getConfirm()){
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 		    button.setEntered(false);
 		    button.repaint();
 		}else if(e.getSource()==ui.getConfirm()){
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 		    button.setEntered(false);
 		    button.repaint();
 		}

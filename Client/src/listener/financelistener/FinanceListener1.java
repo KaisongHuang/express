@@ -10,7 +10,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 
 import logic.financebl.Finance;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI1;
 import vo.ReceiptVO;
 
@@ -71,7 +71,7 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
@@ -81,7 +81,7 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -91,7 +91,7 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -101,7 +101,7 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getSearch()){
-			Button button=ui.getSearch();
+			MyButton button=ui.getSearch();
 		    button.setEntered(false);
 		    button.repaint();
 		}

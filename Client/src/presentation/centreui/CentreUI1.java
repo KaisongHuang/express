@@ -15,7 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener1;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 
 public class CentreUI1 extends JPanel{
@@ -35,8 +35,8 @@ public class CentreUI1 extends JPanel{
 	private JTextField textField_8;
 
 
-	private Button confirm;
-	private Button cancle;
+	private MyButton confirm;
+	private MyButton cancle;
 
 	CentreListener1 centrelistener;
 	private int width;
@@ -155,16 +155,19 @@ public class CentreUI1 extends JPanel{
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(83, 379, 90, 30);
 		this.add(confirm);
 		confirm.addActionListener(centrelistener);
+		confirm.addMouseListener(centrelistener);
 
-		cancle = new Button("取消");
+		cancle = new MyButton("清空");
 		cancle.setBounds(401, 379, 90, 30);
 		this.add(cancle);
 		cancle.addActionListener(centrelistener);
+		cancle.addMouseListener(centrelistener);
 	}
+	
 
 	public JTextField getTextField() {
 		return textField;
@@ -236,12 +239,12 @@ public class CentreUI1 extends JPanel{
 
 
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 
 
-	public Button getCancle() {
+	public MyButton getCancle() {
 		return cancle;
 	}
 

@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 import presentation.centreui.CentreUI;
 import vo.*;
 
@@ -91,12 +91,12 @@ public class CentreListener0 implements MouseListener, ActionListener {
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			Button button=ui.getCancle();
+			MyButton button=ui.getCancle();
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
@@ -105,12 +105,12 @@ public class CentreListener0 implements MouseListener, ActionListener {
 
 	public void mouseReleased(MouseEvent e) {
 		 if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			Button button=ui.getCancle();
+			MyButton button=ui.getCancle();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -121,12 +121,12 @@ public class CentreListener0 implements MouseListener, ActionListener {
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		 if (e.getSource() == ui.getConfirm()) {
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			Button button=ui.getCancle();
+			MyButton button=ui.getCancle();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -136,11 +136,11 @@ public class CentreListener0 implements MouseListener, ActionListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getConfirm()){
-			Button button=ui.getConfirm();
+			MyButton button=ui.getConfirm();
 		    button.setEntered(false);
 		    button.repaint();
 		}else if(e.getSource()==ui.getCancle()){
-			Button button=ui.getCancle();
+			MyButton button=ui.getCancle();
 		    button.setEntered(false);
 		    button.repaint();
 		}
