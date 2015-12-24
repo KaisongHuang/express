@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener2;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 
 public class AdminUI2 extends JPanel{
@@ -24,28 +24,28 @@ public class AdminUI2 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	public Button getSearch() {
+	public MyButton getSearch() {
 		return search;
 	}
 
-	public void setSearch(Button search) {
+	public void setSearch(MyButton search) {
 		this.search = search;
 	}
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 
-	public void setConfirm(Button confirm) {
+	public void setConfirm(MyButton confirm) {
 		this.confirm = confirm;
 	}
 
-	public Button getCancle() {
-		return cancle;
+	public MyButton getClear() {
+		return clear;
 	}
 
-	public void setCancle(Button cancle) {
-		this.cancle = cancle;
+	public void setClear(MyButton cancle) {
+		this.clear = cancle;
 	}
 
 	private JTextField textField;
@@ -54,9 +54,9 @@ public class AdminUI2 extends JPanel{
 
 	private JComboBox<String> comboBox_1;
 
-	private Button search;
-	private Button confirm;
-	private Button cancle;
+	private MyButton search;
+	private MyButton confirm;
+	private MyButton clear;
 
 	AdminListener2 adminlistener;
 	private int width;
@@ -94,7 +94,7 @@ public class AdminUI2 extends JPanel{
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
-		search = new Button("查询");
+		search = new MyButton("查询");
 		search.setBounds(300, 28, 61, 29);
 		this.add(search);
 
@@ -130,17 +130,20 @@ public class AdminUI2 extends JPanel{
 	    comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(139, 228, 61, 29);
 		this.add(confirm);
 
-		cancle = new Button("取消");
-		cancle.setBounds(212, 228, 61, 29);
-		this.add(cancle);
+		clear = new MyButton("清空");
+		clear.setBounds(212, 228, 61, 29);
+		this.add(clear);
 
 		search.addActionListener(adminlistener);
+		search.addMouseListener(adminlistener);
 		confirm.addActionListener(adminlistener);
-		cancle.addActionListener(adminlistener);
+		confirm.addMouseListener(adminlistener);
+		clear.addActionListener(adminlistener);
+		clear.addMouseListener(adminlistener);
 	}
 
 	public JTextField getTextField_2() {

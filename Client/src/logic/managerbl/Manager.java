@@ -265,57 +265,209 @@ public class Manager implements ManagerBlService {
 
 	public ArrayList<String> checkLogging(Object vo) {
 		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	public ArrayList<CarPackVO> checkPack() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<CarPackVO> vo = new ArrayList<CarPackVO>();
+		ArrayList<CarPackPO> po = new ArrayList<CarPackPO>();
+
+		try {
+			po = md.findPack();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new CarPackVO(po.get(i).getDate(), po.get(i).getSellingArea(), po.get(i).getNumber(),
+					po.get(i).getStart(), po.get(i).getDestination(), po.get(i).getCarID(), po.get(i).getSupervisor(),
+					po.get(i).getSupercargo(), po.get(i).getList(), po.get(i).getFee(), po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<ReceiptVO> checkReceipt() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<ReceiptVO> vo = new ArrayList<ReceiptVO>();
+		ArrayList<ReceiptPO> po = new ArrayList<ReceiptPO>();
+
+		try {
+			po = md.findReceipt();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new ReceiptVO(po.get(i).getMoney(), po.get(i).getDate(), po.get(i).getSellingArea(),
+					po.get(i).getNumber(), po.get(i).getId(), po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<AcceptVO> checkAccept() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<AcceptVO> vo = new ArrayList<AcceptVO>();
+		ArrayList<AcceptPO> po = new ArrayList<AcceptPO>();
+
+		try {
+			po = md.findAccept();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new AcceptVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getStart(), po.get(i).getState(), po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<DeliverVO> checkDeliver() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<DeliverVO> vo = new ArrayList<DeliverVO>();
+		ArrayList<DeliverPO> po = new ArrayList<DeliverPO>();
+
+		try {
+			po = md.findDeliver();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new DeliverVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<CentreArrivalVO> checkArrival() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<CentreArrivalVO> vo = new ArrayList<CentreArrivalVO>();
+		ArrayList<CentreArrivalPO> po = new ArrayList<CentreArrivalPO>();
+
+		try {
+			po = md.findArrival();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new CentreArrivalVO(po.get(i).getID(), po.get(i).getGetDate(), po.get(i).getTransferID(),
+					po.get(i).getStart(),po.get(i).getExpressState(),po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<CentreTransforVO> checkTrans() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<CentreTransforVO> vo = new ArrayList<CentreTransforVO>();
+		ArrayList<CentreTransforPO> po = new ArrayList<CentreTransforPO>();
+
+		try {
+			po = md.findTrans();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new CentreTransforVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<CentrePackVO> checkCentrePack() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<CentrePackVO> vo = new ArrayList<CentrePackVO>();
+		ArrayList<CentrePackPO> po = new ArrayList<CentrePackPO>();
+
+		try {
+			po = md.findCentrePack();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new CentrePackVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<InStorageVO> checkImport() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<InStorageVO> vo = new ArrayList<InStorageVO>();
+		ArrayList<InStoragePO> po = new ArrayList<InStoragePO>();
+
+		try {
+			po = md.findImport();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new InStorageVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<OutStorageVO> checkExport() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<OutStorageVO> vo = new ArrayList<OutStorageVO>();
+		ArrayList<OutStoragePO> po = new ArrayList<OutStoragePO>();
+
+		try {
+			po = md.findExport();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new OutStorageVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 	public ArrayList<PayVO> checkPay() {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<PayVO> vo = new ArrayList<PayVO>();
+		ArrayList<PayPO> po = new ArrayList<PayPO>();
+
+		try {
+			po = md.findPay();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new PayVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+					po.get(i).getIsCheck()));
+		}
+
+		return vo;
 	}
 
 }

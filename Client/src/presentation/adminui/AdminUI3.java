@@ -15,7 +15,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.adminlistener.AdminListener3;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 
 public class AdminUI3 extends JPanel{
@@ -29,8 +29,8 @@ public class AdminUI3 extends JPanel{
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	private Button confirm;
-	private Button cancle;
+	private MyButton confirm;
+	private MyButton cancle;
 
 	AdminListener3 adminlistener;
 	private int width;
@@ -86,15 +86,17 @@ public class AdminUI3 extends JPanel{
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(139, 125, 61, 29);
 		this.add(confirm);
 
-		cancle = new Button("取消");
+		cancle = new MyButton("清空");
 		cancle.setBounds(212, 125, 61, 29);
 		this.add(cancle);
 
-		cancle.addActionListener(adminlistener);
+		confirm.addActionListener(adminlistener);
+		confirm.addMouseListener(adminlistener);
+		cancle.addMouseListener(adminlistener);
 		cancle.addActionListener(adminlistener);
 
 	}
@@ -125,13 +127,13 @@ public class AdminUI3 extends JPanel{
 		this.textField_2 = textField_2;
 	}
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 
 
 
-	public Button getCancle() {
+	public MyButton getCancle() {
 		return cancle;
 	}
 

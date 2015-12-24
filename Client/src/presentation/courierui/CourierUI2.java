@@ -16,7 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener2;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 //收件信息输入
 public class CourierUI2 extends JPanel {
@@ -30,7 +30,7 @@ public class CourierUI2 extends JPanel {
 	private JTextField textField_2;
 
 	CourierListener2 courierlistener;
-	private Button confirm;
+	private MyButton confirm;
 	private int width;
 	private int height;
     private JLabel label1;
@@ -88,10 +88,11 @@ public class CourierUI2 extends JPanel {
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
-		confirm = new Button("确认");
+		confirm = new MyButton("确认");
 		confirm.setBounds(374, 347, 100, 30);
 		this.add(confirm);
 		confirm.addActionListener(courierlistener);
+		confirm.addMouseListener(courierlistener);
 
 	}
 
@@ -120,7 +121,7 @@ public class CourierUI2 extends JPanel {
 	}
 
 
-	public Button getConfirm() {
+	public MyButton getConfirm() {
 		return confirm;
 	}
 

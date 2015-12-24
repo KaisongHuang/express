@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-public class Button extends JButton {
+public class MyButton extends JButton {
 	/**
 	 * 
 	 */
@@ -17,11 +17,11 @@ public class Button extends JButton {
 	private boolean entered = false;
 	private JLabel label;
 
-	public Button() {
+	public MyButton() {
 		this.setBorderPainted(false);
 	}
 
-	public Button(String text) {
+	public MyButton(String text) {
 		this.setBorderPainted(false);
 		label = new JLabel();
 		label.setText(text);
@@ -29,7 +29,7 @@ public class Button extends JButton {
 		this.add(label);
 	}
 
-	public Button(String text, String path) {
+	public MyButton(String text, String path) {
 		this.setBorderPainted(false);
 		JLabel label = new JLabel();
 		ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
