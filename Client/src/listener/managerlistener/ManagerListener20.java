@@ -7,6 +7,8 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.table.DefaultTableModel;
+
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI2;
@@ -26,6 +28,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 	private ManagerUI2 ui;
 	ManagerBlService manager = new Manager();
 	private int previousIndex = 0;
+	private int currentTable = 0;
 
 	public ManagerListener20(ManagerUI2 ui) {
 		super();
@@ -34,48 +37,69 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getButton()) {
+			setAllSelected();
+		}
+		if (e.getSource() == ui.getButton_1()) {
+			undoAllSelected();
+		}
+		if (e.getSource() == ui.getButton_2()) {
+			update();
+		}
+
 		if (e.getSource() == ui.getButton1()) {
 			if (ui.getComboBox().getSelectedIndex() == 0) {
 				previousIndex = 0;
+				currentTable = 0;
 				ui.getCard().show(ui.getPanel(), "0");
 			} else if (ui.getComboBox().getSelectedIndex() == 1) {
 				previousIndex = 1;
+				currentTable = 2;
 				refreshPayVO();
 				ui.getCard().show(ui.getPanel(), "1");
 			} else if (ui.getComboBox().getSelectedIndex() == 2) {
 				previousIndex = 2;
+				currentTable = 3;
 				refreshReceiptVO();
 				ui.getCard().show(ui.getPanel(), "2");
 			} else if (ui.getComboBox().getSelectedIndex() == 3) {
 				previousIndex = 3;
+				currentTable = 4;
 				refreshDeliverVO();
 				ui.getCard().show(ui.getPanel(), "3");
 			} else if (ui.getComboBox().getSelectedIndex() == 4) {
 				previousIndex = 4;
+				currentTable = 5;
 				refreshCentreTransforVO();
 				ui.getCard().show(ui.getPanel(), "4");
 			} else if (ui.getComboBox().getSelectedIndex() == 5) {
 				previousIndex = 5;
+				currentTable = 6;
 				refreshInStorageVO();
 				ui.getCard().show(ui.getPanel(), "5");
 			} else if (ui.getComboBox().getSelectedIndex() == 6) {
 				previousIndex = 6;
+				currentTable = 7;
 				refreshOutStorageVO();
 				ui.getCard().show(ui.getPanel(), "6");
 			} else if (ui.getComboBox().getSelectedIndex() == 7) {
 				previousIndex = 7;
+				currentTable = 8;
 				refreshCarPackVO();
 				ui.getCard().show(ui.getPanel(), "7");
 			} else if (ui.getComboBox().getSelectedIndex() == 8) {
 				previousIndex = 8;
+				currentTable = 9;
 				refreshAcceptVO();
 				ui.getCard().show(ui.getPanel(), "8");
 			} else if (ui.getComboBox().getSelectedIndex() == 9) {
 				previousIndex = 9;
+				currentTable = 10;
 				refreshCentreArrivalVO();
 				ui.getCard().show(ui.getPanel(), "9");
 			} else if (ui.getComboBox().getSelectedIndex() == 10) {
 				previousIndex = 10;
+				currentTable = 11;
 				refreshCentrePackVO();
 				ui.getCard().show(ui.getPanel(), "10");
 			}
@@ -176,6 +200,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			rowData.add(vo.get(i).getArrival());
 			rowData.add(vo.get(i).getHuoGuiHao());
 			rowData.add(vo.get(i).getJianZhuangYuan());
+			rowData.add(vo.get(i).getList());
 			rowData.add(vo.get(i).getFee());
 			rowData.add(new Boolean(false));
 			ui.getModel5().addRow(rowData);
@@ -235,6 +260,8 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			rowData.add(vo.get(i).getCarID());
 			rowData.add(vo.get(i).getSupervisor());
 			rowData.add(vo.get(i).getSupercargo());
+			rowData.add(vo.get(i).getList());
+			rowData.add(vo.get(i).getFee());
 			rowData.add(new Boolean(false));
 			ui.getModel8().addRow(rowData);
 		}
@@ -289,6 +316,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			rowData.add(vo.get(i).getCarID());
 			rowData.add(vo.get(i).getJianZhuangYuan());
 			rowData.add(vo.get(i).getYaYunYuan());
+			rowData.add(vo.get(i).getList());
 			rowData.add(vo.get(i).getFee());
 			rowData.add(new Boolean(false));
 			ui.getModel11().addRow(rowData);
@@ -350,5 +378,210 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			break;
 		}
 
+	}
+
+	private void setAllSelected() {
+		int n = getCurrentTable().getColumnCount() - 1;
+		for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+			getCurrentTable().setValueAt(true, i, n);
+		}
+	}
+
+	private void undoAllSelected() {
+		int n = getCurrentTable().getColumnCount() - 1;
+		for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+			getCurrentTable().setValueAt(false, i, n);
+		}
+	}
+
+	private DefaultTableModel getCurrentTable() {
+		switch (currentTable) {
+		case 2:
+			return ui.getModel2();
+		case 3:
+			return ui.getModel3();
+		case 4:
+			return ui.getModel4();
+		case 5:
+			return ui.getModel5();
+		case 6:
+			return ui.getModel6();
+		case 7:
+			return ui.getModel7();
+		case 8:
+			return ui.getModel8();
+		case 9:
+			return ui.getModel9();
+		case 10:
+			return ui.getModel10();
+		case 11:
+			return ui.getModel11();
+		default:
+			return null;
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	private void update() {
+		switch (currentTable) {
+		case 2: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new PayVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							(Double) getCurrentTable().getValueAt(i, 5), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 3: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new ReceiptVO((Double) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3),
+							(ArrayList<String>) getCurrentTable().getValueAt(i, 4), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 4: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new DeliverVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 5: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new CentreTransforVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							(String) getCurrentTable().getValueAt(i, 5), (String) getCurrentTable().getValueAt(i, 6),
+							(String) getCurrentTable().getValueAt(i, 7),
+							(ArrayList<String>) getCurrentTable().getValueAt(i, 8),
+							(Double) getCurrentTable().getValueAt(i, 9), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 6: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new InStorageVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							(Integer) getCurrentTable().getValueAt(i, 5), (Integer) getCurrentTable().getValueAt(i, 6),
+							(Integer) getCurrentTable().getValueAt(i, 7), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 7: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new OutStorageVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							(String) getCurrentTable().getValueAt(i, 5), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 8: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new CarPackVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							(String) getCurrentTable().getValueAt(i, 5), (String) getCurrentTable().getValueAt(i, 6),
+							(String) getCurrentTable().getValueAt(i, 7),
+							(ArrayList<String>) getCurrentTable().getValueAt(i, 8),
+							(Double) getCurrentTable().getValueAt(i, 9), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 9: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new AcceptVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 10: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new CentreArrivalVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		case 11: {
+			int column = getCurrentTable().getColumnCount() - 1;
+			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
+				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
+					manager.checkDocument(new CentrePackVO((String) getCurrentTable().getValueAt(i, 0),
+							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
+							(String) getCurrentTable().getValueAt(i, 5),
+							(ArrayList<String>) getCurrentTable().getValueAt(i, 6),
+							(Double) getCurrentTable().getValueAt(i, 7), 1));
+					getCurrentTable().removeRow(i);
+					i--;
+				}
+
+			}
+			break;
+		}
+		}
 	}
 }

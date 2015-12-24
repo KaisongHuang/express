@@ -364,7 +364,7 @@ public class Manager implements ManagerBlService {
 
 		for (int i = 0; i < po.size(); i++) {
 			vo.add(new CentreArrivalVO(po.get(i).getID(), po.get(i).getGetDate(), po.get(i).getTransferID(),
-					po.get(i).getStart(),po.get(i).getExpressState(),po.get(i).getIsCheck()));
+					po.get(i).getStart(), po.get(i).getExpressState(), po.get(i).getIsCheck()));
 		}
 
 		return vo;
@@ -383,8 +383,10 @@ public class Manager implements ManagerBlService {
 		}
 
 		for (int i = 0; i < po.size(); i++) {
-			vo.add(new CentreTransforVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
-					po.get(i).getIsCheck()));
+			vo.add(new CentreTransforVO(po.get(i).getTransferStyle(), po.get(i).getDataOfGetin(),
+					po.get(i).getCentreTransferID(), po.get(i).getBanHao(), po.get(i).getStart(),
+					po.get(i).getArrival(), po.get(i).getHuoGuiHao(), po.get(i).getJianZhuangYuan(),
+					po.get(i).getList(), po.get(i).getFee(), po.get(i).getIsCheck()));
 		}
 
 		return vo;
@@ -403,8 +405,9 @@ public class Manager implements ManagerBlService {
 		}
 
 		for (int i = 0; i < po.size(); i++) {
-			vo.add(new CentrePackVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
-					po.get(i).getIsCheck()));
+			vo.add(new CentrePackVO(po.get(i).getDataOfGetin(), po.get(i).getCentreTransferID(), po.get(i).getArrival(),
+					po.get(i).getCarID(), po.get(i).getJianZhuangYuan(), po.get(i).getYaYunYuan(), po.get(i).getList(),
+					po.get(i).getFee(), po.get(i).getIsCheck()));
 		}
 
 		return vo;
@@ -423,8 +426,9 @@ public class Manager implements ManagerBlService {
 		}
 
 		for (int i = 0; i < po.size(); i++) {
-			vo.add(new InStorageVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
-					po.get(i).getIsCheck()));
+			vo.add(new InStorageVO(po.get(i).getId(), po.get(i).getIndate(), po.get(i).getDestination(),
+					po.get(i).getWarehouseID(), po.get(i).getPos_qu(), po.get(i).getPos_pai(), po.get(i).getPos_jia(),
+					po.get(i).getPos_wei(), po.get(i).getIsCheck()));
 		}
 
 		return vo;
@@ -443,7 +447,8 @@ public class Manager implements ManagerBlService {
 		}
 
 		for (int i = 0; i < po.size(); i++) {
-			vo.add(new OutStorageVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
+			vo.add(new OutStorageVO(po.get(i).getId(), po.get(i).getDestination(), po.get(i).getOutdate(),
+					po.get(i).getWarehouseID(), po.get(i).getTransportation(), po.get(i).getTrans_id(),
 					po.get(i).getIsCheck()));
 		}
 
@@ -463,8 +468,8 @@ public class Manager implements ManagerBlService {
 		}
 
 		for (int i = 0; i < po.size(); i++) {
-			vo.add(new PayVO(po.get(i).getBarCode(), po.get(i).getDate(), po.get(i).getNumber(),
-					po.get(i).getIsCheck()));
+			vo.add(new PayVO(po.get(i).getDate(), po.get(i).getPayer(), po.get(i).getPayAccount(), po.get(i).getEntry(),
+					po.get(i).getComments(), po.get(i).getCost(), po.get(i).getIsCheck()));
 		}
 
 		return vo;
