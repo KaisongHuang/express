@@ -37,6 +37,8 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			ui.getComboBox_1().setSelectedIndex(0);
 		}else if(e.getSource()==ui.getSearch()){
 			String id = ui.getTextField_2().getText();
+			if(!check(id))
+				return ;
 			vo = admin.find(id);
 			if(!checkReturn(vo))
 				return;
@@ -48,6 +50,21 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			check(rm);
 		}
 
+	}
+	private boolean check(String id){
+		if(id.length()!=10){
+			JOptionPane.showMessageDialog(ui,"请检查编号格式是否正确！");
+	   	    return false;
+		}else{
+			try{
+				Integer.parseInt(id);
+			}
+			catch(NumberFormatException e){
+				JOptionPane.showMessageDialog(ui,"编号必须全部由数字组成！");
+		   	    return false;
+			}
+		}
+		return true;
 	}
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){

@@ -10,7 +10,7 @@ public class CourierBlService_Driver {
 		System.out.println(courierBlService.getPrice("特快","南京","北京",12.0));
 		System.out.println(courierBlService.getTime("南京","北京"));
 		ResultMessage result;
-		result = courierBlService.OrderInput(new SenderVO(), null);
+		result = courierBlService.OrderInput(new SenderVO());
 		if (result == ResultMessage.Success)
 			System.out.println("Success!");
 		result = courierBlService.ConsigneeinfoInput(new CourierVO(null, null, null));

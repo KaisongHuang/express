@@ -114,6 +114,8 @@ public class AdminUI1 extends JPanel {
 
 		btnNewButton_10.addActionListener(adminlistener);
 		btnNewButton_11.addActionListener(adminlistener);
+		btnNewButton_10.addMouseListener(adminlistener);
+		btnNewButton_11.addMouseListener(adminlistener);
 
 	}
 
