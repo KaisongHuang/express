@@ -6,7 +6,6 @@ package presentation.managerui;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -22,7 +21,6 @@ import listener.managerlistener.ManagerListener20;
 import presentation.MySwing.MyTable;
 
 import javax.swing.JComboBox;
-import javax.swing.ScrollPaneConstants;
 
 public class ManagerUI2 extends JPanel {
 
@@ -33,6 +31,9 @@ public class ManagerUI2 extends JPanel {
 	private JComboBox<String> comboBox;
 	private JButton button1;
 	private JButton button2;
+	private JButton button;
+	private JButton button_1;
+	private JButton button_2;
 	private JPanel panel;
 	private JPanel panel1;
 	private JPanel panel2;
@@ -136,21 +137,21 @@ public class ManagerUI2 extends JPanel {
 		comboBox.addItem("中转中心装车单");
 
 		comboBox.setSelectedIndex(0);
-		comboBox.setBounds(105, 5, 150, 28);
+		comboBox.setBounds(61, 5, 150, 28);
 		this.add(comboBox);
 
 		button1 = new JButton("确认");
-		button1.setBounds(270, 5, 80, 28);
+		button1.setBounds(205, 5, 80, 28);
 		this.add(button1);
 		button1.addActionListener(managerlistener);
 
 		button2 = new JButton("取消");
-		button2.setBounds(360, 5, 80, 28);
+		button2.setBounds(280, 5, 80, 28);
 		this.add(button2);
 		button2.addActionListener(managerlistener);
 
 		JLabel label = new JLabel("数据类型：");
-		label.setBounds(38, 10, 100, 18);
+		label.setBounds(0, 9, 100, 18);
 		this.add(label);
 
 		String names2[] = { "付款日期", "付款金额", "付款人", "付款账号", "条目", "备注", "审批通过" };
@@ -184,7 +185,7 @@ public class ManagerUI2 extends JPanel {
 		table3.setFocusable(false);
 		JSP3 = new JScrollPane(table3);
 		JSP3.setBounds(0, 0, panel.getWidth(), panel.getHeight());
-		
+
 		String names4[] = { "到达日期", "订单号", "派送员", "审批通过" };
 		name4 = new Vector<String>(Arrays.asList(names4));
 		table4 = new MyTable(data4, name4);
@@ -201,10 +202,10 @@ public class ManagerUI2 extends JPanel {
 		JSP4 = new JScrollPane(table4);
 		JSP4.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "运费", "审批通过" };
+		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "ID", "运费", "审批通过" };
 		name5 = new Vector<String>(Arrays.asList(names5));
 		table5 = new MyTable(data5, name5);
-		TableColumn tc5 = table5.getColumnModel().getColumn(8);
+		TableColumn tc5 = table5.getColumnModel().getColumn(9);
 		tc5.setCellEditor(table5.getDefaultEditor(Boolean.class));
 		tc5.setCellRenderer(table5.getDefaultRenderer(Boolean.class));
 		table5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -212,8 +213,9 @@ public class ManagerUI2 extends JPanel {
 		model5 = (DefaultTableModel) table5.getModel();
 		table5.setSelectionForeground(Color.BLACK);
 		table5.setSelectionBackground(null);
-		table5.setEditableColumn(8);
+		table5.setEditableColumn(9);
 		table5.setFocusable(false);
+		table5.hideColumn(7);
 		JSP5 = new JScrollPane(table5);
 		JSP5.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
@@ -249,10 +251,10 @@ public class ManagerUI2 extends JPanel {
 		JSP7 = new JScrollPane(table7);
 		JSP7.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员", "审批通过" };
+		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员", "ID", "运费", "审批通过" };
 		name8 = new Vector<String>(Arrays.asList(names8));
 		table8 = new MyTable(data8, name8);
-		TableColumn tc8 = table8.getColumnModel().getColumn(7);
+		TableColumn tc8 = table8.getColumnModel().getColumn(9);
 		tc8.setCellEditor(table8.getDefaultEditor(Boolean.class));
 		tc8.setCellRenderer(table8.getDefaultRenderer(Boolean.class));
 		table8.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -260,8 +262,9 @@ public class ManagerUI2 extends JPanel {
 		model8 = (DefaultTableModel) table8.getModel();
 		table8.setSelectionForeground(Color.BLACK);
 		table8.setSelectionBackground(null);
-		table8.setEditableColumn(7);
+		table8.setEditableColumn(9);
 		table8.setFocusable(false);
+		table8.hideColumn(7);
 		JSP8 = new JScrollPane(table8);
 		JSP8.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
@@ -297,10 +300,10 @@ public class ManagerUI2 extends JPanel {
 		JSP10 = new JScrollPane(table10);
 		JSP10.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names11[] = { "装车日期", "中转中心汽运编号", "到达地", "车辆代号", "监装员", "押运员", "运费", "审批通过" };
+		String names11[] = { "装车日期", "中转中心汽运编号", "到达地", "车辆代号", "监装员", "押运员", "ID", "运费", "审批通过" };
 		name11 = new Vector<String>(Arrays.asList(names11));
 		table11 = new MyTable(data11, name11);
-		TableColumn tc11 = table11.getColumnModel().getColumn(7);
+		TableColumn tc11 = table11.getColumnModel().getColumn(8);
 		tc11.setCellEditor(table11.getDefaultEditor(Boolean.class));
 		tc11.setCellRenderer(table11.getDefaultRenderer(Boolean.class));
 		table11.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -308,8 +311,9 @@ public class ManagerUI2 extends JPanel {
 		model11 = (DefaultTableModel) table11.getModel();
 		table11.setSelectionForeground(Color.BLACK);
 		table11.setSelectionBackground(null);
-		table11.setEditableColumn(7);
+		table11.setEditableColumn(8);
 		table11.setFocusable(false);
+		table11.hideColumn(6);
 		JSP11 = new JScrollPane(table11);
 		JSP11.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
@@ -345,7 +349,6 @@ public class ManagerUI2 extends JPanel {
 		panel11.setLayout(null);
 		panel11.add(JSP11);
 
-		
 		panel.add(panel1, "0");
 		panel.add(panel2, "1");
 		panel.add(panel3, "2");
@@ -359,6 +362,30 @@ public class ManagerUI2 extends JPanel {
 		panel.add(panel11, "10");
 		add(panel);
 
+		button = new JButton("全选");
+		button.setBounds(485, 5, 80, 29);
+		add(button);
+
+		button_1 = new JButton("取消全选");
+		button_1.setBounds(560, 5, 80, 29);
+		add(button_1);
+
+		button_2 = new JButton("已审批");
+		button_2.setBounds(635, 5, 80, 29);
+		add(button_2);
+
+	}
+
+	public JButton getButton() {
+		return button;
+	}
+
+	public JButton getButton_1() {
+		return button_1;
+	}
+
+	public JButton getButton_2() {
+		return button_2;
 	}
 
 	public JPanel getPanel() {

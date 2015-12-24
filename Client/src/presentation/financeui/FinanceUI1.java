@@ -19,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JComboBox;
 
 import listener.financelistener.FinanceListener1;
+import presentation.MySwing.MyButton;
 
 public class FinanceUI1 extends JPanel {
 
@@ -36,7 +37,7 @@ public class FinanceUI1 extends JPanel {
 	private JComboBox<?> comboBox_1;
 	private JComboBox<?> comboBox_2;
 	private JComboBox<?> comboBox_3;
-	private JButton button;
+	private MyButton search;
 	private JTextArea textArea;
 	private Vector<String> name;
 	private Vector<Object> data;
@@ -110,10 +111,11 @@ public class FinanceUI1 extends JPanel {
 		label_5.setBounds(88, 39, 57, 15);
 		this.add(label_5);
 
-		button = new JButton("查看");
-		button.setBounds(505, 33, 85, 27);
-		button.addActionListener(financeListener1);
-		add(button);
+		search = new MyButton("查看");
+		search.setBounds(505, 33, 85, 27);
+		search.addActionListener(financeListener1);
+		search.addMouseListener(financeListener1);;
+		add(search);
 
 		textArea = new JTextArea();
 		textArea.setBounds(484, 389, 106, 27);
@@ -153,13 +155,11 @@ public class FinanceUI1 extends JPanel {
 		this.comboBox_3 = comboBox_3;
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getSearch() {
+		return search;
 	}
 
-	public void setButton(JButton button) {
-		this.button = button;
-	}
+
 
 	public JTextArea getTextArea() {
 		return textArea;

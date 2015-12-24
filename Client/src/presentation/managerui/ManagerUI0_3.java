@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener0_3;
+import presentation.MySwing.MyButton;
 
 public class ManagerUI0_3 extends JPanel {
 
@@ -35,9 +36,9 @@ public class ManagerUI0_3 extends JPanel {
 	private JLabel lblNewLabel_12;
 	private JLabel lblNewLabel_13;
 
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_17;
+	private MyButton search;
+	private MyButton delete;
+	private MyButton cancle;
 
 	ManagerListener0_3 managerlistener;
 
@@ -70,11 +71,11 @@ public class ManagerUI0_3 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(274, 43, 100, 30);
-		this.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
-
+		search = new MyButton("查询");
+		search.setBounds(274, 43, 100, 30);
+		this.add(search);
+		search.addActionListener(managerlistener);
+        search.addMouseListener(managerlistener);
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(66, 78, 492, 205);
 		this.add(panel_6);
@@ -128,16 +129,16 @@ public class ManagerUI0_3 extends JPanel {
 		lblNewLabel_13.setBounds(349, 127, 100, 18);
 		panel_6.add(lblNewLabel_13);
 
-		btnNewButton_16 = new JButton("删除");
-		btnNewButton_16.setBounds(162, 307, 100, 30);
-		this.add(btnNewButton_16);
-		btnNewButton_16.addActionListener(managerlistener);
-
-		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(274, 307, 100, 30);
-		this.add(btnNewButton_17);
-		btnNewButton_17.addActionListener(managerlistener);
-
+		delete = new MyButton("删除");
+		delete.setBounds(162, 307, 100, 30);
+		this.add(delete);
+		delete.addActionListener(managerlistener);
+        delete.addMouseListener(managerlistener);
+		cancle = new MyButton("取消");
+		cancle.setBounds(274, 307, 100, 30);
+		this.add(cancle);
+		cancle.addActionListener(managerlistener);
+        cancle.addMouseListener(managerlistener);
 	}
 
 	public JTextField getTextField() {
@@ -253,28 +254,17 @@ public class ManagerUI0_3 extends JPanel {
 	}
 
 
-	public JButton getBtnNewButton_15() {
-		return btnNewButton_15;
+	public MyButton getSearch() {
+		return search;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
-		this.btnNewButton_15 = btnNewButton_15;
+	public MyButton getDelete() {
+		return delete;
 	}
 
-	public JButton getBtnNewButton_16() {
-		return btnNewButton_16;
-	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
-		this.btnNewButton_16 = btnNewButton_16;
-	}
-
-	public JButton getBtnNewButton_17() {
-		return btnNewButton_17;
-	}
-
-	public void setBtnNewButton_17(JButton btnNewButton_17) {
-		this.btnNewButton_17 = btnNewButton_17;
+	public MyButton getCancle() {
+		return cancle;
 	}
 
 }

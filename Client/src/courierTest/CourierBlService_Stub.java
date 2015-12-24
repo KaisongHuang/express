@@ -39,6 +39,16 @@ public class CourierBlService_Stub implements CourierBlService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	public double getTime() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public double getMoney() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
     
 	
 

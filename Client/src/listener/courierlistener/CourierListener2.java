@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import _enum.ResultMessage;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
+import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI2;
 import vo.CourierVO;
 /**
@@ -29,7 +30,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getButton()) {
+		if (e.getSource() == ui.getConfirm()) {
 			ResultMessage rm;
 			CourierVO vo = this.read();
 			if(!check(vo))
@@ -84,23 +85,43 @@ public class CourierListener2 implements MouseListener, ActionListener {
 
 	}
 
+
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getConfirm()){
+			MyButton button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 }

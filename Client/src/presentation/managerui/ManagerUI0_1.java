@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener0_1;
+import presentation.MySwing.MyButton;
 
 
 public class ManagerUI0_1 extends JPanel{
@@ -23,7 +24,7 @@ public class ManagerUI0_1 extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-	private JButton btnNewButton_15;
+	private MyButton search;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
 	private JLabel lblNewLabel_4;
@@ -135,10 +136,11 @@ public class ManagerUI0_1 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(304, 64, 120, 30);
-		this.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
+		search = new MyButton("查询");
+		search.setBounds(304, 64, 120, 30);
+		this.add(search);
+		search.addActionListener(managerlistener);
+		search.addMouseListener(managerlistener);
 
 	}
 
@@ -151,14 +153,11 @@ public class ManagerUI0_1 extends JPanel{
 	}
 
 
-	public JButton getBtnNewButton_15() {
-		return btnNewButton_15;
+	public MyButton getSearch() {
+		return search;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
-		this.btnNewButton_15 = btnNewButton_15;
-	}
-
+	
 	public JLabel getLblNewLabel_2() {
 		return lblNewLabel_2;
 	}

@@ -1,5 +1,5 @@
 package RMI;
 
-public class NetReconnect {
-
+public class NetReconnect extends Thread{
+     
 }

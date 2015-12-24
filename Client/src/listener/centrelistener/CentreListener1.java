@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import presentation.MySwing.MyButton;
 import presentation.centreui.*;
 import vo.CentreTransforVO;
 
@@ -27,18 +28,14 @@ public class CentreListener1 implements MouseListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
-		if (e.getSource() == ui.getBtnNewButton_10()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_11()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_12()) {
+		 if (e.getSource() == ui.getConfirm()) {
 			ResultMessage rm;
 			CentreTransforVO vo = this.read();
 			if(!check(vo))
 				return ;
 			rm = centre.manageTranfor(vo);
 			check(rm);
-		} else if (e.getSource() == ui.getBtnNewButton_13()) {
+		} else if (e.getSource() == ui.getCancle()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
@@ -101,14 +98,23 @@ public class CentreListener1 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 		String transferStyle = "飞机";
 		String dataOfGetin = ui.getTextField().getText();
+		System.out.println(dataOfGetin);
 		String centreTransferID = ui.getTextField_1().getText();
+		System.out.println(centreTransferID);
 		String banHao = ui.getTextField_2().getText();
+		System.out.println(banHao);
 		String huoGuiHao = ui.getTextField_3().getText();
+		System.out.println(huoGuiHao);
 		String start = ui.getTextField_4().getText();
+		System.out.println(start);
 		String arrival = ui.getTextField_5().getText();
+		System.out.println(arrival);
 		String JianZhuangYuan = ui.getTextField_6().getText();
+		System.out.println(JianZhuangYuan);
 		String YaYunYuan = ui.getTextField_7().getText();
+		System.out.println(YaYunYuan);
 		String fee = ui.getTextField_8().getText();
+		System.out.println(fee);
 
 		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin, centreTransferID, banHao, start, arrival,
 				JianZhuangYuan, YaYunYuan, null, Double.parseDouble(fee), 0);
@@ -123,22 +129,60 @@ public class CentreListener1 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+	if(e.getSource()==ui.getConfirm()){
+			MyButton button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

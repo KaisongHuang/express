@@ -7,6 +7,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
 
 public class MyTable extends JTable {
 	/**
@@ -73,5 +74,20 @@ public class MyTable extends JTable {
 			// tcr.setHorizontalAlignment(SwingConstants.CENTER);// 这句和上句作用一样
 			this.setDefaultRenderer(Object.class, tcr);
 		}
+	}
+	
+	/** 
+	 * 隐藏表格中的某一列 
+	 * @param table  表格 
+	 * @param index  要隐藏的列 的索引
+	 */ 
+	public void hideColumn(int index){ 
+	    TableColumn tc= this.getColumnModel().getColumn(index); 
+	    tc.setMaxWidth(0); 
+	    tc.setPreferredWidth(0); 
+	    tc.setMinWidth(0); 
+	    tc.setWidth(0); 
+	    this.getTableHeader().getColumnModel().getColumn(index).setMaxWidth(0); 
+	    this.getTableHeader().getColumnModel().getColumn(index).setMinWidth(0); 
 	}
 }
