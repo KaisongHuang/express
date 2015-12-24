@@ -12,6 +12,7 @@ import _enum.Opera;
 import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
+import presentation.MySwing.MyButton;
 import presentation.managerui.ManagerUI1_3;
 import vo.EmployeeVO;
 import vo.InstitutionVO;
@@ -28,7 +29,7 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getBtnNewButton_15()) {
+		if (e.getSource() == ui.getSearch()) {
 			String id = ui.getTextField().getText();
 			if (!check(id))
 				return;
@@ -36,7 +37,7 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 			if (!check(vo))
 				return;
 			set(vo);
-		} else if (e.getSource() == ui.getBtnNewButton_16()) {
+		} else if (e.getSource() == ui.getDelete()) {
 			ResultMessage rm;
 			String id = ui.getTextField().getText();
 			if (!check(id))
@@ -46,8 +47,6 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 				return;
 			rm = manager.manageMember(vo, Opera.Institution_delete);
 			check(rm);
-		} else if (e.getSource() == ui.getBtnNewButton_17()) {
-			delete(ui.getTextField());
 		}
 
 	}
@@ -107,22 +106,60 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		} else if (e.getSource() == ui.getDelete()) {
+			MyButton button=ui.getDelete();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getDelete()) {
+			MyButton button=ui.getDelete();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getDelete()) {
+			MyButton button=ui.getDelete();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getSearch()){
+			MyButton button=ui.getSearch();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getDelete()){
+			MyButton button=ui.getDelete();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

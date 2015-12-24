@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
+import presentation.MySwing.MyButton;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -25,11 +26,11 @@ public class FinanceUI4_2 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JLabel label;
 	private JLabel label_1;
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
-	private JButton button_4;
+	private MyButton add;
+	private MyButton clear;
+	private MyButton delete;
+	private MyButton save;
+	private MyButton ret;
 	private JTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -38,7 +39,7 @@ public class FinanceUI4_2 extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	FinanceListener4 financeListener4;
-	private JButton button_5;
+	private MyButton clearAll;
 	private int height = 600;
 	private int width = 900;
 	private JLabel label1;
@@ -83,50 +84,57 @@ public class FinanceUI4_2 extends JPanel {
 		textField_1.setBounds(526, 181, 175, 28);
 		add(textField_1);
 
-		button = new JButton("新增");
-		button.setBounds(526, 241, 80, 29);
-		button.addActionListener(financeListener4);
-		add(button);
+		add = new MyButton("新增");
+		add.setBounds(526, 241, 80, 29);
+		add.addActionListener(financeListener4);
+		add.addMouseListener(financeListener4);
+		add(add);
 
-		button_1 = new JButton("清空");
-		button_1.setBounds(621, 241, 80, 29);
-		button_1.addActionListener(financeListener4);
-		add(button_1);
+		clear = new MyButton("清空");
+		clear.setBounds(621, 241, 80, 29);
+		clear.addActionListener(financeListener4);
+		clear.addMouseListener(financeListener4);
+		add(clear);
 
-		button_2 = new JButton("删除");
-		button_2.setBounds(526, 288, 80, 29);
-		button_2.addActionListener(financeListener4);
-		add(button_2);
+		delete = new MyButton("删除");
+		delete.setBounds(526, 288, 80, 29);
+		delete.addActionListener(financeListener4);
+		delete.addMouseListener(financeListener4);
+		add(delete);
 
-		button_3 = new JButton("保存");
-		button_3.setBounds(621, 288, 80, 29);
-		button_3.addActionListener(financeListener4);
-		add(button_3);
+		save = new MyButton("保存");
+		save.setBounds(621, 288, 80, 29);
+		save.addActionListener(financeListener4);
+		save.addMouseListener(financeListener4);
+		add(save);
 
-		button_4 = new JButton("返回");
-		button_4.setBounds(33, 46, 80, 29);
-		button_4.addActionListener(financeListener4);
-		add(button_4);
+		ret = new MyButton("返回");
+		ret.setBounds(33, 46, 80, 29);
+		ret.addActionListener(financeListener4);
+		ret.addMouseListener(financeListener4);
+		add(ret);
 
-		button_5 = new JButton("清空银行账户");
-		button_5.setBounds(553, 100, 117, 29);
-		add(button_5);
+		clearAll = new MyButton("清空银行账户");
+		clearAll.setBounds(553, 100, 117, 29);
+		add(clearAll);
+		clearAll.addActionListener(financeListener4);
+		clearAll.addMouseListener(financeListener4);
 	}
 
 	public JTable getTable() {
 		return table;
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getAdd() {
+		return add;
 	}
 
-	public JButton getButton_1() {
-		return button_1;
+	public MyButton getClear() {
+		return clear;
 	}
 
-	public JButton getButton_2() {
-		return button_2;
+	public MyButton getDelete() {
+		return delete;
 	}
 
 	public JTextField getTextField() {
@@ -137,16 +145,16 @@ public class FinanceUI4_2 extends JPanel {
 		return textField_1;
 	}
 
-	public JButton getButton_3() {
-		return button_3;
+	public MyButton getSave() {
+		return save;
 	}
 
-	public JButton getButton_4() {
-		return button_4;
+	public MyButton getRet() {
+		return ret;
 	}
 
-	public JButton getButton_5() {
-		return button_5;
+	public MyButton getClearAll() {
+		return clearAll;
 	}
 
 	public DefaultTableModel getModel() {

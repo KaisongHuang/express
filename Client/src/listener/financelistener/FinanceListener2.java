@@ -2,6 +2,8 @@ package listener.financelistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,10 +15,11 @@ import javax.swing.border.EmptyBorder;
 import _enum.ResultMessage;
 import logic.financebl.Finance;
 import logic.financeblservice.FinanceBlService;
+import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI2;
 import vo.PayVO;
 
-public class FinanceListener2 implements ActionListener {
+public class FinanceListener2 implements ActionListener,MouseListener {
 	private FinanceUI2 ui;
 	FinanceBlService financeBl = new Finance();
 
@@ -27,7 +30,7 @@ public class FinanceListener2 implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// add
-		if (e.getSource() == ui.getButton()) {
+		if (e.getSource() == ui.getAdd()) {
 			String year = (String) ui.getComboBox_1().getSelectedItem();
 			String month = (String) ui.getComboBox_2().getSelectedItem();
 			String day = (String) ui.getComboBox_3().getSelectedItem();
@@ -50,7 +53,7 @@ public class FinanceListener2 implements ActionListener {
 			ui.getModel().addRow(item);
 		}
 		// clear
-		else if (e.getSource() == ui.getButton_1()) {
+		else if (e.getSource() == ui.getClear()) {
 			ui.getComboBox().setSelectedIndex(0);
 			ui.getComboBox_1().setSelectedIndex(0);
 			ui.getComboBox_2().setSelectedIndex(0);
@@ -65,7 +68,7 @@ public class FinanceListener2 implements ActionListener {
 		// else if(e.getSource()==ui.getButton_2()){}
 
 		// delete
-		else if (e.getSource() == ui.getBtnNewButton()) {
+		else if (e.getSource() == ui.getDelete()) {
 			int selectedRow = ui.getTable().getSelectedRow();// 获得选中行的索引
 			if (selectedRow != -1) // 存在选中行
 			{
@@ -73,7 +76,7 @@ public class FinanceListener2 implements ActionListener {
 			}
 		}
 		// done
-		else if (e.getSource() == ui.getButton_3()) {
+		else if (e.getSource() == ui.getFinish()) {
 			final JFrame jf = new JFrame();
 			jf.setVisible(true);
 			jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -162,5 +165,125 @@ public class FinanceListener2 implements ActionListener {
 		}
 		if(dialog!=null)
 			JOptionPane.showMessageDialog(ui, dialog);
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getCheck()) {
+			MyButton button=ui.getCheck();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		} else if (e.getSource() == ui.getAdd()) {
+			MyButton button=ui.getAdd();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getDelete()){
+			MyButton button=ui.getDelete();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getFinish()){
+			MyButton button=ui.getFinish();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getCheck()) {
+			MyButton button=ui.getCheck();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getAdd()) {
+			MyButton button=ui.getAdd();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getDelete()){
+			MyButton button=ui.getDelete();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getFinish()){
+			MyButton button=ui.getFinish();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getCheck()) {
+			MyButton button=ui.getCheck();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getAdd()) {
+			MyButton button=ui.getAdd();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getDelete()){
+			MyButton button=ui.getDelete();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getFinish()){
+			MyButton button=ui.getFinish();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource()==ui.getCheck()){
+			MyButton button=ui.getCheck();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getAdd()){
+			MyButton button=ui.getAdd();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getDelete()){
+			MyButton button=ui.getDelete();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getFinish()){
+			MyButton button=ui.getFinish();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 }

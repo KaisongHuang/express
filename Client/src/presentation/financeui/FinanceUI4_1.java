@@ -10,6 +10,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
+import presentation.MySwing.MyButton;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,7 +21,7 @@ public class FinanceUI4_1 extends JPanel {
 	/**
 	 * 
 	 */
-	private JButton button;
+	private MyButton ret;
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel label_2;
@@ -59,10 +60,11 @@ public class FinanceUI4_1 extends JPanel {
 		JSP.setBounds(80, 60, 444, 270);
 		this.add(JSP);
 
-		button = new JButton("返回");
-		button.setBounds(80, 19, 75, 29);
-		button.addActionListener(financeListener4);
-		add(button);
+		ret = new MyButton("返回");
+		ret.setBounds(80, 19, 75, 29);
+		ret.addActionListener(financeListener4);
+		ret.addMouseListener(financeListener4);
+		add(ret);
 
 		label = new JLabel("建账日期：");
 		label.setBounds(366, 342, 65, 16);
@@ -89,8 +91,8 @@ public class FinanceUI4_1 extends JPanel {
 		add(day);
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getRet() {
+		return ret;
 	}
 
 	public void setData(Vector<Object> data) {
