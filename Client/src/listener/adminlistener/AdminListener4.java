@@ -135,8 +135,8 @@ public class AdminListener4 implements MouseListener, ActionListener {
 			MyButton button=ui.getConfirm();
 		    button.setEntered(false);
 		    button.repaint();
-		}else if(e.getSource()==ui.getConfirm()){
-			MyButton button=ui.getConfirm();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
 		    button.setEntered(false);
 		    button.repaint();
 		}

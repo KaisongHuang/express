@@ -103,4 +103,9 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 		return null;
 	}
 
+	public String getDestination(String id) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
