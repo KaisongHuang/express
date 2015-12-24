@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener0_4;
+import presentation.MySwing.MyButton;
 
 
 public class ManagerUI0_4 extends JPanel{
@@ -34,8 +35,8 @@ public class ManagerUI0_4 extends JPanel{
 	private JLabel lblNewLabel_5;
 	private JLabel lblNewLabel_6;
 
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
+	private MyButton add;
+	private MyButton clear;
 
 	ManagerListener0_4 managerlistener;
 
@@ -121,16 +122,16 @@ public class ManagerUI0_4 extends JPanel{
 		panel_6.add(textField_5);
 		textField_5.setColumns(10);
 
-		btnNewButton_15 = new JButton("添加");
-		btnNewButton_15.setBounds(219, 298, 100, 30);
-		this.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
-
-		btnNewButton_16 = new JButton("取消");
-		btnNewButton_16.setBounds(399, 298, 100, 30);
-		this.add(btnNewButton_16);
-		btnNewButton_16.addActionListener(managerlistener);
-
+		add = new MyButton("添加");
+		add.setBounds(219, 298, 100, 30);
+		this.add(add);
+		add.addActionListener(managerlistener);
+        add.addMouseListener(managerlistener);
+		clear = new MyButton("取消");
+		clear.setBounds(399, 298, 100, 30);
+		this.add(clear);
+		clear.addActionListener(managerlistener);
+        clear.addMouseListener(managerlistener);
 	}
 
 
@@ -231,20 +232,16 @@ public class ManagerUI0_4 extends JPanel{
 	}
 
 
-	public JButton getBtnNewButton_15() {
-		return btnNewButton_15;
+	public MyButton getAdd() {
+		return add;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
-		this.btnNewButton_15 = btnNewButton_15;
+	
+
+	public MyButton getClear() {
+		return clear;
 	}
 
-	public JButton getBtnNewButton_16() {
-		return btnNewButton_16;
-	}
-
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
-		this.btnNewButton_16 = btnNewButton_16;
-	}
+	
 
 }

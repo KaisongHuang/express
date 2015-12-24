@@ -12,6 +12,7 @@ import _enum.Opera;
 import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
+import presentation.MySwing.MyButton;
 import presentation.managerui.ManagerUI0_4;
 import vo.EmployeeVO;
 
@@ -27,14 +28,14 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getBtnNewButton_15()) {
+		if (e.getSource() == ui.getAdd()) {
 			ResultMessage rm;
 			EmployeeVO vo = this.read();
 			if(!check(vo))
 				return ;
 			rm = manager.manageMember(vo, Opera.Employee_insert);
 			check(rm);
-		} else if (e.getSource() == ui.getBtnNewButton_16()) {
+		} else if (e.getSource() == ui.getClear()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_2());
 			delete(ui.getTextField_3());
@@ -106,25 +107,62 @@ public class ManagerListener0_4 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 
 	}
-
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getAdd()) {
+			MyButton button=ui.getAdd();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		} else if (e.getSource() == ui.getClear()) {
+			MyButton button=ui.getClear();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getAdd()) {
+			MyButton button=ui.getAdd();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getClear()) {
+			MyButton button=ui.getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getAdd()) {
+			MyButton button=ui.getAdd();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getClear()) {
+			MyButton button=ui.getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getAdd()){
+			MyButton button=ui.getAdd();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

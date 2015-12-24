@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.financebl.Finance;
+import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI4;
 import vo.AccountVO;
 
@@ -46,7 +47,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			}
 
 			ui.getUi1().setData(data);
-		} else if (e.getSource() == ui.getUi1().getButton()) {
+		} else if (e.getSource() == ui.getUi1().getRet()) {
 			System.out.println("返回");
 
 			ui.getCard().show(ui, "0");
@@ -60,23 +61,23 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 		} else if (e.getSource() == ui.getUi3().getButton_1()) {
 			System.out.println("期初建账");
 			ui.getCard().show(ui, "2");
-		} else if (e.getSource() == ui.getUi2().getButton()) {
+		} else if (e.getSource() == ui.getUi2().getAdd()) {
 			String account = ui.getUi2().getTextField().getText();
 			double balance = Double.parseDouble(ui.getUi2().getTextField_1().getText());
 			Vector<Object> item = new Vector<Object>();
 			item.add(account);
 			item.add(balance);
 			ui.getUi2().getModel().addRow(item);
-		} else if (e.getSource() == ui.getUi2().getButton_1()) {
+		} else if (e.getSource() == ui.getUi2().getClear()) {
 			ui.getUi2().getTextField().setText("");
 			ui.getUi2().getTextField_1().setText("");
-		} else if (e.getSource() == ui.getUi2().getButton_2()) {
+		} else if (e.getSource() == ui.getUi2().getDelete()) {
 			int selectedRow = ui.getUi2().getTable().getSelectedRow();// 获得选中行的索引
 			if (selectedRow != -1) // 存在选中行
 			{
 				ui.getUi2().getModel().removeRow(selectedRow); // 删除行
 			}
-		} else if (e.getSource() == ui.getUi2().getButton_3()) {
+		} else if (e.getSource() == ui.getUi2().getSave()) {
 			final JFrame jf = new JFrame();
 			jf.setVisible(true);
 			jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -118,10 +119,10 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			JLabel label = new JLabel("是否保存新建的库存信息？");
 			label.setBounds(149, 47, 244, 16);
 			contentPane.add(label);
-		} else if (e.getSource() == ui.getUi2().getButton_4()) {
+		} else if (e.getSource() == ui.getUi2().getRet()) {
 			System.out.println("返回");
 			ui.getCard().show(ui, "0");
-		} else if (e.getSource() == ui.getUi2().getButton_5()) {
+		} else if (e.getSource() == ui.getUi2().getClearAll()) {
 			rm=finance.clearAccount();
 			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_4()) {
@@ -227,21 +228,282 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 	}
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getUi1().getRet()) {
+			MyButton button=ui.getUi1().getRet();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		} else if (e.getSource() == ui.getUi2().getRet()) {
+			MyButton button=ui.getUi2().getRet();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClearAll()){
+			MyButton button=ui.getUi2().getClearAll();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getAdd()){
+			MyButton button=ui.getUi2().getAdd();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClear()){
+			MyButton button=ui.getUi2().getClear();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getDelete()){
+			MyButton button=ui.getUi2().getDelete();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
+		else if(e.getSource()==ui.getUi2().getSave()){
+			MyButton button=ui.getUi2().getSave();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_1()){
+			MyButton button=ui.getUi3().getButton_1();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_2()){
+			MyButton button=ui.getUi3().getButton_2();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_3()){
+			MyButton button=ui.getUi3().getButton_3();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_4()){
+			MyButton button=ui.getUi3().getButton_4();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_5()){
+			MyButton button=ui.getUi3().getButton_5();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_6()){
+			MyButton button=ui.getUi3().getButton_6();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getUi1().getRet()) {
+			MyButton button=ui.getUi1().getRet();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getUi2().getRet()) {
+			MyButton button=ui.getUi2().getRet();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClearAll()){
+			MyButton button=ui.getUi2().getClearAll();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getAdd()){
+			MyButton button=ui.getUi2().getAdd();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClear()){
+			MyButton button=ui.getUi2().getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getDelete()){
+			MyButton button=ui.getUi2().getDelete();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getSave()){
+			MyButton button=ui.getUi2().getSave();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_1()){
+			MyButton button=ui.getUi3().getButton_1();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_2()){
+			MyButton button=ui.getUi3().getButton_2();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_3()){
+			MyButton button=ui.getUi3().getButton_3();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_4()){
+			MyButton button=ui.getUi3().getButton_4();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_5()){
+			MyButton button=ui.getUi3().getButton_5();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_6()){
+			MyButton button=ui.getUi3().getButton_6();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getUi1().getRet()) {
+			MyButton button=ui.getUi1().getRet();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getUi2().getRet()) {
+			MyButton button=ui.getUi2().getRet();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClearAll()){
+			MyButton button=ui.getUi2().getClearAll();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getAdd()){
+			MyButton button=ui.getUi2().getAdd();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClear()){
+			MyButton button=ui.getUi2().getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getDelete()){
+			MyButton button=ui.getUi2().getDelete();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getSave()){
+			MyButton button=ui.getUi2().getSave();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_1()){
+			MyButton button=ui.getUi3().getButton_1();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_2()){
+			MyButton button=ui.getUi3().getButton_2();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_3()){
+			MyButton button=ui.getUi3().getButton_3();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_4()){
+			MyButton button=ui.getUi3().getButton_4();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_5()){
+			MyButton button=ui.getUi3().getButton_5();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_6()){
+			MyButton button=ui.getUi3().getButton_6();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getUi1().getRet()) {
+			MyButton button=ui.getUi1().getRet();
+			button.setEntered(true);
+			
+			button.repaint();
+		} else if (e.getSource() == ui.getUi2().getRet()) {
+			MyButton button=ui.getUi2().getRet();
+			button.setEntered(true);
+			
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClearAll()){
+			MyButton button=ui.getUi2().getClearAll();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getAdd()){
+			MyButton button=ui.getUi2().getAdd();
+			button.setEntered(true);
+	
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getClear()){
+			MyButton button=ui.getUi2().getClear();
+			button.setEntered(true);
+	
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getDelete()){
+			MyButton button=ui.getUi2().getDelete();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi2().getSave()){
+			MyButton button=ui.getUi2().getSave();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_1()){
+			MyButton button=ui.getUi3().getButton_1();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_2()){
+			MyButton button=ui.getUi3().getButton_2();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_3()){
+			MyButton button=ui.getUi3().getButton_3();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_4()){
+			MyButton button=ui.getUi3().getButton_4();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_5()){
+			MyButton button=ui.getUi3().getButton_5();
+			button.setEntered(true);
+		
+			button.repaint();
+		}else if(e.getSource()==ui.getUi3().getButton_6()){
+			MyButton button=ui.getUi3().getButton_6();
+			button.setEntered(true);
+		
+			button.repaint();
+		}
 	}
 }

@@ -17,18 +17,19 @@ import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
+import presentation.MySwing.MyButton;
 
 public class FinanceUI4_3 extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JLabel label;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
-	private JButton button_4;
-	private JButton button_5;
-	private JButton button_6;
+	private MyButton button_1;
+	private MyButton button_2;
+	private MyButton button_3;
+	private MyButton button_4;
+	private MyButton button_5;
+	private MyButton button_6;
 	private JTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -69,34 +70,40 @@ public class FinanceUI4_3 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
-		button_3 = new JButton("查询");
+		button_3 = new MyButton("查询");
 		button_3.setBounds(434, 108, 55, 27);
 		button_3.addActionListener(financeListener4);
+		button_3.addMouseListener(financeListener4);
 		this.add(button_3);
 
-		button_5 = new JButton("修改");
+		button_5 = new MyButton("修改");
 		button_5.setBounds(533, 251, 57, 27);
 		button_5.addActionListener(financeListener4);
+		button_5.addMouseListener(financeListener4);
 		this.add(button_5);
 
-		button_6 = new JButton("删除");
+		button_6 = new MyButton("删除");
 		button_6.setBounds(591, 251, 57, 27);
 		button_6.addActionListener(financeListener4);
+		button_6.addMouseListener(financeListener4);
 		this.add(button_6);
 
-		button_4 = new JButton("新增");
+		button_4 = new MyButton("新增");
 		button_4.setBounds(473, 251, 57, 27);
 		button_4.addActionListener(financeListener4);
+		button_4.addMouseListener(financeListener4);
 		this.add(button_4);
 
-		button_1 = new JButton("期初建账");
+		button_1 = new MyButton("期初建账");
 		button_1.setBounds(188, 53, 94, 27);
 		button_1.addActionListener(financeListener4);
+		button_1.addMouseListener(financeListener4);
 		this.add(button_1);
 
-		button_2 = new JButton("期初信息");
+		button_2 = new MyButton("期初信息");
 		button_2.setBounds(82, 53, 94, 27);
 		button_2.addActionListener(financeListener4);
+		button_2.addMouseListener(financeListener4);
 		this.add(button_2);
 
 		JLabel label_1 = new JLabel("账户：");
@@ -143,27 +150,27 @@ public class FinanceUI4_3 extends JPanel {
 		return textField;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 
-	public JButton getButton_2() {
+	public MyButton getButton_2() {
 		return button_2;
 	}
 
-	public JButton getButton_3() {
+	public MyButton getButton_3() {
 		return button_3;
 	}
 
-	public JButton getButton_4() {
+	public MyButton getButton_4() {
 		return button_4;
 	}
 
-	public JButton getButton_5() {
+	public MyButton getButton_5() {
 		return button_5;
 	}
 
-	public JButton getButton_6() {
+	public MyButton getButton_6() {
 		return button_6;
 	}
 
