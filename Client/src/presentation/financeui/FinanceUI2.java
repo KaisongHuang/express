@@ -18,6 +18,8 @@ import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener2;
+import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 public class FinanceUI2 extends JPanel {
 	/**
@@ -35,11 +37,11 @@ public class FinanceUI2 extends JPanel {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JComboBox<String> comboBox;
-	private JButton btnNewButton;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
-	private JButton button;
+	private MyButton check;
+	private MyButton add;
+	private MyButton delete;
+	private MyButton clear;
+	private MyButton finish;
 	private JTable table;
 	private DefaultTableModel model;
 	private JScrollPane JSP;
@@ -123,30 +125,35 @@ public class FinanceUI2 extends JPanel {
 		this.add(textField_4);
 		textField_4.setColumns(10);
 
-		button = new JButton("新增");
-		button.setBounds(570, 325, 67, 29);
-		button.addActionListener(financeListener2);
-		this.add(button);
+		add = new MyButton("新增");
+		add.setBounds(570, 325, 67, 29);
+		add.addActionListener(financeListener2);
+		add.addMouseListener(financeListener2);
+		this.add(add);
 
-		button_1 = new JButton("清空");
-		button_1.setBounds(637, 325, 67, 29);
-		button_1.addActionListener(financeListener2);
-		this.add(button_1);
+		clear = new MyButton("清空");
+		clear.setBounds(637, 325, 67, 29);
+		clear.addActionListener(financeListener2);
+		clear.addMouseListener(financeListener2);
+		this.add(clear);
 
-		button_2 = new JButton("查看成本收益表");
-		button_2.setBounds(29, 20, 134, 29);
-		button_2.addActionListener(financeListener2);
-		this.add(button_2);
+		check = new MyButton("查看成本收益表");
+		check.setBounds(29, 20, 134, 29);
+		check.addActionListener(financeListener2);
+		check.addMouseListener(financeListener2);
+		this.add(check);
 
-		btnNewButton = new JButton("删除");
-		btnNewButton.setBounds(570, 361, 67, 27);
-		btnNewButton.addActionListener(financeListener2);
-		add(btnNewButton);
+		delete = new MyButton("删除");
+		delete.setBounds(570, 361, 67, 27);
+		delete.addActionListener(financeListener2);
+		delete.addMouseListener(financeListener2);
+		add(delete);
 
-		button_3 = new JButton("完成");
-		button_3.setBounds(637, 361, 67, 27);
-		button_3.addActionListener(financeListener2);
-		add(button_3);
+		finish = new MyButton("完成");
+		finish.setBounds(637, 361, 67, 27);
+		finish.addActionListener(financeListener2);
+		finish.addMouseListener(financeListener2);
+		add(finish);
 
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(570, 60, 122, 25);
@@ -209,24 +216,24 @@ public class FinanceUI2 extends JPanel {
 		return comboBox;
 	}
 
-	public JButton getBtnNewButton() {
-		return btnNewButton;
+	public MyButton getCheck() {
+		return check;
 	}
 
-	public JButton getButton_1() {
-		return button_1;
+	public MyButton getAdd() {
+		return add;
 	}
 
-	public JButton getButton_2() {
-		return button_2;
+	public MyButton getClear() {
+		return clear;
 	}
 
-	public JButton getButton_3() {
-		return button_3;
+	public MyButton getDelete() {
+		return delete;
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getFinish() {
+		return finish;
 	}
 
 	public JTable getTable() {

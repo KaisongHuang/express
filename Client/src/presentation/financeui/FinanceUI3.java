@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import listener.financelistener.FinanceListener3;
+import presentation.MySwing.MyButton;
+
 import javax.swing.JLabel;
 
 import java.awt.Color;
@@ -35,7 +37,7 @@ public class FinanceUI3 extends JPanel {
 	private JComboBox<String> comboBox_3;
 	private JComboBox<String> comboBox_4;
 	private JComboBox<String> comboBox_5;
-	private JButton button;
+	private MyButton search;
 	private Vector<String> name1;
 	private Vector<Object> data1;
 	private JTable table1;
@@ -131,10 +133,11 @@ public class FinanceUI3 extends JPanel {
 		label_3.setBounds(494, 52, 57, 15);
 		this.add(label_3);
 
-		button = new JButton("查看");
-		button.setBounds(526, 20, 94, 27);
-		button.addActionListener(financeListener3);
-		this.add(button);
+		search = new MyButton("查看");
+		search.setBounds(526, 20, 94, 27);
+		search.addActionListener(financeListener3);
+		search.addMouseListener(financeListener3);
+		this.add(search);
 	}
 
 	public JTable getTable1() {
@@ -177,8 +180,8 @@ public class FinanceUI3 extends JPanel {
 		return comboBox_5;
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getSearch() {
+		return search;
 	}
 
 	private void setImage() {
