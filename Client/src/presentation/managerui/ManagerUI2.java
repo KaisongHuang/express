@@ -364,14 +364,17 @@ public class ManagerUI2 extends JPanel {
 
 		button = new JButton("全选");
 		button.setBounds(485, 5, 80, 29);
+		button.addActionListener(managerlistener);
 		add(button);
 
 		button_1 = new JButton("取消全选");
 		button_1.setBounds(560, 5, 80, 29);
+		button_1.addActionListener(managerlistener);
 		add(button_1);
 
 		button_2 = new JButton("已审批");
 		button_2.setBounds(635, 5, 80, 29);
+		button_2.addActionListener(managerlistener);
 		add(button_2);
 
 	}
