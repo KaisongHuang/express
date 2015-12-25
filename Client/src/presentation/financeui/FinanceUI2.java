@@ -12,7 +12,6 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
@@ -42,7 +41,7 @@ public class FinanceUI2 extends JPanel {
 	private MyButton delete;
 	private MyButton clear;
 	private MyButton finish;
-	private JTable table;
+	private MyTable table;
 	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -71,7 +70,12 @@ public class FinanceUI2 extends JPanel {
 		
 		String names[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(29, 61, 444, 327);
@@ -114,6 +118,10 @@ public class FinanceUI2 extends JPanel {
 
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(570, 246, 134, 27);
+		comboBox.addItem("租金");
+		comboBox.addItem("运费");
+		comboBox.addItem("工资");
+		comboBox.addItem("奖励");
 		this.add(comboBox);
 
 		label = new JLabel("备注:");
@@ -157,14 +165,17 @@ public class FinanceUI2 extends JPanel {
 
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(570, 60, 122, 25);
+		comboBox_1.addItem("2015");
 		add(comboBox_1);
 
 		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(570, 89, 55, 25);
+		comboBox_2.addItem("01");
 		add(comboBox_2);
 
 		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(637, 89, 55, 25);
+		comboBox_3.addItem("01");
 		add(comboBox_3);
 
 		label_1 = new JLabel("年");
@@ -236,7 +247,7 @@ public class FinanceUI2 extends JPanel {
 		return finish;
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 

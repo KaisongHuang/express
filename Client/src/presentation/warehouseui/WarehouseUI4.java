@@ -6,13 +6,13 @@ package presentation.warehouseui;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener4;
+import presentation.MySwing.MyTable;
 
 import javax.swing.JComboBox;
 
@@ -28,7 +28,7 @@ public class WarehouseUI4 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
@@ -48,13 +48,13 @@ public class WarehouseUI4 extends JPanel {
 	private JButton button_2;
 	private JButton button_3;
 	private JButton button_4;
-	private JComboBox<?> comboBox;
-	private JComboBox<?> comboBox_1;
-	private JComboBox<?> comboBox_2;
-	private JComboBox<?> comboBox_3;
-	private JComboBox<?> comboBox_4;
-	private JComboBox<?> comboBox_5;
-	private JComboBox<?> comboBox_6;
+	private JComboBox<String> comboBox;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox_2;
+	private JComboBox<String> comboBox_3;
+	private JComboBox<String> comboBox_4;
+	private JComboBox<String> comboBox_5;
+	private JComboBox<String> comboBox_6;
 	private DefaultTableModel model;
 	WarehouseListener4 warehouseListener;
 
@@ -76,7 +76,12 @@ public class WarehouseUI4 extends JPanel {
 		this.setBackground(Color.white);
 		String names[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(29, 68, 444, 298);
@@ -104,24 +109,27 @@ public class WarehouseUI4 extends JPanel {
 		label_2.setBounds(485, 146, 57, 15);
 		this.add(label_2);
 
-		comboBox = new JComboBox<Object>();
+		comboBox = new JComboBox<String>();
 		comboBox.setBounds(554, 141, 94, 25);
+		comboBox.addItem("2015");
 		this.add(comboBox);
 
 		label_3 = new JLabel("年");
 		label_3.setBounds(649, 146, 12, 15);
 		this.add(label_3);
 
-		comboBox_1 = new JComboBox<Object>();
+		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(554, 173, 57, 25);
+		comboBox_1.addItem("01");
 		this.add(comboBox_1);
 
 		label_4 = new JLabel("月");
 		label_4.setBounds(610, 178, 12, 15);
 		this.add(label_4);
 
-		comboBox_2 = new JComboBox<Object>();
+		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(640, 173, 57, 25);
+		comboBox_2.addItem("01");
 		this.add(comboBox_2);
 
 		label_5 = new JLabel("日");
@@ -132,16 +140,21 @@ public class WarehouseUI4 extends JPanel {
 		label_6.setBounds(485, 215, 57, 15);
 		this.add(label_6);
 
-		comboBox_3 = new JComboBox<Object>();
+		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(554, 210, 57, 25);
+		comboBox_3.addItem("航运区");
+		comboBox_3.addItem("铁运区");
+		comboBox_3.addItem("汽运区");
 		this.add(comboBox_3);
 
-		comboBox_4 = new JComboBox<Object>();
+		comboBox_4 = new JComboBox<String>();
 		comboBox_4.setBounds(640, 210, 57, 25);
+		comboBox_4.addItem("1");
 		this.add(comboBox_4);
 
-		comboBox_5 = new JComboBox<Object>();
+		comboBox_5 = new JComboBox<String>();
 		comboBox_5.setBounds(554, 247, 57, 25);
+		comboBox_5.addItem("1");
 		this.add(comboBox_5);
 
 		label_7 = new JLabel("区");
@@ -156,8 +169,9 @@ public class WarehouseUI4 extends JPanel {
 		label_9.setBounds(610, 252, 12, 15);
 		this.add(label_9);
 
-		comboBox_6 = new JComboBox<Object>();
+		comboBox_6 = new JComboBox<String>();
 		comboBox_6.setBounds(640, 247, 57, 25);
+		comboBox_6.addItem("1");
 		this.add(comboBox_6);
 
 		label_10 = new JLabel("位");
@@ -198,7 +212,7 @@ public class WarehouseUI4 extends JPanel {
 		return textField_1;
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
@@ -222,31 +236,31 @@ public class WarehouseUI4 extends JPanel {
 		return button_4;
 	}
 
-	public JComboBox<?> getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public JComboBox<?> getComboBox_1() {
+	public JComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<?> getComboBox_2() {
+	public JComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<?> getComboBox_3() {
+	public JComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public JComboBox<?> getComboBox_4() {
+	public JComboBox<String> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public JComboBox<?> getComboBox_5() {
+	public JComboBox<String> getComboBox_5() {
 		return comboBox_5;
 	}
 
-	public JComboBox<?> getComboBox_6() {
+	public JComboBox<String> getComboBox_6() {
 		return comboBox_6;
 	}
 

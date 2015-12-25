@@ -6,7 +6,6 @@ package presentation.warehouseui;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 
 import java.awt.Color;
 import java.util.Arrays;
@@ -15,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener3;
+import presentation.MySwing.MyTable;
 
 public class WarehouseUI3 extends JPanel {
 
@@ -22,7 +22,7 @@ public class WarehouseUI3 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTable table;
+	private MyTable table;
 	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -51,7 +51,12 @@ public class WarehouseUI3 extends JPanel {
 		this.setBackground(Color.white);
 		String names[] = { "快递编号", "原区号", "原排号", "原架号", "原位号", "现区号", "现排号", "现架号", "现位号" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(36, 32, 678, 326);
@@ -78,7 +83,7 @@ public class WarehouseUI3 extends JPanel {
 		add(button_3);
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
