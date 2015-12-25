@@ -60,11 +60,11 @@ public class CourierUI4 extends JPanel {
 		this.setBounds(136, 115, 746, 437);
 		setLayout(null);
 
-		JLabel lblNewLabel_1 = new JLabel("\u8D27\u8FD0\u72B6\u6001\uFF1A");
+		JLabel lblNewLabel_1 = new JLabel("订单号：");
 		lblNewLabel_1.setBounds(178, 124, 100, 18);
 		this.add(lblNewLabel_1);
 
-		JLabel lblNewLabel_2 = new JLabel("\u8BA2\u5355\u53F7\uFF1A");
+		JLabel lblNewLabel_2 = new JLabel("货运状态：");
 		lblNewLabel_2.setBounds(178, 174, 100, 18);
 		this.add(lblNewLabel_2);
 
@@ -77,11 +77,11 @@ public class CourierUI4 extends JPanel {
         textArea.setFont(new Font(Font.DIALOG,10,20));
 		this.add(textArea);
 
-		lblNewLabel_4 = new JLabel("New label");
+		lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setBounds(259, 174, 100, 18);
 		this.add(lblNewLabel_4);
 
-		lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(259, 124, 100, 18);
 		this.add(lblNewLabel_5);
 
@@ -122,7 +122,7 @@ public class CourierUI4 extends JPanel {
 		this.lblNewLabel_5 = lblNewLabel_5;
 	}
 
-	
+
 
 	public void setAreaContent(String s){
 		textArea.append(s);
