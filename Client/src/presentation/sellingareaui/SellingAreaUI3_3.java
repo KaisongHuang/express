@@ -4,18 +4,13 @@
 
 package presentation.sellingareaui;
 
-import java.awt.CardLayout;
-
 import java.awt.Color;
-import java.awt.Image;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.sellingarealistener.SellingAreaListener3_3;
+import presentation.MySwing.MyTextField;
 
 public class SellingAreaUI3_3 extends JPanel {
 
@@ -24,7 +19,7 @@ public class SellingAreaUI3_3 extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTextField textField;
+	private MyTextField textField;
 
 	SellingAreaListener3_3 sellingarealistener;
 
@@ -100,7 +95,7 @@ public class SellingAreaUI3_3 extends JPanel {
 		lblNewLabel_1.setBounds(104, 67, 100, 18);
 		this.add(lblNewLabel_1);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(216, 61, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -176,11 +171,11 @@ public class SellingAreaUI3_3 extends JPanel {
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 

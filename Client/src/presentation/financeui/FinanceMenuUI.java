@@ -9,6 +9,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 import listener.financelistener.FinanceMenuListener;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
 
 public class FinanceMenuUI extends JPanel{
@@ -39,6 +40,10 @@ public class FinanceMenuUI extends JPanel{
 		this.setSize(width,height);
 		this.setLayout(null);
 		this.setBackground(new Color(246,246,246));
+		MySeperator line=new MySeperator();
+		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
+		add(line);
+		
 		button1=new NaviButton("结算管理","/导航/finance/结算管理.png");//"结算管理"
 		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.setClicked(true);

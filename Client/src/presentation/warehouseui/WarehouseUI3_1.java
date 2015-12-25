@@ -5,9 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import listener.warehouselistener.WarehouseListener3;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
@@ -23,8 +23,8 @@ public class WarehouseUI3_1 extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textArea;
-	private JTextField textArea_1;
+	private MyTextField textArea;
+	private MyTextField textArea_1;
 	private JLabel label_1;
 	private JLabel label_2;
 	private JLabel label_3;
@@ -76,7 +76,7 @@ public class WarehouseUI3_1 extends JFrame {
 		label_3.setBounds(90, 50, 71, 16);
 		contentPane.add(label_3);
 
-		textArea = new JTextField();
+		textArea = new MyTextField();
 		textArea.setBounds(160, 50, 65, 16);
 		textArea.setText("90");
 		textArea.setEditable(false);
@@ -86,7 +86,7 @@ public class WarehouseUI3_1 extends JFrame {
 		label_4.setBounds(90, 78, 71, 16);
 		contentPane.add(label_4);
 
-		textArea_1 = new JTextField();
+		textArea_1 = new MyTextField();
 		textArea_1.setBounds(160, 78, 65, 16);
 		contentPane.add(textArea_1);
 
@@ -109,11 +109,11 @@ public class WarehouseUI3_1 extends JFrame {
 		contentPane.add(button_1);
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textArea;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textArea_1;
 	}
 

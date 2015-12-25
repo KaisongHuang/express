@@ -5,24 +5,21 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
+import presentation.MySwing.MyTextField;
 
 public class FinanceUI4_3 extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
+	private MyTextField textField;
 	private JLabel label;
 	private MyButton button_1;
 	private MyButton button_2;
@@ -36,8 +33,8 @@ public class FinanceUI4_3 extends JPanel {
 	private Vector<Object> data;
 	private DefaultTableModel model;
 	private FinanceListener4 financeListener4;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
 
 	public FinanceUI4_3(FinanceListener4 financeListener4) {
 		this.financeListener4 = financeListener4;
@@ -70,7 +67,7 @@ public class FinanceUI4_3 extends JPanel {
 		label.setBounds(82, 113, 153, 15);
 		this.add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(247, 106, 175, 27);
 		this.add(textField);
 		textField.setColumns(10);
@@ -119,12 +116,12 @@ public class FinanceUI4_3 extends JPanel {
 		label_2.setBounds(434, 217, 44, 16);
 		add(label_2);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(473, 171, 175, 28);
 		add(textField_1);
 		textField_1.setColumns(10);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(475, 211, 173, 28);
 		add(textField_2);
 		textField_2.setColumns(10);
@@ -139,11 +136,11 @@ public class FinanceUI4_3 extends JPanel {
 		return model;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
@@ -151,7 +148,7 @@ public class FinanceUI4_3 extends JPanel {
 		this.data = data;
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 

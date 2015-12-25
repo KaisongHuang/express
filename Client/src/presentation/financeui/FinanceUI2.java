@@ -6,19 +6,17 @@ package presentation.financeui;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
-
 import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener2;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
+import presentation.MySwing.MyTextField;
 
 public class FinanceUI2 extends JPanel {
 	/**
@@ -31,10 +29,10 @@ public class FinanceUI2 extends JPanel {
 	private JLabel lblNewLabel_4;
 	private JLabel lblNewLabel_5;
 	private JLabel label;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
+	private MyTextField textField_3;
+	private MyTextField textField_4;
 	private JComboBox<String> comboBox;
 	private MyButton check;
 	private MyButton add;
@@ -89,7 +87,7 @@ public class FinanceUI2 extends JPanel {
 		lblNewLabel_2.setBounds(491, 132, 67, 15);
 		this.add(lblNewLabel_2);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(570, 126, 134, 28);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -98,7 +96,7 @@ public class FinanceUI2 extends JPanel {
 		lblNewLabel_3.setBounds(491, 171, 61, 16);
 		this.add(lblNewLabel_3);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(570, 166, 134, 28);
 		this.add(textField_2);
 		textField_2.setColumns(10);
@@ -107,7 +105,7 @@ public class FinanceUI2 extends JPanel {
 		lblNewLabel_4.setBounds(491, 211, 61, 16);
 		this.add(lblNewLabel_4);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(570, 206, 134, 28);
 		this.add(textField_3);
 		textField_3.setColumns(10);
@@ -128,7 +126,7 @@ public class FinanceUI2 extends JPanel {
 		label.setBounds(491, 290, 61, 16);
 		this.add(label);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setBounds(570, 285, 134, 28);
 		this.add(textField_4);
 		textField_4.setColumns(10);
@@ -191,7 +189,7 @@ public class FinanceUI2 extends JPanel {
 		add(label_3);
 	}
 
-	// public JTextField getTextField() {
+	// public MyTextField getTextField() {
 	// return textField;
 	// }
 
@@ -207,19 +205,19 @@ public class FinanceUI2 extends JPanel {
 		return comboBox_3;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public JTextField getTextField_4() {
+	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 

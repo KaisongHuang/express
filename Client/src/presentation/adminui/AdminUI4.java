@@ -7,15 +7,11 @@ package presentation.adminui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import java.awt.Color;
 
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import listener.adminlistener.AdminListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 
 public class AdminUI4 extends JPanel{
@@ -26,7 +22,7 @@ public class AdminUI4 extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTextField textField;
+	private MyTextField textField;
 
 	private MyButton confirm;
 	private MyButton cancle;
@@ -69,7 +65,7 @@ public class AdminUI4 extends JPanel{
 		cancle.setBounds(208, 90, 61, 29);
 		this.add(cancle);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(135, 37, 134, 28);
 		this.add(textField);
 		textField.setColumns(10);
@@ -81,11 +77,11 @@ public class AdminUI4 extends JPanel{
 	}
 
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
