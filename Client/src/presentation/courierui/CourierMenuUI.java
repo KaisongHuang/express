@@ -5,12 +5,12 @@
 package presentation.courierui;
 
 import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.Image;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import listener.courierlistener.CourierMenuListener;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
 
 public class CourierMenuUI extends JPanel {
@@ -44,6 +44,11 @@ public class CourierMenuUI extends JPanel {
 		this.setSize(width,height);
 		this.setLayout(null);
 		this.setBackground(new Color(246,246,246));
+		
+		MySeperator line=new MySeperator();
+		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
+		add(line);
+		
 		button1 = new NaviButton("运单录入","/导航/courier/运单录入.png");//"运单录入"
 		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.setBackground(Color.BLUE);

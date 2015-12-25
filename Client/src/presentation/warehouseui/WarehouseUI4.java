@@ -8,11 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener4;
 import presentation.MySwing.MyTable;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
 
@@ -26,8 +26,8 @@ public class WarehouseUI4 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
+	private MyTextField textField;
+	private MyTextField textField_1;
 	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -91,7 +91,7 @@ public class WarehouseUI4 extends JPanel {
 		label.setBounds(485, 92, 57, 15);
 		this.add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(554, 86, 122, 27);
 		this.add(textField);
 		textField.setColumns(10);
@@ -100,7 +100,7 @@ public class WarehouseUI4 extends JPanel {
 		label_1.setBounds(485, 119, 57, 15);
 		this.add(label_1);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(554, 113, 122, 27);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -204,11 +204,11 @@ public class WarehouseUI4 extends JPanel {
 		add(button_4);
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 

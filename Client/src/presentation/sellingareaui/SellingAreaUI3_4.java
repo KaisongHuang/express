@@ -4,18 +4,14 @@
 
 package presentation.sellingareaui;
 
-import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Image;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import javax.swing.JTextField;
 
 import listener.sellingarealistener.SellingAreaListener3_4;
+import presentation.MySwing.MyTextField;
 
 
 public class SellingAreaUI3_4 extends JPanel{
@@ -25,12 +21,12 @@ public class SellingAreaUI3_4 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
+	private MyTextField textField_3;
+	private MyTextField textField_4;
+	private MyTextField textField_5;
 
 	SellingAreaListener3_4 sellingarealistener;
 	private JButton btnNewButton_16;
@@ -76,7 +72,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		lblNewLabel_1.setBounds(30, 18, 100, 18);
 		panel_6.add(lblNewLabel_1);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(122, 12, 122, 30);
 		panel_6.add(textField);
 		textField.setColumns(10);
@@ -85,7 +81,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		lblNewLabel_2.setBounds(332, 18, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(463, 12, 122, 30);
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
@@ -94,7 +90,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		lblNewLabel_3.setBounds(30, 66, 100, 18);
 		panel_6.add(lblNewLabel_3);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(122, 60, 122, 30);
 		panel_6.add(textField_2);
 		textField_2.setColumns(10);
@@ -103,7 +99,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		lblNewLabel_4.setBounds(332, 66, 100, 18);
 		panel_6.add(lblNewLabel_4);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(463, 54, 122, 30);
 		panel_6.add(textField_3);
 		textField_3.setColumns(10);
@@ -112,7 +108,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		lblNewLabel_5.setBounds(30, 121, 100, 18);
 		panel_6.add(lblNewLabel_5);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setBounds(122, 115, 122, 30);
 		panel_6.add(textField_4);
 		textField_4.setColumns(10);
@@ -121,7 +117,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		lblNewLabel_6.setBounds(332, 121, 100, 18);
 		panel_6.add(lblNewLabel_6);
 
-		textField_5 = new JTextField();
+		textField_5 = new MyTextField();
 		textField_5.setBounds(463, 115, 122, 30);
 		panel_6.add(textField_5);
 		textField_5.setColumns(10);
@@ -139,51 +135,51 @@ public class SellingAreaUI3_4 extends JPanel{
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
+	public void setTextField_1(MyTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
+	public void setTextField_2(MyTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public void setTextField_3(JTextField textField_3) {
+	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
 
-	public JTextField getTextField_4() {
+	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 
-	public void setTextField_4(JTextField textField_4) {
+	public void setTextField_4(MyTextField textField_4) {
 		this.textField_4 = textField_4;
 	}
 
-	public JTextField getTextField_5() {
+	public MyTextField getTextField_5() {
 		return textField_5;
 	}
 
-	public void setTextField_5(JTextField textField_5) {
+	public void setTextField_5(MyTextField textField_5) {
 		this.textField_5 = textField_5;
 	}
 

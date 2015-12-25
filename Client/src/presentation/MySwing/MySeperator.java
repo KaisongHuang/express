@@ -22,7 +22,7 @@ public class MySeperator extends JLabel {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		g.setColor(new Color(228,228,228));
+		g.setColor(new Color(220,220,220));
 		g.drawLine(0, 0, this.getWidth(), 0);
 	}
 	
