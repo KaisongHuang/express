@@ -8,6 +8,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 import listener.managerlistener.ManagerMenuListener;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
 
 
@@ -51,6 +52,11 @@ public class ManagerMenuUI extends JPanel{
 		this.setSize(width,height);
 		this.setLayout(null);
 		this.setBackground(new Color(246,246,246));
+		
+		MySeperator line=new MySeperator();
+		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
+		add(line);
+		
 		button1 = new NaviButton("机构管理","/导航/manager/机构管理.png");//"机构管理"
 		button1.setBounds(0, label_height * 2, width, label_height);
 		button1.setClicked(true);
