@@ -25,6 +25,11 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getSearch()) {
+			//clear table
+			for(int i=0;i<ui.getTable().getRowCount();i++){
+				ui.getModel().removeRow(0);
+			}
+			
 			String year = (String) ui.getComboBox().getSelectedItem();
 			String month = (String) ui.getComboBox_1().getSelectedItem();
 			String day = (String) ui.getComboBox_2().getSelectedItem();
@@ -36,7 +41,6 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
             if(!check(vo))
             	return ;
 
-			Vector<Object> data = new Vector<Object>();
 			double sum = 0;
 
 			for (int i = 0; i < vo.size(); i++) {
@@ -45,11 +49,10 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 				item.add(vo.get(i).getSellingArea());
 				item.add(vo.get(i).getNumber());
 				item.add(vo.get(i).getMoney());
-				data.add(item);
+				ui.getModel().addRow(item);
 				sum = sum + vo.get(i).getMoney();
 			}
 
-			ui.setData(data);
 			ui.getTextArea().setText("" + sum);
 		}
 	}

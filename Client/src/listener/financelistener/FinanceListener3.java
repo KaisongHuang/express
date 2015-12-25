@@ -15,7 +15,7 @@ import po.ReceiptPO;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI3;
 
-public class FinanceListener3 implements ActionListener ,MouseListener{
+public class FinanceListener3 implements ActionListener, MouseListener {
 	private FinanceUI3 ui;
 	Finance finance = new Finance();
 
@@ -26,6 +26,15 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getSearch()) {
+			//clear table
+			for (int i = 0; i < ui.getTable1().getRowCount(); i++) {
+				ui.getModel1().removeRow(0);
+			}
+
+			for (int i = 0; i < ui.getTable2().getRowCount(); i++) {
+				ui.getModel2().removeRow(0);
+			}
+
 			String year1 = (String) ui.getComboBox().getSelectedItem();
 			String month1 = (String) ui.getComboBox_1().getSelectedItem();
 			String day1 = (String) ui.getComboBox_2().getSelectedItem();
@@ -39,8 +48,8 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 
 			ArrayList<Object> ob = finance.getTotal(begin, end);
 
-			if(!check(ob))
-				return ;
+			if (!check(ob))
+				return;
 			ArrayList<PayPO> pay = new ArrayList<PayPO>();
 			ArrayList<ReceiptPO> receipt = new ArrayList<ReceiptPO>();
 			int count = finance.getCount();
@@ -53,8 +62,6 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 				receipt.add((ReceiptPO) ob.get(i));
 			}
 
-			Vector<Object> data1 = new Vector<Object>();
-			Vector<Object> data2 = new Vector<Object>();
 			// "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注"
 			for (int i = 0; i < pay.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
@@ -64,7 +71,7 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 				item.add(pay.get(i).getCost());
 				item.add(pay.get(i).getEntry());
 				item.add(pay.get(i).getComments());
-				data1.add(item);
+				ui.getModel1().addRow(item);
 			}
 			// "收款日期", "收款单位", "收款快递员", "收款金额"
 			for (int i = 0; i < receipt.size(); i++) {
@@ -73,15 +80,14 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 				item.add(receipt.get(i).getSellingArea());
 				item.add(receipt.get(i).getNumber());
 				item.add(receipt.get(i).getMoney());
-				data2.add(item);
+				ui.getModel2().addRow(item);
 			}
-			
-			ui.setData1(data1);
-			ui.setData2(data2);
+
 		}
 	}
-	private boolean check(ArrayList<Object> ob){
-		if(ob==null){
+
+	private boolean check(ArrayList<Object> ob) {
+		if (ob == null) {
 			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
 			return false;
 		}
@@ -90,32 +96,33 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
+			MyButton button = ui.getSearch();
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
-		} 
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
+			MyButton button = ui.getSearch();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
-		} 	}
+		}
+	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
+			MyButton button = ui.getSearch();
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
@@ -124,10 +131,10 @@ public class FinanceListener3 implements ActionListener ,MouseListener{
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getSearch()){
-			MyButton button=ui.getSearch();
-		    button.setEntered(false);
-		    button.repaint();
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button = ui.getSearch();
+			button.setEntered(false);
+			button.repaint();
 		}
 	}
 }
