@@ -5,14 +5,10 @@ package presentation.adminui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import listener.adminlistener.AdminMenuListener;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
 
 public class AdminMenuUI extends JPanel {
@@ -50,6 +46,10 @@ public class AdminMenuUI extends JPanel {
         this.setSize(width,height);
 		this.setLayout(null);
 		this.setBackground(new Color(246,246,246));
+		
+		MySeperator line=new MySeperator();
+		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
+		add(line);
 		
 		button3 = new NaviButton("新增账户","/导航/admin/新增账户.png");//"新增账户"
 		button3.setBounds(0, label_height * 2, width, label_height);

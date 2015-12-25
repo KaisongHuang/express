@@ -5,10 +5,12 @@
 package presentation.sellingareaui;
 
 import java.awt.CardLayout;
+
 import java.awt.Color;
 
 import javax.swing.JPanel;
 import listener.sellingarealistener.SellingAreaMenuListener;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
 
 
@@ -53,7 +55,9 @@ public class SellingAreaMenuUI extends JPanel{
 	private void initialize() {
 	    this.setSize(width,height);
 		this.setLayout(null);
-
+		MySeperator line=new MySeperator();
+		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
+		add(line);
 		button2 = new NaviButton("接收与派件","/导航/sellingarea/接收与派件.png");//"接收与派件"
 
 		button2.setBounds(0, label_height * 3, width, label_height);
