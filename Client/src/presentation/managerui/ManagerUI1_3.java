@@ -14,17 +14,17 @@ import presentation.MySwing.MyTextField;
 public class ManagerUI1_3 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	private MyTextField textField;
 
-	
-	
+
+
 	private MyButton search;
 	private MyButton delete;
-	
+
 
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
@@ -80,7 +80,7 @@ public class ManagerUI1_3 extends JPanel {
 		lblNewLabel_5.setBounds(116, 56, 100, 18);
 		panel_6.add(lblNewLabel_5);
 
-		lblNewLabel_7 = new JLabel("机构编号：");
+		lblNewLabel_7 = new JLabel("机构名称：");
 		lblNewLabel_7.setBounds(241, 56, 100, 18);
 		panel_6.add(lblNewLabel_7);
 

@@ -28,13 +28,12 @@ public interface ManagerDataService {
 
 	public ResultMessage delete(ManagerPO po) throws RemoteException;
 
-	public ResultMessage update(ManagerPO po) throws RemoteException;
 
 	public ResultMessage update(Object ob) throws RemoteException;
 
 	/**
 	 * 新增以下接口
-	 * 
+	 *
 	 * @return
 	 * @throws RemoteException
 	 */

@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import _enum.Opera;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
+import po.InstitutionPO;
 import presentation.MySwing.MyButton;
 import presentation.managerui.ManagerUI1_1;
 import vo.EmployeeVO;
@@ -33,11 +34,15 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 			String id = ui.getTextField().getText();
 			if (!check(id))
 				return;
-			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			InstitutionPO po = (InstitutionPO) manager.find(id, Opera.Institution_find);
+			InstitutionVO vo = new InstitutionVO(po.getOrganizationID(),po.getName());
+//			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
+			set(vo);
+
 			if (!check(vo))
 				return;
-			set(vo);
-		} 
+
+		}
 
 	}
 
@@ -71,8 +76,8 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private void set(InstitutionVO vo) {
 		// TODO Auto-generated method stub
-		ui.setLblNewLabel_4(new JLabel(vo.getOrganizationID()));
-		ui.setLblNewLabel_7(new JLabel(vo.getName()));
+		ui.setLblNewLabel_4(vo.getOrganizationID());
+		ui.setLblNewLabel_7(vo.getName());
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -87,7 +92,7 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 			button.setEntered(false);
 			button.setPressed(true);
 			button.repaint();
-		} 
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
@@ -107,7 +112,7 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 			button.setEntered(true);
 			button.setPressed(false);
 			button.repaint();
-		} 
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
