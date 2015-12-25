@@ -44,6 +44,7 @@ public class MyButton extends JButton {
 		if (pressed) {
 			g.setColor(new Color(158, 211, 240));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
+//			g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
 			label.setForeground(new Color(246,246,246));
 		}
 
@@ -51,14 +52,18 @@ public class MyButton extends JButton {
 			label.setForeground(Color.BLACK);
 			g.setColor(new Color(158, 211, 240));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
+//			g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
 			g.setColor(new Color(246,246,246));
 			g.fillRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
 					this.getHeight() - this.getWidth() / 15);
+//			g.fillRoundRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
+//					this.getHeight() - this.getWidth() / 15,15,15);
 
 		} else if (!entered && !pressed) {
 			label.setForeground(Color.BLACK);
 			g.setColor(new Color(246,246,246));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
+//			g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
 		}
 	}
 
