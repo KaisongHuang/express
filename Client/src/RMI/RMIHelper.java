@@ -16,7 +16,7 @@ import dataservice.senderdataservice.SenderDataBaseService;
 import dataservice.warehousedataservice.WareHouseDataBaseService;
 
 public class RMIHelper {
-    private static String ip="192.168.191.2";
+    private static String ip="172.26.37.3";
     private static int port=3333;
 	private static AdminDataBaseService ad;
 	private static CentreDataBaseService cd;

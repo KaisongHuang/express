@@ -12,7 +12,6 @@ import _enum.Opera;
 import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
-import po.InstitutionPO;
 import presentation.MySwing.MyButton;
 import presentation.managerui.ManagerUI1_3;
 import vo.EmployeeVO;
@@ -34,8 +33,7 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 			String id = ui.getTextField().getText();
 			if (!check(id))
 				return;
-			InstitutionPO po = (InstitutionPO) manager.find(id, Opera.Institution_find);
-			InstitutionVO vo = new InstitutionVO(po.getOrganizationID(),po.getName());
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
 			if (!check(vo))
 				return;
 			set(vo);
@@ -44,12 +42,10 @@ public class ManagerListener1_3 implements MouseListener, ActionListener {
 			String id = ui.getTextField().getText();
 			if (!check(id))
 				return;
-			InstitutionPO po = (InstitutionPO) manager.find(id, Opera.Institution_find);
-			InstitutionVO vo = new InstitutionVO(po.getOrganizationID(),po.getName());
-
-			rm = manager.manageMember(vo, Opera.Institution_delete);
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
 			if (!check(vo))
 				return;
+			rm = manager.manageMember(vo, Opera.Institution_delete);
 			check(rm);
 		}
 

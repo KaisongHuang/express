@@ -14,7 +14,7 @@ import presentation.MySwing.MyTextField;
 public class ManagerUI1_2 extends JPanel {
 
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private MyTextField textField;
@@ -23,13 +23,13 @@ public class ManagerUI1_2 extends JPanel {
 
 	private MyButton search;
 	private MyButton update;
-
+	
 
 	ManagerListener1_2 managerlistener;
 
 	/**
 	 * Create the application.
-	 *
+	 * 
 	 * @param card
 	 */
 	public ManagerUI1_2() {
@@ -79,7 +79,7 @@ public class ManagerUI1_2 extends JPanel {
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
 
-		JLabel lblNewLabel_5 = new JLabel("机构名称：");
+		JLabel lblNewLabel_5 = new JLabel("机构编号：");
 		lblNewLabel_5.setBounds(258, 43, 100, 18);
 		panel_6.add(lblNewLabel_5);
 
@@ -93,7 +93,7 @@ public class ManagerUI1_2 extends JPanel {
 		this.add(update);
 		update.addActionListener(managerlistener);
         update.addMouseListener(managerlistener);
-
+	
 	}
 
 	public MyTextField getTextField() {
@@ -128,7 +128,7 @@ public class ManagerUI1_2 extends JPanel {
 		return update;
 	}
 
-
+	
 
 
 

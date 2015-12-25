@@ -65,6 +65,10 @@ public class ManagerData implements ManagerDataService {
 		return md.delete(po);
 	}
 
+	public ResultMessage update(ManagerPO po) throws RemoteException {
+		return md.update(po);
+
+	}
 
 	public ResultMessage update(Object ob) throws RemoteException {
 

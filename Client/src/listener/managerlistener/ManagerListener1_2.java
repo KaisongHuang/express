@@ -12,7 +12,6 @@ import _enum.Opera;
 import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
-import po.InstitutionPO;
 import presentation.MySwing.MyButton;
 import presentation.managerui.ManagerUI1_2;
 import vo.InstitutionVO;
@@ -33,19 +32,18 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 			String id = ui.getTextField().getText();
 			if (!check(id))
 				return;
-			InstitutionPO po = (InstitutionPO) manager.find(id, Opera.Institution_find);
-			InstitutionVO vo = new InstitutionVO(po.getOrganizationID(),po.getName());
+			InstitutionVO vo = (InstitutionVO) manager.find(id, Opera.Institution_find);
 			if (!check(vo))
 				return;
 			set(vo);
 		} else if (e.getSource() == ui.getUpdate()) {
 			ResultMessage rm;
 			InstitutionVO vo = this.read();
-			rm = manager.manageMember(vo, Opera.Institution_update);
 			if (check(vo.getOrganizationID()))
 				return;
+			rm = manager.manageMember(vo, Opera.Institution_update);
 			check(rm);
-		}
+		} 
 
 	}
 
@@ -89,16 +87,16 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 
 	private InstitutionVO read() {
 		// TODO Auto-generated method stub
-		String name = ui.getTextField_3().getText();
 		String oi = ui.getTextField_1().getText();
+		String name = ui.getTextField_3().getText();
 		InstitutionVO vo = new InstitutionVO(oi, name);
 		return vo;
 	}
 
 	private void set(InstitutionVO vo) {
 		// TODO Auto-generated method stub
-		ui.getTextField_3().setText(vo.getName());
 		ui.getTextField_1().setText(vo.getOrganizationID());
+		ui.getTextField_3().setText(vo.getName());
 	}
 
 	private void delete(JTextField textField) {
