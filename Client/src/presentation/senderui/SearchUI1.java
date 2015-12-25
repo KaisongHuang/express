@@ -16,10 +16,12 @@ public class SearchUI1 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	JLabel label1;
-    JLabel label2;
-    JTextArea textArea;
-    SenderListener1 listen;
+	private JLabel label1;
+    private JLabel state1;
+    private JLabel id1;
+    private JTextArea textArea;
+    private JButton button;
+    private SenderListener1 listen;
 	public SearchUI1() {
 		listen=new SenderListener1(this);
 		initialize();
@@ -31,49 +33,53 @@ public class SearchUI1 extends JPanel{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+
 		this.setBackground(Color.white);
 		this.setLayout(null);
 		this.setBounds(100,100,900,600);
-		JLabel lblNewLabel = new JLabel("货运状态:");
-		lblNewLabel.setBounds(60, 28, 84, 18);
-		this.add(lblNewLabel);
+		JLabel state = new JLabel("货运状态:");
+		state.setBounds(60, 28, 84, 18);
+		this.add(state);
 
 		label1=new JLabel();
 		label1.setBounds(160, 28, 127, 31);
-		JLabel label = new JLabel("订单编号:");
-		label.setBounds(60, 60, 84, 18);
-		this.add(label);
+		JLabel id = new JLabel("订单编号:");
+		id.setBounds(60, 60, 84, 18);
+		this.add(id);
 
-		label2=new JLabel();
-		label2.setBounds(160, 13, 138, 35);
-		this.add(label2);
+		state1=new JLabel();
+		state1.setBounds(163, 27, 132, 18);
+		this.add(state1);
 
 		JLabel label_1 = new JLabel("历史轨迹");
-		label_1.setBounds(260, 90, 72, 18);
+		label_1.setBounds(344, 92, 72, 18);
 		this.add(label_1);
 
 		textArea = new JTextArea();
 
-		textArea.setBounds(100, 120, 519, 307);
+		textArea.setBounds(99, 131, 519, 307);
 		this.add(textArea);
 
-		JButton button = new JButton("返回");
+		button = new JButton("返回");
 		button.setBounds(700, 499, 92, 27);
 		this.add(button);
 		button.addActionListener(listen);
+
+		id1 = new JLabel();
+		id1.setBounds(163, 62, 132, 18);
+		add(id1);
+
 	}
 	public JLabel getLabel1(){
 		return label1;
 	}
 	public JLabel getLabel2(){
-		return label2;
+		return state1;
 	}
 
-	public JTextArea getText(){
-		return textArea;
+	public void  setText(String s){
+	    textArea.append(s);;
 	}
 	private void setImage() {
 	}
-
 }

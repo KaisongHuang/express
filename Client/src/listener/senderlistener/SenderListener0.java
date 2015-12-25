@@ -27,10 +27,10 @@ public class SenderListener0 implements ActionListener{
 		search=s;
 		sender=new Sender();
 		search1=new SearchUI1();
+		search.add(search1);
 		search1.setVisible(false);
 		label1=search1.getLabel1();
 		label2=search1.getLabel2();
-		text=search1.getText();
 	}
 	public void actionPerformed(ActionEvent e) {
 		String s=search.gettextFieldContent();
@@ -68,36 +68,35 @@ public class SenderListener0 implements ActionListener{
 
 		sellingAreaID = list1.get(0);
 		centreID = list1.get(1);
-	
+
 
 		int selling = list2.get(0);
 		int centre = list2.get(1);
-	
-		int courier = list2.get(2);
 
-		text.setText("已揽件");
+
+		search1.setText("已揽件");
 
 		// 判断是否达到发货地的营业厅
-		if (!sellingAreaID.equals(null))
-			text.append("\n" + "快件在营业厅:" + sellingAreaID.substring(0, 6) + "准备装车……");
+		if (!sellingAreaID.equals("0"))
+			search1.setText("\n" + "快件在营业厅:" + sellingAreaID.substring(0, 6) + "准备装车……");
 		// 判断是否达到发货地中转中心
-		if (!centreID.equals(null))
-			text.append("\n" + "快件已到达中转中心:" + centreID.substring(0, 6));
+		if (!centreID.equals("0"))
+			search1.setText("\n" + "快件已到达中转中心:" + centreID.substring(0, 6));
 		// 判断是否发往收货地中转中心
 		if (centre >= 2)
-			text.append("\n" + "快递已离开中转中心" + centreID.substring(0, 6) + "发往下一中转中心");
+			search1.setText("\n" + "快递已离开中转中心" + centreID.substring(0, 6) + "发往下一中转中心");
 		// 判断是否到达收货地中转中心
 		if (centre >= 3)
-			text.append("\n" + "快件已到达中转中心:" + centreID.substring(6, 12));
+			search1.setText("\n" + "快件已到达中转中心:" + centreID.substring(6, 12));
 		// 判断是否发往收货地营业厅
 		if (centre == 4)
-			text.append("\n" + "快件已离开中转中心:" + centreID.substring(6, 12) + "正发往营业厅");
+			search1.setText("\n" + "快件已离开中转中心:" + centreID.substring(6, 12) + "正发往营业厅");
 		// 判断是否达到收货地营业厅
 		if (sellingAreaID.length() == 12)
-			text.append("\n" + "快件已到达营业厅:" + sellingAreaID.substring(6, 12) + "准备派送");
+			search1.setText("\n" + "快件已到达营业厅:" + sellingAreaID.substring(6, 12) + "准备派送");
 		// 判断是否派件
 		if (selling == 3)
-			text.append("\n" + "快递员正在为您派件，请保持电话畅通。");
+			search1.setText("\n" + "快递员正在为您派件，请保持电话畅通。");
 
 	}
 
