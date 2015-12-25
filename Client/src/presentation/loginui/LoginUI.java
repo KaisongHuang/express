@@ -31,6 +31,7 @@ public class LoginUI extends JFrame {
 	private JTextField textField;
 	private JPasswordField textField1;
 	private JButton Login;
+	private JButton Search;
 	private LoginListener listener;
 	private JButton logout;
 	private JLabel lblUserName;
@@ -75,20 +76,20 @@ public class LoginUI extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(158, 211, 240));
 		lblUserName = new JLabel("用户名:");
-		lblUserName.setBounds(380, 233, 50, 16);
+		lblUserName.setBounds(311, 232, 50, 16);
 		contentPane.add(lblUserName);
 
 		lblPassword = new JLabel("密码:");
-		lblPassword.setBounds(380, 301, 50, 16);
+		lblPassword.setBounds(311, 300, 50, 16);
 		contentPane.add(lblPassword);
 
 		textField = new JTextField();
-		textField.setBounds(442, 227, 134, 28);
+		textField.setBounds(380, 227, 196, 28);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		textField1 = new JPasswordField();
-		textField1.setBounds(442, 295, 134, 28);
+		textField1.setBounds(380, 295, 196, 28);
 		contentPane.add(textField1);
 		textField1.setColumns(10);
 
@@ -98,11 +99,17 @@ public class LoginUI extends JFrame {
 		logout.addActionListener(listener);
 
 		Login = new JButton("登录");
-		Login.setBounds(460, 360, 100, 28);
+		Login.setBounds(476, 362, 100, 28);
 		contentPane.add(Login);
 		Login.addActionListener(listener);
 		setImage();
 		this.setVisible(true);
+
+		Search = new JButton("查询");
+		Search.setBackground(new Color(207, 248, 240));
+		Search.setBounds(311, 362, 100, 28);
+		contentPane.add(Search);
+		Search.addActionListener(listener);
 	}
 
 	private void setImage() {
@@ -121,6 +128,8 @@ public class LoginUI extends JFrame {
 		logout.setIcon(icon4);
 		logout.setContentAreaFilled(false);
 		contentPane.add(label);
+
+
 	}
 
 	public JTextField getText() {
@@ -139,4 +148,10 @@ public class LoginUI extends JFrame {
 	public JButton getLogin() {
 		return Login;
 	}
+
+	public JButton getSearch() {
+		return Search;
+	}
+
+
 }

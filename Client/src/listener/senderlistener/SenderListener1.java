@@ -14,8 +14,8 @@ public class SenderListener1 implements ActionListener{
 	     search.setVisible(false);;
          search.getLabel1().setText("");
          search.getLabel2().setText("");
-         search.getText().setText("");
-		
+         search.setText("");
+
 	}
 
 }

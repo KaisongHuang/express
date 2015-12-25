@@ -12,6 +12,7 @@ import logic.loginbl.Login;
 import logic.loginblService.LoginBlService;
 import presentation.loginui.LoginUI;
 import presentation.mainui.MainFrame;
+import presentation.senderui.SearchUI;
 import vo.AdminVO;
 import vo.EmployeeVO;
 
@@ -46,6 +47,8 @@ public class LoginListener implements ActionListener {
 			frame.setVisible(false);
 		} else if (e.getSource() == frame.getLogout()) {
 			System.exit(0);
+		} else if (e.getSource() == frame.getSearch()) {
+			new SearchUI();
 		}
 	}
 
