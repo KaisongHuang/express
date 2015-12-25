@@ -26,11 +26,11 @@ public class WarehouseListener3 implements ActionListener {
 	public WarehouseListener3(WarehouseUI3 ui) {
 		super();
 		this.ui = ui;
-//		warehouse.setAlarm(90);
+		// warehouse.setAlarm(90);
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		ResultMessage rm=null;
+		ResultMessage rm = null;
 		if (e.getSource() == ui.getButton()) {// 刷新：从数据库中读取待调整的运单
 			this.refresh();
 		} else if (!hasUI2 && e.getSource() == ui.getButton_1()) {// 确认：提示是否确认修改，是则后台修改数据并允许button2可监听，否则不做任何修改并提示修改警戒比例
@@ -41,10 +41,10 @@ public class WarehouseListener3 implements ActionListener {
 		else if (hasUI2 && e.getSource() == ui2.getButton()) {// 确认：后台数据修改
 			hasUI2 = false;
 			ArrayList<Object> ob = warehouse.showAdjustGoods();
-            if(ob==null){
-            	JOptionPane.showMessageDialog(ui, "不需要调整库存！");
-       		    return ;
-            }
+			if (ob == null) {
+				JOptionPane.showMessageDialog(ui, "不需要调整库存！");
+				return;
+			}
 			for (int i = 0; i < ob.size(); i++) {
 				InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
 				InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
@@ -59,10 +59,12 @@ public class WarehouseListener3 implements ActionListener {
 				vo.setWarehouseID(EmployeeMes.belongToWho);
 				vo.setIsCheck(0);
 
-				rm=warehouse.importGoods(vo);
+				rm = warehouse.importGoods(vo);
 				check(rm);
 			}
-
+			
+			clearTable();
+			
 			ui2.dispose();
 		} else if (hasUI2 && e.getSource() == ui2.getButton_1()) {// 取消：不做任何修改
 			hasUI2 = false;
@@ -80,7 +82,7 @@ public class WarehouseListener3 implements ActionListener {
 			;
 		else if (hasUI1 && e.getSource() == ui1.getButton()) {// 确认：修改报警比例
 			hasUI1 = false;
-			rm=warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText()));
+			rm = warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText()));
 			check(rm);
 			ui1.getTextField().setText(ui1.getTextField_1().getText());
 			ui1.dispose();
@@ -90,10 +92,16 @@ public class WarehouseListener3 implements ActionListener {
 			ui1.dispose();
 		}
 	}
+
+	private void clearTable(){
+		for (int i = 0; i < ui.getModel().getRowCount(); i++)
+			ui.getModel().removeRow(0);
+	}
 	
-	private void refresh(){
+	private void refresh() {
 		ArrayList<Object> ob = warehouse.showAdjustGoods();
-		Vector<Object> data = new Vector<Object>();
+
+		clearTable();
 
 		for (int i = 0; i < ob.size(); i++) {
 			Vector<Object> item = new Vector<Object>();
@@ -108,23 +116,23 @@ public class WarehouseListener3 implements ActionListener {
 			item.add(vo2.getPos_pai());
 			item.add(vo2.getPos_jia());
 			item.add(vo2.getPos_wei());
-			data.add(item);
+			ui.getModel().addRow(item);
 		}
 
-		ui.setData(data);
 	}
-	private void check(ResultMessage rm){
-		String dialog=null;
-		if(rm==ResultMessage.FunctionError){
-			dialog="网络连接出现了问题，请检查您的网络！";
-		}else if(rm==ResultMessage.Fail)
-			dialog="数据更新失败！";
-		else if(rm==ResultMessage.Success){
-			dialog="数据更新成功！";
-		}else if(rm==ResultMessage.UpdateFail){
-			dialog="请不要重复创建单据";
+
+	private void check(ResultMessage rm) {
+		String dialog = null;
+		if (rm == ResultMessage.FunctionError) {
+			dialog = "网络连接出现了问题，请检查您的网络！";
+		} else if (rm == ResultMessage.Fail)
+			dialog = "数据更新失败！";
+		else if (rm == ResultMessage.Success) {
+			dialog = "数据更新成功！";
+		} else if (rm == ResultMessage.UpdateFail) {
+			dialog = "请不要重复创建单据";
 		}
-		if(dialog!=null)
+		if (dialog != null)
 			JOptionPane.showMessageDialog(ui, dialog);
 	}
 }
