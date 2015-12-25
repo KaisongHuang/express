@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
-import javax.swing.JTextField;
 
 import listener.sellingarealistener.SellingAreaListener3_1;
+import presentation.MySwing.MyTextField;
 
 
 public class SellingAreaUI3_1 extends JPanel{
@@ -23,7 +23,7 @@ public class SellingAreaUI3_1 extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTextField textField;
+	private MyTextField textField;
 
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
@@ -78,7 +78,7 @@ public class SellingAreaUI3_1 extends JPanel{
 		lblNewLabel_1.setBounds(44, 62, 100, 18);
 		this.add(lblNewLabel_1);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(154, 56, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -149,11 +149,11 @@ public class SellingAreaUI3_1 extends JPanel{
 	}
 
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 

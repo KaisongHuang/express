@@ -4,14 +4,13 @@
 
 package presentation.managerui;
 
-import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener4_2;
+import presentation.MySwing.MyTextField;
 
 public class ManagerUI4_2 extends JPanel {
 
@@ -19,12 +18,12 @@ public class ManagerUI4_2 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_2;
-	private JTextField textField_4;
-	private JTextField textField_6;
-	private JTextField textField_8;
-	private JTextField textField_1;
+	private MyTextField textField;
+	private MyTextField textField_2;
+	private MyTextField textField_4;
+	private MyTextField textField_6;
+	private MyTextField textField_8;
+	private MyTextField textField_1;
 
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
@@ -62,27 +61,27 @@ public class ManagerUI4_2 extends JPanel {
 		lblNewLabel_1.setBounds(435, 10, 100, 18);
 		panel_6.add(lblNewLabel_1);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(388, 40, 122, 30);
 		panel_6.add(textField);
 		textField.setColumns(10);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(388, 69, 122, 30);
 		panel_6.add(textField_2);
 		textField_2.setColumns(10);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setBounds(388, 102, 122, 30);
 		panel_6.add(textField_4);
 		textField_4.setColumns(10);
 
-		textField_6 = new JTextField();
+		textField_6 = new MyTextField();
 		textField_6.setBounds(388, 134, 122, 30);
 		panel_6.add(textField_6);
 		textField_6.setColumns(10);
 
-		textField_8 = new JTextField();
+		textField_8 = new MyTextField();
 		textField_8.setBounds(388, 167, 122, 30);
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
@@ -151,7 +150,7 @@ public class ManagerUI4_2 extends JPanel {
 		label.setBounds(86, 49, 150, 18);
 		add(label);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(217, 43, 122, 30);
 		add(textField_1);
 		textField_1.setColumns(10);

@@ -8,9 +8,9 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener1_4;
+import presentation.MySwing.MyTextField;
 
 public class ManagerUI1_4 extends JPanel {
 
@@ -18,8 +18,8 @@ public class ManagerUI1_4 extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_2;
+	private MyTextField textField;
+	private MyTextField textField_2;
 
 	private JButton btnNewButton_15;
 	private JButton btnNewButton_16;
@@ -59,7 +59,7 @@ public class ManagerUI1_4 extends JPanel {
 		lblNewLabel_2.setBounds(17, 54, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(98, 48, 122, 30);
 		panel_6.add(textField);
 		textField.setColumns(10);
@@ -68,7 +68,7 @@ public class ManagerUI1_4 extends JPanel {
 		lblNewLabel_4.setBounds(270, 54, 100, 18);
 		panel_6.add(lblNewLabel_4);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(347, 48, 122, 30);
 		panel_6.add(textField_2);
 		textField_2.setColumns(10);
@@ -86,19 +86,19 @@ public class ManagerUI1_4 extends JPanel {
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
+	public void setTextField_2(MyTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 

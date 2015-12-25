@@ -6,15 +6,12 @@ package presentation.warehouseui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Image;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.warehouselistener.WarehouseListener1;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
@@ -27,9 +24,9 @@ public class WarehouseUI1 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
 	private JButton exportButton;
 	private JButton importButton;
 	private JButton button_3;
@@ -53,10 +50,10 @@ public class WarehouseUI1 extends JPanel {
 	private CardLayout card;
 	private JPanel importPanel;
 	private JLabel label_7;
-	private JTextField textField_3;
+	private MyTextField textField_3;
 	private JLabel label_8;
 	private JLabel label_9;
-	private JTextField textField_4;
+	private MyTextField textField_4;
 	private JComboBox<Object> comboBox_4;
 	private JLabel label_10;
 	private JComboBox<Object> comboBox_5;
@@ -111,7 +108,7 @@ public class WarehouseUI1 extends JPanel {
 		label.setBounds(6, 20, 57, 15);
 		exportPanel.add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(75, 13, 122, 27);
 		exportPanel.add(textField);
 		textField.setColumns(10);
@@ -124,7 +121,7 @@ public class WarehouseUI1 extends JPanel {
 		label_2.setBounds(6, 58, 57, 15);
 		exportPanel.add(label_2);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(75, 52, 122, 27);
 		exportPanel.add(textField_1);
 		textField_1.setColumns(10);
@@ -171,7 +168,7 @@ public class WarehouseUI1 extends JPanel {
 		lblNewLabel_1.setBounds(6, 98, 70, 15);
 		exportPanel.add(lblNewLabel_1);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(75, 91, 122, 27);
 		exportPanel.add(textField_2);
 		textField_2.setColumns(10);
@@ -199,7 +196,7 @@ public class WarehouseUI1 extends JPanel {
 		label_7.setBounds(6, 12, 57, 15);
 		importPanel.add(label_7);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(75, 6, 122, 27);
 		importPanel.add(textField_3);
@@ -212,7 +209,7 @@ public class WarehouseUI1 extends JPanel {
 		label_9.setBounds(247, 12, 57, 15);
 		importPanel.add(label_9);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(300, 6, 122, 27);
 		importPanel.add(textField_4);
@@ -355,15 +352,15 @@ public class WarehouseUI1 extends JPanel {
 		return this.getCardLayout();
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
@@ -443,7 +440,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_7;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
@@ -455,7 +452,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_9;
 	}
 
-	public JTextField getTextField_4() {
+	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 

@@ -6,17 +6,13 @@ package presentation.courierui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 //历史轨迹及货物状态
 public class CourierUI4 extends JPanel {
@@ -26,7 +22,7 @@ public class CourierUI4 extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTextField textField;
+	private MyTextField textField;
 
 	private JTextArea textArea;
 
@@ -39,7 +35,6 @@ public class CourierUI4 extends JPanel {
 	private MyButton search;
 	private int width;
 	private int height;
-    private JLabel label1;
 	/**
 	 * Create the application.
 	 *
@@ -94,7 +89,7 @@ public class CourierUI4 extends JPanel {
 		lblNewLabel_6.setBounds(178, 73, 100, 18);
 		this.add(lblNewLabel_6);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(261, 73, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -107,11 +102,11 @@ public class CourierUI4 extends JPanel {
 
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 

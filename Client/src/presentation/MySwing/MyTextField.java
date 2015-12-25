@@ -15,6 +15,11 @@ public class MyTextField extends JTextField {
 		super();
 		setOpaque(false); 
 	}
+	
+	public MyTextField(String text) {
+		super(text);
+		setOpaque(false); 
+	}
 
 	protected void paintComponent(Graphics g) {
 		g.setColor(getBackground());
