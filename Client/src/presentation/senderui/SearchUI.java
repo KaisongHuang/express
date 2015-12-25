@@ -10,11 +10,12 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 import java.awt.Color;
 
 
-public class SearchUI extends JPanel {
+public class SearchUI extends JFrame {
 
 	/**
 	 *
@@ -28,13 +29,13 @@ public class SearchUI extends JPanel {
 		this.setBounds(200,100,900,600);
 		this.setLayout(null);
 		label = new JLabel("订单编号：");
-	
 
-		label.setBounds(152, 206, 200, 200);
-		ImageIcon icon1 = new ImageIcon(getClass().getResource("./image/search.png"));
-		icon1.setImage(icon1.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
-		label.setIcon(icon1);
-		this.add(label);
+
+//		label.setBounds(152, 206, 200, 200);
+//		ImageIcon icon1 = new ImageIcon(getClass().getResource("./image/search.png"));
+//		icon1.setImage(icon1.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+//		label.setIcon(icon1);
+//		this.add(label);
 
 		textField = new JTextField();
 		textField.setBounds(295, 203, 273, 24);
@@ -48,6 +49,8 @@ public class SearchUI extends JPanel {
 		btnNewButton.setBounds(650, 200, 113, 27);
 		this.add(btnNewButton);
 		this.setBackground(new Color(30,30,30));
+
+		this.setVisible(true);
 	}
 
 	public String gettextFieldContent(){

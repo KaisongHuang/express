@@ -34,7 +34,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	public CourierListener4(CourierUI4 ui) {
 		super();
 		this.ui = ui;
-		
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -60,15 +60,15 @@ public class CourierListener4 implements MouseListener, ActionListener {
 		int selling = list2.get(0);
 		int centre = list2.get(1);
 		// int warehouse = list2.get(2);
-		int courier = list2.get(3);
+//		int courier = list2.get(3);
 
 		ui.setAreaContent("已揽件");
 
 		// 判断是否达到发货地的营业厅
-		if (!sellingAreaID.equals(null))
+		if (!sellingAreaID.equals("0"))
 			ui.setAreaContent("\n" + "快件在营业厅:" + sellingAreaID.substring(0, 6) + "准备装车……");
 		// 判断是否达到发货地中转中心
-		if (!centreID.equals(null))
+		if (!centreID.equals("0"))
 			ui.setAreaContent("\n" + "快件已到达中转中心:" + centreID.substring(0, 6));
 		// 判断是否发往收货地中转中心
 		if (centre == 2)

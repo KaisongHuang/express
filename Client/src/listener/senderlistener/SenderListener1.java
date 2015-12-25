@@ -11,11 +11,10 @@ public class SenderListener1 implements ActionListener{
     	search=s;
     }
 	public void actionPerformed(ActionEvent e) {
-	     search.setVisible(false);;
-         search.getLabel1().setText("");
-         search.getLabel2().setText("");
-         search.getText().setText("");
-		
+	     search.setVisible(false);
+	     search.setID("");
+         search.setLabel2("");
+         search.setText("");
 	}
 
 }
