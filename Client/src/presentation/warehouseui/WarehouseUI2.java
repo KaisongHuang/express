@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener2;
 import presentation.MySwing.MyTable;
@@ -45,6 +46,7 @@ public class WarehouseUI2 extends JPanel {
 	private JTextArea textArea_1;
 	private JTextArea textArea_2;
 	private MyTable table;
+	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
@@ -71,6 +73,7 @@ public class WarehouseUI2 extends JPanel {
 		table.setEditableColumn(-1);
 		table.setEditableRow(-1);
 		table.setFocusable(false);
+		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(34, 29, 444, 300);
 		this.add(JSP);
@@ -179,6 +182,14 @@ public class WarehouseUI2 extends JPanel {
 		add(textArea_2);
 	}
 
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+	public void setModel(DefaultTableModel model) {
+		this.model = model;
+	}
+
 	public MyTable getTable() {
 		return table;
 	}
@@ -284,6 +295,7 @@ public class WarehouseUI2 extends JPanel {
 	public JTextArea getTextArea_2() {
 		return textArea_2;
 	}
+
 	private void setImage() {
 	}
 }
