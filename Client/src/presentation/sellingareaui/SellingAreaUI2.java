@@ -14,12 +14,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import listener.sellingarealistener.SellingAreaListener20;
+import presentation.MySwing.MyTable;
+
 import javax.swing.JComboBox;
 
 public class SellingAreaUI2 extends JPanel {
@@ -30,12 +31,12 @@ public class SellingAreaUI2 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private int width;
 	private int height;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
 	private DefaultTableModel model;
-	private JTable table1;
+	private MyTable table1;
 	private JScrollPane JSP1;
 	private Vector<String> name1;
 	private Vector<Object> data1;
@@ -78,9 +79,14 @@ public class SellingAreaUI2 extends JPanel {
 
 		String names[] = { "收款日期", "收款金额", "收款快递员" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.addMouseListener(sellingarealistener);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(28, 58, 370, 298);
@@ -88,9 +94,14 @@ public class SellingAreaUI2 extends JPanel {
 
 		String names1[] = { "快递订单条形码号" };
 		name1 = new Vector<String>(Arrays.asList(names1));
-		table1 = new JTable(data1, name1);
+		table1 = new MyTable(data1, name1);
 		table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table1.addMouseListener(sellingarealistener);
+		table1.setSelectionForeground(Color.BLACK);
+		table1.setSelectionBackground(new Color(210, 240, 255));
+		table1.setEditableColumn(-1);
+		table1.setEditableRow(-1);
+		table1.setFocusable(false);
 		model1 = (DefaultTableModel) table1.getModel();
 		JSP1 = new JScrollPane(table1);
 		JSP1.setBounds(398, 58, 236, 298);
@@ -176,7 +187,7 @@ public class SellingAreaUI2 extends JPanel {
 		this.data1 = data1;
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
@@ -188,7 +199,7 @@ public class SellingAreaUI2 extends JPanel {
 		return model;
 	}
 
-	public JTable getTable1() {
+	public MyTable getTable1() {
 		return table1;
 	}
 

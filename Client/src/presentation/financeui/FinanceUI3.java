@@ -6,9 +6,9 @@ package presentation.financeui;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import listener.financelistener.FinanceListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 import javax.swing.JLabel;
 
@@ -40,11 +40,11 @@ public class FinanceUI3 extends JPanel {
 	private MyButton search;
 	private Vector<String> name1;
 	private Vector<Object> data1;
-	private JTable table1;
+	private MyTable table1;
 	private JScrollPane JSP1;
 	private Vector<String> name2;
 	private Vector<Object> data2;
-	private JTable table2;
+	private MyTable table2;
 	private JScrollPane JSP2;
 	FinanceListener3 financeListener3;
 	private JLabel label1;
@@ -65,14 +65,24 @@ public class FinanceUI3 extends JPanel {
 
 		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name1 = new Vector<String>(Arrays.asList(names1));
-		table1 = new JTable(data1, name1);
+		table1 = new MyTable(data1, name1);
+		table1.setSelectionForeground(Color.BLACK);
+		table1.setSelectionBackground(new Color(210, 240, 255));
+		table1.setEditableColumn(-1);
+		table1.setEditableRow(-1);
+		table1.setFocusable(false);
 		JSP1 = new JScrollPane(table1);
 		JSP1.setBounds(90, 79, 530, 175);
 		this.add(JSP1);
 
 		String names2[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
 		name2 = new Vector<String>(Arrays.asList(names2));
-		table2 = new JTable(data2, name2);
+		table2 = new MyTable(data2, name2);
+		table2.setSelectionForeground(Color.BLACK);
+		table2.setSelectionBackground(new Color(210, 240, 255));
+		table2.setEditableColumn(-1);
+		table2.setEditableRow(-1);
+		table2.setFocusable(false);
 		JSP2 = new JScrollPane(table2);
 		JSP2.setBounds(90, 257, 530, 175);
 		this.add(JSP2);
@@ -87,6 +97,7 @@ public class FinanceUI3 extends JPanel {
 
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(159, 20, 80, 25);
+		comboBox.addItem("2015");
 		this.add(comboBox);
 
 		lblNewLabel_3 = new JLabel("年");
@@ -95,6 +106,7 @@ public class FinanceUI3 extends JPanel {
 
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(278, 20, 80, 25);
+		comboBox_1.addItem("01");
 		this.add(comboBox_1);
 
 		label = new JLabel("月");
@@ -103,6 +115,7 @@ public class FinanceUI3 extends JPanel {
 
 		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(402, 20, 80, 25);
+		comboBox_2.addItem("01");
 		this.add(comboBox_2);
 
 		lblRi = new JLabel("日");
@@ -111,14 +124,17 @@ public class FinanceUI3 extends JPanel {
 
 		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(159, 47, 80, 25);
+		comboBox_3.addItem("2015");
 		this.add(comboBox_3);
 
 		comboBox_4 = new JComboBox<String>();
 		comboBox_4.setBounds(278, 47, 80, 25);
+		comboBox_4.addItem("01");
 		this.add(comboBox_4);
 
 		comboBox_5 = new JComboBox<String>();
 		comboBox_5.setBounds(402, 47, 80, 25);
+		comboBox_5.addItem("01");
 		this.add(comboBox_5);
 
 		label_1 = new JLabel("年");
@@ -140,11 +156,11 @@ public class FinanceUI3 extends JPanel {
 		this.add(search);
 	}
 
-	public JTable getTable1() {
+	public MyTable getTable1() {
 		return table1;
 	}
 
-	public JTable getTable2() {
+	public MyTable getTable2() {
 		return table2;
 	}
 

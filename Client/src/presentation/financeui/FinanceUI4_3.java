@@ -2,7 +2,6 @@ package presentation.financeui;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JLabel;
 
 import java.awt.Color;
@@ -18,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 public class FinanceUI4_3 extends JPanel {
 
@@ -30,7 +30,7 @@ public class FinanceUI4_3 extends JPanel {
 	private MyButton button_4;
 	private MyButton button_5;
 	private MyButton button_6;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
@@ -53,9 +53,14 @@ public class FinanceUI4_3 extends JPanel {
 
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.addMouseListener(financeListener4);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(82, 176, 340, 200);
@@ -126,7 +131,7 @@ public class FinanceUI4_3 extends JPanel {
 
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 

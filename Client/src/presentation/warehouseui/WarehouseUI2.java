@@ -7,7 +7,6 @@ package presentation.warehouseui;
 import javax.swing.JPanel;
 
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JLabel;
 
 import java.awt.Image;
@@ -21,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 
 import listener.warehouselistener.WarehouseListener2;
+import presentation.MySwing.MyTable;
 
 public class WarehouseUI2 extends JPanel {
 	private JLabel label_8;
@@ -35,16 +35,16 @@ public class WarehouseUI2 extends JPanel {
 	private JLabel label_17;
 	private JButton button_1;
 	private JButton button_2;
-	private JComboBox<?> comboBox;
-	private JComboBox<?> comboBox_1;
-	private JComboBox<?> comboBox_2;
-	private JComboBox<?> comboBox_3;
-	private JComboBox<?> comboBox_4;
-	private JComboBox<?> comboBox_5;
+	private JComboBox<String> comboBox;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox_2;
+	private JComboBox<String> comboBox_3;
+	private JComboBox<String> comboBox_4;
+	private JComboBox<String> comboBox_5;
 	private JTextArea textArea;
 	private JTextArea textArea_1;
 	private JTextArea textArea_2;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
@@ -65,7 +65,12 @@ public class WarehouseUI2 extends JPanel {
 		this.setBackground(Color.white);
 		String names[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		JSP = new JScrollPane(table);
 		JSP.setBounds(34, 29, 444, 300);
 		this.add(JSP);
@@ -82,48 +87,54 @@ public class WarehouseUI2 extends JPanel {
 		label_10.setBounds(490, 130, 57, 15);
 		this.add(label_10);
 
-		comboBox = new JComboBox<Object>();
+		comboBox = new JComboBox<String>();
 		comboBox.setBounds(545, 98, 64, 25);
+		comboBox.addItem("2015");
 		this.add(comboBox);
 
 		label_11 = new JLabel("年");
 		label_11.setBounds(608, 103, 12, 15);
 		this.add(label_11);
 
-		comboBox_1 = new JComboBox<Object>();
+		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(621, 98, 44, 25);
+		comboBox_1.addItem("01");
 		this.add(comboBox_1);
 
 		label_12 = new JLabel("月");
 		label_12.setBounds(663, 103, 12, 15);
 		this.add(label_12);
 
-		comboBox_2 = new JComboBox<Object>();
+		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(677, 98, 44, 25);
+		comboBox_2.addItem("01");
 		this.add(comboBox_2);
 
 		label_13 = new JLabel("日");
 		label_13.setBounds(720, 103, 12, 15);
 		this.add(label_13);
 
-		comboBox_3 = new JComboBox<Object>();
+		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(545, 125, 64, 25);
+		comboBox_3.addItem("2015");
 		this.add(comboBox_3);
 
 		label_14 = new JLabel("年");
 		label_14.setBounds(608, 130, 12, 15);
 		this.add(label_14);
 
-		comboBox_4 = new JComboBox<Object>();
+		comboBox_4 = new JComboBox<String>();
 		comboBox_4.setBounds(621, 125, 44, 25);
+		comboBox_4.addItem("01");
 		this.add(comboBox_4);
 
 		label_15 = new JLabel("月");
 		label_15.setBounds(663, 130, 12, 15);
 		this.add(label_15);
 
-		comboBox_5 = new JComboBox<Object>();
+		comboBox_5 = new JComboBox<String>();
 		comboBox_5.setBounds(677, 125, 44, 25);
+		comboBox_5.addItem("01");
 		this.add(comboBox_5);
 
 		label_16 = new JLabel("日");
@@ -168,7 +179,7 @@ public class WarehouseUI2 extends JPanel {
 		add(textArea_2);
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
@@ -220,27 +231,27 @@ public class WarehouseUI2 extends JPanel {
 		return button_2;
 	}
 
-	public JComboBox<?> getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public JComboBox<?> getComboBox_1() {
+	public JComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<?> getComboBox_2() {
+	public JComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<?> getComboBox_3() {
+	public JComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public JComboBox<?> getComboBox_4() {
+	public JComboBox<String> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public JComboBox<?> getComboBox_5() {
+	public JComboBox<String> getComboBox_5() {
 		return comboBox_5;
 	}
 
