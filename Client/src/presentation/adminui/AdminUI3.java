@@ -7,15 +7,11 @@ package presentation.adminui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import java.awt.Color;
 
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import listener.adminlistener.AdminListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 
 public class AdminUI3 extends JPanel{
@@ -25,9 +21,9 @@ public class AdminUI3 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
 
 	private MyButton confirm;
 	private MyButton cancle;
@@ -71,17 +67,17 @@ public class AdminUI3 extends JPanel{
 		label_2.setBounds(53, 91, 80, 16);
 		this.add(label_2);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(139, 85, 134, 28);
 		this.add(textField);
 		textField.setColumns(10);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(139, 57, 134, 28);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(139, 29, 134, 28);
 		this.add(textField_2);
 		textField_2.setColumns(10);
@@ -103,27 +99,27 @@ public class AdminUI3 extends JPanel{
 
 
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
+	public void setTextField_1(MyTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
+	public void setTextField_2(MyTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 

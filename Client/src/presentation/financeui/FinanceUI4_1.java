@@ -37,7 +37,6 @@ public class FinanceUI4_1 extends JPanel {
 	FinanceListener4 financeListener4;
 	private int height = 600;
 	private int width = 900;
-	private JLabel label1;
 
 	/**
 	 * Create the panel.

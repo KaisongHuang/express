@@ -9,16 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import java.awt.Color;
-
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
 import listener.courierlistener.CourierListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
 
@@ -30,25 +23,25 @@ public class CourierUI extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_18;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
+	private MyTextField textField_3;
+	private MyTextField textField_4;
+	private MyTextField textField_5;
+	private MyTextField textField_6;
+	private MyTextField textField_7;
+	private MyTextField textField_8;
+	private MyTextField textField_9;
+	private MyTextField textField_10;
+	private MyTextField textField_11;
+	private MyTextField textField_12;
+	private MyTextField textField_13;
+	private MyTextField textField_14;
+	private MyTextField textField_15;
+	private MyTextField textField_16;
+	private MyTextField textField_17;
+	private MyTextField textField_18;
 	
 
 	CourierListener0 courierlistener;
@@ -92,7 +85,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_2.setBounds(10, 25, 84, 30);
 		this.add(lblNewLabel_2);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(83, 26, 121, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -101,7 +94,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_3.setBounds(216, 28, 65, 24);
 		this.add(lblNewLabel_3);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(253, 25, 65, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -110,7 +103,7 @@ public class CourierUI extends JPanel{
 		label.setBounds(9, 63,65, 27);
 		this.add(label);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(83, 61, 121, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
@@ -119,7 +112,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_4.setBounds(216, 64, 72, 24);
 		this.add(lblNewLabel_4);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(253, 62, 122, 29);
 		this.add(textField_3);
 		textField_3.setColumns(10);
@@ -128,7 +121,7 @@ public class CourierUI extends JPanel{
 		label_1.setBounds(387, 66, 65, 21);
 		this.add(label_1);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setBounds(429, 61, 154, 30);
 		this.add(textField_4);
 		textField_4.setColumns(10);
@@ -141,7 +134,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_6.setBounds(10, 117, 84, 27);
 		this.add(lblNewLabel_6);
 
-		textField_5 = new JTextField();
+		textField_5 = new MyTextField();
 		textField_5.setBounds(83, 114, 121, 30);
 		this.add(textField_5);
 		textField_5.setColumns(10);
@@ -150,7 +143,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_7.setBounds(216, 117, 65, 27);
 		this.add(lblNewLabel_7);
 
-		textField_6 = new JTextField();
+		textField_6 = new MyTextField();
 		textField_6.setBounds(253, 115, 65, 30);
 		this.add(textField_6);
 		textField_6.setColumns(10);
@@ -159,7 +152,7 @@ public class CourierUI extends JPanel{
 		label_2.setBounds(10, 163, 65, 24);
 		this.add(label_2);
 
-		textField_7 = new JTextField();
+		textField_7 = new MyTextField();
 		textField_7.setBounds(83, 160, 122, 30);
 		this.add(textField_7);
 		textField_7.setColumns(10);
@@ -168,7 +161,7 @@ public class CourierUI extends JPanel{
 		lblNewlabel.setBounds(216, 163, 73, 25);
 		this.add(lblNewlabel);
 
-		textField_8 = new JTextField();
+		textField_8 = new MyTextField();
 		textField_8.setBounds(253, 160, 122, 30);
 		this.add(textField_8);
 		textField_8.setColumns(10);
@@ -177,7 +170,7 @@ public class CourierUI extends JPanel{
 		label_3.setBounds(387, 164, 72, 22);
 		this.add(label_3);
 
-		textField_9 = new JTextField();
+		textField_9 = new MyTextField();
 		textField_9.setBounds(429, 160, 154, 30);
 		this.add(textField_9);
 		textField_9.setColumns(10);
@@ -190,7 +183,7 @@ public class CourierUI extends JPanel{
 		label_5.setBounds(10, 226, 72, 24);
 		this.add(label_5);
 
-		textField_10 = new JTextField();
+		textField_10 = new MyTextField();
 		textField_10.setBounds(83, 220, 121, 30);
 		this.add(textField_10);
 		textField_10.setColumns(10);
@@ -199,7 +192,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_8.setBounds(216, 226, 72, 24);
 		this.add(lblNewLabel_8);
 
-		textField_11 = new JTextField();
+		textField_11 = new MyTextField();
 		textField_11.setBounds(287, 224, 122, 30);
 		this.add(textField_11);
 		textField_11.setColumns(10);
@@ -208,7 +201,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_9.setBounds(461, 228, 65, 21);
 		this.add(lblNewLabel_9);
 
-		textField_12 = new JTextField();
+		textField_12 = new MyTextField();
 		textField_12.setBounds(511, 223, 122, 30);
 		this.add(textField_12);
 		textField_12.setColumns(10);
@@ -217,7 +210,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_10.setBounds(10, 265, 72, 25);
 		this.add(lblNewLabel_10);
 
-		textField_13 = new JTextField();
+		textField_13 = new MyTextField();
 		textField_13.setBounds(83, 259, 121, 31);
 		this.add(textField_13);
 		textField_13.setColumns(10);
@@ -226,7 +219,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_11.setBounds(216, 268, 65, 22);
 		this.add(lblNewLabel_11);
 
-		textField_14 = new JTextField();
+		textField_14 = new MyTextField();
 		textField_14.setBounds(287, 263, 122, 30);
 		this.add(textField_14);
 		textField_14.setColumns(10);
@@ -263,22 +256,22 @@ public class CourierUI extends JPanel{
 		cancle.setBounds(529, 384, 100, 30);
 		this.add(cancle);
 		
-		textField_15 = new JTextField();
+		textField_15 = new MyTextField();
 		textField_15.setColumns(10);
 		textField_15.setBounds(396, 25, 65, 30);
 		add(textField_15);
 		
-		textField_16 = new JTextField();
+		textField_16 = new MyTextField();
 		textField_16.setColumns(10);
 		textField_16.setBounds(520, 25, 154, 30);
 		add(textField_16);
 		
-		textField_17 = new JTextField();
+		textField_17 = new MyTextField();
 		textField_17.setColumns(10);
 		textField_17.setBounds(396, 115, 65, 30);
 		add(textField_17);
 		
-		textField_18 = new JTextField();
+		textField_18 = new MyTextField();
 		textField_18.setColumns(10);
 		textField_18.setBounds(520, 115, 154, 30);
 		add(textField_18);
@@ -306,137 +299,137 @@ public class CourierUI extends JPanel{
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
+	public void setTextField_1(MyTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
+	public void setTextField_2(MyTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public void setTextField_3(JTextField textField_3) {
+	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
 
-	public JTextField getTextField_4() {
+	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 
-	public void setTextField_4(JTextField textField_4) {
+	public void setTextField_4(MyTextField textField_4) {
 		this.textField_4 = textField_4;
 	}
 
-	public JTextField getTextField_5() {
+	public MyTextField getTextField_5() {
 		return textField_5;
 	}
 
-	public void setTextField_5(JTextField textField_5) {
+	public void setTextField_5(MyTextField textField_5) {
 		this.textField_5 = textField_5;
 	}
 
-	public JTextField getTextField_6() {
+	public MyTextField getTextField_6() {
 		return textField_6;
 	}
 
-	public void setTextField_6(JTextField textField_6) {
+	public void setTextField_6(MyTextField textField_6) {
 		this.textField_6 = textField_6;
 	}
 
-	public JTextField getTextField_7() {
+	public MyTextField getTextField_7() {
 		return textField_7;
 	}
 
-	public void setTextField_7(JTextField textField_7) {
+	public void setTextField_7(MyTextField textField_7) {
 		this.textField_7 = textField_7;
 	}
 
-	public JTextField getTextField_8() {
+	public MyTextField getTextField_8() {
 		return textField_8;
 	}
 
-	public void setTextField_8(JTextField textField_8) {
+	public void setTextField_8(MyTextField textField_8) {
 		this.textField_8 = textField_8;
 	}
 
-	public JTextField getTextField_9() {
+	public MyTextField getTextField_9() {
 		return textField_9;
 	}
 
-	public void setTextField_9(JTextField textField_9) {
+	public void setTextField_9(MyTextField textField_9) {
 		this.textField_9 = textField_9;
 	}
 
-	public JTextField getTextField_10() {
+	public MyTextField getTextField_10() {
 		return textField_10;
 	}
 
-	public void setTextField_10(JTextField textField_10) {
+	public void setTextField_10(MyTextField textField_10) {
 		this.textField_10 = textField_10;
 	}
 
-	public JTextField getTextField_11() {
+	public MyTextField getTextField_11() {
 		return textField_11;
 	}
-	public JTextField getTextField_15() {
+	public MyTextField getTextField_15() {
 		return textField_15;
 	}
 
-	public JTextField getTextField_16() {
+	public MyTextField getTextField_16() {
 		return textField_16;
 	}
 
-	public JTextField getTextField_17() {
+	public MyTextField getTextField_17() {
 		return textField_17;
 	}
 
-	public JTextField getTextField_18() {
+	public MyTextField getTextField_18() {
 		return textField_18;
 	}
-	public void setTextField_11(JTextField textField_11) {
+	public void setTextField_11(MyTextField textField_11) {
 		this.textField_11 = textField_11;
 	}
 
-	public JTextField getTextField_12() {
+	public MyTextField getTextField_12() {
 		return textField_12;
 	}
 
-	public void setTextField_12(JTextField textField_12) {
+	public void setTextField_12(MyTextField textField_12) {
 		this.textField_12 = textField_12;
 	}
 
-	public JTextField getTextField_13() {
+	public MyTextField getTextField_13() {
 		return textField_13;
 	}
 
-	public void setTextField_13(JTextField textField_13) {
+	public void setTextField_13(MyTextField textField_13) {
 		this.textField_13 = textField_13;
 	}
 
-	public JTextField getTextField_14() {
+	public MyTextField getTextField_14() {
 		return textField_14;
 	}
 
-	public void setTextField_14(JTextField textField_14) {
+	public void setTextField_14(MyTextField textField_14) {
 		this.textField_14 = textField_14;
 	}
 

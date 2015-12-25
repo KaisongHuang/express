@@ -1,6 +1,5 @@
 package listener.managerlistener;
 
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -14,6 +13,7 @@ import _enum.ResultMessage;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 import presentation.managerui.ManagerUI0_2;
 import vo.EmployeeVO;
 
@@ -130,12 +130,12 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 
 	private void setLabel(EmployeeVO vo) {
 		// TODO Auto-generated method stub
-		ui.setTextField_1(new JTextField(vo.getEmployeeName()));
-		ui.setTextField_4(new JTextField(""+vo.getEmployeeID()));
-		ui.setTextField_2(new JTextField(vo.getEmployeePosition()));
-		ui.setTextField_3(new JTextField(vo.getBelongToWho()));
-		ui.setTextField_5(new JTextField(""+vo.getEmployeeAging()));
-		ui.setTextField_6(new JTextField(""+vo.getTimeOfWorking()));
+		ui.setTextField_1(new MyTextField(vo.getEmployeeName()));
+		ui.setTextField_4(new MyTextField(""+vo.getEmployeeID()));
+		ui.setTextField_2(new MyTextField(vo.getEmployeePosition()));
+		ui.setTextField_3(new MyTextField(vo.getBelongToWho()));
+		ui.setTextField_5(new MyTextField(""+vo.getEmployeeAging()));
+		ui.setTextField_6(new MyTextField(""+vo.getTimeOfWorking()));
 	}
 
 	public void mouseClicked(MouseEvent e) {

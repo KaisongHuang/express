@@ -5,23 +5,19 @@
 package presentation.sellingareaui;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import listener.sellingarealistener.SellingAreaListener20;
 import presentation.MySwing.MyTable;
-
-import javax.swing.JComboBox;
+import presentation.MySwing.MyTextField;
 
 public class SellingAreaUI2 extends JPanel {
 
@@ -43,10 +39,10 @@ public class SellingAreaUI2 extends JPanel {
 	private DefaultTableModel model1;
 
 	SellingAreaListener20 sellingarealistener;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
+	private MyTextField textField_3;
 	private JButton button;
 	private JButton button_1;
 	private JButton button_2;
@@ -111,7 +107,7 @@ public class SellingAreaUI2 extends JPanel {
 		label.setBounds(28, 368, 79, 16);
 		add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(100, 362, 108, 28);
 		add(textField);
 		textField.setColumns(10);
@@ -120,7 +116,7 @@ public class SellingAreaUI2 extends JPanel {
 		label_1.setBounds(28, 401, 73, 16);
 		add(label_1);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(100, 396, 108, 28);
 		add(textField_1);
 		textField_1.setColumns(10);
@@ -129,7 +125,7 @@ public class SellingAreaUI2 extends JPanel {
 		label_2.setBounds(28, 436, 88, 16);
 		add(label_2);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(100, 430, 108, 28);
 		add(textField_2);
@@ -138,7 +134,7 @@ public class SellingAreaUI2 extends JPanel {
 		label_3.setBounds(338, 368, 79, 16);
 		add(label_3);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(398, 362, 134, 28);
 		add(textField_3);
 		textField_3.setColumns(10);
@@ -215,19 +211,19 @@ public class SellingAreaUI2 extends JPanel {
 		return model1;
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 

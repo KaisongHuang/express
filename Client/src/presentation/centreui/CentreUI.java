@@ -5,16 +5,11 @@
 package presentation.centreui;
 
 import java.awt.Color;
-import java.awt.Image;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
 import listener.centrelistener.CentreListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
 
@@ -24,10 +19,10 @@ public class CentreUI extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
+	private MyTextField textField_3;
 	private JComboBox<String> comboBox;
 	private MyButton confirm;
 	private MyButton cancle;
@@ -71,7 +66,7 @@ public class CentreUI extends JPanel {
 		lblNewLabel_1.setBounds(17, 39, 100, 18);
 		panel_5.add(lblNewLabel_1);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(99, 36, 122, 30);
 		panel_5.add(textField);
 		textField.setColumns(10);
@@ -80,7 +75,7 @@ public class CentreUI extends JPanel {
 		lblNewLabel_2.setBounds(253, 42, 100, 18);
 		panel_5.add(lblNewLabel_2);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(320, 33, 122, 30);
 		panel_5.add(textField_1);
 		textField_1.setColumns(10);
@@ -89,7 +84,7 @@ public class CentreUI extends JPanel {
 		lblNewLabel_3.setBounds(17, 93, 100, 18);
 		panel_5.add(lblNewLabel_3);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(99, 87, 122, 30);
 		panel_5.add(textField_2);
 		textField_2.setColumns(10);
@@ -98,7 +93,7 @@ public class CentreUI extends JPanel {
 		lblNewLabel_4.setBounds(253, 93, 100, 18);
 		panel_5.add(lblNewLabel_4);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(320, 87, 122, 30);
 		panel_5.add(textField_3);
 		textField_3.setColumns(10);
@@ -142,35 +137,35 @@ public class CentreUI extends JPanel {
 
 	
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
+	public void setTextField_1(MyTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
+	public void setTextField_2(MyTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public void setTextField_3(JTextField textField_3) {
+	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
 

@@ -6,16 +6,11 @@ package presentation.centreui;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 import java.awt.Color;
-
-import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 
 public class CentreUI1 extends JPanel{
@@ -24,15 +19,15 @@ public class CentreUI1 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
+	private MyTextField textField_3;
+	private MyTextField textField_4;
+	private MyTextField textField_5;
+	private MyTextField textField_6;
+	private MyTextField textField_7;
+	private MyTextField textField_8;
 
 
 	private MyButton confirm;
@@ -78,27 +73,27 @@ public class CentreUI1 extends JPanel{
 		lblNewLabel_2.setBounds(19, 44, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(102, 38, 122, 30);
 		panel_6.add(textField);
 		textField.setColumns(10);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(102, 90, 122, 30);
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(102, 140, 122, 30);
 		panel_6.add(textField_2);
 		textField_2.setColumns(10);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(102, 194, 122, 30);
 		panel_6.add(textField_3);
 		textField_3.setColumns(10);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setBounds(348, 38, 122, 30);
 		panel_6.add(textField_4);
 		textField_4.setColumns(10);
@@ -131,17 +126,17 @@ public class CentreUI1 extends JPanel{
 		lblNewLabel_9.setBounds(277, 200, 100, 18);
 		panel_6.add(lblNewLabel_9);
 
-		textField_5 = new JTextField();
+		textField_5 = new MyTextField();
 		textField_5.setBounds(348, 90, 122, 30);
 		panel_6.add(textField_5);
 		textField_5.setColumns(10);
 
-		textField_6 = new JTextField();
+		textField_6 = new MyTextField();
 		textField_6.setBounds(348, 140, 122, 30);
 		panel_6.add(textField_6);
 		textField_6.setColumns(10);
 
-		textField_7 = new JTextField();
+		textField_7 = new MyTextField();
 		textField_7.setBounds(348, 194, 122, 30);
 		panel_6.add(textField_7);
 		textField_7.setColumns(10);
@@ -150,7 +145,7 @@ public class CentreUI1 extends JPanel{
 		lblNewLabel_10.setBounds(19, 243, 100, 18);
 		panel_6.add(lblNewLabel_10);
 
-		textField_8 = new JTextField();
+		textField_8 = new MyTextField();
 		textField_8.setBounds(102, 243, 122, 30);
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
@@ -169,69 +164,69 @@ public class CentreUI1 extends JPanel{
 	}
 	
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
 	
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
 	
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
 
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public void setTextField_3(JTextField textField_3) {
+	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
 
-	public JTextField getTextField_4() {
+	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 
-	public void setTextField_4(JTextField textField_4) {
+	public void setTextField_4(MyTextField textField_4) {
 		this.textField_4 = textField_4;
 	}
 
-	public JTextField getTextField_5() {
+	public MyTextField getTextField_5() {
 		return textField_5;
 	}
 
-	public void setTextField_5(JTextField textField_5) {
+	public void setTextField_5(MyTextField textField_5) {
 		this.textField_5 = textField_5;
 	}
 
-	public JTextField getTextField_6() {
+	public MyTextField getTextField_6() {
 		return textField_6;
 	}
 
-	public void setTextField_6(JTextField textField_6) {
+	public void setTextField_6(MyTextField textField_6) {
 		this.textField_6 = textField_6;
 	}
 
-	public JTextField getTextField_7() {
+	public MyTextField getTextField_7() {
 		return textField_7;
 	}
 
-	public void setTextField_7(JTextField textField_7) {
+	public void setTextField_7(MyTextField textField_7) {
 		this.textField_7 = textField_7;
 	}
 
-	public JTextField getTextField_8() {
+	public MyTextField getTextField_8() {
 		return textField_8;
 	}
 
-	public void setTextField_8(JTextField textField_8) {
+	public void setTextField_8(MyTextField textField_8) {
 		this.textField_8 = textField_8;
 	}
 

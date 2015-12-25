@@ -7,10 +7,9 @@ package presentation.managerui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import listener.managerlistener.ManagerListener1_3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 public class ManagerUI1_3 extends JPanel {
 
@@ -19,7 +18,7 @@ public class ManagerUI1_3 extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTextField textField;
+	private MyTextField textField;
 
 	
 	
@@ -55,7 +54,7 @@ public class ManagerUI1_3 extends JPanel {
 		lblNewLabel_1.setBounds(104, 63, 100, 18);
 		this.add(lblNewLabel_1);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(191, 57, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -101,11 +100,11 @@ public class ManagerUI1_3 extends JPanel {
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
