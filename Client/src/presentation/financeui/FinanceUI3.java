@@ -6,6 +6,8 @@ package presentation.financeui;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+
 import listener.financelistener.FinanceListener3;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
@@ -41,10 +43,13 @@ public class FinanceUI3 extends JPanel {
 	private Vector<String> name1;
 	private Vector<Object> data1;
 	private MyTable table1;
+	private DefaultTableModel model1;
 	private JScrollPane JSP1;
 	private Vector<String> name2;
 	private Vector<Object> data2;
 	private MyTable table2;
+	private DefaultTableModel model2;
+
 	private JScrollPane JSP2;
 	FinanceListener3 financeListener3;
 	private JLabel label1;
@@ -71,6 +76,7 @@ public class FinanceUI3 extends JPanel {
 		table1.setEditableColumn(-1);
 		table1.setEditableRow(-1);
 		table1.setFocusable(false);
+		model1 = (DefaultTableModel) table1.getModel();
 		JSP1 = new JScrollPane(table1);
 		JSP1.setBounds(90, 79, 530, 175);
 		this.add(JSP1);
@@ -83,6 +89,7 @@ public class FinanceUI3 extends JPanel {
 		table2.setEditableColumn(-1);
 		table2.setEditableRow(-1);
 		table2.setFocusable(false);
+		model2 = (DefaultTableModel) table2.getModel();
 		JSP2 = new JScrollPane(table2);
 		JSP2.setBounds(90, 257, 530, 175);
 		this.add(JSP2);
@@ -200,7 +207,11 @@ public class FinanceUI3 extends JPanel {
 		return search;
 	}
 
-	private void setImage() {
+	public DefaultTableModel getModel1() {
+		return model1;
+	}
 
+	public DefaultTableModel getModel2() {
+		return model2;
 	}
 }

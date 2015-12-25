@@ -14,6 +14,7 @@ import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
 
@@ -41,6 +42,7 @@ public class FinanceUI1 extends JPanel {
 	private JTextArea textArea;
 	private Vector<String> name;
 	private Vector<Object> data;
+	private DefaultTableModel model;
 	private MyTable table;
 	private JScrollPane JSP;
 	private int height = 900;
@@ -67,6 +69,7 @@ public class FinanceUI1 extends JPanel {
 		table.setEditableColumn(-1);
 		table.setEditableRow(-1);
 		table.setFocusable(false);
+		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(88, 84, 502, 300);
 		this.add(JSP);
@@ -131,6 +134,10 @@ public class FinanceUI1 extends JPanel {
 		textArea.setBounds(484, 389, 106, 27);
 		textArea.setEditable(false);
 		add(textArea);
+	}
+
+	public DefaultTableModel getModel() {
+		return model;
 	}
 
 	public JComboBox<String> getComboBox() {
