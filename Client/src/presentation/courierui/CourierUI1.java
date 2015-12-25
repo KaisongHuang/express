@@ -8,15 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import java.awt.Color;
-
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener1;
+import presentation.MySwing.MyTextField;
 
 public class CourierUI1 extends JPanel{
 
@@ -25,15 +20,14 @@ public class CourierUI1 extends JPanel{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
+	private MyTextField textField;
+	private MyTextField textField_1;
 
 	CourierListener1 courierlistener;
 
 	private JButton button;
 	private int width;
 	private int height;
-    private JLabel label1;
 	/**
 	 * Create the application.
 	 * @param j
@@ -70,12 +64,12 @@ public class CourierUI1 extends JPanel{
 		lblYuji.setBounds(102, 146, 55, 18);
 		this.add(lblYuji);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(212, 64, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(212, 140, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -87,13 +81,13 @@ public class CourierUI1 extends JPanel{
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
 	
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 

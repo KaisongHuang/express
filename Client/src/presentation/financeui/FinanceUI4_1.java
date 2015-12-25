@@ -6,11 +6,11 @@ import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -29,7 +29,7 @@ public class FinanceUI4_1 extends JPanel {
 	private JLabel month;
 	private JLabel day;
 	private static final long serialVersionUID = 1L;
-	private JTable table;
+	private MyTable table;
 	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -37,7 +37,6 @@ public class FinanceUI4_1 extends JPanel {
 	FinanceListener4 financeListener4;
 	private int height = 600;
 	private int width = 900;
-	private JLabel label1;
 
 	/**
 	 * Create the panel.
@@ -45,7 +44,7 @@ public class FinanceUI4_1 extends JPanel {
 	public FinanceUI4_1(FinanceListener4 financeListener4) {
 		this.financeListener4 = financeListener4;
 		initialize();
-		//this.setImage();
+		// this.setImage();
 		this.setVisible(true);
 	}
 
@@ -54,7 +53,12 @@ public class FinanceUI4_1 extends JPanel {
 		setBackground(Color.white);
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(80, 60, 444, 270);

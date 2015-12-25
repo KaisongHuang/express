@@ -6,15 +6,12 @@ package presentation.warehouseui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Image;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import listener.warehouselistener.WarehouseListener1;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
@@ -27,9 +24,9 @@ public class WarehouseUI1 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
 	private JButton exportButton;
 	private JButton importButton;
 	private JButton button_3;
@@ -53,10 +50,10 @@ public class WarehouseUI1 extends JPanel {
 	private CardLayout card;
 	private JPanel importPanel;
 	private JLabel label_7;
-	private JTextField textField_3;
+	private MyTextField textField_3;
 	private JLabel label_8;
 	private JLabel label_9;
-	private JTextField textField_4;
+	private MyTextField textField_4;
 	private JComboBox<Object> comboBox_4;
 	private JLabel label_10;
 	private JComboBox<Object> comboBox_5;
@@ -111,7 +108,7 @@ public class WarehouseUI1 extends JPanel {
 		label.setBounds(6, 20, 57, 15);
 		exportPanel.add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(75, 13, 122, 27);
 		exportPanel.add(textField);
 		textField.setColumns(10);
@@ -124,13 +121,14 @@ public class WarehouseUI1 extends JPanel {
 		label_2.setBounds(6, 58, 57, 15);
 		exportPanel.add(label_2);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(75, 52, 122, 27);
 		exportPanel.add(textField_1);
 		textField_1.setColumns(10);
 
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(75, 134, 70, 25);
+		comboBox.addItem("2015");
 		exportPanel.add(comboBox);
 
 		label_3 = new JLabel("年");
@@ -139,6 +137,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(157, 134, 70, 25);
+		comboBox_1.addItem("01");
 		exportPanel.add(comboBox_1);
 
 		label_4 = new JLabel("月");
@@ -147,6 +146,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(239, 134, 70, 25);
+		comboBox_2.addItem("01");
 		exportPanel.add(comboBox_2);
 
 		label_5 = new JLabel("日");
@@ -155,6 +155,9 @@ public class WarehouseUI1 extends JPanel {
 
 		label_6 = new JLabel("装运形式:");
 		label_6.setBounds(6, 179, 57, 15);
+		comboBox_3.addItem("飞机");
+		comboBox_3.addItem("火车");
+		comboBox_3.addItem("汽车");
 		exportPanel.add(label_6);
 
 		comboBox_3 = new JComboBox<String>();
@@ -165,7 +168,7 @@ public class WarehouseUI1 extends JPanel {
 		lblNewLabel_1.setBounds(6, 98, 70, 15);
 		exportPanel.add(lblNewLabel_1);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(75, 91, 122, 27);
 		exportPanel.add(textField_2);
 		textField_2.setColumns(10);
@@ -193,7 +196,7 @@ public class WarehouseUI1 extends JPanel {
 		label_7.setBounds(6, 12, 57, 15);
 		importPanel.add(label_7);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(75, 6, 122, 27);
 		importPanel.add(textField_3);
@@ -206,29 +209,32 @@ public class WarehouseUI1 extends JPanel {
 		label_9.setBounds(247, 12, 57, 15);
 		importPanel.add(label_9);
 
-		textField_4 = new JTextField();
+		textField_4 = new MyTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(300, 6, 122, 27);
 		importPanel.add(textField_4);
 
 		comboBox_4 = new JComboBox<Object>();
-		comboBox_4.setBounds(75, 39, 70, 25);
+		comboBox_4.setBounds(75, 39, 94, 25);
+		comboBox_4.addItem("2015");
 		importPanel.add(comboBox_4);
 
 		label_10 = new JLabel("年");
-		label_10.setBounds(145, 45, 20, 15);
+		label_10.setBounds(168, 45, 20, 15);
 		importPanel.add(label_10);
 
 		comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(200, 41, 70, 25);
+		comboBox_5.addItem("01");
 		importPanel.add(comboBox_5);
 
 		label_11 = new JLabel("月");
-		label_11.setBounds(272, 45, 20, 15);
+		label_11.setBounds(270, 45, 20, 15);
 		importPanel.add(label_11);
 
 		comboBox_6 = new JComboBox<Object>();
 		comboBox_6.setBounds(318, 41, 70, 25);
+		comboBox_6.addItem("01");
 		importPanel.add(comboBox_6);
 
 		label_12 = new JLabel("日");
@@ -248,7 +254,10 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_13);
 
 		comboBox_7 = new JComboBox<Object>();
-		comboBox_7.setBounds(75, 79, 70, 27);
+		comboBox_7.setBounds(75, 79, 94, 27);
+		comboBox_7.addItem("航运区");
+		comboBox_7.addItem("铁运区");
+		comboBox_7.addItem("汽运区");
 		importPanel.add(comboBox_7);
 
 		label_14 = new JLabel("排号:");
@@ -257,6 +266,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_8 = new JComboBox<Object>();
 		comboBox_8.setBounds(200, 79, 70, 27);
+		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
 
 		label_15 = new JLabel("架号:");
@@ -265,6 +275,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_9 = new JComboBox<Object>();
 		comboBox_9.setBounds(318, 79, 70, 27);
+		comboBox_9.addItem("1");
 		importPanel.add(comboBox_9);
 
 		label_16 = new JLabel("位号:");
@@ -273,6 +284,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_10 = new JComboBox<Object>();
 		comboBox_10.setBounds(435, 79, 70, 27);
+		comboBox_10.addItem("1");
 		importPanel.add(comboBox_10);
 
 		button_1 = new JButton("导入");
@@ -340,15 +352,15 @@ public class WarehouseUI1 extends JPanel {
 		return this.getCardLayout();
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
@@ -428,7 +440,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_7;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
@@ -440,7 +452,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_9;
 	}
 
-	public JTextField getTextField_4() {
+	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 

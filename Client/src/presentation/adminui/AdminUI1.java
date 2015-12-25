@@ -8,15 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
-import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
-import java.awt.Color;
 
 public class AdminUI1 extends JPanel {
 
@@ -24,9 +21,9 @@ public class AdminUI1 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_3;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_3;
 
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
@@ -35,7 +32,6 @@ public class AdminUI1 extends JPanel {
 
 	AdminListener1 adminlistener;
 
-	private JLabel label1;
 	private int height;
 	private int width;
 
@@ -66,7 +62,7 @@ public class AdminUI1 extends JPanel {
 		label_3.setBounds(51, 41, 61, 16);
 		this.add(label_3);
 
-		textField_3 = new JTextField();
+		textField_3 = new MyTextField();
 		textField_3.setBounds(124, 41, 134, 28);
 		this.add(textField_3);
 
@@ -74,7 +70,7 @@ public class AdminUI1 extends JPanel {
 		label.setBounds(51, 93, 61, 16);
 		this.add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(124, 93, 134, 28);
 		this.add(textField);
 		textField.setColumns(10);
@@ -83,7 +79,7 @@ public class AdminUI1 extends JPanel {
 		label_1.setBounds(51, 142, 61, 16);
 		this.add(label_1);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(124, 142, 134, 28);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -119,19 +115,19 @@ public class AdminUI1 extends JPanel {
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
+	public void setTextField_1(MyTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
@@ -159,11 +155,11 @@ public class AdminUI1 extends JPanel {
 		this.comboBox = comboBox;
 	}
 
-	public JTextField getTextField_3() {
+	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public void setTextField_3(JTextField textField_3) {
+	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
 

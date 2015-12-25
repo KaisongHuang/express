@@ -8,15 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
 import listener.courierlistener.CourierListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTextField;
 
 //收件信息输入
 public class CourierUI2 extends JPanel {
@@ -25,15 +19,14 @@ public class CourierUI2 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private MyTextField textField;
+	private MyTextField textField_1;
+	private MyTextField textField_2;
 
 	CourierListener2 courierlistener;
 	private MyButton confirm;
 	private int width;
 	private int height;
-    private JLabel label1;
 	/**
 	 * Launch the application.
 	 */
@@ -65,7 +58,7 @@ public class CourierUI2 extends JPanel {
 		label.setBounds(116, 43, 100, 18);
 		this.add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(231, 34, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
@@ -74,7 +67,7 @@ public class CourierUI2 extends JPanel {
 		label_1.setBounds(118, 109, 100, 18);
 		this.add(label_1);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setBounds(236, 105, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
@@ -83,7 +76,7 @@ public class CourierUI2 extends JPanel {
 		label_2.setBounds(115, 187, 100, 18);
 		this.add(label_2);
 
-		textField_2 = new JTextField();
+		textField_2 = new MyTextField();
 		textField_2.setBounds(240, 182, 122, 30);
 		this.add(textField_2);
 		textField_2.setColumns(10);
@@ -96,27 +89,27 @@ public class CourierUI2 extends JPanel {
 
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
+	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
+	public void setTextField_1(MyTextField textField_1) {
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTextField_2() {
+	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
+	public void setTextField_2(MyTextField textField_2) {
 		this.textField_2 = textField_2;
 	}
 

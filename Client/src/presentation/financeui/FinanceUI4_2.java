@@ -1,22 +1,19 @@
 package presentation.financeui;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.util.Arrays;
 import java.util.Vector;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
+import presentation.MySwing.MyTextField;
 
 import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 public class FinanceUI4_2 extends JPanel {
 
@@ -31,18 +28,17 @@ public class FinanceUI4_2 extends JPanel {
 	private MyButton delete;
 	private MyButton save;
 	private MyButton ret;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
 	private DefaultTableModel model;
-	private JTextField textField;
-	private JTextField textField_1;
+	private MyTextField textField;
+	private MyTextField textField_1;
 	FinanceListener4 financeListener4;
 	private MyButton clearAll;
 	private int height = 600;
 	private int width = 900;
-	private JLabel label1;
 
 	/**
 	 * Create the panel.
@@ -60,7 +56,12 @@ public class FinanceUI4_2 extends JPanel {
 	
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(33, 87, 444, 298);
@@ -70,7 +71,7 @@ public class FinanceUI4_2 extends JPanel {
 		label.setBounds(489, 147, 39, 16);
 		add(label);
 
-		textField = new JTextField();
+		textField = new MyTextField();
 		textField.setBounds(526, 141, 175, 28);
 		add(textField);
 		textField.setColumns(10);
@@ -79,7 +80,7 @@ public class FinanceUI4_2 extends JPanel {
 		label_1.setBounds(489, 187, 39, 16);
 		add(label_1);
 
-		textField_1 = new JTextField();
+		textField_1 = new MyTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(526, 181, 175, 28);
 		add(textField_1);
@@ -121,7 +122,7 @@ public class FinanceUI4_2 extends JPanel {
 		clearAll.addMouseListener(financeListener4);
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
@@ -137,11 +138,11 @@ public class FinanceUI4_2 extends JPanel {
 		return delete;
 	}
 
-	public JTextField getTextField() {
+	public MyTextField getTextField() {
 		return textField;
 	}
 
-	public JTextField getTextField_1() {
+	public MyTextField getTextField_1() {
 		return textField_1;
 	}
 
