@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-public class Button extends JButton {
+public class MyButton extends JButton {
 	/**
 	 * 
 	 */
@@ -17,11 +17,11 @@ public class Button extends JButton {
 	private boolean entered = false;
 	private JLabel label;
 
-	public Button() {
+	public MyButton() {
 		this.setBorderPainted(false);
 	}
 
-	public Button(String text) {
+	public MyButton(String text) {
 		this.setBorderPainted(false);
 		label = new JLabel();
 		label.setText(text);
@@ -29,7 +29,7 @@ public class Button extends JButton {
 		this.add(label);
 	}
 
-	public Button(String text, String path) {
+	public MyButton(String text, String path) {
 		this.setBorderPainted(false);
 		JLabel label = new JLabel();
 		ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
@@ -44,21 +44,26 @@ public class Button extends JButton {
 		if (pressed) {
 			g.setColor(new Color(158, 211, 240));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
-			label.setForeground(Color.WHITE);
+//			g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
+			label.setForeground(new Color(246,246,246));
 		}
 
 		if (entered) {
 			label.setForeground(Color.BLACK);
 			g.setColor(new Color(158, 211, 240));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
-			g.setColor(Color.WHITE);
+//			g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
+			g.setColor(new Color(246,246,246));
 			g.fillRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
 					this.getHeight() - this.getWidth() / 15);
+//			g.fillRoundRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
+//					this.getHeight() - this.getWidth() / 15,15,15);
 
 		} else if (!entered && !pressed) {
 			label.setForeground(Color.BLACK);
-			g.setColor(Color.WHITE);
+			g.setColor(new Color(246,246,246));
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
+//			g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
 		}
 	}
 

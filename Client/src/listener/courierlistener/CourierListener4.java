@@ -13,6 +13,7 @@ import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
 import logic.senderbl.Sender;
 import logic.senderblservice.SenderBlService;
+import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI4;
 import vo.HistoryVO;
 /**
@@ -26,18 +27,18 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	private String sellingAreaID;
 	private String centreID;
 	private String warehouseID;
-	private JTextArea text;
+
 	CourierBlService courier = new Courier();
 	SenderBlService sender = new Sender();
 
 	public CourierListener4(CourierUI4 ui) {
 		super();
 		this.ui = ui;
-		text = ui.getTextArea_1();
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == ui.getButton()) {
+		if (e.getSource() == ui.getSearch()) {
 			String id = ui.getTextField().getText();
 			HistoryVO vo = sender.search(id);
 			set(vo);
@@ -61,29 +62,29 @@ public class CourierListener4 implements MouseListener, ActionListener {
 		// int warehouse = list2.get(2);
 		int courier = list2.get(3);
 
-		text.setText("已揽件");
+		ui.setAreaContent("已揽件");
 
 		// 判断是否达到发货地的营业厅
 		if (!sellingAreaID.equals(null))
-			text.append("\n" + "快件在营业厅:" + sellingAreaID.substring(0, 6) + "准备装车……");
+			ui.setAreaContent("\n" + "快件在营业厅:" + sellingAreaID.substring(0, 6) + "准备装车……");
 		// 判断是否达到发货地中转中心
 		if (!centreID.equals(null))
-			text.append("\n" + "快件已到达中转中心:" + centreID.substring(0, 6));
+			ui.setAreaContent("\n" + "快件已到达中转中心:" + centreID.substring(0, 6));
 		// 判断是否发往收货地中转中心
 		if (centre == 2)
-			text.append("\n" + "快递已离开中转中心" + centreID.substring(0, 6) + "发往下一中转中心");
+			ui.setAreaContent("\n" + "快递已离开中转中心" + centreID.substring(0, 6) + "发往下一中转中心");
 		// 判断是否到达收货地中转中心
 		if (centre == 3)
-			text.append("\n" + "快件已到达中转中心:" + centreID.substring(6, 12));
+			ui.setAreaContent("\n" + "快件已到达中转中心:" + centreID.substring(6, 12));
 		// 判断是否发往收货地营业厅
 		if (centre == 4)
-			text.append("\n" + "快件已离开中转中心:" + centreID.substring(6, 12) + "正发往营业厅");
+			ui.setAreaContent("\n" + "快件已离开中转中心:" + centreID.substring(6, 12) + "正发往营业厅");
 		// 判断是否达到收货地营业厅
 		if (sellingAreaID.length() == 12)
-			text.append("\n" + "快件已到达营业厅:" + sellingAreaID.substring(6, 12) + "准备派送");
+			ui.setAreaContent("\n" + "快件已到达营业厅:" + sellingAreaID.substring(6, 12) + "准备派送");
 		// 判断是否派件
 		if (selling == 3)
-			text.append("\n" + "快递员正在为您派件，请保持电话畅通。");
+			ui.setAreaContent("\n" + "快递员正在为您派件，请保持电话畅通。");
 
 	}
 
@@ -92,24 +93,44 @@ public class CourierListener4 implements MouseListener, ActionListener {
 
 	}
 
+
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getSearch()){
+			MyButton button=ui.getSearch();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.centrelistener.CentreListener1;
+import presentation.MySwing.MyButton;
 
 
 public class CentreUI1 extends JPanel{
@@ -32,11 +33,10 @@ public class CentreUI1 extends JPanel{
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
-	private JButton btnNewButton_9;
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_12;
-	private JButton btnNewButton_13;
+
+
+	private MyButton confirm;
+	private MyButton cancle;
 
 	CentreListener1 centrelistener;
 	private int width;
@@ -155,40 +155,37 @@ public class CentreUI1 extends JPanel{
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
 
-		btnNewButton_12 = new JButton("\u786E\u8BA4");
-		btnNewButton_12.setBounds(83, 379, 90, 30);
-		this.add(btnNewButton_12);
-		btnNewButton_12.addActionListener(centrelistener);
+		confirm = new MyButton("确认");
+		confirm.setBounds(83, 379, 90, 30);
+		this.add(confirm);
+		confirm.addActionListener(centrelistener);
+		confirm.addMouseListener(centrelistener);
 
-		btnNewButton_13 = new JButton("\u53D6\u6D88");
-		btnNewButton_13.setBounds(401, 379, 90, 30);
-		this.add(btnNewButton_13);
-		btnNewButton_13.addActionListener(centrelistener);
+		cancle = new MyButton("清空");
+		cancle.setBounds(401, 379, 90, 30);
+		this.add(cancle);
+		cancle.addActionListener(centrelistener);
+		cancle.addMouseListener(centrelistener);
 	}
+	
 
 	public JTextField getTextField() {
 		return textField;
 	}
 
-	public void setTextField(JTextField textField) {
-		this.textField = textField;
-	}
+	
 
 	public JTextField getTextField_1() {
 		return textField_1;
 	}
 
-	public void setTextField_1(JTextField textField_1) {
-		this.textField_1 = textField_1;
-	}
+	
 
 	public JTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(JTextField textField_2) {
-		this.textField_2 = textField_2;
-	}
+
 
 	public JTextField getTextField_3() {
 		return textField_3;
@@ -238,45 +235,20 @@ public class CentreUI1 extends JPanel{
 		this.textField_8 = textField_8;
 	}
 
-	public JButton getBtnNewButton_9() {
-		return btnNewButton_9;
+
+
+
+
+	public MyButton getConfirm() {
+		return confirm;
 	}
 
-	public void setBtnNewButton_9(JButton btnNewButton_9) {
-		this.btnNewButton_9 = btnNewButton_9;
+
+	public MyButton getCancle() {
+		return cancle;
 	}
 
-	public JButton getBtnNewButton_10() {
-		return btnNewButton_10;
-	}
-
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
-		this.btnNewButton_10 = btnNewButton_10;
-	}
-
-	public JButton getBtnNewButton_11() {
-		return btnNewButton_11;
-	}
-
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
-		this.btnNewButton_11 = btnNewButton_11;
-	}
-
-	public JButton getBtnNewButton_12() {
-		return btnNewButton_12;
-	}
-
-	public void setBtnNewButton_12(JButton btnNewButton_12) {
-		this.btnNewButton_12 = btnNewButton_12;
-	}
-
-	public JButton getBtnNewButton_13() {
-		return btnNewButton_13;
-	}
-
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
-		this.btnNewButton_13 = btnNewButton_13;
-	}
+	
 
 	private void setImage() {
 

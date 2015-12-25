@@ -80,9 +80,9 @@ public class WarehouseListener3 implements ActionListener {
 			;
 		else if (hasUI1 && e.getSource() == ui1.getButton()) {// 确认：修改报警比例
 			hasUI1 = false;
-			rm=warehouse.setAlarm(Double.parseDouble(ui1.getTextArea_1().getText()));
+			rm=warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText()));
 			check(rm);
-			ui1.getTextArea().setText(ui1.getTextArea_1().getText());
+			ui1.getTextField().setText(ui1.getTextField_1().getText());
 			ui1.dispose();
 			this.refresh();
 		} else if (hasUI1 && e.getSource() == ui1.getButton_1()) {// 取消：不做任何修改

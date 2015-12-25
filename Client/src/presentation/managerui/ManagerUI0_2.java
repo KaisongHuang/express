@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener0_2;
+import presentation.MySwing.MyButton;
 
 
 public class ManagerUI0_2 extends JPanel{
@@ -37,9 +38,9 @@ public class ManagerUI0_2 extends JPanel{
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_8;
 
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_17;
+	private MyButton search;
+	private MyButton confirm;
+	private MyButton cancle;
 
 	ManagerListener0_2 managerlistener;
 
@@ -74,11 +75,11 @@ public class ManagerUI0_2 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(467, 46, 100, 30);
-		this.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
-
+		search = new MyButton("查询");
+		search.setBounds(467, 46, 100, 30);
+		this.add(search);
+		search.addActionListener(managerlistener);
+        search.addMouseListener(managerlistener);
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(108, 87, 488, 209);
 		this.add(panel_6);
@@ -142,16 +143,18 @@ public class ManagerUI0_2 extends JPanel{
 		panel_6.add(textField_6);
 		textField_6.setColumns(10);
 
-		btnNewButton_16 = new JButton("确定");
-		btnNewButton_16.setBounds(355, 335, 100, 30);
-		this.add(btnNewButton_16);
-		btnNewButton_16.addActionListener(managerlistener);
+		confirm = new MyButton("确定");
+		confirm.setBounds(355, 335, 100, 30);
+		this.add(confirm);
+		confirm.addActionListener(managerlistener);
+		confirm.addMouseListener(managerlistener);
 
-		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(467, 335, 100, 30);
-		this.add(btnNewButton_17);
-		btnNewButton_17.addActionListener(managerlistener);
-
+		
+		cancle = new MyButton("取消");
+		cancle.setBounds(467, 335, 100, 30);
+		this.add(cancle);
+		cancle.addActionListener(managerlistener);
+        cancle.addMouseListener(managerlistener);
 	}
 
 
@@ -276,28 +279,19 @@ public class ManagerUI0_2 extends JPanel{
 	}
 
 
-	public JButton getBtnNewButton_15() {
-		return btnNewButton_15;
+	public MyButton getSearch() {
+		return search;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
-		this.btnNewButton_15 = btnNewButton_15;
+	public MyButton getConfirm() {
+		return confirm;
 	}
 
-	public JButton getBtnNewButton_16() {
-		return btnNewButton_16;
+	
+
+	public MyButton getCancle() {
+		return cancle;
 	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
-		this.btnNewButton_16 = btnNewButton_16;
-	}
-
-	public JButton getBtnNewButton_17() {
-		return btnNewButton_17;
-	}
-
-	public void setBtnNewButton_17(JButton btnNewButton_17) {
-		this.btnNewButton_17 = btnNewButton_17;
-	}
 
 }

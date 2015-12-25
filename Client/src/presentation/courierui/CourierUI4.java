@@ -5,6 +5,7 @@
 package presentation.courierui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.JPanel;
@@ -15,6 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import listener.courierlistener.CourierListener4;
+import presentation.MySwing.MyButton;
 
 //历史轨迹及货物状态
 public class CourierUI4 extends JPanel {
@@ -26,7 +28,7 @@ public class CourierUI4 extends JPanel {
 
 	private JTextField textField;
 
-	private JTextArea textArea_1;
+	private JTextArea textArea;
 
 	CourierListener4 courierlistener;
 
@@ -34,7 +36,7 @@ public class CourierUI4 extends JPanel {
 
 	private JLabel lblNewLabel_5;
 
-	private JButton button;
+	private MyButton search;
 	private int width;
 	private int height;
     private JLabel label1;
@@ -75,10 +77,10 @@ public class CourierUI4 extends JPanel {
 		lblNewLabel_3.setBounds(307, 196, 100, 18);
 		this.add(lblNewLabel_3);
 
-		textArea_1 = new JTextArea();
-		textArea_1.setBounds(178, 226, 354, 204);
-		textArea_1.setBackground(new Color(220, 220, 220));
-		this.add(textArea_1);
+		textArea = new JTextArea();
+		textArea.setBounds(178, 226, 354, 204);
+        textArea.setFont(new Font(Font.DIALOG,10,20));
+		this.add(textArea);
 
 		lblNewLabel_4 = new JLabel("New label");
 		lblNewLabel_4.setBounds(259, 174, 100, 18);
@@ -97,10 +99,11 @@ public class CourierUI4 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
-		button = new JButton("查询");
-		button.setBounds(442, 73, 100, 30);
-		this.add(button);
-		button.addActionListener(courierlistener);
+		search = new MyButton("查询");
+		search.setBounds(442, 73, 100, 30);
+		this.add(search);
+		search.addActionListener(courierlistener);
+		search.addMouseListener(courierlistener);
 
 	}
 
@@ -112,8 +115,8 @@ public class CourierUI4 extends JPanel {
 		return textField;
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getSearch() {
+		return search;
 	}
 
 	public void setLblNewLabel_4(JLabel lblNewLabel_4) {
@@ -124,12 +127,10 @@ public class CourierUI4 extends JPanel {
 		this.lblNewLabel_5 = lblNewLabel_5;
 	}
 
-	public void setTextArea_1(JTextArea textArea_1) {
-		this.textArea_1 = textArea_1;
-	}
+	
 
-	public JTextArea getTextArea_1() {
-		return textArea_1;
+	public void setAreaContent(String s){
+		textArea.append(s);
 	}
 
 	public JLabel getLblNewLabel_4() {

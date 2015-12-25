@@ -13,6 +13,7 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
+import presentation.MySwing.MyButton;
 import presentation.adminui.AdminUI2;
 import vo.AdminVO;
 
@@ -29,24 +30,41 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getButton_1()){
+		if(e.getSource()==ui.getClear()){
 			delete1(ui.getLabel1());
 			delete(ui.getTextField());
 			delete(ui.getTextField_2());
 			ui.getComboBox_1().setSelectedIndex(0);
-		}else if(e.getSource()==ui.getButton_2()){
+		}else if(e.getSource()==ui.getSearch()){
 			String id = ui.getTextField_2().getText();
+			if(!check(id))
+				return ;
 			vo = admin.find(id);
 			if(!checkReturn(vo))
 				return;
 			setAll(vo);
-		}else if(e.getSource()==ui.getButton()){
+		}else if(e.getSource()==ui.getConfirm()){
 			ResultMessage rm;
 			vo = this.update();
 			rm=admin.manageCount(vo, Operation.update);
 			check(rm);
 		}
 
+	}
+	private boolean check(String id){
+		if(id.length()!=10){
+			JOptionPane.showMessageDialog(ui,"请检查编号格式是否正确！");
+	   	    return false;
+		}else{
+			try{
+				Integer.parseInt(id);
+			}
+			catch(NumberFormatException e){
+				JOptionPane.showMessageDialog(ui,"编号必须全部由数字组成！");
+		   	    return false;
+			}
+		}
+		return true;
 	}
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){
@@ -106,22 +124,79 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		} else if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getSearch()) {
+			MyButton button=ui.getSearch();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		} else if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if(e.getSource()==ui.getSearch()){
+			MyButton button=ui.getSearch();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getConfirm()){
+			MyButton button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getClear()){
+			MyButton button=ui.getClear();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

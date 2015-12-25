@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import listener.managerlistener.ManagerListener1_1;
+import presentation.MySwing.MyButton;
 
 public class ManagerUI1_1 extends JPanel {
 
@@ -21,9 +22,7 @@ public class ManagerUI1_1 extends JPanel {
 
 	private JTextField textField;
 
-	private JButton btnNewButton_15;
-	private JButton button;
-	private JButton button_1;
+	private MyButton search;
 
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
@@ -63,11 +62,11 @@ public class ManagerUI1_1 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(360, 58, 100, 30);
-		this.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
-
+		search = new MyButton("查询");
+		search.setBounds(360, 58, 100, 30);
+		this.add(search);
+		search.addActionListener(managerlistener);
+        search.addMouseListener(managerlistener);
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(117, 143, 481, 84);
 		this.add(panel_6);
@@ -93,10 +92,7 @@ public class ManagerUI1_1 extends JPanel {
 		lblNewLabel_10.setBounds(186, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
 
-		button_1 = new JButton("取消");
-		button_1.setBounds(452, 57, 100, 30);
-		add(button_1);
-		button_1.addActionListener(managerlistener);
+	
 
 	}
 
@@ -108,21 +104,11 @@ public class ManagerUI1_1 extends JPanel {
 		this.textField = textField;
 	}
 
-	public JButton getBtnNewButton_15() {
-		return btnNewButton_15;
+	public MyButton getSearch() {
+		return search;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
-		this.btnNewButton_15 = btnNewButton_15;
-	}
-
-	public JButton getButton() {
-		return button;
-	}
-
-	public void setButton(JButton button) {
-		this.button = button;
-	}
+	
 
 	public JLabel getLblNewLabel_1() {
 		return lblNewLabel_1;
@@ -172,8 +158,6 @@ public class ManagerUI1_1 extends JPanel {
 		this.lblNewLabel_10 = lblNewLabel_10;
 	}
 
-	public JButton getButton_1() {
-		return button_1;
-	}
+	
 
 }

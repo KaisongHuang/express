@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import listener.managerlistener.ManagerListener1_3;
+import presentation.MySwing.MyButton;
 
 public class ManagerUI1_3 extends JPanel {
 
@@ -20,13 +21,11 @@ public class ManagerUI1_3 extends JPanel {
 
 	private JTextField textField;
 
-	private JButton btnNewButton_15;
-	public JButton getBtnNewButton_15() {
-		return btnNewButton_15;
-	}
-
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_17;
+	
+	
+	private MyButton search;
+	private MyButton delete;
+	
 
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
@@ -61,9 +60,9 @@ public class ManagerUI1_3 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(325, 57, 100, 30);
-		this.add(btnNewButton_15);
+		search = new MyButton("查询");
+		search.setBounds(325, 57, 100, 30);
+		this.add(search);
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(104, 112, 477, 113);
@@ -90,17 +89,15 @@ public class ManagerUI1_3 extends JPanel {
 		lblNewLabel_8.setBounds(368, 56, 100, 18);
 		panel_6.add(lblNewLabel_8);
 
-		btnNewButton_16 = new JButton("删除");
-		btnNewButton_16.setBounds(213, 262, 100, 30);
-		this.add(btnNewButton_16);
+		delete = new MyButton("删除");
+		delete.setBounds(213, 262, 100, 30);
+		this.add(delete);
 
-		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(325, 262, 100, 30);
-		this.add(btnNewButton_17);
 
-		btnNewButton_15.addActionListener(managerlistener);
-		btnNewButton_16.addActionListener(managerlistener);
-		btnNewButton_17.addActionListener(managerlistener);
+		search.addActionListener(managerlistener);
+		search.addMouseListener(managerlistener);
+		delete.addActionListener(managerlistener);
+	    delete.addMouseListener(managerlistener);
 
 	}
 
@@ -112,24 +109,12 @@ public class ManagerUI1_3 extends JPanel {
 		this.textField = textField;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
-		this.btnNewButton_15 = btnNewButton_15;
+	public MyButton getSearch(){
+		return search;
 	}
 
-	public JButton getBtnNewButton_16() {
-		return btnNewButton_16;
-	}
-
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
-		this.btnNewButton_16 = btnNewButton_16;
-	}
-
-	public JButton getBtnNewButton_17() {
-		return btnNewButton_17;
-	}
-
-	public void setBtnNewButton_17(JButton btnNewButton_17) {
-		this.btnNewButton_17 = btnNewButton_17;
+	public MyButton getDelete() {
+		return delete;
 	}
 
 	public JLabel getLblNewLabel_1() {

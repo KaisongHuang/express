@@ -6,10 +6,11 @@ import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
+import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,7 +21,7 @@ public class FinanceUI4_1 extends JPanel {
 	/**
 	 * 
 	 */
-	private JButton button;
+	private MyButton ret;
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel label_2;
@@ -28,7 +29,7 @@ public class FinanceUI4_1 extends JPanel {
 	private JLabel month;
 	private JLabel day;
 	private static final long serialVersionUID = 1L;
-	private JTable table;
+	private MyTable table;
 	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -44,7 +45,7 @@ public class FinanceUI4_1 extends JPanel {
 	public FinanceUI4_1(FinanceListener4 financeListener4) {
 		this.financeListener4 = financeListener4;
 		initialize();
-		//this.setImage();
+		// this.setImage();
 		this.setVisible(true);
 	}
 
@@ -53,16 +54,22 @@ public class FinanceUI4_1 extends JPanel {
 		setBackground(Color.white);
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(80, 60, 444, 270);
 		this.add(JSP);
 
-		button = new JButton("返回");
-		button.setBounds(80, 19, 75, 29);
-		button.addActionListener(financeListener4);
-		add(button);
+		ret = new MyButton("返回");
+		ret.setBounds(80, 19, 75, 29);
+		ret.addActionListener(financeListener4);
+		ret.addMouseListener(financeListener4);
+		add(ret);
 
 		label = new JLabel("建账日期：");
 		label.setBounds(366, 342, 65, 16);
@@ -89,8 +96,8 @@ public class FinanceUI4_1 extends JPanel {
 		add(day);
 	}
 
-	public JButton getButton() {
-		return button;
+	public MyButton getRet() {
+		return ret;
 	}
 
 	public void setData(Vector<Object> data) {

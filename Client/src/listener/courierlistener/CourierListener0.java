@@ -12,6 +12,7 @@ import _enum.ResultMessage;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
 import po.DistanceAndFee;
+import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI;
 import presentation.courierui.CourierUI1;
 import vo.SenderVO;
@@ -20,7 +21,7 @@ import vo.SenderVO;
  * @author john
  *
  */
-public class CourierListener0 implements ActionListener {
+public class CourierListener0 implements ActionListener ,MouseListener{
 
 	private CourierUI ui;
 	CourierBlService courier = new Courier();
@@ -37,7 +38,7 @@ public class CourierListener0 implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getBtnNewButton_11()) {
+		if (e.getSource() == ui.getCancle()) {
 			delete(ui.getTextField());
 			delete(ui.getTextField_1());
 			delete(ui.getTextField_2());
@@ -55,7 +56,7 @@ public class CourierListener0 implements ActionListener {
 			delete(ui.getTextField_14());
 			ui.getComboBox().setSelectedIndex(1);
 			ui.getComboBox_1().setSelectedIndex(1);
-		} else if (e.getSource() == ui.getBtnNewButton_10()) {
+		} else if (e.getSource() == ui.getConfirm()) {
 			ResultMessage rm;
 			SenderVO vo = this.read();
 			if(!check(vo))
@@ -148,6 +149,69 @@ public class CourierListener0 implements ActionListener {
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub
 		textField.setText("");
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+			button.setEntered(false);
+			button.setPressed(true);
+			button.repaint();
+		}
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getConfirm()) {
+			MyButton button=ui.getConfirm();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+			button.setEntered(true);
+			button.setPressed(false);
+			button.repaint();
+		}
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource()==ui.getConfirm()){
+			MyButton button=ui.getConfirm();
+		    button.setEntered(false);
+		    button.repaint();
+		}else if(e.getSource()==ui.getCancle()){
+			MyButton button=ui.getCancle();
+		    button.setEntered(false);
+		    button.repaint();
+		}
 	}
 
 }

@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener1;
-import presentation.MySwing.Button;
+import presentation.MySwing.MyButton;
 
 import java.awt.Color;
 
@@ -28,8 +28,8 @@ public class AdminUI1 extends JPanel {
 	private JTextField textField_1;
 	private JTextField textField_3;
 
-	private Button btnNewButton_10;
-	private Button btnNewButton_11;
+	private MyButton btnNewButton_10;
+	private MyButton btnNewButton_11;
 
 	private JComboBox<String> comboBox;
 
@@ -88,11 +88,11 @@ public class AdminUI1 extends JPanel {
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
-		btnNewButton_10 = new Button("确定");
+		btnNewButton_10 = new MyButton("确定");
 		btnNewButton_10.setBounds(73, 250, 61, 29);
 		this.add(btnNewButton_10);
 
-		btnNewButton_11 = new Button("取消");
+		btnNewButton_11 = new MyButton("取消");
 		btnNewButton_11.setBounds(146, 250, 61, 29);
 		this.add(btnNewButton_11);
 
@@ -114,6 +114,8 @@ public class AdminUI1 extends JPanel {
 
 		btnNewButton_10.addActionListener(adminlistener);
 		btnNewButton_11.addActionListener(adminlistener);
+		btnNewButton_10.addMouseListener(adminlistener);
+		btnNewButton_11.addMouseListener(adminlistener);
 
 	}
 
@@ -133,19 +135,19 @@ public class AdminUI1 extends JPanel {
 		this.textField_1 = textField_1;
 	}
 
-	public Button getBtnNewButton_10() {
+	public MyButton getBtnNewButton_10() {
 		return btnNewButton_10;
 	}
 
-	public void setBtnNewButton_10(Button btnNewButton_10) {
+	public void setBtnNewButton_10(MyButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
 	}
 
-	public Button getBtnNewButton_11() {
+	public MyButton getBtnNewButton_11() {
 		return btnNewButton_11;
 	}
 
-	public void setBtnNewButton_11(Button btnNewButton_11) {
+	public void setBtnNewButton_11(MyButton btnNewButton_11) {
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 
