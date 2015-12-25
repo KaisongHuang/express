@@ -131,6 +131,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(75, 134, 70, 25);
+		comboBox.addItem("2015");
 		exportPanel.add(comboBox);
 
 		label_3 = new JLabel("年");
@@ -139,6 +140,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(157, 134, 70, 25);
+		comboBox_1.addItem("01");
 		exportPanel.add(comboBox_1);
 
 		label_4 = new JLabel("月");
@@ -147,6 +149,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(239, 134, 70, 25);
+		comboBox_2.addItem("01");
 		exportPanel.add(comboBox_2);
 
 		label_5 = new JLabel("日");
@@ -155,6 +158,9 @@ public class WarehouseUI1 extends JPanel {
 
 		label_6 = new JLabel("装运形式:");
 		label_6.setBounds(6, 179, 57, 15);
+		comboBox_3.addItem("飞机");
+		comboBox_3.addItem("火车");
+		comboBox_3.addItem("汽车");
 		exportPanel.add(label_6);
 
 		comboBox_3 = new JComboBox<String>();
@@ -212,23 +218,26 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(textField_4);
 
 		comboBox_4 = new JComboBox<Object>();
-		comboBox_4.setBounds(75, 39, 70, 25);
+		comboBox_4.setBounds(75, 39, 94, 25);
+		comboBox_4.addItem("2015");
 		importPanel.add(comboBox_4);
 
 		label_10 = new JLabel("年");
-		label_10.setBounds(145, 45, 20, 15);
+		label_10.setBounds(168, 45, 20, 15);
 		importPanel.add(label_10);
 
 		comboBox_5 = new JComboBox<Object>();
 		comboBox_5.setBounds(200, 41, 70, 25);
+		comboBox_5.addItem("01");
 		importPanel.add(comboBox_5);
 
 		label_11 = new JLabel("月");
-		label_11.setBounds(272, 45, 20, 15);
+		label_11.setBounds(270, 45, 20, 15);
 		importPanel.add(label_11);
 
 		comboBox_6 = new JComboBox<Object>();
 		comboBox_6.setBounds(318, 41, 70, 25);
+		comboBox_6.addItem("01");
 		importPanel.add(comboBox_6);
 
 		label_12 = new JLabel("日");
@@ -248,7 +257,10 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_13);
 
 		comboBox_7 = new JComboBox<Object>();
-		comboBox_7.setBounds(75, 79, 70, 27);
+		comboBox_7.setBounds(75, 79, 94, 27);
+		comboBox_7.addItem("航运区");
+		comboBox_7.addItem("铁运区");
+		comboBox_7.addItem("汽运区");
 		importPanel.add(comboBox_7);
 
 		label_14 = new JLabel("排号:");
@@ -257,6 +269,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_8 = new JComboBox<Object>();
 		comboBox_8.setBounds(200, 79, 70, 27);
+		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
 
 		label_15 = new JLabel("架号:");
@@ -265,6 +278,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_9 = new JComboBox<Object>();
 		comboBox_9.setBounds(318, 79, 70, 27);
+		comboBox_9.addItem("1");
 		importPanel.add(comboBox_9);
 
 		label_16 = new JLabel("位号:");
@@ -273,6 +287,7 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_10 = new JComboBox<Object>();
 		comboBox_10.setBounds(435, 79, 70, 27);
+		comboBox_10.addItem("1");
 		importPanel.add(comboBox_10);
 
 		button_1 = new JButton("导入");

@@ -15,11 +15,11 @@ import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JComboBox;
 
 import listener.financelistener.FinanceListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 public class FinanceUI1 extends JPanel {
 
@@ -33,19 +33,18 @@ public class FinanceUI1 extends JPanel {
 	private JLabel label_3;
 	private JLabel label_4;
 	private JLabel label_5;
-	private JComboBox<?> comboBox;
-	private JComboBox<?> comboBox_1;
-	private JComboBox<?> comboBox_2;
-	private JComboBox<?> comboBox_3;
+	private JComboBox<String> comboBox;
+	private JComboBox<String> comboBox_1;
+	private JComboBox<String> comboBox_2;
+	private JComboBox<String> comboBox_3;
 	private MyButton search;
 	private JTextArea textArea;
 	private Vector<String> name;
 	private Vector<Object> data;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private int height = 900;
 	private int width = 600;
-	private JLabel label1;
 	FinanceListener1 financeListener1;
 
 	public FinanceUI1() {
@@ -62,28 +61,39 @@ public class FinanceUI1 extends JPanel {
 
 		String names[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		JSP = new JScrollPane(table);
 		JSP.setBounds(88, 84, 502, 300);
 		this.add(JSP);
 
-		comboBox = new JComboBox<Object>();
+		comboBox = new JComboBox<String>();
 		comboBox.setBounds(127, 34, 61, 25);
+		comboBox.addItem("2015");
+		
 //		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
 
-		comboBox_1 = new JComboBox<Object>();
+		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(200, 34, 61, 25);
+		comboBox_1.addItem("01");
+		
 //		comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 
-		comboBox_2 = new JComboBox<Object>();
+		comboBox_2 = new JComboBox<String>();
 		comboBox_2.setBounds(273, 34, 61, 25);
+		comboBox_2.addItem("01");
 //		comboBox_2.setSelectedIndex(0);
 		this.add(comboBox_2);
 
-		comboBox_3 = new JComboBox<Object>();
+		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(408, 34, 85, 25);
+		comboBox_3.addItem("南京鼓楼");
 //		comboBox_3.setSelectedIndex(0);
 		this.add(comboBox_3);
 
@@ -123,35 +133,35 @@ public class FinanceUI1 extends JPanel {
 		add(textArea);
 	}
 
-	public JComboBox<?> getComboBox() {
+	public JComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<?> comboBox) {
+	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
-	public JComboBox<?> getComboBox_1() {
+	public JComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox<?> comboBox_1) {
+	public void setComboBox_1(JComboBox<String> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JComboBox<?> getComboBox_2() {
+	public JComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public void setComboBox_2(JComboBox<?> comboBox_2) {
+	public void setComboBox_2(JComboBox<String> comboBox_2) {
 		this.comboBox_2 = comboBox_2;
 	}
 
-	public JComboBox<?> getComboBox_3() {
+	public JComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public void setComboBox_3(JComboBox<?> comboBox_3) {
+	public void setComboBox_3(JComboBox<String> comboBox_3) {
 		this.comboBox_3 = comboBox_3;
 	}
 
@@ -177,11 +187,11 @@ public class FinanceUI1 extends JPanel {
 		this.data = data;
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
-	public void setTable(JTable table) {
+	public void setTable(MyTable table) {
 		this.table = table;
 	}
 	private void setImage() {

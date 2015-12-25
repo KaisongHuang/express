@@ -7,11 +7,11 @@ import java.util.Vector;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -31,7 +31,7 @@ public class FinanceUI4_2 extends JPanel {
 	private MyButton delete;
 	private MyButton save;
 	private MyButton ret;
-	private JTable table;
+	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
@@ -60,7 +60,12 @@ public class FinanceUI4_2 extends JPanel {
 	
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
-		table = new JTable(data, name);
+		table = new MyTable(data, name);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
 		JSP.setBounds(33, 87, 444, 298);
@@ -121,7 +126,7 @@ public class FinanceUI4_2 extends JPanel {
 		clearAll.addMouseListener(financeListener4);
 	}
 
-	public JTable getTable() {
+	public MyTable getTable() {
 		return table;
 	}
 
