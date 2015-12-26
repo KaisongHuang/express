@@ -14,7 +14,7 @@ public class History implements HistoryService{
 	}
 	public void init(String id) {
 		sql="insert into History values('"+id+"','完整','0','0',0,0);";
-		
+		db.insert(sql);
 	}
 
 	

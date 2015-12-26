@@ -66,6 +66,7 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_16;
 	private JComboBox<Object> comboBox_10;
 	private JPanel panel;
+
 	private MyTable table;
 	private DefaultTableModel model;
 	private JScrollPane JSP;
@@ -78,6 +79,7 @@ public class WarehouseUI1 extends JPanel {
 	private Vector<Object> data1;
 
 	private WarehouseListener1 warehouseListener;
+
 
 	/**
 	 * Create the application.
@@ -104,7 +106,7 @@ public class WarehouseUI1 extends JPanel {
 		panel.setLayout(card);
 		add(panel);
 
-		
+
 
 		exportPanel = new JPanel();
 
@@ -155,14 +157,16 @@ public class WarehouseUI1 extends JPanel {
 		exportPanel.add(label_5);
 
 		label_6 = new JLabel("装运形式:");
-		label_6.setBounds(333, 52, 57, 15);
-		comboBox_3.addItem("飞机");
-		comboBox_3.addItem("火车");
-		comboBox_3.addItem("汽车");
+
+		label_6.setBounds(6, 179, 57, 15);
 		exportPanel.add(label_6);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(391, 48, 70, 25);
+		comboBox_3.setBounds(75, 175, 70, 25);
+		comboBox_3.addItem("飞机");
+		comboBox_3.addItem("火车");
+		comboBox_3.addItem("汽车");
+
 		exportPanel.add(comboBox_3);
 
 		button_5 = new JButton("确认");
@@ -343,17 +347,6 @@ public class WarehouseUI1 extends JPanel {
 		return this.getCardLayout();
 	}
 
-	public MyTextField getTextField() {
-		return textField;
-	}
-
-	public MyTextField getTextField_1() {
-		return textField_1;
-	}
-
-	public MyTextField getTextField_2() {
-		return textField_2;
-	}
 
 	public JButton getButton_3() {
 		return button_3;
@@ -367,17 +360,12 @@ public class WarehouseUI1 extends JPanel {
 		return exportPanel;
 	}
 
-	public JLabel getLabel() {
-		return label;
-	}
+
 
 	public JLabel getLabel_1() {
 		return label_1;
 	}
 
-	public JLabel getLabel_2() {
-		return label_2;
-	}
 
 	public JLabel getLabel_3() {
 		return label_3;
@@ -395,9 +383,6 @@ public class WarehouseUI1 extends JPanel {
 		return label_6;
 	}
 
-	public JLabel getLblNewLabel_1() {
-		return lblNewLabel_1;
-	}
 
 	public JComboBox<String> getComboBox() {
 		return comboBox;
@@ -427,25 +412,11 @@ public class WarehouseUI1 extends JPanel {
 		return importPanel;
 	}
 
-	public JLabel getLabel_7() {
-		return label_7;
-	}
-
-	public MyTextField getTextField_3() {
-		return textField_3;
-	}
 
 	public JLabel getLabel_8() {
 		return label_8;
 	}
 
-	public JLabel getLabel_9() {
-		return label_9;
-	}
-
-	public MyTextField getTextField_4() {
-		return textField_4;
-	}
 
 	public JComboBox<Object> getComboBox_4() {
 		return comboBox_4;
@@ -545,25 +516,6 @@ public class WarehouseUI1 extends JPanel {
 		return year + month + date;
 	}
 
-	public String getExportID() {
-		return this.textField.getText();
-	}
-
-	public String getImportID() {
-		return this.textField_3.getText();
-	}
-
-	public String getExportDestination() {
-		return this.textField_1.getText();
-	}
-
-	public String getImportDestination() {
-		return this.textField_4.getText();
-	}
-
-	public String getTrans_ID() {
-		return this.textField_2.getText();
-	}
 
 	public String getTransportation() {
 		return (String) comboBox_3.getSelectedItem();

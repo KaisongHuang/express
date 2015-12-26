@@ -11,6 +11,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 import listener.courierlistener.CourierListener1;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 public class CourierUI1 extends JPanel{
@@ -25,7 +26,7 @@ public class CourierUI1 extends JPanel{
 
 	CourierListener1 courierlistener;
 
-	private JButton button;
+	private MyButton button;
 	private int width;
 	private int height;
 	/**
@@ -47,35 +48,35 @@ public class CourierUI1 extends JPanel{
 	 */
 	private void initialize() {
 
-		setBackground(Color.white);
-		this.setBounds(136, 113, 746, 440);
+		setBackground(new Color(240, 248, 255));
+		this.setBounds(0, 0, 450, 234);
 
 		this.setLayout(null);
-	
+
 		JLabel label = new JLabel("");
 		label.setBounds(373, 5, 0, 0);
 		this.add(label);
 
 		JLabel label_1 = new JLabel("\u9884\u4F30\u65F6\u95F4\uFF1A");
-		label_1.setBounds(102, 64, 72, 18);
+		label_1.setBounds(47, 44, 72, 18);
 		this.add(label_1);
 
 		JLabel lblYuji = new JLabel("\u62A5\u4EF7\uFF1A");
-		lblYuji.setBounds(102, 146, 55, 18);
+		lblYuji.setBounds(47, 86, 55, 18);
 		this.add(lblYuji);
 
 		textField = new MyTextField();
-		textField.setBounds(212, 64, 122, 30);
+		textField.setBounds(110, 39, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new MyTextField();
-		textField_1.setBounds(212, 140, 122, 30);
+		textField_1.setBounds(112, 81, 122, 30);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
-		button = new JButton("返回");
-		button.setBounds(485, 382, 90, 30);
+		button = new MyButton("返回");
+		button.setBounds(283, 57, 90, 30);
 		this.add(button);
 		button.addActionListener(courierlistener);
 
@@ -85,7 +86,7 @@ public class CourierUI1 extends JPanel{
 		return textField;
 	}
 
-	
+
 
 	public MyTextField getTextField_1() {
 		return textField_1;
