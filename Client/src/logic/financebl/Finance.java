@@ -47,6 +47,7 @@ public class Finance implements FinanceBlService {
 		}
 		try {
 			receipt = fd.findReceipt(begin, end);
+
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,7 +91,7 @@ public class Finance implements FinanceBlService {
 				e.printStackTrace();
 				rm = ResultMessage.FunctionError;
 			}
-		} 
+		}
 		return rm;
 	}
 

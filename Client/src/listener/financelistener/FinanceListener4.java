@@ -84,10 +84,11 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			}
 		} else if (e.getSource() == ui.getUi2().getSave()) {
 			final JFrame jf = new JFrame();
-			jf.setVisible(true);
+
 			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			jf.setUndecorated(true);
+			jf.setVisible(true);
 
 			jf.addMouseListener(new MouseAdapter() {
 				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
@@ -121,7 +122,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 					for (int i = 0; i < ui.getUi2().getTable().getRowCount(); i++) {
 						AccountVO vo = new AccountVO();
 						Vector<Object> rowData = new Vector<Object>();
-						for (int j = 0; j < 6; j++) {
+						for (int j = 0; j < 2; j++) {
 							rowData.add(ui.getUi2().getTable().getValueAt(i, j));
 						}
 						vo.setBankAccount((String) rowData.get(0));
@@ -132,42 +133,15 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 					ui.getUi2().getTextField().setText("");
 					ui.getUi2().getTextField_1().setText("");
-					for (int i = 0; i < ui.getUi2().getTable().getRowCount(); i++) {
+
+					while(ui.getUi2().getModel().getRowCount()>0)
 						ui.getUi2().getModel().removeRow(0);
-					}
+
 
 					jf.dispose();
 				}
 			});
-			button.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button.setEntered(false);
-					button.setPressed(true);
-					button.repaint();
-				}
 
-				public void mouseReleased(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button.setEntered(false);
-					button.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
-				}
-			});
 			contentPane.add(button);
 
 			final MyButton button_1 = new MyButton("继续修改");
@@ -177,35 +151,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 					jf.dispose();
 				}
 			});
-			button_1.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.setPressed(true);
-					button_1.repaint();
-				}
 
-				public void mouseReleased(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
-				}
-			});
 			contentPane.add(button_1);
 
 			JLabel label = new JLabel("是否保存新建的库存信息？");
@@ -219,11 +165,11 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			ui.getCard().show(ui, "0");
 		} else if (e.getSource() == ui.getUi2().getClearAll()) {
 			final JFrame jf = new JFrame();
-			jf.setVisible(true);
+
 			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			jf.setUndecorated(true);
-
+			jf.setVisible(true);
 			jf.addMouseListener(new MouseAdapter() {
 				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
 				public void mousePressed(MouseEvent e) {
@@ -258,35 +204,6 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 					jf.dispose();
 				}
 			});
-			button.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button.setEntered(false);
-					button.setPressed(true);
-					button.repaint();
-				}
-
-				public void mouseReleased(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button.setEntered(false);
-					button.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
-				}
-			});
 			contentPane.add(button);
 
 			final MyButton button_1 = new MyButton("取消");
@@ -294,35 +211,6 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			button_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					jf.dispose();
-				}
-			});
-			button_1.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.setPressed(true);
-					button_1.repaint();
-				}
-
-				public void mouseReleased(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
 				}
 			});
 			contentPane.add(button_1);
@@ -335,8 +223,6 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			// add new bankaccount
 			String account = ui.getUi3().getTextField_1().getText();
 			double money = Double.parseDouble(ui.getUi3().getTextField_2().getText());
-			Object rowData[] = { account, money };
-			ui.getUi3().getModel().addRow(rowData);
 			AccountVO vo = new AccountVO(account, money);
 			if (!check(vo))
 				return;
@@ -344,15 +230,78 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_6()) {
 			// delete selected account
-			int selectedRow = ui.getUi3().getTable().getSelectedRow();// 获得选中行的索引
-			String account = (String) ui.getUi3().getTable().getValueAt(selectedRow, 0);
-			double money = (Double) ui.getUi3().getTable().getValueAt(selectedRow, 1);
-			if (selectedRow != -1) // 存在选中行
-				ui.getUi3().getModel().removeRow(selectedRow); // 删除行
-			rm = finance.manageAccount(new AccountVO(account, money), Operation.delete);
+			final JFrame jf = new JFrame();
+
+			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			jf.setBounds(300, 300, 450, 150);
+			jf.setUndecorated(true);
+			jf.setVisible(true);
+
+			jf.addMouseListener(new MouseAdapter() {
+				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
+				public void mousePressed(MouseEvent e) {
+					// 当鼠标按下的时候获得窗口当前的位置
+					origin.x = e.getX();
+					origin.y = e.getY();
+				}
+			});
+			jf.addMouseMotionListener(new MouseMotionAdapter() {
+				// 拖动（mouseDragged 指的不是鼠标在窗口中移动，而是用鼠标拖动）
+				public void mouseDragged(MouseEvent e) {
+					// 当鼠标拖动时获取窗口当前位置
+					Point p = jf.getLocation();
+					// 设置窗口的位置
+					// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
+					jf.setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
+				}
+			});
+
+			JPanel contentPane = new JPanel();
+			contentPane.setBackground(Color.WHITE);
+			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			jf.setContentPane(contentPane);
+			contentPane.setLayout(null);
+
+			final MyButton button = new MyButton("确认");
+			button.setBounds(86, 75, 117, 29);
+			button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int selectedRow = ui.getUi3().getTable().getSelectedRow();// 获得选中行的索引
+					String account = (String) ui.getUi3().getTable().getValueAt(selectedRow, 0);
+					double money = (Double) ui.getUi3().getTable().getValueAt(selectedRow, 1);
+					rm = finance.manageAccount(new AccountVO(account, money), Operation.delete);
+					check(rm);
+					if (selectedRow != -1) // 存在选中行
+						ui.getUi3().getModel().removeRow(selectedRow); // 删除行
+					ui.getUi3().getTextField_1().setText("");
+					ui.getUi3().getTextField_2().setText("");
+					jf.dispose();
+				}
+			});
+			contentPane.add(button);
+
+			final MyButton button_1 = new MyButton("取消");
+			button_1.setBounds(245, 75, 117, 29);
+			button_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					jf.dispose();
+				}
+			});
+			contentPane.add(button_1);
+
+			JLabel label = new JLabel("是否确认删除此条账户信息？");
+			label.setBounds(149, 47, 244, 16);
+			contentPane.add(label);
+
 			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_5()) {
 			// edit selected account
+
+
+
+
+
+
 			String account = ui.getUi3().getTextField_1().getText();
 			double money = Double.parseDouble(ui.getUi3().getTextField_2().getText());
 			int selectedRow = ui.getUi3().getTable().getSelectedRow();// 获得选中行的索引
@@ -367,21 +316,26 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_3()) {
 			// find account by key string
+			int rowCount=ui.getUi3().getModel().getRowCount();
+			for(int i=0;i<rowCount;i++){
+				ui.getUi3().getModel().removeRow(0);
+			}
+
+			System.out.println("clear");
+
 			String key = ui.getUi3().getTextField().getText();
-			ArrayList<AccountVO> vo = finance.findAccount(key);
+			ArrayList<AccountVO> vo =new ArrayList<AccountVO>();
+			vo= finance.findAccount(key);
 			if (!check(vo))
 				return;
-			Vector<Object> data = new Vector<Object>();
-
+			System.out.println(vo.size());
 			for (int i = 0; i < vo.size(); i++) {
 				Vector<Object> item = new Vector<Object>();
 				item.add(vo.get(i).getBankAccount());
 				item.add(vo.get(i).getBalance());
 				ui.getUi3().getModel().addRow(item);
-				data.add(item);
 			}
 
-			ui.getUi3().setData(data);
 		}
 
 	}
@@ -412,11 +366,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	public void mouseClicked(java.awt.event.MouseEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getSource()==ui.getUi3().getTable()){
 		int selectedRow = ui.getUi3().getTable().getSelectedRow(); // 获得选中行索引
 		String account = (String) ui.getUi3().getModel().getValueAt(selectedRow, 0);
 		double money = (Double) ui.getUi3().getModel().getValueAt(selectedRow, 1);
 		ui.getUi3().getTextField_1().setText(account); // 给文本框赋值
 		ui.getUi3().getTextField_2().setText(String.valueOf(money));
+		}
 
 	}
 

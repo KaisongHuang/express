@@ -36,7 +36,6 @@ public class FinanceUI2 extends JPanel {
 	private JComboBox<String> comboBox;
 	private MyButton check;
 	private MyButton add;
-	private MyButton update;
 	private MyButton delete;
 	private MyButton clear;
 	private MyButton finish;
@@ -66,7 +65,7 @@ public class FinanceUI2 extends JPanel {
 		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-		
+
 		String names[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -151,13 +150,13 @@ public class FinanceUI2 extends JPanel {
 		this.add(check);
 
 		delete = new MyButton("删除");
-		delete.setBounds(637, 359, 67, 29);
+		delete.setBounds(637, 325, 67, 29);
 		delete.addActionListener(financeListener2);
 		delete.addMouseListener(financeListener2);
 		add(delete);
 
 		finish = new MyButton("保存");
-		finish.setBounds(406, 394, 67, 27);
+		finish.setBounds(637, 359, 67, 29);
 		finish.addActionListener(financeListener2);
 		finish.addMouseListener(financeListener2);
 		add(finish);
@@ -188,21 +187,12 @@ public class FinanceUI2 extends JPanel {
 		label_3 = new JLabel("日");
 		label_3.setBounds(692, 94, 19, 15);
 		add(label_3);
-		
-		update = new MyButton("修改");
-		update.setBounds(637, 325, 67, 29);
-		update.addActionListener(financeListener2);
-		update.addMouseListener(financeListener2);
-		add(update);
 	}
 
 	// public MyTextField getTextField() {
 	// return textField;
 	// }
 
-	public MyButton getUpdate() {
-		return update;
-	}
 
 	public JComboBox<String> getComboBox_1() {
 		return comboBox_1;
