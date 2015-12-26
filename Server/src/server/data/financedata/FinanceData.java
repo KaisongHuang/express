@@ -211,4 +211,12 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		return list;
 	}
 
+	public ResultMessage update(AccountPO po) throws RemoteException {
+		// TODO Auto-generated method stub
+		ResultMessage rm=null;
+		String sql = "update Account set balance = '" + po.getBalance() + "' where bankAccount = '" + po.getBankAccount() + "';";
+		rm = db.update(sql);
+		return rm;
+	}
+
 }
