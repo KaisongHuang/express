@@ -30,7 +30,6 @@ public interface ManagerDataBaseService extends Remote{
 	 public Object find() throws RemoteException;
 	 public ResultMessage update(Object po) throws RemoteException;
 	 public ResultMessage delete(Object po) throws RemoteException;
-	 public ResultMessage update(ManagerPO po)throws RemoteException;
 	 public ArrayList<CarPackPO> getCarPack() throws RemoteException;
 	 public ArrayList<ReceiptPO> getReceipt() throws RemoteException;
 	 public ArrayList<AcceptPO> getAccept() throws RemoteException;

@@ -61,47 +61,15 @@ public class LoginListener implements ActionListener, MouseListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getLogin()) {
-			ui.getLogin().setEntered(false);
-			ui.getLogin().setPressed(true);
-			ui.getLogin().repaint();
-		} else if (e.getSource() == ui.getSearch()) {
-			ui.getSearch().setEntered(false);
-			ui.getSearch().setPressed(true);
-			ui.getSearch().repaint();
-		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getLogin()) {
-			ui.getLogin().setEntered(true);
-			ui.getLogin().setPressed(false);
-			ui.getLogin().repaint();
-		} else if (e.getSource() == ui.getSearch()) {
-			ui.getSearch().setEntered(true);
-			ui.getSearch().setPressed(false);
-			ui.getSearch().repaint();
-		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getLogin()) {
-			ui.getLogin().setEntered(true);
-			ui.getLogin().repaint();
-		} else if (e.getSource() == ui.getSearch()) {
-			ui.getSearch().setEntered(true);
-			ui.getSearch().repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		ui.getLogin().setEntered(false);
-		ui.getLogin().repaint();
-		ui.getSearch().setEntered(false);
-		ui.getSearch().repaint();
 	}
 
 }

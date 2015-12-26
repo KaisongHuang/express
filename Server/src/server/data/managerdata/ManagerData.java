@@ -38,24 +38,28 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		super();
 		this.db=db;
 	}
-	public ResultMessage insert(Object po) throws RemoteException{
-		
+
+	public ResultMessage insert(Object po) throws RemoteException {
+
 		String sql;
-		ResultMessage rm=null;
-		if(po instanceof EmployeePO){
-			EmployeePO po1=(EmployeePO) po;
-			sql="insert into Employee values('"+po1.getEmployeeID()+"','"+po1.getEmployeeName()+"',"+po1.getEmployeeAging()+",'"+po1.getEmployeePosition()+"',"+po1.getTimeOfWorking()+",'"+po1.getBelongToWho()+"');";
-			rm=db.insert(sql);
-		}else if(po instanceof InstitutionPO){
-			InstitutionPO po1=(InstitutionPO) po;
-			sql="insert into Institution values('"+po1.getOrganizationID()+"','"+po1.getName()+"');";
-			rm=db.delete(sql);
-		}else {
-			DistanceAndFee po1=(DistanceAndFee) po;
-			String list1=po1.getCity1();
-			String list2=po1.getCity2();
-			
-				sql="insert into DistanceAndFee values('"+list1+"','"+list2+","+po1.getFee()+","+po1.getDistance()+");";
+		ResultMessage rm = null;
+		if (po instanceof EmployeePO) {
+			EmployeePO po1 = (EmployeePO) po;
+			sql = "insert into Employee values('" + po1.getEmployeeID() + "','" + po1.getEmployeeName() + "',"
+					+ po1.getEmployeeAging() + ",'" + po1.getEmployeePosition() + "'," + po1.getTimeOfWorking() + ",'"
+					+ po1.getBelongToWho() + "');";
+			rm = db.insert(sql);
+		} else if (po instanceof InstitutionPO) {
+			InstitutionPO po1 = (InstitutionPO) po;
+			sql = "insert into Institution values('" + po1.getOrganizationID() + "','" + po1.getName() + "');";
+			rm = db.delete(sql);
+		} else {
+			DistanceAndFee po1 = (DistanceAndFee) po;
+			String list1 = po1.getCity1();
+			String list2 = po1.getCity2();
+
+			sql = "insert into DistanceAndFee values('" + list1 + "','" + list2 + "," + po1.getFee() + ","
+					+ po1.getDistance() + ");";
 		}
 		return rm;
 	}
@@ -83,7 +87,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	    rs=db.find(sql);
 	    try {
 			if(rs.next()){
-				return new InstitutionPO(rs.getString(1),rs.getString(2));
+				return new InstitutionPO(rs.getString(2),rs.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -132,7 +136,9 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof CentreArrivalPO){
 			CentreArrivalPO centre=(CentreArrivalPO) po;
-			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getID()+"';";
+			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getTransferID()+"';";
+//			System.out.println(centre.getIsCheck());
+//			System.out.println(centre.getTransferID());
 		    rm=db.update(sql);
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO centre=(CentreTransforPO) po;
@@ -163,24 +169,29 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			sql="update Salary set fee="+po1.getFee()+",distance="+po1.getDistance()+" where city1='"+po1.getCity1()+
 					"';";
 			rm=db.update(sql);
+		}else if(po instanceof InstitutionPO){
+			InstitutionPO po1=(InstitutionPO) po;
+			sql="update Institution set name='"+po1.getName()+"' where id='"+po1.getOrganizationID()+"';";
+			rm=db.update(sql);
+		}else if(po instanceof EmployeePO){
+			EmployeePO po1=(EmployeePO) po;
+			sql="update Employee set name='"+po1.getEmployeeName()+"', age="+po1.getEmployeeAging()+",position='"+po1.getEmployeePosition()+
+					"',time="+po1.getTimeOfWorking()+",belong='"+po1.getBelongToWho()+"' where id='"+po1.getEmployeeID()+"';";
+			rm=db.update(sql);
 		}
 		return rm;
 	}
 
-	public ResultMessage update(ManagerPO po)throws RemoteException{
-		
-		return null;
-	}
 	public ResultMessage delete( Object po) throws RemoteException{
 		String sql;
 		ResultMessage rm;
 		if(po instanceof EmployeePO){
 			EmployeePO po1=(EmployeePO) po;
-			sql="delete from Employee where id='"+po1.getEmployeeID()+"');";
+			sql="delete from Employee where id='"+po1.getEmployeeID()+"';";
 			rm=db.delete(sql);
 		}else{
 			InstitutionPO po1=(InstitutionPO) po;
-			sql="delete from Institution where id='"+po1.getOrganizationID()+"');";
+			sql="delete from Institution where id='"+po1.getOrganizationID()+"';";
 			rm=db.delete(sql);
 		}
 		return rm;
@@ -202,6 +213,9 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 				count++;
 				if(id1.equals(id2)){
 				   list1.add(rs.getString(7));
+				   list.add(new CarPackPO(rs.getString(1),rs.getString(10),rs.getString(2),rs.getString(3),rs.getString(4),
+							rs.getString(11),rs.getString(5),rs.getString(6),
+						list1,rs.getDouble(8),rs.getInt(9)));
 				}
 				else{
 					list.add(new CarPackPO(rs.getString(1),rs.getString(10),rs.getString(2),rs.getString(3),rs.getString(4),
@@ -233,8 +247,10 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 				id1=rs.getString(3);
 				if(count==0)
 					id2=id1;
-				if(id1.equals(id2))
+				if(id1.equals(id2)){
 					list1.add(rs.getString(5));
+					list.add(new ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),list1,rs.getInt(4)));
+				}
 				else{
 					list.add(new ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),list1,rs.getInt(4)));
 					list1.clear();
@@ -308,8 +324,11 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			   id1=rs.getString(2);
 			   if(count==0)
 				   id2=id1;
-			   if(id1.equals(id2))
+			   if(id1.equals(id2)){
 				   list1.add(rs.getString(7));
+				   list.add(new CentrePackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
+						   rs.getString(6),list1,rs.getDouble(8),rs.getInt(9)));
+			   }
 			   else{
 				   list.add(new CentrePackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
 						   rs.getString(6),list1,rs.getDouble(8),rs.getInt(9)));
@@ -338,8 +357,12 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			    id1=rs.getString(3);
 			    if(count==0)
 			    	id2=id1;
-			    if(id1.equals(id2))
+			    if(id1.equals(id2)){
 			    	list1.add(rs.getString(9));
+			    	list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),list1,rs.getDouble(10),
+			    			rs.getInt(11),rs.getInt(12)));
+			    }
 			    else{
 			    	list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
 			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),list1,rs.getDouble(10),

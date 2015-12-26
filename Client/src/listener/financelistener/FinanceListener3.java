@@ -14,6 +14,8 @@ import po.PayPO;
 import po.ReceiptPO;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI3;
+import vo.PayVO;
+import vo.ReceiptVO;
 
 public class FinanceListener3 implements ActionListener, MouseListener {
 	private FinanceUI3 ui;
@@ -50,16 +52,16 @@ public class FinanceListener3 implements ActionListener, MouseListener {
 
 			if (!check(ob))
 				return;
-			ArrayList<PayPO> pay = new ArrayList<PayPO>();
-			ArrayList<ReceiptPO> receipt = new ArrayList<ReceiptPO>();
+			ArrayList<PayVO> pay = new ArrayList<PayVO>();
+			ArrayList<ReceiptVO> receipt = new ArrayList<ReceiptVO>();
 			int count = finance.getCount();
 
 			for (int i = 0; i < count; i++) {
-				pay.add((PayPO) ob.get(i));
+				pay.add((PayVO) ob.get(i));
 			}
 
 			for (int i = count; i < ob.size(); i++) {
-				receipt.add((ReceiptPO) ob.get(i));
+				receipt.add((ReceiptVO) ob.get(i));
 			}
 
 			// "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注"
@@ -101,40 +103,15 @@ public class FinanceListener3 implements ActionListener, MouseListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button = ui.getSearch();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button = ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button = ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button = ui.getSearch();
-			button.setEntered(false);
-			button.repaint();
-		}
 	}
 }

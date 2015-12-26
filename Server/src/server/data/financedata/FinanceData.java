@@ -24,6 +24,15 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
            this.db=db;
 	}
 	
+	public ResultMessage InitInsert(AccountPO po) throws RemoteException{
+		ResultMessage rm=null;
+		String sql="insert into Account values('"+po.getBankAccount()+"',"+po.getBalance()+",0);";
+		String sql1="insert into Account values('"+po.getBankAccount()+"',"+po.getBalance()+",1);";
+		rm=db.insert(sql);
+		rm=db.insert(sql1);
+	    return rm;
+	}
+	
 	public ResultMessage insert(Object po) throws RemoteException{
 		String sql=null;
 		ResultMessage rm=null;
@@ -31,8 +40,6 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			AccountPO po1=(AccountPO) po;
 			sql="insert into Account values('"+po1.getBankAccount()+"',"+po1.getBalance()+",0);";
 			rm=db.insert(sql);
-			String sql1="insert into Account values('"+po1.getBankAccount()+"',"+po1.getBalance()+",1);";
-		    rm=db.insert(sql1);
 		}else if(po instanceof PayPO){
 			PayPO po1=(PayPO) po;
 			sql="insert into Pay values('"+po1.getDate()+"','"+po1.getPayer()+"','"+po1.getPayAccount()+"','"+po1.getEntry()+"','"+po1.getComments()+"',"+po1.getCost()+","+po1.getIsCheck()+");";
@@ -74,16 +81,27 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
 		String sql="select * from Receipt where date='"+date+"' and sellingarea='"+SellingAreaID+"';";
 		ResultSet rs=db.find(sql);
-		String number1=null;
-		String number2=null;
+		String number1="";
+		String number2="";
+		int count=0;
+		ArrayList<String> l=new ArrayList<String>();
 		try {
 			while(rs.next()){
-				ArrayList<String> l=new ArrayList<String>();
+				
 				number1=rs.getString(3);
+				if(count==0){
+					number2=number1;
+				}
+				count++;
 				if(number1.equals(number2)){
-				     l.add(rs.getString(3));
+				     l.add(rs.getString(5));
+				     if(rs.isLast()){
+				    	 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+				     }
 				}else{
 					list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+					l.clear();
+					l.add(rs.getString(5));
 				}
 				number2=rs.getString(3);
 			}
@@ -149,22 +167,39 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		return list;
 	}
 
+	public ResultMessage clear() throws RemoteException {
+		String sql1="truncate table Account;";
+		ResultMessage rm;
+		rm=db.delete(sql1);
+		return rm;
+		
+	}
 	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
 		// TODO Auto-generated method stub
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
 		String sql="select * from Receipt;";
 		ResultSet rs=db.find(sql);
-		String number1=null;
-		String number2=null;
+		String number1="";
+		String number2="";
+		int count=0;
+		ArrayList<String> l=new ArrayList<String>();
 		try {
 			while(rs.next()){
-				ArrayList<String> l=new ArrayList<String>();
+				
 				number1=rs.getString(3);
+				if(count==0)
+					number2=number1;
+				count++;
 				if(Integer.parseInt((begin))<=Integer.parseInt(rs.getString(2))&&Integer.parseInt(end)>=Integer.parseInt(rs.getString(2))){
 				     if(number1.equals(number2)){
-				          l.add(rs.getString(3));
+				          l.add(rs.getString(5));
+				          if(rs.isLast()){
+						    	 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+						     }
 				     }else{
 					      list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+					      list.clear();
+					      l.add(rs.getString(5));
 				     }
 				}
 				number2=rs.getString(3);
@@ -174,6 +209,14 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	public ResultMessage update(AccountPO po) throws RemoteException {
+		// TODO Auto-generated method stub
+		ResultMessage rm=null;
+		String sql = "update Account set balance = '" + po.getBalance() + "' where bankAccount = '" + po.getBankAccount() + "';";
+		rm = db.update(sql);
+		return rm;
 	}
 
 }
