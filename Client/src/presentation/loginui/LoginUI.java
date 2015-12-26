@@ -7,6 +7,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import listener.mainlistener.LoginListener;
+import presentation.MySwing.MyButton;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -30,8 +31,8 @@ public class LoginUI extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField textField1;
-	private JButton Login;
-	private JButton Search;
+	private MyButton Login;
+	private MyButton Search;
 	private LoginListener listener;
 	private JButton logout;
 	private JLabel lblUserName;
@@ -98,18 +99,22 @@ public class LoginUI extends JFrame {
 		contentPane.add(logout);
 		logout.addActionListener(listener);
 
-		Login = new JButton("登录");
+		Login = new MyButton("登录");
 		Login.setBounds(476, 362, 100, 28);
-		contentPane.add(Login);
 		Login.addActionListener(listener);
+		Login.addMouseListener(listener);
+		contentPane.add(Login);
+		
+		
 		setImage();
 		this.setVisible(true);
 
-		Search = new JButton("查询");
-		Search.setBackground(new Color(207, 248, 240));
+		Search = new MyButton("查询");
 		Search.setBounds(311, 362, 100, 28);
-		contentPane.add(Search);
 		Search.addActionListener(listener);
+		Search.addMouseListener(listener);
+		contentPane.add(Search);
+		
 	}
 
 	private void setImage() {
@@ -145,11 +150,11 @@ public class LoginUI extends JFrame {
 
 	}
 
-	public JButton getLogin() {
+	public MyButton getLogin() {
 		return Login;
 	}
 
-	public JButton getSearch() {
+	public MyButton getSearch() {
 		return Search;
 	}
 

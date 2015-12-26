@@ -6,10 +6,10 @@ package presentation.managerui;
 
 import java.awt.Color;
 import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import listener.managerlistener.ManagerListener1_5;
+import presentation.MySwing.MyButton;
 
 
 public class ManagerUI1_5 extends JPanel{
@@ -20,13 +20,13 @@ public class ManagerUI1_5 extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
+	private MyButton btnNewButton_15;
+	private MyButton btnNewButton_16;
 
 
 	private JTextArea textArea;
 
-	ManagerListener1_5 managerlistener;
+	private ManagerListener1_5 managerlistener;
 
 
 	/**
@@ -49,11 +49,11 @@ public class ManagerUI1_5 extends JPanel{
 		this.setLayout(null);
 
 
-		btnNewButton_15 = new JButton("确定");
+		btnNewButton_15 = new MyButton("确定");
 		btnNewButton_15.setBounds(162, 333, 100, 30);
 		this.add(btnNewButton_15);
 
-		btnNewButton_16 = new JButton("清空");
+		btnNewButton_16 = new MyButton("清空");
 		btnNewButton_16.setBounds(493, 333, 100, 30);
 		this.add(btnNewButton_16);
 
@@ -65,23 +65,24 @@ public class ManagerUI1_5 extends JPanel{
 		scrollPane.setColumnHeaderView(textArea);
 
 		btnNewButton_15.addActionListener(managerlistener);
+		btnNewButton_15.addMouseListener(managerlistener);
 		btnNewButton_16.addActionListener(managerlistener);
-
+		btnNewButton_16.addMouseListener(managerlistener);
 	}
 
-	public JButton getBtnNewButton_15() {
+	public MyButton getBtnNewButton_15() {
 		return btnNewButton_15;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
+	public void setBtnNewButton_15(MyButton btnNewButton_15) {
 		this.btnNewButton_15 = btnNewButton_15;
 	}
 
-	public JButton getBtnNewButton_16() {
+	public MyButton getBtnNewButton_16() {
 		return btnNewButton_16;
 	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
+	public void setBtnNewButton_16(MyButton btnNewButton_16) {
 		this.btnNewButton_16 = btnNewButton_16;
 	}
 

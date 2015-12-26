@@ -7,9 +7,9 @@ package presentation.sellingareaui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 import listener.sellingarealistener.SellingAreaListener10;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
@@ -30,8 +30,8 @@ public class SellingAreaUI1 extends JPanel{
 	private MyTextField textField_5;
 	private JComboBox<String> comboBox;
 
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
+	private MyButton btnNewButton_10;
+	private MyButton btnNewButton_11;
 
 	SellingAreaListener10 sellingarealistener;
 
@@ -150,16 +150,18 @@ public class SellingAreaUI1 extends JPanel{
 		panel_6.add(textField_5);
 		textField_5.setColumns(10);
 
-		btnNewButton_10 = new JButton("\u786E\u8BA4");
+		btnNewButton_10 = new MyButton("\u786E\u8BA4");
 		btnNewButton_10.setBounds(82, 381, 90, 30);
 		this.add(btnNewButton_10);
 
-		btnNewButton_11 = new JButton("\u6E05\u7A7A");
+		btnNewButton_11 = new MyButton("\u6E05\u7A7A");
 		btnNewButton_11.setBounds(492, 381, 90, 30);
 		this.add(btnNewButton_11);
 
 		btnNewButton_10.addActionListener(sellingarealistener);
+		btnNewButton_10.addMouseListener(sellingarealistener);
 		btnNewButton_11.addActionListener(sellingarealistener);
+		btnNewButton_11.addMouseListener(sellingarealistener);
 
 	}
 
@@ -220,19 +222,19 @@ public class SellingAreaUI1 extends JPanel{
 		this.comboBox = comboBox;
 	}
 
-	public JButton getBtnNewButton_10() {
+	public MyButton getBtnNewButton_10() {
 		return btnNewButton_10;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
+	public void setBtnNewButton_10(MyButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
 	}
 
-	public JButton getBtnNewButton_11() {
+	public MyButton getBtnNewButton_11() {
 		return btnNewButton_11;
 	}
 
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
+	public void setBtnNewButton_11(MyButton btnNewButton_11) {
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 	private void setImage() {
