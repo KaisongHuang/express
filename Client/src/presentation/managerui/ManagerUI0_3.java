@@ -42,7 +42,7 @@ public class ManagerUI0_3 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param card
 	 */
 	public ManagerUI0_3() {
@@ -167,8 +167,8 @@ public class ManagerUI0_3 extends JPanel {
 		return lblNewLabel_3;
 	}
 
-	public void setLblNewLabel_3(JLabel lblNewLabel_3) {
-		this.lblNewLabel_3 = lblNewLabel_3;
+	public void setLblNewLabel_3(String string) {
+		this.lblNewLabel_3.setText(string);
 	}
 
 	public JLabel getLblNewLabel_4() {
@@ -183,8 +183,8 @@ public class ManagerUI0_3 extends JPanel {
 		return lblNewLabel_5;
 	}
 
-	public void setLblNewLabel_5(JLabel lblNewLabel_5) {
-		this.lblNewLabel_5 = lblNewLabel_5;
+	public void setLblNewLabel_5(String string) {
+		this.lblNewLabel_5.setText(string);
 	}
 
 	public JLabel getLblNewLabel_6() {
@@ -199,8 +199,8 @@ public class ManagerUI0_3 extends JPanel {
 		return lblNewLabel_7;
 	}
 
-	public void setLblNewLabel_7(JLabel lblNewLabel_7) {
-		this.lblNewLabel_7 = lblNewLabel_7;
+	public void setLblNewLabel_7(String string) {
+		this.lblNewLabel_7.setText(string);
 	}
 
 	public JLabel getLblNewLabel_8() {
@@ -215,8 +215,8 @@ public class ManagerUI0_3 extends JPanel {
 		return lblNewLabel_9;
 	}
 
-	public void setLblNewLabel_9(JLabel lblNewLabel_9) {
-		this.lblNewLabel_9 = lblNewLabel_9;
+	public void setLblNewLabel_9(String string) {
+		this.lblNewLabel_9.setText(string);
 	}
 
 	public JLabel getLblNewLabel_10() {
@@ -231,8 +231,8 @@ public class ManagerUI0_3 extends JPanel {
 		return lblNewLabel_11;
 	}
 
-	public void setLblNewLabel_11(JLabel lblNewLabel_11) {
-		this.lblNewLabel_11 = lblNewLabel_11;
+	public void setLblNewLabel_11(String string) {
+		this.lblNewLabel_11.setText(string);
 	}
 
 	public JLabel getLblNewLabel_12() {
@@ -247,8 +247,8 @@ public class ManagerUI0_3 extends JPanel {
 		return lblNewLabel_13;
 	}
 
-	public void setLblNewLabel_13(JLabel lblNewLabel_13) {
-		this.lblNewLabel_13 = lblNewLabel_13;
+	public void setLblNewLabel_13(String string) {
+		this.lblNewLabel_13.setText(string);
 	}
 
 

@@ -18,7 +18,7 @@ import presentation.managerui.ManagerUI0_3;
 import vo.EmployeeVO;
 
 public class ManagerListener0_3 implements MouseListener, ActionListener {
-	
+
 	private ManagerUI0_3 ui;
 	ManagerBlService manager = new Manager();
 	public ManagerListener0_3 (ManagerUI0_3 ui){
@@ -52,7 +52,7 @@ public class ManagerListener0_3 implements MouseListener, ActionListener {
 			delete2(ui.getLblNewLabel_11());
 			delete2(ui.getLblNewLabel_13());
 		}
-		
+
 	}
 	private void check(ResultMessage rm){
 		String dialog=null;
@@ -71,11 +71,11 @@ public class ManagerListener0_3 implements MouseListener, ActionListener {
 	private boolean check(EmployeeVO vo){
 		if(vo==null){
 			JOptionPane.showMessageDialog(ui, "员工编号不存在！");
-   		    return false;	
+   		    return false;
 		}
 		if(vo.checkIsNull()==0){
 			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
-   		    return false;	
+   		    return false;
 		}
 		if(vo.checkAge()==0){
 			JOptionPane.showMessageDialog(ui, "请检查员工年龄格式是否正确！");
@@ -112,7 +112,7 @@ public class ManagerListener0_3 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 		textField.setText("");
 	}
-	
+
 	private void delete2(JLabel label) {
 		// TODO Auto-generated method stub
 		label.setText("");
@@ -126,27 +126,27 @@ public class ManagerListener0_3 implements MouseListener, ActionListener {
 		String belongToWho = ui.getLblNewLabel_7().getText();
 		String employeeAging = ui.getLblNewLabel_11().getText();
 		String timeOfWorking = ui.getLblNewLabel_13().getText();
-		
+
 		EmployeeVO vo = new EmployeeVO(employeeID, employeeName, Integer.parseInt(employeeAging),
-				employeePosition, Integer.parseInt(timeOfWorking), belongToWho);
-		
+				employeePosition, Double.parseDouble(timeOfWorking), belongToWho);
+
 		return vo;
 	}
 
 	private void setLabel(EmployeeVO vo) {
 		// TODO Auto-generated method stub
-		ui.setLblNewLabel_3(new JLabel(vo.getEmployeeName()));
-		ui.setLblNewLabel_9(new JLabel(""+vo.getEmployeeID()));
-		ui.setLblNewLabel_5(new JLabel(vo.getEmployeePosition()));
-		ui.setLblNewLabel_11(new JLabel(""+vo.getEmployeeAging()));
-		ui.setLblNewLabel_7(new JLabel(vo.getBelongToWho()));
-		ui.setLblNewLabel_13(new JLabel(""+vo.getTimeOfWorking()));
+		ui.setLblNewLabel_3(vo.getEmployeeName());
+		ui.setLblNewLabel_9(""+vo.getEmployeeID());
+		ui.setLblNewLabel_5(vo.getEmployeePosition());
+		ui.setLblNewLabel_11(""+vo.getEmployeeAging());
+		ui.setLblNewLabel_7(vo.getBelongToWho());
+		ui.setLblNewLabel_13(""+vo.getTimeOfWorking());
 	}
 
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {

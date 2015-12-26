@@ -62,7 +62,7 @@ public class ManagerUI0_2 extends JPanel{
 
 		this.setLayout(null);
 
-		
+
 
 		lblNewLabel_1 = new JLabel("员工编号：");
 		lblNewLabel_1.setBounds(108, 51, 100, 18);
@@ -147,7 +147,7 @@ public class ManagerUI0_2 extends JPanel{
 		confirm.addActionListener(managerlistener);
 		confirm.addMouseListener(managerlistener);
 
-		
+
 		cancle = new MyButton("取消");
 		cancle.setBounds(467, 335, 100, 30);
 		this.add(cancle);
@@ -168,48 +168,48 @@ public class ManagerUI0_2 extends JPanel{
 		return textField_1;
 	}
 
-	public void setTextField_1(MyTextField textField_1) {
-		this.textField_1 = textField_1;
+	public void setTextField_1(String string) {
+		this.textField_1.setText(string);
 	}
 
 	public MyTextField getTextField_2() {
 		return textField_2;
 	}
 
-	public void setTextField_2(MyTextField textField_2) {
-		this.textField_2 = textField_2;
+	public void setTextField_2(String string) {
+		this.textField_2.setText(string);
 	}
 
 	public MyTextField getTextField_3() {
 		return textField_3;
 	}
 
-	public void setTextField_3(MyTextField textField_3) {
-		this.textField_3 = textField_3;
+	public void setTextField_3(String string) {
+		this.textField_3.setText(string);
 	}
 
 	public MyTextField getTextField_4() {
 		return textField_4;
 	}
 
-	public void setTextField_4(MyTextField textField_4) {
-		this.textField_4 = textField_4;
+	public void setTextField_4(String string) {
+		this.textField_4.setText(string);
 	}
 
 	public MyTextField getTextField_5() {
 		return textField_5;
 	}
 
-	public void setTextField_5(MyTextField textField_5) {
-		this.textField_5 = textField_5;
+	public void setTextField_5(String string) {
+		this.textField_5.setText(string);
 	}
 
 	public MyTextField getTextField_6() {
 		return textField_6;
 	}
 
-	public void setTextField_6(MyTextField textField_6) {
-		this.textField_6 = textField_6;
+	public void setTextField_6(String string) {
+		this.textField_6.setText(string);
 	}
 
 	public JLabel getLblNewLabel_1() {
@@ -285,7 +285,7 @@ public class ManagerUI0_2 extends JPanel{
 		return confirm;
 	}
 
-	
+
 
 	public MyButton getCancle() {
 		return cancle;
