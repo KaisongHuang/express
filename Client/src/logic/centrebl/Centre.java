@@ -5,8 +5,12 @@ import java.rmi.RemoteException;
 import po.CentreArrivalPO;
 import po.CentrePackPO;
 import po.CentreTransforPO;
+
 import _enum.ResultMessage;
 import data.centredata.CentreData;
+import data.centredataservice.CentreDataService;
+import data.sellingareadata.SellingAreaData;
+import data.sellingareadataservice.SellingareaDataService;
 import logic.centreblservice.CentreBlService;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
@@ -14,8 +18,12 @@ import vo.CentrePackVO;
 
 public class Centre implements CentreBlService {
 
-	CentreData cd;
-
+	CentreDataService cd;
+	SellingAreaData sd ;
+    public Centre(){
+    	cd=new CentreData();
+    	sd= new SellingAreaData();
+    }
 	public ResultMessage manageTranfor(CentreTransforVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm=null;
@@ -63,6 +71,25 @@ public class Centre implements CentreBlService {
 			rm=ResultMessage.FunctionError;
 		}
 		return rm;
+	}
+	public double getFee(String city1,String city2,String type,int count){
+		double distance=0;
+		double fee=0;
+		try {
+			distance=sd.getDistance(city1, city2);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        if(type.equals("汽车")){
+        	fee=distance*20*count/1000.0;
+        }else if(type.equals("火车")){
+        	fee=distance*40000*count/200000.0;
+        }else if(type.equals("飞机")){
+        	fee=distance*1000*count/5000.0;
+        }
+		return fee;
+		
 	}
 
 }
