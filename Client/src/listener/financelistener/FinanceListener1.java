@@ -29,13 +29,14 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 			for(int i=0;i<ui.getTable().getRowCount();i++){
 				ui.getModel().removeRow(0);
 			}
-			
+
 			String year = (String) ui.getComboBox().getSelectedItem();
 			String month = (String) ui.getComboBox_1().getSelectedItem();
 			String day = (String) ui.getComboBox_2().getSelectedItem();
 
 			String date = year + month + day;
-			String sellingArea = (String) ui.getComboBox_3().getSelectedItem();
+//			String sellingArea = (String) ui.getComboBox_3().getSelectedItem();
+			String sellingArea = "025000";
 
 			ArrayList<ReceiptVO> vo = finance.checkReceipt(date, sellingArea);
             if(!check(vo))
@@ -56,19 +57,19 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 			ui.getTextArea().setText("" + sum);
 		}
 	}
-	
+
 	private boolean check(ArrayList<ReceiptVO> vo){
 		if(vo==null){
 			JOptionPane.showMessageDialog(ui, "查询的信息不存在！");
 			return false;
 		}
 		return true;
-			
+
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
