@@ -81,42 +81,17 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 	}
 
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} 
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} 
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getSearch()){
-			MyButton button=ui.getSearch();
-		    button.setEntered(false);
-		    button.repaint();
-		}
 	}
 
 }

@@ -65,36 +65,10 @@ public class FinanceMenuListener implements ActionListener, MouseListener {
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getButton1()) {
-			ui.getButton1().setEntered(true);
-			setUnclicked();
-			repaint();
-		} else if (e.getSource() == ui.getButton2()) {
-			ui.getButton2().setEntered(true);
-			setUnclicked();
-			repaint();
-		} else if (e.getSource() == ui.getButton3()) {
-			ui.getButton3().setEntered(true);
-			setUnclicked();
-			repaint();
-		} else if (e.getSource() == ui.getButton4()) {
-			ui.getButton4().setEntered(true);
-			setUnclicked();
-			repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		ui.getButton1().setEntered(false);
-		ui.getButton2().setEntered(false);
-		ui.getButton3().setEntered(false);
-		ui.getButton4().setEntered(false);
-		ui.getButton1().setClicked(button1_clicked);
-		ui.getButton2().setClicked(button2_clicked);
-		ui.getButton3().setClicked(button3_clicked);
-		ui.getButton4().setClicked(button4_clicked);
-		repaint();
 	}
 
 	private void setClicked(boolean b1, boolean b2, boolean b3, boolean b4) {
