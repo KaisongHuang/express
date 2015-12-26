@@ -38,24 +38,28 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		super();
 		this.db=db;
 	}
-	public ResultMessage insert(Object po) throws RemoteException{
-		
+
+	public ResultMessage insert(Object po) throws RemoteException {
+
 		String sql;
-		ResultMessage rm=null;
-		if(po instanceof EmployeePO){
-			EmployeePO po1=(EmployeePO) po;
-			sql="insert into Employee values('"+po1.getEmployeeID()+"','"+po1.getEmployeeName()+"',"+po1.getEmployeeAging()+",'"+po1.getEmployeePosition()+"',"+po1.getTimeOfWorking()+",'"+po1.getBelongToWho()+"');";
-			rm=db.insert(sql);
-		}else if(po instanceof InstitutionPO){
-			InstitutionPO po1=(InstitutionPO) po;
-			sql="insert into Institution values('"+po1.getOrganizationID()+"','"+po1.getName()+"');";
-			rm=db.delete(sql);
-		}else {
-			DistanceAndFee po1=(DistanceAndFee) po;
-			String list1=po1.getCity1();
-			String list2=po1.getCity2();
-			
-				sql="insert into DistanceAndFee values('"+list1+"','"+list2+","+po1.getFee()+","+po1.getDistance()+");";
+		ResultMessage rm = null;
+		if (po instanceof EmployeePO) {
+			EmployeePO po1 = (EmployeePO) po;
+			sql = "insert into Employee values('" + po1.getEmployeeID() + "','" + po1.getEmployeeName() + "',"
+					+ po1.getEmployeeAging() + ",'" + po1.getEmployeePosition() + "'," + po1.getTimeOfWorking() + ",'"
+					+ po1.getBelongToWho() + "');";
+			rm = db.insert(sql);
+		} else if (po instanceof InstitutionPO) {
+			InstitutionPO po1 = (InstitutionPO) po;
+			sql = "insert into Institution values('" + po1.getOrganizationID() + "','" + po1.getName() + "');";
+			rm = db.delete(sql);
+		} else {
+			DistanceAndFee po1 = (DistanceAndFee) po;
+			String list1 = po1.getCity1();
+			String list2 = po1.getCity2();
+
+			sql = "insert into DistanceAndFee values('" + list1 + "','" + list2 + "," + po1.getFee() + ","
+					+ po1.getDistance() + ");";
 		}
 		return rm;
 	}

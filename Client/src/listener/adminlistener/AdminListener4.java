@@ -90,56 +90,18 @@ public class AdminListener4 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getConfirm()) {
-			ui.getConfirm().setEntered(false);
-			ui.getConfirm().setPressed(true);
-			ui.getConfirm().repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			ui.getCancle().setEntered(false);
-			ui.getCancle().setPressed(true);
-			ui.getCancle().repaint();
-		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		 if (e.getSource() == ui.getConfirm()) {
-			MyButton button=ui.getConfirm();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			MyButton button=ui.getCancle();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		 if (e.getSource() == ui.getConfirm()) {
-			ui.getConfirm().setEntered(true);
-			ui.getConfirm().setPressed(false);
-			ui.getConfirm().repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			ui.getCancle().setEntered(true);
-			ui.getCancle().setPressed(false);
-			ui.getCancle().repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-	  if(e.getSource()==ui.getConfirm()){
-			MyButton button=ui.getConfirm();
-		    button.setEntered(false);
-		    button.repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			MyButton button=ui.getCancle();
-		    button.setEntered(false);
-		    button.repaint();
-		}
 	}
 
 }
