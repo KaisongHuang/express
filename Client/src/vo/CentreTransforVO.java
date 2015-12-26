@@ -65,11 +65,7 @@ public class CentreTransforVO {
 		return 1;
 	}
 
-	public int checkFee() {
-		if (fee <= 0 || fee > 10000000)
-			return 0;
-		return 1;
-	}
+	
 
 	public int getIsCheck() {
 		return isCheck;

@@ -75,10 +75,7 @@ public class CentreListener1 implements MouseListener, ActionListener {
 			JOptionPane.showMessageDialog(ui,"请检查日期格式是否正确！");
 			return false;
 		}
-		if(vo.checkFee()==0){
-			JOptionPane.showMessageDialog(ui,"费用不合理，请检查！");
-			return false;
-		}
+	
 		if(vo.checkJian()==0){
 			JOptionPane.showMessageDialog(ui,"请检查监装员编号格式是否正确！");
 			return false;
@@ -113,11 +110,11 @@ public class CentreListener1 implements MouseListener, ActionListener {
 		System.out.println(JianZhuangYuan);
 		String YaYunYuan = ui.getTextField_7().getText();
 		System.out.println(YaYunYuan);
-		String fee = ui.getTextField_8().getText();
-		System.out.println(fee);
+//		String fee = ui.getTextField_8().getText();
+//		System.out.println(fee);
 
 		CentreTransforVO vo = new CentreTransforVO(transferStyle, dataOfGetin, centreTransferID, banHao, start, arrival,
-				JianZhuangYuan, YaYunYuan, null, Double.parseDouble(fee), 0);
+				JianZhuangYuan, YaYunYuan, null, 0, 0);
 
 		return vo;
 	}

@@ -26,7 +26,7 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	private SellingAreaUI ui;
 	SellingareaBlService sellingarea = new SellingArea();
-
+	double fee;
 	public SellingAreaListener00(SellingAreaUI ui) {
 		super();
 		this.ui = ui;
@@ -52,6 +52,7 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			if (!check(vo))
 				return;
 			rm = sellingarea.manageCarPack(vo);
+			ui.getTextField_6().setText(""+fee);
 			check(rm);
 		}
 
@@ -116,7 +117,7 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 		String carID = ui.getTextField_8().getText();
 		String supervisor = ui.getTextField_4().getText();
 		String supercargo = ui.getTextField_5().getText();
-		String fee = ui.getTextField_6().getText();
+		//String fee = ui.getTextField_6().getText();
 		// int count = ui.getTextArea().getLineCount();
 		// System.out.println(count);
 		ArrayList<String> list = new ArrayList<String>();
@@ -128,8 +129,20 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 		// }
 		// System.out.println(list);
 		list.add("1000000001");
-		CarPackVO vo = new CarPackVO(date, sellingArea, number, start, destination, carID, supervisor, supercargo, list,
-				Double.parseDouble(fee), 0);
+		String s="";
+		String d="";
+		int i=0;
+		while(!s.contains("市")){
+			i++;
+			s=start.substring(0, i);
+		}
+		i=0;
+		while(!d.contains("市")){
+			i++;
+			d=destination.substring(0, i);
+		}
+		fee=sellingarea.getFee(s, d, "飞机", list.size());
+		CarPackVO vo = new CarPackVO(date, sellingArea, number, start, destination, carID, supervisor, supercargo, list,fee, 0);
 
 		return vo;
 	}

@@ -63,7 +63,6 @@ public class CentreMenuListener implements ActionListener,MouseListener {
 
 	public void mouseEntered(MouseEvent e) {
 
-		
 		if (e.getSource() == ui.getButton1()) {
 			ui.getButton1().setEntered(true);
 			setUnclicked();
@@ -84,6 +83,7 @@ public class CentreMenuListener implements ActionListener,MouseListener {
 	}
 
 	public void mouseExited(MouseEvent e) {
+
 		ui.getButton1().setEntered(false);
 		ui.getButton2().setEntered(false);
 		ui.getButton3().setEntered(false);
