@@ -1,8 +1,11 @@
 package logic.financebl;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+
+import javax.swing.JFileChooser;
 
 import org.apache.poi.hssf.usermodel.*;
 
@@ -187,7 +190,7 @@ public class Finance implements FinanceBlService {
 	public void exportCostAndReceive(String in,String out,String all){
 		HSSFWorkbook wb = new HSSFWorkbook();  
         // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet  
-        HSSFSheet sheet = wb.createSheet("学生表一");  
+        HSSFSheet sheet = wb.createSheet("成本收益表");  
         // 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short  
         HSSFRow row = sheet.createRow((int) 0);  
         // 第四步，创建单元格，并设置值表头 设置表头居中  
@@ -219,7 +222,7 @@ public class Finance implements FinanceBlService {
         // 第六步，将文件存到指定位置  
         try  
         {  
-            FileOutputStream fout = new FileOutputStream("D:/students.xls");  
+            FileOutputStream fout = new FileOutputStream(getPath());  
             wb.write(fout);  
             fout.close();  
         }  
@@ -231,11 +234,120 @@ public class Finance implements FinanceBlService {
 	}
 	
 	public void exportPay(ArrayList<PayVO> list){
-		
+		HSSFWorkbook wb = new HSSFWorkbook();  
+        // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet  
+        HSSFSheet sheet = wb.createSheet("付款单");  
+        // 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short  
+        HSSFRow row = sheet.createRow((int) 0);  
+        // 第四步，创建单元格，并设置值表头 设置表头居中  
+        HSSFCellStyle style = wb.createCellStyle();  
+        style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式  
+  
+        HSSFCell cell = row.createCell((short) 0);  
+        cell.setCellValue( "付款日期");  
+        cell.setCellStyle(style);  
+        cell = row.createCell((short) 1);  
+        cell.setCellValue("付款账号");  
+        cell.setCellStyle(style);  
+        cell = row.createCell((short) 2);  
+        cell.setCellValue("付款人");  
+        cell.setCellStyle(style); 
+        cell = row.createCell((short) 3);  
+        cell.setCellValue("付款金额");  
+        cell.setCellStyle(style); 
+        cell = row.createCell((short) 4);  
+        cell.setCellValue("条目");  
+        cell.setCellStyle(style); 
+        cell = row.createCell((short) 5);  
+        cell.setCellValue("备注");  
+        cell.setCellStyle(style);
+      
+       
+  
+        // 第五步，写入实体数据 实际应用中这些数据从数据库得到，  
+      //  List list = CreateSimpleExcelToDisk.getStudent();  
+  
+       for(int i=0;i<list.size();i++){
+            row = sheet.createRow(i+1);  
+            PayVO vo=list.get(i);
+            // 第四步，创建单元格，并设置值  
+            row.createCell((short) 0).setCellValue(vo.getDate());  
+            row.createCell((short) 1).setCellValue(vo.getPayAccount());  
+            row.createCell((short) 2).setCellValue(vo.getPayer());  
+            row.createCell((short) 3).setCellValue(vo.getCost());  
+            row.createCell((short) 4).setCellValue(vo.getEntry());  
+            row.createCell((short) 5).setCellValue(vo.getComments());  
+       }
+        // 第六步，将文件存到指定位置  
+        try  
+        {  
+            FileOutputStream fout = new FileOutputStream(getPath());  
+            wb.write(fout);  
+            fout.close();  
+        }  
+        catch (Exception e)  
+        {  
+            e.printStackTrace();  
+        }  
 	}
 	
-	public void exportReceipt(){
-		
+	public void exportReceipt(ArrayList<ReceiptVO> list){
+		HSSFWorkbook wb = new HSSFWorkbook();  
+        // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet  
+        HSSFSheet sheet = wb.createSheet("收款单");  
+        // 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short  
+        HSSFRow row = sheet.createRow((int) 0);  
+        // 第四步，创建单元格，并设置值表头 设置表头居中  
+        HSSFCellStyle style = wb.createCellStyle();  
+        style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式  
+  
+        HSSFCell cell = row.createCell((short) 0);  
+        cell.setCellValue("收款日期");  
+        cell.setCellStyle(style);  
+        cell = row.createCell((short) 1);  
+        cell.setCellValue("收款单位");  
+        cell.setCellStyle(style);  
+        cell = row.createCell((short) 2);  
+        cell.setCellValue("收款快递员");  
+        cell.setCellStyle(style);  
+        cell = row.createCell((short) 3);  
+        cell.setCellValue("收款金额");  
+        cell.setCellStyle(style);  
+       
+  
+        // 第五步，写入实体数据 实际应用中这些数据从数据库得到，  
+      //  List list = CreateSimpleExcelToDisk.getStudent();  
+  
+       for(int i=0;i<list.size();i++){
+            row = sheet.createRow(i+1);  
+             ReceiptVO vo=list.get(i); 
+            // 第四步，创建单元格，并设置值  
+            row.createCell((short) 0).setCellValue(vo.getDate());  
+            row.createCell((short) 1).setCellValue(vo.getSellingArea());  
+            row.createCell((short) 2).setCellValue(vo.getNumber());  
+            row.createCell((short) 2).setCellValue(vo.getMoney()); 
+       }
+        // 第六步，将文件存到指定位置  
+        try  
+        {  
+            FileOutputStream fout = new FileOutputStream(getPath());  
+            wb.write(fout);  
+            fout.close();  
+        }  
+        catch (Exception e)  
+        {  
+            e.printStackTrace();  
+        }  
 	}
 
+	public String  getPath(){
+		JFileChooser jf = new JFileChooser();  
+		jf.setFileSelectionMode(JFileChooser.SAVE_DIALOG | JFileChooser.DIRECTORIES_ONLY);  
+		jf.showDialog(null,null);  
+	
+		File fi = jf.getSelectedFile();  
+		String f = fi.getAbsolutePath()+".xls";  
+		System.out.println("save: "+f);
+		return f;
+	}
 }
