@@ -28,8 +28,8 @@ import server.data.warehousedata.WareHouseData;
 import server.database.MySQLDataBase;
 
 public class Server {
-	String ip = "192.168.191.2";
-	String ip1="192.168.191.2";
+	String ip = "172.25.132.193";
+	//String ip1="192.168.191.2";
 	int port=3333;
 	MySQLDataBase db;
 
@@ -56,7 +56,7 @@ public class Server {
 			SenderDataBaseService sender=new SenderData(db);
 			WareHouseDataBaseService WareHouse=new WareHouseData(db);
 			//解决不能外网访问问题			
-			System.setProperty("java.rmi.server.hostname",ip1);
+		//	System.setProperty("java.rmi.server.hostname",ip1);
 			LocateRegistry.createRegistry(port);
 			
 			
