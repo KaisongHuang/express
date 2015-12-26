@@ -21,7 +21,10 @@ public class WarehouseListener3 implements ActionListener {
 	private WarehouseUI3_2 ui2;
 	private boolean hasUI1 = false;
 	private boolean hasUI2 = false;
+
 	Warehouse warehouse = new Warehouse();
+	private String Default="90";
+
 
 	public WarehouseListener3(WarehouseUI3 ui) {
 		super();
@@ -62,9 +65,9 @@ public class WarehouseListener3 implements ActionListener {
 				rm = warehouse.importGoods(vo);
 				check(rm);
 			}
-			
+
 			clearTable();
-			
+
 			ui2.dispose();
 		} else if (hasUI2 && e.getSource() == ui2.getButton_1()) {// 取消：不做任何修改
 			hasUI2 = false;
@@ -76,15 +79,15 @@ public class WarehouseListener3 implements ActionListener {
 			}
 			ui.getButton_2().setEnabled(false);
 		} else if (!hasUI1 && e.getSource() == ui.getButton_3()) {// 设置警戒比例
-			ui1 = new WarehouseUI3_1(this);
+			ui1 = new WarehouseUI3_1(this,Default);
 			hasUI1 = true;
 		} else if (hasUI1 && e.getSource() == ui.getButton_3())
 			;
 		else if (hasUI1 && e.getSource() == ui1.getButton()) {// 确认：修改报警比例
 			hasUI1 = false;
-			rm = warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText()));
+			rm = warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText())/100);
 			check(rm);
-			ui1.getTextField().setText(ui1.getTextField_1().getText());
+			Default=ui1.getTextField_1().getText();
 			ui1.dispose();
 			this.refresh();
 		} else if (hasUI1 && e.getSource() == ui1.getButton_1()) {// 取消：不做任何修改
@@ -97,7 +100,7 @@ public class WarehouseListener3 implements ActionListener {
 		for (int i = 0; i < ui.getModel().getRowCount(); i++)
 			ui.getModel().removeRow(0);
 	}
-	
+
 	private void refresh() {
 		ArrayList<Object> ob = warehouse.showAdjustGoods();
 

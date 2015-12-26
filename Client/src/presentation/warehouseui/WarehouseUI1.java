@@ -71,7 +71,7 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_16;
 	private JComboBox<Object> comboBox_10;
 	private JPanel panel;
-	
+
 	WarehouseListener1 warehouseListener;
 
 	/**
@@ -155,13 +155,13 @@ public class WarehouseUI1 extends JPanel {
 
 		label_6 = new JLabel("装运形式:");
 		label_6.setBounds(6, 179, 57, 15);
-		comboBox_3.addItem("飞机");
-		comboBox_3.addItem("火车");
-		comboBox_3.addItem("汽车");
 		exportPanel.add(label_6);
 
 		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(75, 175, 70, 25);
+		comboBox_3.addItem("飞机");
+		comboBox_3.addItem("火车");
+		comboBox_3.addItem("汽车");
 		exportPanel.add(comboBox_3);
 
 		lblNewLabel_1 = new JLabel("中转单编号:");

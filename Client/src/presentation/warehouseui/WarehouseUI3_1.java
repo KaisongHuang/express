@@ -31,12 +31,14 @@ public class WarehouseUI3_1 extends JFrame {
 	private JLabel label_4;
 	private JButton button;
 	private JButton button_1;
+	private String Default;
 	static Point origin = new Point();
 	WarehouseListener3 warehouseListener;
 	//private int
 
-	public WarehouseUI3_1(WarehouseListener3 warehouseListener) {
+	public WarehouseUI3_1(WarehouseListener3 warehouseListener,String Default) {
 		this.warehouseListener = warehouseListener;
+		this.Default=Default;
 		initialize();
 	}
 
@@ -44,10 +46,12 @@ public class WarehouseUI3_1 extends JFrame {
 	 * initialize the frame.
 	 */
 	private void initialize() {
-		setVisible(true);
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 360, 240);
 		setUndecorated(true);
+		setVisible(true);
+
 		addMouseListener(new MouseAdapter() {
 			// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
 			public void mousePressed(MouseEvent e) {
@@ -66,7 +70,7 @@ public class WarehouseUI3_1 extends JFrame {
 				setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
 			}
 		});
-		
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -78,7 +82,7 @@ public class WarehouseUI3_1 extends JFrame {
 
 		textArea = new MyTextField();
 		textArea.setBounds(160, 50, 65, 16);
-		textArea.setText("90");
+		textArea.setText(Default);
 		textArea.setEditable(false);
 		contentPane.add(textArea);
 

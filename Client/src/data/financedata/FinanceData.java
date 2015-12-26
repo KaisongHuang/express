@@ -49,8 +49,9 @@ public class FinanceData implements FinanceDataService {
 		return rm;
 	}
 
-	public ResultMessage update(FinancePO po) throws RemoteException {
-		return null;
+	public ResultMessage update(AccountPO po) throws RemoteException {
+		rm=fd.update(po);
+		return rm;
 	}
 
 	public ArrayList<AccountPO> findAccount() throws RemoteException {
@@ -76,12 +77,12 @@ public class FinanceData implements FinanceDataService {
 	public ResultMessage clear() throws RemoteException {
 		// TODO Auto-generated method stub
 
-		return null;
+		return fd.clear();
 	}
 
-	public ResultMessage InitInsert(FinancePO po) throws RemoteException {
+	public ResultMessage InitInsert(AccountPO po) throws RemoteException {
 		// TODO Auto-generated method stub
-
-		return null;
+		rm=fd.InitInsert(po);
+		return rm;
 	}
 }

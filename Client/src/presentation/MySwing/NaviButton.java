@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 public class NaviButton extends JButton {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private boolean clicked = false;
@@ -43,7 +43,7 @@ public class NaviButton extends JButton {
 	@Override
 	protected void paintComponent(Graphics g) {
 		if (clicked) {
-			g.setColor(new Color(158, 211, 240));
+			g.setColor(new Color(246,246,246));
 			g.fillRect(0, 0, this.getWidth() / 20, this.getHeight());
 			g.setColor(new Color(228, 228, 228));
 			g.fillRect(this.getWidth() / 20, 0, this.getWidth() - this.getWidth() / 20, this.getHeight());

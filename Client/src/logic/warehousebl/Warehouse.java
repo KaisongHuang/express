@@ -130,6 +130,7 @@ public class Warehouse implements WarehouseBlService {
 			arr.add(new OutStorageVO(list1.get(i).getId(), list1.get(i).getDestination(), list1.get(i).getOutdate(),
 					list1.get(i).getWarehouseID(), list1.get(i).getTransportation(), list1.get(i).getTrans_id(),
 					list1.get(i).getIsCheck()));
+		System.out.println(inNum);
 
 		return arr;
 	}
@@ -169,6 +170,7 @@ public class Warehouse implements WarehouseBlService {
 		ArrayList<int[]> post = new ArrayList<int[]>();
 		try {
 			list = wd.adjust();
+			System.out.println(list.size());
 		} catch (RemoteException e1) {
 			e1.printStackTrace();
 		}
