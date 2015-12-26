@@ -35,11 +35,13 @@ public class WarehouseUI3_2 extends JFrame {
 	 * initialize the frame.
 	 */
 	private void initialize() {
-		
-		setVisible(true);
+
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 360, 240);
 		setUndecorated(true);
+		setVisible(true);
+
 		addMouseListener(new MouseAdapter() {
 			// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
 			public void mousePressed(MouseEvent e) {
@@ -58,8 +60,8 @@ public class WarehouseUI3_2 extends JFrame {
 				setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
 			}
 		});
-		
-		
+
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

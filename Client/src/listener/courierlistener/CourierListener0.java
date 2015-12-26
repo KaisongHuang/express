@@ -1,12 +1,21 @@
 package listener.courierlistener;
 
+import java.awt.Color;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
+import java.util.Vector;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import _enum.ResultMessage;
 import logic.courierbl.Courier;
@@ -15,6 +24,7 @@ import po.DistanceAndFee;
 import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI;
 import presentation.courierui.CourierUI1;
+import vo.PayVO;
 import vo.SenderVO;
 /**
  * 订单输入界面监听
@@ -25,15 +35,16 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 
 	private CourierUI ui;
 	CourierBlService courier = new Courier();
-	
+	static Point origin=new Point();
 	CourierUI1 panel;
+
+
+
     double[] d=new double[2];
 	public CourierListener0(CourierUI ui) {
 		super();
 		this.ui = ui;
 		panel = new CourierUI1(ui.WIDTH, ui.HEIGHT);
-		ui.add(panel);
-		panel.setVisible(false);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -65,9 +76,49 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			check(rm);
 			panel.getTextField().setText(courier.getTime()+"");
 			panel.getTextField_1().setText(courier.getMoney()+"");
-			panel.setVisible(true);
+//			panel.setVisible(true);
+			final JFrame jf;
+			jf = new JFrame();
 
+
+			//jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			jf.setBounds(300, 300, 450, 150);
+			jf.setUndecorated(true);
+
+
+			jf.add(panel);
+			jf.addMouseListener(new MouseAdapter() {
+				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
+				public void mousePressed(MouseEvent e) {
+					// 当鼠标按下的时候获得窗口当前的位置
+					origin.x = e.getX();
+					origin.y = e.getY();
+				}
+			});
+			jf.addMouseMotionListener(new MouseMotionAdapter() {
+				// 拖动（mouseDragged 指的不是鼠标在窗口中移动，而是用鼠标拖动）
+				public void mouseDragged(MouseEvent e) {
+					// 当鼠标拖动时获取窗口当前位置
+					Point p = jf.getLocation();
+					// 设置窗口的位置
+					// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
+					jf.setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
+				}
+			});
+
+			final MyButton button_1 = new MyButton("返回");
+			button_1.setBounds(300, 150, 117, 29);
+			button_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					;
+				}
+			});
+
+			panel.add(button_1);
+			jf.setContentPane(panel);
+			jf.setVisible(true);
 		}
+
 	}
 	private void check(ResultMessage rm){
 		String dialog=null;
@@ -102,13 +153,13 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 		// TODO Auto-generated method stub
 		String SenderName = ui.getTextField().getText();
 		String SenderCity = "";
-		
+
 		if (ui.getTextField_1().getText().equals("北京") || ui.getTextField_1().getText().equals("天津")
 				|| ui.getTextField_1().getText().equals("上海") || ui.getTextField_1().getText().equals("重庆"))
 			SenderCity = ui.getTextField_1().getText();
 		else
 			SenderCity = ui.getTextField_15().getText();
-		
+
 		String SenderAddress = ui.getTextField_1().getText() + ui.getTextField_15().getText()
 				+ ui.getTextField_16().getText();
 		String SenderCompany = ui.getTextField_2().getText();
@@ -122,7 +173,7 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			RecipientCity = ui.getTextField_6().getText();
 		else
 			RecipientCity = ui.getTextField_17().getText();
-		
+
 		String RecipientAddress = ui.getTextField_6().getText() + ui.getTextField_17().getText()
 				+ ui.getTextField_18().getText();
 		String RecipientCompany = ui.getTextField_7().getText();
@@ -153,7 +204,7 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {

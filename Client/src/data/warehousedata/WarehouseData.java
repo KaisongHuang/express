@@ -21,20 +21,21 @@ import po.WarehousePO;
 public class WarehouseData implements WarehouseDataService {
 	WareHouseDataBaseService wd;
 	String WarehouseID = EmployeeMes.belongToWho;
+	ResultMessage rm = null;
 
 	public WarehouseData() {
-//		try {
-//			wd = RMIHelper.getWareHouseService();
-//		} catch (MalformedURLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (RemoteException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (NotBoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			wd = RMIHelper.getWareHouseService();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public ArrayList<InStoragePO> findIn(String begin, String end) throws RemoteException {
@@ -50,9 +51,12 @@ public class WarehouseData implements WarehouseDataService {
 		return wd.summarize(date, EmployeeMes.belongToWho);
 	}
 
-	public ResultMessage insert(WarehousePO po) throws RemoteException {
-
-		return wd.insert(po);
+	public ResultMessage insert(Object po) throws RemoteException {
+		InStoragePO po1 = (InStoragePO) po;
+		System.out.println(po1.getPos_qu());
+		rm = wd.insert(po1);
+		System.out.println(rm);
+		return rm;
 	}
 
 	public ResultMessage clear() throws RemoteException {
@@ -60,9 +64,11 @@ public class WarehouseData implements WarehouseDataService {
 		return wd.clear();
 	}
 
-	public ResultMessage update(WarehousePO po) throws RemoteException {
+	public ResultMessage update(Object po) throws RemoteException {
 
-		return wd.update(po);
+		InStoragePO po1 = (InStoragePO) po;
+
+		return wd.update(po1);
 	}
 
 	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
