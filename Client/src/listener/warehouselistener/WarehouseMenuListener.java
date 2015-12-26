@@ -83,7 +83,6 @@ public class WarehouseMenuListener implements ActionListener,MouseListener{
 
 	}
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton1()) {
 			ui.getButton1().setEntered(true);
 			setUnclicked();

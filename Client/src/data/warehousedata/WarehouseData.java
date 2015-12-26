@@ -23,18 +23,18 @@ public class WarehouseData implements WarehouseDataService {
 	String WarehouseID = EmployeeMes.belongToWho;
 
 	public WarehouseData() {
-		try {
-			wd = RMIHelper.getWareHouseService();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NotBoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			wd = RMIHelper.getWareHouseService();
+//		} catch (MalformedURLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (RemoteException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (NotBoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	public ArrayList<InStoragePO> findIn(String begin, String end) throws RemoteException {
