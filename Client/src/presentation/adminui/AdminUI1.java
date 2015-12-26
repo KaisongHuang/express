@@ -12,6 +12,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -27,7 +28,7 @@ public class AdminUI1 extends JPanel {
 
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
-
+    private MyDialog dialog;
 	private JComboBox<String> comboBox;
 
 	AdminListener1 adminlistener;
@@ -49,6 +50,7 @@ public class AdminUI1 extends JPanel {
 		initialize();
 //		this.setImage();
 		this.setVisible(true);
+		
 	}
 
 	/**
@@ -56,14 +58,18 @@ public class AdminUI1 extends JPanel {
 	 */
 	private void initialize() {
 		setBackground(Color.white);
-		this.setBounds(0, 0, 480, 320);
+		this.setBounds(0, 0, 720, 480);
 		this.setLayout(null);
+		
+		dialog=new MyDialog();
+		this.add(dialog);
+		
 		JLabel label_3 = new JLabel("姓名：");
 		label_3.setBounds(51, 41, 61, 16);
 		this.add(label_3);
 
 		textField_3 = new MyTextField();
-		textField_3.setBounds(124, 41, 134, 28);
+		textField_3.setBounds(217, 35, 134, 28);
 		this.add(textField_3);
 
 		JLabel label = new JLabel("账户名：");
@@ -71,7 +77,7 @@ public class AdminUI1 extends JPanel {
 		this.add(label);
 
 		textField = new MyTextField();
-		textField.setBounds(124, 93, 134, 28);
+		textField.setBounds(217, 87, 134, 28);
 		this.add(textField);
 		textField.setColumns(10);
 
@@ -80,16 +86,16 @@ public class AdminUI1 extends JPanel {
 		this.add(label_1);
 
 		textField_1 = new MyTextField();
-		textField_1.setBounds(124, 142, 134, 28);
+		textField_1.setBounds(217, 136, 134, 28);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
 		btnNewButton_10 = new MyButton("确定");
-		btnNewButton_10.setBounds(73, 250, 61, 29);
+		btnNewButton_10.setBounds(74, 330, 61, 29);
 		this.add(btnNewButton_10);
 
 		btnNewButton_11 = new MyButton("取消");
-		btnNewButton_11.setBounds(146, 250, 61, 29);
+		btnNewButton_11.setBounds(333, 330, 61, 29);
 		this.add(btnNewButton_11);
 
 		JLabel lblNewLabel_1 = new JLabel("权限：");
@@ -97,7 +103,7 @@ public class AdminUI1 extends JPanel {
 		this.add(lblNewLabel_1);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(124, 195, 134, 27);
+		comboBox.setBounds(217, 190, 134, 27);
 		comboBox.addItem("无");
 		comboBox.addItem("总经理");
 		comboBox.addItem("财务人员");
