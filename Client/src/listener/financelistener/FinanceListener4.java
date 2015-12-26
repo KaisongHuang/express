@@ -120,15 +120,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					for (int i = 0; i < ui.getUi2().getTable().getRowCount(); i++) {
-						AccountVO vo = new AccountVO();
+//						AccountVO vo = new AccountVO();
 						Vector<Object> rowData = new Vector<Object>();
 						for (int j = 0; j < 2; j++) {
 							rowData.add(ui.getUi2().getTable().getValueAt(i, j));
 						}
-						vo.setBankAccount((String) rowData.get(0));
-						vo.setBalance((Double) rowData.get(1));
-						rm = finance.initAccount(vo);
-						check(rm);
+						rm = finance.initAccount(new AccountVO((String)rowData.get(0),(Double)rowData.get(1)));
+//						check(rm);
 					}
 
 					ui.getUi2().getTextField().setText("");
@@ -200,6 +198,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					rm = finance.clearAccount();
+					System.out.println("clear");
 					check(rm);
 					jf.dispose();
 				}
@@ -270,12 +269,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 					String account = (String) ui.getUi3().getTable().getValueAt(selectedRow, 0);
 					double money = (Double) ui.getUi3().getTable().getValueAt(selectedRow, 1);
 					rm = finance.manageAccount(new AccountVO(account, money), Operation.delete);
-					check(rm);
+
 					if (selectedRow != -1) // 存在选中行
 						ui.getUi3().getModel().removeRow(selectedRow); // 删除行
 					ui.getUi3().getTextField_1().setText("");
 					ui.getUi3().getTextField_2().setText("");
 					jf.dispose();
+					check(rm);
 				}
 			});
 			contentPane.add(button);
@@ -293,7 +293,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			label.setBounds(149, 47, 244, 16);
 			contentPane.add(label);
 
-			check(rm);
+
 		} else if (e.getSource() == ui.getUi3().getButton_5()) {
 			// edit selected account
 

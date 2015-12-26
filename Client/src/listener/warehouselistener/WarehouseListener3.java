@@ -21,7 +21,10 @@ public class WarehouseListener3 implements ActionListener {
 	private WarehouseUI3_2 ui2;
 	private boolean hasUI1 = false;
 	private boolean hasUI2 = false;
+
 	Warehouse warehouse = new Warehouse();
+	private String Default="90";
+
 
 	public WarehouseListener3(WarehouseUI3 ui) {
 		super();
@@ -45,26 +48,26 @@ public class WarehouseListener3 implements ActionListener {
 				JOptionPane.showMessageDialog(ui, "不需要调整库存！");
 				return;
 			}
-			for (int i = 0; i < ob.size(); i++) {
+			for (int i = 0; i < ob.size()/2; i++) {
 				InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
-				InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
+				int[] vo2 = (int[]) ob.get(2 * i + 1);
 				InStorageVO vo = new InStorageVO();
 				vo.setId(vo1.getId());// textField_3
 				vo.setDestination(vo1.getDestination());// textField_4
 				vo.setIndate(vo1.getIndate());// comboBox_4comboBox_5comboBox_6
-				vo.setPos_qu(vo2.getPos_qu());// comboBox_7
-				vo.setPos_pai(vo2.getPos_pai());// comboBox_8
-				vo.setPos_jia(vo2.getPos_jia());// comboBox_9
-				vo.setPos_wei(vo2.getPos_wei());// comboBox_10
+				vo.setPos_qu("temp");// comboBox_7
+				vo.setPos_pai(vo2[0]);// comboBox_8
+				vo.setPos_jia(vo2[1]);// comboBox_9
+				vo.setPos_wei(vo2[2]);// comboBox_10
 				vo.setWarehouseID(EmployeeMes.belongToWho);
 				vo.setIsCheck(0);
 
-				rm = warehouse.importGoods(vo);
+				rm = warehouse.update(vo);
 				check(rm);
 			}
-			
+
 			clearTable();
-			
+
 			ui2.dispose();
 		} else if (hasUI2 && e.getSource() == ui2.getButton_1()) {// 取消：不做任何修改
 			hasUI2 = false;
@@ -76,15 +79,15 @@ public class WarehouseListener3 implements ActionListener {
 			}
 			ui.getButton_2().setEnabled(false);
 		} else if (!hasUI1 && e.getSource() == ui.getButton_3()) {// 设置警戒比例
-			ui1 = new WarehouseUI3_1(this);
+			ui1 = new WarehouseUI3_1(this,Default);
 			hasUI1 = true;
 		} else if (hasUI1 && e.getSource() == ui.getButton_3())
 			;
 		else if (hasUI1 && e.getSource() == ui1.getButton()) {// 确认：修改报警比例
 			hasUI1 = false;
-			rm = warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText()));
+			rm = warehouse.setAlarm(Double.parseDouble(ui1.getTextField_1().getText())/100);
 			check(rm);
-			ui1.getTextField().setText(ui1.getTextField_1().getText());
+			Default=ui1.getTextField_1().getText();
 			ui1.dispose();
 			this.refresh();
 		} else if (hasUI1 && e.getSource() == ui1.getButton_1()) {// 取消：不做任何修改
@@ -94,28 +97,29 @@ public class WarehouseListener3 implements ActionListener {
 	}
 
 	private void clearTable(){
-		for (int i = 0; i < ui.getModel().getRowCount(); i++)
+		int n=ui.getModel().getRowCount();
+		for (int i = 0; i < n; i++)
 			ui.getModel().removeRow(0);
 	}
-	
+
 	private void refresh() {
 		ArrayList<Object> ob = warehouse.showAdjustGoods();
 
 		clearTable();
 
-		for (int i = 0; i < ob.size(); i++) {
+		for (int i = 0; i < ob.size()/2; i++) {
 			Vector<Object> item = new Vector<Object>();
 			InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
-			InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
+			int[] vo2 = (int[]) ob.get(2 * i + 1);
 			item.add(vo1.getId());
 			item.add(vo1.getPos_qu());
 			item.add(vo1.getPos_pai());
 			item.add(vo1.getPos_jia());
 			item.add(vo1.getPos_wei());
-			item.add(vo2.getPos_qu());
-			item.add(vo2.getPos_pai());
-			item.add(vo2.getPos_jia());
-			item.add(vo2.getPos_wei());
+			item.add("temp");
+			item.add(vo2[0]);
+			item.add(vo2[1]);
+			item.add(vo2[2]);
 			ui.getModel().addRow(item);
 		}
 

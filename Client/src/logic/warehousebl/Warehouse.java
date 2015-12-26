@@ -39,8 +39,13 @@ public class Warehouse implements WarehouseBlService {
 		ResultMessage rm = null;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
 				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
+		System.out.println( vo.getPos_pai());
+		System.out.println( vo.getPos_jia());
+		System.out.println( vo.getPos_wei());
 		try {
+
 			rm = wd.insert(po);
+			System.out.println("done");
 		} catch (RemoteException e) {
 			e.printStackTrace();
 			rm = ResultMessage.FunctionError;
@@ -130,6 +135,7 @@ public class Warehouse implements WarehouseBlService {
 			arr.add(new OutStorageVO(list1.get(i).getId(), list1.get(i).getDestination(), list1.get(i).getOutdate(),
 					list1.get(i).getWarehouseID(), list1.get(i).getTransportation(), list1.get(i).getTrans_id(),
 					list1.get(i).getIsCheck()));
+		System.out.println(inNum);
 
 		return arr;
 	}
@@ -169,6 +175,7 @@ public class Warehouse implements WarehouseBlService {
 		ArrayList<int[]> post = new ArrayList<int[]>();
 		try {
 			list = wd.adjust();
+			System.out.println(list.size());
 		} catch (RemoteException e1) {
 			e1.printStackTrace();
 		}
@@ -246,6 +253,26 @@ public class Warehouse implements WarehouseBlService {
 			e.printStackTrace();
 		}
 		return destination;
+	}
+
+	public ResultMessage update(Object ob) {
+		// TODO Auto-generated method stub
+		ResultMessage rm = null;
+		InStorageVO vo = (InStorageVO) ob;
+		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
+				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
+		System.out.println( vo.getPos_pai());
+		System.out.println( vo.getPos_jia());
+		System.out.println( vo.getPos_wei());
+		try {
+
+			rm = wd.update(po);
+			System.out.println("done");
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			rm = ResultMessage.FunctionError;
+		}
+		return rm;
 	}
 
 }

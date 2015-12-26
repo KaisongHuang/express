@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import _enum.ResultMessage;
 
 public interface WarehouseBlService {
+	public ResultMessage update(Object ob);
+
 	public ResultMessage importGoods(InStorageVO vo);
 
 	public ResultMessage exportGoods(OutStorageVO vo);
@@ -22,16 +24,16 @@ public interface WarehouseBlService {
 	public ArrayList<Object> checkWarehouse(String begin, String end);
 
 	public ArrayList<InStorageVO> summarizeWarehouse();
-	
+
 	public ArrayList<Object> showAdjustGoods();
 
 	public ResultMessage initWarehouse(InStorageVO vo);
-	
+
 	public ResultMessage clearWarehouse();
-	
+
 	public ArrayList<CentreArrivalVO> getImport();
-	
+
 	public ArrayList<CentreTransforVO> getExport();
-	
+
 	public String getSenderDestination(String id);
 }

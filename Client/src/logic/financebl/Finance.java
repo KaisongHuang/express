@@ -139,7 +139,7 @@ public class Finance implements FinanceBlService {
 		ResultMessage rm = null;
 		AccountPO po = new AccountPO(vo.getBankAccount(), vo.getBalance());
 		try {
-			rm = fd.insert(po);
+			rm = fd.InitInsert(po);
 
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
