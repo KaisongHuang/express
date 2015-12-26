@@ -79,10 +79,11 @@ public class WarehouseListener4 implements ActionListener {
 		// save&back
 		else if (e.getSource() == ui.getButton_3()) {
 			final JFrame jf = new JFrame();
-			jf.setVisible(true);
+			
 			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			jf.setUndecorated(true);
+			jf.setVisible(true);
 			
 			jf.addMouseListener(new MouseAdapter() {
 				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
@@ -105,7 +106,7 @@ public class WarehouseListener4 implements ActionListener {
 			
 			JPanel contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			contentPane.setBackground(Color.WHITE);
+			contentPane.setBackground(new Color(246,246,246));
 			jf.setContentPane(contentPane);
 			contentPane.setLayout(null);
 
@@ -132,39 +133,11 @@ public class WarehouseListener4 implements ActionListener {
 							return ;
 						warehouseBl.initWarehouse(vo);
 					}
-					for(int i=0;i<ui.getModel().getRowCount();i++){
+					int n=ui.getModel().getRowCount();
+					for(int i=0;i<n;i++){
 						ui.getModel().removeRow(0);
 					}
 					jf.dispose();
-				}
-			});
-			button.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button.setEntered(false);
-					button.setPressed(true);
-					button.repaint();
-				}
-
-				public void mouseReleased(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button.setEntered(false);
-					button.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
 				}
 			});
 			contentPane.add(button);
@@ -174,35 +147,6 @@ public class WarehouseListener4 implements ActionListener {
 			button_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					jf.dispose();
-				}
-			});
-			button_1.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.setPressed(true);
-					button_1.repaint();
-				}
-
-				public void mouseReleased(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
 				}
 			});
 			contentPane.add(button_1);

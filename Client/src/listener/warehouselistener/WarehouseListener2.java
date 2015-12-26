@@ -23,7 +23,8 @@ public class WarehouseListener2 implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// enquireButton
 		if (e.getSource() == ui.getButton_1()) {
-			for(int i=0;i<ui.getModel().getRowCount();i++){
+			int n=ui.getModel().getRowCount();
+			for(int i=0;i<n;i++){
 				ui.getModel().removeRow(0);
 			}
 			// 快递编号，入库日期，目的地，区号，排号，架号，位号
@@ -62,7 +63,8 @@ public class WarehouseListener2 implements ActionListener {
 		// clearButton
 		else if (e.getSource() == ui.getButton_2()) {
 			System.out.println("clear");
-			for(int i=0;i<ui.getModel().getRowCount();i++){
+			int n=ui.getModel().getRowCount();
+			for(int i=0;i<n;i++){
 				ui.getModel().removeRow(0);
 			}
 			ui.getComboBox().setSelectedIndex(0);

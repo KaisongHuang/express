@@ -159,7 +159,8 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			contentPane.add(label);
 		} else if (e.getSource() == ui.getUi2().getRet()) {
 			System.out.println("返回");
-			for (int i = 0; i < ui.getUi2().getTable().getRowCount(); i++) {
+			int n=ui.getUi2().getTable().getRowCount();
+			for (int i = 0; i < n; i++) {
 				ui.getUi2().getModel().removeRow(0);
 			}
 			ui.getCard().show(ui, "0");
@@ -296,11 +297,6 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_5()) {
 			// edit selected account
-
-
-
-
-
 
 			String account = ui.getUi3().getTextField_1().getText();
 			double money = Double.parseDouble(ui.getUi3().getTextField_2().getText());

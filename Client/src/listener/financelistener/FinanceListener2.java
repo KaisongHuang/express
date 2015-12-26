@@ -278,7 +278,8 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 	private void allClear() {
 		clearText();
 		// clear table
-		for (int i = 0; i < ui.getTable().getRowCount(); i++) {
+		int n=ui.getModel().getRowCount();
+		for (int i = 0; i < n; i++) {
 			ui.getModel().removeRow(0);
 		}
 	}
