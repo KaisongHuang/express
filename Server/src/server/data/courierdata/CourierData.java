@@ -51,17 +51,20 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 			}
 			return rm;
 		} else {
-			String sql1 = "select * from Sender limit 1";
+			String sql1 = "select * from Sender";
 			ResultSet rs = db.find(sql1);
 			String barcode = "1000000000";
 			try {
-				if (rs.next()) {
+				if (rs.last()) {
 					barcode = (1 + Integer.parseInt(rs.getString(18)))+"";
+					System.out.println(rs.getString(18));
+					System.out.println(barcode+"in");
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			System.out.println(barcode+"out");
 
 			SenderPO po1 = (SenderPO) po;
 			sql = "insert into Sender values('" + po1.getSenderName() + "'," + "'" + po1.getSenderAddress() + "','"
@@ -72,8 +75,10 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 					+ ",'" + po1.getCommodity() + "','" + po1.getSize() + "','" + po1.getBagging() + "',"
 					+ po1.getTotal() + ",'" + barcode + "','" + po1.getType() + "');";
 			rm = db.insert(sql);
-			if(rm==ResultMessage.Success)
+			if(rm==ResultMessage.Success){
 				his.init(barcode);
+			    System.out.println("success");
+			}
 			return rm;
 		}
 

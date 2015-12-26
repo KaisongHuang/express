@@ -18,18 +18,18 @@ public interface WarehouseDataService {
 
 	public ArrayList<OutStoragePO> findOut(String begin, String end) throws RemoteException;
 
-	public ResultMessage insert(WarehousePO po) throws RemoteException;
+	public ResultMessage insert(Object po) throws RemoteException;
 
 	/**
 	 * 仓库初始化时使用
-	 * 
+	 *
 	 * @param po
 	 * @return
 	 * @throws RemoteException
 	 */
 	public ResultMessage clear() throws RemoteException;
 
-	public ResultMessage update(WarehousePO po) throws RemoteException;
+	public ResultMessage update(Object ob) throws RemoteException;
 
 	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException;
 
@@ -38,10 +38,10 @@ public interface WarehouseDataService {
 	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException;
 
 	public ResultMessage checkAlarm() throws RemoteException;
-	
+
 	public ArrayList<InStoragePO> adjust() throws RemoteException;
-	
+
 	public ArrayList<int[]> findFreeSpace() throws RemoteException;
-	
+
 	public String getDestination(String id) throws RemoteException;
 }

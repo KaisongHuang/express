@@ -29,7 +29,6 @@ public class ManagerMenuListener implements ActionListener,MouseListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton1()) {
             card.show(panel, "0");
             setClicked(true,false,false,false,false);

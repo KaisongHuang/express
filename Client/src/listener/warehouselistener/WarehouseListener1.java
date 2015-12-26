@@ -3,6 +3,7 @@ package listener.warehouselistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
@@ -35,10 +36,20 @@ public class WarehouseListener1 implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getButton_1()) {
+			for(int i=0;i<arrival.size();i++){
+				ui.getModel().removeRow(0);
+			}
+			
 			arrival = new ArrayList<CentreArrivalVO>();
 			arrival = warehouseBl.getImport();
-			ui.getTextField_3().setText(arrival.get(0).getID());
-			ui.getTextField_4().setText(warehouseBl.getSenderDestination(arrival.get(0).getID()));
+			for(int i=0;i<arrival.size();i++){
+				Vector<Object> rowData=new Vector<Object>();
+				rowData.add(arrival.get(i).getID());
+				rowData.add(warehouseBl.getSenderDestination(arrival.get(i).getID()));
+				ui.getModel().addRow(rowData);
+			}
+			
+			
 		} else if (e.getSource() == ui.getButton_2()) {
 			trans = new ArrayList<CentreTransforVO>();
 			trans = warehouseBl.getExport();

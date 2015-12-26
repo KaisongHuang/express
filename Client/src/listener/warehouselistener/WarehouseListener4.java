@@ -44,9 +44,9 @@ public class WarehouseListener4 implements ActionListener {
 			String date = (String) ui.getComboBox_2().getSelectedItem();
 			String time = year + month + date;
 			String qu = (String) ui.getComboBox_3().getSelectedItem();
-			int pai = (Integer) ui.getComboBox_4().getSelectedItem();
-			int jia = (Integer) ui.getComboBox_5().getSelectedItem();
-			int wei = (Integer) ui.getComboBox_6().getSelectedItem();
+			int pai = Integer.parseInt((String) ui.getComboBox_4().getSelectedItem());
+			int jia = Integer.parseInt((String) ui.getComboBox_5().getSelectedItem());
+			int wei = Integer.parseInt((String) ui.getComboBox_6().getSelectedItem());
 			item.add(id);
 			item.add(destination);
 			item.add(time);
@@ -83,7 +83,7 @@ public class WarehouseListener4 implements ActionListener {
 			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			jf.setUndecorated(true);
-			
+
 			jf.addMouseListener(new MouseAdapter() {
 				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
 				public void mousePressed(MouseEvent e) {
@@ -102,7 +102,7 @@ public class WarehouseListener4 implements ActionListener {
 					jf.setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
 				}
 			});
-			
+
 			JPanel contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			contentPane.setBackground(Color.WHITE);

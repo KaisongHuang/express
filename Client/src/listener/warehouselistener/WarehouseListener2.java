@@ -23,6 +23,7 @@ public class WarehouseListener2 implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// enquireButton
 		if (e.getSource() == ui.getButton_1()) {
+			System.out.println("begin to search!");
 			for(int i=0;i<ui.getModel().getRowCount();i++){
 				ui.getModel().removeRow(0);
 			}
@@ -39,7 +40,7 @@ public class WarehouseListener2 implements ActionListener {
 			String inNum = "" + warehouse.getInNum();
 			String outNum = "" + warehouse.getOutNum();
 			String total = "" + warehouse.getTotal();
-            
+
 			ui.getTextArea().setText(inNum);
 			ui.getTextArea_1().setText(outNum);
 			ui.getTextArea_2().setText(total);
@@ -73,7 +74,7 @@ public class WarehouseListener2 implements ActionListener {
 			ui.getComboBox_5().setSelectedIndex(0);
 		}
 	}
-	
+
 	private boolean check(String date){
 		 if(date.length()!=8){
 			 JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");

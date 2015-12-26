@@ -131,35 +131,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 				}
 			});
 
-			button.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button.setEntered(false);
-					button.setPressed(true);
-					button.repaint();
-				}
 
-				public void mouseReleased(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button.setEntered(true);
-					button.setPressed(false);
-					button.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button.setEntered(false);
-					button.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
-				}
-			});
 			contentPane.add(button);
 
 			final MyButton button_1 = new MyButton("继续修改");
@@ -169,35 +141,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 					jf.dispose();
 				}
 			});
-			button_1.addMouseListener(new MouseListener() {
-				public void mousePressed(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.setPressed(true);
-					button_1.repaint();
-				}
 
-				public void mouseReleased(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseEntered(MouseEvent e) {
-					button_1.setEntered(true);
-					button_1.setPressed(false);
-					button_1.repaint();
-				}
-
-				public void mouseExited(MouseEvent e) {
-					button_1.setEntered(false);
-					button_1.repaint();
-				}
-
-				public void mouseClicked(MouseEvent e) {
-					// TODO Auto-generated method stub
-
-				}
-			});
 			contentPane.add(button_1);
 
 			JLabel label = new JLabel("是否保存新建的库存信息？");
