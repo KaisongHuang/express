@@ -7,9 +7,9 @@ package presentation.managerui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 import listener.managerlistener.ManagerListener1_4;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 public class ManagerUI1_4 extends JPanel {
@@ -21,10 +21,10 @@ public class ManagerUI1_4 extends JPanel {
 	private MyTextField textField;
 	private MyTextField textField_2;
 
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
+	private MyButton btnNewButton_15;
+	private MyButton btnNewButton_16;
 
-	ManagerListener1_4 managerlistener;
+	private ManagerListener1_4 managerlistener;
 
 	/**
 	 * Create the application.
@@ -73,17 +73,18 @@ public class ManagerUI1_4 extends JPanel {
 		panel_6.add(textField_2);
 		textField_2.setColumns(10);
 
-		btnNewButton_15 = new JButton("确定");
+		btnNewButton_15 = new MyButton("确定");
 		btnNewButton_15.setBounds(224, 277, 100, 30);
 		this.add(btnNewButton_15);
 
-		btnNewButton_16 = new JButton("取消");
+		btnNewButton_16 = new MyButton("取消");
 		btnNewButton_16.setBounds(459, 277, 100, 30);
 		this.add(btnNewButton_16);
 
 		btnNewButton_15.addActionListener(managerlistener);
+		btnNewButton_15.addMouseListener(managerlistener);
 		btnNewButton_16.addActionListener(managerlistener);
-
+		btnNewButton_16.addMouseListener(managerlistener);
 	}
 
 	public MyTextField getTextField() {
@@ -102,19 +103,19 @@ public class ManagerUI1_4 extends JPanel {
 		this.textField_2 = textField_2;
 	}
 
-	public JButton getBtnNewButton_15() {
+	public MyButton getBtnNewButton_15() {
 		return btnNewButton_15;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
+	public void setBtnNewButton_15(MyButton btnNewButton_15) {
 		this.btnNewButton_15 = btnNewButton_15;
 	}
 
-	public JButton getBtnNewButton_16() {
+	public MyButton getBtnNewButton_16() {
 		return btnNewButton_16;
 	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
+	public void setBtnNewButton_16(MyButton btnNewButton_16) {
 		this.btnNewButton_16 = btnNewButton_16;
 	}
 
