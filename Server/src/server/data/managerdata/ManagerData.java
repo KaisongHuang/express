@@ -136,7 +136,9 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof CentreArrivalPO){
 			CentreArrivalPO centre=(CentreArrivalPO) po;
-			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getID()+"';";
+			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getTransferID()+"';";
+//			System.out.println(centre.getIsCheck());
+//			System.out.println(centre.getTransferID());
 		    rm=db.update(sql);
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO centre=(CentreTransforPO) po;
@@ -211,6 +213,9 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 				count++;
 				if(id1.equals(id2)){
 				   list1.add(rs.getString(7));
+				   list.add(new CarPackPO(rs.getString(1),rs.getString(10),rs.getString(2),rs.getString(3),rs.getString(4),
+							rs.getString(11),rs.getString(5),rs.getString(6),
+						list1,rs.getDouble(8),rs.getInt(9)));
 				}
 				else{
 					list.add(new CarPackPO(rs.getString(1),rs.getString(10),rs.getString(2),rs.getString(3),rs.getString(4),
@@ -242,8 +247,10 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 				id1=rs.getString(3);
 				if(count==0)
 					id2=id1;
-				if(id1.equals(id2))
+				if(id1.equals(id2)){
 					list1.add(rs.getString(5));
+					list.add(new ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),list1,rs.getInt(4)));
+				}
 				else{
 					list.add(new ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),list1,rs.getInt(4)));
 					list1.clear();
@@ -317,8 +324,11 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			   id1=rs.getString(2);
 			   if(count==0)
 				   id2=id1;
-			   if(id1.equals(id2))
+			   if(id1.equals(id2)){
 				   list1.add(rs.getString(7));
+				   list.add(new CentrePackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
+						   rs.getString(6),list1,rs.getDouble(8),rs.getInt(9)));
+			   }
 			   else{
 				   list.add(new CentrePackPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),
 						   rs.getString(6),list1,rs.getDouble(8),rs.getInt(9)));
@@ -347,8 +357,12 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			    id1=rs.getString(3);
 			    if(count==0)
 			    	id2=id1;
-			    if(id1.equals(id2))
+			    if(id1.equals(id2)){
 			    	list1.add(rs.getString(9));
+			    	list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),list1,rs.getDouble(10),
+			    			rs.getInt(11),rs.getInt(12)));
+			    }
 			    else{
 			    	list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
 			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),list1,rs.getDouble(10),

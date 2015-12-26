@@ -48,9 +48,9 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 
 			Vector<Object> item = new Vector<Object>();
 			item.add(date);
-			item.add(money);
-			item.add(payer);
 			item.add(payAccount);
+			item.add(payer);
+			item.add(money);
 			item.add(entry);
 			item.add(comments);
 
@@ -59,22 +59,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 		// clear
 		else if (e.getSource() == ui.getClear()) {
 			clearText();
-		} else if (e.getSource() == ui.getUpdate()) {
-			// edit selected row
-			// String date = ui.getTextField().getText();
-			// double money = Double.parseDouble(ui.getTextField_1().getText());
-			// String courier = ui.getTextField_2().getText();
-			// int selectedRow = ui.getTable().getSelectedRow();// 获得选中行的索引
-			// if (selectedRow != -1) // 是否存在选中行
-			// {
-			// // 修改指定的值：
-			// ui.getModel().setValueAt(date, selectedRow, 0);
-			// ui.getModel().setValueAt(money, selectedRow, 1);
-			// ui.getModel().setValueAt(courier, selectedRow, 2);
-			// // table.setValueAt(arg0, arg1, arg2)
-			// }
 		}
-		// delete
 		else if (e.getSource() == ui.getDelete()) {
 			int selectedRow = ui.getTable().getSelectedRow();// 获得选中行的索引
 			if (selectedRow != -1) // 存在选中行
@@ -86,12 +71,13 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 		else if (e.getSource() == ui.getFinish()) {
 			final JFrame jf = new JFrame();
 
-			jf.setVisible(true);
+
 			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			jf.setUndecorated(true);
-			
-			
+			jf.setVisible(true);
+
+
 			jf.addMouseListener(new MouseAdapter() {
 				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
 				public void mousePressed(MouseEvent e) {
@@ -134,8 +120,8 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 						vo.setEntry((String) rowData.get(4));
 						vo.setComments((String) rowData.get(5));
 						vo.setIsCheck(0);
-						if (!check(vo))
-							continue;
+//						if (!check(vo))
+//							continue;
 						rm = financeBl.createCost(vo);
 						check(rm);
 					}

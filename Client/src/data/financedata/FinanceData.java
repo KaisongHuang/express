@@ -75,6 +75,13 @@ public class FinanceData implements FinanceDataService {
 
 	public ResultMessage clear() throws RemoteException {
 		// TODO Auto-generated method stub
+
+		return null;
+	}
+
+	public ResultMessage InitInsert(FinancePO po) throws RemoteException {
+		// TODO Auto-generated method stub
+
 		return null;
 	}
 }

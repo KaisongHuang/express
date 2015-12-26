@@ -553,6 +553,12 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
 							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
 							1));
+//					System.out.println((String) getCurrentTable().getValueAt(i, 0));
+//					System.out.println((String) getCurrentTable().getValueAt(i, 1));
+//					System.out.println((String) getCurrentTable().getValueAt(i, 2));
+//					System.out.println((String) getCurrentTable().getValueAt(i, 3));
+//					System.out.println((String) getCurrentTable().getValueAt(i, 4));
+//					System.out.println(1);
 					getCurrentTable().removeRow(i);
 					i--;
 				}
