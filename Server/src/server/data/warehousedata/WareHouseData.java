@@ -21,7 +21,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
-
+    int size;
 	public WareHouseData(MySQLDataBase db) throws RemoteException {
 		super();
 		this.db = db;
@@ -33,8 +33,9 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		ResultMessage rm = null;
 		if (po instanceof InStoragePO) {
 			InStoragePO po1 = (InStoragePO) po;
+			System.out.println(po1.getPos_qu());
 			sql = "insert into InStorage values('" + po1.getId() + "','" + po1.getIndate() + "','"
-					+ po1.getDestination() + "'," + po1.getPos_qu() + "," + po1.getPos_pai() + "," + po1.getPos_jia()
+					+ po1.getDestination() + "','" + po1.getPos_qu() + "'," + po1.getPos_pai() + "," + po1.getPos_jia()
 					+ "," + po1.getPos_wei() + "," + po1.getIsCheck() + ",'" + po1.getWarehouseID() + "'，1);";
 			rm = db.insert(sql);
 		} else {
@@ -44,7 +45,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 					+ po1.getIsCheck() + ",'" + po1.getWarehouseID() + "');";
 			rm = db.insert(sql);
 			if (rm == ResultMessage.Success) {
-				String sql1 = "update InStorage set isInStorage=0 where id='" + po1.getId() + "';";
+				String sql1 = "update InStorage set isInStorage=1 where id='" + po1.getId() + "';";
 				db.update(sql1);
 			}
 		}
@@ -87,10 +88,6 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		return list;
 	}
 
-	public ResultMessage insert(WarehousePO po) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public ResultMessage clear() throws RemoteException {
 		String sql1 = "truncate table InStorage;";
@@ -101,7 +98,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		return rm;
 	}
 
-	public ResultMessage update(WarehousePO po) throws RemoteException {
+	public ResultMessage update(Object po) throws RemoteException {
 		InStoragePO po1 = (InStoragePO) po;
 		String sql = "update InStorage set qu=" + po1.getPos_qu() + ",pai=" + po1.getPos_pai() + ",jia="
 				+ po1.getPos_jia() + ",wei=" + po1.getPos_wei() + " where id='" + po1.getId() + "';";
@@ -242,17 +239,15 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			e1.printStackTrace();
 		}
 
-		String sql1 = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0 ;";
+		String sql1 = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=1 ;";
 		ResultSet rs1 = db.find(sql1);
 		int size1 = 0;
 		int size2 = 0;
 		int size3 = 0;
 		try {
-			if (!rs1.next()) {
-				return null;
-			}
+			
 			while (rs1.next()) {
-				if (rs1.getString(4).equals("Car"))
+				if (rs1.getString(4).equals("car"))
 					size1++;
 				else if (rs1.getString(4).equals("train"))
 					size2++;
@@ -282,14 +277,14 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	 */
 	public ArrayList<InStoragePO> adjust(String WarehouseID) throws RemoteException {
 		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
-		String sql = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0;";
-		ResultSet rs = db.find(sql);
+		
 		String sql1 = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
 		ResultSet rs1 = db.find(sql1);
 
 		double alarm = 0;
 		try {
-			alarm = rs.getDouble(14);
+			if(rs1.next())
+				alarm = rs1.getDouble(14);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -300,6 +295,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 
 		try {
 			Size1 = rs1.getInt(2) * rs1.getInt(3) * rs1.getInt(4);
+			System.out.println(Size1);
 			Size2 = rs1.getInt(5) * rs1.getInt(6) * rs1.getInt(7);
 			Size3 = rs1.getInt(8) * rs1.getInt(9) * rs1.getInt(10);
 		} catch (SQLException e1) {
@@ -307,49 +303,50 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			e1.printStackTrace();
 		}
 
-		String sql2 = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=0 ;";
+		String sql2 = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=1 ;";
 		ResultSet rs2 = db.find(sql2);
 		int size1 = 0;
 		int size2 = 0;
 		int size3 = 0;
 		try {
-			if (!rs2.next()) {
-				return null;
-			}
+			
 			while (rs2.next()) {
-				if (rs2.getString(4).equals("Car"))
+				if (rs2.getString(4).equals("car"))
 					size1++;
 				else if (rs2.getString(4).equals("train"))
 					size2++;
 				else if (rs2.getString(4).equals("air"))
 					size3++;
 			}
+			
+			System.out.println(size1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		int cout1 = (int) (Size1 * 0.1);
 		int cout2 = (int) (Size2 * 0.1);
 		int cout3 = (int) (Size3 * 0.1);
-
+		String sql = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=1;";
+		ResultSet rs = db.find(sql);
 		try {
-			if (!rs.next()) {
-				return null;
-			}
+			
 			while (rs.next()) {
-				if (size1 / Size1 >= alarm && rs.getString(4).equals("Car") && cout1 == 0) {
+				if (size1 / Size1 >= alarm && rs.getString(4).equals("car") && cout1 >= 0) {
 					cout1--;
 					list.add(new InStoragePO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(9),
 							rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(10)));
 				}
 
-				if (size2 / Size2 >= alarm && rs.getString(4).equals("train") && cout2 == 0) {
+				if (size2 / Size2 >= alarm && rs.getString(4).equals("train") && cout2 >= 0) {
 					cout2--;
 					list.add(new InStoragePO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(9),
 							rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(10)));
 				}
 
-				if (size3 / Size3 >= alarm && rs.getString(4).equals("air") && cout3 == 0) {
+				if (size3 / Size3 >= alarm && rs.getString(4).equals("air") && cout3 >= 0) {
 					cout3--;
 					list.add(new InStoragePO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(9),
 							rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getInt(7), rs.getInt(8), rs.getInt(10)));
@@ -359,11 +356,12 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		size=list.size();
 		return list;
 	}
 
 	public ArrayList<int[]> findFreeSpace(String WarehouseID) throws RemoteException {
-		int size = 10;
+	
 		String sql = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
 		ResultSet rs = db.find(sql);
 		ArrayList<int[]> list = new ArrayList<int[]>();
@@ -371,25 +369,31 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		int jia = 0;
 		int wei = 0;
 		try {
-			pai = rs.getInt(11);
-			jia = rs.getInt(12);
-			wei = rs.getInt(13);
+			if (rs.next()) {
+				pai = rs.getInt(11);
+				jia = rs.getInt(12);
+				wei = rs.getInt(13);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		for (int i = 1; i <= pai; i++) {
+A:		for (int i = 1; i <= pai; i++) {
 			for (int m = 1; m <= jia; m++) {
 				for (int n = 1; n <= wei; n++) {
-					String sql1 = "select * from InStorage where isInStorage=0 and WarehouseID='" + WarehouseID
-							+ "',pai=" + pai + ",jia=" + jia + ",wei=" + wei + ";";
+					System.out.println(n);
+					System.out.println(size);
+					String sql1 = "select * from InStorage where isInStorage=1 and WarehouseID='" + WarehouseID
+							+ "' and pai=" + pai + " and jia=" + jia + " and wei=" + wei + ";";
 					rs = db.find(sql1);
 					try {
-						while (!rs.wasNull() && list.size() <= size) {
-							int[] a = { pai, jia, wei };
+						if (!rs.next() && list.size() <= size) {
+							int[] a = { i, m, n };
 							list.add(a);
 						}
+						else if(list.size()>size)
+							break A;
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
