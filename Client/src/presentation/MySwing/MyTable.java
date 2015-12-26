@@ -25,14 +25,17 @@ public class MyTable extends JTable {
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
 		//((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
-	    tableHeader.setDefaultRenderer(new headerRender());
+		tableHeader.setPreferredSize(new Dimension(0, 40));
+		tableHeader.setDefaultRenderer(new headerRender());
 	}
 
 	public MyTable(DefaultTableModel tableModel) {
 		super(tableModel);
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
-		((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
+	//	((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
+		tableHeader.setPreferredSize(new Dimension(0, 40));
+		tableHeader.setDefaultRenderer(new headerRender());
 	}
 
 	public MyTable(Vector<Object> data, Vector<String> name) {
@@ -40,7 +43,9 @@ public class MyTable extends JTable {
 		super(data,name);
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
-		((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
+		//((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
+		tableHeader.setPreferredSize(new Dimension(0, 40));
+		tableHeader.setDefaultRenderer(new headerRender());
 	}
 
 	@Override
@@ -107,7 +112,7 @@ class headerRender extends DefaultTableCellRenderer {
 	
 		Dimension d = label.getSize();
 		//d.height = 36;
-		label.setBackground(Color.BLUE);
+		label.setBackground(new Color(158, 211, 240));
 		label.setSize(d);
 		label.setOpaque(true);
 		return label;
