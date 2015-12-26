@@ -151,22 +151,47 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getBtnNewButton_10()) {
+			ui.getBtnNewButton_10().setEntered(false);
+			ui.getBtnNewButton_10().setPressed(true);
+			ui.getBtnNewButton_10().repaint();
+		} else if (e.getSource() == ui.getBtnNewButton_11()) {
+			ui.getBtnNewButton_11().setEntered(false);
+			ui.getBtnNewButton_11().setPressed(true);
+			ui.getBtnNewButton_11().repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getBtnNewButton_10()) {
+			ui.getBtnNewButton_10().setEntered(true);
+			ui.getBtnNewButton_10().setPressed(false);
+			ui.getBtnNewButton_10().repaint();
+		} else if (e.getSource() == ui.getBtnNewButton_11()) {
+			ui.getBtnNewButton_11().setEntered(true);
+			ui.getBtnNewButton_11().setPressed(false);
+			ui.getBtnNewButton_11().repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getBtnNewButton_10()) {
+			ui.getBtnNewButton_10().setEntered(true);
+			ui.getBtnNewButton_10().repaint();
+		} else if (e.getSource() == ui.getBtnNewButton_11()) {
+			ui.getBtnNewButton_11().setEntered(true);
+			ui.getBtnNewButton_11().repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		ui.getBtnNewButton_10().setEntered(false);
+		ui.getBtnNewButton_10().repaint();
+		ui.getBtnNewButton_11().setEntered(false);
+		ui.getBtnNewButton_11().repaint();
 	}
 
 }

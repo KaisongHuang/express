@@ -116,22 +116,86 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getButton()) {
+			ui.getButton().setEntered(false);
+			ui.getButton().setPressed(true);
+			ui.getButton().repaint();
+		} else if (e.getSource() == ui.getButton1()) {
+			ui.getButton1().setEntered(false);
+			ui.getButton1().setPressed(true);
+			ui.getButton1().repaint();
+		} else if (e.getSource() == ui.getButton2()) {
+			ui.getButton2().setEntered(false);
+			ui.getButton2().setPressed(true);
+			ui.getButton2().repaint();
+		} else if (e.getSource() == ui.getButton_1()) {
+			ui.getButton_1().setEntered(false);
+			ui.getButton_1().setPressed(true);
+			ui.getButton_1().repaint();
+		} else if (e.getSource() == ui.getButton_2()) {
+			ui.getButton_2().setEntered(false);
+			ui.getButton_2().setPressed(true);
+			ui.getButton_2().repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getButton()) {
+			ui.getButton().setEntered(true);
+			ui.getButton().setPressed(false);
+			ui.getButton().repaint();
+		} else if (e.getSource() == ui.getButton1()) {
+			ui.getButton1().setEntered(true);
+			ui.getButton1().setPressed(false);
+			ui.getButton1().repaint();
+		} else if (e.getSource() == ui.getButton2()) {
+			ui.getButton2().setEntered(true);
+			ui.getButton2().setPressed(false);
+			ui.getButton2().repaint();
+		} else if (e.getSource() == ui.getButton_1()) {
+			ui.getButton_1().setEntered(true);
+			ui.getButton_1().setPressed(false);
+			ui.getButton_1().repaint();
+		} else if (e.getSource() == ui.getButton_2()) {
+			ui.getButton_2().setEntered(true);
+			ui.getButton_2().setPressed(false);
+			ui.getButton_2().repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getButton()) {
+			ui.getButton().setEntered(true);
+			ui.getButton().repaint();
+		} else if (e.getSource() == ui.getButton1()) {
+			ui.getButton1().setEntered(true);
+			ui.getButton1().repaint();
+		}else if (e.getSource() == ui.getButton2()) {
+			ui.getButton2().setEntered(true);
+			ui.getButton2().repaint();
+		}else if (e.getSource() == ui.getButton_1()) {
+			ui.getButton_1().setEntered(true);
+			ui.getButton_1().repaint();
+		}else if (e.getSource() == ui.getButton_2()) {
+			ui.getButton_2().setEntered(true);
+			ui.getButton_2().repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		ui.getButton().setEntered(false);
+		ui.getButton().repaint();
+		ui.getButton1().setEntered(false);
+		ui.getButton1().repaint();
+		ui.getButton2().setEntered(false);
+		ui.getButton2().repaint();
+		ui.getButton_1().setEntered(false);
+		ui.getButton_1().repaint();
+		ui.getButton_2().setEntered(false);
+		ui.getButton_2().repaint();
 	}
 
 	private void refreshPayVO() {

@@ -43,22 +43,47 @@ public class ManagerListener1_5 implements MouseListener, ActionListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getBtnNewButton_15()) {
+			ui.getBtnNewButton_15().setEntered(false);
+			ui.getBtnNewButton_15().setPressed(true);
+			ui.getBtnNewButton_15().repaint();
+		} else if (e.getSource() == ui.getBtnNewButton_16()) {
+			ui.getBtnNewButton_16().setEntered(false);
+			ui.getBtnNewButton_16().setPressed(true);
+			ui.getBtnNewButton_16().repaint();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getBtnNewButton_15()) {
+			ui.getBtnNewButton_15().setEntered(true);
+			ui.getBtnNewButton_15().setPressed(false);
+			ui.getBtnNewButton_15().repaint();
+		} else if (e.getSource() == ui.getBtnNewButton_16()) {
+			ui.getBtnNewButton_16().setEntered(true);
+			ui.getBtnNewButton_16().setPressed(false);
+			ui.getBtnNewButton_16().repaint();
+		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == ui.getBtnNewButton_15()) {
+			ui.getBtnNewButton_15().setEntered(true);
+			ui.getBtnNewButton_15().repaint();
+		} else if (e.getSource() == ui.getBtnNewButton_16()) {
+			ui.getBtnNewButton_16().setEntered(true);
+			ui.getBtnNewButton_16().repaint();
+		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		ui.getBtnNewButton_15().setEntered(false);
+		ui.getBtnNewButton_15().repaint();
+		ui.getBtnNewButton_16().setEntered(false);
+		ui.getBtnNewButton_16().repaint();
 	}
 
 }

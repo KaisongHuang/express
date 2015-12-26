@@ -11,11 +11,11 @@ import java.util.Vector;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import listener.sellingarealistener.SellingAreaListener20;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -38,18 +38,18 @@ public class SellingAreaUI2 extends JPanel {
 	private Vector<Object> data1;
 	private DefaultTableModel model1;
 
-	SellingAreaListener20 sellingarealistener;
+	private SellingAreaListener20 sellingarealistener;
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_2;
 	private MyTextField textField_3;
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
-	private JButton button_4;
-	private JButton button_5;
-	private JButton button_6;
+	private MyButton button;
+	private MyButton button_1;
+	private MyButton button_2;
+	private MyButton button_3;
+	private MyButton button_4;
+	private MyButton button_5;
+	private MyButton button_6;
 
 	/**
 	 * Create the application.
@@ -139,39 +139,46 @@ public class SellingAreaUI2 extends JPanel {
 		add(textField_3);
 		textField_3.setColumns(10);
 
-		button = new JButton("新增收款单");
+		button = new MyButton("新增收款单");
 		button.setBounds(220, 363, 93, 29);
 		button.addActionListener(sellingarealistener);
+		button.addMouseListener(sellingarealistener);
 		add(button);
 
-		button_1 = new JButton("修改收款单");
+		button_1 = new MyButton("修改收款单");
 		button_1.setBounds(220, 396, 93, 29);
 		button_1.addActionListener(sellingarealistener);
+		button_1.addMouseListener(sellingarealistener);
 		add(button_1);
 
-		button_2 = new JButton("删除收款单");
+		button_2 = new MyButton("删除收款单");
 		button_2.setBounds(220, 431, 93, 29);
 		button_2.addActionListener(sellingarealistener);
+		button_2.addMouseListener(sellingarealistener);
 		add(button_2);
 
-		button_3 = new JButton("添加");
+		button_3 = new MyButton("添加");
 		button_3.setBounds(527, 363, 60, 29);
 		button_3.addActionListener(sellingarealistener);
+		button_3.addMouseListener(sellingarealistener);
 		add(button_3);
 
-		button_4 = new JButton("删除");
+		button_4 = new MyButton("删除");
 		button_4.setBounds(582, 363, 60, 29);
 		button_4.addActionListener(sellingarealistener);
+		button_4.addMouseListener(sellingarealistener);
 		add(button_4);
 
-		button_5 = new JButton("保存");
+		button_5 = new MyButton("保存");
 		button_5.setBounds(28, 30, 60, 29);
 		button_5.addActionListener(sellingarealistener);
+		button_5.addMouseListener(sellingarealistener);
 		add(button_5);
 
-		button_6 = new JButton("清空");
+		button_6 = new MyButton("清空");
 		button_6.setBounds(89, 30, 60, 29);
 		button_6.addActionListener(sellingarealistener);
+		button_6.addMouseListener(sellingarealistener);
 		add(button_6);
 	}
 
@@ -227,31 +234,31 @@ public class SellingAreaUI2 extends JPanel {
 		return textField_3;
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 
-	public JButton getButton_2() {
+	public MyButton getButton_2() {
 		return button_2;
 	}
 
-	public JButton getButton_3() {
+	public MyButton getButton_3() {
 		return button_3;
 	}
 
-	public JButton getButton_4() {
+	public MyButton getButton_4() {
 		return button_4;
 	}
 
-	public JButton getButton_5() {
+	public MyButton getButton_5() {
 		return button_5;
 	}
 
-	public JButton getButton_6() {
+	public MyButton getButton_6() {
 		return button_6;
 	}
 }
