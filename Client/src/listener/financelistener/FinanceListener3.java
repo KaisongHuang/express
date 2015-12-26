@@ -10,9 +10,6 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 
 import logic.financebl.Finance;
-import po.PayPO;
-import po.ReceiptPO;
-import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI3;
 import vo.PayVO;
 import vo.ReceiptVO;
@@ -29,11 +26,13 @@ public class FinanceListener3 implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getSearch()) {
 			//clear table
-			for (int i = 0; i < ui.getTable1().getRowCount(); i++) {
+			int n1=ui.getModel1().getRowCount();
+			for (int i = 0; i < n1; i++) {
 				ui.getModel1().removeRow(0);
 			}
 
-			for (int i = 0; i < ui.getTable2().getRowCount(); i++) {
+			int n2=ui.getModel2().getRowCount();
+			for (int i = 0; i < n2; i++) {
 				ui.getModel2().removeRow(0);
 			}
 

@@ -21,11 +21,6 @@ public class ManagerListener30 implements MouseListener, ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getButton1()){
-			
-		}else if(e.getSource()==ui.getButton2()){
-			
-		}
 		
 	}
 
