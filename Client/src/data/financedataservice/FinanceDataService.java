@@ -10,13 +10,13 @@ import po.ReceiptPO;
 import _enum.ResultMessage;
 
 public interface FinanceDataService {
-	public ResultMessage InitInsert(FinancePO po) throws RemoteException;
+	public ResultMessage InitInsert(AccountPO po) throws RemoteException;
 
 	public ResultMessage insert(FinancePO po) throws RemoteException;
 
 	public ResultMessage delete(FinancePO po) throws RemoteException;
 
-	public ResultMessage update(FinancePO po) throws RemoteException;
+	public ResultMessage update(AccountPO po) throws RemoteException;
 
 	public ArrayList<AccountPO> findAccount() throws RemoteException;
 
