@@ -57,7 +57,6 @@ public class CourierMenuListener implements ActionListener ,MouseListener{
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == menu.getButton1()) {
 			menu.getButton1().setEntered(true);
 			setUnclicked();

@@ -49,7 +49,6 @@ public class CentreMenuListener implements ActionListener,MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -59,12 +58,11 @@ public class CentreMenuListener implements ActionListener,MouseListener {
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		if (e.getSource() == ui.getButton1()) {
 			ui.getButton1().setEntered(true);
 			setUnclicked();
@@ -85,7 +83,6 @@ public class CentreMenuListener implements ActionListener,MouseListener {
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
 		ui.getButton1().setEntered(false);
 		ui.getButton2().setEntered(false);
 		ui.getButton3().setEntered(false);
