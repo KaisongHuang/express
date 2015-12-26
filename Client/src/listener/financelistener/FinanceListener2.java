@@ -266,136 +266,16 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getCheck()) {
-			MyButton button = ui.getCheck();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} else if (e.getSource() == ui.getAdd()) {
-			MyButton button = ui.getAdd();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} else if (e.getSource() == ui.getClear()) {
-			MyButton button = ui.getClear();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} else if (e.getSource() == ui.getDelete()) {
-			MyButton button = ui.getDelete();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} else if (e.getSource() == ui.getFinish()) {
-			MyButton button = ui.getFinish();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} else if (e.getSource() == ui.getUpdate()) {
-			MyButton button = ui.getUpdate();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getCheck()) {
-			MyButton button = ui.getCheck();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getAdd()) {
-			MyButton button = ui.getAdd();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getClear()) {
-			MyButton button = ui.getClear();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getDelete()) {
-			MyButton button = ui.getDelete();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getFinish()) {
-			MyButton button = ui.getFinish();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getUpdate()) {
-			MyButton button = ui.getUpdate();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getCheck()) {
-			MyButton button = ui.getCheck();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getAdd()) {
-			MyButton button = ui.getAdd();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getClear()) {
-			MyButton button = ui.getClear();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getDelete()) {
-			MyButton button = ui.getDelete();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getFinish()) {
-			MyButton button = ui.getFinish();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getUpdate()) {
-			MyButton button = ui.getUpdate();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getCheck()) {
-			MyButton button = ui.getCheck();
-			button.setEntered(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getAdd()) {
-			MyButton button = ui.getAdd();
-			button.setEntered(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getClear()) {
-			MyButton button = ui.getClear();
-			button.setEntered(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getDelete()) {
-			MyButton button = ui.getDelete();
-			button.setEntered(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getFinish()) {
-			MyButton button = ui.getFinish();
-			button.setEntered(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getUpdate()) {
-			MyButton button = ui.getUpdate();
-			button.setEntered(false);
-			button.repaint();
-		}
 	}
 
 	private void clearText() {
