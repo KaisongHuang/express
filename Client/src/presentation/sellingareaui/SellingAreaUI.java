@@ -7,11 +7,11 @@ package presentation.sellingareaui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
 import listener.sellingarealistener.SellingAreaListener00;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 public class SellingAreaUI extends JPanel {
@@ -29,10 +29,10 @@ public class SellingAreaUI extends JPanel {
 	private MyTextField textField_6;
 	private JTextArea textArea;
 
-	private JButton btnNewButton_10;
-	private JButton btnNewButton_11;
+	private MyButton btnNewButton_10;
+	private MyButton btnNewButton_11;
 
-	SellingAreaListener00 sellingarealistener;
+	private SellingAreaListener00 sellingarealistener;
 	private int width;
 	private int height;
 	private MyTextField textField_7;
@@ -145,11 +145,11 @@ public class SellingAreaUI extends JPanel {
 		this.add(textField_6);
 		textField_6.setColumns(10);
 
-		btnNewButton_10 = new JButton("\u786E\u8BA4");
+		btnNewButton_10 = new MyButton("\u786E\u8BA4");
 		btnNewButton_10.setBounds(431, 403, 100, 30);
 		this.add(btnNewButton_10);
 
-		btnNewButton_11 = new JButton("\u6E05\u7A7A");
+		btnNewButton_11 = new MyButton("\u6E05\u7A7A");
 		btnNewButton_11.setBounds(543, 403, 100, 30);
 		this.add(btnNewButton_11);
 
@@ -176,7 +176,9 @@ public class SellingAreaUI extends JPanel {
 		textField_8.setColumns(10);
 
 		btnNewButton_10.addActionListener(sellingarealistener);
+		btnNewButton_10.addMouseListener(sellingarealistener);
 		btnNewButton_11.addActionListener(sellingarealistener);
+		btnNewButton_11.addMouseListener(sellingarealistener);
 
 	}
 
@@ -236,19 +238,19 @@ public class SellingAreaUI extends JPanel {
 		this.textField_6 = textField_6;
 	}
 
-	public JButton getBtnNewButton_10() {
+	public MyButton getBtnNewButton_10() {
 		return btnNewButton_10;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
+	public void setBtnNewButton_10(MyButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
 	}
 
-	public JButton getBtnNewButton_11() {
+	public MyButton getBtnNewButton_11() {
 		return btnNewButton_11;
 	}
 
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
+	public void setBtnNewButton_11(MyButton btnNewButton_11) {
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 

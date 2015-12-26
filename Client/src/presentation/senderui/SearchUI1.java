@@ -9,14 +9,14 @@ import listener.senderlistener.SenderListener1;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 
-public class SearchUI1 extends JPanel{
+public class SearchUI1 extends JFrame{
     /**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JLabel label1;
     private JLabel state1;
     private JLabel id1;
     private JTextArea textArea;
@@ -41,8 +41,6 @@ public class SearchUI1 extends JPanel{
 		state.setBounds(60, 28, 84, 18);
 		this.add(state);
 
-		label1=new JLabel();
-		label1.setBounds(160, 28, 127, 31);
 		JLabel id = new JLabel("订单编号:");
 		id.setBounds(60, 60, 84, 18);
 		this.add(id);
@@ -69,17 +67,34 @@ public class SearchUI1 extends JPanel{
 		id1.setBounds(163, 62, 132, 18);
 		add(id1);
 
-	}
-	public JLabel getLabel1(){
-		return label1;
-	}
-	public JLabel getLabel2(){
-		return state1;
+		this.setVisible(true);
+
 	}
 
+
+	public void setLabel2(String s){
+		state1.setText(s);
+	}
+
+	public void setID(String id){
+		id1.setText(id);
+	}
 	public void  setText(String s){
 	    textArea.append(s);;
 	}
 	private void setImage() {
 	}
+
+	public JButton getButton() {
+		return button;
+	}
+
+	public void setState1(String state1) {
+		this.state1.setText(state1);
+	}
+
+	public void setId1(String id1) {
+		this.id1.setText(id1);
+	}
+
 }

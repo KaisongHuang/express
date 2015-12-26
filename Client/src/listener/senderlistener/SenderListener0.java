@@ -26,11 +26,8 @@ public class SenderListener0 implements ActionListener{
 	public SenderListener0(SearchUI s){
 		search=s;
 		sender=new Sender();
-		search1=new SearchUI1();
-		search.add(search1);
-		search1.setVisible(false);
-		label1=search1.getLabel1();
-		label2=search1.getLabel2();
+
+
 	}
 	public void actionPerformed(ActionEvent e) {
 		String s=search.gettextFieldContent();
@@ -39,8 +36,9 @@ public class SenderListener0 implements ActionListener{
 		HistoryVO h= sender.search(s);
 		if(!check(h))
 			return ;
+
+		search1=new SearchUI1();
 		set(h);
-		search1.setVisible(true);
 	}
 
 	private boolean check(HistoryVO vo){
@@ -68,8 +66,8 @@ public class SenderListener0 implements ActionListener{
 
 		sellingAreaID = list1.get(0);
 		centreID = list1.get(1);
-
-
+        search1.setLabel2(vo.getState());;
+        search1.setID(vo.getID());
 		int selling = list2.get(0);
 		int centre = list2.get(1);
 

@@ -14,7 +14,7 @@ import presentation.MySwing.MyTextField;
 public class ManagerUI1_1 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,7 @@ public class ManagerUI1_1 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param card
 	 */
 	public ManagerUI1_1() {
@@ -74,7 +74,7 @@ public class ManagerUI1_1 extends JPanel {
 		lblNewLabel_2.setBounds(6, 35, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
-		lblNewLabel_4 = new JLabel("111");
+		lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setBounds(103, 35, 100, 18);
 		panel_6.add(lblNewLabel_4);
 
@@ -90,7 +90,7 @@ public class ManagerUI1_1 extends JPanel {
 		lblNewLabel_10.setBounds(186, 6, 100, 18);
 		panel_6.add(lblNewLabel_10);
 
-	
+
 
 	}
 
@@ -106,7 +106,7 @@ public class ManagerUI1_1 extends JPanel {
 		return search;
 	}
 
-	
+
 
 	public JLabel getLblNewLabel_1() {
 		return lblNewLabel_1;
@@ -156,6 +156,6 @@ public class ManagerUI1_1 extends JPanel {
 		this.lblNewLabel_10 = lblNewLabel_10;
 	}
 
-	
+
 
 }

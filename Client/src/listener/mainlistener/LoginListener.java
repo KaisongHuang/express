@@ -2,6 +2,8 @@ package listener.mainlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,23 +18,23 @@ import presentation.senderui.SearchUI;
 import vo.AdminVO;
 import vo.EmployeeVO;
 
-public class LoginListener implements ActionListener {
-	LoginUI frame;
-	LoginBlService l;
+public class LoginListener implements ActionListener, MouseListener {
+	private LoginUI ui;
+	private LoginBlService l;
 
 	public LoginListener(JFrame frame) {
-		this.frame = (LoginUI) frame;
+		this.ui = (LoginUI) frame;
 		l = new Login();
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == frame.getLogin()) {
-			JTextField text = frame.getText();
-			JTextField text1 = frame.getText1();
+		if (e.getSource() == ui.getLogin()) {
+			JTextField text = ui.getText();
+			JTextField text1 = ui.getText1();
 
 			EmployeeVO vo = l.login(new AdminVO(text.getText(), null, text1.getText(), null));
 			if (vo == null) {
-				JOptionPane.showMessageDialog(frame, "用户名或密码不正确！");
+				JOptionPane.showMessageDialog(ui, "用户名或密码不正确！");
 				return;
 			}
 			EmployeeMes.employeeID = vo.getEmployeeID();
@@ -44,12 +46,30 @@ public class LoginListener implements ActionListener {
 			System.out.println(EmployeeMes.employeePosition);
 			MainFrame frame1 = new MainFrame();
 			frame1.init();
-			frame.setVisible(false);
-		} else if (e.getSource() == frame.getLogout()) {
+			ui.setVisible(false);
+		} else if (e.getSource() == ui.getLogout()) {
 			System.exit(0);
-		} else if (e.getSource() == frame.getSearch()) {
+		} else if (e.getSource() == ui.getSearch()) {
 			new SearchUI();
 		}
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+	}
+
+	public void mouseReleased(MouseEvent e) {
+	}
+
+	public void mouseEntered(MouseEvent e) {
+	}
+
+	public void mouseExited(MouseEvent e) {
 	}
 
 }

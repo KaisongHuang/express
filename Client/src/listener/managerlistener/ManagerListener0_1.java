@@ -17,14 +17,14 @@ import vo.DriverVO;
 import vo.EmployeeVO;
 
 public class ManagerListener0_1 implements MouseListener, ActionListener {
-	
+
 	private ManagerUI0_1 ui;
 	ManagerBlService manager = new Manager();
 	public ManagerListener0_1 (ManagerUI0_1 ui){
 		super();
 		this.ui=ui;
 	}
-	
+
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -37,12 +37,12 @@ public class ManagerListener0_1 implements MouseListener, ActionListener {
 				return ;
 			setLabel(vo);
 		}
-		
+
 	}
 	private boolean check(EmployeeVO vo){
 		if(vo==null){
 			JOptionPane.showMessageDialog(ui, "员工编号不存在！");
-   		    return false;	
+   		    return false;
 		}
 		return true;
 	}
@@ -61,57 +61,31 @@ public class ManagerListener0_1 implements MouseListener, ActionListener {
 	   }
 	private void setLabel(EmployeeVO vo) {
 		// TODO Auto-generated method stub
-		ui.setLblNewLabel_4(new JLabel(vo.getEmployeeName()));
-		ui.setLblNewLabel_10(new JLabel(""+vo.getEmployeeID()));
-		ui.setLblNewLabel_7(new JLabel(vo.getEmployeePosition()));
-		ui.setLblNewLabel_13(new JLabel(""+vo.getEmployeeAging()));
-		ui.setLblNewLabel_8(new JLabel(vo.getBelongToWho()));
-		ui.setLblNewLabel_14(new JLabel(""+vo.getTimeOfWorking()));
+		ui.getLblNewLabel_4().setText(vo.getEmployeeName());
+		ui.getLblNewLabel_10().setText(""+vo.getEmployeeID());
+		ui.getLblNewLabel_7().setText(vo.getEmployeePosition());
+		ui.getLblNewLabel_13().setText(""+vo.getEmployeeAging());
+		ui.getLblNewLabel_8().setText(vo.getBelongToWho());
+		ui.getLblNewLabel_14().setText(""+vo.getTimeOfWorking());
 	}
 
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} 
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getSearch()){
-			MyButton button=ui.getSearch();
-		    button.setEntered(false);
-		    button.repaint();
-		}
-	}
+			}
 
 }

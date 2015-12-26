@@ -18,7 +18,7 @@ import presentation.managerui.ManagerUI0_2;
 import vo.EmployeeVO;
 
 public class ManagerListener0_2 implements MouseListener, ActionListener {
-	
+
 	private ManagerUI0_2 ui;
 	ManagerBlService manager = new Manager();
 	public ManagerListener0_2 (ManagerUI0_2 ui){
@@ -52,9 +52,9 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 			delete(ui.getTextField_5());
 			delete(ui.getTextField_6());
 		}
-		
+
 	}
-	
+
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub
 		textField.setText("");
@@ -75,11 +75,11 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 	private boolean check(EmployeeVO vo){
 		if(vo==null){
 			JOptionPane.showMessageDialog(ui, "员工编号不存在！");
-   		    return false;	
+   		    return false;
 		}
 		if(vo.checkIsNull()==0){
 			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
-   		    return false;	
+   		    return false;
 		}
 		if(vo.checkAge()==0){
 			JOptionPane.showMessageDialog(ui, "请检查员工年龄格式是否正确！");
@@ -121,104 +121,43 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 		String belongToWho = ui.getTextField_3().getText();
 		String employeeAging = ui.getTextField_5().getText();
 		String timeOfWorking = ui.getTextField_6().getText();
-		
+
 		EmployeeVO vo = new EmployeeVO(employeeID, employeeName, Integer.parseInt(employeeAging),
-				employeePosition, Integer.parseInt(timeOfWorking), belongToWho);
-		
+				employeePosition, Double.parseDouble(timeOfWorking), belongToWho);
+
 		return vo;
 	}
 
 	private void setLabel(EmployeeVO vo) {
 		// TODO Auto-generated method stub
-		ui.setTextField_1(new MyTextField(vo.getEmployeeName()));
-		ui.setTextField_4(new MyTextField(""+vo.getEmployeeID()));
-		ui.setTextField_2(new MyTextField(vo.getEmployeePosition()));
-		ui.setTextField_3(new MyTextField(vo.getBelongToWho()));
-		ui.setTextField_5(new MyTextField(""+vo.getEmployeeAging()));
-		ui.setTextField_6(new MyTextField(""+vo.getTimeOfWorking()));
+		ui.setTextField_1(vo.getEmployeeName());
+		ui.setTextField_4(""+vo.getEmployeeID());
+		ui.setTextField_2(vo.getEmployeePosition());
+		ui.setTextField_3(vo.getBelongToWho());
+		ui.setTextField_5(""+vo.getEmployeeAging());
+		ui.setTextField_6(""+vo.getTimeOfWorking());
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		} else if (e.getSource() == ui.getConfirm()) {
-			MyButton button=ui.getConfirm();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			MyButton button=ui.getCancle();
-			button.setEntered(false);
-			button.setPressed(true);
-			button.repaint();
-		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getConfirm()) {
-			MyButton button=ui.getConfirm();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			MyButton button=ui.getCancle();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == ui.getSearch()) {
-			MyButton button=ui.getSearch();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		} else if (e.getSource() == ui.getConfirm()) {
-			MyButton button=ui.getConfirm();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			MyButton button=ui.getCancle();
-			button.setEntered(true);
-			button.setPressed(false);
-			button.repaint();
-		}
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getSearch()){
-			MyButton button=ui.getSearch();
-		    button.setEntered(false);
-		    button.repaint();
-		}else if(e.getSource()==ui.getConfirm()){
-			MyButton button=ui.getConfirm();
-		    button.setEntered(false);
-		    button.repaint();
-		}else if(e.getSource()==ui.getCancle()){
-			MyButton button=ui.getCancle();
-		    button.setEntered(false);
-		    button.repaint();
-		}
 	}
-	
+
 
 }

@@ -16,8 +16,8 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 
-import javax.swing.JButton;
 import listener.managerlistener.ManagerListener20;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
 
 import javax.swing.JComboBox;
@@ -29,11 +29,11 @@ public class ManagerUI2 extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JComboBox<String> comboBox;
-	private JButton button1;
-	private JButton button2;
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
+	private MyButton button1;
+	private MyButton button2;
+	private MyButton button;
+	private MyButton button_1;
+	private MyButton button_2;
 	private JPanel panel;
 	private JPanel panel1;
 	private JPanel panel2;
@@ -98,7 +98,7 @@ public class ManagerUI2 extends JPanel {
 	private DefaultTableModel model10;
 	private DefaultTableModel model11;
 	private CardLayout card;
-	ManagerListener20 managerlistener;
+	private ManagerListener20 managerlistener;
 
 	/**
 	 * Create the application.
@@ -140,15 +140,17 @@ public class ManagerUI2 extends JPanel {
 		comboBox.setBounds(61, 5, 150, 28);
 		this.add(comboBox);
 
-		button1 = new JButton("确认");
+		button1 = new MyButton("确认");
 		button1.setBounds(205, 5, 80, 28);
 		this.add(button1);
 		button1.addActionListener(managerlistener);
-
-		button2 = new JButton("取消");
+		button1.addMouseListener(managerlistener);
+		
+		button2 = new MyButton("取消");
 		button2.setBounds(280, 5, 80, 28);
 		this.add(button2);
 		button2.addActionListener(managerlistener);
+		button2.addMouseListener(managerlistener);
 
 		JLabel label = new JLabel("数据类型：");
 		label.setBounds(0, 9, 100, 18);
@@ -362,32 +364,35 @@ public class ManagerUI2 extends JPanel {
 		panel.add(panel11, "10");
 		add(panel);
 
-		button = new JButton("全选");
+		button = new MyButton("全选");
 		button.setBounds(485, 5, 80, 29);
 		button.addActionListener(managerlistener);
+		button.addMouseListener(managerlistener);
 		add(button);
 
-		button_1 = new JButton("取消全选");
+		button_1 = new MyButton("取消全选");
 		button_1.setBounds(560, 5, 80, 29);
 		button_1.addActionListener(managerlistener);
+		button_1.addMouseListener(managerlistener);
 		add(button_1);
 
-		button_2 = new JButton("已审批");
+		button_2 = new MyButton("已审批");
 		button_2.setBounds(635, 5, 80, 29);
 		button_2.addActionListener(managerlistener);
+		button_2.addMouseListener(managerlistener);
 		add(button_2);
 
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 
-	public JButton getButton_2() {
+	public MyButton getButton_2() {
 		return button_2;
 	}
 
@@ -475,19 +480,19 @@ public class ManagerUI2 extends JPanel {
 		this.data11 = data11;
 	}
 
-	public JButton getButton1() {
+	public MyButton getButton1() {
 		return button1;
 	}
 
-	public void setButton1(JButton button1) {
+	public void setButton1(MyButton button1) {
 		this.button1 = button1;
 	}
 
-	public JButton getButton2() {
+	public MyButton getButton2() {
 		return button2;
 	}
 
-	public void setButton2(JButton button2) {
+	public void setButton2(MyButton button2) {
 		this.button2 = button2;
 	}
 

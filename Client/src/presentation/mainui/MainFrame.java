@@ -49,7 +49,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
-		// EmployeeMes.employeePosition = "总经理";
+//		EmployeeMes.employeePosition = "营业厅业务员";
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
