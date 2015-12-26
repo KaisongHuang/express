@@ -60,7 +60,7 @@ public class FinanceUI4_3 extends JPanel {
 		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
-		JSP.setBounds(82, 176, 340, 200);
+		JSP.setBounds(82, 171, 340, 200);
 		this.add(JSP);
 
 		label = new JLabel("请输入银行账号关键字段:");
@@ -73,25 +73,25 @@ public class FinanceUI4_3 extends JPanel {
 		textField.setColumns(10);
 
 		button_3 = new MyButton("查询");
-		button_3.setBounds(434, 108, 55, 27);
+		button_3.setBounds(434, 108, 94, 27);
 		button_3.addActionListener(financeListener4);
 		button_3.addMouseListener(financeListener4);
 		this.add(button_3);
 
 		button_5 = new MyButton("修改");
-		button_5.setBounds(533, 251, 57, 27);
+		button_5.setBounds(473, 288, 175, 27);
 		button_5.addActionListener(financeListener4);
 		button_5.addMouseListener(financeListener4);
 		this.add(button_5);
 
 		button_6 = new MyButton("删除");
-		button_6.setBounds(591, 251, 57, 27);
+		button_6.setBounds(473, 325, 175, 27);
 		button_6.addActionListener(financeListener4);
 		button_6.addMouseListener(financeListener4);
 		this.add(button_6);
 
 		button_4 = new MyButton("新增");
-		button_4.setBounds(473, 251, 57, 27);
+		button_4.setBounds(473, 251, 175, 27);
 		button_4.addActionListener(financeListener4);
 		button_4.addMouseListener(financeListener4);
 		this.add(button_4);

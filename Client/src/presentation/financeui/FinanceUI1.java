@@ -77,14 +77,14 @@ public class FinanceUI1 extends JPanel {
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(127, 34, 61, 25);
 		comboBox.addItem("2015");
-		
+
 //		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
 
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(200, 34, 61, 25);
 		comboBox_1.addItem("01");
-		
+
 //		comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 
@@ -96,7 +96,7 @@ public class FinanceUI1 extends JPanel {
 
 		comboBox_3 = new JComboBox<String>();
 		comboBox_3.setBounds(408, 34, 85, 25);
-		comboBox_3.addItem("南京鼓楼");
+		comboBox_3.addItem("南京鼓楼营业厅4");
 //		comboBox_3.setSelectedIndex(0);
 		this.add(comboBox_3);
 
@@ -202,7 +202,7 @@ public class FinanceUI1 extends JPanel {
 		this.table = table;
 	}
 	private void setImage() {
-		
+
 	}
-	
+
 }
