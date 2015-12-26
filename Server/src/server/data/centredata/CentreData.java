@@ -30,7 +30,7 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		String sql=null;
 		if(po instanceof CentreArrivalPO){
 			CentreArrivalPO po1=(CentreArrivalPO) po;
-			sql="insert into CentreArrival values("+po1.getID()+",'"+po1.getGetDate()+"',"+po1.getTransferID()+",'"+po1.getStart()+"','"+po1.getExpressState()+"',"+po1.getIsCheck()+"',"+po1.getIsInstorage()+")";
+			sql="insert into CentreArrival values("+po1.getID()+",'"+po1.getGetDate()+"',"+po1.getTransferID()+",'"+po1.getStart()+"','"+po1.getExpressState()+"',"+po1.getIsCheck()+"',0)";
 		    rm=db.insert(sql);
 		    his.Centre(po1.getID(), po1.getID(), po1.getExpressState());
 		}else if(po instanceof CentreTransforPO){
@@ -38,7 +38,7 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 			for(int i=0;i<po1.getList().size();i++){
 			sql="insert into CentreTransfor values("+"'"+po1.getTransferStyle()+"','"+po1.getDataOfGetin()+"',"+po1.getCentreTransferID()+
 					","+po1.getBanHao()+",'"+po1.getStart()+"','"+po1.getArrival()+"',"+po1.getHuoGuiHao()+
-					","+po1.getJianZhuangYuan()+","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+","+po1.getIsOutStorage()+")";
+					","+po1.getJianZhuangYuan()+","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+",0)";
 		    rm=db.insert(sql);
 		    his.Centre(po1.getList().get(i), null, null);
 			}
