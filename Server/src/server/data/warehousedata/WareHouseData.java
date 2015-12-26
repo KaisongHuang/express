@@ -100,7 +100,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 
 	public ResultMessage update(Object po) throws RemoteException {
 		InStoragePO po1 = (InStoragePO) po;
-		String sql = "update InStorage set qu=" + po1.getPos_qu() + ",pai=" + po1.getPos_pai() + ",jia="
+		String sql = "update InStorage set qu='" + po1.getPos_qu() + "',pai=" + po1.getPos_pai() + ",jia="
 				+ po1.getPos_jia() + ",wei=" + po1.getPos_wei() + " where id='" + po1.getId() + "';";
 		ResultMessage rm = db.update(sql);
 		return rm;
