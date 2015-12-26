@@ -39,8 +39,13 @@ public class Warehouse implements WarehouseBlService {
 		ResultMessage rm = null;
 		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
 				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
+		System.out.println( vo.getPos_pai());
+		System.out.println( vo.getPos_jia());
+		System.out.println( vo.getPos_wei());
 		try {
+
 			rm = wd.insert(po);
+			System.out.println("done");
 		} catch (RemoteException e) {
 			e.printStackTrace();
 			rm = ResultMessage.FunctionError;
@@ -248,6 +253,26 @@ public class Warehouse implements WarehouseBlService {
 			e.printStackTrace();
 		}
 		return destination;
+	}
+
+	public ResultMessage update(Object ob) {
+		// TODO Auto-generated method stub
+		ResultMessage rm = null;
+		InStorageVO vo = (InStorageVO) ob;
+		InStoragePO po = new InStoragePO(vo.getId(), vo.getIndate(), vo.getDestination(), vo.getWarehouseID(),
+				vo.getPos_qu(), vo.getPos_pai(), vo.getPos_jia(), vo.getPos_wei(), vo.getIsCheck(), 0);
+		System.out.println( vo.getPos_pai());
+		System.out.println( vo.getPos_jia());
+		System.out.println( vo.getPos_wei());
+		try {
+
+			rm = wd.update(po);
+			System.out.println("done");
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			rm = ResultMessage.FunctionError;
+		}
+		return rm;
 	}
 
 }

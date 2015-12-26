@@ -48,21 +48,21 @@ public class WarehouseListener3 implements ActionListener {
 				JOptionPane.showMessageDialog(ui, "不需要调整库存！");
 				return;
 			}
-			for (int i = 0; i < ob.size(); i++) {
+			for (int i = 0; i < ob.size()/2; i++) {
 				InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
-				InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
+				int[] vo2 = (int[]) ob.get(2 * i + 1);
 				InStorageVO vo = new InStorageVO();
 				vo.setId(vo1.getId());// textField_3
 				vo.setDestination(vo1.getDestination());// textField_4
 				vo.setIndate(vo1.getIndate());// comboBox_4comboBox_5comboBox_6
-				vo.setPos_qu(vo2.getPos_qu());// comboBox_7
-				vo.setPos_pai(vo2.getPos_pai());// comboBox_8
-				vo.setPos_jia(vo2.getPos_jia());// comboBox_9
-				vo.setPos_wei(vo2.getPos_wei());// comboBox_10
+				vo.setPos_qu("temp");// comboBox_7
+				vo.setPos_pai(vo2[0]);// comboBox_8
+				vo.setPos_jia(vo2[1]);// comboBox_9
+				vo.setPos_wei(vo2[2]);// comboBox_10
 				vo.setWarehouseID(EmployeeMes.belongToWho);
 				vo.setIsCheck(0);
 
-				rm = warehouse.importGoods(vo);
+				rm = warehouse.update(vo);
 				check(rm);
 			}
 
@@ -97,7 +97,8 @@ public class WarehouseListener3 implements ActionListener {
 	}
 
 	private void clearTable(){
-		for (int i = 0; i < ui.getModel().getRowCount(); i++)
+		int n=ui.getModel().getRowCount();
+		for (int i = 0; i < n; i++)
 			ui.getModel().removeRow(0);
 	}
 
@@ -106,19 +107,19 @@ public class WarehouseListener3 implements ActionListener {
 
 		clearTable();
 
-		for (int i = 0; i < ob.size(); i++) {
+		for (int i = 0; i < ob.size()/2; i++) {
 			Vector<Object> item = new Vector<Object>();
 			InStorageVO vo1 = (InStorageVO) ob.get(2 * i);
-			InStorageVO vo2 = (InStorageVO) ob.get(2 * i + 1);
+			int[] vo2 = (int[]) ob.get(2 * i + 1);
 			item.add(vo1.getId());
 			item.add(vo1.getPos_qu());
 			item.add(vo1.getPos_pai());
 			item.add(vo1.getPos_jia());
 			item.add(vo1.getPos_wei());
-			item.add(vo2.getPos_qu());
-			item.add(vo2.getPos_pai());
-			item.add(vo2.getPos_jia());
-			item.add(vo2.getPos_wei());
+			item.add("temp");
+			item.add(vo2[0]);
+			item.add(vo2[1]);
+			item.add(vo2[2]);
 			ui.getModel().addRow(item);
 		}
 
