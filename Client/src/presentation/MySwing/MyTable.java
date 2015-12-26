@@ -1,5 +1,8 @@
 package presentation.MySwing;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.util.Vector;
 
 import javax.swing.JLabel;
@@ -21,7 +24,8 @@ public class MyTable extends JTable {
 		super();
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
-		((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
+		//((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
+	    tableHeader.setDefaultRenderer(new headerRender());
 	}
 
 	public MyTable(DefaultTableModel tableModel) {
@@ -90,4 +94,25 @@ public class MyTable extends JTable {
 	    this.getTableHeader().getColumnModel().getColumn(index).setMaxWidth(0); 
 	    this.getTableHeader().getColumnModel().getColumn(index).setMinWidth(0); 
 	}
+	
+	
+
 }
+
+class headerRender extends DefaultTableCellRenderer {
+	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+			int row, int column) {
+		label.setText("      "+value.toString());
+		//label.setBorder(UIManager.getBorder("TableHeader.cellBorder"));
+	
+		Dimension d = label.getSize();
+		//d.height = 36;
+		label.setBackground(Color.BLUE);
+		label.setSize(d);
+		label.setOpaque(true);
+		return label;
+	}
+
+	JLabel label = new JLabel();
+}
+

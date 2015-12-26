@@ -20,4 +20,5 @@ public interface SellingareaBlService {
 	public CarVO findCar(String id);
 	public ResultMessage manageDriverinfo(DriverVO vo,Operation op);
 	public DriverVO findDriver(String id);
+	public double getFee(String city1,String city2,String type,int count);
 }

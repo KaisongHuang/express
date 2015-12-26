@@ -66,10 +66,7 @@ public class CentreListener3 implements MouseListener, ActionListener {
 			JOptionPane.showMessageDialog(ui,"请检查日期格式是否正确！");
 			return false;
 		}
-		if(vo.checkFee()==0){
-			JOptionPane.showMessageDialog(ui,"费用不合理，请检查！");
-			return false;
-		}
+	
 		if(vo.checkJian()==0){
 			JOptionPane.showMessageDialog(ui,"请检查监装员编号格式是否正确！");
 			return false;
