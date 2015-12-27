@@ -10,10 +10,10 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
-import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener3;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
 
 public class WarehouseUI3 extends JPanel {
@@ -27,10 +27,10 @@ public class WarehouseUI3 extends JPanel {
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
-	private JButton button;
-	private JButton button_1;
-	private JButton button_2;
-	private JButton button_3;
+	private MyButton button;
+	private MyButton button_1;
+	private MyButton button_2;
+	private MyButton button_3;
 	WarehouseListener3 warehouseListener;
 
 	/**
@@ -59,26 +59,26 @@ public class WarehouseUI3 extends JPanel {
 		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
-		JSP.setBounds(36, 32, 678, 326);
+		JSP.setBounds(15, 29, 692, 326);
 		this.add(JSP);
 
-		button = new JButton("刷新");
-		button.setBounds(36, 380, 94, 27);
+		button = new MyButton("刷新");
+		button.setBounds(18, 369, 94, 27);
 		button.addActionListener(warehouseListener);
 		add(button);
 
-		button_1 = new JButton("确认");
-		button_1.setBounds(142, 380, 94, 27);
+		button_1 = new MyButton("确认");
+		button_1.setBounds(124, 369, 94, 27);
 		button_1.addActionListener(warehouseListener);
 		add(button_1);
 
-		button_2 = new JButton("清空");
-		button_2.setBounds(248, 380, 94, 27);
+		button_2 = new MyButton("清空");
+		button_2.setBounds(230, 369, 94, 27);
 		button_2.addActionListener(warehouseListener);
 		add(button_2);
 
-		button_3 = new JButton("设置报警比例");
-		button_3.setBounds(600, 380, 114, 27);
+		button_3 = new MyButton("设置报警比例");
+		button_3.setBounds(593, 367, 114, 27);
 		button_3.addActionListener(warehouseListener);
 		add(button_3);
 	}
@@ -99,19 +99,19 @@ public class WarehouseUI3 extends JPanel {
 		this.data = data;
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 
-	public JButton getButton_2() {
+	public MyButton getButton_2() {
 		return button_2;
 	}
 
-	public JButton getButton_3() {
+	public MyButton getButton_3() {
 		return button_3;
 	}
 

@@ -1,15 +1,11 @@
 package presentation.senderui;
 
 
-import java.awt.Image;
-
-import javax.swing.JPanel;
 import listener.senderlistener.SenderListener0;
+import presentation.MySwing.MyButton;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import java.awt.Color;
@@ -23,7 +19,7 @@ public class SearchUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	JLabel label;
-	JButton btnNewButton;
+	MyButton btnNewButton;
 	public SearchUI() {
 		this.setBackground(Color.white);
 		this.setBounds(200,100,900,600);
@@ -42,7 +38,7 @@ public class SearchUI extends JFrame {
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton = new JButton("查询");
+		btnNewButton = new MyButton("查询");
 		btnNewButton.addActionListener(new SenderListener0(this));
 
 

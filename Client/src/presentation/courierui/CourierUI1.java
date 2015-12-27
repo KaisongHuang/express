@@ -49,7 +49,7 @@ public class CourierUI1 extends JPanel{
 	private void initialize() {
 
 		setBackground(new Color(240, 248, 255));
-		this.setBounds(0, 0, 450, 234);
+		this.setBounds(0, 0, 450, 178);
 
 		this.setLayout(null);
 

@@ -1,14 +1,10 @@
 package presentation.senderui;
 import java.awt.Color;
-import java.awt.Image;
-
-import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import listener.senderlistener.SenderListener1;
+import presentation.MySwing.MyButton;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
@@ -20,7 +16,7 @@ public class SearchUI1 extends JFrame{
     private JLabel state1;
     private JLabel id1;
     private JTextArea textArea;
-    private JButton button;
+    private MyButton button;
     private SenderListener1 listen;
 	public SearchUI1() {
 		listen=new SenderListener1(this);
@@ -58,7 +54,7 @@ public class SearchUI1 extends JFrame{
 		textArea.setBounds(99, 131, 519, 307);
 		this.add(textArea);
 
-		button = new JButton("返回");
+		button = new MyButton("返回");
 		button.setBounds(700, 499, 92, 27);
 		this.add(button);
 		button.addActionListener(listen);
@@ -85,7 +81,7 @@ public class SearchUI1 extends JFrame{
 	private void setImage() {
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 

@@ -141,13 +141,13 @@ public class ManagerUI2 extends JPanel {
 		this.add(comboBox);
 
 		button1 = new MyButton("确认");
-		button1.setBounds(205, 5, 80, 28);
+		button1.setBounds(209, 5, 91, 28);
 		this.add(button1);
 		button1.addActionListener(managerlistener);
 		button1.addMouseListener(managerlistener);
 		
 		button2 = new MyButton("取消");
-		button2.setBounds(280, 5, 80, 28);
+		button2.setBounds(301, 5, 91, 28);
 		this.add(button2);
 		button2.addActionListener(managerlistener);
 		button2.addMouseListener(managerlistener);
@@ -320,6 +320,7 @@ public class ManagerUI2 extends JPanel {
 		JSP11.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
 		panel1 = new JPanel();
+		panel1.setBackground(Color.WHITE);
 		panel2 = new JPanel();
 		panel2.setLayout(null);
 		panel2.add(JSP2);
@@ -365,13 +366,13 @@ public class ManagerUI2 extends JPanel {
 		add(panel);
 
 		button = new MyButton("全选");
-		button.setBounds(485, 5, 80, 29);
+		button.setBounds(450, 5, 80, 29);
 		button.addActionListener(managerlistener);
 		button.addMouseListener(managerlistener);
 		add(button);
 
 		button_1 = new MyButton("取消全选");
-		button_1.setBounds(560, 5, 80, 29);
+		button_1.setBounds(543, 4, 80, 29);
 		button_1.addActionListener(managerlistener);
 		button_1.addMouseListener(managerlistener);
 		add(button_1);

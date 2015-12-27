@@ -127,7 +127,7 @@ public class CourierUI extends JPanel{
 		textField_4.setColumns(10);
 
 		JLabel lblNewLabel_5 = new JLabel("收件人信息");
-		lblNewLabel_5.setBounds(300, 93, 84, 30);
+		lblNewLabel_5.setBounds(300, 88, 84, 30);
 		this.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_6 = new JLabel("收件人姓名：");
@@ -176,7 +176,7 @@ public class CourierUI extends JPanel{
 		textField_9.setColumns(10);
 
 		JLabel label_4 = new JLabel("货物信息");
-		label_4.setBounds(300, 186, 84, 30);
+		label_4.setBounds(300, 193, 84, 30);
 		this.add(label_4);
 
 		JLabel label_5 = new JLabel("原件数量：");

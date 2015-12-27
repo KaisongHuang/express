@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import _enum.EmployeeMes;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
+import presentation.MySwing.MyButton;
 import presentation.sellingareaui.SellingAreaUI2;
 import vo.ReceiptVO;
 
@@ -123,15 +124,16 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 			// vec.get(index)remove(selectedRow);
 		} else if (e.getSource() == ui.getButton_5()) {
 			final JFrame jf = new JFrame();
+			jf.setUndecorated(true);
 			jf.setVisible(true);
-			jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			JPanel contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			jf.setContentPane(contentPane);
 			contentPane.setLayout(null);
 
-			JButton button = new JButton("保存");
+			MyButton button = new MyButton("保存");
 			button.setBounds(86, 75, 117, 29);
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -160,12 +162,18 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 						// if(!check(vo))
 						// return ;
 						sellingarea.createDebitnote(vo);
+						
 					}
+					while (ui.getModel().getRowCount() > 0)
+						ui.getModel().removeRow(ui.getModel().getRowCount() - 1);
+					while (ui.getModel1().getRowCount() > 0)
+						ui.getModel1().removeRow(ui.getModel1().getRowCount() - 1);
+					jf.dispose();
 				}
 			});
 			contentPane.add(button);
 
-			JButton button_1 = new JButton("继续修改");
+			MyButton button_1 = new MyButton("继续修改");
 			button_1.setBounds(245, 75, 117, 29);
 			button_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
