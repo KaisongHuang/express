@@ -66,24 +66,25 @@ public class ManagerUI1_1 extends JPanel {
 		search.addActionListener(managerlistener);
         search.addMouseListener(managerlistener);
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(117, 143, 481, 84);
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(117, 110, 481, 117);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
 		lblNewLabel_2 = new JLabel("机构编号：");
-		lblNewLabel_2.setBounds(6, 35, 100, 18);
+		lblNewLabel_2.setBounds(6, 65, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
 		lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBounds(103, 35, 100, 18);
+		lblNewLabel_4.setBounds(103, 65, 100, 18);
 		panel_6.add(lblNewLabel_4);
 
 		lblNewLabel_6 = new JLabel("机构名称：");
-		lblNewLabel_6.setBounds(244, 35, 100, 18);
+		lblNewLabel_6.setBounds(245, 65, 100, 18);
 		panel_6.add(lblNewLabel_6);
 
 		lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setBounds(357, 35, 100, 18);
+		lblNewLabel_7.setBounds(357, 65, 100, 18);
 		panel_6.add(lblNewLabel_7);
 
 		lblNewLabel_10 = new JLabel("机构信息");

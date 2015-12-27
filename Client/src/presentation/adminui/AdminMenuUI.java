@@ -5,11 +5,16 @@ package presentation.adminui;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import listener.adminlistener.AdminMenuListener;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
+import presentation.MySwing.ShowTimePanel;
 
 public class AdminMenuUI extends JPanel {
 
@@ -23,18 +28,21 @@ public class AdminMenuUI extends JPanel {
 	private NaviButton button2;
 	private NaviButton button3;
 	private NaviButton button4;
+	private JLabel user;
+	private ShowTimePanel time;
 	private int width;
 	private int height;
 	private int label_height;
+
 	/*
 	 * 构造
 	 */
 	public AdminMenuUI(CardLayout card, int width, int height, JPanel panel1) {
 		this.card = card;
-		adminlistener = new AdminMenuListener(this, card,panel1);
+		adminlistener = new AdminMenuListener(this, card, panel1);
 		this.width = width;
 		this.height = height;
-		this.label_height=height/10;
+		this.label_height = height / 10;
 		initialize();
 	}
 
@@ -43,34 +51,46 @@ public class AdminMenuUI extends JPanel {
 	 */
 	private void initialize() {
 
-        this.setSize(width,height);
+		this.setSize(width, height);
 		this.setLayout(null);
-		this.setBackground(new Color(246,246,246));
-		
-		MySeperator line=new MySeperator();
-		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
+		this.setBackground(new Color(246, 246, 246));
+
+		user = new JLabel();
+		user.setBounds(10, 20, 50, 50);
+		ImageIcon icon = new ImageIcon(this.getClass().getResource("/圆形/管理员.jpg"));
+		icon.setImage(icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+		user.setIcon(icon);
+		add(user);
+
+		time = new ShowTimePanel();
+		time.setBounds(75, 25, 80, 50);
+		time.setBackground(new Color(246, 246, 246));
+		add(time);
+
+		MySeperator line = new MySeperator();
+		line.setBounds(width / 20, label_height * 7 / 4, width * 9 / 10, label_height);
 		add(line);
-		
-		button3 = new NaviButton("新增账户","/导航/admin/新增账户.png");//"新增账户"
+
+		button3 = new NaviButton("新增账户", "/导航/admin/新增账户.png");// "新增账户"
 		button3.setBounds(0, label_height * 2, width, label_height);
 		button3.setClicked(true);
 		button3.addActionListener(adminlistener);
 		button3.addMouseListener(adminlistener);
 		this.add(button3);
 
-		button4 = new NaviButton("权限管理","/导航/admin/权限管理.png");//"权限管理"
+		button4 = new NaviButton("权限管理", "/导航/admin/权限管理.png");// "权限管理"
 		button4.setBounds(0, label_height * 3, width, label_height);
 		button4.addActionListener(adminlistener);
 		button4.addMouseListener(adminlistener);
 		this.add(button4);
 
-		button2 = new NaviButton("修改密码","/导航/admin/修改密码.png");//"修改密码"
+		button2 = new NaviButton("修改密码", "/导航/admin/修改密码.png");// "修改密码"
 		button2.setBounds(0, label_height * 4, width, label_height);
 		button2.addActionListener(adminlistener);
 		button2.addMouseListener(adminlistener);
 		this.add(button2);
 
-		button1 = new NaviButton("删除账户","/导航/admin/删除帐户.png");//"删除账户"
+		button1 = new NaviButton("删除账户", "/导航/admin/删除帐户.png");// "删除账户"
 		button1.setBounds(0, label_height * 5, width, label_height);
 		button1.addActionListener(adminlistener);
 		button1.addMouseListener(adminlistener);

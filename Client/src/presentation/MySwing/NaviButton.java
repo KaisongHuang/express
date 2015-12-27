@@ -48,7 +48,7 @@ public class NaviButton extends JButton {
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
 			g.setColor(new Color(158, 211, 240));
-			g.fillRect(0, this.getHeight()/20, this.getWidth() / 20, this.getHeight()-this.getHeight()/20);
+			g.fillRect(0, this.getHeight()/8, this.getWidth() / 30, this.getHeight()-this.getHeight()/8*2);
 
 		} else if (!clicked) {
 			g.setColor(new Color(246, 246, 246));

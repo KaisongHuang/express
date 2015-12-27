@@ -80,42 +80,42 @@ public class FinanceUI2 extends JPanel {
 		this.add(JSP);
 
 		lblNewLabel_1 = new JLabel("付款日期:");
-		lblNewLabel_1.setBounds(491, 65, 67, 15);
+		lblNewLabel_1.setBounds(485, 63, 67, 15);
 		this.add(lblNewLabel_1);
 
 		lblNewLabel_2 = new JLabel("付款金额:");
-		lblNewLabel_2.setBounds(491, 132, 67, 15);
+		lblNewLabel_2.setBounds(485, 132, 67, 15);
 		this.add(lblNewLabel_2);
 
 		textField_1 = new MyTextField();
-		textField_1.setBounds(570, 126, 134, 28);
+		textField_1.setBounds(546, 125, 134, 28);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
 		lblNewLabel_3 = new JLabel("付款人:");
-		lblNewLabel_3.setBounds(491, 171, 61, 16);
+		lblNewLabel_3.setBounds(485, 171, 61, 16);
 		this.add(lblNewLabel_3);
 
 		textField_2 = new MyTextField();
-		textField_2.setBounds(570, 166, 134, 28);
+		textField_2.setBounds(546, 165, 134, 28);
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
 		lblNewLabel_4 = new JLabel("付款账号:");
-		lblNewLabel_4.setBounds(491, 211, 61, 16);
+		lblNewLabel_4.setBounds(485, 211, 61, 16);
 		this.add(lblNewLabel_4);
 
 		textField_3 = new MyTextField();
-		textField_3.setBounds(570, 206, 134, 28);
+		textField_3.setBounds(546, 205, 134, 28);
 		this.add(textField_3);
 		textField_3.setColumns(10);
 
 		lblNewLabel_5 = new JLabel("条目:");
-		lblNewLabel_5.setBounds(491, 251, 61, 16);
+		lblNewLabel_5.setBounds(485, 251, 61, 16);
 		this.add(lblNewLabel_5);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(570, 246, 134, 27);
+		comboBox.setBounds(546, 247, 134, 27);
 		comboBox.addItem("租金");
 		comboBox.addItem("运费");
 		comboBox.addItem("工资");
@@ -123,22 +123,22 @@ public class FinanceUI2 extends JPanel {
 		this.add(comboBox);
 
 		label = new JLabel("备注:");
-		label.setBounds(491, 290, 61, 16);
+		label.setBounds(485, 290, 61, 16);
 		this.add(label);
 
 		textField_4 = new MyTextField();
-		textField_4.setBounds(570, 285, 134, 28);
+		textField_4.setBounds(546, 284, 134, 28);
 		this.add(textField_4);
 		textField_4.setColumns(10);
 
 		add = new MyButton("新增");
-		add.setBounds(570, 325, 67, 29);
+		add.setBounds(546, 325, 67, 29);
 		add.addActionListener(financeListener2);
 		add.addMouseListener(financeListener2);
 		this.add(add);
 
 		clear = new MyButton("清空");
-		clear.setBounds(570, 359, 67, 29);
+		clear.setBounds(546, 359, 67, 29);
 		clear.addActionListener(financeListener2);
 		clear.addMouseListener(financeListener2);
 		this.add(clear);
@@ -150,38 +150,38 @@ public class FinanceUI2 extends JPanel {
 		this.add(check);
 
 		delete = new MyButton("删除");
-		delete.setBounds(637, 325, 67, 29);
+		delete.setBounds(613, 325, 67, 29);
 		delete.addActionListener(financeListener2);
 		delete.addMouseListener(financeListener2);
 		add(delete);
 
 		finish = new MyButton("保存");
-		finish.setBounds(637, 359, 67, 29);
+		finish.setBounds(613, 359, 67, 29);
 		finish.addActionListener(financeListener2);
 		finish.addMouseListener(financeListener2);
 		add(finish);
 
 		comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(570, 60, 122, 25);
+		comboBox_1.setBounds(546, 60, 119, 25);
 		comboBox_1.addItem("2015");
 		add(comboBox_1);
 
 		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(570, 89, 55, 25);
+		comboBox_2.setBounds(546, 89, 67, 25);
 		comboBox_2.addItem("01");
 		add(comboBox_2);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(637, 89, 55, 25);
+		comboBox_3.setBounds(625, 89, 67, 25);
 		comboBox_3.addItem("01");
 		add(comboBox_3);
 
 		label_1 = new JLabel("年");
-		label_1.setBounds(692, 65, 19, 15);
+		label_1.setBounds(662, 63, 19, 15);
 		add(label_1);
 
 		label_2 = new JLabel("月");
-		label_2.setBounds(624, 94, 19, 15);
+		label_2.setBounds(609, 93, 19, 15);
 		add(label_2);
 
 		label_3 = new JLabel("日");

@@ -7,10 +7,10 @@ package presentation.sellingareaui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 
 import listener.sellingarealistener.SellingAreaListener4_2;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 
@@ -31,9 +31,9 @@ public class SellingAreaUI4_2 extends JPanel{
 	private MyTextField textField_8;
 
 	SellingAreaListener4_2 sellingarealistener;
-	private JButton btnNewButton_17;
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_15;
+	private MyButton btnNewButton_17;
+	private MyButton btnNewButton_16;
+	private MyButton btnNewButton_15;
 	private int width;
 	private int height;
 	/**
@@ -62,7 +62,7 @@ public class SellingAreaUI4_2 extends JPanel{
 
 
 		JLabel lblNewLabel_1 = new JLabel("司机编号：");
-		lblNewLabel_1.setBounds(24, 56, 100, 18);
+		lblNewLabel_1.setBounds(30, 56, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new MyTextField();
@@ -70,11 +70,12 @@ public class SellingAreaUI4_2 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 
-		btnNewButton_15 = new JButton("查询");
-		btnNewButton_15.setBounds(343, 50, 100, 30);
+		btnNewButton_15 = new MyButton("查询");
+		btnNewButton_15.setBounds(276, 50, 100, 30);
 		this.add(btnNewButton_15);
 
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(24, 105, 579, 209);
 		this.add(panel_6);
 		panel_6.setLayout(null);
@@ -143,12 +144,12 @@ public class SellingAreaUI4_2 extends JPanel{
 		textField_8.setBounds(431, 152, 100, 30);
 		panel_6.add(textField_8);
 
-		btnNewButton_16 = new JButton("\u66F4\u65B0");
-		btnNewButton_16.setBounds(83, 382, 90, 30);
+		btnNewButton_16 = new MyButton("更新");
+		btnNewButton_16.setBounds(388, 50, 90, 30);
 		this.add(btnNewButton_16);
 
-		btnNewButton_17 = new JButton("\u53D6\u6D88");
-		btnNewButton_17.setBounds(431, 382, 90, 30);
+		btnNewButton_17 = new MyButton("清空");
+		btnNewButton_17.setBounds(490, 50, 90, 30);
 		this.add(btnNewButton_17);
 
 		btnNewButton_15.addActionListener(sellingarealistener);
@@ -230,27 +231,27 @@ public class SellingAreaUI4_2 extends JPanel{
 		this.textField_8 = textField_8;
 	}
 
-	public JButton getBtnNewButton_17() {
+	public MyButton getBtnNewButton_17() {
 		return btnNewButton_17;
 	}
 
-	public void setBtnNewButton_17(JButton btnNewButton_17) {
+	public void setBtnNewButton_17(MyButton btnNewButton_17) {
 		this.btnNewButton_17 = btnNewButton_17;
 	}
 
-	public JButton getBtnNewButton_16() {
+	public MyButton getBtnNewButton_16() {
 		return btnNewButton_16;
 	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
+	public void setBtnNewButton_16(MyButton btnNewButton_16) {
 		this.btnNewButton_16 = btnNewButton_16;
 	}
 
-	public JButton getBtnNewButton_15() {
+	public MyButton getBtnNewButton_15() {
 		return btnNewButton_15;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
+	public void setBtnNewButton_15(MyButton btnNewButton_15) {
 		this.btnNewButton_15 = btnNewButton_15;
 	}
 

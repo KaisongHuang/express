@@ -25,7 +25,7 @@ public class MyTable extends JTable {
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
 		//((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
-		tableHeader.setPreferredSize(new Dimension(0, 40));
+		tableHeader.setPreferredSize(new Dimension(0, 20));
 		tableHeader.setDefaultRenderer(new headerRender());
 	}
 
@@ -34,7 +34,7 @@ public class MyTable extends JTable {
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
 	//	((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
-		tableHeader.setPreferredSize(new Dimension(0, 40));
+		tableHeader.setPreferredSize(new Dimension(0, 20));
 		tableHeader.setDefaultRenderer(new headerRender());
 	}
 
@@ -44,7 +44,7 @@ public class MyTable extends JTable {
 		JTableHeader tableHeader = this.getTableHeader();
 //		tableHeader.setReorderingAllowed(false);// 表格列不可移动
 		//((JLabel) tableHeader.getDefaultRenderer()).setHorizontalAlignment(DefaultTableCellRenderer.CENTER);// 列名居中
-		tableHeader.setPreferredSize(new Dimension(0, 40));
+		tableHeader.setPreferredSize(new Dimension(0, 20));
 		tableHeader.setDefaultRenderer(new headerRender());
 	}
 

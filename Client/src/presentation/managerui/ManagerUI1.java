@@ -6,6 +6,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import listener.managerlistener.ManagerListener10;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.SubNaviButton;
 
 public class ManagerUI1 extends JPanel{
@@ -24,6 +25,7 @@ public class ManagerUI1 extends JPanel{
 	private SubNaviButton button3;
 	private SubNaviButton button4;
 	private SubNaviButton button5;
+	private MySeperator line;
 	private JPanel navi_panel;
 	private JPanel panel;
 	private ManagerListener10 listener;
@@ -44,7 +46,7 @@ public class ManagerUI1 extends JPanel{
 		ui5 = new ManagerUI1_5();
 
 		panel = new JPanel();
-		panel.setBounds(0, 44, 746, 394);
+		panel.setBounds(0, 50, 746, 394);
 		add(panel);
 		card = new CardLayout(0, 0);
 		panel.setLayout(card);
@@ -63,36 +65,39 @@ public class ManagerUI1 extends JPanel{
 		navi_panel.setLayout(null);
 
 		button1 = new SubNaviButton("查询");
-		button1.setBounds(44, 8, 90, 44);
+		button1.setBounds(44, 0, 90, 44);
 		button1.addActionListener(listener);
 		button1.addMouseListener(listener);
 		button1.setClicked(true);
 		navi_panel.add(button1);
 
 		button2 = new SubNaviButton("更新");
-		button2.setBounds(157, 8, 90, 44);
+		button2.setBounds(134, 0, 90, 44);
 		button2.addActionListener(listener);
 		button2.addMouseListener(listener);
 		navi_panel.add(button2);
 
 		button3 = new SubNaviButton("删除");
-		button3.setBounds(259, 8, 90, 44);
+		button3.setBounds(224, 0, 90, 44);
 		button3.addActionListener(listener);
 		button3.addMouseListener(listener);
 		navi_panel.add(button3);
 
 		button4 = new SubNaviButton("添加");
-		button4.setBounds(361, 8, 90, 44);
+		button4.setBounds(314, 0, 90, 44);
 		button4.addActionListener(listener);
 		button4.addMouseListener(listener);
 		navi_panel.add(button4);
 
 		button5 = new SubNaviButton("日志查看");
-		button5.setBounds(463, 8, 90, 44);
+		button5.setBounds(404, 0, 90, 44);
 		button5.addActionListener(listener);
 		button5.addMouseListener(listener);
 		navi_panel.add(button5);
 		
+		line=new MySeperator();
+		line.setBounds(44, 44, 630, 10);
+		add(line);
 		add(navi_panel);
 
 	}

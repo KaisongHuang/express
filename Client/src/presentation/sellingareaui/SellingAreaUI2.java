@@ -131,11 +131,11 @@ public class SellingAreaUI2 extends JPanel {
 		add(textField_2);
 
 		JLabel label_3 = new JLabel("条形码号：");
-		label_3.setBounds(338, 368, 79, 16);
+		label_3.setBounds(340, 368, 79, 16);
 		add(label_3);
 
 		textField_3 = new MyTextField();
-		textField_3.setBounds(398, 362, 134, 28);
+		textField_3.setBounds(408, 362, 134, 28);
 		add(textField_3);
 		textField_3.setColumns(10);
 
@@ -158,25 +158,25 @@ public class SellingAreaUI2 extends JPanel {
 		add(button_2);
 
 		button_3 = new MyButton("添加");
-		button_3.setBounds(527, 363, 60, 29);
+		button_3.setBounds(555, 362, 79, 29);
 		button_3.addActionListener(sellingarealistener);
 		button_3.addMouseListener(sellingarealistener);
 		add(button_3);
 
 		button_4 = new MyButton("删除");
-		button_4.setBounds(582, 363, 60, 29);
+		button_4.setBounds(555, 401, 79, 29);
 		button_4.addActionListener(sellingarealistener);
 		button_4.addMouseListener(sellingarealistener);
 		add(button_4);
 
 		button_5 = new MyButton("保存");
-		button_5.setBounds(28, 30, 60, 29);
+		button_5.setBounds(28, 25, 79, 29);
 		button_5.addActionListener(sellingarealistener);
 		button_5.addMouseListener(sellingarealistener);
 		add(button_5);
 
 		button_6 = new MyButton("清空");
-		button_6.setBounds(89, 30, 60, 29);
+		button_6.setBounds(116, 25, 79, 29);
 		button_6.addActionListener(sellingarealistener);
 		button_6.addMouseListener(sellingarealistener);
 		add(button_6);

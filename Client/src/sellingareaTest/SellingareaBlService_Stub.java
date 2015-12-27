@@ -50,4 +50,9 @@ public class SellingareaBlService_Stub implements SellingareaBlService{
 		return new DriverVO();
 	}
 
+	public double getFee(String city1, String city2, String type, int count) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
