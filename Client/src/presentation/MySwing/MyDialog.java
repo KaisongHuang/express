@@ -4,16 +4,18 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-class MyPanel extends JPanel implements Runnable{
+public class MyDialog extends JPanel implements Runnable{
 	int i=50;
 	String content;
-	public MyPanel(){
+	
+	public MyDialog(){
 		super();
-	    content="";
-		this.setBounds(0,500,900,100);
-	    this.setVisible(false);
+		this.setLayout(null);
+	    content="ssss";		
+	    this.setVisible(true);
 	}
 	public void setText(String s){
 		content=s;
