@@ -204,10 +204,10 @@ public class ManagerUI2 extends JPanel {
 		JSP4 = new JScrollPane(table4);
 		JSP4.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names5[] = { "装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "ID", "运费", "审批通过" };
+		String names5[] = { "运输方式","装车日期", "中转单号", "航班号", "出发地", "到达地", "货柜号", "监装员", "ID", "运费", "审批通过" };
 		name5 = new Vector<String>(Arrays.asList(names5));
 		table5 = new MyTable(data5, name5);
-		TableColumn tc5 = table5.getColumnModel().getColumn(9);
+		TableColumn tc5 = table5.getColumnModel().getColumn(10);
 		tc5.setCellEditor(table5.getDefaultEditor(Boolean.class));
 		tc5.setCellRenderer(table5.getDefaultRenderer(Boolean.class));
 		table5.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -215,16 +215,16 @@ public class ManagerUI2 extends JPanel {
 		model5 = (DefaultTableModel) table5.getModel();
 		table5.setSelectionForeground(Color.BLACK);
 		table5.setSelectionBackground(null);
-		table5.setEditableColumn(9);
+		table5.setEditableColumn(10);
 		table5.setFocusable(false);
-		table5.hideColumn(7);
+		table5.hideColumn(8);
 		JSP5 = new JScrollPane(table5);
 		JSP5.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names6[] = { "快递编号", "入库日期", "目的地", "区号", "排号", "架号", "位号", "审批通过" };
+		String names6[] = { "快递编号", "入库日期", "目的地","入库仓库", "区号", "排号", "架号", "位号", "审批通过" };
 		name6 = new Vector<String>(Arrays.asList(names6));
 		table6 = new MyTable(data6, name6);
-		TableColumn tc6 = table6.getColumnModel().getColumn(7);
+		TableColumn tc6 = table6.getColumnModel().getColumn(8);
 		tc6.setCellEditor(table6.getDefaultEditor(Boolean.class));
 		tc6.setCellRenderer(table6.getDefaultRenderer(Boolean.class));
 		table6.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -232,15 +232,15 @@ public class ManagerUI2 extends JPanel {
 		model6 = (DefaultTableModel) table6.getModel();
 		table6.setSelectionForeground(Color.BLACK);
 		table6.setSelectionBackground(null);
-		table6.setEditableColumn(7);
+		table6.setEditableColumn(8);
 		table6.setFocusable(false);
 		JSP6 = new JScrollPane(table6);
 		JSP6.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names7[] = { "快递编号", "出库日期", "目的地", "装运形式", "中转单号", "审批通过" };
+		String names7[] = { "快递编号", "出库日期", "目的地", "出库仓库","装运形式", "中转单号", "审批通过" };
 		name7 = new Vector<String>(Arrays.asList(names7));
 		table7 = new MyTable(data7, name7);
-		TableColumn tc7 = table7.getColumnModel().getColumn(5);
+		TableColumn tc7 = table7.getColumnModel().getColumn(6);
 		tc7.setCellEditor(table7.getDefaultEditor(Boolean.class));
 		tc7.setCellRenderer(table7.getDefaultRenderer(Boolean.class));
 		table7.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -248,7 +248,7 @@ public class ManagerUI2 extends JPanel {
 		model7 = (DefaultTableModel) table7.getModel();
 		table7.setSelectionForeground(Color.BLACK);
 		table7.setSelectionBackground(null);
-		table7.setEditableColumn(5);
+		table7.setEditableColumn(6);
 		table7.setFocusable(false);
 		JSP7 = new JScrollPane(table7);
 		JSP7.setBounds(0, 0, panel.getWidth(), panel.getHeight());

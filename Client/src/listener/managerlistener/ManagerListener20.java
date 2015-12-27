@@ -188,6 +188,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 
 		for (int i = 0; i < vo.size(); i++) {
 			Vector<Object> rowData = new Vector<Object>();
+			rowData.add(vo.get(i).getTransferStyle());
 			rowData.add(vo.get(i).getDateOfGetin());
 			rowData.add(vo.get(i).getCentreTransferID());
 			rowData.add(vo.get(i).getBanHao());
@@ -213,6 +214,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			rowData.add(vo.get(i).getId());
 			rowData.add(vo.get(i).getIndate());
 			rowData.add(vo.get(i).getDestination());
+			rowData.add(vo.get(i).getWarehouseID());
 			rowData.add(vo.get(i).getPos_qu());
 			rowData.add(vo.get(i).getPos_pai());
 			rowData.add(vo.get(i).getPos_jia());
@@ -233,6 +235,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			rowData.add(vo.get(i).getId());
 			rowData.add(vo.get(i).getOutdate());
 			rowData.add(vo.get(i).getDestination());
+			rowData.add(vo.get(i).getWarehouseID());
 			rowData.add(vo.get(i).getTransportation());
 			rowData.add(vo.get(i).getTrans_id());
 			rowData.add(new Boolean(false));
@@ -424,9 +427,9 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
 				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
 					manager.checkDocument(new PayVO((String) getCurrentTable().getValueAt(i, 0),
-							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
-							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
-							(Double) getCurrentTable().getValueAt(i, 5), 1));
+							(String) getCurrentTable().getValueAt(i, 2), (String) getCurrentTable().getValueAt(i, 3),
+							(String) getCurrentTable().getValueAt(i, 4), (String) getCurrentTable().getValueAt(i, 5),
+							(Double) getCurrentTable().getValueAt(i, 1), 1));
 					getCurrentTable().removeRow(i);
 					i--;
 				}
@@ -438,8 +441,8 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			int column = getCurrentTable().getColumnCount() - 1;
 			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
 				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
-					manager.checkDocument(new ReceiptVO((Double) getCurrentTable().getValueAt(i, 0),
-							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+					manager.checkDocument(new ReceiptVO((Double) getCurrentTable().getValueAt(i, 1),
+							(String) getCurrentTable().getValueAt(i, 0), (String) getCurrentTable().getValueAt(i, 2),
 							(String) getCurrentTable().getValueAt(i, 3),
 							(ArrayList<String>) getCurrentTable().getValueAt(i, 4), 1));
 					getCurrentTable().removeRow(i);
@@ -502,7 +505,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
 				if ((Boolean) getCurrentTable().getValueAt(i, column)) {
 					manager.checkDocument(new OutStorageVO((String) getCurrentTable().getValueAt(i, 0),
-							(String) getCurrentTable().getValueAt(i, 1), (String) getCurrentTable().getValueAt(i, 2),
+							(String) getCurrentTable().getValueAt(i, 2), (String) getCurrentTable().getValueAt(i, 1),
 							(String) getCurrentTable().getValueAt(i, 3), (String) getCurrentTable().getValueAt(i, 4),
 							(String) getCurrentTable().getValueAt(i, 5), 1));
 					getCurrentTable().removeRow(i);
