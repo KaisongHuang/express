@@ -108,17 +108,17 @@ public class MainFrame implements ActionListener {
 			}
 		});
 
-		button2 = new JButton();
-		button2.setBorderPainted(false);
-		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/按钮/绿色按钮.png"));
-		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
-		button2.setIcon(bi2);
-		button2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-			}
-		});
-		button2.setContentAreaFilled(false);
+//		button2 = new JButton();
+//		button2.setBorderPainted(false);
+//		ImageIcon bi2 = new ImageIcon(this.getClass().getResource("/按钮/绿色按钮.png"));
+//		bi2.setImage(bi2.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+//		button2.setIcon(bi2);
+//		button2.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//			}
+//		});
+//		button2.setContentAreaFilled(false);
 		button3 = new JButton();
 		button3.setBorderPainted(false);
 		ImageIcon bi3 = new ImageIcon(this.getClass().getResource("/按钮/红色按钮.png"));
@@ -126,8 +126,8 @@ public class MainFrame implements ActionListener {
 		button3.setIcon(bi3);
 		button3.setContentAreaFilled(false);
 
-		button1.setBounds(width - 60, 0, 20, 20);
-		button2.setBounds(width - 40, 0, 20, 20);
+		button1.setBounds(width - 40, 0, 20, 20);
+//		button2.setBounds(width - 40, 0, 20, 20);
 		button3.setBounds(width - 20, 0, 20, 20);
 
 		panel1.setBounds(width / 5, height / 5, 4 * width / 5, 4 * height / 5);
@@ -137,7 +137,7 @@ public class MainFrame implements ActionListener {
 		button3.addActionListener(this);
 
 		panel2.add(button1);
-		panel2.add(button2);
+//		panel2.add(button2);
 		panel2.add(button3);
 
 		panel2.add(label2);
