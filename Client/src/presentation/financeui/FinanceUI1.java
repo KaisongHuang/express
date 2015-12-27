@@ -75,45 +75,45 @@ public class FinanceUI1 extends JPanel {
 		this.add(JSP);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(127, 34, 61, 25);
+		comboBox.setBounds(120, 34, 91, 25);
 		comboBox.addItem("2015");
 
 //		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
 
 		comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(200, 34, 61, 25);
+		comboBox_1.setBounds(223, 34, 68, 25);
 		comboBox_1.addItem("01");
 
 //		comboBox_1.setSelectedIndex(0);
 		this.add(comboBox_1);
 
 		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(273, 34, 61, 25);
+		comboBox_2.setBounds(297, 34, 68, 25);
 		comboBox_2.addItem("01");
 //		comboBox_2.setSelectedIndex(0);
 		this.add(comboBox_2);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(408, 34, 85, 25);
+		comboBox_3.setBounds(423, 34, 85, 25);
 		comboBox_3.addItem("南京鼓楼营业厅4");
 //		comboBox_3.setSelectedIndex(0);
 		this.add(comboBox_3);
 
 		label = new JLabel("营业厅:");
-		label.setBounds(364, 39, 57, 15);
+		label.setBounds(377, 38, 57, 15);
 		this.add(label);
 
 		label_1 = new JLabel("年");
-		label_1.setBounds(189, 39, 12, 15);
+		label_1.setBounds(209, 38, 22, 15);
 		this.add(label_1);
 
 		label_2 = new JLabel("月");
-		label_2.setBounds(261, 39, 12, 15);
+		label_2.setBounds(285, 38, 13, 15);
 		this.add(label_2);
 
 		label_3 = new JLabel("日");
-		label_3.setBounds(335, 39, 17, 15);
+		label_3.setBounds(360, 38, 17, 15);
 		this.add(label_3);
 
 		label_4 = new JLabel("合计:");

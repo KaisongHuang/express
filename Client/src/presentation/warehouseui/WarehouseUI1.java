@@ -10,11 +10,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 import listener.warehouselistener.WarehouseListener1;
+import presentation.MySwing.MyButton;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.MyTable;
-import presentation.MySwing.MyTextField;
+import presentation.MySwing.SubNaviButton;
 
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
@@ -29,12 +30,12 @@ public class WarehouseUI1 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JButton exportButton;
-	private JButton importButton;
-	private JButton button_3;
-	private JButton button_5;
-	private JButton button_1;
-	private JButton button_2;
+	private SubNaviButton exportButton;
+	private SubNaviButton importButton;
+	private MyButton button_3;
+	private MyButton button_5;
+	private MyButton button_1;
+	private MyButton button_2;
 	private JPanel exportPanel;
 	private JLabel label_1;
 	private JLabel label_3;
@@ -55,8 +56,8 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_11;
 	private JComboBox<Object> comboBox_6;
 	private JLabel label_12;
-	private JButton button;
-	private JButton button_6;
+	private MyButton button;
+	private MyButton button_6;
 	private JLabel label_13;
 	private JComboBox<Object> comboBox_7;
 	private JLabel label_14;
@@ -77,7 +78,8 @@ public class WarehouseUI1 extends JPanel {
 	private JScrollPane JSP1;
 	private Vector<String> name1;
 	private Vector<Object> data1;
-
+	private MySeperator line;
+	private JPanel navi_panel;
 	private WarehouseListener1 warehouseListener;
 
 
@@ -87,7 +89,6 @@ public class WarehouseUI1 extends JPanel {
 	public WarehouseUI1() {
 		warehouseListener = new WarehouseListener1(this);
 		initialize();
-		this.setImage();
 		this.setVisible(true);
 	}
 
@@ -102,7 +103,7 @@ public class WarehouseUI1 extends JPanel {
 		this.setBounds(0, 0, 746, 438);
 		this.setLayout(null);
 		panel = new JPanel();
-		panel.setBounds(100, 50, 532, 350);
+		panel.setBounds(20, 50, 746, 394);
 		panel.setLayout(card);
 		add(panel);
 
@@ -148,7 +149,7 @@ public class WarehouseUI1 extends JPanel {
 		exportPanel.add(label_4);
 
 		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(391, 165, 70, 25);
+		comboBox_2.setBounds(391, 134, 70, 25);
 		comboBox_2.addItem("01");
 		exportPanel.add(comboBox_2);
 
@@ -169,17 +170,17 @@ public class WarehouseUI1 extends JPanel {
 
 		exportPanel.add(comboBox_3);
 
-		button_5 = new JButton("确认");
+		button_5 = new MyButton("确认");
 		button_5.setBounds(391, 202, 94, 27);
 		button_5.addActionListener(listener);
 		exportPanel.add(button_5);
 
-		button_3 = new JButton("清空");
+		button_3 = new MyButton("清空");
 		button_3.setBounds(391, 241, 94, 27);
 		button_3.addActionListener(listener);
 		exportPanel.add(button_3);
 
-		button_2 = new JButton("导入");
+		button_2 = new MyButton("导入");
 		button_2.setBounds(391, 14, 94, 29);
 		button_2.addActionListener(warehouseListener);
 		exportPanel.add(button_2);
@@ -215,7 +216,7 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_10);
 
 		comboBox_5 = new JComboBox<Object>();
-		comboBox_5.setBounds(393, 79, 70, 25);
+		comboBox_5.setBounds(393, 79, 94, 25);
 		comboBox_5.addItem("01");
 		importPanel.add(comboBox_5);
 
@@ -224,7 +225,7 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_11);
 
 		comboBox_6 = new JComboBox<Object>();
-		comboBox_6.setBounds(393, 116, 70, 25);
+		comboBox_6.setBounds(393, 116, 94, 25);
 		comboBox_6.addItem("01");
 		importPanel.add(comboBox_6);
 
@@ -232,12 +233,12 @@ public class WarehouseUI1 extends JPanel {
 		label_12.setBounds(491, 120, 57, 15);
 		importPanel.add(label_12);
 
-		button = new JButton("确认");
+		button = new MyButton("确认");
 		button.setBounds(339, 267, 94, 27);
 		importPanel.add(button);
 
-		button_6 = new JButton("清空");
-		button_6.setBounds(432, 267, 94, 27);
+		button_6 = new MyButton("清空");
+		button_6.setBounds(438, 267, 94, 27);
 		importPanel.add(button_6);
 
 		label_13 = new JLabel("区号:");
@@ -256,7 +257,7 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_14);
 
 		comboBox_8 = new JComboBox<Object>();
-		comboBox_8.setBounds(393, 175, 70, 27);
+		comboBox_8.setBounds(393, 175, 94, 27);
 		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
 
@@ -265,7 +266,7 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_15);
 
 		comboBox_9 = new JComboBox<Object>();
-		comboBox_9.setBounds(393, 203, 70, 27);
+		comboBox_9.setBounds(393, 203, 94, 27);
 		comboBox_9.addItem("1");
 		importPanel.add(comboBox_9);
 
@@ -274,11 +275,11 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_16);
 
 		comboBox_10 = new JComboBox<Object>();
-		comboBox_10.setBounds(393, 235, 70, 27);
+		comboBox_10.setBounds(393, 235, 94, 27);
 		comboBox_10.addItem("1");
 		importPanel.add(comboBox_10);
 
-		button_1 = new JButton("导入");
+		button_1 = new MyButton("导入");
 		button_1.setBounds(393, 15, 94, 27);
 		button_1.addActionListener(warehouseListener);
 		importPanel.add(button_1);
@@ -286,24 +287,29 @@ public class WarehouseUI1 extends JPanel {
 		panel.add(importPanel, "import");
 		panel.add(exportPanel, "export");
 
-		exportButton = new JButton("新建出库单");
-		exportButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				card.show(panel, "export");
-			}
-		});
+		navi_panel = new JPanel();
+		navi_panel.setBounds(0, 0, 746, 44);
+		navi_panel.setBackground(Color.WHITE);
+		this.add(navi_panel);
+		navi_panel.setLayout(null);
+		
+		exportButton = new SubNaviButton("新建出库单");
+		exportButton.addActionListener(warehouseListener);
+		exportButton.addMouseListener(warehouseListener);
 		exportButton.setBackground(new Color(255, 248, 220));
-		exportButton.setBounds(206, 11, 94, 27);
-		this.add(exportButton);
+		exportButton.setBounds(162, 0, 118, 44);
+		navi_panel.add(exportButton);
 
-		importButton = new JButton("新建入库单");
-		importButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				card.show(panel, "import");
-			}
-		});
-		importButton.setBounds(100, 11, 94, 27);
-		this.add(importButton);
+		importButton = new SubNaviButton("新建入库单");
+		importButton.addActionListener(warehouseListener);
+		importButton.addMouseListener(warehouseListener);
+		importButton.setBounds(44, 0, 118, 44);
+		importButton.setClicked(true);
+		navi_panel.add(importButton);
+		
+		line=new MySeperator();
+		line.setBounds(44, 44, 630, 10);
+		add(line);
 
 	}
 
@@ -311,31 +317,31 @@ public class WarehouseUI1 extends JPanel {
 		return model;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 
-	public JButton getButton_2() {
+	public MyButton getButton_2() {
 		return button_2;
 	}
 
-	public JButton getExportButton() {
+	public SubNaviButton getExportButton() {
 		return this.exportButton;
 	}
 
-	public JButton getImportButton() {
+	public SubNaviButton getImportButton() {
 		return this.importButton;
 	}
 
-	public JButton getExportClearButton() {
+	public MyButton getExportClearButton() {
 		return this.button_3;
 	}
 
-	public JButton getImportClearButton() {
+	public MyButton getImportClearButton() {
 		return this.button_6;
 	}
 
-	public JButton getExportConfirmButton() {
+	public MyButton getExportConfirmButton() {
 		return this.button_5;
 	}
 
@@ -343,16 +349,16 @@ public class WarehouseUI1 extends JPanel {
 		return this.panel;
 	}
 
-	public CardLayout getCardLayout() {
-		return this.getCardLayout();
-	}
+//	public CardLayout getCardLayout() {
+//		return this.getCardLayout();
+//	}
 
 
-	public JButton getButton_3() {
+	public MyButton getButton_3() {
 		return button_3;
 	}
 
-	public JButton getButton_5() {
+	public MyButton getButton_5() {
 		return button_5;
 	}
 
@@ -442,11 +448,11 @@ public class WarehouseUI1 extends JPanel {
 		return label_12;
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 
-	public JButton getButton_6() {
+	public MyButton getButton_6() {
 		return button_6;
 	}
 
@@ -482,7 +488,7 @@ public class WarehouseUI1 extends JPanel {
 		return comboBox_10;
 	}
 
-	public JButton getImportConfirmButton() {
+	public MyButton getImportConfirmButton() {
 		return this.button;
 	}
 
@@ -520,8 +526,12 @@ public class WarehouseUI1 extends JPanel {
 	public String getTransportation() {
 		return (String) comboBox_3.getSelectedItem();
 	}
-
-	private void setImage() {
-
+	
+	public SubNaviButton getButton1(){
+		return this.importButton;
+	}
+	
+	public SubNaviButton getButton2(){
+		return this.exportButton;
 	}
 }

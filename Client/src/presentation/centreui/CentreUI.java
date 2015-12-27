@@ -54,12 +54,13 @@ public class CentreUI extends JPanel {
 		this.setLayout(null);
 
 		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(120, 29, 464, 204);
+		panel_5.setBackground(Color.WHITE);
+		panel_5.setBounds(26, 20, 311, 322);
 		this.add(panel_5);
 		panel_5.setLayout(null);
 
 		JLabel label = new JLabel("\u4E2D\u8F6C\u4E2D\u5FC3\u5230\u8FBE\u5355");
-		label.setBounds(184, 6, 109, 18);
+		label.setBounds(99, 6, 109, 18);
 		panel_5.add(label);
 
 		JLabel lblNewLabel_1 = new JLabel("托运单号：");
@@ -72,34 +73,34 @@ public class CentreUI extends JPanel {
 		textField.setColumns(10);
 
 		JLabel lblNewLabel_2 = new JLabel("到达日期：");
-		lblNewLabel_2.setBounds(253, 42, 100, 18);
+		lblNewLabel_2.setBounds(17, 97, 100, 18);
 		panel_5.add(lblNewLabel_2);
 
 		textField_1 = new MyTextField();
-		textField_1.setBounds(320, 33, 122, 30);
+		textField_1.setBounds(99, 91, 122, 30);
 		panel_5.add(textField_1);
 		textField_1.setColumns(10);
 
 		JLabel lblNewLabel_3 = new JLabel("中转编号：");
-		lblNewLabel_3.setBounds(17, 93, 100, 18);
+		lblNewLabel_3.setBounds(17, 159, 100, 18);
 		panel_5.add(lblNewLabel_3);
 
 		textField_2 = new MyTextField();
-		textField_2.setBounds(99, 87, 122, 30);
+		textField_2.setBounds(99, 153, 122, 30);
 		panel_5.add(textField_2);
 		textField_2.setColumns(10);
 
 		JLabel lblNewLabel_4 = new JLabel("出发地：");
-		lblNewLabel_4.setBounds(253, 93, 100, 18);
+		lblNewLabel_4.setBounds(17, 207, 100, 18);
 		panel_5.add(lblNewLabel_4);
 
 		textField_3 = new MyTextField();
-		textField_3.setBounds(320, 87, 122, 30);
+		textField_3.setBounds(99, 201, 122, 30);
 		panel_5.add(textField_3);
 		textField_3.setColumns(10);
 
 		JLabel lblNewLabel_5 = new JLabel("状态：");
-		lblNewLabel_5.setBounds(17, 155, 100, 18);
+		lblNewLabel_5.setBounds(17, 267, 100, 18);
 		panel_5.add(lblNewLabel_5);
 
 		comboBox = new JComboBox<String>();
@@ -107,16 +108,16 @@ public class CentreUI extends JPanel {
 		comboBox.addItem("损坏");
 		comboBox.addItem("丢失");
 		comboBox.setSelectedItem(0);
-		comboBox.setBounds(99, 150, 122, 28);
+		comboBox.setBounds(99, 263, 122, 28);
 		panel_5.add(comboBox);
 
-		confirm = new MyButton("确认");
-		confirm.setBounds(89, 340, 90, 30);
+		confirm = new MyButton("保存");
+		confirm.setBounds(62, 367, 120, 30);
 		this.add(confirm);
 		confirm.addActionListener(centreListener);
 
 		cancle = new MyButton("清空");
-		cancle.setBounds(493, 340, 90, 30);
+		cancle.setBounds(194, 367, 120, 30);
 		this.add(cancle);
 		confirm.addActionListener(centreListener);
 		confirm.addMouseListener(centreListener);

@@ -108,4 +108,14 @@ public class WarehouseDataService_Stub implements WarehouseDataService {
 		return null;
 	}
 
+	public ResultMessage insert(Object po) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage update(Object ob) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

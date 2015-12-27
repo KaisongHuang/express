@@ -6,6 +6,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import listener.managerlistener.ManagerListener40;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.SubNaviButton;
 
 public class ManagerUI4 extends JPanel {
@@ -18,6 +19,7 @@ public class ManagerUI4 extends JPanel {
 	private ManagerUI4_2 ui2;
 	private SubNaviButton button1;
 	private SubNaviButton button2;
+	private MySeperator line;
 	private JPanel navi_panel;
 	private JPanel panel;
 	private ManagerListener40 listener;
@@ -35,7 +37,7 @@ public class ManagerUI4 extends JPanel {
 		ui2 = new ManagerUI4_2();
 
 		panel = new JPanel();
-		panel.setBounds(0, 44, 746, 394);
+		panel.setBounds(0, 50, 746, 394);
 		add(panel);
 		card = new CardLayout(0, 0);
 		panel.setLayout(card);
@@ -46,23 +48,26 @@ public class ManagerUI4 extends JPanel {
 
 		navi_panel = new JPanel();
 		navi_panel.setBounds(0, 0, 746, 44);
-		navi_panel.setBackground(new Color(246, 246, 246));
+		navi_panel.setBackground(Color.WHITE);
 		this.add(navi_panel);
 		navi_panel.setLayout(null);
 
 		button1 = new SubNaviButton("制定薪水策略");
-		button1.setBounds(44, 8, 90, 44);
+		button1.setBounds(44, 0, 118, 44);
 		button1.addActionListener(listener);
 		button1.addMouseListener(listener);
 		button1.setClicked(true);
 		navi_panel.add(button1);
 
 		button2 = new SubNaviButton("制定距离价格");
-		button2.setBounds(194, 8, 90, 44);
+		button2.setBounds(162, 0, 118, 44);
 		button2.addActionListener(listener);
 		button2.addMouseListener(listener);
 		navi_panel.add(button2);
 
+		line=new MySeperator();
+		line.setBounds(44, 44, 630, 10);
+		add(line);
 		add(navi_panel);
 
 	}

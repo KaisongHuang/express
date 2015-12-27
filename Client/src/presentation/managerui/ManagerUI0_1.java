@@ -69,7 +69,8 @@ public class ManagerUI0_1 extends JPanel{
 		
 
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(94, 120, 566, 212);
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(74, 128, 566, 212);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 

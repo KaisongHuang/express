@@ -69,4 +69,14 @@ public class FinanceDataService_Stub implements FinanceDataService{
 		return null;
 	}
 
+	public ResultMessage InitInsert(AccountPO po) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage update(AccountPO po) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -65,20 +65,20 @@ public class CourierUI4 extends JPanel {
 		this.add(lblNewLabel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("货运状态：");
-		lblNewLabel_2.setBounds(178, 174, 100, 18);
+		lblNewLabel_2.setBounds(371, 124, 100, 18);
 		this.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("\u5386\u53F2\u8F68\u8FF9");
-		lblNewLabel_3.setBounds(307, 196, 100, 18);
+		lblNewLabel_3.setBounds(303, 164, 100, 18);
 		this.add(lblNewLabel_3);
 
 		textArea = new JTextArea();
-		textArea.setBounds(178, 226, 354, 204);
+		textArea.setBounds(178, 186, 354, 204);
         textArea.setFont(new Font(Font.DIALOG,10,20));
 		this.add(textArea);
 
 		lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBounds(259, 174, 100, 18);
+		lblNewLabel_4.setBounds(442, 124, 100, 18);
 		this.add(lblNewLabel_4);
 
 		lblNewLabel_5 = new JLabel("");
@@ -95,7 +95,7 @@ public class CourierUI4 extends JPanel {
 		textField.setColumns(10);
 
 		search = new MyButton("查询");
-		search.setBounds(442, 73, 100, 30);
+		search.setBounds(408, 73, 100, 30);
 		this.add(search);
 		search.addActionListener(courierlistener);
 		search.addMouseListener(courierlistener);
