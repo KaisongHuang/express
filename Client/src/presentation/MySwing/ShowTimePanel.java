@@ -23,6 +23,7 @@ public class ShowTimePanel extends JPanel {
 		
 		setLayout(null);
 		JLabel label=new JLabel("欢迎回来！");
+		label.setForeground(new Color(233,150,122));
 		label.setBounds(12, 0, 80, 15);
 		label.setBackground(new Color(246,246,246));
 		TimePanel1 panel1=new TimePanel1();
@@ -53,6 +54,7 @@ public class ShowTimePanel extends JPanel {
 		public void paint(Graphics g) {
 			super.paint(g);
 			// 显示时间
+			g.setColor(new Color(233,150,122));
 			g.drawString(sdf1.format(new Date()), 0, 10);
 			
 		}
@@ -68,6 +70,7 @@ public class ShowTimePanel extends JPanel {
 		public void paint(Graphics g) {
 			super.paint(g);
 			// 显示时间
+			g.setColor(new Color(233,150,122));
 			g.drawString(sdf2.format(new Date()), 0, 10);
 		}
 
