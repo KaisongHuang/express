@@ -35,7 +35,7 @@ public class FinanceUI4_2 extends JPanel {
 	private DefaultTableModel model;
 	private MyTextField textField;
 	private MyTextField textField_1;
-	FinanceListener4 financeListener4;
+	private FinanceListener4 financeListener4;
 	private MyButton clearAll;
 	private int height = 600;
 	private int width = 900;

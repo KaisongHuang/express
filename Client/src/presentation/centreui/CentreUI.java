@@ -5,10 +5,15 @@
 package presentation.centreui;
 
 import java.awt.Color;
+import java.util.Vector;
+
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import listener.centrelistener.CentreListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
@@ -26,19 +31,28 @@ public class CentreUI extends JPanel {
 	private JComboBox<String> comboBox;
 	private MyButton confirm;
 	private MyButton cancle;
-	CentreListener0 centreListener;
+	private MyButton myButton;
+	private MyButton myButton_1;
+	private CentreListener0 centreListener;
+	private MyTable table;
+	private JScrollPane JSP;
+	private Vector<String> name;
+	private Vector<Object> data;
+	private DefaultTableModel model;
 	private int width;
 	private int height;
+
 	/**
 	 * Create the application.
+	 * 
 	 * @param j
 	 * @param i
 	 */
 	public CentreUI(int i, int j) {
 
 		centreListener = new CentreListener0(this);
-		width=i;
-		height=j;
+		width = i;
+		height = j;
 		initialize();
 		this.setImage();
 		this.setVisible(true);
@@ -55,7 +69,7 @@ public class CentreUI extends JPanel {
 
 		JPanel panel_5 = new JPanel();
 		panel_5.setBackground(Color.WHITE);
-		panel_5.setBounds(26, 20, 311, 322);
+		panel_5.setBounds(480, 20, 244, 322);
 		this.add(panel_5);
 		panel_5.setLayout(null);
 
@@ -112,31 +126,44 @@ public class CentreUI extends JPanel {
 		panel_5.add(comboBox);
 
 		confirm = new MyButton("保存");
-		confirm.setBounds(62, 367, 120, 30);
+		confirm.setBounds(604, 382, 120, 30);
 		this.add(confirm);
 		confirm.addActionListener(centreListener);
 
 		cancle = new MyButton("清空");
-		cancle.setBounds(194, 367, 120, 30);
+		cancle.setBounds(604, 345, 120, 30);
 		this.add(cancle);
-		confirm.addActionListener(centreListener);
-		confirm.addMouseListener(centreListener);
-		cancle.addActionListener(centreListener);
-		cancle.addMouseListener(centreListener);
 
+		myButton = new MyButton("新增");
+		myButton.setBounds(480, 345, 120, 30);
+		add(myButton);
+
+		myButton_1 = new MyButton("删除");
+		myButton_1.setBounds(480, 382, 120, 30);
+		add(myButton_1);
+		
+		myButton_1.addActionListener(centreListener);
+		myButton.addActionListener(centreListener);
+		confirm.addActionListener(centreListener);
+		cancle.addActionListener(centreListener);
+
+	}
+
+	public MyButton getMyButton() {
+		return myButton;
+	}
+
+	public MyButton getMyButton_1() {
+		return myButton_1;
 	}
 
 	public MyButton getConfirm() {
 		return confirm;
 	}
 
-	
-
 	public MyButton getCancle() {
 		return cancle;
 	}
-
-	
 
 	public MyTextField getTextField() {
 		return textField;
@@ -177,6 +204,7 @@ public class CentreUI extends JPanel {
 	public void setComboBox(JComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
+
 	private void setImage() {
 
 	}
