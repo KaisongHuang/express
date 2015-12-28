@@ -6,8 +6,8 @@ import po.ManagerPO;
 
 public class SalaryPO extends ManagerPO  implements Serializable{
 
-	String employeeName;
-	String salaryMethod;
+	private String employeeName;
+	private String salaryMethod;
 
 	public SalaryPO(String en, String sm) {
 		this.employeeName = en;

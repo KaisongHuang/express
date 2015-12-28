@@ -63,7 +63,7 @@ public class History implements HistoryService{
 			e.printStackTrace();
 		}
 		if(state!=null&&centreID!=null)
-		     sql="update History set centreID='"+cid+centreID+"' ,state="+state+",centre="+centre+" where id='"+id+"';";
+		     sql="update History set centreID='"+cid+centreID+"' ,state='"+state+"',centre="+centre+" where id='"+id+"';";
 		else
 			 sql="update History set centre="+centre+" where id='"+id+"';";
 		db.update(sql);

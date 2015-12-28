@@ -36,7 +36,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			System.out.println(po1.getPos_qu());
 			sql = "insert into InStorage values('" + po1.getId() + "','" + po1.getIndate() + "','"
 					+ po1.getDestination() + "','" + po1.getPos_qu() + "'," + po1.getPos_pai() + "," + po1.getPos_jia()
-					+ "," + po1.getPos_wei() + "," + po1.getIsCheck() + ",'" + po1.getWarehouseID() + "'，1);";
+					+ "," + po1.getPos_wei() + "," + po1.getIsCheck() + ",'" + po1.getWarehouseID() + "',1);";
 			rm = db.insert(sql);
 		} else {
 			OutStoragePO po1 = (OutStoragePO) po;

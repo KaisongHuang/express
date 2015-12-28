@@ -1,9 +1,9 @@
 package vo;
 
 public class InStorageVO  {
-	String id;
-	String destination;
-	String WarehouseID;
+	private String id;
+	private String destination;
+	private String WarehouseID;
 	private String indate;
 	private String pos_qu;
 	private int pos_pai;

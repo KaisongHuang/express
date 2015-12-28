@@ -6,13 +6,13 @@ import po.CentrePO;
 
 public class CentreArrivalPO extends CentrePO  implements Serializable{
 
-	String ID;
-	String getDate;
-	String transferID;
-	String start;
-	String expressState;
-	int isCheck;
-    int isInStorage;
+	private String ID;
+	private String getDate;
+	private String transferID;
+	private String start;
+	private String expressState;
+	private int isCheck;
+	private int isInStorage;
 	public CentreArrivalPO(String id, String gd, String transferID, String start, String es, int isCheck,int isInstorage) {
 
 		this.ID = id;

@@ -2,8 +2,8 @@ package vo;
 
 public class InstitutionVO {
 
-	String organizationID;
-	String name;
+	private String organizationID;
+	private String name;
     
 	public InstitutionVO(String oi, String n) {
 

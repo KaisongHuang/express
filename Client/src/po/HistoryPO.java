@@ -8,10 +8,10 @@ public class HistoryPO  implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	String id;
-	String state;
-	ArrayList<String> list1;
-    ArrayList<Integer> list2 ;
+	private String id;
+	private String state;
+	private ArrayList<String> list1;
+	private ArrayList<Integer> list2 ;
    
 	public HistoryPO(String id,String state, ArrayList<String> list1,ArrayList<Integer> list2) {
 		this.state = state;

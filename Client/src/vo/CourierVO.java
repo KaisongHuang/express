@@ -1,10 +1,10 @@
 package vo;
 
 public class CourierVO {
-	String number;
-	String name;
-	String date;
-    Check c;
+	private String number;
+	private String name;
+	private String date;
+	private Check c;
 	public CourierVO(String num, String na, String da) {
 		number = num;
 		name = na;
