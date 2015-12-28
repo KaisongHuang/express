@@ -24,9 +24,9 @@ public class ShowTimePanel extends JPanel {
 	public ShowTimePanel() {
 		
 		setLayout(null);
-		JLabel name=new JLabel(EmployeeMes.employeeName);
+		JLabel name=new JLabel(EmployeeMes.employeeName,JLabel.CENTER);
 		name.setForeground(new Color(233,150,122));
-		name.setBounds(12, 0, 80, 15);
+		name.setBounds(0, 0, 80, 15);
 		name.setBackground(new Color(246,246,246));
 		JLabel label=new JLabel("欢迎回来！");
 		label.setForeground(new Color(233,150,122));

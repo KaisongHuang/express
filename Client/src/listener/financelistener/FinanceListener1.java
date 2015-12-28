@@ -31,11 +31,17 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 				ui.getModel().removeRow(0);
 			}
 
-			String year = (String) ui.getComboBox().getSelectedItem();
-			String month = (String) ui.getComboBox_1().getSelectedItem();
-			String day = (String) ui.getComboBox_2().getSelectedItem();
+//			String year = (String) ui.getComboBox().getSelectedItem();
+//			String month = (String) ui.getComboBox_1().getSelectedItem();
+//			String day = (String) ui.getComboBox_2().getSelectedItem();
 
-			String date = year + month + day;
+//			System.out.println(ui.getMdp().gett);
+			String date = ui.getMdp().getText();
+			date = date.replace("/", "");
+			String s1 = date.substring(0,4);
+			String s2 = date.substring(4,8);
+			date = s2 + s1 ;
+			System.out.println(date);
 //			String sellingArea = (String) ui.getComboBox_3().getSelectedItem();
 			String sellingArea = "025000";
 

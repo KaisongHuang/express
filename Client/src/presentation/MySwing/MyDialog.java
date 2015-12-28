@@ -8,14 +8,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MyDialog extends JPanel implements Runnable{
-	int i=50;
+
 	String content;
-	
 	public MyDialog(){
 		super();
-		this.setLayout(null);
-	    content="ssss";		
-	    this.setVisible(true);
+	    content="";
+		this.setBounds(0,400,900,100);
+	    this.setVisible(false);
 	}
 	public void setText(String s){
 		content=s;

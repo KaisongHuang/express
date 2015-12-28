@@ -79,7 +79,7 @@ public class WarehouseListener4 implements ActionListener {
 		// save&back
 		else if (e.getSource() == ui.getButton_3()) {
 			final JFrame jf = new JFrame();
-			
+
 			jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			jf.setBounds(300, 300, 450, 150);
 			jf.setUndecorated(true);
@@ -120,18 +120,26 @@ public class WarehouseListener4 implements ActionListener {
 						for (int j = 0; j < 7; j++) {
 							rowData.add(ui.getTable().getValueAt(i, j));
 						}
+						String qu=(String) rowData.get(3);
+						if(qu.equals("航运区")){
+							qu="plane";
+						}else if(qu.equals("铁运区")){
+							qu="train";
+						}else{
+							qu="car";
+						}
 						vo.setId((String) rowData.get(0));
 						vo.setDestination((String) rowData.get(1));
 						vo.setIndate((String) rowData.get(2));
-						vo.setPos_qu((String) rowData.get(3));
+						vo.setPos_qu(qu);
 						vo.setPos_pai((Integer) rowData.get(4));
 						vo.setPos_jia((Integer) rowData.get(5));
 						vo.setPos_wei((Integer) rowData.get(6));
 						vo.setWarehouseID(EmployeeMes.belongToWho);
 						vo.setIsCheck(0);
-						if(!check(vo))
-							return ;
 						warehouseBl.initWarehouse(vo);
+//						if(!check(vo))
+//							return ;
 					}
 					int n=ui.getModel().getRowCount();
 					for(int i=0;i<n;i++){
