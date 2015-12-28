@@ -62,7 +62,8 @@ public class AdminUI1 extends JPanel {
 		this.setLayout(null);
 		
 		dialog=new MyDialog();
-		dialog.setBounds(0,30,550,40);
+		dialog.setBackground(Color.BLACK);
+		dialog.setBounds(0,0,100,100);
 		this.add(dialog);
 		
 		JLabel label_3 = new JLabel("姓名：");
@@ -115,6 +116,10 @@ public class AdminUI1 extends JPanel {
 		comboBox.addItem("快递员");
 		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
+		
+		MyDialog myDialog = new MyDialog();
+		myDialog.setBounds(51, 223, 100, 100);
+		add(myDialog);
 		
      
 		
@@ -174,5 +179,4 @@ public class AdminUI1 extends JPanel {
     public void setText(String s){
     	dialog.setText(s);
     }
-
 }
