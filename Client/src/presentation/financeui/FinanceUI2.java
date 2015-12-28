@@ -13,6 +13,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
+import com.eltima.components.ui.DatePicker;
+
 import listener.financelistener.FinanceListener2;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTable;
@@ -53,6 +55,7 @@ public class FinanceUI2 extends JPanel {
 	private JLabel label_3;
 //	private int height = 600;
 //	private int width = 900;
+	private DatePicker dp;
 
 	public FinanceUI2() {
 		financeListener2 = new FinanceListener2(this);
@@ -84,38 +87,38 @@ public class FinanceUI2 extends JPanel {
 		this.add(lblNewLabel_1);
 
 		lblNewLabel_2 = new JLabel("付款金额:");
-		lblNewLabel_2.setBounds(485, 132, 67, 15);
+		lblNewLabel_2.setBounds(483, 100, 67, 15);
 		this.add(lblNewLabel_2);
 
 		textField_1 = new MyTextField();
-		textField_1.setBounds(546, 125, 134, 28);
+		textField_1.setBounds(546, 94, 134, 28);
 		this.add(textField_1);
 		textField_1.setColumns(10);
 
 		lblNewLabel_3 = new JLabel("付款人:");
-		lblNewLabel_3.setBounds(485, 171, 61, 16);
+		lblNewLabel_3.setBounds(483, 141, 61, 16);
 		this.add(lblNewLabel_3);
 
 		textField_2 = new MyTextField();
-		textField_2.setBounds(546, 165, 134, 28);
+		textField_2.setBounds(546, 136, 134, 28);
 		this.add(textField_2);
 		textField_2.setColumns(10);
 
 		lblNewLabel_4 = new JLabel("付款账号:");
-		lblNewLabel_4.setBounds(485, 211, 61, 16);
+		lblNewLabel_4.setBounds(483, 180, 61, 16);
 		this.add(lblNewLabel_4);
 
 		textField_3 = new MyTextField();
-		textField_3.setBounds(546, 205, 134, 28);
+		textField_3.setBounds(546, 175, 134, 28);
 		this.add(textField_3);
 		textField_3.setColumns(10);
 
 		lblNewLabel_5 = new JLabel("条目:");
-		lblNewLabel_5.setBounds(485, 251, 61, 16);
+		lblNewLabel_5.setBounds(483, 223, 61, 16);
 		this.add(lblNewLabel_5);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(546, 247, 134, 27);
+		comboBox.setBounds(546, 218, 134, 27);
 		comboBox.addItem("租金");
 		comboBox.addItem("运费");
 		comboBox.addItem("工资");
@@ -123,11 +126,11 @@ public class FinanceUI2 extends JPanel {
 		this.add(comboBox);
 
 		label = new JLabel("备注:");
-		label.setBounds(485, 290, 61, 16);
+		label.setBounds(483, 266, 61, 16);
 		this.add(label);
 
 		textField_4 = new MyTextField();
-		textField_4.setBounds(546, 284, 134, 28);
+		textField_4.setBounds(546, 261, 134, 28);
 		this.add(textField_4);
 		textField_4.setColumns(10);
 
@@ -161,32 +164,36 @@ public class FinanceUI2 extends JPanel {
 		finish.addMouseListener(financeListener2);
 		add(finish);
 
-		comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(546, 60, 119, 25);
-		comboBox_1.addItem("2015");
-		add(comboBox_1);
+		dp = new DatePicker(this);
+		dp.setBounds(546, 60, 119, 25);
+		add(dp);
 
-		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(546, 89, 67, 25);
-		comboBox_2.addItem("01");
-		add(comboBox_2);
-
-		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(625, 89, 67, 25);
-		comboBox_3.addItem("01");
-		add(comboBox_3);
-
-		label_1 = new JLabel("年");
-		label_1.setBounds(662, 63, 19, 15);
-		add(label_1);
-
-		label_2 = new JLabel("月");
-		label_2.setBounds(609, 93, 19, 15);
-		add(label_2);
-
-		label_3 = new JLabel("日");
-		label_3.setBounds(692, 94, 19, 15);
-		add(label_3);
+//		comboBox_1 = new JComboBox<String>();
+//		comboBox_1.setBounds(546, 60, 119, 25);
+//		comboBox_1.addItem("2015");
+//		add(comboBox_1);
+//
+//		comboBox_2 = new JComboBox<String>();
+//		comboBox_2.setBounds(546, 89, 67, 25);
+//		comboBox_2.addItem("01");
+//		add(comboBox_2);
+//
+//		comboBox_3 = new JComboBox<String>();
+//		comboBox_3.setBounds(625, 89, 67, 25);
+//		comboBox_3.addItem("01");
+//		add(comboBox_3);
+//
+//		label_1 = new JLabel("年");
+//		label_1.setBounds(662, 63, 19, 15);
+//		add(label_1);
+//
+//		label_2 = new JLabel("月");
+//		label_2.setBounds(609, 93, 19, 15);
+//		add(label_2);
+//
+//		label_3 = new JLabel("日");
+//		label_3.setBounds(692, 94, 19, 15);
+//		add(label_3);
 	}
 
 	// public MyTextField getTextField() {
@@ -257,4 +264,9 @@ public class FinanceUI2 extends JPanel {
 	public void setData(Vector<Object> data) {
 		this.data = data;
 	}
+
+	public DatePicker getDp() {
+		return dp;
+	}
+
 }
