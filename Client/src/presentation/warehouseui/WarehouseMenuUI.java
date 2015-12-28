@@ -56,7 +56,7 @@ public class WarehouseMenuUI extends JPanel {
 		add(user);
 		
 		time=new ShowTimePanel();
-		time.setBounds(75, 25, 80, 50);
+		time.setBounds(75, 10, 80, 70);
 		time.setBackground(new Color(246,246,246));
 		add(time);
 		
