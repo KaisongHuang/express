@@ -7,15 +7,15 @@ import po.CentrePO;
 
 public class CentrePackPO extends CentrePO  implements Serializable{
 
-	String dataOfGetin;
-	String centreTransferID;
-	String arrival;
-	String carID;
-	String jianZhuangYuan;
-	String yaYunYuan;
-	ArrayList<String> list = new ArrayList<String>();
-	double fee;
-	int isCheck;
+	private String dataOfGetin;
+	private String centreTransferID;
+	private String arrival;
+	private String carID;
+	private String jianZhuangYuan;
+	private String yaYunYuan;
+	private ArrayList<String> list = new ArrayList<String>();
+	private double fee;
+	private int isCheck;
 
 	public CentrePackPO(String dog, String cti, String arrival, String ci, String jzy, String yyy,
 			ArrayList<String> list, double fee, int isCheck) {

@@ -5,14 +5,14 @@ import java.io.Serializable;
 import po.SellingareaPO;
 
 public class DriverPO extends SellingareaPO  implements Serializable{ 
-    String number;
-    String name;
-    String birthday;
-    String ID;
-    String phone;
-    String CarCompany;
-    String sex;
-    String LicenceTime;
+	private String number;
+	private  String name;
+	private String birthday;
+	private String ID;
+	private String phone;
+	private String CarCompany;
+	private  String sex;
+	private  String LicenceTime;
     
     public DriverPO(String number,String name,String birthday,String ID,String phone,String CarCompany,String sex,String LicenceTime){
     	this.number=number;

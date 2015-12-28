@@ -6,10 +6,10 @@ import po.SellingareaPO;
 
 public class DeliverPO extends SellingareaPO  implements Serializable{
 
-	String BarCode;
-	String date;
-	String number;
-	int isCheck;
+	private String BarCode;
+	private String date;
+	private String number;
+	private int isCheck;
 
 	public DeliverPO(String BarCode, String date, String number, int isCheck) {
 		this.BarCode = BarCode;

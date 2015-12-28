@@ -1,9 +1,9 @@
 package vo;
 
 public class WarehouseVO {
-	double rate;
-	String WarehouseID;
-    int carpai,carjia,carwei,trainpai,trainjia,trainwei,airpai,airjia,airwei,pai,jia,wei;
+	private double rate;
+	private String WarehouseID;
+	private int carpai,carjia,carwei,trainpai,trainjia,trainwei,airpai,airjia,airwei,pai,jia,wei;
     public WarehouseVO(){
     	
     }
