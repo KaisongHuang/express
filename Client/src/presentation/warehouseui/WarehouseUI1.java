@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 
 import listener.warehouselistener.WarehouseListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDatePicker;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.SubNaviButton;
@@ -81,6 +82,8 @@ public class WarehouseUI1 extends JPanel {
 	private MySeperator line;
 	private JPanel navi_panel;
 	private WarehouseListener1 warehouseListener;
+
+	private MyDatePicker mdp1;
 
 
 	/**
@@ -206,76 +209,80 @@ public class WarehouseUI1 extends JPanel {
 		label_8.setBounds(335, 52, 57, 15);
 		importPanel.add(label_8);
 
-		comboBox_4 = new JComboBox<Object>();
-		comboBox_4.setBounds(393, 48, 94, 25);
-		comboBox_4.addItem("2015");
-		importPanel.add(comboBox_4);
+		mdp1 = new MyDatePicker(this);
+		mdp1.setBounds(393, 48, 94, 25);
+		importPanel.add(mdp1);
 
-		label_10 = new JLabel("年");
-		label_10.setBounds(491, 52, 20, 15);
-		importPanel.add(label_10);
-
-		comboBox_5 = new JComboBox<Object>();
-		comboBox_5.setBounds(393, 79, 94, 25);
-		comboBox_5.addItem("01");
-		importPanel.add(comboBox_5);
-
-		label_11 = new JLabel("月");
-		label_11.setBounds(491, 79, 20, 15);
-		importPanel.add(label_11);
-
-		comboBox_6 = new JComboBox<Object>();
-		comboBox_6.setBounds(393, 116, 94, 25);
-		comboBox_6.addItem("01");
-		importPanel.add(comboBox_6);
-
-		label_12 = new JLabel("日");
-		label_12.setBounds(491, 120, 57, 15);
-		importPanel.add(label_12);
+//		comboBox_4 = new JComboBox<Object>();
+//		comboBox_4.setBounds(393, 48, 94, 25);
+//		comboBox_4.addItem("2015");
+//		importPanel.add(comboBox_4);
+//
+//		label_10 = new JLabel("年");
+//		label_10.setBounds(491, 52, 20, 15);
+//		importPanel.add(label_10);
+//
+//		comboBox_5 = new JComboBox<Object>();
+//		comboBox_5.setBounds(393, 79, 94, 25);
+//		comboBox_5.addItem("01");
+//		importPanel.add(comboBox_5);
+//
+//		label_11 = new JLabel("月");
+//		label_11.setBounds(491, 79, 20, 15);
+//		importPanel.add(label_11);
+//
+//		comboBox_6 = new JComboBox<Object>();
+//		comboBox_6.setBounds(393, 116, 94, 25);
+//		comboBox_6.addItem("01");
+//		importPanel.add(comboBox_6);
+//
+//		label_12 = new JLabel("日");
+//		label_12.setBounds(491, 120, 57, 15);
+//		importPanel.add(label_12);
 
 		button = new MyButton("确认");
-		button.setBounds(339, 267, 94, 27);
+		button.setBounds(334, 291, 94, 27);
 		importPanel.add(button);
 
 		button_6 = new MyButton("清空");
-		button_6.setBounds(438, 267, 94, 27);
+		button_6.setBounds(444, 291, 94, 27);
 		importPanel.add(button_6);
 
 		label_13 = new JLabel("区号:");
-		label_13.setBounds(361, 151, 31, 16);
+		label_13.setBounds(361, 100, 31, 16);
 		importPanel.add(label_13);
 
 		comboBox_7 = new JComboBox<Object>();
-		comboBox_7.setBounds(393, 147, 94, 27);
+		comboBox_7.setBounds(393, 95, 94, 27);
 		comboBox_7.addItem("航运区");
 		comboBox_7.addItem("铁运区");
 		comboBox_7.addItem("汽运区");
 		importPanel.add(comboBox_7);
 
 		label_14 = new JLabel("排号:");
-		label_14.setBounds(361, 179, 42, 16);
+		label_14.setBounds(361, 142, 42, 16);
 		importPanel.add(label_14);
 
 		comboBox_8 = new JComboBox<Object>();
-		comboBox_8.setBounds(393, 175, 94, 27);
+		comboBox_8.setBounds(393, 137, 94, 27);
 		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
 
 		label_15 = new JLabel("架号:");
-		label_15.setBounds(361, 207, 42, 16);
+		label_15.setBounds(361, 187, 42, 16);
 		importPanel.add(label_15);
 
 		comboBox_9 = new JComboBox<Object>();
-		comboBox_9.setBounds(393, 203, 94, 27);
+		comboBox_9.setBounds(393, 182, 94, 27);
 		comboBox_9.addItem("1");
 		importPanel.add(comboBox_9);
 
 		label_16 = new JLabel("位号:");
-		label_16.setBounds(361, 239, 61, 16);
+		label_16.setBounds(361, 241, 61, 16);
 		importPanel.add(label_16);
 
 		comboBox_10 = new JComboBox<Object>();
-		comboBox_10.setBounds(393, 235, 94, 27);
+		comboBox_10.setBounds(393, 230, 94, 27);
 		comboBox_10.addItem("1");
 		importPanel.add(comboBox_10);
 
@@ -292,7 +299,7 @@ public class WarehouseUI1 extends JPanel {
 		navi_panel.setBackground(Color.WHITE);
 		this.add(navi_panel);
 		navi_panel.setLayout(null);
-		
+
 		exportButton = new SubNaviButton("新建出库单");
 		exportButton.addActionListener(warehouseListener);
 		exportButton.addMouseListener(warehouseListener);
@@ -306,7 +313,7 @@ public class WarehouseUI1 extends JPanel {
 		importButton.setBounds(44, 0, 118, 44);
 		importButton.setClicked(true);
 		navi_panel.add(importButton);
-		
+
 		line=new MySeperator();
 		line.setBounds(44, 44, 630, 10);
 		add(line);
@@ -526,11 +533,11 @@ public class WarehouseUI1 extends JPanel {
 	public String getTransportation() {
 		return (String) comboBox_3.getSelectedItem();
 	}
-	
+
 	public SubNaviButton getButton1(){
 		return this.importButton;
 	}
-	
+
 	public SubNaviButton getButton2(){
 		return this.exportButton;
 	}
