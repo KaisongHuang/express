@@ -82,7 +82,7 @@ public class CourierUI2 extends JPanel {
 		textField_2.setColumns(10);
 
 		confirm = new MyButton("确认");
-		confirm.setBounds(374, 347, 100, 30);
+		confirm.setBounds(240, 249, 100, 30);
 		this.add(confirm);
 		confirm.addActionListener(courierlistener);
 		confirm.addMouseListener(courierlistener);

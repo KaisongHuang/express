@@ -78,5 +78,10 @@ public class WarehouseBlService_Stub implements WarehouseBlService{
 		return null;
 	}
 
+	public ResultMessage update(Object ob) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

@@ -75,7 +75,8 @@ public class ManagerUI0_3 extends JPanel {
 		search.addActionListener(managerlistener);
         search.addMouseListener(managerlistener);
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(66, 78, 492, 205);
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(140, 118, 492, 205);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -128,12 +129,12 @@ public class ManagerUI0_3 extends JPanel {
 		panel_6.add(lblNewLabel_13);
 
 		delete = new MyButton("删除");
-		delete.setBounds(162, 307, 100, 30);
+		delete.setBounds(386, 42, 100, 30);
 		this.add(delete);
 		delete.addActionListener(managerlistener);
         delete.addMouseListener(managerlistener);
-		cancle = new MyButton("取消");
-		cancle.setBounds(274, 307, 100, 30);
+		cancle = new MyButton("清空");
+		cancle.setBounds(498, 42, 100, 30);
 		this.add(cancle);
 		cancle.addActionListener(managerlistener);
         cancle.addMouseListener(managerlistener);

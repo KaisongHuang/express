@@ -8,10 +8,10 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 
 import listener.sellingarealistener.SellingAreaListener3_1;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 
@@ -39,8 +39,8 @@ public class SellingAreaUI3_1 extends JPanel{
 	private JLabel lblNewLabel_12;
 	private JLabel lblNewLabel_13;
 
-	private JButton button_1;
-	private JButton button_2;
+	private MyButton button_1;
+	private MyButton button_2;
 
 	private JPanel panel_6;
 	SellingAreaListener3_1 sellingarealistener;
@@ -75,7 +75,7 @@ public class SellingAreaUI3_1 extends JPanel{
 
 		
 		lblNewLabel_1 = new JLabel("车辆编号：");
-		lblNewLabel_1.setBounds(44, 62, 100, 18);
+		lblNewLabel_1.setBounds(68, 62, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new MyTextField();
@@ -83,16 +83,17 @@ public class SellingAreaUI3_1 extends JPanel{
 		this.add(textField);
 		textField.setColumns(10);
 
-		button_1 = new JButton("查询");
-		button_1.setBounds(360, 56,100, 30);
+		button_1 = new MyButton("查询");
+		button_1.setBounds(288, 56,100, 30);
 		this.add(button_1);
 
-		button_2 = new JButton("清空");
-		button_2.setBounds(470, 56,100, 30);
+		button_2 = new MyButton("清空");
+		button_2.setBounds(400, 56,100, 30);
 		this.add(button_2);
 
 		panel_6 = new JPanel();
-		panel_6.setBounds(34, 115, 641, 199);
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(35, 97, 641, 199);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -261,19 +262,19 @@ public class SellingAreaUI3_1 extends JPanel{
 		this.lblNewLabel_13 = lblNewLabel_13;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 
-	public void setButton_1(JButton button_1) {
+	public void setButton_1(MyButton button_1) {
 		this.button_1 = button_1;
 	}
 
-	public JButton getButton_2() {
+	public MyButton getButton_2() {
 		return button_2;
 	}
 
-	public void setButton_2(JButton button_2) {
+	public void setButton_2(MyButton button_2) {
 		this.button_2 = button_2;
 	}
 }

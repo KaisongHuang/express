@@ -50,7 +50,7 @@ public class SellingAreaUI3 extends JPanel{
 
 		panel=new JPanel();
 		panel.setBounds(0,50, 746, 394);
-		panel.setBackground(Color.blue);
+		panel.setBackground(Color.WHITE);
 		add(panel);
 		card = new CardLayout(0, 0);
 		panel.setLayout(card);

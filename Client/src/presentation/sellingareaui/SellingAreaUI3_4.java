@@ -7,10 +7,10 @@ package presentation.sellingareaui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 
 import listener.sellingarealistener.SellingAreaListener3_4;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 
@@ -29,12 +29,12 @@ public class SellingAreaUI3_4 extends JPanel{
 	private MyTextField textField_5;
 
 	SellingAreaListener3_4 sellingarealistener;
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_14;
-	private JButton btnNewButton_13;
-	private JButton btnNewButton_11;
-	private JButton btnNewButton_10;
+	private MyButton btnNewButton_16;
+	private MyButton btnNewButton_15;
+	private MyButton btnNewButton_14;
+	private MyButton btnNewButton_13;
+	private MyButton btnNewButton_11;
+	private MyButton btnNewButton_10;
 	private int width;
 	private int height;
 
@@ -64,6 +64,7 @@ public class SellingAreaUI3_4 extends JPanel{
 		this.setLayout(null);
 
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(35, 97, 634, 187);
 		this.add(panel_6);
 		panel_6.setLayout(null);
@@ -122,12 +123,12 @@ public class SellingAreaUI3_4 extends JPanel{
 		panel_6.add(textField_5);
 		textField_5.setColumns(10);
 
-		btnNewButton_15 = new JButton("\u6DFB\u52A0");
-		btnNewButton_15.setBounds(252, 296, 100, 30);
+		btnNewButton_15 = new MyButton("\u6DFB\u52A0");
+		btnNewButton_15.setBounds(62, 55, 100, 30);
 		this.add(btnNewButton_15);
 
-		btnNewButton_16 = new JButton("\u53D6\u6D88");
-		btnNewButton_16.setBounds(364, 296, 100, 30);
+		btnNewButton_16 = new MyButton("清空");
+		btnNewButton_16.setBounds(174, 55, 100, 30);
 		this.add(btnNewButton_16);
 
 		btnNewButton_15.addActionListener(sellingarealistener);
@@ -183,51 +184,51 @@ public class SellingAreaUI3_4 extends JPanel{
 		this.textField_5 = textField_5;
 	}
 
-	public JButton getBtnNewButton_16() {
+	public MyButton getBtnNewButton_16() {
 		return btnNewButton_16;
 	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
+	public void setBtnNewButton_16(MyButton btnNewButton_16) {
 		this.btnNewButton_16 = btnNewButton_16;
 	}
 
-	public JButton getBtnNewButton_15() {
+	public MyButton getBtnNewButton_15() {
 		return btnNewButton_15;
 	}
 
-	public void setBtnNewButton_15(JButton btnNewButton_15) {
+	public void setBtnNewButton_15(MyButton btnNewButton_15) {
 		this.btnNewButton_15 = btnNewButton_15;
 	}
 
-	public JButton getBtnNewButton_14() {
+	public MyButton getBtnNewButton_14() {
 		return btnNewButton_14;
 	}
 
-	public void setBtnNewButton_14(JButton btnNewButton_14) {
+	public void setBtnNewButton_14(MyButton btnNewButton_14) {
 		this.btnNewButton_14 = btnNewButton_14;
 	}
 
-	public JButton getBtnNewButton_13() {
+	public MyButton getBtnNewButton_13() {
 		return btnNewButton_13;
 	}
 
-	public void setBtnNewButton_13(JButton btnNewButton_13) {
+	public void setBtnNewButton_13(MyButton btnNewButton_13) {
 		this.btnNewButton_13 = btnNewButton_13;
 	}
 
-	public JButton getBtnNewButton_11() {
+	public MyButton getBtnNewButton_11() {
 		return btnNewButton_11;
 	}
 
-	public void setBtnNewButton_11(JButton btnNewButton_11) {
+	public void setBtnNewButton_11(MyButton btnNewButton_11) {
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 
-	public JButton getBtnNewButton_10() {
+	public MyButton getBtnNewButton_10() {
 		return btnNewButton_10;
 	}
 
-	public void setBtnNewButton_10(JButton btnNewButton_10) {
+	public void setBtnNewButton_10(MyButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
 	}
 

@@ -1,17 +1,18 @@
 package presentation.warehouseui;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import listener.warehouselistener.WarehouseListener3;
+import presentation.MySwing.MyButton;
 
 public class WarehouseUI3_2 extends JFrame {
 
@@ -20,8 +21,8 @@ public class WarehouseUI3_2 extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JButton button;
-	private JButton button_1;
+	private MyButton button;
+	private MyButton button_1;
 	private JLabel label;
 	static Point origin = new Point();
 	WarehouseListener3 warehouseListener;
@@ -63,16 +64,17 @@ public class WarehouseUI3_2 extends JFrame {
 
 
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(240,248,255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		button = new JButton("确认");
+		button = new MyButton("确认");
 		button.setBounds(60, 130, 117, 29);
 		button.addActionListener(warehouseListener);
 		contentPane.add(button);
 
-		button_1 = new JButton("取消");
+		button_1 = new MyButton("取消");
 		button_1.setBounds(189, 130, 117, 29);
 		button_1.addActionListener(warehouseListener);
 		contentPane.add(button_1);
@@ -82,11 +84,11 @@ public class WarehouseUI3_2 extends JFrame {
 		contentPane.add(label);
 	}
 
-	public JButton getButton() {
+	public MyButton getButton() {
 		return button;
 	}
 
-	public JButton getButton_1() {
+	public MyButton getButton_1() {
 		return button_1;
 	}
 }

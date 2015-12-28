@@ -65,21 +65,22 @@ public class ManagerUI0_2 extends JPanel{
 
 
 		lblNewLabel_1 = new JLabel("员工编号：");
-		lblNewLabel_1.setBounds(108, 51, 100, 18);
+		lblNewLabel_1.setBounds(66, 51, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new MyTextField();
-		textField.setBounds(220, 45, 122, 30);
+		textField.setBounds(178, 45, 122, 30);
 		this.add(textField);
 		textField.setColumns(10);
 
 		search = new MyButton("查询");
-		search.setBounds(467, 46, 100, 30);
+		search.setBounds(312, 45, 100, 30);
 		this.add(search);
 		search.addActionListener(managerlistener);
         search.addMouseListener(managerlistener);
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(108, 87, 488, 209);
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(66, 114, 488, 209);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -142,14 +143,14 @@ public class ManagerUI0_2 extends JPanel{
 		textField_6.setColumns(10);
 
 		confirm = new MyButton("确定");
-		confirm.setBounds(355, 335, 100, 30);
+		confirm.setBounds(178, 335, 100, 30);
 		this.add(confirm);
 		confirm.addActionListener(managerlistener);
 		confirm.addMouseListener(managerlistener);
 
 
-		cancle = new MyButton("取消");
-		cancle.setBounds(467, 335, 100, 30);
+		cancle = new MyButton("清空");
+		cancle.setBounds(289, 335, 100, 30);
 		this.add(cancle);
 		cancle.addActionListener(managerlistener);
         cancle.addMouseListener(managerlistener);

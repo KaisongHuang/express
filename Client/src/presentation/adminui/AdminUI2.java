@@ -84,7 +84,7 @@ public class AdminUI2 extends JPanel {
 		this.add(label_1);
 
 		label1 = new JLabel();
-		label1.setBounds(139, 126, 134, 28);
+		label1.setBounds(139, 123, 134, 28);
 		this.add(label1);
 
 		JLabel label_3 = new JLabel("权限:");
