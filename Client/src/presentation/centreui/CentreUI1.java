@@ -10,6 +10,7 @@ import java.awt.Color;
 
 import listener.centrelistener.CentreListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -28,7 +29,7 @@ public class CentreUI1 extends JPanel{
 	private MyTextField textField_6;
 	private MyTextField textField_7;
 	private MyTextField textField_8;
-
+    private MyDialog dialog;
 
 	private MyButton confirm;
 	private MyButton cancle;
@@ -65,6 +66,8 @@ public class CentreUI1 extends JPanel{
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel lblNewLabel_1 = new JLabel("中转转出");
 		lblNewLabel_1.setBounds(202, 6, 100, 18);
 		panel_6.add(lblNewLabel_1);
@@ -230,7 +233,9 @@ public class CentreUI1 extends JPanel{
 		this.textField_8 = textField_8;
 	}
 
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
 
 

@@ -25,7 +25,7 @@ public class AdminUI1 extends JPanel {
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_3;
-
+    
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
     private MyDialog dialog;

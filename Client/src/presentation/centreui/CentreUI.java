@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import listener.centrelistener.CentreListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
@@ -27,6 +28,7 @@ public class CentreUI extends JPanel {
 	private MyButton confirm;
 	private MyButton cancle;
 	CentreListener0 centreListener;
+	private MyDialog dialog;
 	private int width;
 	private int height;
 	/**
@@ -53,6 +55,8 @@ public class CentreUI extends JPanel {
 		this.setBackground(Color.white);
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(120, 29, 464, 204);
 		this.add(panel_5);
@@ -129,7 +133,9 @@ public class CentreUI extends JPanel {
 		return confirm;
 	}
 
-	
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
 	public MyButton getCancle() {
 		return cancle;

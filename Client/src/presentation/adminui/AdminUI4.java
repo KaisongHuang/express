@@ -11,6 +11,7 @@ import java.awt.Color;
 
 import listener.adminlistener.AdminListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -23,7 +24,7 @@ public class AdminUI4 extends JPanel{
 	private static final long serialVersionUID = 1L;
 
 	private MyTextField textField;
-
+    private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
 
@@ -57,6 +58,9 @@ public class AdminUI4 extends JPanel{
 		label.setBounds(54, 43, 80, 16);
 		this.add(label);
 
+		dialog=new MyDialog();
+		this.add(dialog);
+		
 		confirm = new MyButton("确认");
 		confirm.setBounds(135, 90, 61, 29);
 		this.add(confirm);
@@ -99,5 +103,7 @@ public class AdminUI4 extends JPanel{
 	private void setImage() {
 
 	}
-
+   public void setText(String s){
+	   dialog.setText(s);
+   }
 }
