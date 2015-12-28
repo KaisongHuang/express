@@ -1,11 +1,11 @@
 package vo;
 
 public class DeliverVO {
-	String BarCode;
-	String date;
-	String number;
-	int isCheck;
-    Check c;
+	private String BarCode;
+	private String date;
+	private String number;
+	private int isCheck;
+	private Check c;
 	public DeliverVO(String BarCode, String date, String number, int isCheck) {
 		this.BarCode = BarCode;
 		this.date = date;

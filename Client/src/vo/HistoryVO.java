@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class HistoryVO {
 	
-	String id;
-	String state;
-	ArrayList<String> list1;
-    ArrayList<Integer> list2 ;
-   Check c;
+	private String id;
+	private String state;
+	private ArrayList<String> list1;
+	private ArrayList<Integer> list2 ;
+	private Check c;
 	public HistoryVO(String id,String state, ArrayList<String> list1,ArrayList<Integer> list2) {
 		this.state = state;
 		this.list1 = list1;

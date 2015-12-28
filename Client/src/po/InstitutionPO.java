@@ -6,8 +6,8 @@ import po.ManagerPO;
 
 public class InstitutionPO extends ManagerPO  implements Serializable{
 
-	String organizationID;
-	String name;
+	private String organizationID;
+	private String name;
 
 	public InstitutionPO(String oi, String n) {
 

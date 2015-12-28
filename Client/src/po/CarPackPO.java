@@ -14,9 +14,9 @@ public class CarPackPO extends SellingareaPO implements Serializable {
 	private String carID;
 	private String supervisor;
 	private String supercargo;
-	ArrayList<String> list = new ArrayList<String>();
-	double fee;
-	int isCheck;
+	private ArrayList<String> list = new ArrayList<String>();
+	private double fee;
+	private int isCheck;
 
 	public CarPackPO(String date, String sellingArea, String number, String start, String destination, String carID,
 			String supervisor, String supercargo, ArrayList<String> list, double fee, int isCheck) {

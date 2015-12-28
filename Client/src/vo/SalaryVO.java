@@ -2,9 +2,9 @@ package vo;
 
 public class SalaryVO {
 
-	String employeeName;
-	String salaryMethod;
-    Check c;
+	private String employeeName;
+	private String salaryMethod;
+	private Check c;
 	public SalaryVO(String en, String sm) {
 		this.employeeName = en;
 		this.salaryMethod = sm;
