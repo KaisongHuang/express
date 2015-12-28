@@ -62,9 +62,7 @@ public class AdminUI1 extends JPanel {
 		this.setLayout(null);
 		
 		dialog=new MyDialog();
-		dialog.setBackground(Color.BLACK);
-		dialog.setBounds(0,0,550,40);
-		this.add(dialog);
+        this.add(dialog);
 		
 		JLabel label_3 = new JLabel("姓名：");
 		label_3.setBounds(51, 41, 61, 16);

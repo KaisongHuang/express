@@ -16,7 +16,7 @@ public class MySQLDataBase {
 	   Connection con;
 	   Statement st;
 	  public MySQLDataBase(){
-		  con=getMySQL_Con(null, null, null, "express", "root","141250081");
+		  con=getMySQL_Con(null, null, null, "express", "root",null);
 		  try {
 			st=(Statement) con.createStatement();
 		} catch (SQLException e) {
