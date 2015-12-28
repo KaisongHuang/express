@@ -14,18 +14,19 @@ public class MyDialog extends JPanel implements Runnable{
 		super();
 	    content="";
 		this.setBounds(0,400,900,100);
-	    this.setVisible(false);
+	    this.setVisible(true);
 	}
 	public void setText(String s){
 		content=s;
-		
-		repaint();
-		 this.setVisible(true);
+System.out.println(s);	
+this.setVisible(true);
+    this.repaint();
+	
 		if(time())
 			this.setVisible(false);
 	}
 	public void paintComponent(Graphics g){
-		
+System.out.println("repaint");		
 		g.setColor(new Color(200,100,100));
 		g.fillRect(0, 0, 900, 100);
 		g.setFont(new Font(Font.SERIF,10,25));
@@ -39,7 +40,7 @@ public class MyDialog extends JPanel implements Runnable{
 		long time1=System.currentTimeMillis();
 		long time2=System.currentTimeMillis();
 		while(time2-time1<=2000){
-			System.out.println(time2-time1);
+			System.out.println("time");
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
