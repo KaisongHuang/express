@@ -10,6 +10,8 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import _enum.EmployeeMes;
+
 public class ShowTimePanel extends JPanel {
 	/**
 	 * 
@@ -22,16 +24,21 @@ public class ShowTimePanel extends JPanel {
 	public ShowTimePanel() {
 		
 		setLayout(null);
+		JLabel name=new JLabel(EmployeeMes.employeeName,JLabel.CENTER);
+		name.setForeground(new Color(233,150,122));
+		name.setBounds(0, 0, 80, 15);
+		name.setBackground(new Color(246,246,246));
 		JLabel label=new JLabel("欢迎回来！");
 		label.setForeground(new Color(233,150,122));
-		label.setBounds(12, 0, 80, 15);
+		label.setBounds(12, 20, 80, 15);
 		label.setBackground(new Color(246,246,246));
 		TimePanel1 panel1=new TimePanel1();
 		panel1.setBackground(new Color(246,246,246));
 		TimePanel panel = new TimePanel();
 		panel.setBackground(new Color(246,246,246));
-		panel1.setBounds(0, 20, 80, 10);
-		panel.setBounds(12, 35, 80, 10);
+		panel1.setBounds(0, 40, 80, 10);
+		panel.setBounds(12, 55, 80, 10);
+		add(name);
 		add(label);
 		add(panel1);
 		add(panel);
