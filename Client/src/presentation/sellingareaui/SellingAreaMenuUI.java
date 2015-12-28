@@ -64,7 +64,7 @@ public class SellingAreaMenuUI extends JPanel{
 		
 		user=new JLabel();
 		user.setBounds(10, 20, 50, 50);
-		ImageIcon icon = new ImageIcon(this.getClass().getResource("/圆形/总经理.jpg"));
+		ImageIcon icon = new ImageIcon(this.getClass().getResource("/圆形/营业厅.jpg"));
 		icon.setImage(icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 		user.setIcon(icon);
 		add(user);
