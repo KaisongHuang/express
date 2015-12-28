@@ -26,7 +26,8 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getSearch()) {
 			//clear table
-			for(int i=0;i<ui.getTable().getRowCount();i++){
+			int n=ui.getModel().getRowCount();
+			for(int i=0;i<n;i++){
 				ui.getModel().removeRow(0);
 			}
 
