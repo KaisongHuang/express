@@ -7,15 +7,13 @@ import java.awt.Graphics;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MyDialog extends JLabel implements Runnable{
+public class MyDialog extends JPanel implements Runnable{
 
 	String content;
 	public MyDialog(){
 		super();
 	    content="";
-	    this.setBounds(0,400,720,50);
-	    this.setBackground(Color.BLACK);
-	
+		this.setBounds(0,400,900,100);
 	    this.setVisible(false);
 	}
 	public void setText(String s){
@@ -29,7 +27,7 @@ public class MyDialog extends JLabel implements Runnable{
 	public void paintComponent(Graphics g){
 		
 		g.setColor(new Color(200,100,100));
-		g.fillRect(0, 0, 720, 100);
+		g.fillRect(0, 0, 900, 100);
 		g.setFont(new Font(Font.SERIF,10,25));
 		g.setColor(Color.BLACK);
 		g.drawString(content, 300, 30);
@@ -57,4 +55,5 @@ public class MyDialog extends JLabel implements Runnable{
 		// TODO Auto-generated method stub
 		
 	}
+	
 }
