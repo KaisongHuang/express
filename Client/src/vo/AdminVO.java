@@ -2,11 +2,11 @@ package vo;
 
 public class AdminVO {
 	
-	String id;
-	String name;
-	String password;
-	String role;
-	Check c;
+	private String id;
+	private String name;
+	private String password;
+	private String role;
+	private Check c;
 	public AdminVO(String id,String name,String password,String role){
 		
 		this.id=id;

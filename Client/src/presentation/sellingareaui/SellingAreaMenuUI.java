@@ -7,11 +7,15 @@ package presentation.sellingareaui;
 import java.awt.CardLayout;
 
 import java.awt.Color;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import listener.sellingarealistener.SellingAreaMenuListener;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.NaviButton;
+import presentation.MySwing.ShowTimePanel;
 
 
 public class SellingAreaMenuUI extends JPanel{
@@ -28,6 +32,8 @@ public class SellingAreaMenuUI extends JPanel{
 	private NaviButton button3;
 	private NaviButton button4;
 	private NaviButton button;
+	private JLabel user;
+	private ShowTimePanel time;
 	private int width;
 	private int height;
 	private int label_height;
@@ -55,6 +61,19 @@ public class SellingAreaMenuUI extends JPanel{
 	private void initialize() {
 	    this.setSize(width,height);
 		this.setLayout(null);
+		
+		user=new JLabel();
+		user.setBounds(10, 20, 50, 50);
+		ImageIcon icon = new ImageIcon(this.getClass().getResource("/圆形/营业厅.jpg"));
+		icon.setImage(icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+		user.setIcon(icon);
+		add(user);
+		
+		time=new ShowTimePanel();
+		time.setBounds(75, 10, 80, 70);
+		time.setBackground(new Color(246,246,246));
+		add(time);
+		
 		MySeperator line=new MySeperator();
 		line.setBounds(width/20, label_height*7/4, width*9/10, label_height);
 		add(line);

@@ -1,15 +1,15 @@
 package vo;
 
 public class DriverVO {
-	String number;
-    String name;
-    String birthday;
-    String ID;
-    String phone;
-    String CarCompany;
-    String sex;
-    String LicenceTime;
-    Check c;
+	private String number;
+	private String name;
+	private String birthday;
+	private  String ID;
+	private  String phone;
+	private String CarCompany;
+	private  String sex;
+	private String LicenceTime;
+    private Check c;
     public DriverVO(String number,String name,String birthday,String ID,String phone,String CarCompany,String sex,String LicenceTime){
     	this.number=number;
     	this.name=name;

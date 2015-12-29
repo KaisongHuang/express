@@ -5,12 +5,12 @@ import java.io.Serializable;
 import po.SellingareaPO;
 
 public class AcceptPO extends SellingareaPO implements Serializable{
-     String BarCode;
-     String date;
-     String number;
-     String start;
-     String state;
-     int isCheck;
+	private String BarCode;
+	private String date;
+	private String number;
+	private String start;
+	private  String state;
+	private int isCheck;
      public AcceptPO(String BarCode,String date,String number,String start,String state,int isCheck){
     	 this.BarCode=BarCode;
     	 this.date=date;

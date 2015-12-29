@@ -2,6 +2,8 @@ package listener.warehouselistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -17,12 +19,14 @@ import vo.CentreTransforVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
 
-public class WarehouseListener1 implements ActionListener {
+public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private WarehouseUI1 ui;
 	private WarehouseBlService warehouseBl = new Warehouse();
 	private ArrayList<CentreArrivalVO> arrival;
 	private ArrayList<CentreTransforVO> trans;
+	private boolean import_clicked = true;
+	private boolean export_clicked = false;
 
 	public WarehouseListener1(WarehouseUI1 ui) {
 		super();
@@ -35,34 +39,37 @@ public class WarehouseListener1 implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getButton1()) {
+			ui.getCard().show(ui.getPanel(), "import");
+			setClicked(true, false);
+			repaint();
+		} else if (e.getSource() == ui.getButton2()) {
+			ui.getCard().show(ui.getPanel(), "export");
+			setClicked(false, true);
+			repaint();
+		}
+
 		if (e.getSource() == ui.getButton_1()) {
-			for(int i=0;i<arrival.size();i++){
+			for (int i = 0; i < arrival.size(); i++) {
 				ui.getModel().removeRow(0);
 			}
-			
+
 			arrival = new ArrayList<CentreArrivalVO>();
 			arrival = warehouseBl.getImport();
-			for(int i=0;i<arrival.size();i++){
-				Vector<Object> rowData=new Vector<Object>();
+			for (int i = 0; i < arrival.size(); i++) {
+				Vector<Object> rowData = new Vector<Object>();
 				rowData.add(arrival.get(i).getID());
 				rowData.add(warehouseBl.getSenderDestination(arrival.get(i).getID()));
 				ui.getModel().addRow(rowData);
 			}
-			
-			
+
 		} else if (e.getSource() == ui.getButton_2()) {
 			trans = new ArrayList<CentreTransforVO>();
 			trans = warehouseBl.getExport();
-			ui.getTextField().setText(trans.get(0).getList().get(0));
-			ui.getTextField_1().setText(trans.get(0).getArrival());
-			ui.getTextField_2().setText(trans.get(0).getCentreTransferID());
+			// ui.getTextField().setText(trans.get(0).getList().get(0));
+			// ui.getTextField_1().setText(trans.get(0).getArrival());
+			// ui.getTextField_2().setText(trans.get(0).getCentreTransferID());
 
-		} else if (e.getSource() == ui.getImportButton()) {
-			System.out.println("ImportPanel");
-			ui.getCardLayout().show(ui.getPanel(), "import");
-		} else if (e.getSource() == ui.getExportButton()) {
-			System.out.println("ExportPanel");
-			ui.getCardLayout().show(ui.getPanel(), "export");
 		} else if (e.getSource() == ui.getExportClearButton()) {
 			System.out.println("ExportClear");
 			ui.getComboBox().setSelectedIndex(0);
@@ -90,20 +97,20 @@ public class WarehouseListener1 implements ActionListener {
 			if (trans.get(0).getList().size() == 0) {
 				trans.remove(0);
 				if (trans.size() != 0) {
-					ui.getTextField().setText(trans.get(0).getList().get(0));
-					ui.getTextField_1().setText(trans.get(0).getArrival());
-					ui.getTextField_2().setText(trans.get(0).getCentreTransferID());
+					// ui.getTextField().setText(trans.get(0).getList().get(0));
+					// ui.getTextField_1().setText(trans.get(0).getArrival());
+					// ui.getTextField_2().setText(trans.get(0).getCentreTransferID());
 				} else {
-					ui.getTextField().setText("");
-					ui.getTextField_1().setText("");
-					ui.getTextField_2().setText("");
+					// ui.getTextField().setText("");
+					// ui.getTextField_1().setText("");
+					// ui.getTextField_2().setText("");
 					ui.getComboBox().setSelectedIndex(0);
 					ui.getComboBox_1().setSelectedIndex(0);
 					ui.getComboBox_2().setSelectedIndex(0);
 					ui.getComboBox_3().setSelectedIndex(0);
 				}
 			} else {
-				ui.getTextField().setText(trans.get(0).getList().get(0));
+				// ui.getTextField().setText(trans.get(0).getList().get(0));
 			}
 		} else if (e.getSource() == ui.getImportConfirmButton()) {
 			ResultMessage rm = null;
@@ -115,11 +122,11 @@ public class WarehouseListener1 implements ActionListener {
 			check(rm);
 			arrival.remove(0);
 			if (arrival.size() != 0) {
-				ui.getTextField_3().setText(arrival.get(0).getID());
-				ui.getTextField_4().setText(warehouseBl.getSenderDestination(arrival.get(0).getID()));
+				// ui.getTextField_3().setText(arrival.get(0).getID());
+				// ui.getTextField_4().setText(warehouseBl.getSenderDestination(arrival.get(0).getID()));
 			} else {
-				ui.getTextField_3().setText("");
-				ui.getTextField_4().setText("");
+				// ui.getTextField_3().setText("");
+				// ui.getTextField_4().setText("");
 				ui.getComboBox_4().setSelectedIndex(0);
 				ui.getComboBox_5().setSelectedIndex(0);
 				ui.getComboBox_6().setSelectedIndex(0);
@@ -174,9 +181,9 @@ public class WarehouseListener1 implements ActionListener {
 
 	public OutStorageVO getOutStorageVO() {
 		OutStorageVO out = new OutStorageVO();
-		out.setId(ui.getExportID());
-		out.setDestination(ui.getExportDestination());
-		out.setTrans_id(ui.getTrans_ID());
+		// out.setId(ui.getExportID());
+		// out.setDestination(ui.getExportDestination());
+		// out.setTrans_id(ui.getTrans_ID());
 		out.setOutdate(ui.getExportDate());
 		out.setTransportation(ui.getTransportation());
 		out.setWarehouseID(EmployeeMes.belongToWho);
@@ -186,8 +193,8 @@ public class WarehouseListener1 implements ActionListener {
 
 	public InStorageVO getInStorageVO() {
 		InStorageVO in = new InStorageVO();
-		in.setId(ui.getImportID());// textField_3
-		in.setDestination(ui.getImportDestination());// textField_4
+		// in.setId(ui.getImportID());// textField_3
+		// in.setDestination(ui.getImportDestination());// textField_4
 		in.setIndate(ui.getImportDate());// comboBox_4comboBox_5comboBox_6
 		in.setPos_qu(ui.getPos_qu());// comboBox_7
 		in.setPos_pai(ui.getPos_pai());// comboBox_8
@@ -211,5 +218,57 @@ public class WarehouseListener1 implements ActionListener {
 		}
 		if (dialog != null)
 			JOptionPane.showMessageDialog(ui, dialog);
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getButton1()) {
+			ui.getButton1().setEntered(true);
+			setUnclicked();
+			repaint();
+		} else if (e.getSource() == ui.getButton2()) {
+			ui.getButton2().setEntered(true);
+			setUnclicked();
+			repaint();
+		}
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		ui.getButton1().setEntered(false);
+		ui.getButton2().setEntered(false);
+		ui.getButton1().setClicked(import_clicked);
+		ui.getButton2().setClicked(export_clicked);
+		repaint();
+	}
+
+	private void setClicked(boolean b1, boolean b2) {
+		import_clicked = b1;
+		export_clicked = b2;
+	}
+
+	private void setUnclicked() {
+		ui.getButton1().setClicked(false);
+		ui.getButton2().setClicked(false);
+	}
+
+	private void repaint() {
+		ui.getButton1().repaint();
+		ui.getButton2().repaint();
 	}
 }

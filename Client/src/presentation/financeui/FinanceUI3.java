@@ -103,12 +103,12 @@ public class FinanceUI3 extends JPanel {
 		this.add(lblNewLabel_2);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(159, 20, 80, 25);
+		comboBox.setBounds(159, 20, 87, 25);
 		comboBox.addItem("2015");
 		this.add(comboBox);
 
 		lblNewLabel_3 = new JLabel("年");
-		lblNewLabel_3.setBounds(246, 25, 20, 15);
+		lblNewLabel_3.setBounds(258, 25, 20, 15);
 		this.add(lblNewLabel_3);
 
 		comboBox_1 = new JComboBox<String>();
@@ -130,7 +130,7 @@ public class FinanceUI3 extends JPanel {
 		this.add(lblRi);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(159, 47, 80, 25);
+		comboBox_3.setBounds(159, 47, 87, 25);
 		comboBox_3.addItem("2015");
 		this.add(comboBox_3);
 
@@ -145,7 +145,7 @@ public class FinanceUI3 extends JPanel {
 		this.add(comboBox_5);
 
 		label_1 = new JLabel("年");
-		label_1.setBounds(246, 52, 57, 15);
+		label_1.setBounds(258, 52, 57, 15);
 		this.add(label_1);
 
 		label_2 = new JLabel("月");

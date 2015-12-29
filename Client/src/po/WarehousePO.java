@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class WarehousePO  implements Serializable{
 
-	double rate;
-	String WarehouseID;
-    int carpai,carjia,carwei,trainpai,trainjia,trainwei,airpai,airjia,airwei,pai,jia,wei;
+	private double rate;
+	private String WarehouseID;
+	private int carpai,carjia,carwei,trainpai,trainjia,trainwei,airpai,airjia,airwei,pai,jia,wei;
 	public WarehousePO( String WarehouseID,int carpai,int carjia,int carwei,int trainpai,int trainjia,int trainwei,int airpai,int qirjia,int airwei,int pai,int jia,int wei,double rate) {
          this.carpai=carpai;
          this.carjia=carjia;

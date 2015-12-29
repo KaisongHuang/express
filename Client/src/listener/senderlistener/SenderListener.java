@@ -11,7 +11,6 @@ import javax.swing.JTextField;
 
 import logic.senderbl.Sender;
 import presentation.senderui.SearchUI;
-import presentation.senderui.SearchUI;
 import vo.HistoryVO;
 
 public class SenderListener implements ActionListener{

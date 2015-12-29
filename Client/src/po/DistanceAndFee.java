@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class DistanceAndFee extends ManagerPO implements Serializable {
-	String city1;
-	String  city2;
-	double distance;
-	double fee;
+	private String city1;
+	private String  city2;
+	private double distance;
+	private double fee;
 
 	public DistanceAndFee(String city1,String city2, double distance, double fee) {
 		this.city1 = city1;

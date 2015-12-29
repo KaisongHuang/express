@@ -1,13 +1,13 @@
 package vo;
 
 public class CarVO {
-	String number;
-	String EngineNumber;
-	String CarNumber;
-	String ChassisNumber;
-	String purchase;
-	int ServiceTime;
-    Check c;
+	private String number;
+	private String EngineNumber;
+	private String CarNumber;
+	private String ChassisNumber;
+	private String purchase;
+	private int ServiceTime;
+	private Check c;
 	public CarVO(String number, String EngineNumber, String CarNumber, String ChassisNumber, String purchase,
 			int ServiceTime) {
 		this.number = number;

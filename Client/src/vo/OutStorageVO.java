@@ -1,14 +1,14 @@
 package vo;
 
 public class OutStorageVO {
-	String id;
-	String destination;
-	String WarehouseID;
-	String outdate;
-	String transportation;
-	String trans_id;
-	int isCheck;
-    Check c;
+	private String id;
+	private String destination;
+	private String WarehouseID;
+	private String outdate;
+	private String transportation;
+	private String trans_id;
+	private int isCheck;
+	private Check c;
 	public OutStorageVO(String id, String destination, String outdate, String WarehouseID, String transportation,
 			String trans_id, int isCheck) {
 		this.id=id;

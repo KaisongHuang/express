@@ -2,13 +2,13 @@ package vo;
 
 public class EmployeeVO {
 
-	String employeeID;
-	String employeeName;
-	int employeeAging;
-	String employeePosition;
-	double timeOfWorking;
-	String belongToWho;
-    Check c;
+	private String employeeID;
+	private String employeeName;
+	private int employeeAging;
+	private String employeePosition;
+	private double timeOfWorking;
+	private String belongToWho;
+	private Check c;
 	public EmployeeVO(String ei, String en, int ea, String ep, double tow, String btw) {
 		this.employeeAging = ea;
 		this.employeeID = ei;

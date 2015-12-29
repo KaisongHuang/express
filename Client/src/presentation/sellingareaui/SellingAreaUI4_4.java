@@ -7,10 +7,10 @@ package presentation.sellingareaui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JButton;
 
 
 import listener.sellingarealistener.SellingAreaListener4_4;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 
 
@@ -29,8 +29,8 @@ public class SellingAreaUI4_4 extends JPanel{
 	private MyTextField textField_7;
 	private MyTextField textField_8;
 
-	private JButton btnNewButton_17;
-	private JButton btnNewButton_16;
+	private MyButton btnNewButton_17;
+	private MyButton btnNewButton_16;
 
 
 	SellingAreaListener4_4 sellingarealistener;
@@ -60,6 +60,7 @@ public class SellingAreaUI4_4 extends JPanel{
 		this.setLayout(null);
 
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(24, 105, 579, 209);
 		this.add(panel_6);
 		panel_6.setLayout(null);
@@ -128,12 +129,12 @@ public class SellingAreaUI4_4 extends JPanel{
 		textField_8.setBounds(431, 152, 100, 30);
 		panel_6.add(textField_8);
 
-		btnNewButton_16 = new JButton("添加");
-		btnNewButton_16.setBounds(83, 382, 90, 30);
+		btnNewButton_16 = new MyButton("添加");
+		btnNewButton_16.setBounds(30, 56, 90, 30);
 		this.add(btnNewButton_16);
 
-		btnNewButton_17 = new JButton("\u53D6\u6D88");
-		btnNewButton_17.setBounds(431, 382, 90, 30);
+		btnNewButton_17 = new MyButton("清空");
+		btnNewButton_17.setBounds(132, 56, 90, 30);
 		this.add(btnNewButton_17);
 
 		btnNewButton_16.addActionListener(sellingarealistener);
@@ -205,19 +206,19 @@ public class SellingAreaUI4_4 extends JPanel{
 		this.textField_8 = textField_8;
 	}
 
-	public JButton getBtnNewButton_17() {
+	public MyButton getBtnNewButton_17() {
 		return btnNewButton_17;
 	}
 
-	public void setBtnNewButton_17(JButton btnNewButton_17) {
+	public void setBtnNewButton_17(MyButton btnNewButton_17) {
 		this.btnNewButton_17 = btnNewButton_17;
 	}
 
-	public JButton getBtnNewButton_16() {
+	public MyButton getBtnNewButton_16() {
 		return btnNewButton_16;
 	}
 
-	public void setBtnNewButton_16(JButton btnNewButton_16) {
+	public void setBtnNewButton_16(MyButton btnNewButton_16) {
 		this.btnNewButton_16 = btnNewButton_16;
 	}
 }

@@ -7,9 +7,9 @@ public class CourierPO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	String number;
-	String name;
-	String date;
+	private String number;
+	private String name;
+	private String date;
 
 	public CourierPO(String num, String na, String da) {
 		number = num;

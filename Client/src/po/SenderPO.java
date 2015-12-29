@@ -7,15 +7,15 @@ public class SenderPO implements Serializable {
 	* 
 	*/
 	private static final long serialVersionUID = 1L;
-	String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone;
-	String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone;
-	double pcs, weight, volume;
-	String commodity;
-	String size = "";
-	String bagging;
-	double total;
-	String BarCode;
-	String type;
+	private String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone;
+	private String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone;
+	private double pcs, weight, volume;
+	private String commodity;
+	private String size = "";
+	private String bagging;
+	private double total;
+	private String BarCode;
+	private String type;
 
 	public SenderPO(String SenderName, String SenderAddress, String SenderCompany, String SenderCall,
 			String SenderPhone, String RecipientName, String RecipientAddress, String RecipientCompany,

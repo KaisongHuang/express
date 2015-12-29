@@ -64,12 +64,13 @@ public class ManagerUI1_3 extends JPanel {
 		this.add(search);
 
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(104, 112, 477, 113);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
 		lblNewLabel_2 = new JLabel("机构信息");
-		lblNewLabel_2.setBounds(199, 6, 100, 18);
+		lblNewLabel_2.setBounds(164, 6, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
 		lblNewLabel_3 = new JLabel("机构编号：");
@@ -81,7 +82,7 @@ public class ManagerUI1_3 extends JPanel {
 		panel_6.add(lblNewLabel_5);
 
 		lblNewLabel_7 = new JLabel("机构编号：");
-		lblNewLabel_7.setBounds(241, 56, 100, 18);
+		lblNewLabel_7.setBounds(294, 56, 100, 18);
 		panel_6.add(lblNewLabel_7);
 
 		lblNewLabel_8 = new JLabel("");
@@ -89,7 +90,7 @@ public class ManagerUI1_3 extends JPanel {
 		panel_6.add(lblNewLabel_8);
 
 		delete = new MyButton("删除");
-		delete.setBounds(213, 262, 100, 30);
+		delete.setBounds(437, 57, 100, 30);
 		this.add(delete);
 
 

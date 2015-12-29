@@ -6,13 +6,13 @@ import po.FinancePO;
 
 public class PayPO extends FinancePO  implements Serializable{
 
-	String date;
-	double cost;
-	String payer;
-	String payAccount;
-	String entry;
-	String comments;
-	int isCheck;
+	private String date;
+	private double cost;
+	private String payer;
+	private String payAccount;
+	private String entry;
+	private String comments;
+	private int isCheck;
 
 	public PayPO(String date, String payer, String payAccount, String entry, String comments, double cost, int isCheck) {
 		this.date = date;

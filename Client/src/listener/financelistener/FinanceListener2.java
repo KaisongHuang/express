@@ -35,11 +35,15 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		// add
 		if (e.getSource() == ui.getAdd()) {
-			String year = (String) ui.getComboBox_1().getSelectedItem();
-			String month = (String) ui.getComboBox_2().getSelectedItem();
-			String day = (String) ui.getComboBox_3().getSelectedItem();
-
-			String date = year + month + day;
+//			String year = (String) ui.getComboBox_1().getSelectedItem();
+//			String month = (String) ui.getComboBox_2().getSelectedItem();
+//			String day = (String) ui.getComboBox_3().getSelectedItem();
+			String date = ui.getDp().getText();
+			date = date.replace("/", "");
+			String s1 = date.substring(0,4);
+			String s2 = date.substring(4,8);
+			date = s2 + s1 ;
+			System.out.println(date);
 			double money = Double.parseDouble(ui.getTextField_1().getText());
 			String payer = ui.getTextField_2().getText();
 			String payAccount = ui.getTextField_3().getText();

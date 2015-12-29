@@ -5,13 +5,13 @@ import java.io.Serializable;
 import po.WarehousePO;
 
 public class OutStoragePO extends WarehousePO  implements Serializable{
-	String id;
-	String destination;
-	String WarehouseID;
-	String outdate;
-	String transportation;
-	String trans_id;
-	int isCheck;
+	private String id;
+	private String destination;
+	private String WarehouseID;
+	private String outdate;
+	private String transportation;
+	private String trans_id;
+	private int isCheck;
 
 	public int getIsCheck() {
 		return isCheck;

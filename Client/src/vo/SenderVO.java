@@ -2,15 +2,15 @@ package vo;
 
 public class SenderVO {
 
-	String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone,SenderCity;
-	String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone,RecipientCity;
-	int pcs, weight, volume;
-	String commodity;
-	String size = "";
-	String bagging;
-	String BarCode;
-	String type;
-    Check c;
+	private String SenderName, SenderAddress, SenderCompany, SenderCall, SenderPhone,SenderCity;
+	private String RecipientName, RecipientAddress, RecipientCompany, RecipientCall, RecipientPhone,RecipientCity;
+	private int pcs, weight, volume;
+	private String commodity;
+	private String size = "";
+	private String bagging;
+	private String BarCode;
+	private String type;
+	private Check c;
 	public SenderVO(String SenderName, String SenderAddress, String SenderCompany, String SenderCall,
 			String SenderPhone, String RecipientName, String RecipientAddress, String RecipientCompany,
 			String RecipientCall, String RecipientPhone, int pcs, int weight, int volume, String commodity, String size,

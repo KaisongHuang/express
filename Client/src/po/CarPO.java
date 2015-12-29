@@ -5,12 +5,12 @@ import java.io.Serializable;
 import po.SellingareaPO;
 
 public class CarPO extends SellingareaPO  implements Serializable{
-	String number;
-	String EngineNumber;
-	String CarNumber;
-	String ChassisNumber;
-	String purchase;
-	int ServiceTime;
+	private String number;
+	private String EngineNumber;
+	private String CarNumber;
+	private String ChassisNumber;
+	private String purchase;
+	private int ServiceTime;
 
 	public CarPO(String number, String EngineNumber, String CarNumber, String ChassisNumber, String purchase,
 			int ServiceTime) {

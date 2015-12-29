@@ -10,12 +10,12 @@ public class EmployeePO extends ManagerPO implements Serializable{
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	String employeeID;
-	String employeeName;
-	String employeePosition;
-	String belongToWho;
-	int employeeAging;
-	double timeOfWorking;
+	private String employeeID;
+	private String employeeName;
+	private String employeePosition;
+	private String belongToWho;
+	private int employeeAging;
+	private double timeOfWorking;
 
 	public EmployeePO(String ei, String en, int ea, String ep, double tow, String btw) {
 		this.employeeAging = ea;
