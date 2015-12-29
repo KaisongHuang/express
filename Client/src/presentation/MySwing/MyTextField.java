@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-public class MyTextField extends JTextField implements ActionListener{
+public class MyTextField extends JTextField{
 	/**
 	 * 
 	 */
@@ -22,7 +22,6 @@ public class MyTextField extends JTextField implements ActionListener{
 	public MyTextField(String text) {
 		super(text);
 		setOpaque(false); 
-		this.addActionListener(this);
 	}
 
 	protected void paintComponent(Graphics g) {

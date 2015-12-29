@@ -32,6 +32,7 @@ public interface ManagerDataService {
 	public ResultMessage update(ManagerPO po) throws RemoteException;
 
 	public ResultMessage update(Object ob) throws RemoteException;
+	
 	public ArrayList<SalaryPO> getSalary()throws RemoteException;
 	/**
 	 * 新增以下接口
