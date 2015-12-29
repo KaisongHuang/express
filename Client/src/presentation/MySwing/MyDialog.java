@@ -57,3 +57,4 @@ public class MyDialog extends JPanel implements Runnable{
 	}
 	
 }
+
