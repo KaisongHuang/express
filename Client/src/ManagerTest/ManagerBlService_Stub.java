@@ -148,4 +148,9 @@ public class ManagerBlService_Stub implements ManagerBlService {
 		return null;
 	}
 
+	public ResultMessage updateSalary(Object vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

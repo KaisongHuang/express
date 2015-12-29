@@ -44,6 +44,7 @@ public class Manager implements ManagerBlService {
 		}
 		return list1;
 	}
+	
 	public Object find(String id, Opera op) {
 		EmployeePO ep;
 		InstitutionPO po;
@@ -488,6 +489,18 @@ public class Manager implements ManagerBlService {
 		}
 
 		return vo;
+	}
+	public ResultMessage updateSalary(SalaryVO vo) {
+		// TODO Auto-generated method stub
+		ResultMessage rm = null;
+		SalaryVO vo1=(SalaryVO) vo;
+		try {
+			md.update(new SalaryPO(vo1.getEmployeeName(),vo1.getSalaryMethod(),vo1.getMoney()));
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rm;
 	}
 
 }
