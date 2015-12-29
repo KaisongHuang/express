@@ -50,6 +50,7 @@ public class FinanceUI3 extends JPanel {
 	private MyTable table2;
 	private DefaultTableModel model2;
 
+	private MyButton export;
 	private JScrollPane JSP2;
 	FinanceListener3 financeListener3;
 	private JLabel label1;
@@ -81,6 +82,10 @@ public class FinanceUI3 extends JPanel {
 		JSP1.setBounds(90, 79, 530, 175);
 		this.add(JSP1);
 
+		export=new MyButton("导出");
+		export.setBounds(528,52,92,25);
+		this.add(export);
+		
 		String names2[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
 		name2 = new Vector<String>(Arrays.asList(names2));
 		table2 = new MyTable(data2, name2);
@@ -153,7 +158,7 @@ public class FinanceUI3 extends JPanel {
 		this.add(label_2);
 
 		label_3 = new JLabel("日");
-		label_3.setBounds(494, 52, 57, 15);
+		label_3.setBounds(494, 52, 20, 15);
 		this.add(label_3);
 
 		search = new MyButton("查看");
@@ -161,12 +166,17 @@ public class FinanceUI3 extends JPanel {
 		search.addActionListener(financeListener3);
 		search.addMouseListener(financeListener3);
 		this.add(search);
+		
+		export.addActionListener(financeListener3);
 	}
 
 	public MyTable getTable1() {
 		return table1;
 	}
 
+	public MyButton getExport(){
+		return export;
+	}
 	public MyTable getTable2() {
 		return table2;
 	}

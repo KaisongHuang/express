@@ -23,6 +23,7 @@ import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
+import po.SalaryPO;
 import po.WarehousePO;
 
 public class ManagerData implements ManagerDataService {
@@ -73,6 +74,9 @@ public class ManagerData implements ManagerDataService {
 	public ResultMessage update(Object ob) throws RemoteException {
 
 		return md.update(ob);
+	}
+	public ArrayList<SalaryPO> getSalary() throws RemoteException{
+		return md.getSalary();
 	}
 
 	/**
