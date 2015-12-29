@@ -29,6 +29,21 @@ public class Manager implements ManagerBlService {
 	// WarehouseData wd = new WarehouseData();
 	// FinanceData fd = new FinanceData();
 
+	public ArrayList<SalaryVO> getSalary(){
+		ArrayList<SalaryPO> list=new ArrayList<SalaryPO>();
+		ArrayList<SalaryVO> list1=new ArrayList<SalaryVO>();
+		try {
+			list=md.getSalary();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for(int i=0;i<list.size();i++){
+			list1.add(new SalaryVO(list.get(i).getEmployeeName(),list.get(i).getSalaryMethod(),list.get(i).getMoney()));
+		}
+		return list1;
+	}
 	public Object find(String id, Opera op) {
 		EmployeePO ep;
 		InstitutionPO po;
@@ -251,7 +266,7 @@ public class Manager implements ManagerBlService {
 
 		if (tempvo instanceof SalaryVO) {
 			SalaryVO vo = (SalaryVO) tempvo;
-			SalaryPO po = new SalaryPO(vo.getEmployeeName(), vo.getSalaryMethod());
+			SalaryPO po = new SalaryPO(vo.getEmployeeName(), vo.getSalaryMethod(),vo.getMoney());
 			try {
 				rm = md.update(po);
 			} catch (RemoteException e) {

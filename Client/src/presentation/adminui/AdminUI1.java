@@ -62,8 +62,7 @@ public class AdminUI1 extends JPanel {
 		this.setLayout(null);
 		
 		dialog=new MyDialog();
-		dialog.setBackground(Color.BLACK);
-		dialog.setBounds(0,0,100,100);
+	
 		this.add(dialog);
 		
 		JLabel label_3 = new JLabel("姓名：");
@@ -128,7 +127,10 @@ public class AdminUI1 extends JPanel {
 		btnNewButton_10.addMouseListener(adminlistener);
 		btnNewButton_11.addMouseListener(adminlistener);
 	}
-
+ 
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}
@@ -176,7 +178,5 @@ public class AdminUI1 extends JPanel {
 	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
-    public void setText(String s){
-    	dialog.setText(s);
-    }
+    
 }
