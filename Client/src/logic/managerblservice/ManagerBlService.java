@@ -14,6 +14,7 @@ import vo.OutStorageVO;
 import vo.CentrePackVO;
 import vo.PayVO;
 import vo.ReceiptVO;
+import vo.SalaryVO;
 
 public interface ManagerBlService {
 
@@ -24,6 +25,10 @@ public interface ManagerBlService {
 	public ResultMessage checkDocument(Object vo);
 
 	public ResultMessage checkStatistics(Object vo);
+	
+	public ResultMessage updateSalary(SalaryVO vo);
+	
+	public ArrayList<SalaryVO> getSalary();
 
 	public ArrayList<String> checkLogging(Object vo);
 
