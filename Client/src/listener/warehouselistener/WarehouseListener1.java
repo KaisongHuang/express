@@ -140,19 +140,19 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private boolean check(OutStorageVO vo) {
 		if (vo.checkIsNUll() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查出库日期格式是否正确！");
+			ui.setText("请检查出库日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkID() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查货物单号是否正确！");
+			ui.setText( "请检查货物单号是否正确！");
 			return false;
 		}
 		if (vo.checkTransID() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查中转单编号是否正确！");
+			ui.setText("请检查中转单编号是否正确！");
 			return false;
 		}
 
@@ -161,19 +161,19 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private boolean check(InStorageVO vo) {
 		if (vo.checkDate() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查入库日期是否正确！");
+			ui.setText("请检查入库日期是否正确！");
 			return false;
 		}
 		if (vo.checkJia() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查仓库架号是否正确！");
+			ui.setText("请检查仓库架号是否正确！");
 			return false;
 		}
 		if (vo.checkPai() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查仓库排号是否正确！");
+			ui.setText("请检查仓库排号是否正确！");
 			return false;
 		}
 		if (vo.checkWei() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查仓库位号是否正确！");
+			ui.setText("请检查仓库位号是否正确！");
 			return false;
 		}
 		return true;
@@ -217,7 +217,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 
 	public void mouseClicked(MouseEvent e) {

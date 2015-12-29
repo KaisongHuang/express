@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import listener.managerlistener.ManagerListener0_3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 public class ManagerUI0_3 extends JPanel {
@@ -37,7 +38,7 @@ public class ManagerUI0_3 extends JPanel {
 	private MyButton search;
 	private MyButton delete;
 	private MyButton cancle;
-
+    private MyDialog dialog;
 	ManagerListener0_3 managerlistener;
 
 	/**
@@ -69,6 +70,8 @@ public class ManagerUI0_3 extends JPanel {
 		this.add(textField);
 		textField.setColumns(10);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		search = new MyButton("查询");
 		search.setBounds(274, 43, 100, 30);
 		this.add(search);
@@ -139,7 +142,9 @@ public class ManagerUI0_3 extends JPanel {
 		cancle.addActionListener(managerlistener);
         cancle.addMouseListener(managerlistener);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

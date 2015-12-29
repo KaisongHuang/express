@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
 
 import listener.sellingarealistener.SellingAreaListener00;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 public class SellingAreaUI extends JPanel {
@@ -28,7 +29,7 @@ public class SellingAreaUI extends JPanel {
 	private MyTextField textField_5;
 	private MyTextField textField_6;
 	private JTextArea textArea;
-
+    private MyDialog dialog;
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
 
@@ -70,6 +71,8 @@ public class SellingAreaUI extends JPanel {
 
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel label = new JLabel("\u88C5\u8F66\u65E5\u671F\uFF1A");
 		label.setBounds(69, 35, 100, 18);
 		this.add(label);
@@ -182,6 +185,9 @@ public class SellingAreaUI extends JPanel {
 
 	}
 
+	public void setText(String s){
+		dialog.setText(s);;
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

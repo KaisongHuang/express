@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 
 import listener.managerlistener.ManagerListener1_4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 public class ManagerUI1_4 extends JPanel {
@@ -20,7 +21,7 @@ public class ManagerUI1_4 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private MyTextField textField;
 	private MyTextField textField_2;
-
+    private MyDialog dialog;
 	private MyButton btnNewButton_15;
 	private MyButton btnNewButton_16;
 
@@ -46,6 +47,8 @@ public class ManagerUI1_4 extends JPanel {
 
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(77, 56, 517, 117);
@@ -87,7 +90,9 @@ public class ManagerUI1_4 extends JPanel {
 		btnNewButton_16.addActionListener(managerlistener);
 		btnNewButton_16.addMouseListener(managerlistener);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

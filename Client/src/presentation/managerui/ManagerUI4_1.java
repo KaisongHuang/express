@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import listener.managerlistener.ManagerListener4_1;
+import presentation.MySwing.MyDialog;
 
 import javax.swing.JComboBox;
 
@@ -21,7 +22,7 @@ public class ManagerUI4_1 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
-
+    private MyDialog dialog;
 	private JComboBox<?> comboBox;
 	private JComboBox<?> comboBox_1;
 	private JComboBox<?> comboBox_2;
@@ -52,7 +53,8 @@ public class ManagerUI4_1 extends JPanel {
 		this.setBounds(0, 44, 746, 394);
 
 		this.setLayout(null);
-
+        dialog=new MyDialog();
+        this.add(dialog);
 		JLabel lblNewLabel_1 = new JLabel("总经理：");
 		lblNewLabel_1.setBounds(48, 84, 100, 18);
 		this.add(lblNewLabel_1);
@@ -120,7 +122,9 @@ public class ManagerUI4_1 extends JPanel {
 		btnNewButton_15.addActionListener(managerlistener);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public JButton getBtnNewButton_14() {
 		return btnNewButton_14;
 	}

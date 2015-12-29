@@ -31,6 +31,7 @@ public class CentreUI extends JPanel {
 	private MyDialog dialog;
 	private int width;
 	private int height;
+	
 	/**
 	 * Create the application.
 	 * @param j

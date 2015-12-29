@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -56,6 +57,7 @@ public class WarehouseUI4 extends JPanel {
 	private JComboBox<String> comboBox_5;
 	private JComboBox<String> comboBox_6;
 	private DefaultTableModel model;
+	private MyDialog dialog;
 	WarehouseListener4 warehouseListener;
 
 	/**
@@ -91,6 +93,8 @@ public class WarehouseUI4 extends JPanel {
 		label.setBounds(485, 75, 57, 15);
 		this.add(label);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		textField = new MyTextField();
 		textField.setBounds(554, 68, 122, 27);
 		this.add(textField);
@@ -202,6 +206,9 @@ public class WarehouseUI4 extends JPanel {
 		button_4.setBounds(29, 27, 117, 29);
 		button_4.addActionListener(warehouseListener);
 		add(button_4);
+	}
+	public void setText(String s){
+		dialog.setText(s);
 	}
 
 	public MyTextField getTextField() {

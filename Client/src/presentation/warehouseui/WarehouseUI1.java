@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import listener.warehouselistener.WarehouseListener1;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyDatePicker;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.SubNaviButton;
@@ -43,6 +44,7 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_4;
 	private JLabel label_5;
 	private JLabel label_6;
+	private MyDialog dialog;
 	private JComboBox<String> comboBox;
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox_2;
@@ -110,7 +112,8 @@ public class WarehouseUI1 extends JPanel {
 		panel.setLayout(card);
 		add(panel);
 
-
+        dialog=new MyDialog();
+        this.add(dialog);
 
 		exportPanel = new JPanel();
 
@@ -320,6 +323,9 @@ public class WarehouseUI1 extends JPanel {
 
 	}
 
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public DefaultTableModel getModel() {
 		return model;
 	}
