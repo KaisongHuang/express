@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 public class AdminUI2 extends JPanel {
@@ -24,7 +25,7 @@ public class AdminUI2 extends JPanel {
 	private MyTextField textField_2;
 
 	private JComboBox<String> comboBox_1;
-
+    private MyDialog dialog;
 	private MyButton search;
 	private MyButton confirm;
 	private MyButton clear;
@@ -62,6 +63,8 @@ public class AdminUI2 extends JPanel {
 		label_2.setBounds(66, 34, 61, 16);
 		this.add(label_2);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		textField_2 = new MyTextField();
 		textField_2.setBounds(139, 28, 134, 28);
 		this.add(textField_2);
@@ -195,6 +198,10 @@ public class AdminUI2 extends JPanel {
 
 	public void setClear(MyButton cancle) {
 		this.clear = cancle;
+	}
+	
+	public void setText(String s){
+		dialog.setText(s);
 	}
 
 }

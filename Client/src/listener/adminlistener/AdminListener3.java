@@ -56,13 +56,13 @@ public class AdminListener3 implements MouseListener, ActionListener {
 	}
 	private boolean check(String id){
 		if(id.length()!=10){
-			JOptionPane.showMessageDialog(ui,"请确保编号长度为10！");
+			ui.setText( "请确保编号长度为10！");
    		   return false;
 		}
    	 try{
    		 Integer.parseInt(id);
    	 }catch(NumberFormatException e){
-   		JOptionPane.showMessageDialog(ui,"请确保编号只包含数字！");
+   		ui.setText( "请确保编号只包含数字！");
    		 return false;
    	 }
    	 return true;
@@ -79,7 +79,7 @@ public class AdminListener3 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(  dialog);
 	}
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub

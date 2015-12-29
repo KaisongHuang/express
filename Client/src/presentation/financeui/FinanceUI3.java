@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
 import javax.swing.JLabel;
@@ -55,7 +56,7 @@ public class FinanceUI3 extends JPanel {
 	private JLabel label1;
 	private int height = 600;
 	private int width = 900;
-
+    private MyDialog dialog;
 	public FinanceUI3() {
 		financeListener3 = new FinanceListener3(this);
 		initialize();
@@ -67,7 +68,8 @@ public class FinanceUI3 extends JPanel {
 		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		dialog=new MyDialog();
+		this.add(dialog);
 		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new MyTable(data1, name1);
@@ -162,7 +164,9 @@ public class FinanceUI3 extends JPanel {
 		search.addMouseListener(financeListener3);
 		this.add(search);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTable getTable1() {
 		return table1;
 	}
