@@ -52,9 +52,9 @@ public class LoginUI extends JFrame {
 		try {
 		       final int SystemFontSize = 13;
 		       final int DataFontSize = 13;
-		       final Font SystemFont = new Font("HanzipenSC", Font.PLAIN,
+		       final Font SystemFont = new Font("stkaiti", Font.PLAIN,
 		                                        SystemFontSize);
-		       final Font DataFont = new Font("HanzipenSC", Font.PLAIN,
+		       final Font DataFont = new Font("stkaiti", Font.PLAIN,
 		                                      DataFontSize);
 		       //   可以通过修改下面的代码,变换窗口的风格
 		       //   其它的外观风格类,可以通过引入外部JAR包来实现
@@ -141,6 +141,8 @@ public class LoginUI extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(158, 211, 240));
 		lblUserName = new JLabel("用户名:");
+//		lblUserName.setFont(new Font("kaiti", Font.PLAIN, 12));
+
 		lblUserName.setBounds(311, 232, 50, 16);
 		contentPane.add(lblUserName);
 
