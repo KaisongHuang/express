@@ -42,5 +42,5 @@ public interface ManagerDataBaseService extends Remote{
 	 public ArrayList<PayPO> getPay() throws RemoteException;
 	 public ArrayList<SalaryPO> getSalary() throws RemoteException;
 	 public ArrayList<DistanceAndFee> getDistanceAndFee() throws RemoteException;
-	 
+	 public ArrayList<DistanceAndFee> getCity()throws RemoteException;
 }

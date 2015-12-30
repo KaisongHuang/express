@@ -45,12 +45,10 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_3;
 	private JLabel label_4;
 	private JLabel label_5;
-	private JLabel label_6;
 	private MyDialog dialog;
 	private MyComboBox<String> comboBox;
 	private MyComboBox<String> comboBox_1;
 	private MyComboBox<String> comboBox_2;
-	private MyComboBox<String> comboBox_3;
 	private WarehouseListener1 listener;
 	private CardLayout card;
 	private JPanel importPanel;
@@ -83,6 +81,11 @@ public class WarehouseUI1 extends JPanel {
 	private JScrollPane JSP1;
 	private Vector<String> name1;
 	private Vector<Object> data1;
+	private MyTable table2;
+	private DefaultTableModel model2;
+	private JScrollPane JSP2;
+	private Vector<String> name2;
+	private Vector<Object> data2;
 	private MySeperator line;
 	private JPanel navi_panel;
 	private WarehouseListener1 warehouseListener;
@@ -113,15 +116,14 @@ public class WarehouseUI1 extends JPanel {
 		panel.setLayout(card);
 		add(panel);
 
-
-        dialog=new MyDialog();
-        this.add(dialog);
+		dialog = new MyDialog();
+		this.add(dialog);
 
 		exportPanel = new JPanel();
 
 		exportPanel.setBackground(Color.WHITE);
 		exportPanel.setLayout(null);
-		String names1[] = { "快递编号", "目的地", "中转单号","装运形式" };
+		String names1[] = { "中转单号", "目的地", "装运形式","所有快递单号" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new MyTable(data1, name1);
 		table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -131,67 +133,70 @@ public class WarehouseUI1 extends JPanel {
 		table1.setEditableColumn(-1);
 		table1.setEditableRow(-1);
 		table1.setFocusable(false);
+		table1.hideColumn(3);//hide Column3
 		model1 = (DefaultTableModel) table1.getModel();
 		JSP1 = new JScrollPane(table1);
-		JSP1.setBounds(4, 18, 317, 300);
+		JSP1.setBounds(6, 18, 317, 300);
 		exportPanel.add(JSP1);
 
+		String names2[] = { "快递编号" };
+		name2 = new Vector<String>(Arrays.asList(names2));
+		table2 = new MyTable(data2, name2);
+		table2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table2.addMouseListener(warehouseListener);
+		table2.setSelectionForeground(Color.BLACK);
+		table2.setSelectionBackground(new Color(210, 240, 255));
+		table2.setEditableColumn(-1);
+		table2.setEditableRow(-1);
+		table2.setFocusable(false);
+		model2 = (DefaultTableModel) table2.getModel();
+		JSP2 = new JScrollPane(table2);
+		JSP2.setBounds(323, 18, 185, 300);
+		exportPanel.add(JSP2);
+
 		label_1 = new JLabel("出库日期:");
-		label_1.setBounds(333, 84, 57, 15);
+		label_1.setBounds(520, 63, 57, 15);
 		exportPanel.add(label_1);
 
 		comboBox = new MyComboBox<String>();
-		comboBox.setBounds(391, 80, 70, 25);
+		comboBox.setBounds(589, 58, 88, 25);
 		comboBox.addItem("2015");
 		exportPanel.add(comboBox);
 
 		label_3 = new JLabel("年");
-		label_3.setBounds(462, 84, 23, 15);
+		label_3.setBounds(689, 63, 23, 15);
 		exportPanel.add(label_3);
 
 		comboBox_1 = new MyComboBox<String>();
-		comboBox_1.setBounds(391, 107, 70, 25);
+		comboBox_1.setBounds(589, 92, 88, 25);
 		comboBox_1.addItem("01");
 		exportPanel.add(comboBox_1);
 
 		label_4 = new JLabel("月");
-		label_4.setBounds(462, 111, 13, 15);
+		label_4.setBounds(689, 97, 13, 15);
 		exportPanel.add(label_4);
 
 		comboBox_2 = new MyComboBox<String>();
-		comboBox_2.setBounds(391, 134, 70, 25);
+		comboBox_2.setBounds(589, 134, 88, 25);
 		comboBox_2.addItem("01");
 		exportPanel.add(comboBox_2);
 
 		label_5 = new JLabel("日");
-		label_5.setBounds(462, 138, 23, 15);
+		label_5.setBounds(689, 139, 23, 15);
 		exportPanel.add(label_5);
 
-		label_6 = new JLabel("装运形式:");
-
-		label_6.setBounds(6, 179, 57, 15);
-		exportPanel.add(label_6);
-
-		comboBox_3 = new MyComboBox<String>();
-		comboBox_3.setBounds(75, 175, 70, 25);
-		comboBox_3.addItem("飞机");
-		comboBox_3.addItem("火车");
-		comboBox_3.addItem("汽车");
-
-		exportPanel.add(comboBox_3);
-
 		button_5 = new MyButton("确认");
-		button_5.setBounds(391, 202, 94, 27);
+		button_5.setBounds(589, 183, 94, 27);
 		button_5.addActionListener(listener);
 		exportPanel.add(button_5);
 
 		button_3 = new MyButton("清空");
-		button_3.setBounds(391, 241, 94, 27);
+		button_3.setBounds(589, 222, 94, 27);
 		button_3.addActionListener(listener);
 		exportPanel.add(button_3);
 
 		button_2 = new MyButton("导入");
-		button_2.setBounds(391, 28, 94, 29);
+		button_2.setBounds(583, 18, 94, 29);
 		button_2.addActionListener(warehouseListener);
 		exportPanel.add(button_2);
 
@@ -274,16 +279,14 @@ public class WarehouseUI1 extends JPanel {
 		label_14.setBounds(361, 142, 42, 16);
 		importPanel.add(label_14);
 
-		comboBox_8=new MyComboBox<Object>();
-		comboBox_8.setBounds(393,138,94,27);
+		comboBox_8 = new MyComboBox<Object>();
+		comboBox_8.setBounds(393, 138, 94, 27);
 		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
 
 		label_15 = new JLabel("架号:");
 		label_15.setBounds(361, 187, 42, 16);
 		importPanel.add(label_15);
-
-
 
 		comboBox_9 = new MyComboBox<Object>();
 		comboBox_9.setBounds(393, 182, 94, 27);
@@ -333,6 +336,13 @@ public class WarehouseUI1 extends JPanel {
 
 	}
 
+	public MyTable getTable2() {
+		return table2;
+	}
+
+	public DefaultTableModel getModel2() {
+		return model2;
+	}
 
 	public MyTable getTable1() {
 		return table1;
@@ -350,10 +360,9 @@ public class WarehouseUI1 extends JPanel {
 		return model1;
 	}
 
-	public void setText(String s){
+	public void setText(String s) {
 		dialog.setText(s);
 	}
-
 
 	public DefaultTableModel getModel() {
 		return model;
@@ -423,10 +432,6 @@ public class WarehouseUI1 extends JPanel {
 		return label_5;
 	}
 
-	public JLabel getLabel_6() {
-		return label_6;
-	}
-
 	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
@@ -437,10 +442,6 @@ public class WarehouseUI1 extends JPanel {
 
 	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
-	}
-
-	public MyComboBox<String> getComboBox_3() {
-		return comboBox_3;
 	}
 
 	public WarehouseListener1 getListener() {
@@ -555,10 +556,6 @@ public class WarehouseUI1 extends JPanel {
 		String month = (String) comboBox_5.getSelectedItem();
 		String date = (String) comboBox_6.getSelectedItem();
 		return year + month + date;
-	}
-
-	public String getTransportation() {
-		return (String) comboBox_3.getSelectedItem();
 	}
 
 	public SubNaviButton getButton1() {
