@@ -12,6 +12,7 @@ import com.eltima.components.ui.DatePicker;
 
 import listener.financelistener.FinanceListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
 import javax.swing.JLabel;
@@ -20,8 +21,6 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 public class FinanceUI3 extends JPanel {
@@ -29,12 +28,6 @@ public class FinanceUI3 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_3;
-	private JLabel label;
-	private JLabel lblRi;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel label_3;
 	private JComboBox<String> comboBox;
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox_2;
@@ -55,12 +48,10 @@ public class FinanceUI3 extends JPanel {
 	private DatePicker begin;
 	private DatePicker end;
 
+	private MyButton export;
 	private JScrollPane JSP2;
 	FinanceListener3 financeListener3;
-	private JLabel label1;
-	private int height = 600;
-	private int width = 900;
-
+	private MyDialog dialog;
 	public FinanceUI3() {
 		financeListener3 = new FinanceListener3(this);
 		initialize();
@@ -72,7 +63,8 @@ public class FinanceUI3 extends JPanel {
 		setBackground(Color.white);
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
-
+		dialog=new MyDialog();
+		this.add(dialog);
 		String names1[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new MyTable(data1, name1);
@@ -86,6 +78,10 @@ public class FinanceUI3 extends JPanel {
 		JSP1.setBounds(90, 55, 530, 175);
 		this.add(JSP1);
 
+		export=new MyButton("导出");
+		export.setBounds(521,18,94,27);
+		this.add(export);
+
 		String names2[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
 		name2 = new Vector<String>(Arrays.asList(names2));
 		table2 = new MyTable(data2, name2);
@@ -96,7 +92,7 @@ public class FinanceUI3 extends JPanel {
 		table2.setFocusable(false);
 		model2 = (DefaultTableModel) table2.getModel();
 		JSP2 = new JScrollPane(table2);
-		JSP2.setBounds(90, 240, 530, 175);
+		JSP2.setBounds(90, 241, 530, 175);
 		this.add(JSP2);
 
 		lblNewLabel_1 = new JLabel("开始日期:");
@@ -104,16 +100,17 @@ public class FinanceUI3 extends JPanel {
 		this.add(lblNewLabel_1);
 
 		lblNewLabel_2 = new JLabel("结束日期:");
-		lblNewLabel_2.setBounds(302, 25, 57, 15);
+		lblNewLabel_2.setBounds(263, 25, 57, 15);
 		this.add(lblNewLabel_2);
 
 		begin = new DatePicker(this);
-		begin.setBounds(159, 20, 87, 25);
+		begin.setBounds(143, 20, 87, 25);
 		this.add(begin);
 
 		end = new DatePicker(this);
-		end.setBounds(369, 20, 87, 25);
+		end.setBounds(317, 20, 87, 25);
 		this.add(end);
+
 //		comboBox = new JComboBox<String>();
 //		comboBox.setBounds(159, 20, 87, 25);
 //		comboBox.addItem("2015");
@@ -165,20 +162,27 @@ public class FinanceUI3 extends JPanel {
 //		this.add(label_2);
 //
 //		label_3 = new JLabel("日");
-//		label_3.setBounds(494, 52, 57, 15);
+//		label_3.setBounds(494, 52, 20, 15);
 //		this.add(label_3);
 
 		search = new MyButton("查看");
-		search.setBounds(526, 20, 94, 27);
+		search.setBounds(427, 18, 94, 27);
 		search.addActionListener(financeListener3);
 		search.addMouseListener(financeListener3);
 		this.add(search);
-	}
 
+		export.addActionListener(financeListener3);
+	}
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTable getTable1() {
 		return table1;
 	}
 
+	public MyButton getExport(){
+		return export;
+	}
 	public MyTable getTable2() {
 		return table2;
 	}
@@ -234,6 +238,5 @@ public class FinanceUI3 extends JPanel {
 	public DatePicker getEnd() {
 		return end;
 	}
-
 
 }
