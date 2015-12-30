@@ -90,7 +90,6 @@ public class Manager implements ManagerBlService {
 				else
 					rm = md.update(po);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm = ResultMessage.FunctionError;
 			}
@@ -106,7 +105,6 @@ public class Manager implements ManagerBlService {
 					rm = md.update(po);
 
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm = ResultMessage.FunctionError;
 			}
@@ -501,6 +499,17 @@ public class Manager implements ManagerBlService {
 			e.printStackTrace();
 		}
 		return rm;
+	}
+
+	public ResultMessage manageDistance(Object vo, Opera op) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage updateFee(double fee) {
+		// TODO Auto-generated method stub
+		
+		return null;
 	}
 
 }
