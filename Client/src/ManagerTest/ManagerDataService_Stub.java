@@ -18,6 +18,7 @@ import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
+import po.SalaryPO;
 
 public class ManagerDataService_Stub implements ManagerDataService {
 	
@@ -108,6 +109,11 @@ public class ManagerDataService_Stub implements ManagerDataService {
 	}
 
 	public ArrayList<PayPO> findPay() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<SalaryPO> getSalary() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}

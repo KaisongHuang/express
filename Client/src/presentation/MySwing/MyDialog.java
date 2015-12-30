@@ -79,4 +79,6 @@ public class MyDialog extends JLabel{
 			
 		}
 	}
+
 }
+

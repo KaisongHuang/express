@@ -49,7 +49,7 @@ public class AdminListener3 implements MouseListener, ActionListener {
 
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(ui,"系统中不存在此编号！");
+			ui.setText("系统中不存在此编号！");
 	   	    return false;
 		}
 		return true;
@@ -57,6 +57,7 @@ public class AdminListener3 implements MouseListener, ActionListener {
 	private boolean check(String id){
 		if(id.length()!=10){
 			ui.setText( "请确保编号长度为10！");
+
    		   return false;
 		}
    	 try{
@@ -79,7 +80,7 @@ public class AdminListener3 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(  dialog);
+			ui.setText(dialog);
 	}
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub

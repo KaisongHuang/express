@@ -52,17 +52,23 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		} else if (po instanceof InstitutionPO) {
 			InstitutionPO po1 = (InstitutionPO) po;
 			sql = "insert into Institution values('" + po1.getOrganizationID() + "','" + po1.getName() + "');";
-			rm = db.delete(sql);
-		} else {
+			rm = db.insert(sql);
+		} else if(po instanceof DistanceAndFee){
 			DistanceAndFee po1 = (DistanceAndFee) po;
 			String list1 = po1.getCity1();
 			String list2 = po1.getCity2();
 
 			sql = "insert into DistanceAndFee values('" + list1 + "','" + list2 + "," + po1.getFee() + ","
 					+ po1.getDistance() + ");";
+			rm=db.insert(sql);
+		}else if(po instanceof SalaryPO){
+			SalaryPO po1=(SalaryPO) po;
+			sql="insert into Salary values('"+po1.getEmployeeName()+"','"+po1.getSalaryMethod()+"',"+po1.getMoney()+")";
+			rm=db.insert(sql);
 		}
 		return rm;
 	}
+
 
 	public EmployeePO findEmployee(String id) throws RemoteException{
 		String sql;
@@ -162,7 +168,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		    rm=db.update(sql);
 		}else if(po instanceof SalaryPO){
 			SalaryPO salary=(SalaryPO) po;
-			sql="update Salary set salaryMethod='"+salary.getSalaryMethod()+"' where employeeName='"+salary.getEmployeeName()+"';";
+			sql="update Salary set salaryMethod='"+salary.getSalaryMethod()+"',"+salary.getMoney()+"' where employeeName='"+salary.getEmployeeName()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof DistanceAndFee){
 			DistanceAndFee po1=(DistanceAndFee) po;
@@ -432,7 +438,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
-				list.add(new SalaryPO(rs.getString(1),rs.getString(2)));
+				list.add(new SalaryPO(rs.getString(1),rs.getString(2),rs.getDouble(3)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

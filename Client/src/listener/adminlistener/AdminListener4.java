@@ -76,7 +76,7 @@ public class AdminListener4 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(  dialog);
+			ui.setText(dialog);
 	}
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub

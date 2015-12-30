@@ -29,7 +29,7 @@ public class AdminUI2 extends JPanel {
 	private MyButton search;
 	private MyButton confirm;
 	private MyButton clear;
-
+    private MyDialog dialog;
 	AdminListener2 adminlistener;
 	private int width;
 	private int height;
@@ -121,7 +121,9 @@ public class AdminUI2 extends JPanel {
 		clear.addActionListener(adminlistener);
 		clear.addMouseListener(adminlistener);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField_2() {
 		return textField_2;
 	}

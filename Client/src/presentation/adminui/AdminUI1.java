@@ -62,7 +62,7 @@ public class AdminUI1 extends JPanel {
 		this.setLayout(null);
 		
 		dialog=new MyDialog();
-        this.add(dialog);
+		this.add(dialog);
 		
 		JLabel label_3 = new JLabel("姓名：");
 		label_3.setBounds(51, 41, 61, 16);
@@ -122,7 +122,7 @@ public class AdminUI1 extends JPanel {
 		btnNewButton_10.addMouseListener(adminlistener);
 		btnNewButton_11.addMouseListener(adminlistener);
 	}
-
+ 
 	public MyTextField getTextField() {
 		return textField;
 	}
@@ -170,6 +170,7 @@ public class AdminUI1 extends JPanel {
 	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
+
     public void setText(String s){
     	dialog.setText(s);
     }

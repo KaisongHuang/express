@@ -27,7 +27,6 @@ public class AdminUI4 extends JPanel{
     private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
-
 	AdminListener4 adminlistener;
 	private int width;
 	private int height;
@@ -60,7 +59,6 @@ public class AdminUI4 extends JPanel{
 
 		dialog=new MyDialog();
 		this.add(dialog);
-		
 		confirm = new MyButton("确认");
 		confirm.setBounds(135, 90, 61, 29);
 		this.add(confirm);
@@ -79,7 +77,9 @@ public class AdminUI4 extends JPanel{
 		cancle.addActionListener(adminlistener);
 		cancle.addMouseListener(adminlistener);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
 	public MyTextField getTextField() {
 		return textField;
@@ -103,7 +103,4 @@ public class AdminUI4 extends JPanel{
 	private void setImage() {
 
 	}
-   public void setText(String s){
-	   dialog.setText(s);
-   }
 }

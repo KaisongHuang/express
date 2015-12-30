@@ -85,7 +85,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText( dialog);
+			ui.setText(dialog);
 	}
 	
 
