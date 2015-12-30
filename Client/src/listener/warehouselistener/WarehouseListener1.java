@@ -78,62 +78,47 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			ui.getComboBox_3().setSelectedIndex(0);
 		} else if (e.getSource() == ui.getImportClearButton()) {
 			System.out.println("ImportClear");
-			ui.getComboBox_4().setSelectedIndex(0);
-			ui.getComboBox_5().setSelectedIndex(0);
-			ui.getComboBox_6().setSelectedIndex(0);
 			ui.getComboBox_7().setSelectedIndex(0);
 			ui.getComboBox_8().setSelectedIndex(0);
 			ui.getComboBox_9().setSelectedIndex(0);
 			ui.getComboBox_10().setSelectedIndex(0);
-		} else if (e.getSource() == ui.getExportConfirmButton()) {
-			ResultMessage rm = null;
+		}
+		if (e.getSource() == ui.getExportConfirmButton()) {
 			System.out.println("export");
-			OutStorageVO vo = this.getOutStorageVO();
-			if (!check(vo))
-				return;
-			rm = warehouseBl.exportGoods(vo);
-			check(rm);
-			trans.get(0).getList().remove(0);
-			if (trans.get(0).getList().size() == 0) {
-				trans.remove(0);
-				if (trans.size() != 0) {
-					// ui.getTextField().setText(trans.get(0).getList().get(0));
-					// ui.getTextField_1().setText(trans.get(0).getArrival());
-					// ui.getTextField_2().setText(trans.get(0).getCentreTransferID());
-				} else {
-					// ui.getTextField().setText("");
-					// ui.getTextField_1().setText("");
-					// ui.getTextField_2().setText("");
-					ui.getComboBox().setSelectedIndex(0);
-					ui.getComboBox_1().setSelectedIndex(0);
-					ui.getComboBox_2().setSelectedIndex(0);
-					ui.getComboBox_3().setSelectedIndex(0);
-				}
-			} else {
-				// ui.getTextField().setText(trans.get(0).getList().get(0));
-			}
-		} else if (e.getSource() == ui.getImportConfirmButton()) {
-			ResultMessage rm = null;
+
+		}
+		if (e.getSource() == ui.getImportConfirmButton()) {
 			System.out.println("import");
-			InStorageVO vo = this.getInStorageVO();
-			if (!check(vo))
-				return;
-			rm = warehouseBl.importGoods(vo);
-			check(rm);
-			arrival.remove(0);
-			if (arrival.size() != 0) {
-				// ui.getTextField_3().setText(arrival.get(0).getID());
-				// ui.getTextField_4().setText(warehouseBl.getSenderDestination(arrival.get(0).getID()));
-			} else {
-				// ui.getTextField_3().setText("");
-				// ui.getTextField_4().setText("");
-				ui.getComboBox_4().setSelectedIndex(0);
-				ui.getComboBox_5().setSelectedIndex(0);
-				ui.getComboBox_6().setSelectedIndex(0);
-				ui.getComboBox_7().setSelectedIndex(0);
-				ui.getComboBox_8().setSelectedIndex(0);
-				ui.getComboBox_9().setSelectedIndex(0);
-				ui.getComboBox_10().setSelectedIndex(0);
+			int selectedRow = ui.getTable().getSelectedRow();// 获得选中行的索引
+			if (ui.getTable().getRowCount() > 0) {
+				if (selectedRow != -1) { // 存在选中行
+					String id=(String) ui.getModel().getValueAt(selectedRow, 0);
+					String destination=(String) ui.getModel().getValueAt(selectedRow, 1);
+					String date=ui.getMdp1().getText();
+					date = date.replace("/", "");
+					String s1 = date.substring(0,4);
+					String s2 = date.substring(4,8);
+					date = s2 + s1 ;
+					String qu=(String) ui.getComboBox_7().getSelectedItem();
+					int pai=(Integer) ui.getComboBox_8().getSelectedItem();
+					int jia=(Integer) ui.getComboBox_9().getSelectedItem();
+					int wei=(Integer) ui.getComboBox_10().getSelectedItem();
+					warehouseBl.importGoods(new InStorageVO(id,date,destination,EmployeeMes.belongToWho,qu,pai,jia,wei,0));
+				} else {
+					selectedRow = 0;
+					String id=(String) ui.getModel().getValueAt(selectedRow, 0);
+					String destination=(String) ui.getModel().getValueAt(selectedRow, 1);
+					String date=ui.getMdp1().getText();
+					date = date.replace("/", "");
+					String s1 = date.substring(0,4);
+					String s2 = date.substring(4,8);
+					date = s2 + s1 ;
+					String qu=(String) ui.getComboBox_7().getSelectedItem();
+					int pai=(Integer) ui.getComboBox_8().getSelectedItem();
+					int jia=(Integer) ui.getComboBox_9().getSelectedItem();
+					int wei=(Integer) ui.getComboBox_10().getSelectedItem();
+					warehouseBl.importGoods(new InStorageVO(id,date,destination,EmployeeMes.belongToWho,qu,pai,jia,wei,0));
+				}
 			}
 		}
 	}
@@ -271,4 +256,5 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 		ui.getButton1().repaint();
 		ui.getButton2().repaint();
 	}
+
 }
