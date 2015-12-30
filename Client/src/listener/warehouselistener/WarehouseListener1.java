@@ -50,9 +50,9 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 		}
 
 		if (e.getSource() == ui.getButton_1()) {
-			for (int i = 0; i < arrival.size(); i++) {
+			int row = ui.getModel().getRowCount();
+			for (int i = 0; i < row; i++)
 				ui.getModel().removeRow(0);
-			}
 
 			arrival = new ArrayList<CentreArrivalVO>();
 			arrival = warehouseBl.getImport();
@@ -64,18 +64,27 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			}
 
 		} else if (e.getSource() == ui.getButton_2()) {
+			int row = ui.getModel1().getRowCount();
+			for (int i = 0; i < row; i++)
+				ui.getModel1().removeRow(0);
+
 			trans = new ArrayList<CentreTransforVO>();
 			trans = warehouseBl.getExport();
-			// ui.getTextField().setText(trans.get(0).getList().get(0));
-			// ui.getTextField_1().setText(trans.get(0).getArrival());
-			// ui.getTextField_2().setText(trans.get(0).getCentreTransferID());
+			for (int i = 0; i < trans.size(); i++) {
+				Vector<Object> rowData = new Vector<Object>();
+				rowData.add(trans.get(i).getList().get(0));
+				rowData.add(trans.get(i).getArrival());
+				rowData.add(trans.get(i).getCentreTransferID());
+				rowData.add(trans.get(i).getTransferStyle());
+				ui.getModel1().addRow(rowData);
+			}
 
 		} else if (e.getSource() == ui.getExportClearButton()) {
 			System.out.println("ExportClear");
 			ui.getComboBox().setSelectedIndex(0);
 			ui.getComboBox_1().setSelectedIndex(0);
 			ui.getComboBox_2().setSelectedIndex(0);
-			ui.getComboBox_3().setSelectedIndex(0);
+			// ui.getComboBox_3().setSelectedIndex(0);
 		} else if (e.getSource() == ui.getImportClearButton()) {
 			System.out.println("ImportClear");
 			ui.getComboBox_7().setSelectedIndex(0);
@@ -85,39 +94,76 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 		}
 		if (e.getSource() == ui.getExportConfirmButton()) {
 			System.out.println("export");
+			int selectedRow = ui.getTable1().getSelectedRow();// 获得选中行的索引
+			if (ui.getTable1().getRowCount() > 0) {
+				if (selectedRow != -1) { // 存在选中行
+					String id = (String) ui.getModel1().getValueAt(selectedRow, 0);
+					String destination = (String) ui.getModel1().getValueAt(selectedRow, 1);
+					String transferID = (String) ui.getModel1().getValueAt(selectedRow, 2);
+					String transferType = (String) ui.getModel1().getValueAt(selectedRow, 3);
 
+					String year = (String) ui.getComboBox().getSelectedItem();
+					String month = (String) ui.getComboBox_1().getSelectedItem();
+					String day = (String) ui.getComboBox_2().getSelectedItem();
+					String date = year + month + day;
+
+					warehouseBl.exportGoods(new OutStorageVO(id, destination, date, EmployeeMes.belongToWho,
+							transferType, transferID, 0));
+					ui.getModel1().removeRow(selectedRow);
+				} else {
+					selectedRow = 0;
+					String id = (String) ui.getModel1().getValueAt(selectedRow, 0);
+					String destination = (String) ui.getModel1().getValueAt(selectedRow, 1);
+					String transferID = (String) ui.getModel1().getValueAt(selectedRow, 2);
+					String transferType = (String) ui.getModel1().getValueAt(selectedRow, 3);
+
+					String year = (String) ui.getComboBox().getSelectedItem();
+					String month = (String) ui.getComboBox_1().getSelectedItem();
+					String day = (String) ui.getComboBox_2().getSelectedItem();
+					String date = year + month + day;
+
+					warehouseBl.exportGoods(new OutStorageVO(id, destination, date, EmployeeMes.belongToWho,
+							transferType, transferID, 0));
+					ui.getModel1().removeRow(selectedRow);
+				}
+
+			}
 		}
 		if (e.getSource() == ui.getImportConfirmButton()) {
 			System.out.println("import");
 			int selectedRow = ui.getTable().getSelectedRow();// 获得选中行的索引
 			if (ui.getTable().getRowCount() > 0) {
 				if (selectedRow != -1) { // 存在选中行
-					String id=(String) ui.getModel().getValueAt(selectedRow, 0);
-					String destination=(String) ui.getModel().getValueAt(selectedRow, 1);
-					String date=ui.getMdp1().getText();
+					String id = (String) ui.getModel().getValueAt(selectedRow, 0);
+					String destination = (String) ui.getModel().getValueAt(selectedRow, 1);
+					String date = ui.getMdp1().getText();
 					date = date.replace("/", "");
-					String s1 = date.substring(0,4);
-					String s2 = date.substring(4,8);
-					date = s2 + s1 ;
-					String qu=(String) ui.getComboBox_7().getSelectedItem();
-					int pai=(Integer) ui.getComboBox_8().getSelectedItem();
-					int jia=(Integer) ui.getComboBox_9().getSelectedItem();
-					int wei=(Integer) ui.getComboBox_10().getSelectedItem();
-					warehouseBl.importGoods(new InStorageVO(id,date,destination,EmployeeMes.belongToWho,qu,pai,jia,wei,0));
+					String s1 = date.substring(0, 4);
+					String s2 = date.substring(4, 8);
+					date = s2 + s1;
+					String qu = (String) ui.getComboBox_7().getSelectedItem();
+					int pai = (Integer) ui.getComboBox_8().getSelectedItem();
+					int jia = (Integer) ui.getComboBox_9().getSelectedItem();
+					int wei = (Integer) ui.getComboBox_10().getSelectedItem();
+					warehouseBl.importGoods(
+							new InStorageVO(id, date, destination, EmployeeMes.belongToWho, qu, pai, jia, wei, 0));
+					ui.getModel().removeRow(selectedRow);
 				} else {
 					selectedRow = 0;
-					String id=(String) ui.getModel().getValueAt(selectedRow, 0);
-					String destination=(String) ui.getModel().getValueAt(selectedRow, 1);
-					String date=ui.getMdp1().getText();
+					String id = (String) ui.getModel().getValueAt(selectedRow, 0);
+					String destination = (String) ui.getModel().getValueAt(selectedRow, 1);
+					String date = ui.getMdp1().getText();
 					date = date.replace("/", "");
-					String s1 = date.substring(0,4);
-					String s2 = date.substring(4,8);
-					date = s2 + s1 ;
-					String qu=(String) ui.getComboBox_7().getSelectedItem();
-					int pai=(Integer) ui.getComboBox_8().getSelectedItem();
-					int jia=(Integer) ui.getComboBox_9().getSelectedItem();
-					int wei=(Integer) ui.getComboBox_10().getSelectedItem();
-					warehouseBl.importGoods(new InStorageVO(id,date,destination,EmployeeMes.belongToWho,qu,pai,jia,wei,0));
+					String s1 = date.substring(0, 4);
+					String s2 = date.substring(4, 8);
+					date = s2 + s1;
+					String qu = (String) ui.getComboBox_7().getSelectedItem();
+					int pai = (Integer) ui.getComboBox_8().getSelectedItem();
+					int jia = (Integer) ui.getComboBox_9().getSelectedItem();
+					int wei = (Integer) ui.getComboBox_10().getSelectedItem();
+					warehouseBl.importGoods(
+							new InStorageVO(id, date, destination, EmployeeMes.belongToWho, qu, pai, jia, wei, 0));
+					ui.getModel().removeRow(selectedRow);
 				}
 			}
 		}
@@ -133,7 +179,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			return false;
 		}
 		if (vo.checkID() == 0) {
-			ui.setText( "请检查货物单号是否正确！");
+			ui.setText("请检查货物单号是否正确！");
 			return false;
 		}
 		if (vo.checkTransID() == 0) {
