@@ -18,18 +18,17 @@ import java.util.Vector;
 
 import listener.managerlistener.ManagerListener20;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
-
-import javax.swing.JComboBox;
 
 public class ManagerUI2 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
 	private MyButton button1;
 	private MyButton button2;
 	private MyButton button;
@@ -125,7 +124,7 @@ public class ManagerUI2 extends JPanel {
 		panel = new JPanel();
 		panel.setBounds(0, 40, 715, 400);
 		panel.setLayout(card);
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.addItem("无");
 		comboBox.addItem("付款单");
 		comboBox.addItem("收款单");
@@ -147,7 +146,7 @@ public class ManagerUI2 extends JPanel {
 		this.add(button1);
 		button1.addActionListener(managerlistener);
 		button1.addMouseListener(managerlistener);
-		
+
 		button2 = new MyButton("取消");
 		button2.setBounds(301, 5, 91, 28);
 		this.add(button2);
@@ -501,11 +500,11 @@ public class ManagerUI2 extends JPanel {
 		this.button2 = button2;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
