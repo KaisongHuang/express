@@ -50,23 +50,23 @@ public class SellingAreaListener3_4 implements ActionListener {
 	}
     private boolean check(CarVO vo){
     	if(vo.checkIsNull()==0){
-    		JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+    		ui.setText("请将信息填写完整！");
 			return false;
     	}
     	if(vo.checkCarNumber()==0){
-    		JOptionPane.showMessageDialog(ui, "请检查车辆代号格式是否正确！");
+    		ui.setText( "请检查车辆代号格式是否正确！");
 			return false;
     	}
     	if(vo.checkNumber()==0){
-    		JOptionPane.showMessageDialog(ui, "请检查车辆好格式是否正确！");
+    		ui.setText("请检查车辆好格式是否正确！");
 			return false;
     	}
     	if(vo.checkPurchase()==0){
-    		JOptionPane.showMessageDialog(ui, "请检查车辆购买时间是否合理！");
+    		ui.setText( "请检查车辆购买时间是否合理！");
 			return false;
     	}
     	if(vo.checkService()==0){
-    		JOptionPane.showMessageDialog(ui, "请检查车辆服役时间是否合理！");
+    		ui.setText("请检查车辆服役时间是否合理！");
 			return false;
     	}
 
@@ -84,7 +84,7 @@ public class SellingAreaListener3_4 implements ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 
     }
 	private CarVO read() {

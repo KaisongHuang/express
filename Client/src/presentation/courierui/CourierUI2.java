@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import listener.courierlistener.CourierListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 //收件信息输入
@@ -22,7 +23,7 @@ public class CourierUI2 extends JPanel {
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_2;
-
+    private MyDialog dialog;
 	CourierListener2 courierlistener;
 	private MyButton confirm;
 	private int width;
@@ -54,6 +55,8 @@ public class CourierUI2 extends JPanel {
 		setBackground(Color.white);
 		this.setLayout(null);
 		
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel label = new JLabel("收件编号");
 		label.setBounds(116, 43, 100, 18);
 		this.add(label);
@@ -88,7 +91,9 @@ public class CourierUI2 extends JPanel {
 		confirm.addMouseListener(courierlistener);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

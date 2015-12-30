@@ -25,7 +25,7 @@ public class AdminUI3 extends JPanel{
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_2;
-
+    private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
     private MyDialog dialog;
@@ -140,5 +140,8 @@ public class AdminUI3 extends JPanel{
 
 	private void setImage() {
 		
+	}
+	public void setText(String s){
+		dialog.setText(s);
 	}
 }

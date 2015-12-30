@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -35,7 +36,7 @@ public class FinanceUI4_3 extends JPanel {
 	private FinanceListener4 financeListener4;
 	private MyTextField textField_1;
 	private MyTextField textField_2;
-
+    private MyDialog dialog;
 	public FinanceUI4_3(FinanceListener4 financeListener4) {
 		this.financeListener4 = financeListener4;
 		initialize();
@@ -47,7 +48,8 @@ public class FinanceUI4_3 extends JPanel {
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 		setBackground(Color.white);
-
+		dialog=new MyDialog();
+		this.add(dialog);
 		String names[] = { "账户", "余额" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -127,7 +129,9 @@ public class FinanceUI4_3 extends JPanel {
 		textField_2.setColumns(10);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTable getTable() {
 		return table;
 	}

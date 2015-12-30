@@ -45,7 +45,7 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private boolean check(InstitutionVO vo) {
 		if (vo == null) {
-			JOptionPane.showMessageDialog(ui, "机构编号不存在！");
+			ui.setText("机构编号不存在！");
 			return false;
 		}
 		return true;
@@ -53,13 +53,13 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private boolean check(String id) {
 		if (id.length() != 6) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText("请确认机构编号格式是否正确！");
 			return false;
 		}
 		try {
 			Integer.parseInt(id);
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText("请确认机构编号格式是否正确！");
 			return false;
 		}
 		return true;

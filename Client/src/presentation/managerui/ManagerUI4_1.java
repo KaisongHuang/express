@@ -8,6 +8,8 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import listener.managerlistener.ManagerListener4_1;
+import presentation.MySwing.MyDialog;
+
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 import javax.swing.JComboBox;
@@ -18,6 +20,7 @@ public class ManagerUI4_1 extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	private MyButton btnNewButton_14;
 	private MyButton btnNewButton_15;
 
@@ -28,7 +31,7 @@ public class ManagerUI4_1 extends JPanel {
 	private JComboBox<String> comboBox_4;
 	private JComboBox<String> comboBox_5;
 	private JComboBox<String> comboBox_6;
-
+	private MyDialog dialog;
 	private MyTextField myTextField;
 	private MyTextField myTextField_1;
 	private MyTextField myTextField_2;
@@ -58,7 +61,8 @@ public class ManagerUI4_1 extends JPanel {
 		this.setBounds(0, 44, 746, 394);
 
 		this.setLayout(null);
-
+        dialog=new MyDialog();
+        this.add(dialog);
 		JLabel lblNewLabel_1 = new JLabel("总经理：");
 		lblNewLabel_1.setBounds(48, 59, 100, 18);
 		this.add(lblNewLabel_1);

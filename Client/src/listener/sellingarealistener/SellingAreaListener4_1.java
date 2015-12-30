@@ -42,13 +42,13 @@ public class SellingAreaListener4_1 implements ActionListener {
 	}
 	  private boolean check(String id){
 	    	 if(id.length()!=10){
-	    		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+	    		 ui.setText("请确认车辆编号格式是否正确！");
 	    		 return false;
 	    	 }
 	    	 try{
 	    		 Integer.parseInt(id);
 	    	 }catch(NumberFormatException e){
-	    		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+	    		 ui.setText( "请确认车辆编号格式是否正确！");
 	    		 return false;
 	    	 }
 	    	 return true;

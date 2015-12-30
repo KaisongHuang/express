@@ -25,7 +25,7 @@ public class AdminUI2 extends JPanel {
 	private MyTextField textField_2;
 
 	private JComboBox<String> comboBox_1;
-
+    private MyDialog dialog;
 	private MyButton search;
 	private MyButton confirm;
 	private MyButton clear;
@@ -200,6 +200,10 @@ public class AdminUI2 extends JPanel {
 
 	public void setClear(MyButton cancle) {
 		this.clear = cancle;
+	}
+	
+	public void setText(String s){
+		dialog.setText(s);
 	}
 
 }

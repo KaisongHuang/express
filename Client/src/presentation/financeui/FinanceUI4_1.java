@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.financelistener.FinanceListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
 import javax.swing.ImageIcon;
@@ -37,7 +38,7 @@ public class FinanceUI4_1 extends JPanel {
 	FinanceListener4 financeListener4;
 	private int height = 600;
 	private int width = 900;
-
+    private MyDialog dialog;
 	/**
 	 * Create the panel.
 	 */
@@ -63,7 +64,8 @@ public class FinanceUI4_1 extends JPanel {
 		JSP = new JScrollPane(table);
 		JSP.setBounds(80, 60, 444, 270);
 		this.add(JSP);
-
+		dialog=new MyDialog();
+		this.add(dialog);
 		ret = new MyButton("返回");
 		ret.setBounds(80, 19, 75, 29);
 		ret.addActionListener(financeListener4);
@@ -94,7 +96,9 @@ public class FinanceUI4_1 extends JPanel {
 		day.setBounds(486, 342, 16, 16);
 		add(day);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyButton getRet() {
 		return ret;
 	}

@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -48,6 +49,7 @@ public class WarehouseUI2 extends JPanel {
 	private JScrollPane JSP;
 	private Vector<String> name;
 	private Vector<Object> data;
+	private MyDialog dialog;
 	private static final long serialVersionUID = 1L;
 	WarehouseListener2 warehouseListener;
 
@@ -76,6 +78,8 @@ public class WarehouseUI2 extends JPanel {
 		JSP.setBounds(6, 29, 472, 350);
 		this.add(JSP);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		label_8 = new JLabel("库存查看");
 		label_8.setBounds(562, 31, 57, 15);
 		this.add(label_8);
@@ -179,7 +183,9 @@ public class WarehouseUI2 extends JPanel {
 		textArea_2.setEditable(false);
 		add(textArea_2);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public DefaultTableModel getModel() {
 		return model;
 	}

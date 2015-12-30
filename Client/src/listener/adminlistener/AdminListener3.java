@@ -56,13 +56,14 @@ public class AdminListener3 implements MouseListener, ActionListener {
 	}
 	private boolean check(String id){
 		if(id.length()!=10){
-			ui.setText("请确保编号长度为10！");
+			ui.setText( "请确保编号长度为10！");
+
    		   return false;
 		}
    	 try{
    		 Integer.parseInt(id);
    	 }catch(NumberFormatException e){
-   		ui.setText("请确保编号只包含数字！");
+   		ui.setText( "请确保编号只包含数字！");
    		 return false;
    	 }
    	 return true;

@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.warehouselistener.WarehouseListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
 public class WarehouseUI3 extends JPanel {
@@ -32,7 +33,7 @@ public class WarehouseUI3 extends JPanel {
 	private MyButton button_2;
 	private MyButton button_3;
 	WarehouseListener3 warehouseListener;
-
+    private MyDialog dialog;
 	/**
 	 * Create the application.
 	 */
@@ -62,6 +63,8 @@ public class WarehouseUI3 extends JPanel {
 		JSP.setBounds(15, 29, 692, 326);
 		this.add(JSP);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		button = new MyButton("刷新");
 		button.setBounds(18, 369, 94, 27);
 		button.addActionListener(warehouseListener);
@@ -82,7 +85,9 @@ public class WarehouseUI3 extends JPanel {
 		button_3.addActionListener(warehouseListener);
 		add(button_3);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTable getTable() {
 		return table;
 	}

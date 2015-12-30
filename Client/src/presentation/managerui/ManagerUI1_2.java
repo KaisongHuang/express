@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import listener.managerlistener.ManagerListener1_2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 public class ManagerUI1_2 extends JPanel {
@@ -20,7 +21,7 @@ public class ManagerUI1_2 extends JPanel {
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_3;
-
+    private MyDialog dialog;
 	private MyButton search;
 	private MyButton update;
 	
@@ -47,6 +48,8 @@ public class ManagerUI1_2 extends JPanel {
 
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel lblNewLabel_1 = new JLabel("机构编号：");
 		lblNewLabel_1.setBounds(75, 72, 100, 18);
 		this.add(lblNewLabel_1);
@@ -96,7 +99,9 @@ public class ManagerUI1_2 extends JPanel {
         update.addMouseListener(managerlistener);
 	
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}
