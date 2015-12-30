@@ -10,6 +10,7 @@ import po.CentreArrivalPO;
 import po.CentrePackPO;
 import po.CentreTransforPO;
 import po.DeliverPO;
+import po.DistanceAndFee;
 import po.EmployeePO;
 import po.InStoragePO;
 import po.InstitutionPO;
@@ -20,7 +21,7 @@ import po.ReceiptPO;
 import po.SalaryPO;
 
 public interface ManagerDataService {
-
+	public ArrayList<DistanceAndFee> getCity()throws RemoteException;
 	public EmployeePO findEmployee(String id) throws RemoteException;
 
 	public InstitutionPO findInStitution(String id) throws RemoteException;
