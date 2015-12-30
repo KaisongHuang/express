@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
-public class MyTextField extends JTextField{
+public class MyTextField extends JTextField implements ActionListener {
 	/**
 	 * 
 	 */
@@ -25,15 +25,23 @@ public class MyTextField extends JTextField{
 	}
 
 	protected void paintComponent(Graphics g) {
-		g.setColor(getBackground());
-		g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
-//		g.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
-		super.paintComponent(g);
+		if(!enter){
+		    g.setColor(getBackground());
+		    g.drawRect(5, 5, getWidth() - 10, getHeight() - 10);
+//		    g.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
+		    super.paintComponent(g);
+		}
+		else if(enter){
+			g.setColor(getBackground());
+			for(int i=0;i<5;i++){
+				g.drawRect(i, i, getWidth()-2*i, getHeight()-2*i);
+			}
+		}
 	}
 
 	protected void paintBorder(Graphics g) {
 		g.setColor(new Color(158, 211, 240));
-		g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+		g.drawRect(5, 5, getWidth() - 10, getHeight() - 10);
 //		g.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
 	}
 
