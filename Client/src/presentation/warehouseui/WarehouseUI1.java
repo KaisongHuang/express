@@ -17,17 +17,15 @@ import javax.swing.JLabel;
 
 import listener.warehouselistener.WarehouseListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDatePicker;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.SubNaviButton;
 
-import javax.swing.JComboBox;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Vector;
-import java.awt.event.ActionEvent;
 
 //出库入库界面
 public class WarehouseUI1 extends JPanel {
@@ -49,30 +47,30 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_5;
 	private JLabel label_6;
 	private MyDialog dialog;
-	private JComboBox<String> comboBox;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox_2;
-	private JComboBox<String> comboBox_3;
+	private MyComboBox<String> comboBox;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox_2;
+	private MyComboBox<String> comboBox_3;
 	private WarehouseListener1 listener;
 	private CardLayout card;
 	private JPanel importPanel;
 	private JLabel label_8;
-	private JComboBox<Object> comboBox_4;
+	private MyComboBox<Object> comboBox_4;
 	private JLabel label_10;
-	private JComboBox<Object> comboBox_5;
+	private MyComboBox<Object> comboBox_5;
 	private JLabel label_11;
-	private JComboBox<Object> comboBox_6;
+	private MyComboBox<Object> comboBox_6;
 	private JLabel label_12;
 	private MyButton button;
 	private MyButton button_6;
 	private JLabel label_13;
-	private JComboBox<Object> comboBox_7;
-	private JComboBox<Object> comboBox_8;
+	private MyComboBox<Object> comboBox_7;
+	private MyComboBox<Object> comboBox_8;
 	private JLabel label_14;
 	private JLabel label_15;
-	private JComboBox<Object> comboBox_9;
+	private MyComboBox<Object> comboBox_9;
 	private JLabel label_16;
-	private JComboBox<Object> comboBox_10;
+	private MyComboBox<Object> comboBox_10;
 	private JPanel panel;
 
 	private MyTable table;
@@ -142,7 +140,7 @@ public class WarehouseUI1 extends JPanel {
 		label_1.setBounds(333, 84, 57, 15);
 		exportPanel.add(label_1);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(391, 80, 70, 25);
 		comboBox.addItem("2015");
 		exportPanel.add(comboBox);
@@ -151,7 +149,7 @@ public class WarehouseUI1 extends JPanel {
 		label_3.setBounds(462, 84, 23, 15);
 		exportPanel.add(label_3);
 
-		comboBox_1 = new JComboBox<String>();
+		comboBox_1 = new MyComboBox<String>();
 		comboBox_1.setBounds(391, 107, 70, 25);
 		comboBox_1.addItem("01");
 		exportPanel.add(comboBox_1);
@@ -160,7 +158,7 @@ public class WarehouseUI1 extends JPanel {
 		label_4.setBounds(462, 111, 13, 15);
 		exportPanel.add(label_4);
 
-		comboBox_2 = new JComboBox<String>();
+		comboBox_2 = new MyComboBox<String>();
 		comboBox_2.setBounds(391, 134, 70, 25);
 		comboBox_2.addItem("01");
 		exportPanel.add(comboBox_2);
@@ -174,7 +172,7 @@ public class WarehouseUI1 extends JPanel {
 		label_6.setBounds(6, 179, 57, 15);
 		exportPanel.add(label_6);
 
-		comboBox_3 = new JComboBox<String>();
+		comboBox_3 = new MyComboBox<String>();
 		comboBox_3.setBounds(75, 175, 70, 25);
 		comboBox_3.addItem("飞机");
 		comboBox_3.addItem("火车");
@@ -224,7 +222,7 @@ public class WarehouseUI1 extends JPanel {
 		mdp1.setBounds(393, 48, 117, 25);
 		importPanel.add(mdp1);
 
-		// comboBox_4 = new JComboBox<Object>();
+		// comboBox_4 = new MyComboBox<Object>();
 		// comboBox_4.setBounds(393, 48, 94, 25);
 		// comboBox_4.addItem("2015");
 		// importPanel.add(comboBox_4);
@@ -233,7 +231,7 @@ public class WarehouseUI1 extends JPanel {
 		// label_10.setBounds(491, 52, 20, 15);
 		// importPanel.add(label_10);
 		//
-		// comboBox_5 = new JComboBox<Object>();
+		// comboBox_5 = new MyComboBox<Object>();
 		// comboBox_5.setBounds(393, 79, 94, 25);
 		// comboBox_5.addItem("01");
 		// importPanel.add(comboBox_5);
@@ -242,7 +240,7 @@ public class WarehouseUI1 extends JPanel {
 		// label_11.setBounds(491, 79, 20, 15);
 		// importPanel.add(label_11);
 		//
-		// comboBox_6 = new JComboBox<Object>();
+		// comboBox_6 = new MyComboBox<Object>();
 		// comboBox_6.setBounds(393, 116, 94, 25);
 		// comboBox_6.addItem("01");
 		// importPanel.add(comboBox_6);
@@ -265,7 +263,7 @@ public class WarehouseUI1 extends JPanel {
 		label_13.setBounds(361, 100, 31, 16);
 		importPanel.add(label_13);
 
-		comboBox_7 = new JComboBox<Object>();
+		comboBox_7 = new MyComboBox<Object>();
 		comboBox_7.setBounds(393, 95, 94, 27);
 		comboBox_7.addItem("航运区");
 		comboBox_7.addItem("铁运区");
@@ -276,7 +274,7 @@ public class WarehouseUI1 extends JPanel {
 		label_14.setBounds(361, 142, 42, 16);
 		importPanel.add(label_14);
 
-		comboBox_8=new JComboBox<Object>();
+		comboBox_8=new MyComboBox<Object>();
 		comboBox_8.setBounds(393,138,94,27);
 		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
@@ -287,7 +285,7 @@ public class WarehouseUI1 extends JPanel {
 
 
 
-		comboBox_9 = new JComboBox<Object>();
+		comboBox_9 = new MyComboBox<Object>();
 		comboBox_9.setBounds(393, 182, 94, 27);
 		comboBox_9.addItem("1");
 		importPanel.add(comboBox_9);
@@ -296,7 +294,7 @@ public class WarehouseUI1 extends JPanel {
 		label_16.setBounds(361, 241, 61, 16);
 		importPanel.add(label_16);
 
-		comboBox_10 = new JComboBox<Object>();
+		comboBox_10 = new MyComboBox<Object>();
 		comboBox_10.setBounds(393, 230, 94, 27);
 		comboBox_10.addItem("1");
 		importPanel.add(comboBox_10);
@@ -429,19 +427,19 @@ public class WarehouseUI1 extends JPanel {
 		return label_6;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox_2() {
+	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<String> getComboBox_3() {
+	public MyComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
@@ -461,7 +459,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_8;
 	}
 
-	public JComboBox<Object> getComboBox_4() {
+	public MyComboBox<Object> getComboBox_4() {
 		return comboBox_4;
 	}
 
@@ -469,7 +467,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_10;
 	}
 
-	public JComboBox<Object> getComboBox_5() {
+	public MyComboBox<Object> getComboBox_5() {
 		return comboBox_5;
 	}
 
@@ -477,7 +475,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_11;
 	}
 
-	public JComboBox<Object> getComboBox_6() {
+	public MyComboBox<Object> getComboBox_6() {
 		return comboBox_6;
 	}
 
@@ -497,7 +495,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_13;
 	}
 
-	public JComboBox<Object> getComboBox_7() {
+	public MyComboBox<Object> getComboBox_7() {
 		return comboBox_7;
 	}
 
@@ -505,7 +503,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_14;
 	}
 
-	public JComboBox<Object> getComboBox_8() {
+	public MyComboBox<Object> getComboBox_8() {
 		return comboBox_8;
 	}
 
@@ -513,7 +511,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_15;
 	}
 
-	public JComboBox<Object> getComboBox_9() {
+	public MyComboBox<Object> getComboBox_9() {
 		return comboBox_9;
 	}
 
@@ -521,7 +519,7 @@ public class WarehouseUI1 extends JPanel {
 		return label_16;
 	}
 
-	public JComboBox<Object> getComboBox_10() {
+	public MyComboBox<Object> getComboBox_10() {
 		return comboBox_10;
 	}
 
