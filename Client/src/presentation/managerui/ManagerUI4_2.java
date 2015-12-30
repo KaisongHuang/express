@@ -5,12 +5,20 @@
 package presentation.managerui;
 
 import java.awt.Color;
+import java.util.Arrays;
+import java.util.Vector;
+
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
 import listener.managerlistener.ManagerListener4_2;
+import presentation.MySwing.MyButton;
 import presentation.MySwing.MyDialog;
+import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
 public class ManagerUI4_2 extends JPanel {
@@ -19,19 +27,24 @@ public class ManagerUI4_2 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private MyTextField textField;
-	private MyTextField textField_2;
-	private MyTextField textField_4;
-	private MyTextField textField_6;
-	private MyTextField textField_8;
 	private MyTextField textField_1;
-    private MyDialog dialog;
-	private JButton btnNewButton_14;
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_17;
+	private MyTextField myTextField;
+	private MyTextField myTextField_1;
+	private MyTextField myTextField_2;
 
-	ManagerListener4_2 managerlistener;
+	private MyButton myButton;
+	private MyButton myButton_1;
+	private MyButton myButton_2;
+	private MyButton myButton_3;
+
+	private MyTable table;
+	private JScrollPane JSP;
+	private Vector<String> name;
+	private Vector<Object> data;
+	private DefaultTableModel model;
+
+	private MyDialog dialog;
+	private ManagerListener4_2 managerlistener;
 
 	/**
 	 * Create the application.
@@ -52,104 +65,130 @@ public class ManagerUI4_2 extends JPanel {
 		this.setBounds(0, 44, 790, 433);
 
 		this.setLayout(null);
-        dialog=new MyDialog();
-        this.add(dialog);
-		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(Color.WHITE);
-		panel_6.setBounds(23, 79, 743, 282);
-		this.add(panel_6);
-		panel_6.setLayout(null);
+		dialog = new MyDialog();
+		this.add(dialog);
 
-		JLabel lblNewLabel_1 = new JLabel("价格");
-		lblNewLabel_1.setBounds(435, 10, 100, 18);
-		panel_6.add(lblNewLabel_1);
+		String names[] = { "城市A", "城市B", "距离(KM)" };
+		name = new Vector<String>(Arrays.asList(names));
+		table = new MyTable(data, name);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.addMouseListener(managerlistener);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
+		model = (DefaultTableModel) table.getModel();
+		JSP = new JScrollPane(table);
+		JSP.setBounds(21, 90, 340, 272);
+		this.add(JSP);
 
-		textField = new MyTextField();
-		textField.setBounds(388, 40, 122, 30);
-		panel_6.add(textField);
-		textField.setColumns(10);
-
-		textField_2 = new MyTextField();
-		textField_2.setBounds(388, 69, 122, 30);
-		panel_6.add(textField_2);
-		textField_2.setColumns(10);
-
-		textField_4 = new MyTextField();
-		textField_4.setBounds(388, 102, 122, 30);
-		panel_6.add(textField_4);
-		textField_4.setColumns(10);
-
-		textField_6 = new MyTextField();
-		textField_6.setBounds(388, 134, 122, 30);
-		panel_6.add(textField_6);
-		textField_6.setColumns(10);
-
-		textField_8 = new MyTextField();
-		textField_8.setBounds(388, 167, 122, 30);
-		panel_6.add(textField_8);
-		textField_8.setColumns(10);
-
-		JLabel lblNewLabel = new JLabel("1");
-		lblNewLabel.setBounds(51, 46, 55, 18);
-		panel_6.add(lblNewLabel);
-
-		JLabel lblNewLabel_3 = new JLabel("2");
-		lblNewLabel_3.setBounds(183, 46, 55, 18);
-		panel_6.add(lblNewLabel_3);
-
-		JLabel lblNewLabel_4 = new JLabel("3");
-		lblNewLabel_4.setBounds(51, 108, 55, 18);
-		panel_6.add(lblNewLabel_4);
-
-		JLabel lblNewLabel_5 = new JLabel("4");
-		lblNewLabel_5.setBounds(51, 140, 55, 18);
-		panel_6.add(lblNewLabel_5);
-
-		JLabel lblNewLabel_6 = new JLabel("5");
-		lblNewLabel_6.setBounds(51, 173, 55, 18);
-		panel_6.add(lblNewLabel_6);
-
-		JLabel lblNewLabel_7 = new JLabel("6");
-		lblNewLabel_7.setBounds(51, 75, 55, 18);
-		panel_6.add(lblNewLabel_7);
-
-		JLabel lblNewLabel_8 = new JLabel("7");
-		lblNewLabel_8.setBounds(183, 75, 55, 18);
-		panel_6.add(lblNewLabel_8);
-
-		JLabel lblNewLabel_9 = new JLabel("8");
-		lblNewLabel_9.setBounds(183, 108, 55, 18);
-		panel_6.add(lblNewLabel_9);
-
-		JLabel lblNewLabel_10 = new JLabel("9");
-		lblNewLabel_10.setBounds(183, 140, 55, 18);
-		panel_6.add(lblNewLabel_10);
-
-		JLabel lblNewLabel_11 = new JLabel("10");
-		lblNewLabel_11.setBounds(183, 173, 55, 18);
-		panel_6.add(lblNewLabel_11);
-
-		btnNewButton_16 = new JButton("确定");
-		btnNewButton_16.setBounds(122, 390, 90, 30);
-		this.add(btnNewButton_16);
-		btnNewButton_16.addActionListener(managerlistener);
-
-		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(495, 390, 90, 30);
-		this.add(btnNewButton_17);
-		btnNewButton_17.addActionListener(managerlistener);
-
-		JLabel label = new JLabel("\u4EF7\u683C\uFF08\u6BCF\u5343\u516C\u91CC\uFF09");
-		label.setBounds(86, 49, 150, 18);
+		JLabel label = new JLabel("价格(每千公里):");
+		label.setBounds(21, 60, 150, 18);
 		add(label);
 
+		JLabel lbla = new JLabel("城市A：");
+		lbla.setBounds(392, 101, 61, 16);
+		add(lbla);
+
+		JLabel lblb = new JLabel("城市B：");
+		lblb.setBounds(392, 161, 61, 16);
+		add(lblb);
+
+		JLabel lblkm = new JLabel("距离(KM)：");
+		lblkm.setBounds(392, 220, 73, 16);
+		add(lblkm);
+
 		textField_1 = new MyTextField();
-		textField_1.setBounds(217, 43, 122, 30);
+		textField_1.setBounds(115, 54, 122, 30);
 		add(textField_1);
 		textField_1.setColumns(10);
 
+		myTextField = new MyTextField();
+		myTextField.setColumns(10);
+		myTextField.setBounds(465, 94, 122, 30);
+		add(myTextField);
+
+		myTextField_1 = new MyTextField();
+		myTextField_1.setColumns(10);
+		myTextField_1.setBounds(465, 155, 122, 30);
+		add(myTextField_1);
+
+		myTextField_2 = new MyTextField();
+		myTextField_2.setColumns(10);
+		myTextField_2.setBounds(465, 214, 122, 30);
+		add(myTextField_2);
+
+		myButton = new MyButton("添加");
+		myButton.setBounds(392, 260, 195, 30);
+		myButton.addActionListener(managerlistener);
+		add(myButton);
+
+		myButton_1 = new MyButton("修改");
+		myButton_1.setBounds(392, 296, 195, 30);
+		myButton_1.addActionListener(managerlistener);
+		add(myButton_1);
+
+		myButton_2 = new MyButton("删除");
+		myButton_2.setBounds(392, 332, 195, 30);
+		myButton_2.addActionListener(managerlistener);
+		add(myButton_2);
+
+		myButton_3 = new MyButton("设定");
+		myButton_3.setBounds(243, 54, 118, 30);
+		add(myButton_3);
+
+		setData();
 	}
-	public void setText(String s){
+
+	public MyTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public MyTextField getMyTextField() {
+		return myTextField;
+	}
+
+	public MyTextField getMyTextField_1() {
+		return myTextField_1;
+	}
+
+	public MyTextField getMyTextField_2() {
+		return myTextField_2;
+	}
+
+	public MyTable getTable() {
+		return table;
+	}
+
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+	public MyButton getMyButton() {
+		return myButton;
+	}
+
+	public MyButton getMyButton_1() {
+		return myButton_1;
+	}
+
+	public MyButton getMyButton_2() {
+		return myButton_2;
+	}
+
+	public MyButton getMyButton_3() {
+		return myButton_3;
+	}
+
+	public void setText(String s) {
 		dialog.setText(s);
+	}
+
+	private void setData() {
+		this.myTextField.setText();
+		this.myTextField_1.setText();
+		this.myTextField_2.setText();
+		this.textField_1.setText();
 	}
 }
