@@ -11,10 +11,9 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import listener.courierlistener.CourierListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
-
-import javax.swing.JComboBox;
 
 //订单输入界面
 public class CourierUI extends JPanel{
@@ -46,8 +45,8 @@ public class CourierUI extends JPanel{
 	private MyDialog dialog;
 
 	CourierListener0 courierlistener;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox;
 	private MyButton confirm;
 	private MyButton cancle;
 	@SuppressWarnings("unused")
@@ -55,7 +54,7 @@ public class CourierUI extends JPanel{
 	@SuppressWarnings("unused")
 	private int height;
 
-	
+
 	/**
 	 * Create the application.
 	 * @param width
@@ -77,7 +76,7 @@ public class CourierUI extends JPanel{
 		setBackground(Color.white);
 
 		this.setLayout(null);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("寄件人信息");
 		lblNewLabel_1.setBounds(300, 0, 84, 30);
 		this.add(lblNewLabel_1);
@@ -231,7 +230,7 @@ public class CourierUI extends JPanel{
 		lblNewLabel_12.setBounds(14, 316, 65, 24);
 		this.add(lblNewLabel_12);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(81, 312, 123, 28);
 		comboBox.addItem("快递袋");
 		comboBox.addItem("纸箱");
@@ -243,7 +242,7 @@ public class CourierUI extends JPanel{
 		label_6.setBounds(216, 316, 65, 24);
 		this.add(label_6);
 
-		comboBox_1 = new JComboBox<String>();
+		comboBox_1 = new MyComboBox<String>();
 		comboBox_1.setBounds(287, 311, 122, 29);
 		comboBox_1.addItem("经快");
 		comboBox_1.addItem("普快");
@@ -258,39 +257,39 @@ public class CourierUI extends JPanel{
 		cancle = new MyButton("清空");
 		cancle.setBounds(529, 384, 100, 30);
 		this.add(cancle);
-		
+
 		textField_15 = new MyTextField();
 		textField_15.setColumns(10);
 		textField_15.setBounds(396, 25, 65, 30);
 		add(textField_15);
-		
+
 		textField_16 = new MyTextField();
 		textField_16.setColumns(10);
 		textField_16.setBounds(520, 25, 154, 30);
 		add(textField_16);
-		
+
 		textField_17 = new MyTextField();
 		textField_17.setColumns(10);
 		textField_17.setBounds(396, 115, 65, 30);
 		add(textField_17);
-		
+
 		textField_18 = new MyTextField();
 		textField_18.setColumns(10);
 		textField_18.setBounds(520, 115, 154, 30);
 		add(textField_18);
-		
+
 		JLabel label_7 = new JLabel("省（直辖市）");
 		label_7.setBounds(320, 32, 84, 16);
 		add(label_7);
-		
+
 		JLabel label_9 = new JLabel("市（区）");
 		label_9.setBounds(461, 32, 52, 16);
 		add(label_9);
-		
+
 		JLabel label_8 = new JLabel("省（直辖市）");
 		label_8.setBounds(320, 122, 83, 16);
 		add(label_8);
-		
+
 		JLabel label_10 = new JLabel("市（区）");
 		label_10.setBounds(461, 122, 52, 16);
 		add(label_10);
@@ -438,19 +437,19 @@ public class CourierUI extends JPanel{
 		this.textField_14 = textField_14;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox<String> comboBox_1) {
+	public void setComboBox_1(MyComboBox<String> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
@@ -458,7 +457,7 @@ public class CourierUI extends JPanel{
 		return confirm;
 	}
 
-	
+
 
 	public MyButton getCancle() {
 		return cancle;
@@ -466,6 +465,6 @@ public class CourierUI extends JPanel{
 
 	@SuppressWarnings("unused")
 	private void setImage() {
-		
+
 	}
 }
