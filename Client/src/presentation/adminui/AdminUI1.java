@@ -25,7 +25,7 @@ public class AdminUI1 extends JPanel {
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_3;
-
+    
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
     private MyDialog dialog;
@@ -62,7 +62,6 @@ public class AdminUI1 extends JPanel {
 		this.setLayout(null);
 		
 		dialog=new MyDialog();
-	
 		this.add(dialog);
 		
 		JLabel label_3 = new JLabel("姓名：");
@@ -116,10 +115,6 @@ public class AdminUI1 extends JPanel {
 		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
 		
-		MyDialog myDialog = new MyDialog();
-		myDialog.setBounds(51, 223, 100, 100);
-		add(myDialog);
-		
      
 		
 		btnNewButton_10.addActionListener(adminlistener);
@@ -128,9 +123,6 @@ public class AdminUI1 extends JPanel {
 		btnNewButton_11.addMouseListener(adminlistener);
 	}
  
-	public void setText(String s){
-		dialog.setText(s);
-	}
 	public MyTextField getTextField() {
 		return textField;
 	}
@@ -178,5 +170,9 @@ public class AdminUI1 extends JPanel {
 	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
-    
+
+    public void setText(String s){
+    	dialog.setText(s);
+    }
+
 }

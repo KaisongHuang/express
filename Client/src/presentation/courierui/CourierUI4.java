@@ -12,6 +12,7 @@ import javax.swing.JTextArea;
 
 import listener.courierlistener.CourierListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 //历史轨迹及货物状态
@@ -21,7 +22,7 @@ public class CourierUI4 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
+    private MyDialog dialog;
 	private MyTextField textField;
 
 	private JTextArea textArea;
@@ -57,6 +58,8 @@ public class CourierUI4 extends JPanel {
 
 		this.setBackground(Color.white);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		this.setBounds(136, 115, 746, 437);
 		setLayout(null);
 
@@ -101,7 +104,9 @@ public class CourierUI4 extends JPanel {
 		search.addMouseListener(courierlistener);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}

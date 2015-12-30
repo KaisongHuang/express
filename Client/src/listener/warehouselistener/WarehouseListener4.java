@@ -172,19 +172,19 @@ public class WarehouseListener4 implements ActionListener {
 
 	private boolean check(InStorageVO vo){
 		if(vo.checkDate()==0){
-			JOptionPane.showMessageDialog(ui, "请检查入库日期是否正确！");
+			ui.setText("请检查入库日期是否正确！");
 			return false;
 		}
 		if(vo.checkJia()==0){
-			JOptionPane.showMessageDialog(ui, "请检查仓库架号是否正确！");
+			ui.setText("请检查仓库架号是否正确！");
 			return false;
 		}
 		if(vo.checkPai()==0){
-			JOptionPane.showMessageDialog(ui, "请检查仓库排号是否正确！");
+			ui.setText("请检查仓库排号是否正确！");
 			return false;
 		}
 		if(vo.checkWei()==0){
-			JOptionPane.showMessageDialog(ui, "请检查仓库位号是否正确！");
+			ui.setText("请检查仓库位号是否正确！");
 			return false;
 		}
 		return true;
@@ -201,6 +201,6 @@ public class WarehouseListener4 implements ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 }

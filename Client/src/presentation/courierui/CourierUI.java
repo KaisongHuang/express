@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import listener.courierlistener.CourierListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
@@ -42,7 +43,7 @@ public class CourierUI extends JPanel{
 	private MyTextField textField_16;
 	private MyTextField textField_17;
 	private MyTextField textField_18;
-	
+	private MyDialog dialog;
 
 	CourierListener0 courierlistener;
 	private JComboBox<String> comboBox_1;
@@ -85,6 +86,8 @@ public class CourierUI extends JPanel{
 		lblNewLabel_2.setBounds(10, 25, 84, 30);
 		this.add(lblNewLabel_2);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		textField = new MyTextField();
 		textField.setBounds(83, 26, 121, 30);
 		this.add(textField);
@@ -298,7 +301,9 @@ public class CourierUI extends JPanel{
 		confirm.addMouseListener(courierlistener);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

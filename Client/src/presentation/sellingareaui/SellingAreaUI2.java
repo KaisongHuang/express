@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.sellingarealistener.SellingAreaListener20;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -38,6 +39,7 @@ public class SellingAreaUI2 extends JPanel {
 	private Vector<Object> data1;
 	private DefaultTableModel model1;
 
+	private MyDialog dialog;
 	private SellingAreaListener20 sellingarealistener;
 	private MyTextField textField;
 	private MyTextField textField_1;
@@ -88,6 +90,8 @@ public class SellingAreaUI2 extends JPanel {
 		JSP.setBounds(28, 58, 370, 298);
 		this.add(JSP);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		String names1[] = { "快递订单条形码号" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new MyTable(data1, name1);
@@ -181,7 +185,9 @@ public class SellingAreaUI2 extends JPanel {
 		button_6.addMouseListener(sellingarealistener);
 		add(button_6);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);;
+	}
 	public void setData(Vector<Object> data) {
 		this.data = data;
 	}

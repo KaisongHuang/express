@@ -1,5 +1,6 @@
 package listener.mainlistener;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -50,7 +51,9 @@ public class LoginListener implements ActionListener, MouseListener {
 		} else if (e.getSource() == ui.getLogout()) {
 			System.exit(0);
 		} else if (e.getSource() == ui.getSearch()) {
-			new SearchUI();
+			SearchUI search=new SearchUI();
+			search.setBounds(100,100,900,600);
+		
 		}
 	}
 

@@ -51,7 +51,7 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 
 	private boolean check(InstitutionVO vo) {
 		if (vo == null) {
-			JOptionPane.showMessageDialog(ui, "机构编号不存在！");
+			ui.setText( "机构编号不存在！");
 			return false;
 
 		}
@@ -70,12 +70,12 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText( dialog);
 	}
 
 	private boolean check(String id) {
 		if (id.length() != 6) {
-			JOptionPane.showMessageDialog(ui, "请确认员工编号格式是否正确！");
+			ui.setText( "请确认员工编号格式是否正确！");
 			return false;
 		}
 		try {

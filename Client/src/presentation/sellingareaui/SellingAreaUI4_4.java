@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 
 import listener.sellingarealistener.SellingAreaListener4_4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -28,7 +29,7 @@ public class SellingAreaUI4_4 extends JPanel{
 	private MyTextField textField_6;
 	private MyTextField textField_7;
 	private MyTextField textField_8;
-
+    private MyDialog dialog;
 	private MyButton btnNewButton_17;
 	private MyButton btnNewButton_16;
 
@@ -59,6 +60,8 @@ public class SellingAreaUI4_4 extends JPanel{
 
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(24, 105, 579, 209);
@@ -141,7 +144,9 @@ public class SellingAreaUI4_4 extends JPanel{
 		btnNewButton_17.addActionListener(sellingarealistener);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);;
+	}
 	public MyTextField getTextField_1() {
 		return textField_1;
 	}

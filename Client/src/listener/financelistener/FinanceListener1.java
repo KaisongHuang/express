@@ -67,7 +67,7 @@ public class FinanceListener1 implements ActionListener ,MouseListener{
 
 	private boolean check(ArrayList<ReceiptVO> vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(ui, "查询的信息不存在！");
+			ui.setText( "查询的信息不存在！");
 			return false;
 		}
 		return true;

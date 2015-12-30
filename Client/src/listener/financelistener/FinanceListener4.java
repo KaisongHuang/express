@@ -338,15 +338,15 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	private boolean check(AccountVO vo) {
 		if (vo.checkIsNull() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.getUi3().setText( "请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkAccount() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查账户格式是否正确！");
+			ui.getUi3().setText(  "请检查账户格式是否正确！");
 			return false;
 		}
 		if (vo.checkBalance() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查账户余额是否为正！");
+			ui.getUi3().setText( "请检查账户余额是否为正！");
 			return false;
 		}
 		return true;

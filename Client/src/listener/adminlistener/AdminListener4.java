@@ -46,20 +46,20 @@ public class AdminListener4 implements MouseListener, ActionListener {
 	}
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(ui,"系统中不存在此编号！");
+			ui.setText( "系统中不存在此编号！");
 	   	    return false;
 		}
 		return true;
 	}
 	private boolean check(String id){
 		if(id.length()!=10){
-			JOptionPane.showMessageDialog(ui,"请确保编号长度为10！");
+			ui.setText( "请确保编号长度为10！");
    		   return false;
 		}
    	    try{
    		    Integer.parseInt(id);
    	    }catch(NumberFormatException e){
-   		    JOptionPane.showMessageDialog(ui,"请确保编号只包含数字！");
+   	    	ui.setText( "请确保编号只包含数字！");
    		    return false;
    	 }
    	 return true;

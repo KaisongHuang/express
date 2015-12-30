@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 
 import listener.sellingarealistener.SellingAreaListener10;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 import javax.swing.JComboBox;
@@ -29,7 +30,7 @@ public class SellingAreaUI1 extends JPanel{
 	private MyTextField textField_4;
 	private MyTextField textField_5;
 	private JComboBox<String> comboBox;
-
+    private MyDialog dialog;
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
 
@@ -64,6 +65,8 @@ public class SellingAreaUI1 extends JPanel{
 
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(6, 6, 699, 153);
 		panel_5.setBackground(new Color(233, 150, 122));
@@ -165,7 +168,9 @@ public class SellingAreaUI1 extends JPanel{
 
 	}
 
-
+	public void setText(String s){
+		dialog.setText(s);;
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

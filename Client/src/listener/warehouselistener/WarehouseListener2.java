@@ -81,13 +81,13 @@ public class WarehouseListener2 implements ActionListener {
 
 	private boolean check(String date){
 		 if(date.length()!=8){
-			 JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			 ui.setText("请检查日期格式是否正确！");
     		 return false;
 		 }
          try{
         		 Integer.parseInt(date);
         	 }catch(NumberFormatException e){
-        		 JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+        		 ui.setText("请检查日期格式是否正确！");
         		 return false;
          }
          return true;

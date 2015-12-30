@@ -156,23 +156,23 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 
 	private boolean check(PayVO vo) {
 		if (vo.checkIsNull() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText(  "请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkAccount() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查账户格式是否正确！");
+			ui.setText( "请检查账户格式是否正确！");
 			return false;
 		}
 		if (vo.checkCost() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查金额是否正确！");
+			ui.setText(  "请检查金额是否正确！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			ui.setText(  "请检查日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkPayer() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查付款人编号是否正确！");
+			ui.setText( "请检查付款人编号是否正确！");
 			return false;
 		}
 		return true;
@@ -190,7 +190,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText( dialog);
 	}
 
 	public void mouseClicked(MouseEvent e) {
