@@ -53,14 +53,14 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	}
 	private boolean check(String id){
 		if(id.length()!=10){
-			JOptionPane.showMessageDialog(ui,"请检查编号格式是否正确！");
+			ui.setText( "请检查编号格式是否正确！");
 	   	    return false;
 		}else{
 			try{
 				Integer.parseInt(id);
 			}
 			catch(NumberFormatException e){
-				JOptionPane.showMessageDialog(ui,"编号必须全部由数字组成！");
+				ui.setText( "编号必须全部由数字组成！");
 		   	    return false;
 			}
 		}
@@ -68,7 +68,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	}
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(ui,"系统中不存在此编号！");
+			ui.setText( "系统中不存在此编号！");
 	   	    return false;
 		}
 		return true;
@@ -85,7 +85,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 	
 

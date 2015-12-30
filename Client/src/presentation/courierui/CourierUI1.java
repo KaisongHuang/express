@@ -12,6 +12,7 @@ import javax.swing.JButton;
 
 import listener.courierlistener.CourierListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 public class CourierUI1 extends JPanel{
@@ -23,7 +24,7 @@ public class CourierUI1 extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private MyTextField textField;
 	private MyTextField textField_1;
-
+    private MyDialog dialog;
 	CourierListener1 courierlistener;
 
 	private MyButton button;
@@ -53,6 +54,8 @@ public class CourierUI1 extends JPanel{
 
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel label = new JLabel("");
 		label.setBounds(373, 5, 0, 0);
 		this.add(label);
@@ -80,6 +83,9 @@ public class CourierUI1 extends JPanel{
 		this.add(button);
 		button.addActionListener(courierlistener);
 
+	}
+	public void setText(String s){
+		dialog.setText(s);
 	}
 
 	public MyTextField getTextField() {

@@ -84,23 +84,24 @@ public class CentreMenuUI extends JPanel {
 		button1.setClicked(true);
 		this.add(button1);
 
-		button2 = new NaviButton("飞机装运","/导航/centre/飞机装运.png");// "飞机装运"
+		button2 = new NaviButton("转运管理","/导航/centre/飞机装运.png");// "飞机装运"
 		button2.setBounds(0, label_height * 3, width, label_height);
 		button2.addActionListener(centreMenuListener);
 		button2.addMouseListener(centreMenuListener);
 		this.add(button2);
+		
 
-		button3 = new NaviButton("火车装运","/导航/centre/火车装运.png");// "火车装运"
+		button3 = new NaviButton("装车管理","/导航/centre/汽车装运.png");// "火车装运"
 		button3.setBounds(0, label_height * 4, width, label_height);
 		button3.addActionListener(centreMenuListener);
 		button3.addMouseListener(centreMenuListener);
 		this.add(button3);
-
-		button4 = new NaviButton("汽车装运","/导航/centre/汽车装运.png");// "汽车装运"
-		button4.setBounds(0, label_height * 5, width, label_height);
-		button4.addActionListener(centreMenuListener);
-		button4.addMouseListener(centreMenuListener);
-		this.add(button4);
+//
+//		button4 = new NaviButton("汽车装运","/导航/centre/汽车装运.png");// "汽车装运"
+//		button4.setBounds(0, label_height * 5, width, label_height);
+//		button4.addActionListener(centreMenuListener);
+//		button4.addMouseListener(centreMenuListener);
+//		this.add(button4);
 
 		
 

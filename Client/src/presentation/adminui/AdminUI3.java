@@ -11,6 +11,7 @@ import java.awt.Color;
 
 import listener.adminlistener.AdminListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -24,10 +25,9 @@ public class AdminUI3 extends JPanel{
 	private MyTextField textField;
 	private MyTextField textField_1;
 	private MyTextField textField_2;
-
+    private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
-
 	AdminListener3 adminlistener;
 	private int width;
 	private int height;
@@ -59,6 +59,8 @@ public class AdminUI3 extends JPanel{
 		label.setBounds(53, 35, 61, 16);
 		this.add(label);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel label_1 = new JLabel("新密码:");
 		label_1.setBounds(53, 63, 61, 16);
 		this.add(label_1);
@@ -98,7 +100,6 @@ public class AdminUI3 extends JPanel{
 	}
 
 
-
 	public MyTextField getTextField() {
 		return textField;
 	}
@@ -135,5 +136,8 @@ public class AdminUI3 extends JPanel{
 
 	private void setImage() {
 		
+	}
+	public void setText(String s){
+		dialog.setText(s);
 	}
 }

@@ -17,6 +17,7 @@ import po.ManagerPO;
 import po.OutStoragePO;
 import po.PayPO;
 import po.ReceiptPO;
+import po.SalaryPO;
 
 public interface ManagerDataService {
 
@@ -31,7 +32,8 @@ public interface ManagerDataService {
 	public ResultMessage update(ManagerPO po) throws RemoteException;
 
 	public ResultMessage update(Object ob) throws RemoteException;
-
+	
+	public ArrayList<SalaryPO> getSalary()throws RemoteException;
 	/**
 	 * 新增以下接口
 	 * 

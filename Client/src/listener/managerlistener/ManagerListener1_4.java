@@ -43,13 +43,13 @@ public class ManagerListener1_4 implements MouseListener, ActionListener {
 
 	private boolean check(String id) {
 		if (id.length() != 6) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText("请确认机构编号格式是否正确！");
 			return false;
 		}
 		try {
 			Integer.parseInt(id);
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText( "请确认机构编号格式是否正确！");
 			return false;
 		}
 		return true;
@@ -67,7 +67,7 @@ public class ManagerListener1_4 implements MouseListener, ActionListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 
 	private InstitutionVO read() {

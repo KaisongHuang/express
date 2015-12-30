@@ -7,18 +7,18 @@ import po.CentrePO;
 
 public class CentreTransforPO extends CentrePO  implements Serializable{
 
-	String transforStyle;
-	String dataOfGetin;
-	String centreTransferID;
-	String banHao;
-	String start;
-	String arrival;
-	String huoGuiHao;
-	String jianZhuangYuan;
-	ArrayList<String> list = new ArrayList<String>();
-	double fee;
-    int isCheck;
-    int isOutStorage;
+	private String transforStyle;
+	private String dataOfGetin;
+	private String centreTransferID;
+	private String banHao;
+	private String start;
+	private String arrival;
+	private String huoGuiHao;
+	private String jianZhuangYuan;
+	private ArrayList<String> list = new ArrayList<String>();
+	private double fee;
+	private int isCheck;
+	private int isOutStorage;
 	public CentreTransforPO(String ts, String dog, String cti, String bh,
 			String start, String arrival, String hgh, String jzy,
 			ArrayList<String> list, double fee,int isCheck,int isOutStorage) {

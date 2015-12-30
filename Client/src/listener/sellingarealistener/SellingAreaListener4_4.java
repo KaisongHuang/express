@@ -56,27 +56,27 @@ public class SellingAreaListener4_4 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 	private boolean check(DriverVO vo){
 		if(vo.checkIsNull()==0){
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText("请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkBirthday()==0){
-			JOptionPane.showMessageDialog(ui, "请检查司机生日格式是否正确！");
+			ui.setText("请检查司机生日格式是否正确！");
 			return false;
 		}
 		if(vo.checkID()==0){
-			JOptionPane.showMessageDialog(ui, "请检查司机身份证号是否正确！");
+			ui.setText("请检查司机身份证号是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			JOptionPane.showMessageDialog(ui, "请检查司机编号！");
+			ui.setText("请检查司机编号！");
 			return false;
 		}
 		if(vo.checkPhone()==0){
-			JOptionPane.showMessageDialog(ui, "请检查司机手机号格式是否正确！");
+			ui.setText( "请检查司机手机号格式是否正确！");
 			return false;
 		}
 		return true;

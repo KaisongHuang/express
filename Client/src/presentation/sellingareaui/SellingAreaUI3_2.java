@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.*;
 import listener.sellingarealistener.SellingAreaListener3_2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -27,6 +28,7 @@ public class SellingAreaUI3_2 extends JPanel{
 	private MyTextField textField_5;
 	private MyTextField textField_6;
 
+	private MyDialog dialog;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
@@ -71,6 +73,8 @@ public class SellingAreaUI3_2 extends JPanel{
 		this.setBounds(136, 114, 746, 394);
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		lblNewLabel_1 = new JLabel("车辆编号：");
 		lblNewLabel_1.setBounds(51, 57, 100, 18);
 		this.add(lblNewLabel_1);
@@ -158,7 +162,9 @@ public class SellingAreaUI3_2 extends JPanel{
 
 	}
 
-
+	public void setText(String s){
+		dialog.setText(s);;
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

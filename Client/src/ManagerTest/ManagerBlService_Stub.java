@@ -20,6 +20,7 @@ import vo.OutStorageVO;
 import vo.CentrePackVO;
 import vo.PayVO;
 import vo.ReceiptVO;
+import vo.SalaryVO;
 
 public class ManagerBlService_Stub implements ManagerBlService {
 	
@@ -144,6 +145,21 @@ public class ManagerBlService_Stub implements ManagerBlService {
 	}
 
 	public ArrayList<PayVO> checkPay() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage updateSalary(Object vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResultMessage updateSalary(SalaryVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<SalaryVO> getSalary() {
 		// TODO Auto-generated method stub
 		return null;
 	}

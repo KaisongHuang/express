@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import listener.managerlistener.ManagerListener1_5;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 
 
 public class ManagerUI1_5 extends JPanel{
@@ -23,7 +24,7 @@ public class ManagerUI1_5 extends JPanel{
 	private MyButton btnNewButton_15;
 	private MyButton btnNewButton_16;
 
-
+    private MyDialog dialog;
 	private JTextArea textArea;
 
 	private ManagerListener1_5 managerlistener;
@@ -48,7 +49,8 @@ public class ManagerUI1_5 extends JPanel{
 
 		this.setLayout(null);
 
-
+        dialog=new MyDialog();
+        this.add(dialog);
 		btnNewButton_15 = new MyButton("确定");
 		btnNewButton_15.setBounds(162, 333, 100, 30);
 		this.add(btnNewButton_15);
@@ -69,7 +71,9 @@ public class ManagerUI1_5 extends JPanel{
 		btnNewButton_16.addActionListener(managerlistener);
 		btnNewButton_16.addMouseListener(managerlistener);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyButton getBtnNewButton_15() {
 		return btnNewButton_15;
 	}

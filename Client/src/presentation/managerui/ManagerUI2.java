@@ -18,6 +18,7 @@ import java.util.Vector;
 
 import listener.managerlistener.ManagerListener20;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
 import javax.swing.JComboBox;
@@ -47,7 +48,7 @@ public class ManagerUI2 extends JPanel {
 	private JPanel panel10;
 	private JPanel panel11;
 	private MyTable table2;
-
+    private MyDialog dialog;
 	private MyTable table3;
 	private MyTable table4;
 	private MyTable table5;
@@ -118,7 +119,8 @@ public class ManagerUI2 extends JPanel {
 		this.setBounds(136, 115, 746, 443);
 		this.setBackground(Color.WHITE);
 		this.setLayout(null);
-
+        dialog=new MyDialog();
+        this.add(dialog);
 		card = new CardLayout();
 		panel = new JPanel();
 		panel.setBounds(0, 40, 715, 400);
@@ -384,7 +386,9 @@ public class ManagerUI2 extends JPanel {
 		add(button_2);
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public MyButton getButton() {
 		return button;
 	}

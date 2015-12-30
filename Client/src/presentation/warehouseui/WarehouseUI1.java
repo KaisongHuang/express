@@ -8,12 +8,17 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+
+import com.eltima.components.ui.DatePicker;
+
 import javax.swing.JLabel;
 
 import listener.warehouselistener.WarehouseListener1;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyDatePicker;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.SubNaviButton;
@@ -43,6 +48,7 @@ public class WarehouseUI1 extends JPanel {
 	private JLabel label_4;
 	private JLabel label_5;
 	private JLabel label_6;
+	private MyDialog dialog;
 	private JComboBox<String> comboBox;
 	private JComboBox<String> comboBox_1;
 	private JComboBox<String> comboBox_2;
@@ -61,8 +67,8 @@ public class WarehouseUI1 extends JPanel {
 	private MyButton button_6;
 	private JLabel label_13;
 	private JComboBox<Object> comboBox_7;
-	private JLabel label_14;
 	private JComboBox<Object> comboBox_8;
+	private JLabel label_14;
 	private JLabel label_15;
 	private JComboBox<Object> comboBox_9;
 	private JLabel label_16;
@@ -83,8 +89,7 @@ public class WarehouseUI1 extends JPanel {
 	private JPanel navi_panel;
 	private WarehouseListener1 warehouseListener;
 
-	private MyDatePicker mdp1;
-
+	private DatePicker mdp1;
 
 	/**
 	 * Create the application.
@@ -111,14 +116,18 @@ public class WarehouseUI1 extends JPanel {
 		add(panel);
 
 
+        dialog=new MyDialog();
+        this.add(dialog);
 
 		exportPanel = new JPanel();
 
 		exportPanel.setBackground(Color.WHITE);
 		exportPanel.setLayout(null);
-		String names1[] = { "快递编号", "目的地","中转单编号" };
+		String names1[] = { "快递编号", "目的地", "中转单编号" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new MyTable(data1, name1);
+		table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table1.addMouseListener(warehouseListener);
 		table1.setSelectionForeground(Color.BLACK);
 		table1.setSelectionBackground(new Color(210, 240, 255));
 		table1.setEditableColumn(-1);
@@ -184,7 +193,7 @@ public class WarehouseUI1 extends JPanel {
 		exportPanel.add(button_3);
 
 		button_2 = new MyButton("导入");
-		button_2.setBounds(391, 14, 94, 29);
+		button_2.setBounds(391, 28, 94, 29);
 		button_2.addActionListener(warehouseListener);
 		exportPanel.add(button_2);
 
@@ -196,6 +205,8 @@ public class WarehouseUI1 extends JPanel {
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
 		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.addMouseListener(warehouseListener);
 		table.setSelectionBackground(new Color(210, 240, 255));
 		table.setEditableColumn(-1);
 		table.setEditableRow(-1);
@@ -210,35 +221,35 @@ public class WarehouseUI1 extends JPanel {
 		importPanel.add(label_8);
 
 		mdp1 = new MyDatePicker(this);
-		mdp1.setBounds(393, 48, 94, 25);
+		mdp1.setBounds(393, 48, 117, 25);
 		importPanel.add(mdp1);
 
-//		comboBox_4 = new JComboBox<Object>();
-//		comboBox_4.setBounds(393, 48, 94, 25);
-//		comboBox_4.addItem("2015");
-//		importPanel.add(comboBox_4);
-//
-//		label_10 = new JLabel("年");
-//		label_10.setBounds(491, 52, 20, 15);
-//		importPanel.add(label_10);
-//
-//		comboBox_5 = new JComboBox<Object>();
-//		comboBox_5.setBounds(393, 79, 94, 25);
-//		comboBox_5.addItem("01");
-//		importPanel.add(comboBox_5);
-//
-//		label_11 = new JLabel("月");
-//		label_11.setBounds(491, 79, 20, 15);
-//		importPanel.add(label_11);
-//
-//		comboBox_6 = new JComboBox<Object>();
-//		comboBox_6.setBounds(393, 116, 94, 25);
-//		comboBox_6.addItem("01");
-//		importPanel.add(comboBox_6);
-//
-//		label_12 = new JLabel("日");
-//		label_12.setBounds(491, 120, 57, 15);
-//		importPanel.add(label_12);
+		// comboBox_4 = new JComboBox<Object>();
+		// comboBox_4.setBounds(393, 48, 94, 25);
+		// comboBox_4.addItem("2015");
+		// importPanel.add(comboBox_4);
+		//
+		// label_10 = new JLabel("年");
+		// label_10.setBounds(491, 52, 20, 15);
+		// importPanel.add(label_10);
+		//
+		// comboBox_5 = new JComboBox<Object>();
+		// comboBox_5.setBounds(393, 79, 94, 25);
+		// comboBox_5.addItem("01");
+		// importPanel.add(comboBox_5);
+		//
+		// label_11 = new JLabel("月");
+		// label_11.setBounds(491, 79, 20, 15);
+		// importPanel.add(label_11);
+		//
+		// comboBox_6 = new JComboBox<Object>();
+		// comboBox_6.setBounds(393, 116, 94, 25);
+		// comboBox_6.addItem("01");
+		// importPanel.add(comboBox_6);
+		//
+		// label_12 = new JLabel("日");
+		// label_12.setBounds(491, 120, 57, 15);
+		// importPanel.add(label_12);
 
 		button = new MyButton("确认");
 		button.setBounds(334, 291, 94, 27);
@@ -263,15 +274,17 @@ public class WarehouseUI1 extends JPanel {
 		label_14.setBounds(361, 142, 42, 16);
 		importPanel.add(label_14);
 
-		comboBox_8 = new JComboBox<Object>();
-		comboBox_8.setBounds(393, 137, 94, 27);
+		comboBox_8=new JComboBox<Object>();
+		comboBox_8.setBounds(393,138,94,27);
 		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
-
+		
 		label_15 = new JLabel("架号:");
 		label_15.setBounds(361, 187, 42, 16);
 		importPanel.add(label_15);
 
+		
+		
 		comboBox_9 = new JComboBox<Object>();
 		comboBox_9.setBounds(393, 182, 94, 27);
 		comboBox_9.addItem("1");
@@ -314,12 +327,34 @@ public class WarehouseUI1 extends JPanel {
 		importButton.setClicked(true);
 		navi_panel.add(importButton);
 
-		line=new MySeperator();
+		line = new MySeperator();
 		line.setBounds(44, 44, 630, 10);
 		add(line);
 
 	}
 
+
+	public MyTable getTable1() {
+		return table1;
+	}
+
+	public void setTable1(MyTable table1) {
+		this.table1 = table1;
+	}
+
+	public MyTable getTable() {
+		return table;
+	}
+
+	public DefaultTableModel getModel1() {
+		return model1;
+	}
+
+	public void setText(String s){
+		dialog.setText(s);
+	}
+
+    
 	public DefaultTableModel getModel() {
 		return model;
 	}
@@ -356,10 +391,9 @@ public class WarehouseUI1 extends JPanel {
 		return this.panel;
 	}
 
-//	public CardLayout getCardLayout() {
-//		return this.getCardLayout();
-//	}
-
+	// public CardLayout getCardLayout() {
+	// return this.getCardLayout();
+	// }
 
 	public MyButton getButton_3() {
 		return button_3;
@@ -373,12 +407,9 @@ public class WarehouseUI1 extends JPanel {
 		return exportPanel;
 	}
 
-
-
 	public JLabel getLabel_1() {
 		return label_1;
 	}
-
 
 	public JLabel getLabel_3() {
 		return label_3;
@@ -395,7 +426,6 @@ public class WarehouseUI1 extends JPanel {
 	public JLabel getLabel_6() {
 		return label_6;
 	}
-
 
 	public JComboBox<String> getComboBox() {
 		return comboBox;
@@ -425,11 +455,9 @@ public class WarehouseUI1 extends JPanel {
 		return importPanel;
 	}
 
-
 	public JLabel getLabel_8() {
 		return label_8;
 	}
-
 
 	public JComboBox<Object> getComboBox_4() {
 		return comboBox_4;
@@ -529,16 +557,23 @@ public class WarehouseUI1 extends JPanel {
 		return year + month + date;
 	}
 
-
 	public String getTransportation() {
 		return (String) comboBox_3.getSelectedItem();
 	}
 
-	public SubNaviButton getButton1(){
+	public SubNaviButton getButton1() {
 		return this.importButton;
 	}
 
-	public SubNaviButton getButton2(){
+	public SubNaviButton getButton2() {
 		return this.exportButton;
+	}
+
+	public DatePicker getMdp1() {
+		return mdp1;
+	}
+
+	public void setMdp1(DatePicker mdp1) {
+		this.mdp1 = mdp1;
 	}
 }

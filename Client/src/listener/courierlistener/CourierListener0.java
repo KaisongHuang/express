@@ -132,19 +132,19 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
     private boolean check(SenderVO vo){
     	if(vo.checkIsNull()==0){
-    		JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+    		ui.setText("请将信息填写完整！");
 			return false;
     	}
     	if(vo.checkRecipientPhone()==0){
-    		JOptionPane.showMessageDialog(ui,"请检查收件人的手机号格式！");
+    		ui.setText("请检查收件人的手机号格式！");
 			return false;
     	}
     	if(vo.checkSenderPhone()==0){
-    		JOptionPane.showMessageDialog(ui,"请检查寄件人的手机号格式！");
+    		ui.setText("请检查寄件人的手机号格式！");
 			return false;
     	}
     	return true;

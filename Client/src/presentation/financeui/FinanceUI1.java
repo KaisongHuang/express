@@ -24,6 +24,7 @@ import javax.swing.JComboBox;
 import listener.financelistener.FinanceListener1;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyDatePicker;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
 public class FinanceUI1 extends JPanel {
@@ -51,6 +52,7 @@ public class FinanceUI1 extends JPanel {
 	private JScrollPane JSP;
 	private int height = 900;
 	private int width = 600;
+	private MyDialog dialog;
 	FinanceListener1 financeListener1;
 
 	private DatePicker mdp;
@@ -67,6 +69,9 @@ public class FinanceUI1 extends JPanel {
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
+		
 		String names[] = { "收款日期", "收款单位", "收款快递员", "收款金额" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -105,7 +110,7 @@ public class FinanceUI1 extends JPanel {
 //		this.add(comboBox_2);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(350, 34, 145, 25);
+		comboBox_3.setBounds(371, 34, 145, 25);
 		comboBox_3.addItem("南京鼓楼营业厅4");
 //		comboBox_3.setSelectedIndex(0);
 		this.add(comboBox_3);
@@ -135,7 +140,7 @@ public class FinanceUI1 extends JPanel {
 		this.add(label_5);
 
 		search = new MyButton("查看");
-		search.setBounds(505, 33, 85, 27);
+		search.setBounds(522, 34, 85, 27);
 		search.addActionListener(financeListener1);
 		search.addMouseListener(financeListener1);;
 		add(search);
@@ -145,7 +150,9 @@ public class FinanceUI1 extends JPanel {
 		textArea.setEditable(false);
 		add(textArea);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public DefaultTableModel getModel() {
 		return model;
 	}

@@ -1,13 +1,13 @@
 package vo;
 
 public class AcceptVO {
-	String BarCode;
-	String date;
-	String number;
-	String start;
-	String state;
-	int isCheck;
-    Check c;
+	private String BarCode;
+	private String date;
+	private String number;
+	private String start;
+	private String state;
+	private int isCheck;
+    private Check c;
 	public AcceptVO(String BarCode, String date, String number, String start, String state, int isCheck) {
 		this.BarCode = BarCode;
 		this.date = date;

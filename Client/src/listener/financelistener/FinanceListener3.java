@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 import logic.financebl.Finance;
 import presentation.financeui.FinanceUI3;
@@ -86,12 +87,26 @@ public class FinanceListener3 implements ActionListener, MouseListener {
 				ui.getModel2().addRow(item);
 			}
 
+		}else if(e.getSource()==ui.getExport()){
+			ArrayList<PayVO> list1=new ArrayList<PayVO>();
+			ArrayList<ReceiptVO> list2=new ArrayList<ReceiptVO>();
+			DefaultTableModel table2=ui.getModel2();
+			for(int i=0;i<table2.getRowCount();i++){
+			    list2.add(new ReceiptVO((Double)table2.getValueAt(i, 3),(String)table2.getValueAt(i, 0),(String)table2.getValueAt(i, 1),(String)table2.getValueAt(i, 2),null,0));
+			}
+			DefaultTableModel table1=ui.getModel1();
+			for(int i=0;i<table1.getRowCount();i++){
+				list1.add(new PayVO((String)table1.getValueAt(i, 0),(String)table1.getValueAt(i, 2),(String)table1.getValueAt(i, 1),
+						(String)table1.getValueAt(i, 4),(String)table1.getValueAt(i, 5),(Double)table1.getValueAt(i, 3),0));
+			}
+			finance.exportPay(list1);
+			finance.exportReceipt(list2);
 		}
 	}
 
 	private boolean check(ArrayList<Object> ob) {
 		if (ob == null) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText( "请将信息填写完整！");
 			return false;
 		}
 		return true;

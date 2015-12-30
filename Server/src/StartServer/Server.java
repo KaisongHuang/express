@@ -1,6 +1,7 @@
 package StartServer;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.rmi.Naming;
@@ -28,7 +29,7 @@ import server.data.warehousedata.WareHouseData;
 import server.database.MySQLDataBase;
 
 public class Server {
-	String ip = "172.25.132.193";
+	String ip ;
 	//String ip1="192.168.191.2";
 	int port=3333;
 	MySQLDataBase db;
@@ -45,7 +46,8 @@ public class Server {
 
 	public void DataStart() {
 		try {
-			
+			InetAddress addr=InetAddress.getLocalHost();
+			ip=addr.getHostAddress();
 			AdminDataBaseService ad = new AdminData(db);
 			CentreDataBaseService cd=new CentreData(db);
 			LoginDataBaseService ld=new LoginData(db);
