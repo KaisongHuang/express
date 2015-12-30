@@ -25,12 +25,9 @@ public class ManagerUI4_2 extends JPanel {
 	private MyTextField textField_6;
 	private MyTextField textField_8;
 	private MyTextField textField_1;
-<<<<<<< HEAD
-=======
     private MyDialog dialog;
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
->>>>>>> master
 	private JButton btnNewButton_16;
 	private JButton btnNewButton_17;
 

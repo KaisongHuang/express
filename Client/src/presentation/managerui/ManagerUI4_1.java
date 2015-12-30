@@ -10,13 +10,9 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import listener.managerlistener.ManagerListener4_1;
-<<<<<<< HEAD
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
-=======
 import presentation.MySwing.MyDialog;
-
->>>>>>> master
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyTextField;
 import vo.SalaryVO;
