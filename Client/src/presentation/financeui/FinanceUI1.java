@@ -110,13 +110,13 @@ public class FinanceUI1 extends JPanel {
 //		this.add(comboBox_2);
 
 		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(371, 34, 145, 25);
+		comboBox_3.setBounds(348, 47, 145, 25);
 		comboBox_3.addItem("南京鼓楼营业厅4");
 //		comboBox_3.setSelectedIndex(0);
 		this.add(comboBox_3);
 
 		label = new JLabel("营业厅:");
-		label.setBounds(300, 44, 57, 15);
+		label.setBounds(296, 51, 57, 15);
 		this.add(label);
 
 //		label_1 = new JLabel("年");
@@ -140,7 +140,7 @@ public class FinanceUI1 extends JPanel {
 		this.add(label_5);
 
 		search = new MyButton("查看");
-		search.setBounds(522, 34, 85, 27);
+		search.setBounds(505, 45, 85, 27);
 		search.addActionListener(financeListener1);
 		search.addMouseListener(financeListener1);;
 		add(search);

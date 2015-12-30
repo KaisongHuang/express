@@ -21,12 +21,16 @@ public interface ManagerBlService {
 	public Object find(String id, Opera op);
 
 	public ResultMessage manageMember(Object vo, Opera op);
+	
+	public ResultMessage manageDistance(Object vo,Opera op);
 
 	public ResultMessage checkDocument(Object vo);
 
 	public ResultMessage checkStatistics(Object vo);
 	
 	public ResultMessage updateSalary(SalaryVO vo);
+	
+	public ResultMessage updateFee(double fee);
 	
 	public ArrayList<SalaryVO> getSalary();
 

@@ -28,7 +28,6 @@ public class AdminUI3 extends JPanel{
     private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
-    private MyDialog dialog;
 	AdminListener3 adminlistener;
 	private int width;
 	private int height;
@@ -100,9 +99,6 @@ public class AdminUI3 extends JPanel{
 
 	}
 
-	public void setText(String s){
-		dialog.setText(s);
-	}
 
 	public MyTextField getTextField() {
 		return textField;
