@@ -56,7 +56,7 @@ public class MyComboBox<E> extends JComboBox<E> {
 		g2d.setColor(grid);
 		g2d.setStroke(new BasicStroke(2f));
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g2d.drawRoundRect(1, 1, getWidth() - 3, getHeight() - 3, 15, 15);
+		g2d.drawRect(1, 1, getWidth() - 3, getHeight() - 3);
 	}
 
 	private class MyComboBoxUI extends BasicComboBoxUI {
