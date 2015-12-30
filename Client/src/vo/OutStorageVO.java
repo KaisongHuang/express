@@ -9,6 +9,9 @@ public class OutStorageVO {
 	private String trans_id;
 	private int isCheck;
 	private Check c;
+	public OutStorageVO() {
+	}
+	
 	public OutStorageVO(String id, String destination, String outdate, String WarehouseID, String transportation,
 			String trans_id, int isCheck) {
 		this.id=id;
@@ -47,8 +50,7 @@ public class OutStorageVO {
 	public Check getC() {
 		return c;
 	}
-	public OutStorageVO() {
-	}
+
 
 	public int getIsCheck() {
 		return isCheck;

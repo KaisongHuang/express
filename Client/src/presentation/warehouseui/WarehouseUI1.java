@@ -123,7 +123,7 @@ public class WarehouseUI1 extends JPanel {
 
 		exportPanel.setBackground(Color.WHITE);
 		exportPanel.setLayout(null);
-		String names1[] = { "快递编号", "目的地", "中转单编号" };
+		String names1[] = { "快递编号", "目的地", "中转单号","装运形式" };
 		name1 = new Vector<String>(Arrays.asList(names1));
 		table1 = new MyTable(data1, name1);
 		table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
