@@ -25,7 +25,6 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private WarehouseUI1 ui;
 	private WarehouseBlService warehouseBl = new Warehouse();
-	private CentreBlService centre = new Centre();
 	private ArrayList<CentreArrivalVO> arrival;
 	private ArrayList<CentreTransforVO> trans;
 	private boolean import_clicked = true;
@@ -56,7 +55,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			int row = ui.getModel().getRowCount();
 			for (int i = 0; i < row; i++)
 				ui.getModel().removeRow(0);
-//			System.out.println(row);
+			// System.out.println(row);
 			arrival = new ArrayList<CentreArrivalVO>();
 			arrival = warehouseBl.getImport();
 			System.out.println(arrival.size());
@@ -68,18 +67,22 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			}
 
 		} else if (e.getSource() == ui.getButton_2()) {
-			int row = ui.getModel1().getRowCount();
-			for (int i = 0; i < row; i++)
+			int row1 = ui.getModel1().getRowCount();
+			for (int i = 0; i < row1; i++)
 				ui.getModel1().removeRow(0);
+
+			int row2 = ui.getModel2().getRowCount();
+			for (int i = 0; i < row2; i++)
+				ui.getModel2().removeRow(0);
 
 			trans = new ArrayList<CentreTransforVO>();
 			trans = warehouseBl.getExport();
 			for (int i = 0; i < trans.size(); i++) {
 				Vector<Object> rowData = new Vector<Object>();
-				rowData.add(trans.get(i).getList().get(0));
-				rowData.add(trans.get(i).getArrival());
 				rowData.add(trans.get(i).getCentreTransferID());
+				rowData.add(trans.get(i).getArrival());
 				rowData.add(trans.get(i).getTransferStyle());
+				rowData.add(trans.get(i).getList());
 				ui.getModel1().addRow(rowData);
 			}
 
@@ -99,38 +102,27 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 		if (e.getSource() == ui.getExportConfirmButton()) {
 			System.out.println("export");
 			int selectedRow = ui.getTable1().getSelectedRow();// 获得选中行的索引
-			if (ui.getTable1().getRowCount() > 0) {
-				if (selectedRow != -1) { // 存在选中行
-					String id = (String) ui.getModel1().getValueAt(selectedRow, 0);
-					String destination = (String) ui.getModel1().getValueAt(selectedRow, 1);
-					String transferID = (String) ui.getModel1().getValueAt(selectedRow, 2);
-					String transferType = (String) ui.getModel1().getValueAt(selectedRow, 3);
+			if (selectedRow != -1) { // 存在选中行
+				String transferID = (String) ui.getModel1().getValueAt(selectedRow, 0);
+				String destination = (String) ui.getModel1().getValueAt(selectedRow, 1);
+				String transferType = (String) ui.getModel1().getValueAt(selectedRow, 2);
 
-					String year = (String) ui.getComboBox().getSelectedItem();
-					String month = (String) ui.getComboBox_1().getSelectedItem();
-					String day = (String) ui.getComboBox_2().getSelectedItem();
-					String date = year + month + day;
+				String year = (String) ui.getComboBox().getSelectedItem();
+				String month = (String) ui.getComboBox_1().getSelectedItem();
+				String day = (String) ui.getComboBox_2().getSelectedItem();
+				String date = year + month + day;
 
+				int row = ui.getModel2().getRowCount();
+				for (int i = 0; i < row; i++) {
+					String id = (String) ui.getModel2().getValueAt(i, 0);
 					warehouseBl.exportGoods(new OutStorageVO(id, destination, date, EmployeeMes.belongToWho,
 							transferType, transferID, 0));
-					ui.getModel1().removeRow(selectedRow);
-				} else {
-					selectedRow = 0;
-					String id = (String) ui.getModel1().getValueAt(selectedRow, 0);
-					String destination = (String) ui.getModel1().getValueAt(selectedRow, 1);
-					String transferID = (String) ui.getModel1().getValueAt(selectedRow, 2);
-					String transferType = (String) ui.getModel1().getValueAt(selectedRow, 3);
-
-					String year = (String) ui.getComboBox().getSelectedItem();
-					String month = (String) ui.getComboBox_1().getSelectedItem();
-					String day = (String) ui.getComboBox_2().getSelectedItem();
-					String date = year + month + day;
-
-					warehouseBl.exportGoods(new OutStorageVO(id, destination, date, EmployeeMes.belongToWho,
-							transferType, transferID, 0));
-					ui.getModel1().removeRow(selectedRow);
 				}
 
+				for(int i=0;i<row;i++)
+					ui.getModel2().removeRow(0);
+					
+				ui.getModel1().removeRow(selectedRow);
 			}
 		}
 		if (e.getSource() == ui.getImportConfirmButton()) {
@@ -146,11 +138,11 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 					String s2 = date.substring(4, 8);
 					date = s2 + s1;
 					String qu = (String) ui.getComboBox_7().getSelectedItem();
-					if(qu.equals("航运区")){
+					if (qu.equals("航运区")) {
 						qu = "plane";
-					}else if(qu.equals("铁运区")){
+					} else if (qu.equals("铁运区")) {
 						qu = "train";
-					}else{
+					} else {
 						qu = "car";
 					}
 					int pai = Integer.parseInt((String) ui.getComboBox_8().getSelectedItem());
@@ -169,11 +161,11 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 					String s2 = date.substring(4, 8);
 					date = s2 + s1;
 					String qu = (String) ui.getComboBox_7().getSelectedItem();
-					if(qu.equals("航运区")){
+					if (qu.equals("航运区")) {
 						qu = "plane";
-					}else if(qu.equals("铁运区")){
+					} else if (qu.equals("铁运区")) {
 						qu = "train";
-					}else{
+					} else {
 						qu = "car";
 					}
 					int pai = Integer.parseInt((String) ui.getComboBox_8().getSelectedItem());
@@ -234,7 +226,6 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 		// out.setDestination(ui.getExportDestination());
 		// out.setTrans_id(ui.getTrans_ID());
 		out.setOutdate(ui.getExportDate());
-		out.setTransportation(ui.getTransportation());
 		out.setWarehouseID(EmployeeMes.belongToWho);
 		out.setIsCheck(0);
 		return out;
@@ -269,9 +260,27 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			ui.setText(dialog);
 	}
 
+	@SuppressWarnings("unchecked")
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+		if (e.getSource() == ui.getTable1()) {
+			int selectedRow = ui.getTable1().getSelectedRow();
+			if (selectedRow != -1) {
+				// clear table2
+				int row = ui.getModel2().getRowCount();
+				for (int i = 0; i < row; i++)
+					ui.getModel2().removeRow(0);
+				// add barcodes of selected Centrefor to table2
+				ArrayList<String> id = new ArrayList<String>();
+				id = (ArrayList<String>) ui.getTable1().getValueAt(selectedRow, 3);
+				for (int i = 0; i < id.size(); i++) {
+					Vector<Object> rowData = new Vector<Object>();
+					rowData.add(id.get(i));
+					ui.getModel2().addRow(rowData);
+				}
 
+			}
+		}
 	}
 
 	public void mousePressed(MouseEvent e) {
