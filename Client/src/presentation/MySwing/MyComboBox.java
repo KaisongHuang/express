@@ -28,9 +28,9 @@ import javax.swing.plaf.basic.ComboPopup;
 
 public class MyComboBox<E> extends JComboBox<E> {
 	private static final long serialVersionUID = 1L;
-	private static Icon arrowImg = new ImageIcon("image/arrow.png");
+	private  Icon arrowImg = new ImageIcon(this.getClass().getResource("/按钮/combo.png"));
 	private static Color fore = new Color(44, 62, 80);
-//	private static Font font = new Font("", Font.PLAIN, 17);
+	// private static Font font = new Font("", Font.PLAIN, 17);
 	private static Color back = Color.white;
 	private static Color select = new Color(158, 211, 240);
 	private static Color grid = new Color(158, 211, 240);
@@ -39,14 +39,13 @@ public class MyComboBox<E> extends JComboBox<E> {
 		super();
 		this.setOpaque(false);
 		this.setBackground(back);
-//		this.setFont(font);
+		// this.setFont(font);
 		this.setForeground(fore);
 		this.setBorder(new EmptyBorder(0, 0, 0, 0));
 		this.setUI(new MyComboBoxUI());
 		this.setRenderer(new MyRenderer());
 		this.setPreferredSize(new Dimension(120, 33));
 		this.setMaximumRowCount(4);
-
 
 	}
 
@@ -56,7 +55,7 @@ public class MyComboBox<E> extends JComboBox<E> {
 		g2d.setColor(grid);
 		g2d.setStroke(new BasicStroke(2f));
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g2d.drawRect(1, 1, getWidth() - 3, getHeight() - 3);
+		g2d.drawRoundRect(1, 1, getWidth() - 3, getHeight() - 3, 15, 15);
 	}
 
 	private class MyComboBoxUI extends BasicComboBoxUI {
@@ -108,8 +107,8 @@ public class MyComboBox<E> extends JComboBox<E> {
 					float arc = 1.2f;
 
 					g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-					Shape inner = new RoundRectangle2D.Float(x+offs+arc, y,
-							width - size-2*arc -2, height-arc, 15,15);
+					Shape inner = new RoundRectangle2D.Float(x + offs + arc, y, width - size - 2 * arc - 2,
+							height - arc, 15, 15);
 					g2d.setColor(back);
 					g2d.fill(inner);
 					g2d.setStroke(new BasicStroke(arc));
@@ -123,7 +122,6 @@ public class MyComboBox<E> extends JComboBox<E> {
 			scroller.getVerticalScrollBar().setBorder(new EmptyBorder(0, 0, 0, 0));
 			scroller.getVerticalScrollBar().setUI(ui);
 		}
-
 
 	}
 
@@ -151,7 +149,7 @@ public class MyComboBox<E> extends JComboBox<E> {
 			list.setBackground(back);
 			list.setSelectionBackground(back);
 
-//			renderer.setFont(font);
+			// renderer.setFont(font);
 			renderer.setHorizontalAlignment(JLabel.CENTER);
 			return renderer;
 		}
