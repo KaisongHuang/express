@@ -17,7 +17,7 @@ public class SearchUI extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
     private JLabel state1;
-   
+
     private JTextArea textArea;
     private MyButton button;
     private SenderListener listen;
@@ -44,30 +44,27 @@ public class SearchUI extends JFrame{
 
 		id=new MyTextField();
 		getContentPane().add(id);
-		id.setBounds(155,27,140,30);
+		id.setBounds(134,22,140,30);
 		search=new MyButton("查找");
 		getContentPane().add(search);
-		search.setBounds(333,27,80,30);
-		
+		search.setBounds(333,22,80,30);
+		search.addActionListener(listen);
+
 		JLabel id = new JLabel("订单编号:");
 		id.setBounds(65, 27, 84, 18);
 		getContentPane().add(id);
 
 		state1=new JLabel();
-		state1.setBounds(163, 27, 132, 18);
+		state1.setBounds(134, 62, 140, 37);
 		getContentPane().add(state1);
-
-		JLabel label_1 = new JLabel("历史轨迹");
-		label_1.setBounds(344, 92, 72, 18);
-		getContentPane().add(label_1);
 
 		textArea = new JTextArea();
 
-		textArea.setBounds(99, 131, 519, 307);
+		textArea.setBounds(102, 137, 519, 307);
 		getContentPane().add(textArea);
 
 		button = new MyButton("返回");
-		button.setBounds(700, 499, 92, 27);
+		button.setBounds(333, 64, 80, 30);
 		getContentPane().add(button);
 		button.addActionListener(listen);
 
@@ -102,5 +99,5 @@ public class SearchUI extends JFrame{
     public String getText(){
     	return id.getText();
     }
-	
+
 }

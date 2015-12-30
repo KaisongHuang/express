@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 
 import _enum.EmployeeMes;
 import _enum.ResultMessage;
+import logic.centrebl.Centre;
+import logic.centreblservice.CentreBlService;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI1;
@@ -23,6 +25,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private WarehouseUI1 ui;
 	private WarehouseBlService warehouseBl = new Warehouse();
+	private CentreBlService centre = new Centre();
 	private ArrayList<CentreArrivalVO> arrival;
 	private ArrayList<CentreTransforVO> trans;
 	private boolean import_clicked = true;
@@ -53,9 +56,10 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			int row = ui.getModel().getRowCount();
 			for (int i = 0; i < row; i++)
 				ui.getModel().removeRow(0);
-
+//			System.out.println(row);
 			arrival = new ArrayList<CentreArrivalVO>();
 			arrival = warehouseBl.getImport();
+			System.out.println(arrival.size());
 			for (int i = 0; i < arrival.size(); i++) {
 				Vector<Object> rowData = new Vector<Object>();
 				rowData.add(arrival.get(i).getID());
@@ -142,9 +146,16 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 					String s2 = date.substring(4, 8);
 					date = s2 + s1;
 					String qu = (String) ui.getComboBox_7().getSelectedItem();
-					int pai = (Integer) ui.getComboBox_8().getSelectedItem();
-					int jia = (Integer) ui.getComboBox_9().getSelectedItem();
-					int wei = (Integer) ui.getComboBox_10().getSelectedItem();
+					if(qu.equals("航运区")){
+						qu = "plane";
+					}else if(qu.equals("铁运区")){
+						qu = "train";
+					}else{
+						qu = "car";
+					}
+					int pai = Integer.parseInt((String) ui.getComboBox_8().getSelectedItem());
+					int jia = Integer.parseInt((String) ui.getComboBox_9().getSelectedItem());
+					int wei = Integer.parseInt((String) ui.getComboBox_10().getSelectedItem());
 					warehouseBl.importGoods(
 							new InStorageVO(id, date, destination, EmployeeMes.belongToWho, qu, pai, jia, wei, 0));
 					ui.getModel().removeRow(selectedRow);
@@ -158,9 +169,16 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 					String s2 = date.substring(4, 8);
 					date = s2 + s1;
 					String qu = (String) ui.getComboBox_7().getSelectedItem();
-					int pai = (Integer) ui.getComboBox_8().getSelectedItem();
-					int jia = (Integer) ui.getComboBox_9().getSelectedItem();
-					int wei = (Integer) ui.getComboBox_10().getSelectedItem();
+					if(qu.equals("航运区")){
+						qu = "plane";
+					}else if(qu.equals("铁运区")){
+						qu = "train";
+					}else{
+						qu = "car";
+					}
+					int pai = Integer.parseInt((String) ui.getComboBox_8().getSelectedItem());
+					int jia = Integer.parseInt((String) ui.getComboBox_9().getSelectedItem());
+					int wei = Integer.parseInt((String) ui.getComboBox_10().getSelectedItem());
 					warehouseBl.importGoods(
 							new InStorageVO(id, date, destination, EmployeeMes.belongToWho, qu, pai, jia, wei, 0));
 					ui.getModel().removeRow(selectedRow);
