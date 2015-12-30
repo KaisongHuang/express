@@ -159,7 +159,7 @@ public class CentreListener1 implements MouseListener, ActionListener {
 				centre.manageTranfor(new CentreTransforVO((String) rowData.get(4), (String) rowData.get(1),
 						(String) rowData.get(0), (String) rowData.get(5), (String) rowData.get(2),
 						(String) rowData.get(3), (String) rowData.get(6), (String) rowData.get(7),
-						(ArrayList<String>) rowData.get(10), (Double) rowData.get(9), 0));
+						(ArrayList<String>) rowData.get(9), (Double) rowData.get(8), 0));
 			}
 			while (ui.getModel().getRowCount() > 0)
 				ui.getModel().removeRow(0);

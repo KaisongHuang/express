@@ -39,10 +39,11 @@ public class WarehouseListener4 implements ActionListener {
 			Vector<Object> item = new Vector<Object>();
 			String id = ui.getTextField().getText();
 			String destination = ui.getTextField_1().getText();
-			String year = (String) ui.getComboBox().getSelectedItem();
-			String month = (String) ui.getComboBox_1().getSelectedItem();
-			String date = (String) ui.getComboBox_2().getSelectedItem();
-			String time = year + month + date;
+//			String year = (String) ui.getComboBox().getSelectedItem();
+//			String month = (String) ui.getComboBox_1().getSelectedItem();
+//			String date = (String) ui.getComboBox_2().getSelectedItem();
+			String time = ui.getDate().getText().replace("/", "");
+			time = time.substring(4, 8) + time.substring(0, 4);
 			String qu = (String) ui.getComboBox_3().getSelectedItem();
 			int pai = Integer.parseInt((String) ui.getComboBox_4().getSelectedItem());
 			int jia = Integer.parseInt((String) ui.getComboBox_5().getSelectedItem());

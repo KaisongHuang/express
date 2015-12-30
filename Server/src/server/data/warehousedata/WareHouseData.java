@@ -17,7 +17,7 @@ import dataservice.warehousedataservice.WareHouseDataBaseService;
 
 public class WareHouseData extends UnicastRemoteObject implements WareHouseDataBaseService {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
@@ -109,11 +109,12 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	public ArrayList<CentreArrivalPO> getArrival() throws RemoteException {
 		String sql = "select * from CentreArrival where isCheck=1 and isInStorage=0;";
 		ResultSet rs = db.find(sql);
+//		System.out.println(rs);
 		ArrayList<CentreArrivalPO> list = new ArrayList<CentreArrivalPO>();
 		try {
-			if (!rs.next()) {
-				return null;
-			}
+//			if (!rs.next()) {
+//				return null;
+//			}
 			while (rs.next()) {
 				list.add(new CentreArrivalPO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
 						rs.getString(5), rs.getInt(6), rs.getInt(7)));
@@ -122,6 +123,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(list.size());
 		return list;
 	}
 
@@ -245,7 +247,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		int size2 = 0;
 		int size3 = 0;
 		try {
-			
+
 			while (rs1.next()) {
 				if (rs1.getString(4).equals("car"))
 					size1++;
@@ -270,14 +272,14 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * dataservice.warehousedataservice.WareHouseDataBaseService#adjust(java.
 	 * lang.String)
 	 */
 	public ArrayList<InStoragePO> adjust(String WarehouseID) throws RemoteException {
 		ArrayList<InStoragePO> list = new ArrayList<InStoragePO>();
-		
+
 		String sql1 = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
 		ResultSet rs1 = db.find(sql1);
 
@@ -309,7 +311,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		int size2 = 0;
 		int size3 = 0;
 		try {
-			
+
 			while (rs2.next()) {
 				if (rs2.getString(4).equals("car"))
 					size1++;
@@ -318,21 +320,21 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 				else if (rs2.getString(4).equals("air"))
 					size3++;
 			}
-			
+
 			System.out.println(size1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
+
 		int cout1 = (int) (Size1 * 0.1);
 		int cout2 = (int) (Size2 * 0.1);
 		int cout3 = (int) (Size3 * 0.1);
 		String sql = "select * from InStorage where WarehouseID='" + WarehouseID + "' and isInStorage=1;";
 		ResultSet rs = db.find(sql);
 		try {
-			
+
 			while (rs.next()) {
 				if (size1 / Size1 >= alarm && rs.getString(4).equals("car") && cout1 >= 0) {
 					cout1--;
@@ -361,7 +363,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	}
 
 	public ArrayList<int[]> findFreeSpace(String WarehouseID) throws RemoteException {
-	
+
 		String sql = "select * from Warehouse where WarehouseID='" + WarehouseID + "';";
 		ResultSet rs = db.find(sql);
 		ArrayList<int[]> list = new ArrayList<int[]>();
