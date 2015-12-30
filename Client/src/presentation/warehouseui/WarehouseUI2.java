@@ -13,13 +13,13 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 
-import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 import com.eltima.components.ui.DatePicker;
 
 import listener.warehouselistener.WarehouseListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
@@ -37,12 +37,12 @@ public class WarehouseUI2 extends JPanel {
 	private JLabel label_17;
 	private MyButton button_1;
 	private MyButton button_2;
-	private JComboBox<String> comboBox;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox_2;
-	private JComboBox<String> comboBox_3;
-	private JComboBox<String> comboBox_4;
-	private JComboBox<String> comboBox_5;
+	private MyComboBox<String> comboBox;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox_2;
+	private MyComboBox<String> comboBox_3;
+	private MyComboBox<String> comboBox_4;
+	private MyComboBox<String> comboBox_5;
 	private MyTextField textArea;
 	private MyTextField textArea_1;
 	private MyTextField textArea_2;
@@ -106,7 +106,7 @@ public class WarehouseUI2 extends JPanel {
 		end.setBounds(545, 95, 100, 25);
 		this.add(end);
 
-//		comboBox = new JComboBox<String>();
+//		comboBox = new MyComboBox<String>();
 //		comboBox.setBounds(545, 51, 85, 25);
 //		comboBox.addItem("2015");
 //		this.add(comboBox);
@@ -115,7 +115,7 @@ public class WarehouseUI2 extends JPanel {
 //		label_11.setBounds(631, 55, 20, 15);
 //		this.add(label_11);
 //
-//		comboBox_1 = new JComboBox<String>();
+//		comboBox_1 = new MyComboBox<String>();
 //		comboBox_1.setBounds(545, 77, 85, 25);
 //		comboBox_1.addItem("01");
 //		this.add(comboBox_1);
@@ -124,7 +124,7 @@ public class WarehouseUI2 extends JPanel {
 //		label_12.setBounds(631, 81, 20, 15);
 //		this.add(label_12);
 //
-//		comboBox_2 = new JComboBox<String>();
+//		comboBox_2 = new MyComboBox<String>();
 //		comboBox_2.setBounds(545, 105, 85, 25);
 //		comboBox_2.addItem("01");
 //		this.add(comboBox_2);
@@ -133,7 +133,7 @@ public class WarehouseUI2 extends JPanel {
 //		label_13.setBounds(631, 109, 20, 15);
 //		this.add(label_13);
 //
-//		comboBox_3 = new JComboBox<String>();
+//		comboBox_3 = new MyComboBox<String>();
 //		comboBox_3.setBounds(545, 162, 85, 25);
 //		comboBox_3.addItem("2015");
 //		this.add(comboBox_3);
@@ -142,7 +142,7 @@ public class WarehouseUI2 extends JPanel {
 //		label_14.setBounds(629, 166, 22, 15);
 //		this.add(label_14);
 //
-//		comboBox_4 = new JComboBox<String>();
+//		comboBox_4 = new MyComboBox<String>();
 //		comboBox_4.setBounds(545, 188, 85, 25);
 //		comboBox_4.addItem("01");
 //		this.add(comboBox_4);
@@ -151,7 +151,7 @@ public class WarehouseUI2 extends JPanel {
 //		label_15.setBounds(631, 192, 29, 15);
 //		this.add(label_15);
 //
-//		comboBox_5 = new JComboBox<String>();
+//		comboBox_5 = new MyComboBox<String>();
 //		comboBox_5.setBounds(545, 216, 85, 25);
 //		comboBox_5.addItem("01");
 //		this.add(comboBox_5);
@@ -260,27 +260,27 @@ public class WarehouseUI2 extends JPanel {
 		return button_2;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox_2() {
+	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<String> getComboBox_3() {
+	public MyComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public JComboBox<String> getComboBox_4() {
+	public MyComboBox<String> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public JComboBox<String> getComboBox_5() {
+	public MyComboBox<String> getComboBox_5() {
 		return comboBox_5;
 	}
 

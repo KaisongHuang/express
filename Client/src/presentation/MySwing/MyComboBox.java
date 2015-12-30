@@ -30,7 +30,7 @@ public class MyComboBox<E> extends JComboBox<E> {
 	private static final long serialVersionUID = 1L;
 	private static Icon arrowImg = new ImageIcon("image/arrow.png");
 	private static Color fore = new Color(44, 62, 80);
-	private static Font font = new Font("", Font.PLAIN, 17);
+//	private static Font font = new Font("", Font.PLAIN, 17);
 	private static Color back = Color.white;
 	private static Color select = new Color(158, 211, 240);
 	private static Color grid = new Color(158, 211, 240);
@@ -39,14 +39,14 @@ public class MyComboBox<E> extends JComboBox<E> {
 		super();
 		this.setOpaque(false);
 		this.setBackground(back);
-		this.setFont(font);
+//		this.setFont(font);
 		this.setForeground(fore);
 		this.setBorder(new EmptyBorder(0, 0, 0, 0));
 		this.setUI(new MyComboBoxUI());
 		this.setRenderer(new MyRenderer());
 		this.setPreferredSize(new Dimension(120, 33));
 		this.setMaximumRowCount(4);
-	
+
 
 	}
 
@@ -63,7 +63,7 @@ public class MyComboBox<E> extends JComboBox<E> {
 
 		MyComboBoxUI() {
 			super();
-			
+
 		}
 
 		@Override
@@ -151,7 +151,7 @@ public class MyComboBox<E> extends JComboBox<E> {
 			list.setBackground(back);
 			list.setSelectionBackground(back);
 
-			renderer.setFont(font);
+//			renderer.setFont(font);
 			renderer.setHorizontalAlignment(JLabel.CENTER);
 			return renderer;
 		}

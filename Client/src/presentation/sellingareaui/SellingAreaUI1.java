@@ -10,10 +10,10 @@ import javax.swing.JLabel;
 
 import listener.sellingarealistener.SellingAreaListener10;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
-import javax.swing.JComboBox;
 
 
 public class SellingAreaUI1 extends JPanel{
@@ -29,13 +29,14 @@ public class SellingAreaUI1 extends JPanel{
 	private MyTextField textField_3;
 	private MyTextField textField_4;
 	private MyTextField textField_5;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
     private MyDialog dialog;
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
 
 	SellingAreaListener10 sellingarealistener;
 
+	@SuppressWarnings("unused")
 	private int width;
 	private int height;
 
@@ -108,7 +109,7 @@ public class SellingAreaUI1 extends JPanel{
 		lblNewLabel_5.setBounds(344, 98, 100, 18);
 		panel_5.add(lblNewLabel_5);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(467, 93, 122, 28);
 		comboBox.addItem("完整");
 		comboBox.addItem("损坏");
@@ -219,11 +220,11 @@ public class SellingAreaUI1 extends JPanel{
 		this.textField_5 = textField_5;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 

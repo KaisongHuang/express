@@ -5,19 +5,13 @@
 package presentation.managerui;
 
 import java.awt.Color;
-import java.util.ArrayList;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import listener.managerlistener.ManagerListener4_1;
-import logic.managerbl.Manager;
-import logic.managerblservice.ManagerBlService;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyTextField;
-import vo.SalaryVO;
-
-import javax.swing.JComboBox;
 
 public class ManagerUI4_1 extends JPanel {
 
@@ -29,13 +23,13 @@ public class ManagerUI4_1 extends JPanel {
 	private MyButton btnNewButton_14;
 	private MyButton btnNewButton_15;
 
-	private JComboBox<String> comboBox;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox_2;
-	private JComboBox<String> comboBox_3;
-	private JComboBox<String> comboBox_4;
-	private JComboBox<String> comboBox_5;
-	private JComboBox<String> comboBox_6;
+	private MyComboBox<String> comboBox;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox_2;
+	private MyComboBox<String> comboBox_3;
+	private MyComboBox<String> comboBox_4;
+	private MyComboBox<String> comboBox_5;
+	private MyComboBox<String> comboBox_6;
 	private MyDialog dialog;
 	private MyTextField myTextField;
 	private MyTextField myTextField_1;
@@ -72,7 +66,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_1.setBounds(48, 59, 100, 18);
 		this.add(lblNewLabel_1);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(160, 55, 100, 28);
 		comboBox.addItem("按月");
 		comboBox.addItem("计次");
@@ -83,7 +77,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_2.setBounds(48, 187, 100, 18);
 		this.add(lblNewLabel_2);
 
-		comboBox_1 = new JComboBox<String>();
+		comboBox_1 = new MyComboBox<String>();
 		comboBox_1.setBounds(160, 85, 100, 28);
 		comboBox_1.addItem("按月");
 		comboBox_1.addItem("计次");
@@ -94,7 +88,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_3.setBounds(48, 217, 100, 18);
 		this.add(lblNewLabel_3);
 
-		comboBox_2 = new JComboBox<String>();
+		comboBox_2 = new MyComboBox<String>();
 		comboBox_2.setBounds(160, 118, 100, 28);
 		comboBox_2.addItem("按月");
 		comboBox_2.addItem("计次");
@@ -105,7 +99,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_4.setBounds(48, 154, 100, 18);
 		this.add(lblNewLabel_4);
 
-		comboBox_3 = new JComboBox<String>();
+		comboBox_3 = new MyComboBox<String>();
 		comboBox_3.setBounds(160, 150, 100, 28);
 		comboBox_3.addItem("按月");
 		comboBox_3.addItem("计次");
@@ -116,7 +110,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_5.setBounds(48, 250, 110, 18);
 		this.add(lblNewLabel_5);
 
-		comboBox_4 = new JComboBox<String>();
+		comboBox_4 = new MyComboBox<String>();
 		comboBox_4.setBounds(160, 182, 100, 28);
 		comboBox_4.addItem("按月");
 		comboBox_4.addItem("计次");
@@ -127,7 +121,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_6.setBounds(48, 89, 100, 18);
 		this.add(lblNewLabel_6);
 
-		comboBox_5 = new JComboBox<String>();
+		comboBox_5 = new MyComboBox<String>();
 		comboBox_5.setBounds(160, 213, 100, 28);
 		comboBox_5.addItem("按月");
 		comboBox_5.addItem("计次");
@@ -138,7 +132,7 @@ public class ManagerUI4_1 extends JPanel {
 		lblNewLabel_7.setBounds(48, 122, 100, 18);
 		this.add(lblNewLabel_7);
 
-		comboBox_6 = new JComboBox<String>();
+		comboBox_6 = new MyComboBox<String>();
 		comboBox_6.setBounds(160, 246, 100, 28);
 		comboBox_6.addItem("按月");
 		comboBox_6.addItem("计次");
@@ -222,59 +216,59 @@ public class ManagerUI4_1 extends JPanel {
 		return btnNewButton_15;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox<String> comboBox_1) {
+	public void setComboBox_1(MyComboBox<String> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox_2() {
+	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public void setComboBox_2(JComboBox<String> comboBox_2) {
+	public void setComboBox_2(MyComboBox<String> comboBox_2) {
 		this.comboBox_2 = comboBox_2;
 	}
 
-	public JComboBox<String> getComboBox_3() {
+	public MyComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public void setComboBox_3(JComboBox<String> comboBox_3) {
+	public void setComboBox_3(MyComboBox<String> comboBox_3) {
 		this.comboBox_3 = comboBox_3;
 	}
 
-	public JComboBox<String> getComboBox_4() {
+	public MyComboBox<String> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public void setComboBox_4(JComboBox<String> comboBox_4) {
+	public void setComboBox_4(MyComboBox<String> comboBox_4) {
 		this.comboBox_4 = comboBox_4;
 	}
 
-	public JComboBox<String> getComboBox_5() {
+	public MyComboBox<String> getComboBox_5() {
 		return comboBox_5;
 	}
 
-	public void setComboBox_5(JComboBox<String> comboBox_5) {
+	public void setComboBox_5(MyComboBox<String> comboBox_5) {
 		this.comboBox_5 = comboBox_5;
 	}
 
-	public JComboBox<String> getComboBox_6() {
+	public MyComboBox<String> getComboBox_6() {
 		return comboBox_6;
 	}
 
-	public void setComboBox_6(JComboBox<String> comboBox_6) {
+	public void setComboBox_6(MyComboBox<String> comboBox_6) {
 		this.comboBox_6 = comboBox_6;
 	}
 
