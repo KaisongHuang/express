@@ -14,6 +14,7 @@ import java.util.Vector;
 
 import listener.centrelistener.CentreListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 import javax.swing.JScrollPane;
@@ -21,8 +22,6 @@ import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import _enum.EmployeeMes;
-
-import javax.swing.JComboBox;
 
 public class CentreUI1 extends JPanel {
 
@@ -46,7 +45,7 @@ public class CentreUI1 extends JPanel {
 	private MyButton myButton_1;
 	private MyButton myButton_2;
 	private MyButton myButton_3;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
 
 	private MyTable table;
 	private JScrollPane JSP;
@@ -61,7 +60,7 @@ public class CentreUI1 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param j
 	 * @param i
 	 */
@@ -175,7 +174,7 @@ public class CentreUI1 extends JPanel {
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(348, 41, 122, 27);
 		comboBox.addItem("飞机");
 		comboBox.addItem("火车");
@@ -185,16 +184,16 @@ public class CentreUI1 extends JPanel {
 		JLabel label = new JLabel("装运方式:");
 		label.setBounds(277, 45, 61, 16);
 		panel_6.add(label);
-		
+
 		label_1 = new JLabel("中转单编号：");
 		label_1.setBounds(19, 254, 86, 16);
 		panel_6.add(label_1);
-		
+
 		textField_1 = new MyTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(102, 247, 122, 30);
 		panel_6.add(textField_1);
-		
+
 		myButton_3 = new MyButton("本次装运所有运单号");
 		myButton_3.setBounds(277, 247, 193, 30);
 		panel_6.add(myButton_3);
@@ -259,11 +258,11 @@ public class CentreUI1 extends JPanel {
 		return myButton_2;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
@@ -323,7 +322,7 @@ public class CentreUI1 extends JPanel {
 	public MyButton getCancle() {
 		return cancle;
 	}
-	
+
 	public MyTable getTable() {
 		return table;
 	}

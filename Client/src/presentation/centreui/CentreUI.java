@@ -14,10 +14,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import listener.centrelistener.CentreListener0;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
-
-import javax.swing.JComboBox;
 
 public class CentreUI extends JPanel {
 
@@ -29,7 +28,7 @@ public class CentreUI extends JPanel {
 	private MyTextField textField_1;
 	private MyTextField textField_2;
 	private MyTextField textField_3;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
 	private MyButton confirm;
 	private MyButton cancle;
 	private MyButton myButton;
@@ -45,7 +44,7 @@ public class CentreUI extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param j
 	 * @param i
 	 */
@@ -67,7 +66,7 @@ public class CentreUI extends JPanel {
 		this.setBounds(136, 116, 746, 437);
 		this.setBackground(Color.white);
 		this.setLayout(null);
-		
+
 		String names[] = { "托运编号", "到达日期","中转编号","出发地","状态" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -86,8 +85,8 @@ public class CentreUI extends JPanel {
 		panel_5.setBounds(480, 20, 244, 322);
 		this.add(panel_5);
 		panel_5.setLayout(null);
-		
-		
+
+
 
 		JLabel label = new JLabel("\u4E2D\u8F6C\u4E2D\u5FC3\u5230\u8FBE\u5355");
 		label.setBounds(99, 6, 109, 18);
@@ -133,7 +132,7 @@ public class CentreUI extends JPanel {
 		lblNewLabel_5.setBounds(17, 267, 100, 18);
 		panel_5.add(lblNewLabel_5);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.addItem("完整");
 		comboBox.addItem("损坏");
 		comboBox.addItem("丢失");
@@ -159,7 +158,7 @@ public class CentreUI extends JPanel {
 		myButton_1.setBounds(472, 382, 120, 30);
 		myButton_1.addMouseListener(centreListener);
 		add(myButton_1);
-		
+
 		myButton_1.addActionListener(centreListener);
 		myButton.addActionListener(centreListener);
 		confirm.addActionListener(centreListener);
@@ -223,11 +222,11 @@ public class CentreUI extends JPanel {
 		this.textField_3 = textField_3;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 

@@ -12,6 +12,7 @@ import com.eltima.components.ui.DatePicker;
 
 import listener.financelistener.FinanceListener3;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 
@@ -21,19 +22,17 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 
-import javax.swing.JComboBox;
-
 public class FinanceUI3 extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
-	private JComboBox<String> comboBox;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox_2;
-	private JComboBox<String> comboBox_3;
-	private JComboBox<String> comboBox_4;
-	private JComboBox<String> comboBox_5;
+	private MyComboBox<String> comboBox;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox_2;
+	private MyComboBox<String> comboBox_3;
+	private MyComboBox<String> comboBox_4;
+	private MyComboBox<String> comboBox_5;
 	private MyButton search;
 	private Vector<String> name1;
 	private Vector<Object> data1;
@@ -111,7 +110,7 @@ public class FinanceUI3 extends JPanel {
 		end.setBounds(317, 20, 87, 25);
 		this.add(end);
 
-//		comboBox = new JComboBox<String>();
+//		comboBox = new MyComboBox<String>();
 //		comboBox.setBounds(159, 20, 87, 25);
 //		comboBox.addItem("2015");
 //		this.add(comboBox);
@@ -120,7 +119,7 @@ public class FinanceUI3 extends JPanel {
 //		lblNewLabel_3.setBounds(258, 25, 20, 15);
 //		this.add(lblNewLabel_3);
 //
-//		comboBox_1 = new JComboBox<String>();
+//		comboBox_1 = new MyComboBox<String>();
 //		comboBox_1.setBounds(278, 20, 80, 25);
 //		comboBox_1.addItem("01");
 //		this.add(comboBox_1);
@@ -129,7 +128,7 @@ public class FinanceUI3 extends JPanel {
 //		label.setBounds(370, 25, 20, 15);
 //		this.add(label);
 //
-//		comboBox_2 = new JComboBox<String>();
+//		comboBox_2 = new MyComboBox<String>();
 //		comboBox_2.setBounds(402, 20, 80, 25);
 //		comboBox_2.addItem("01");
 //		this.add(comboBox_2);
@@ -138,17 +137,17 @@ public class FinanceUI3 extends JPanel {
 //		lblRi.setBounds(494, 25, 20, 15);
 //		this.add(lblRi);
 //
-//		comboBox_3 = new JComboBox<String>();
+//		comboBox_3 = new MyComboBox<String>();
 //		comboBox_3.setBounds(159, 47, 87, 25);
 //		comboBox_3.addItem("2015");
 //		this.add(comboBox_3);
 //
-//		comboBox_4 = new JComboBox<String>();
+//		comboBox_4 = new MyComboBox<String>();
 //		comboBox_4.setBounds(278, 47, 80, 25);
 //		comboBox_4.addItem("01");
 //		this.add(comboBox_4);
 //
-//		comboBox_5 = new JComboBox<String>();
+//		comboBox_5 = new MyComboBox<String>();
 //		comboBox_5.setBounds(402, 47, 80, 25);
 //		comboBox_5.addItem("01");
 //		this.add(comboBox_5);
@@ -195,27 +194,27 @@ public class FinanceUI3 extends JPanel {
 		this.data2 = data2;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox_2() {
+	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<String> getComboBox_3() {
+	public MyComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public JComboBox<String> getComboBox_4() {
+	public MyComboBox<String> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public JComboBox<String> getComboBox_5() {
+	public MyComboBox<String> getComboBox_5() {
 		return comboBox_5;
 	}
 
