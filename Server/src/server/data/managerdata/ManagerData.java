@@ -39,6 +39,21 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		this.db=db;
 	}
 
+	public ArrayList<DistanceAndFee> getCity()throws RemoteException{
+		ArrayList<DistanceAndFee> list=new ArrayList<DistanceAndFee>();
+		ResultSet rs;
+		String sql="select * from DistanceAndFee;";
+		rs=db.find(sql);
+		try {
+			while(rs.next()){
+				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(3),rs.getDouble(4)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	public ResultMessage insert(Object po) throws RemoteException {
 
 		String sql;
@@ -172,7 +187,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof DistanceAndFee){
 			DistanceAndFee po1=(DistanceAndFee) po;
-			sql="update Salary set fee="+po1.getFee()+",distance="+po1.getDistance()+" where city1='"+po1.getCity1()+
+			sql="update DistanceAndFee set fee="+po1.getFee()+",distance="+po1.getDistance()+" where city1='"+po1.getCity1()+
 					"';";
 			rm=db.update(sql);
 		}else if(po instanceof InstitutionPO){
@@ -190,16 +205,21 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 
 	public ResultMessage delete( Object po) throws RemoteException{
 		String sql;
-		ResultMessage rm;
+		ResultMessage rm=null;
 		if(po instanceof EmployeePO){
 			EmployeePO po1=(EmployeePO) po;
 			sql="delete from Employee where id='"+po1.getEmployeeID()+"';";
 			rm=db.delete(sql);
-		}else{
+		}else if(po instanceof InstitutionPO){
 			InstitutionPO po1=(InstitutionPO) po;
 			sql="delete from Institution where id='"+po1.getOrganizationID()+"';";
 			rm=db.delete(sql);
+		}else if(po instanceof DistanceAndFee){
+			DistanceAndFee po1=(DistanceAndFee) po;
+			sql="delete from DistanceAndFee where city1='"+po1.getCity1()+"' and city2='"+po1.getCity2()+"';";
+			rm=db.delete(sql);
 		}
+		
 		return rm;
 	}
 	

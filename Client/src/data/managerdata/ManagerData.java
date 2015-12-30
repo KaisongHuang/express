@@ -16,6 +16,7 @@ import po.CentreArrivalPO;
 import po.CentrePackPO;
 import po.CentreTransforPO;
 import po.DeliverPO;
+import po.DistanceAndFee;
 import po.EmployeePO;
 import po.InStoragePO;
 import po.InstitutionPO;
@@ -130,6 +131,11 @@ public class ManagerData implements ManagerDataService {
 	public ArrayList<PayPO> findPay() throws RemoteException {
 		// TODO Auto-generated method stub
 		return md.getPay();
+	}
+
+	public ArrayList<DistanceAndFee> getCity() throws RemoteException {
+		
+		return md.getCity();
 	}
 
 }
