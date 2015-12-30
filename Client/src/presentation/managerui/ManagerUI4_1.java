@@ -22,7 +22,7 @@ import javax.swing.JComboBox;
 public class ManagerUI4_1 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -48,7 +48,7 @@ public class ManagerUI4_1 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param card
 	 */
 	public ManagerUI4_1() {
@@ -182,8 +182,8 @@ public class ManagerUI4_1 extends JPanel {
 		myTextField_6 = new MyTextField();
 		myTextField_6.setBounds(272, 245, 100, 28);
 		add(myTextField_6);
-		
-		setData();
+
+//		setData();
 	}
 
 	public MyTextField getMyTextField() {
@@ -277,34 +277,34 @@ public class ManagerUI4_1 extends JPanel {
 	public void setComboBox_6(JComboBox<String> comboBox_6) {
 		this.comboBox_6 = comboBox_6;
 	}
-	
-	private void setData(){
-		ManagerBlService managerbl=new Manager();
-		
-		ArrayList<SalaryVO> arr = managerbl.getSalary();
-		SalaryVO manager=arr.get(0);
-		SalaryVO courier=arr.get(1);
-		SalaryVO admin=arr.get(2);
-		SalaryVO finance=arr.get(3);
-		SalaryVO warehouse=arr.get(4);
-		SalaryVO sellingarea=arr.get(5);
-		SalaryVO centre=arr.get(6);
-		
-		getComboBox().setSelectedItem(manager.getSalaryMethod());
-		getComboBox_1().setSelectedItem(courier.getSalaryMethod());
-		getComboBox_2().setSelectedItem(admin.getSalaryMethod());
-		getComboBox_3().setSelectedItem(finance.getSalaryMethod());
-		getComboBox_4().setSelectedItem(warehouse.getSalaryMethod());
-		getComboBox_5().setSelectedItem(sellingarea.getSalaryMethod());
-		getComboBox_6().setSelectedItem(centre.getSalaryMethod());
-		
-		getMyTextField().setText(""+manager.getMoney());
-		getMyTextField_1().setText(""+courier.getMoney());
-		getMyTextField_2().setText(""+admin.getMoney());
-		getMyTextField_3().setText(""+finance.getMoney());
-		getMyTextField_4().setText(""+warehouse.getMoney());
-		getMyTextField_5().setText(""+sellingarea.getMoney());
-		getMyTextField_6().setText(""+centre.getMoney());
-	}
+
+//	private void setData(){
+//		ManagerBlService managerbl=new Manager();
+//
+//		ArrayList<SalaryVO> arr = managerbl.getSalary();
+//		SalaryVO manager=arr.get(0);
+//		SalaryVO courier=arr.get(1);
+//		SalaryVO admin=arr.get(2);
+//		SalaryVO finance=arr.get(3);
+//		SalaryVO warehouse=arr.get(4);
+//		SalaryVO sellingarea=arr.get(5);
+//		SalaryVO centre=arr.get(6);
+//
+//		getComboBox().setSelectedItem(manager.getSalaryMethod());
+//		getComboBox_1().setSelectedItem(courier.getSalaryMethod());
+//		getComboBox_2().setSelectedItem(admin.getSalaryMethod());
+//		getComboBox_3().setSelectedItem(finance.getSalaryMethod());
+//		getComboBox_4().setSelectedItem(warehouse.getSalaryMethod());
+//		getComboBox_5().setSelectedItem(sellingarea.getSalaryMethod());
+//		getComboBox_6().setSelectedItem(centre.getSalaryMethod());
+//
+//		getMyTextField().setText(""+manager.getMoney());
+//		getMyTextField_1().setText(""+courier.getMoney());
+//		getMyTextField_2().setText(""+admin.getMoney());
+//		getMyTextField_3().setText(""+finance.getMoney());
+//		getMyTextField_4().setText(""+warehouse.getMoney());
+//		getMyTextField_5().setText(""+sellingarea.getMoney());
+//		getMyTextField_6().setText(""+centre.getMoney());
+//	}
 
 }

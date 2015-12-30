@@ -212,6 +212,7 @@ public class Warehouse implements WarehouseBlService {
 		ArrayList<CentreArrivalPO> po = new ArrayList<CentreArrivalPO>();
 		try {
 			po = wd.getArrival();
+			System.out.println(po.size());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

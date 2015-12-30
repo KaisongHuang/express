@@ -253,10 +253,12 @@ public class WarehouseUI1 extends JPanel {
 
 		button = new MyButton("确认");
 		button.setBounds(334, 291, 94, 27);
+		button.addActionListener(warehouseListener);
 		importPanel.add(button);
 
 		button_6 = new MyButton("清空");
 		button_6.setBounds(444, 291, 94, 27);
+		button_6.addActionListener(warehouseListener);
 		importPanel.add(button_6);
 
 		label_13 = new JLabel("区号:");
@@ -278,13 +280,13 @@ public class WarehouseUI1 extends JPanel {
 		comboBox_8.setBounds(393,138,94,27);
 		comboBox_8.addItem("1");
 		importPanel.add(comboBox_8);
-		
+
 		label_15 = new JLabel("架号:");
 		label_15.setBounds(361, 187, 42, 16);
 		importPanel.add(label_15);
 
-		
-		
+
+
 		comboBox_9 = new JComboBox<Object>();
 		comboBox_9.setBounds(393, 182, 94, 27);
 		comboBox_9.addItem("1");
@@ -354,7 +356,7 @@ public class WarehouseUI1 extends JPanel {
 		dialog.setText(s);
 	}
 
-    
+
 	public DefaultTableModel getModel() {
 		return model;
 	}

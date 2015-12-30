@@ -51,6 +51,7 @@ public class MainFrame implements ActionListener {
 	}
 
 	public void init() {
+
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 		} catch (ClassNotFoundException e) {
@@ -66,7 +67,9 @@ public class MainFrame implements ActionListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		EmployeeMes.employeePosition = "中转中心业务员";
+
+//		EmployeeMes.employeePosition = "中转中心业务员";
+
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);

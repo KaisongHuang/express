@@ -16,6 +16,8 @@ import java.util.Vector;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
+import com.eltima.components.ui.DatePicker;
+
 import listener.warehouselistener.WarehouseListener2;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyDialog;
@@ -45,6 +47,10 @@ public class WarehouseUI2 extends JPanel {
 	private MyTextField textArea_1;
 	private MyTextField textArea_2;
 	private MyTable table;
+
+	private DatePicker begin;
+	private DatePicker end;
+
 	private DefaultTableModel model;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -85,101 +91,109 @@ public class WarehouseUI2 extends JPanel {
 		this.add(label_8);
 
 		label_9 = new JLabel("开始日期:");
-		label_9.setBounds(490, 55, 57, 15);
+		label_9.setBounds(488, 55, 57, 15);
 		this.add(label_9);
 
 		label_10 = new JLabel("结束日期:");
-		label_10.setBounds(490, 166, 57, 15);
+		label_10.setBounds(488, 100, 57, 15);
 		this.add(label_10);
 
-		comboBox = new JComboBox<String>();
-		comboBox.setBounds(545, 51, 85, 25);
-		comboBox.addItem("2015");
-		this.add(comboBox);
+		begin = new DatePicker(this);
+		begin.setBounds(545, 51, 100, 25);
+		this.add(begin);
 
-		label_11 = new JLabel("年");
-		label_11.setBounds(631, 55, 20, 15);
-		this.add(label_11);
+		end = new DatePicker(this);
+		end.setBounds(545, 95, 100, 25);
+		this.add(end);
 
-		comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(545, 77, 85, 25);
-		comboBox_1.addItem("01");
-		this.add(comboBox_1);
-
-		label_12 = new JLabel("月");
-		label_12.setBounds(631, 81, 20, 15);
-		this.add(label_12);
-
-		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(545, 105, 85, 25);
-		comboBox_2.addItem("01");
-		this.add(comboBox_2);
-
-		label_13 = new JLabel("日");
-		label_13.setBounds(631, 109, 20, 15);
-		this.add(label_13);
-
-		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(545, 162, 85, 25);
-		comboBox_3.addItem("2015");
-		this.add(comboBox_3);
-
-		label_14 = new JLabel("年");
-		label_14.setBounds(629, 166, 22, 15);
-		this.add(label_14);
-
-		comboBox_4 = new JComboBox<String>();
-		comboBox_4.setBounds(545, 188, 85, 25);
-		comboBox_4.addItem("01");
-		this.add(comboBox_4);
-
-		label_15 = new JLabel("月");
-		label_15.setBounds(631, 192, 29, 15);
-		this.add(label_15);
-
-		comboBox_5 = new JComboBox<String>();
-		comboBox_5.setBounds(545, 216, 85, 25);
-		comboBox_5.addItem("01");
-		this.add(comboBox_5);
-
-		label_16 = new JLabel("日");
-		label_16.setBounds(632, 220, 19, 15);
-		this.add(label_16);
+//		comboBox = new JComboBox<String>();
+//		comboBox.setBounds(545, 51, 85, 25);
+//		comboBox.addItem("2015");
+//		this.add(comboBox);
+//
+//		label_11 = new JLabel("年");
+//		label_11.setBounds(631, 55, 20, 15);
+//		this.add(label_11);
+//
+//		comboBox_1 = new JComboBox<String>();
+//		comboBox_1.setBounds(545, 77, 85, 25);
+//		comboBox_1.addItem("01");
+//		this.add(comboBox_1);
+//
+//		label_12 = new JLabel("月");
+//		label_12.setBounds(631, 81, 20, 15);
+//		this.add(label_12);
+//
+//		comboBox_2 = new JComboBox<String>();
+//		comboBox_2.setBounds(545, 105, 85, 25);
+//		comboBox_2.addItem("01");
+//		this.add(comboBox_2);
+//
+//		label_13 = new JLabel("日");
+//		label_13.setBounds(631, 109, 20, 15);
+//		this.add(label_13);
+//
+//		comboBox_3 = new JComboBox<String>();
+//		comboBox_3.setBounds(545, 162, 85, 25);
+//		comboBox_3.addItem("2015");
+//		this.add(comboBox_3);
+//
+//		label_14 = new JLabel("年");
+//		label_14.setBounds(629, 166, 22, 15);
+//		this.add(label_14);
+//
+//		comboBox_4 = new JComboBox<String>();
+//		comboBox_4.setBounds(545, 188, 85, 25);
+//		comboBox_4.addItem("01");
+//		this.add(comboBox_4);
+//
+//		label_15 = new JLabel("月");
+//		label_15.setBounds(631, 192, 29, 15);
+//		this.add(label_15);
+//
+//		comboBox_5 = new JComboBox<String>();
+//		comboBox_5.setBounds(545, 216, 85, 25);
+//		comboBox_5.addItem("01");
+//		this.add(comboBox_5);
+//
+//		label_16 = new JLabel("日");
+//		label_16.setBounds(632, 220, 19, 15);
+//		this.add(label_16);
 
 		button_1 = new MyButton("查询");
-		button_1.setBounds(490, 259, 80, 27);
+		button_1.setBounds(490, 142, 80, 27);
 		button_1.addActionListener(warehouseListener);
 		this.add(button_1);
 
 		button_2 = new MyButton("清空");
-		button_2.setBounds(582, 259, 78, 27);
+		button_2.setBounds(580, 142, 78, 27);
 		button_2.addActionListener(warehouseListener);
 		this.add(button_2);
 
 		label_17 = new JLabel("入库数量(件)：");
-		label_17.setBounds(490, 310, 99, 15);
+		label_17.setBounds(488, 280, 99, 15);
 		this.add(label_17);
 
 		JLabel label = new JLabel("出库数量(件)：");
-		label.setBounds(490, 337, 99, 15);
+		label.setBounds(488, 320, 99, 15);
 		add(label);
 
 		JLabel lblji = new JLabel("库存合计(件)：");
-		lblji.setBounds(490, 364, 99, 15);
+		lblji.setBounds(488, 360, 99, 15);
 		add(lblji);
 
 		textArea = new MyTextField();
-		textArea.setBounds(582, 304, 80, 25);
+		textArea.setBounds(580, 275, 80, 25);
 		textArea.setEditable(false);
 		add(textArea);
 
 		textArea_1 = new MyTextField();
-		textArea_1.setBounds(582, 331, 80, 25);
+		textArea_1.setBounds(580, 315, 80, 25);
 		textArea_1.setEditable(false);
 		add(textArea_1);
 
 		textArea_2 = new MyTextField();
-		textArea_2.setBounds(582, 358, 80, 25);
+		textArea_2.setBounds(580, 355, 80, 25);
 		textArea_2.setEditable(false);
 		add(textArea_2);
 	}
@@ -275,17 +289,15 @@ public class WarehouseUI2 extends JPanel {
 	}
 
 	public String getBeginDate() {
-		String year = (String) this.comboBox.getSelectedItem();
-		String month = (String) this.comboBox_1.getSelectedItem();
-		String date = (String) this.comboBox_2.getSelectedItem();
-		return year + month + date;
+		String date = this.getBegin().getText().replace("/", "");
+		date = date.substring(4, 8) + date.substring(0, 4);
+		return date;
 	}
 
 	public String getEndDate() {
-		String year = (String) this.comboBox_3.getSelectedItem();
-		String month = (String) this.comboBox_4.getSelectedItem();
-		String date = (String) this.comboBox_5.getSelectedItem();
-		return year + month + date;
+		String date = this.getEnd().getText().replace("/", "");
+		date = date.substring(4, 8) + date.substring(0, 4);
+		return date;
 	}
 
 	public MyTextField getTextArea() {
@@ -302,4 +314,14 @@ public class WarehouseUI2 extends JPanel {
 
 	private void setImage() {
 	}
+
+	public DatePicker getBegin() {
+		return begin;
+	}
+
+	public DatePicker getEnd() {
+		return end;
+	}
+
+
 }
