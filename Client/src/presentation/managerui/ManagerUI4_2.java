@@ -51,7 +51,7 @@ public class ManagerUI4_2 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param card
 	 */
 	public ManagerUI4_2() {
@@ -73,16 +73,19 @@ public class ManagerUI4_2 extends JPanel {
 
 		ArrayList<DistanceAndFeeVO> arr=new ArrayList<DistanceAndFeeVO>();
 		arr=manager.findCity();
-		
+		System.out.println(arr.size());
+		data = new Vector<Object>();
 		for(int i=0;i<arr.size();i++){
+			System.out.println(arr.size());
 			Vector<Object> rowData=new Vector<Object>();
 			rowData.add(arr.get(i).getCity1());
 			rowData.add(arr.get(i).getCity2());
 			rowData.add(arr.get(i).getDistance());
 			rowData.add(arr.get(i).getFee());
+//			System.out.println(data.size());
 			data.add(rowData);
 		}
-		
+
 		String names[] = { "城市A", "城市B", "距离(KM)","价格(每千公里)" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -139,11 +142,11 @@ public class ManagerUI4_2 extends JPanel {
 		myButton_2.setBounds(477, 332, 195, 30);
 		myButton_2.addActionListener(managerlistener);
 		add(myButton_2);
-		
+
 		label = new JLabel("价格：");
 		label.setBounds(477, 204, 86, 16);
 		add(label);
-		
+
 		myTextField_3 = new MyTextField();
 		myTextField_3.setColumns(10);
 		myTextField_3.setBounds(550, 197, 122, 30);
@@ -187,7 +190,7 @@ public class ManagerUI4_2 extends JPanel {
 	public MyButton getMyButton_2() {
 		return myButton_2;
 	}
-	
+
 	public void setText(String s) {
 		dialog.setText(s);
 	}

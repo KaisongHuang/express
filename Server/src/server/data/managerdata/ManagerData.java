@@ -30,7 +30,7 @@ import dataservice.managerdataservice.ManagerDataBaseService;
 
 public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseService{
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
@@ -44,6 +44,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs;
 		String sql="select * from DistanceAndFee;";
 		rs=db.find(sql);
+		System.out.println(1);
 		try {
 			while(rs.next()){
 				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(3),rs.getDouble(4)));
@@ -99,7 +100,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			e.printStackTrace();
 		}
 		return null;
-	
+
 	}
 	public InstitutionPO findInstitution(String id) throws RemoteException{
 		String sql;
@@ -132,7 +133,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		return null;
 	}
 	public Object find() throws RemoteException{
-	    
+
 		return null;
 	}
 
@@ -145,7 +146,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof ReceiptPO){
 			ReceiptPO receipt=(ReceiptPO) po;
-			sql="update Receipt set isCheck="+receipt.getIsCheck()+" where number='"+receipt.getNumber()+"';";	
+			sql="update Receipt set isCheck="+receipt.getIsCheck()+" where number='"+receipt.getNumber()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof AcceptPO){
 			AcceptPO accept=(AcceptPO) po;
@@ -219,10 +220,10 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			sql="delete from DistanceAndFee where city1='"+po1.getCity1()+"' and city2='"+po1.getCity2()+"';";
 			rm=db.delete(sql);
 		}
-		
+
 		return rm;
 	}
-	
+
 	public ArrayList<CarPackPO> getCarPack() throws RemoteException{
 		ArrayList<CarPackPO> list=new ArrayList<CarPackPO>();
 		String sql="select * from CarPack where isCheck=0;";
@@ -257,9 +258,9 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			e.printStackTrace();
 		}
 		return list;
-		
+
 	}
-	
+
 	public ArrayList<ReceiptPO> getReceipt() throws RemoteException{
 		String sql="select * from Receipt where isCheck=0;";
 		ArrayList<ReceiptPO> list=new ArrayList<ReceiptPO>();
@@ -288,17 +289,17 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return list;
 	}
-	
+
 	public ArrayList<AcceptPO> getAccept() throws RemoteException{
 		String sql="select * from Accept where isCheck=0;";
 		ArrayList<AcceptPO> list=new ArrayList<AcceptPO>();
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
-			    list.add(new AcceptPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6)));	
+			    list.add(new AcceptPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -313,7 +314,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
-			     list.add(new DeliverPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4)));	
+			     list.add(new DeliverPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(4)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -328,7 +329,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		try {
 			while(rs.next()){
 			    list.add(new CentreArrivalPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getInt(7)));
-			    
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -336,7 +337,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return list;
 	}
-	
+
 	public ArrayList<CentrePackPO> getCentrePack() throws RemoteException{
 		String sql="select * from CentrePack where isCheck=0;";
 		ArrayList<CentrePackPO> list=new ArrayList<CentrePackPO>();
@@ -369,7 +370,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 	    return list;
 	}
-	
+
 	public ArrayList<CentreTransforPO> getCentreTransfor() throws RemoteException{
 		String sql="select * from CentreTransfor where isCheck=0;";
 		ArrayList<CentreTransforPO> list=new ArrayList<CentreTransforPO>();
@@ -412,7 +413,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			while(rs.next()){
 			     list.add(new InStoragePO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(9),
 			    		 rs.getString(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(10)));
-			     
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -420,7 +421,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return list;
 	}
-	
+
 	public ArrayList<OutStoragePO> getOutStorage() throws RemoteException{
 		String sql = "select * from OutStorage where isCheck=0;";
 		ArrayList<OutStoragePO> list = new ArrayList<OutStoragePO>();
@@ -436,7 +437,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return list;
 	}
-	
+
 	public ArrayList<PayPO> getPay() throws RemoteException{
 	   String sql="select * from Pay where isCheck=0;";
 	   ArrayList<PayPO> list=new ArrayList<PayPO>();
@@ -481,5 +482,5 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}
 		return list;
 	}
-	
+
 }
