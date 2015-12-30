@@ -7,7 +7,6 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import logic.financebl.Finance;
@@ -37,16 +36,18 @@ public class FinanceListener3 implements ActionListener, MouseListener {
 				ui.getModel2().removeRow(0);
 			}
 
-			String year1 = (String) ui.getComboBox().getSelectedItem();
-			String month1 = (String) ui.getComboBox_1().getSelectedItem();
-			String day1 = (String) ui.getComboBox_2().getSelectedItem();
+//			String year1 = (String) ui.getComboBox().getSelectedItem();
+//			String month1 = (String) ui.getComboBox_1().getSelectedItem();
+//			String day1 = (String) ui.getComboBox_2().getSelectedItem();
+//
+//			String year2 = (String) ui.getComboBox_3().getSelectedItem();
+//			String month2 = (String) ui.getComboBox_4().getSelectedItem();
+//			String day2 = (String) ui.getComboBox_5().getSelectedItem();
 
-			String year2 = (String) ui.getComboBox_3().getSelectedItem();
-			String month2 = (String) ui.getComboBox_4().getSelectedItem();
-			String day2 = (String) ui.getComboBox_5().getSelectedItem();
-
-			String begin = year1 + month1 + day1;
-			String end = year2 + month2 + day2;
+			String begin = ui.getBegin().getText().replace("/", "");
+			begin = begin.substring(4, 8) + begin.substring(0, 4);
+			String end = ui.getEnd().getText().replace("/", "");
+			end = end.substring(4, 8) + end.substring(0, 4);
 
 			ArrayList<Object> ob = finance.getTotal(begin, end);
 
