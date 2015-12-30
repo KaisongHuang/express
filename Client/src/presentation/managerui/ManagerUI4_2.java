@@ -25,9 +25,12 @@ public class ManagerUI4_2 extends JPanel {
 	private MyTextField textField_6;
 	private MyTextField textField_8;
 	private MyTextField textField_1;
+<<<<<<< HEAD
+=======
     private MyDialog dialog;
 	private JButton btnNewButton_14;
 	private JButton btnNewButton_15;
+>>>>>>> master
 	private JButton btnNewButton_16;
 	private JButton btnNewButton_17;
 
@@ -88,16 +91,6 @@ public class ManagerUI4_2 extends JPanel {
 		textField_8.setBounds(388, 167, 122, 30);
 		panel_6.add(textField_8);
 		textField_8.setColumns(10);
-
-		btnNewButton_14 = new JButton("\u4E0A\u4E00\u9875");
-		btnNewButton_14.setBounds(193, 231, 90, 30);
-		panel_6.add(btnNewButton_14);
-		btnNewButton_14.addActionListener(managerlistener);
-
-		btnNewButton_15 = new JButton("\u4E0B\u4E00\u9875");
-		btnNewButton_15.setBounds(365, 231, 90, 30);
-		panel_6.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
 
 		JLabel lblNewLabel = new JLabel("1");
 		lblNewLabel.setBounds(51, 46, 55, 18);
