@@ -43,8 +43,13 @@ public class CourierListener4 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getSearch()) {
+
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return;
 			HistoryVO vo = sender.search(id);
+			if(!check(vo))
+				return;
 			set(vo);
 		}
 	}
