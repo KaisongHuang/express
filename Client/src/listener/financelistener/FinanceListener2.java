@@ -18,18 +18,20 @@ import javax.swing.border.EmptyBorder;
 import _enum.ResultMessage;
 import logic.financebl.Finance;
 import logic.financeblservice.FinanceBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI2;
 import vo.PayVO;
 
 public class FinanceListener2 implements ActionListener, MouseListener {
 	private FinanceUI2 ui;
-	FinanceBlService financeBl = new Finance();
+	FinanceBlService finance ;
 	static Point origin = new Point();
 
 	public FinanceListener2(FinanceUI2 ui) {
 		super();
 		this.ui = ui;
+		finance=LogicFactory.getFinanceService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -126,7 +128,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 						vo.setIsCheck(0);
 //						if (!check(vo))
 //							continue;
-						rm = financeBl.createCost(vo);
+						rm = finance.createCost(vo);
 						check(rm);
 					}
 

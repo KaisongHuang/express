@@ -3,6 +3,7 @@ package logic.senderbl;
 import java.rmi.RemoteException;
 
 import po.HistoryPO;
+import data.datafactory.DataFactory;
 import data.senderdata.SenderData;
 import vo.HistoryVO;
 import logic.senderblservice.SenderBlService;
@@ -10,7 +11,7 @@ import logic.senderblservice.SenderBlService;
 public class Sender implements SenderBlService {
 
 	public HistoryVO search(String id) {
-		SenderData sd = new SenderData();
+		SenderData sd = DataFactory.getSenderDataService();
 		HistoryPO hispo;
 		try {
 			hispo = sd.find(id);

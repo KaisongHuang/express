@@ -13,6 +13,7 @@ import _enum.EmployeeMes;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import logic.logicfactory.LogicFactory;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI1;
@@ -24,7 +25,7 @@ import vo.OutStorageVO;
 public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private WarehouseUI1 ui;
-	private WarehouseBlService warehouseBl = new Warehouse();
+	private WarehouseBlService warehouseBl ;
 	private ArrayList<CentreArrivalVO> arrival;
 	private ArrayList<CentreTransforVO> trans;
 	private boolean import_clicked = true;
@@ -33,6 +34,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 	public WarehouseListener1(WarehouseUI1 ui) {
 		super();
 		this.ui = ui;
+		warehouseBl=LogicFactory.getWarehouseService();
 	}
 
 	public WarehouseListener1() {

@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import _enum.Operation;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI3_3;
@@ -16,10 +17,10 @@ import vo.CarVO;
 public class SellingAreaListener3_3 implements ActionListener {
 
 	private SellingAreaUI3_3 ui;
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea  ;
 	public SellingAreaListener3_3(SellingAreaUI3_3 ui) {
 		super();
-		this.ui = ui;
+		this.ui = ui;sellingarea=LogicFactory.getSellingAreaService();
 	}
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

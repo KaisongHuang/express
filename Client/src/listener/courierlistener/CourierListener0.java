@@ -18,8 +18,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import _enum.ResultMessage;
+import data.datafactory.DataFactory;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
+import logic.logicfactory.LogicFactory;
 import po.DistanceAndFee;
 import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI;
@@ -34,7 +36,7 @@ import vo.SenderVO;
 public class CourierListener0 implements ActionListener ,MouseListener{
 
 	private CourierUI ui;
-	CourierBlService courier = new Courier();
+	CourierBlService courier ;
 	static Point origin=new Point();
 	CourierUI1 panel;
 
@@ -44,6 +46,7 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 	public CourierListener0(CourierUI ui) {
 		super();
 		this.ui = ui;
+		courier=LogicFactory.getCourierService();
 		panel = new CourierUI1(ui.WIDTH, ui.HEIGHT);
 	}
 
