@@ -47,7 +47,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 					+ po1.getIsCheck() + ",'" + po1.getWarehouseID() + "');";
 			rm = db.insert(sql);
 			if (rm == ResultMessage.Success) {
-				String sql1 = "update InStorage set isInStorage=1 where id='" + po1.getId() + "';";
+				String sql1 = "update InStorage set isInStorage=0 where id='" + po1.getId() + "';";
 				db.update(sql1);
 			}
 		}

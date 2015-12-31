@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import _enum.ResultMessage;
 import data.courierdata.CourierData;
 import data.courierdataservice.CourierDataService;
+import data.datafactory.DataFactory;
 import data.senderdata.SenderData;
 import data.senderdataservice.SenderDataService;
 import logic.courierblservice.CourierBlService;
@@ -16,11 +17,15 @@ import vo.SenderVO;
 
 public class Courier implements CourierBlService {
 
-	CourierDataService cd = new CourierData();
-	SenderDataService sd = new SenderData();
+	CourierDataService cd ;
+	SenderDataService sd ;
 	private double time;
 	private double money;
 
+	public Courier(){
+		cd=DataFactory.getCourierDataService();
+		sd=DataFactory.getSenderDataService();
+	}
 	public ResultMessage OrderInput(SenderVO vo) {
 
 		// TODO Auto-generated method stub
