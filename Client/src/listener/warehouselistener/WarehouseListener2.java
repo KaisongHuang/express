@@ -7,17 +7,19 @@ import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
+import logic.logicfactory.LogicFactory;
 import logic.warehousebl.Warehouse;
 import presentation.warehouseui.WarehouseUI2;
 import vo.InStorageVO;
 
 public class WarehouseListener2 implements ActionListener {
 	private WarehouseUI2 ui;
-	Warehouse warehouse = new Warehouse();
+	Warehouse warehouse  ;
 
 	public WarehouseListener2(WarehouseUI2 ui) {
 		super();
 		this.ui = ui;
+		warehouse=LogicFactory.getWarehouseService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

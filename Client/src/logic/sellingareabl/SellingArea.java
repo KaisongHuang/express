@@ -8,6 +8,7 @@ import po.CarPackPO;
 import po.DeliverPO;
 import po.DriverPO;
 import po.ReceiptPO;
+import data.datafactory.DataFactory;
 import data.sellingareadata.SellingAreaData;
 import vo.AcceptVO;
 import vo.CarPackVO;
@@ -20,8 +21,11 @@ import _enum.ResultMessage;
 import logic.sellingareablservice.SellingareaBlService;
 
 public class SellingArea implements SellingareaBlService {
-	SellingAreaData sd = new SellingAreaData();
+	SellingAreaData sd ;
 
+	public SellingArea(){
+		sd=DataFactory.getSellingAreaDataService();
+	}
 	public ResultMessage manageCarPack(CarPackVO vo) {
 		ResultMessage rm=null;
 

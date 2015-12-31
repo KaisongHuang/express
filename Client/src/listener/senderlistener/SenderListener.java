@@ -9,13 +9,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import logic.logicfactory.LogicFactory;
 import logic.senderbl.Sender;
+import logic.senderblservice.SenderBlService;
 import presentation.senderui.SearchUI;
 import vo.HistoryVO;
 
 public class SenderListener implements ActionListener{
     
-    Sender sender;
+    SenderBlService sender;
     SearchUI search;
     JLabel label1;
     JLabel label2;
@@ -24,7 +26,7 @@ public class SenderListener implements ActionListener{
     String centreID;
 	public SenderListener(SearchUI s){
 		search=s;
-		sender=new Sender();
+		sender=LogicFactory.getSenderService();
 
 
 	}

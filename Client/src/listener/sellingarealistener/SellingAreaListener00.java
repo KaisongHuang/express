@@ -11,6 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI;
@@ -25,11 +26,12 @@ import vo.CarPackVO;
 public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	private SellingAreaUI ui;
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea  ;
 	double fee;
 	public SellingAreaListener00(SellingAreaUI ui) {
 		super();
 		this.ui = ui;
+		sellingarea=LogicFactory.getSellingAreaService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

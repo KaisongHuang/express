@@ -13,6 +13,7 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.adminui.AdminUI2;
 import vo.AdminVO;
@@ -21,11 +22,12 @@ public class AdminListener2 implements MouseListener, ActionListener {
 
 	private AdminUI2 ui;
 	AdminVO vo ;
-	AdminBlService admin = new Admin();
+	AdminBlService admin ;
 
 	public AdminListener2 (AdminUI2 ui){
 		super();
 		this.ui=ui;
+		admin=LogicFactory.getAdminService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

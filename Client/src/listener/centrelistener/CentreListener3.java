@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.centreui.*;
 import vo.CentreTransforVO;
@@ -18,11 +19,12 @@ import vo.CentreTransforVO;
 public class CentreListener3 implements MouseListener, ActionListener {
 
 	private CentreUI3 ui;
-	CentreBlService centre = new Centre();
+	CentreBlService centre ;
 
 	public CentreListener3(CentreUI3 ui) {
 		super();
 		this.ui = ui;
+		centre=LogicFactory.getCentreService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

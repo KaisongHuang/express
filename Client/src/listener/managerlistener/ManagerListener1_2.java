@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 
 import _enum.Opera;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import po.InstitutionPO;
@@ -20,11 +21,12 @@ import vo.InstitutionVO;
 public class ManagerListener1_2 implements MouseListener, ActionListener {
 
 	private ManagerUI1_2 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager  ;
 
 	public ManagerListener1_2(ManagerUI1_2 ui) {
 		super();
 		this.ui = ui;
+		manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

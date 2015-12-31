@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI4_1;
@@ -14,10 +15,10 @@ import vo.DriverVO;
 public class SellingAreaListener4_1 implements ActionListener {
 
 	private SellingAreaUI4_1 ui;
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea  ;
 	public SellingAreaListener4_1 (SellingAreaUI4_1 ui){
 		super();
-		this.ui=ui;
+		this.ui=ui;sellingarea=LogicFactory.getSellingAreaService();
 	}
 	
 	public void actionPerformed(ActionEvent e) {

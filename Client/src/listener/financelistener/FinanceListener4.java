@@ -19,19 +19,21 @@ import javax.swing.border.EmptyBorder;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.financebl.Finance;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI4;
 import vo.AccountVO;
 
 public class FinanceListener4 implements ActionListener, MouseListener {
 	private FinanceUI4 ui;
-	Finance finance = new Finance();
+	Finance finance ;
 	ResultMessage rm = null;
 	static Point origin = new Point();
 
 	public FinanceListener4(FinanceUI4 ui) {
 		super();
 		this.ui = ui;
+		finance=LogicFactory.getFinanceService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

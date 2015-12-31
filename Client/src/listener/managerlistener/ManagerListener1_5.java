@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JTextArea;
 
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI1_5;
@@ -14,11 +15,11 @@ import presentation.managerui.ManagerUI1_5;
 public class ManagerListener1_5 implements MouseListener, ActionListener {
 
 	private ManagerUI1_5 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager ;
 
 	public ManagerListener1_5(ManagerUI1_5 ui) {
 		super();
-		this.ui = ui;
+		this.ui = ui;manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
