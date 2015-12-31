@@ -47,7 +47,7 @@ public class SenderListener implements ActionListener{
 
 	private boolean check(HistoryVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(search,"系统中不存在此快递编号！");
+			ui.setErrorTest("系统中不存在此快递编号！");
 			return false;
 		}
 		return true;
