@@ -49,8 +49,9 @@ public class FinanceUI3 extends JPanel {
 
 	private MyButton export;
 	private JScrollPane JSP2;
-	FinanceListener3 financeListener3;
+	private FinanceListener3 financeListener3;
 	private MyDialog dialog;
+	
 	public FinanceUI3() {
 		financeListener3 = new FinanceListener3(this);
 		initialize();

@@ -18,18 +18,17 @@ import java.util.Vector;
 
 import listener.managerlistener.ManagerListener20;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
-
-import javax.swing.JComboBox;
 
 public class ManagerUI2 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
 	private MyButton button1;
 	private MyButton button2;
 	private MyButton button;
@@ -125,7 +124,7 @@ public class ManagerUI2 extends JPanel {
 		panel = new JPanel();
 		panel.setBounds(0, 40, 715, 400);
 		panel.setLayout(card);
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.addItem("无");
 		comboBox.addItem("付款单");
 		comboBox.addItem("收款单");
@@ -147,7 +146,7 @@ public class ManagerUI2 extends JPanel {
 		this.add(button1);
 		button1.addActionListener(managerlistener);
 		button1.addMouseListener(managerlistener);
-		
+
 		button2 = new MyButton("取消");
 		button2.setBounds(301, 5, 91, 28);
 		this.add(button2);
@@ -174,10 +173,10 @@ public class ManagerUI2 extends JPanel {
 		JSP2 = new JScrollPane(table2);
 		JSP2.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names3[] = { "收款日期", "收款金额", "收款快递员", "审批通过" };
+		String names3[] = { "收款日期", "收款金额","收款单位", "收款快递员", "id","审批通过" };
 		name3 = new Vector<String>(Arrays.asList(names3));
 		table3 = new MyTable(data3, name3);
-		TableColumn tc3 = table3.getColumnModel().getColumn(3);
+		TableColumn tc3 = table3.getColumnModel().getColumn(5);
 		tc3.setCellEditor(table3.getDefaultEditor(Boolean.class));
 		tc3.setCellRenderer(table3.getDefaultRenderer(Boolean.class));
 		table3.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -185,7 +184,8 @@ public class ManagerUI2 extends JPanel {
 		model3 = (DefaultTableModel) table3.getModel();
 		table3.setSelectionForeground(Color.BLACK);
 		table3.setSelectionBackground(null);
-		table3.setEditableColumn(3);
+		table3.setEditableColumn(5);
+		table3.hideColumn(4);
 		table3.setFocusable(false);
 		JSP3 = new JScrollPane(table3);
 		JSP3.setBounds(0, 0, panel.getWidth(), panel.getHeight());
@@ -255,10 +255,10 @@ public class ManagerUI2 extends JPanel {
 		JSP7 = new JScrollPane(table7);
 		JSP7.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names8[] = { "装车日期", "营业厅编号", "汽运编号", "到达地", "车辆代号", "监装员", "押运员", "ID", "运费", "审批通过" };
+		String names8[] = { "装车日期", "营业厅编号","中转单号", "出发地", "到达地", "车辆代号", "监装员", "押运员", "ID", "运费", "审批通过" };
 		name8 = new Vector<String>(Arrays.asList(names8));
 		table8 = new MyTable(data8, name8);
-		TableColumn tc8 = table8.getColumnModel().getColumn(9);
+		TableColumn tc8 = table8.getColumnModel().getColumn(10);
 		tc8.setCellEditor(table8.getDefaultEditor(Boolean.class));
 		tc8.setCellRenderer(table8.getDefaultRenderer(Boolean.class));
 		table8.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -266,16 +266,16 @@ public class ManagerUI2 extends JPanel {
 		model8 = (DefaultTableModel) table8.getModel();
 		table8.setSelectionForeground(Color.BLACK);
 		table8.setSelectionBackground(null);
-		table8.setEditableColumn(9);
+		table8.setEditableColumn(10);
 		table8.setFocusable(false);
-		table8.hideColumn(7);
+		table8.hideColumn(8);
 		JSP8 = new JScrollPane(table8);
 		JSP8.setBounds(0, 0, panel.getWidth(), panel.getHeight());
 
-		String names9[] = { "到达日期", "中转单编号", "出发地", "货物到达状态", "审批通过" };
+		String names9[] = { "快递单号","到达日期", "中转单编号", "出发地", "货物到达状态", "审批通过" };
 		name9 = new Vector<String>(Arrays.asList(names9));
 		table9 = new MyTable(data9, name9);
-		TableColumn tc9 = table9.getColumnModel().getColumn(4);
+		TableColumn tc9 = table9.getColumnModel().getColumn(5);
 		tc9.setCellEditor(table9.getDefaultEditor(Boolean.class));
 		tc9.setCellRenderer(table9.getDefaultRenderer(Boolean.class));
 		table9.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -283,7 +283,7 @@ public class ManagerUI2 extends JPanel {
 		model9 = (DefaultTableModel) table9.getModel();
 		table9.setSelectionForeground(Color.BLACK);
 		table9.setSelectionBackground(null);
-		table9.setEditableColumn(4);
+		table9.setEditableColumn(5);
 		table9.setFocusable(false);
 		JSP9 = new JScrollPane(table9);
 		JSP9.setBounds(0, 0, panel.getWidth(), panel.getHeight());
@@ -501,11 +501,11 @@ public class ManagerUI2 extends JPanel {
 		this.button2 = button2;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
