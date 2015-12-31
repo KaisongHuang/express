@@ -341,41 +341,4 @@ public class Finance implements FinanceBlService {
 		System.out.println("save: " + f);
 		return f;
 	}
-
-	public ArrayList<ReceiptVO> getReceipt() {
-		// TODO Auto-generated method stub
-		ArrayList<ReceiptPO> po = new ArrayList<ReceiptPO>();
-		ArrayList<ReceiptVO> vo = new ArrayList<ReceiptVO>();
-
-		try {
-			po = fd.getReceipt();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		for (int i = 0; i < po.size(); i++)
-			vo.add(new ReceiptVO(po.get(i).getMoney(), po.get(i).getDate(), po.get(i).getSellingArea(),
-					po.get(i).getNumber(), po.get(i).getId(), po.get(i).getIsCheck()));
-
-		return vo;
-	}
-
-	public ArrayList<PayVO> getPay() {
-		// TODO Auto-generated method stub
-		ArrayList<PayPO> po = new ArrayList<PayPO>();
-		ArrayList<PayVO> vo = new ArrayList<PayVO>();
-
-		try {
-			po = fd.getPay();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		for (int i = 0; i < po.size(); i++)
-			vo.add(new PayVO(po.get(i).getDate(), po.get(i).getPayer(), po.get(i).getPayAccount(), po.get(i).getEntry(),
-					po.get(i).getComments(), po.get(i).getCost(), po.get(i).getIsCheck()));
-		return vo;
-	}
 }
