@@ -9,9 +9,9 @@ public class NetReconnect{
 		
 	}
      
-	public static  AdminDataBaseService getAdminService(){
-		
-	}
+//	public static  AdminDataBaseService getAdminService(){
+//		
+//	}
 	
 	class Time extends Thread{
 		public void run(){

@@ -9,6 +9,7 @@ import po.CentreTransforPO;
 import _enum.ResultMessage;
 import data.centredata.CentreData;
 import data.centredataservice.CentreDataService;
+import data.datafactory.DataFactory;
 import data.sellingareadata.SellingAreaData;
 import data.sellingareadataservice.SellingareaDataService;
 import logic.centreblservice.CentreBlService;
@@ -21,8 +22,8 @@ public class Centre implements CentreBlService {
 	CentreDataService cd;
 	SellingAreaData sd ;
     public Centre(){
-    	cd=new CentreData();
-    	sd= new SellingAreaData();
+    	cd=DataFactory.getCentreDataService();
+    	sd= DataFactory.getSellingAreaDataService();
     }
 	public ResultMessage manageTranfor(CentreTransforVO vo) {
 		// TODO Auto-generated method stub
