@@ -99,7 +99,7 @@ public class CourierListener4 implements MouseListener, ActionListener {
 
 	private boolean check(HistoryVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(search,"系统中不存在此快递编号！");
+			ui.setErrorText("系统中不存在此快递编号！");
 			return false;
 		}
 		return true;

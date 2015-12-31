@@ -47,7 +47,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		System.out.println(1);
 		try {
 			while(rs.next()){
-				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(3),rs.getDouble(4)));
+				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(4),rs.getDouble(3)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -74,7 +74,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			String list1 = po1.getCity1();
 			String list2 = po1.getCity2();
 
-			sql = "insert into DistanceAndFee values('" + list1 + "','" + list2 + "," + po1.getFee() + ","
+			sql = "insert into DistanceAndFee values('" + list1 + "','" + list2 + "'," + po1.getFee() + ","
 					+ po1.getDistance() + ");";
 			rm=db.insert(sql);
 		}else if(po instanceof SalaryPO){
@@ -474,7 +474,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs=db.find(sql);
 		try {
 			while(rs.next()){
-				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(3),rs.getDouble(4)));
+				list.add(new DistanceAndFee(rs.getString(1),rs.getString(2),rs.getDouble(4),rs.getDouble(3)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

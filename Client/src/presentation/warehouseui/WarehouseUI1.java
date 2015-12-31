@@ -341,6 +341,9 @@ public class WarehouseUI1 extends JPanel {
 
 	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);;
+	}
 	public MyTable getTable2() {
 		return table2;
 	}

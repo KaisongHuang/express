@@ -68,6 +68,8 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			delete(ui.getTextField_12());
 			delete(ui.getTextField_13());
 			delete(ui.getTextField_14());
+			ui.setTime("");;
+			ui.setMoney("");
 			ui.getComboBox().setSelectedIndex(1);
 			ui.getComboBox_1().setSelectedIndex(1);
 		} else if (e.getSource() == ui.getConfirm()) {
@@ -77,49 +79,49 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 				return ;
 			rm = courier.OrderInput(vo);
 			check(rm);
-			panel.getTextField().setText(courier.getTime()+"");
-			panel.getTextField_1().setText(courier.getMoney()+"");
+			ui.setTime(courier.getTime()+"");
+			ui.setMoney(courier.getMoney()+"");
 //			panel.setVisible(true);
-			final JFrame jf;
-			jf = new JFrame();
-
-
-			//jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			jf.setBounds(300, 300, 450, 150);
-			jf.setUndecorated(true);
-
-
-			jf.add(panel);
-			jf.addMouseListener(new MouseAdapter() {
-				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
-				public void mousePressed(MouseEvent e) {
-					// 当鼠标按下的时候获得窗口当前的位置
-					origin.x = e.getX();
-					origin.y = e.getY();
-				}
-			});
-			jf.addMouseMotionListener(new MouseMotionAdapter() {
-				// 拖动（mouseDragged 指的不是鼠标在窗口中移动，而是用鼠标拖动）
-				public void mouseDragged(MouseEvent e) {
-					// 当鼠标拖动时获取窗口当前位置
-					Point p = jf.getLocation();
-					// 设置窗口的位置
-					// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
-					jf.setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
-				}
-			});
-
-			final MyButton button_1 = new MyButton("返回");
-			button_1.setBounds(300, 150, 117, 29);
-			button_1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					;
-				}
-			});
-
-			panel.add(button_1);
-			jf.setContentPane(panel);
-			jf.setVisible(true);
+//			final JFrame jf;
+//			jf = new JFrame();
+//
+//
+//			//jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//			jf.setBounds(300, 300, 450, 150);
+//			jf.setUndecorated(true);
+//
+//
+//			jf.add(panel);
+//			jf.addMouseListener(new MouseAdapter() {
+//				// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
+//				public void mousePressed(MouseEvent e) {
+//					// 当鼠标按下的时候获得窗口当前的位置
+//					origin.x = e.getX();
+//					origin.y = e.getY();
+//				}
+//			});
+//			jf.addMouseMotionListener(new MouseMotionAdapter() {
+//				// 拖动（mouseDragged 指的不是鼠标在窗口中移动，而是用鼠标拖动）
+//				public void mouseDragged(MouseEvent e) {
+//					// 当鼠标拖动时获取窗口当前位置
+//					Point p = jf.getLocation();
+//					// 设置窗口的位置
+//					// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
+//					jf.setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
+//				}
+//			});
+//
+//			final MyButton button_1 = new MyButton("返回");
+//			button_1.setBounds(300, 150, 117, 29);
+//			button_1.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent e) {
+//					;
+//				}
+//			});
+//
+//			panel.add(button_1);
+//			jf.setContentPane(panel);
+//			jf.setVisible(true);
 		}
 
 	}
@@ -131,23 +133,25 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
     private boolean check(SenderVO vo){
     	if(vo.checkIsNull()==0){
-    		ui.setText("请将信息填写完整！");
+    		ui.setErrorText("请将信息填写完整！");
 			return false;
     	}
     	if(vo.checkRecipientPhone()==0){
-    		ui.setText("请检查收件人的手机号格式！");
+    		ui.setErrorText("请检查收件人的手机号格式！");
 			return false;
     	}
     	if(vo.checkSenderPhone()==0){
-    		ui.setText("请检查寄件人的手机号格式！");
+    		ui.setErrorText("请检查寄件人的手机号格式！");
 			return false;
     	}
     	return true;
