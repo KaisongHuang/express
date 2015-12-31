@@ -61,4 +61,14 @@ public class FinanceBlService_Stub implements FinanceBlService {
 		return null;
 	}
 
+	public ArrayList<ReceiptVO> getReceipt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<PayVO> getPay() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
