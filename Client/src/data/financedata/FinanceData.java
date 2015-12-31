@@ -85,4 +85,14 @@ public class FinanceData implements FinanceDataService {
 		rm=fd.InitInsert(po);
 		return rm;
 	}
+
+	public ArrayList<PayPO> getPay() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<ReceiptPO> getReceipt() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
