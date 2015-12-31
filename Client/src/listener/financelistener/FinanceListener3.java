@@ -10,17 +10,19 @@ import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
 import logic.financebl.Finance;
+import logic.logicfactory.LogicFactory;
 import presentation.financeui.FinanceUI3;
 import vo.PayVO;
 import vo.ReceiptVO;
 
 public class FinanceListener3 implements ActionListener, MouseListener {
 	private FinanceUI3 ui;
-	Finance finance = new Finance();
+	Finance finance;
 
 	public FinanceListener3(FinanceUI3 ui) {
 		super();
 		this.ui = ui;
+		finance=LogicFactory.getFinanceService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

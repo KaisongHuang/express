@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import _enum.Opera;
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.MySwing.MyButton;
@@ -19,10 +20,11 @@ import vo.EmployeeVO;
 public class ManagerListener0_1 implements MouseListener, ActionListener {
 
 	private ManagerUI0_1 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager;
 	public ManagerListener0_1 (ManagerUI0_1 ui){
 		super();
 		this.ui=ui;
+		manager=LogicFactory.getManagerService();
 	}
 
 

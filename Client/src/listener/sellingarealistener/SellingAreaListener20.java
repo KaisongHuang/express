@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import _enum.EmployeeMes;
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.MySwing.MyButton;
@@ -25,11 +26,11 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 
 	private SellingAreaUI2 ui;
 	private Vector<Object> vec = new Vector<Object>();
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea  ;
 
 	public SellingAreaListener20(SellingAreaUI2 ui) {
 		super();
-		this.ui = ui;
+		this.ui = ui;sellingarea=LogicFactory.getSellingAreaService();
 	}
 
 	@SuppressWarnings("unchecked")

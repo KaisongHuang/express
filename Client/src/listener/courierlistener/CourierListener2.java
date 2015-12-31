@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import _enum.ResultMessage;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI2;
 import vo.CourierVO;
@@ -21,11 +22,12 @@ import vo.CourierVO;
 public class CourierListener2 implements MouseListener, ActionListener {
 
 	private CourierUI2 ui;
-	CourierBlService courier = new Courier();
+	CourierBlService courier ;
 
 	public CourierListener2(CourierUI2 ui) {
 		super();
 		this.ui = ui;
+		courier=LogicFactory.getCourierService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

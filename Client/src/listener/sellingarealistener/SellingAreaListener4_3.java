@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import _enum.Operation;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI4_3;
@@ -19,10 +20,10 @@ import vo.DriverVO;
 public class SellingAreaListener4_3 implements MouseListener, ActionListener {
 
 	private SellingAreaUI4_3 ui;
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea  ;
 	public SellingAreaListener4_3 (SellingAreaUI4_3 ui){
 		super();
-		this.ui=ui;
+		this.ui=ui;sellingarea=LogicFactory.getSellingAreaService();
 	}
 
 	

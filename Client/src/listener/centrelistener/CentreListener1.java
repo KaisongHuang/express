@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.centreui.*;
 import vo.CentreTransforVO;
@@ -23,11 +24,12 @@ public class CentreListener1 implements MouseListener, ActionListener {
 	private CentreUI1_1 ui1;
 	private boolean hasUI1 = false;
 	private Vector<Object> data;
-	CentreBlService centre = new Centre();
+	CentreBlService centre;
 
 	public CentreListener1(CentreUI1 ui) {
 		super();
 		this.ui = ui;
+		centre=LogicFactory.getCentreService();
 	}
 
 	@SuppressWarnings("unchecked")

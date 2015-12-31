@@ -10,17 +10,19 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 
 import logic.financebl.Finance;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI1;
 import vo.ReceiptVO;
 
 public class FinanceListener1 implements ActionListener ,MouseListener{
 	private FinanceUI1 ui;
-	Finance finance = new Finance();
+	Finance finance;
 
 	public FinanceListener1(FinanceUI1 ui) {
 		super();
 		this.ui = ui;
+		finance=LogicFactory.getFinanceService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

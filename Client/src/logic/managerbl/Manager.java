@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import _enum.Opera;
 import _enum.ResultMessage;
+import data.datafactory.DataFactory;
 import data.managerdata.ManagerData;
 import logic.managerblservice.ManagerBlService;
 import po.AcceptPO;
@@ -30,6 +31,9 @@ public class Manager implements ManagerBlService {
 	// WarehouseData wd = new WarehouseData();
 	// FinanceData fd = new FinanceData();
 
+	public Manager(){
+		md=DataFactory.getManagerDataService();
+	}
 	public ArrayList<SalaryVO> getSalary() {
 		ArrayList<SalaryPO> list = new ArrayList<SalaryPO>();
 		ArrayList<SalaryVO> list1 = new ArrayList<SalaryVO>();

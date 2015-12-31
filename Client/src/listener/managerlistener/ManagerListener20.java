@@ -9,6 +9,7 @@ import java.util.Vector;
 
 import javax.swing.table.DefaultTableModel;
 
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI2;
@@ -26,13 +27,13 @@ import vo.ReceiptVO;
 public class ManagerListener20 implements MouseListener, ActionListener {
 
 	private ManagerUI2 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager  ;
 	private int previousIndex = 0;
 	private int currentTable = 0;
 
 	public ManagerListener20(ManagerUI2 ui) {
 		super();
-		this.ui = ui;
+		this.ui = ui;manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

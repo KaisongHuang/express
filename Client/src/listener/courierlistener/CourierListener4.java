@@ -11,6 +11,7 @@ import javax.swing.JTextArea;
 
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
+import logic.logicfactory.LogicFactory;
 import logic.senderbl.Sender;
 import logic.senderblservice.SenderBlService;
 import presentation.MySwing.MyButton;
@@ -28,12 +29,14 @@ public class CourierListener4 implements MouseListener, ActionListener {
 	private String centreID;
 	private String warehouseID;
 
-	CourierBlService courier = new Courier();
-	SenderBlService sender = new Sender();
+	CourierBlService courier;
+	SenderBlService sender ;
 
 	public CourierListener4(CourierUI4 ui) {
 		super();
 		this.ui = ui;
+		courier=LogicFactory.getCourierService();
+		sender=LogicFactory.getSenderService();
 
 	}
 

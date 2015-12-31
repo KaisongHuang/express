@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import _enum.ResultMessage;
+import data.datafactory.DataFactory;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
 import po.CentreArrivalPO;
@@ -17,11 +18,14 @@ import vo.OutStorageVO;
 import vo.SenderVO;
 
 public class Warehouse implements WarehouseBlService {
-	WarehouseData wd = new WarehouseData();
+	WarehouseData wd ;
 	private int inNum;
 	private int outNum;
 	private int total;
 
+	public Warehouse(){
+		wd=DataFactory.getWarehosueDataService();
+	}
 	public int getInNum() {
 		return inNum;
 	}
