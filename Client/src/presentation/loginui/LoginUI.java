@@ -61,7 +61,7 @@ public class LoginUI extends JFrame {
 		       //   其它类型的LOOK&FEEL包
 		       //    LookAndFeel alloyLnF = new com.incors.plaf.alloy.AlloyLookAndFeel();
 		       //   UIManager.getSystemLookAndFeelClassName();
-		         JFrame.setDefaultLookAndFeelDecorated(true);
+//		         JFrame.setDefaultLookAndFeelDecorated(true);
 		         JDialog.setDefaultLookAndFeelDecorated(true);
 		         javax.swing.plaf.FontUIResource fontResource = new javax.swing.plaf.
 		             FontUIResource(SystemFont);
@@ -76,7 +76,7 @@ public class LoginUI extends JFrame {
 		         UIManager.put("ToggleButton.font", fontResource);
 		         UIManager.put("ComboBox.font", fontResource);
 		         UIManager.put("ComboBoxItem.font", fontResource);
-		         UIManager.put("InternalFrame.titleFont", fontResource);
+//		         UIManager.put("InternalFrame.titleFont", fontResource);
 		         UIManager.put("Label.font", fontResource);
 		         UIManager.put("List.font", datafontResource);
 		         UIManager.put("MenuBar.font", fontResource);
@@ -170,8 +170,8 @@ public class LoginUI extends JFrame {
 		Login.addActionListener(listener);
 		Login.addMouseListener(listener);
 		contentPane.add(Login);
-		
-		
+
+
 		setImage();
 		this.setVisible(true);
 
@@ -180,7 +180,7 @@ public class LoginUI extends JFrame {
 		Search.addActionListener(listener);
 		Search.addMouseListener(listener);
 		contentPane.add(Search);
-		
+
 	}
 
 	private void setImage() {

@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.centrelistener.CentreListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -31,7 +32,7 @@ public class CentreUI1_1 extends JFrame {
 	private MyButton myButton;
 	private MyButton myButton1;
 	private MyButton myButton2;
-
+    private MyDialog dialog;
 	private MyButton myButton3;
 	private MyTable table;
 	private JScrollPane JSP;
@@ -57,6 +58,8 @@ public class CentreUI1_1 extends JFrame {
 		setBounds(100, 100, 590, 418);
 		setUndecorated(true);
 		setVisible(true);
+		dialog=new MyDialog();
+		this.add(dialog);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -112,7 +115,13 @@ public class CentreUI1_1 extends JFrame {
 		textField.setColumns(10);
 
 	}
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyTable getTable() {
 		return table;
 	}
