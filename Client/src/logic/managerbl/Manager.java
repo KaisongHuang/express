@@ -506,11 +506,30 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage updateCity(DistanceAndFeeVO vo) {
 		// TODO Auto-generated method stub
+		ResultMessage rm;
+		DistanceAndFee po = new DistanceAndFee(vo.getCity1(),vo.getCity2(),vo.getDistance(),vo.getFee());
+		try {
+			rm = md.update(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return null;
 	}
 
 	public ResultMessage insertCity(DistanceAndFeeVO vo) {
 		// TODO Auto-generated method stub
+		ResultMessage rm;
+		DistanceAndFee po = new DistanceAndFee(vo.getCity1(),vo.getCity2(),vo.getDistance(),vo.getFee());
+		try {
+			rm = md.insert(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -534,6 +553,15 @@ public class Manager implements ManagerBlService {
 
 	public ResultMessage deleteCity(DistanceAndFeeVO vo) {
 		// TODO Auto-generated method stub
+		ResultMessage rm;
+		DistanceAndFee po = new DistanceAndFee(vo.getCity1(),vo.getCity2(),vo.getDistance(),vo.getFee());
+		try {
+			rm = md.delete(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
