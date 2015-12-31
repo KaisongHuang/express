@@ -48,6 +48,7 @@ public class SenderListener implements ActionListener{
 	private boolean check(HistoryVO vo){
 		if(vo==null){
 			search.setMesErrorText("系统中不存在此快递编号！");
+
 			return false;
 		}
 		return true;
