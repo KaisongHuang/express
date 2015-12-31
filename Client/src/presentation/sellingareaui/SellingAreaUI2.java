@@ -188,6 +188,9 @@ public class SellingAreaUI2 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);;
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);;
+	}
 	public void setData(Vector<Object> data) {
 		this.data = data;
 	}

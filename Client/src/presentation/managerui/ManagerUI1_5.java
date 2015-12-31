@@ -74,6 +74,9 @@ public class ManagerUI1_5 extends JPanel{
 	public void setText(String s){
 		dialog.setText(s);
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyButton getBtnNewButton_15() {
 		return btnNewButton_15;
 	}
