@@ -82,7 +82,6 @@ public class ManagerUI4_2 extends JPanel {
 			rowData.add(arr.get(i).getCity2());
 			rowData.add(arr.get(i).getDistance());
 			rowData.add(arr.get(i).getFee());
-//			System.out.println(data.size());
 			data.add(rowData);
 		}
 

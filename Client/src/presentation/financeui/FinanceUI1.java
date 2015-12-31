@@ -85,7 +85,7 @@ public class FinanceUI1 extends JPanel {
 		this.add(JSP);
 
 		mdp = new DatePicker(this);
-		mdp.setBounds(135, 34, 91, 25);
+		mdp.setBounds(134, 47, 106, 25);
 		this.add(mdp);
 
 //		comboBox = new MyComboBox<String>();
@@ -135,7 +135,7 @@ public class FinanceUI1 extends JPanel {
 		this.add(label_4);
 
 		label_5 = new JLabel("日期:");
-		label_5.setBounds(88, 44, 57, 15);
+		label_5.setBounds(88, 57, 57, 15);
 		this.add(label_5);
 
 		search = new MyButton("查看");
