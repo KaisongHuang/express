@@ -5,12 +5,25 @@
 package presentation.managerui;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Vector;
+
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
 import listener.managerlistener.ManagerListener4_2;
+import logic.managerbl.Manager;
+import logic.managerblservice.ManagerBlService;
+import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
+import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
+import vo.DistanceAndFeeVO;
 
 public class ManagerUI4_2 extends JPanel {
 
@@ -18,23 +31,27 @@ public class ManagerUI4_2 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private MyTextField textField;
-	private MyTextField textField_2;
-	private MyTextField textField_4;
-	private MyTextField textField_6;
-	private MyTextField textField_8;
-	private MyTextField textField_1;
+	private MyTextField myTextField;
+	private MyTextField myTextField_1;
+	private MyTextField myTextField_2;
+	private MyTextField myTextField_3;
+	private MyButton myButton;
+	private MyButton myButton_1;
+	private MyButton myButton_2;
 
-	private JButton btnNewButton_14;
-	private JButton btnNewButton_15;
-	private JButton btnNewButton_16;
-	private JButton btnNewButton_17;
-
-	ManagerListener4_2 managerlistener;
+	private MyTable table;
+	private JScrollPane JSP;
+	private Vector<String> name;
+	private Vector<Object> data;
+	private DefaultTableModel model;
+	private ManagerBlService manager = new Manager();
+	private MyDialog dialog;
+	private ManagerListener4_2 managerlistener;
+	private JLabel label;
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param card
 	 */
 	public ManagerUI4_2() {
@@ -51,110 +68,130 @@ public class ManagerUI4_2 extends JPanel {
 		this.setBounds(0, 44, 790, 433);
 
 		this.setLayout(null);
+		dialog = new MyDialog();
+		this.add(dialog);
 
-		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(Color.WHITE);
-		panel_6.setBounds(23, 79, 743, 282);
-		this.add(panel_6);
-		panel_6.setLayout(null);
+		ArrayList<DistanceAndFeeVO> arr=new ArrayList<DistanceAndFeeVO>();
+		arr=manager.findCity();
+		System.out.println(arr.size());
+		data = new Vector<Object>();
+		for(int i=0;i<arr.size();i++){
+			System.out.println(arr.size());
+			Vector<Object> rowData=new Vector<Object>();
+			rowData.add(arr.get(i).getCity1());
+			rowData.add(arr.get(i).getCity2());
+			rowData.add(arr.get(i).getDistance());
+			rowData.add(arr.get(i).getFee());
+//			System.out.println(data.size());
+			data.add(rowData);
+		}
 
-		JLabel lblNewLabel_1 = new JLabel("价格");
-		lblNewLabel_1.setBounds(435, 10, 100, 18);
-		panel_6.add(lblNewLabel_1);
+		String names[] = { "城市A", "城市B", "距离(KM)","价格(每千公里)" };
+		name = new Vector<String>(Arrays.asList(names));
+		table = new MyTable(data, name);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.addMouseListener(managerlistener);
+		table.setSelectionForeground(Color.BLACK);
+		table.setSelectionBackground(new Color(210, 240, 255));
+		table.setEditableColumn(-1);
+		table.setEditableRow(-1);
+		table.setFocusable(false);
+		model = (DefaultTableModel) table.getModel();
+		JSP = new JScrollPane(table);
+		JSP.setBounds(21, 90, 444, 272);
+		this.add(JSP);
 
-		textField = new MyTextField();
-		textField.setBounds(388, 40, 122, 30);
-		panel_6.add(textField);
-		textField.setColumns(10);
+		JLabel lbla = new JLabel("城市A：");
+		lbla.setBounds(477, 101, 61, 16);
+		add(lbla);
 
-		textField_2 = new MyTextField();
-		textField_2.setBounds(388, 69, 122, 30);
-		panel_6.add(textField_2);
-		textField_2.setColumns(10);
+		JLabel lblb = new JLabel("城市B：");
+		lblb.setBounds(477, 135, 61, 16);
+		add(lblb);
 
-		textField_4 = new MyTextField();
-		textField_4.setBounds(388, 102, 122, 30);
-		panel_6.add(textField_4);
-		textField_4.setColumns(10);
+		JLabel lblkm = new JLabel("距离(KM)：");
+		lblkm.setBounds(477, 169, 73, 16);
+		add(lblkm);
 
-		textField_6 = new MyTextField();
-		textField_6.setBounds(388, 134, 122, 30);
-		panel_6.add(textField_6);
-		textField_6.setColumns(10);
+		myTextField = new MyTextField();
+		myTextField.setColumns(10);
+		myTextField.setBounds(550, 94, 122, 30);
+		add(myTextField);
 
-		textField_8 = new MyTextField();
-		textField_8.setBounds(388, 167, 122, 30);
-		panel_6.add(textField_8);
-		textField_8.setColumns(10);
+		myTextField_1 = new MyTextField();
+		myTextField_1.setColumns(10);
+		myTextField_1.setBounds(550, 128, 122, 30);
+		add(myTextField_1);
 
-		btnNewButton_14 = new JButton("\u4E0A\u4E00\u9875");
-		btnNewButton_14.setBounds(193, 231, 90, 30);
-		panel_6.add(btnNewButton_14);
-		btnNewButton_14.addActionListener(managerlistener);
+		myTextField_2 = new MyTextField();
+		myTextField_2.setColumns(10);
+		myTextField_2.setBounds(550, 162, 122, 30);
+		add(myTextField_2);
 
-		btnNewButton_15 = new JButton("\u4E0B\u4E00\u9875");
-		btnNewButton_15.setBounds(365, 231, 90, 30);
-		panel_6.add(btnNewButton_15);
-		btnNewButton_15.addActionListener(managerlistener);
+		myButton = new MyButton("添加");
+		myButton.setBounds(477, 260, 195, 30);
+		myButton.addActionListener(managerlistener);
+		add(myButton);
 
-		JLabel lblNewLabel = new JLabel("1");
-		lblNewLabel.setBounds(51, 46, 55, 18);
-		panel_6.add(lblNewLabel);
+		myButton_1 = new MyButton("修改");
+		myButton_1.setBounds(477, 297, 195, 30);
+		myButton_1.addActionListener(managerlistener);
+		add(myButton_1);
 
-		JLabel lblNewLabel_3 = new JLabel("2");
-		lblNewLabel_3.setBounds(183, 46, 55, 18);
-		panel_6.add(lblNewLabel_3);
+		myButton_2 = new MyButton("删除");
+		myButton_2.setBounds(477, 332, 195, 30);
+		myButton_2.addActionListener(managerlistener);
+		add(myButton_2);
 
-		JLabel lblNewLabel_4 = new JLabel("3");
-		lblNewLabel_4.setBounds(51, 108, 55, 18);
-		panel_6.add(lblNewLabel_4);
-
-		JLabel lblNewLabel_5 = new JLabel("4");
-		lblNewLabel_5.setBounds(51, 140, 55, 18);
-		panel_6.add(lblNewLabel_5);
-
-		JLabel lblNewLabel_6 = new JLabel("5");
-		lblNewLabel_6.setBounds(51, 173, 55, 18);
-		panel_6.add(lblNewLabel_6);
-
-		JLabel lblNewLabel_7 = new JLabel("6");
-		lblNewLabel_7.setBounds(51, 75, 55, 18);
-		panel_6.add(lblNewLabel_7);
-
-		JLabel lblNewLabel_8 = new JLabel("7");
-		lblNewLabel_8.setBounds(183, 75, 55, 18);
-		panel_6.add(lblNewLabel_8);
-
-		JLabel lblNewLabel_9 = new JLabel("8");
-		lblNewLabel_9.setBounds(183, 108, 55, 18);
-		panel_6.add(lblNewLabel_9);
-
-		JLabel lblNewLabel_10 = new JLabel("9");
-		lblNewLabel_10.setBounds(183, 140, 55, 18);
-		panel_6.add(lblNewLabel_10);
-
-		JLabel lblNewLabel_11 = new JLabel("10");
-		lblNewLabel_11.setBounds(183, 173, 55, 18);
-		panel_6.add(lblNewLabel_11);
-
-		btnNewButton_16 = new JButton("确定");
-		btnNewButton_16.setBounds(122, 390, 90, 30);
-		this.add(btnNewButton_16);
-		btnNewButton_16.addActionListener(managerlistener);
-
-		btnNewButton_17 = new JButton("取消");
-		btnNewButton_17.setBounds(495, 390, 90, 30);
-		this.add(btnNewButton_17);
-		btnNewButton_17.addActionListener(managerlistener);
-
-		JLabel label = new JLabel("\u4EF7\u683C\uFF08\u6BCF\u5343\u516C\u91CC\uFF09");
-		label.setBounds(86, 49, 150, 18);
+		label = new JLabel("价格：");
+		label.setBounds(477, 204, 86, 16);
 		add(label);
 
-		textField_1 = new MyTextField();
-		textField_1.setBounds(217, 43, 122, 30);
-		add(textField_1);
-		textField_1.setColumns(10);
+		myTextField_3 = new MyTextField();
+		myTextField_3.setColumns(10);
+		myTextField_3.setBounds(550, 197, 122, 30);
+		add(myTextField_3);
 
+	}
+
+
+	public MyTextField getMyTextField_3() {
+		return myTextField_3;
+	}
+
+	public MyTextField getMyTextField() {
+		return myTextField;
+	}
+
+	public MyTextField getMyTextField_1() {
+		return myTextField_1;
+	}
+
+	public MyTextField getMyTextField_2() {
+		return myTextField_2;
+	}
+
+	public MyTable getTable() {
+		return table;
+	}
+
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+	public MyButton getMyButton() {
+		return myButton;
+	}
+
+	public MyButton getMyButton_1() {
+		return myButton_1;
+	}
+
+	public MyButton getMyButton_2() {
+		return myButton_2;
+	}
+
+	public void setText(String s) {
+		dialog.setText(s);
 	}
 }

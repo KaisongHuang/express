@@ -12,6 +12,7 @@ import _enum.Operation;
 import _enum.ResultMessage;
 import logic.adminbl.Admin;
 import logic.adminblservice.AdminBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.adminui.AdminUI1;
 
 import vo.AdminVO;
@@ -19,12 +20,12 @@ import vo.AdminVO;
 public class AdminListener1 implements MouseListener, ActionListener {
 
 	private AdminUI1 ui;
-	AdminBlService admin = new Admin();
+	AdminBlService admin ;
 
 	public AdminListener1(AdminUI1 ui) {
 		super();
 		this.ui = ui;
-
+        admin=LogicFactory.getAdminService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -47,10 +48,12 @@ public class AdminListener1 implements MouseListener, ActionListener {
 
 	private boolean check(AdminVO vo) {
 		if (vo.checkIsNull() == 0) {
+System.out.println("请将信息填写完整！");
 			ui.setText( "请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkId() == 0) {
+System.out.println("请检查编号格式是否正确。");
 			ui.setText( "请检查编号格式是否正确。");
 			return false;
 		}

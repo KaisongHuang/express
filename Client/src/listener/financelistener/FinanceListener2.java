@@ -18,18 +18,20 @@ import javax.swing.border.EmptyBorder;
 import _enum.ResultMessage;
 import logic.financebl.Finance;
 import logic.financeblservice.FinanceBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI2;
 import vo.PayVO;
 
 public class FinanceListener2 implements ActionListener, MouseListener {
 	private FinanceUI2 ui;
-	FinanceBlService financeBl = new Finance();
+	FinanceBlService finance ;
 	static Point origin = new Point();
 
 	public FinanceListener2(FinanceUI2 ui) {
 		super();
 		this.ui = ui;
+		finance=LogicFactory.getFinanceService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -126,7 +128,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 						vo.setIsCheck(0);
 //						if (!check(vo))
 //							continue;
-						rm = financeBl.createCost(vo);
+						rm = finance.createCost(vo);
 						check(rm);
 					}
 
@@ -156,23 +158,23 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 
 	private boolean check(PayVO vo) {
 		if (vo.checkIsNull() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText(  "请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkAccount() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查账户格式是否正确！");
+			ui.setText( "请检查账户格式是否正确！");
 			return false;
 		}
 		if (vo.checkCost() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查金额是否正确！");
+			ui.setText(  "请检查金额是否正确！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			ui.setText(  "请检查日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkPayer() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查付款人编号是否正确！");
+			ui.setText( "请检查付款人编号是否正确！");
 			return false;
 		}
 		return true;
@@ -190,7 +192,7 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText( dialog);
 	}
 
 	public void mouseClicked(MouseEvent e) {

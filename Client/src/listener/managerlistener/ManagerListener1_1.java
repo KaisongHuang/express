@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.Opera;
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import po.InstitutionPO;
@@ -21,11 +22,12 @@ import vo.InstitutionVO;
 public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private ManagerUI1_1 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager  ;
 
 	public ManagerListener1_1(ManagerUI1_1 ui) {
 		super();
 		this.ui = ui;
+		manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -45,7 +47,7 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private boolean check(InstitutionVO vo) {
 		if (vo == null) {
-			JOptionPane.showMessageDialog(ui, "机构编号不存在！");
+			ui.setText("机构编号不存在！");
 			return false;
 		}
 		return true;
@@ -53,13 +55,13 @@ public class ManagerListener1_1 implements MouseListener, ActionListener {
 
 	private boolean check(String id) {
 		if (id.length() != 6) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText("请确认机构编号格式是否正确！");
 			return false;
 		}
 		try {
 			Integer.parseInt(id);
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText("请确认机构编号格式是否正确！");
 			return false;
 		}
 		return true;

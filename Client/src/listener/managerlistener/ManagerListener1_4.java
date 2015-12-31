@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 
 import _enum.Opera;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI1_4;
@@ -18,11 +19,11 @@ import vo.InstitutionVO;
 public class ManagerListener1_4 implements MouseListener, ActionListener {
 
 	private ManagerUI1_4 ui;
-	private ManagerBlService manager = new Manager();
+	private ManagerBlService manager  ;
 
 	public ManagerListener1_4(ManagerUI1_4 ui) {
 		super();
-		this.ui = ui;
+		this.ui = ui;manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -43,13 +44,13 @@ public class ManagerListener1_4 implements MouseListener, ActionListener {
 
 	private boolean check(String id) {
 		if (id.length() != 6) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText("请确认机构编号格式是否正确！");
 			return false;
 		}
 		try {
 			Integer.parseInt(id);
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(ui, "请确认机构编号格式是否正确！");
+			ui.setText( "请确认机构编号格式是否正确！");
 			return false;
 		}
 		return true;
@@ -67,7 +68,7 @@ public class ManagerListener1_4 implements MouseListener, ActionListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 
 	private InstitutionVO read() {

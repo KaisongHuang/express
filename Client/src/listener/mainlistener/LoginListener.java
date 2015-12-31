@@ -1,5 +1,6 @@
 package listener.mainlistener;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -10,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.EmployeeMes;
+import logic.logicfactory.LogicFactory;
 import logic.loginbl.Login;
 import logic.loginblService.LoginBlService;
 import presentation.loginui.LoginUI;
@@ -24,7 +26,8 @@ public class LoginListener implements ActionListener, MouseListener {
 
 	public LoginListener(JFrame frame) {
 		this.ui = (LoginUI) frame;
-		l = new Login();
+		l = LogicFactory.getLoginService();
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -50,7 +53,9 @@ public class LoginListener implements ActionListener, MouseListener {
 		} else if (e.getSource() == ui.getLogout()) {
 			System.exit(0);
 		} else if (e.getSource() == ui.getSearch()) {
-			new SearchUI();
+			SearchUI search=new SearchUI();
+			search.setBounds(100,100,900,600);
+		
 		}
 	}
 

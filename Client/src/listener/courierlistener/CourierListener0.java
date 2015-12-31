@@ -18,8 +18,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import _enum.ResultMessage;
+import data.datafactory.DataFactory;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
+import logic.logicfactory.LogicFactory;
 import po.DistanceAndFee;
 import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI;
@@ -34,7 +36,7 @@ import vo.SenderVO;
 public class CourierListener0 implements ActionListener ,MouseListener{
 
 	private CourierUI ui;
-	CourierBlService courier = new Courier();
+	CourierBlService courier ;
 	static Point origin=new Point();
 	CourierUI1 panel;
 
@@ -44,6 +46,7 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 	public CourierListener0(CourierUI ui) {
 		super();
 		this.ui = ui;
+		courier=LogicFactory.getCourierService();
 		panel = new CourierUI1(ui.WIDTH, ui.HEIGHT);
 	}
 
@@ -132,19 +135,19 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
     private boolean check(SenderVO vo){
     	if(vo.checkIsNull()==0){
-    		JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+    		ui.setText("请将信息填写完整！");
 			return false;
     	}
     	if(vo.checkRecipientPhone()==0){
-    		JOptionPane.showMessageDialog(ui,"请检查收件人的手机号格式！");
+    		ui.setText("请检查收件人的手机号格式！");
 			return false;
     	}
     	if(vo.checkSenderPhone()==0){
-    		JOptionPane.showMessageDialog(ui,"请检查寄件人的手机号格式！");
+    		ui.setText("请检查寄件人的手机号格式！");
 			return false;
     	}
     	return true;

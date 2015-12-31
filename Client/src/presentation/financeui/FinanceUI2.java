@@ -10,13 +10,14 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.Vector;
 import javax.swing.JScrollPane;
-import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 import com.eltima.components.ui.DatePicker;
 
 import listener.financelistener.FinanceListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -35,7 +36,7 @@ public class FinanceUI2 extends JPanel {
 	private MyTextField textField_2;
 	private MyTextField textField_3;
 	private MyTextField textField_4;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
 	private MyButton check;
 	private MyButton add;
 	private MyButton delete;
@@ -47,16 +48,16 @@ public class FinanceUI2 extends JPanel {
 	private Vector<String> name;
 	private Vector<Object> data;
 	private FinanceListener2 financeListener2;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox_2;
-	private JComboBox<String> comboBox_3;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox_2;
+	private MyComboBox<String> comboBox_3;
 	private JLabel label_1;
 	private JLabel label_2;
 	private JLabel label_3;
 //	private int height = 600;
 //	private int width = 900;
 	private DatePicker dp;
-
+    private MyDialog dialog;
 	public FinanceUI2() {
 		financeListener2 = new FinanceListener2(this);
 		initialize();
@@ -69,6 +70,8 @@ public class FinanceUI2 extends JPanel {
 		this.setBounds(136, 115, 746, 438);
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		String names[] = { "付款日期", "付款账号", "付款人", "付款金额", "条目", "备注" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -117,7 +120,7 @@ public class FinanceUI2 extends JPanel {
 		lblNewLabel_5.setBounds(483, 223, 61, 16);
 		this.add(lblNewLabel_5);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(546, 218, 134, 27);
 		comboBox.addItem("租金");
 		comboBox.addItem("运费");
@@ -168,17 +171,17 @@ public class FinanceUI2 extends JPanel {
 		dp.setBounds(546, 60, 119, 25);
 		add(dp);
 
-//		comboBox_1 = new JComboBox<String>();
+//		comboBox_1 = new MyComboBox<String>();
 //		comboBox_1.setBounds(546, 60, 119, 25);
 //		comboBox_1.addItem("2015");
 //		add(comboBox_1);
 //
-//		comboBox_2 = new JComboBox<String>();
+//		comboBox_2 = new MyComboBox<String>();
 //		comboBox_2.setBounds(546, 89, 67, 25);
 //		comboBox_2.addItem("01");
 //		add(comboBox_2);
 //
-//		comboBox_3 = new JComboBox<String>();
+//		comboBox_3 = new MyComboBox<String>();
 //		comboBox_3.setBounds(625, 89, 67, 25);
 //		comboBox_3.addItem("01");
 //		add(comboBox_3);
@@ -200,16 +203,18 @@ public class FinanceUI2 extends JPanel {
 	// return textField;
 	// }
 
-
-	public JComboBox<String> getComboBox_1() {
+	public void setText(String s){
+		dialog.setText(s);
+	}
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox_2() {
+	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<String> getComboBox_3() {
+	public MyComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
@@ -229,7 +234,7 @@ public class FinanceUI2 extends JPanel {
 		return textField_4;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 

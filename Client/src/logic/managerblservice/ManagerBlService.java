@@ -9,6 +9,7 @@ import vo.CarPackVO;
 import vo.CentreArrivalVO;
 import vo.CentreTransforVO;
 import vo.DeliverVO;
+import vo.DistanceAndFeeVO;
 import vo.InStorageVO;
 import vo.OutStorageVO;
 import vo.CentrePackVO;
@@ -21,12 +22,20 @@ public interface ManagerBlService {
 	public Object find(String id, Opera op);
 
 	public ResultMessage manageMember(Object vo, Opera op);
-
+	
 	public ResultMessage checkDocument(Object vo);
 
 	public ResultMessage checkStatistics(Object vo);
 	
 	public ResultMessage updateSalary(SalaryVO vo);
+	
+	public ResultMessage updateCity(DistanceAndFeeVO vo);
+	
+	public ResultMessage insertCity(DistanceAndFeeVO vo);
+	
+	public ResultMessage deleteCity(DistanceAndFeeVO vo);
+	
+	public ArrayList<DistanceAndFeeVO> findCity();
 	
 	public ArrayList<SalaryVO> getSalary();
 
@@ -51,4 +60,5 @@ public interface ManagerBlService {
 	public ArrayList<OutStorageVO> checkExport();
 
 	public ArrayList<PayVO> checkPay();
+	
 }

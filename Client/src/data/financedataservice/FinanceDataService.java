@@ -30,4 +30,8 @@ public interface FinanceDataService {
 
 	public ArrayList<ReceiptPO> checkReceipt(String date,String SellingAreaID) throws RemoteException;
 
+	public ArrayList<PayPO> getPay() throws RemoteException;
+
+	public ArrayList<ReceiptPO> getReceipt() throws RemoteException;
+
 }

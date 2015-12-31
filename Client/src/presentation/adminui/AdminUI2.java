@@ -7,9 +7,9 @@ package presentation.adminui;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
@@ -24,19 +24,18 @@ public class AdminUI2 extends JPanel {
 	private JLabel label1;
 	private MyTextField textField_2;
 
-	private JComboBox<String> comboBox_1;
-
+	private MyComboBox<String> comboBox_1;
+    private MyDialog dialog;
 	private MyButton search;
 	private MyButton confirm;
 	private MyButton clear;
-    private MyDialog dialog;
 	AdminListener2 adminlistener;
 	private int width;
 	private int height;
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param j
 	 * @param i
 	 */
@@ -94,7 +93,7 @@ public class AdminUI2 extends JPanel {
 		label_3.setBounds(66, 176, 61, 16);
 		this.add(label_3);
 
-		comboBox_1 = new JComboBox<String>();
+		comboBox_1 = new MyComboBox<String>();
 		comboBox_1.setBounds(139, 177, 134, 27);
 		comboBox_1.addItem("无");
 		comboBox_1.addItem("总经理");
@@ -121,9 +120,6 @@ public class AdminUI2 extends JPanel {
 		clear.addActionListener(adminlistener);
 		clear.addMouseListener(adminlistener);
 	}
-	public void setText(String s){
-		dialog.setText(s);
-	}
 	public MyTextField getTextField_2() {
 		return textField_2;
 	}
@@ -133,11 +129,11 @@ public class AdminUI2 extends JPanel {
 		;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public void setComboBox_1(JComboBox<String> comboBox_1) {
+	public void setComboBox_1(MyComboBox<String> comboBox_1) {
 		this.comboBox_1 = comboBox_1;
 	}
 
@@ -200,6 +196,10 @@ public class AdminUI2 extends JPanel {
 
 	public void setClear(MyButton cancle) {
 		this.clear = cancle;
+	}
+
+	public void setText(String s){
+		dialog.setText(s);
 	}
 
 }

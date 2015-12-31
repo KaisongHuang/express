@@ -11,6 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI;
@@ -25,11 +26,12 @@ import vo.CarPackVO;
 public class SellingAreaListener00 implements MouseListener, ActionListener {
 
 	private SellingAreaUI ui;
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea  ;
 	double fee;
 	public SellingAreaListener00(SellingAreaUI ui) {
 		super();
 		this.ui = ui;
+		sellingarea=LogicFactory.getSellingAreaService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -70,37 +72,37 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 
 	private boolean check(CarPackVO vo) {
 		if (vo.checkIsNull() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			ui.setText("请检查日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkFee() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查费用是否合理！");
+			ui.setText( "请检查费用是否合理！");
 			return false;
 		}
 		if (vo.checkList() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
+			ui.setText("请检查快递编号格式是否正确！");
 			return false;
 		}
 		if (vo.checkNumber() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查汽运编号格式是否正确！");
+			ui.setText("请检查汽运编号格式是否正确！");
 			return false;
 		}
 
 		if (vo.checkSupercargo() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查押运员编号格式是否正确！");
+			ui.setText("请检查押运员编号格式是否正确！");
 			return false;
 		}
 		if (vo.checkSupervisor() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查监装员编号格式是否正确！");
+			ui.setText("请检查监装员编号格式是否正确！");
 			return false;
 		}
 

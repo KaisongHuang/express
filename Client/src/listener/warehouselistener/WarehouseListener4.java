@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import _enum.EmployeeMes;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.MySwing.MyButton;
@@ -25,12 +26,13 @@ import vo.InStorageVO;
 
 public class WarehouseListener4 implements ActionListener {
 	private WarehouseUI4 ui;
-	WarehouseBlService warehouseBl = new Warehouse();
+	WarehouseBlService warehouseBl ;
 	static Point origin = new Point();
 
 	public WarehouseListener4(WarehouseUI4 ui) {
 		super();
 		this.ui = ui;
+		warehouseBl=LogicFactory.getWarehouseService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -39,10 +41,11 @@ public class WarehouseListener4 implements ActionListener {
 			Vector<Object> item = new Vector<Object>();
 			String id = ui.getTextField().getText();
 			String destination = ui.getTextField_1().getText();
-			String year = (String) ui.getComboBox().getSelectedItem();
-			String month = (String) ui.getComboBox_1().getSelectedItem();
-			String date = (String) ui.getComboBox_2().getSelectedItem();
-			String time = year + month + date;
+//			String year = (String) ui.getComboBox().getSelectedItem();
+//			String month = (String) ui.getComboBox_1().getSelectedItem();
+//			String date = (String) ui.getComboBox_2().getSelectedItem();
+			String time = ui.getDate().getText().replace("/", "");
+			time = time.substring(4, 8) + time.substring(0, 4);
 			String qu = (String) ui.getComboBox_3().getSelectedItem();
 			int pai = Integer.parseInt((String) ui.getComboBox_4().getSelectedItem());
 			int jia = Integer.parseInt((String) ui.getComboBox_5().getSelectedItem());
@@ -172,19 +175,19 @@ public class WarehouseListener4 implements ActionListener {
 
 	private boolean check(InStorageVO vo){
 		if(vo.checkDate()==0){
-			JOptionPane.showMessageDialog(ui, "请检查入库日期是否正确！");
+			ui.setText("请检查入库日期是否正确！");
 			return false;
 		}
 		if(vo.checkJia()==0){
-			JOptionPane.showMessageDialog(ui, "请检查仓库架号是否正确！");
+			ui.setText("请检查仓库架号是否正确！");
 			return false;
 		}
 		if(vo.checkPai()==0){
-			JOptionPane.showMessageDialog(ui, "请检查仓库排号是否正确！");
+			ui.setText("请检查仓库排号是否正确！");
 			return false;
 		}
 		if(vo.checkWei()==0){
-			JOptionPane.showMessageDialog(ui, "请检查仓库位号是否正确！");
+			ui.setText("请检查仓库位号是否正确！");
 			return false;
 		}
 		return true;
@@ -201,6 +204,6 @@ public class WarehouseListener4 implements ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 }

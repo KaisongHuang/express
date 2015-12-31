@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.centreui.*;
 import vo.CentreTransforVO;
@@ -18,11 +19,12 @@ import vo.CentreTransforVO;
 public class CentreListener3 implements MouseListener, ActionListener {
 
 	private CentreUI3 ui;
-	CentreBlService centre = new Centre();
+	CentreBlService centre ;
 
 	public CentreListener3(CentreUI3 ui) {
 		super();
 		this.ui = ui;
+		centre=LogicFactory.getCentreService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -55,24 +57,24 @@ public class CentreListener3 implements MouseListener, ActionListener {
 	}
 	private boolean check(CentreTransforVO vo){
 		if(vo.checkIsNull()==0){
-			JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+			ui.setText( "请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkBanHao()==0){
-			JOptionPane.showMessageDialog(ui,"请检查班号格式是否正确！");
+			ui.setText( "请检查班号格式是否正确！");
 			return false;
 		}
 		if(vo.checkDate()==0){
-			JOptionPane.showMessageDialog(ui,"请检查日期格式是否正确！");
+			ui.setText( "请检查日期格式是否正确！");
 			return false;
 		}
 	
 		if(vo.checkJian()==0){
-			JOptionPane.showMessageDialog(ui,"请检查监装员编号格式是否正确！");
+			ui.setText( "请检查监装员编号格式是否正确！");
 			return false;
 		}
 		if(vo.checkList()==0){
-			JOptionPane.showMessageDialog(ui,"请检查所有快递单号格式是否正确！");
+			ui.setText( "请检查所有快递单号格式是否正确！");
 			return false;
 		}
 		return true;
@@ -90,7 +92,7 @@ public class CentreListener3 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText( dialog);
 	}
 	private CentreTransforVO read() {
 		// TODO Auto-generated method stub

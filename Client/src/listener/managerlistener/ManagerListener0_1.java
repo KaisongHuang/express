@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import _enum.Opera;
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.MySwing.MyButton;
@@ -19,10 +20,11 @@ import vo.EmployeeVO;
 public class ManagerListener0_1 implements MouseListener, ActionListener {
 
 	private ManagerUI0_1 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager;
 	public ManagerListener0_1 (ManagerUI0_1 ui){
 		super();
 		this.ui=ui;
+		manager=LogicFactory.getManagerService();
 	}
 
 
@@ -41,20 +43,20 @@ public class ManagerListener0_1 implements MouseListener, ActionListener {
 	}
 	private boolean check(EmployeeVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(ui, "员工编号不存在！");
+			ui.setText("员工编号不存在！");
    		    return false;
 		}
 		return true;
 	}
 	private boolean check(String id){
 	   	 if(id.length()!=10){
-	   		 JOptionPane.showMessageDialog(ui, "请确认员工编号格式是否正确！");
+	   		ui.setText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
 	   	 try{
 	   		 Integer.parseInt(id);
 	   	 }catch(NumberFormatException e){
-	   		 JOptionPane.showMessageDialog(ui, "请确认员工编号格式是否正确！");
+	   		ui.setText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
 	   	 return true;

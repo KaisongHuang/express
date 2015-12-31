@@ -9,12 +9,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
+import com.eltima.components.ui.DatePicker;
+
 import listener.warehouselistener.WarehouseListener4;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
-import javax.swing.JComboBox;
 
 import java.awt.Color;
 import java.util.Arrays;
@@ -26,12 +29,17 @@ public class WarehouseUI4 extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
+
 	private MyTextField textField;
 	private MyTextField textField_1;
+
 	private MyTable table;
+
 	private JScrollPane JSP;
+
 	private Vector<String> name;
 	private Vector<Object> data;
+
 	private JLabel label;
 	private JLabel label_1;
 	private JLabel label_2;
@@ -43,19 +51,27 @@ public class WarehouseUI4 extends JPanel {
 	private JLabel label_8;
 	private JLabel label_9;
 	private JLabel label_10;
+
 	private MyButton button;
 	private MyButton button_1;
 	private MyButton button_2;
 	private MyButton button_3;
 	private MyButton button_4;
-	private JComboBox<String> comboBox;
-	private JComboBox<String> comboBox_1;
-	private JComboBox<String> comboBox_2;
-	private JComboBox<String> comboBox_3;
-	private JComboBox<String> comboBox_4;
-	private JComboBox<String> comboBox_5;
-	private JComboBox<String> comboBox_6;
+
+	private DatePicker date;
+
+	private MyComboBox<String> comboBox;
+	private MyComboBox<String> comboBox_1;
+	private MyComboBox<String> comboBox_2;
+	private MyComboBox<String> comboBox_3;
+	private MyComboBox<String> comboBox_4;
+	private MyComboBox<String> comboBox_5;
+	private MyComboBox<String> comboBox_6;
+
 	private DefaultTableModel model;
+
+	private MyDialog dialog;
+
 	WarehouseListener4 warehouseListener;
 
 	/**
@@ -91,6 +107,8 @@ public class WarehouseUI4 extends JPanel {
 		label.setBounds(485, 75, 57, 15);
 		this.add(label);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		textField = new MyTextField();
 		textField.setBounds(554, 68, 122, 27);
 		this.add(textField);
@@ -109,92 +127,96 @@ public class WarehouseUI4 extends JPanel {
 		label_2.setBounds(485, 146, 57, 15);
 		this.add(label_2);
 
-		comboBox = new JComboBox<String>();
-		comboBox.setBounds(542, 141, 106, 25);
-		comboBox.addItem("2015");
-		this.add(comboBox);
+		date = new DatePicker(this);
+		date.setBounds(554, 139, 122, 27);
+		this.add(date);
 
-		label_3 = new JLabel("年");
-		label_3.setBounds(649, 146, 27, 15);
-		this.add(label_3);
-
-		comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(542, 173, 86, 25);
-		comboBox_1.addItem("01");
-		this.add(comboBox_1);
-
-		label_4 = new JLabel("月");
-		label_4.setBounds(623, 178, 25, 15);
-		this.add(label_4);
-
-		comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(640, 173, 70, 25);
-		comboBox_2.addItem("01");
-		this.add(comboBox_2);
-
-		label_5 = new JLabel("日");
-		label_5.setBounds(705, 177, 27, 15);
-		this.add(label_5);
+//		comboBox = new MyComboBox<String>();
+//		comboBox.setBounds(542, 141, 106, 25);
+//		comboBox.addItem("2015");
+//		this.add(comboBox);
+//
+//		label_3 = new JLabel("年");
+//		label_3.setBounds(649, 146, 27, 15);
+//		this.add(label_3);
+//
+//		comboBox_1 = new MyComboBox<String>();
+//		comboBox_1.setBounds(542, 173, 86, 25);
+//		comboBox_1.addItem("01");
+//		this.add(comboBox_1);
+//
+//		label_4 = new JLabel("月");
+//		label_4.setBounds(623, 178, 25, 15);
+//		this.add(label_4);
+//
+//		comboBox_2 = new MyComboBox<String>();
+//		comboBox_2.setBounds(640, 173, 70, 25);
+//		comboBox_2.addItem("01");
+//		this.add(comboBox_2);
+//
+//		label_5 = new JLabel("日");
+//		label_5.setBounds(705, 177, 27, 15);
+//		this.add(label_5);
 
 		label_6 = new JLabel("位置:");
-		label_6.setBounds(485, 215, 57, 15);
+		label_6.setBounds(485, 180, 57, 15);
 		this.add(label_6);
 
-		comboBox_3 = new JComboBox<String>();
-		comboBox_3.setBounds(527, 210, 101, 25);
+		comboBox_3 = new MyComboBox<String>();
+		comboBox_3.setBounds(554, 175, 86, 25);
 		comboBox_3.addItem("航运区");
 		comboBox_3.addItem("铁运区");
 		comboBox_3.addItem("汽运区");
 		this.add(comboBox_3);
 
-		comboBox_4 = new JComboBox<String>();
-		comboBox_4.setBounds(640, 210, 70, 25);
+		comboBox_4 = new MyComboBox<String>();
+		comboBox_4.setBounds(554, 235, 86, 25);
 		comboBox_4.addItem("1");
 		this.add(comboBox_4);
 
-		comboBox_5 = new JComboBox<String>();
-		comboBox_5.setBounds(542, 247, 86, 25);
+		comboBox_5 = new MyComboBox<String>();
+		comboBox_5.setBounds(554, 205, 86, 25);
 		comboBox_5.addItem("1");
 		this.add(comboBox_5);
 
 		label_7 = new JLabel("区");
-		label_7.setBounds(623, 215, 25, 15);
+		label_7.setBounds(650, 180, 27, 15);
 		this.add(label_7);
 
 		label_8 = new JLabel("排");
-		label_8.setBounds(705, 215, 27, 15);
+		label_8.setBounds(650, 240, 27, 15);
 		this.add(label_8);
 
 		label_9 = new JLabel("架");
-		label_9.setBounds(623, 251, 25, 15);
+		label_9.setBounds(650, 210, 25, 15);
 		this.add(label_9);
 
-		comboBox_6 = new JComboBox<String>();
-		comboBox_6.setBounds(640, 247, 70, 25);
+		comboBox_6 = new MyComboBox<String>();
+		comboBox_6.setBounds(554, 265, 86, 25);
 		comboBox_6.addItem("1");
 		this.add(comboBox_6);
 
 		label_10 = new JLabel("位");
-		label_10.setBounds(705, 251, 28, 15);
+		label_10.setBounds(650, 270, 28, 15);
 		this.add(label_10);
 
 		button_1 = new MyButton("新增");
-		button_1.setBounds(485, 281, 86, 27);
+		button_1.setBounds(494, 302, 86, 27);
 		button_1.addActionListener(warehouseListener);
 		this.add(button_1);
 
 		button_2 = new MyButton("清空");
-		button_2.setBounds(583, 281, 86, 27);
+		button_2.setBounds(590, 302, 86, 27);
 		button_2.addActionListener(warehouseListener);
 		this.add(button_2);
 
 		button_3 = new MyButton("保存");
-		button_3.setBounds(583, 320, 86, 27);
+		button_3.setBounds(590, 339, 86, 27);
 		button_3.addActionListener(warehouseListener);
 		this.add(button_3);
 
 		button = new MyButton("删除");
-		button.setBounds(485, 320, 86, 27);
+		button.setBounds(494, 339, 86, 27);
 		button.addActionListener(warehouseListener);
 		add(button);
 
@@ -202,6 +224,9 @@ public class WarehouseUI4 extends JPanel {
 		button_4.setBounds(29, 27, 117, 29);
 		button_4.addActionListener(warehouseListener);
 		add(button_4);
+	}
+	public void setText(String s){
+		dialog.setText(s);
 	}
 
 	public MyTextField getTextField() {
@@ -231,40 +256,45 @@ public class WarehouseUI4 extends JPanel {
 	public MyButton getButton_3() {
 		return button_3;
 	}
-	
+
 	public MyButton getButton_4(){
 		return button_4;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public JComboBox<String> getComboBox_1() {
+	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}
 
-	public JComboBox<String> getComboBox_2() {
+	public MyComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
 
-	public JComboBox<String> getComboBox_3() {
+	public MyComboBox<String> getComboBox_3() {
 		return comboBox_3;
 	}
 
-	public JComboBox<String> getComboBox_4() {
+	public MyComboBox<String> getComboBox_4() {
 		return comboBox_4;
 	}
 
-	public JComboBox<String> getComboBox_5() {
+	public MyComboBox<String> getComboBox_5() {
 		return comboBox_5;
 	}
 
-	public JComboBox<String> getComboBox_6() {
+	public MyComboBox<String> getComboBox_6() {
 		return comboBox_6;
 	}
 
 	public DefaultTableModel getModel() {
 		return model;
 	}
+
+	public DatePicker getDate() {
+		return date;
+	}
+
 }

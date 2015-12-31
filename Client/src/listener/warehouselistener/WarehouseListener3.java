@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import _enum.EmployeeMes;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.warehousebl.Warehouse;
 import presentation.warehouseui.WarehouseUI3;
 import presentation.warehouseui.WarehouseUI3_1;
@@ -22,13 +23,14 @@ public class WarehouseListener3 implements ActionListener {
 	private boolean hasUI1 = false;
 	private boolean hasUI2 = false;
 
-	Warehouse warehouse = new Warehouse();
+	Warehouse warehouse ;
 	private String Default="90";
 
 
 	public WarehouseListener3(WarehouseUI3 ui) {
 		super();
 		this.ui = ui;
+		warehouse=LogicFactory.getWarehouseService();
 		// warehouse.setAlarm(90);
 	}
 
@@ -137,6 +139,6 @@ public class WarehouseListener3 implements ActionListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 }

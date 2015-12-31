@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 
 import listener.sellingarealistener.SellingAreaListener4_2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 
@@ -30,6 +31,7 @@ public class SellingAreaUI4_2 extends JPanel{
 	private MyTextField textField_7;
 	private MyTextField textField_8;
 
+	private MyDialog dialog;
 	SellingAreaListener4_2 sellingarealistener;
 	private MyButton btnNewButton_17;
 	private MyButton btnNewButton_16;
@@ -61,6 +63,8 @@ public class SellingAreaUI4_2 extends JPanel{
 		this.setLayout(null);
 
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JLabel lblNewLabel_1 = new JLabel("司机编号：");
 		lblNewLabel_1.setBounds(30, 56, 100, 18);
 		this.add(lblNewLabel_1);
@@ -158,7 +162,9 @@ public class SellingAreaUI4_2 extends JPanel{
 
 
 	}
-
+	public void setText(String s){
+		dialog.setText(s);;
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

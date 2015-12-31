@@ -24,10 +24,9 @@ public class AdminUI4 extends JPanel{
 	private static final long serialVersionUID = 1L;
 
 	private MyTextField textField;
-
+    private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
-    private MyDialog dialog;
 	AdminListener4 adminlistener;
 	private int width;
 	private int height;
@@ -104,5 +103,4 @@ public class AdminUI4 extends JPanel{
 	private void setImage() {
 
 	}
-
 }

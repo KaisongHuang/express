@@ -9,6 +9,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 
 import listener.managerlistener.ManagerListener30;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.SubNaviButton;
 import presentation.financeui.FinanceUI3;
@@ -16,7 +17,7 @@ import presentation.financeui.FinanceUI3;
 public class ManagerUI3 extends JPanel {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel panel;
@@ -36,7 +37,7 @@ public class ManagerUI3 extends JPanel {
 	private SubNaviButton button2;
 	private MySeperator line;
 	private ManagerListener30 listener;
-
+    private MyDialog dialog;
 	/**
 	 * Create the application.
 	 */
@@ -53,30 +54,31 @@ public class ManagerUI3 extends JPanel {
 		this.setBounds(136, 115, 746, 493);
 
 		this.setLayout(null);
-		
+
 		card=new CardLayout(0,0);
-		
+		dialog=new MyDialog();
+		this.add(dialog);
 		ui1=new FinanceUI3();
-		ui1.getComboBox_3().setBounds(159, 47, 88, 25);
-		ui1.getComboBox().setBounds(159, 20, 88, 25);
+//		ui1.getComboBox_3().setBounds(159, 47, 88, 25);
+//		ui1.getComboBox().setBounds(159, 20, 88, 25);
 		ui2=new JPanel();
 		ui2.setBackground(Color.WHITE);
-		
+
 		panel=new JPanel();
 		panel.setLayout(card);
-		
+
 		panel.add(ui1, "1");
 		panel.add(ui2, "2");
-		
+
 		panel.setBounds(0,45,740,443);
 		add(panel);
-		
+
 		navi_panel = new JPanel();
 		navi_panel.setBounds(0, 0, 746, 44);
 		navi_panel.setBackground(Color.WHITE);
 		this.add(navi_panel);
 		navi_panel.setLayout(null);
-		
+
 		button1 = new SubNaviButton("经营情况表");
 		button1.setBounds(44, 0, 118, 44);
 		button1.addActionListener(listener);
@@ -95,7 +97,9 @@ public class ManagerUI3 extends JPanel {
 		add(line);
 		add(navi_panel);
 	}
-
+	public void setText(String s){
+		dialog.setText(s);
+	}
 	public SubNaviButton getButton1() {
 		return button1;
 	}

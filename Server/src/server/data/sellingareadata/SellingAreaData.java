@@ -130,7 +130,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			for (int i = 0; i < list.size(); i++) {
 				sql = "insert into CarPack values('" + po1.getDate() + "','" + po1.getNumber() + "','" + po1.getStart() + "','"
 						+ po1.getDestination() + "','" + po1.getSupervisor() + "','" + po1.getSupercargo() + "','"
-						+ list.get(i) + "'," + po1.getFee() + "," + po1.getIsCheck() + ");";
+						+ list.get(i) + "'," + po1.getFee() + "," + po1.getIsCheck() + ",'"+po1.getSellingArea()+"','"+po1.getCarID()+"');";
 				rm = db.insert(sql);
 				his.SellingArea(list.get(i), po1.getStart(), null);
 			}

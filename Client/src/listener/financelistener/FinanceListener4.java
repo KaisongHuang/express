@@ -19,19 +19,21 @@ import javax.swing.border.EmptyBorder;
 import _enum.Operation;
 import _enum.ResultMessage;
 import logic.financebl.Finance;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.financeui.FinanceUI4;
 import vo.AccountVO;
 
 public class FinanceListener4 implements ActionListener, MouseListener {
 	private FinanceUI4 ui;
-	Finance finance = new Finance();
+	Finance finance ;
 	ResultMessage rm = null;
 	static Point origin = new Point();
 
 	public FinanceListener4(FinanceUI4 ui) {
 		super();
 		this.ui = ui;
+		finance=LogicFactory.getFinanceService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -120,21 +122,20 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					for (int i = 0; i < ui.getUi2().getTable().getRowCount(); i++) {
-//						AccountVO vo = new AccountVO();
+						// AccountVO vo = new AccountVO();
 						Vector<Object> rowData = new Vector<Object>();
 						for (int j = 0; j < 2; j++) {
 							rowData.add(ui.getUi2().getTable().getValueAt(i, j));
 						}
-						rm = finance.initAccount(new AccountVO((String)rowData.get(0),(Double)rowData.get(1)));
-//						check(rm);
+						rm = finance.initAccount(new AccountVO((String) rowData.get(0), (Double) rowData.get(1)));
+						// check(rm);
 					}
 
 					ui.getUi2().getTextField().setText("");
 					ui.getUi2().getTextField_1().setText("");
 
-					while(ui.getUi2().getModel().getRowCount()>0)
+					while (ui.getUi2().getModel().getRowCount() > 0)
 						ui.getUi2().getModel().removeRow(0);
-
 
 					jf.dispose();
 				}
@@ -157,7 +158,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			contentPane.add(label);
 		} else if (e.getSource() == ui.getUi2().getRet()) {
 			System.out.println("返回");
-			int n=ui.getUi2().getTable().getRowCount();
+			int n = ui.getUi2().getTable().getRowCount();
 			for (int i = 0; i < n; i++) {
 				ui.getUi2().getModel().removeRow(0);
 			}
@@ -294,7 +295,6 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			label.setBounds(149, 47, 244, 16);
 			contentPane.add(label);
 
-
 		} else if (e.getSource() == ui.getUi3().getButton_5()) {
 			// edit selected account
 
@@ -312,16 +312,16 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			check(rm);
 		} else if (e.getSource() == ui.getUi3().getButton_3()) {
 			// find account by key string
-			int rowCount=ui.getUi3().getModel().getRowCount();
-			for(int i=0;i<rowCount;i++){
+			int rowCount = ui.getUi3().getModel().getRowCount();
+			for (int i = 0; i < rowCount; i++) {
 				ui.getUi3().getModel().removeRow(0);
 			}
 
 			System.out.println("clear");
 
 			String key = ui.getUi3().getTextField().getText();
-			ArrayList<AccountVO> vo =new ArrayList<AccountVO>();
-			vo= finance.findAccount(key);
+			ArrayList<AccountVO> vo = new ArrayList<AccountVO>();
+			vo = finance.findAccount(key);
 			if (!check(vo))
 				return;
 			System.out.println(vo.size());
@@ -338,15 +338,15 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	private boolean check(AccountVO vo) {
 		if (vo.checkIsNull() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.getUi3().setText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkAccount() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查账户格式是否正确！");
+			ui.getUi3().setText("请检查账户格式是否正确！");
 			return false;
 		}
 		if (vo.checkBalance() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查账户余额是否为正！");
+			ui.getUi3().setText("请检查账户余额是否为正！");
 			return false;
 		}
 		return true;
@@ -362,12 +362,12 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	public void mouseClicked(java.awt.event.MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()==ui.getUi3().getTable()){
-		int selectedRow = ui.getUi3().getTable().getSelectedRow(); // 获得选中行索引
-		String account = (String) ui.getUi3().getModel().getValueAt(selectedRow, 0);
-		double money = (Double) ui.getUi3().getModel().getValueAt(selectedRow, 1);
-		ui.getUi3().getTextField_1().setText(account); // 给文本框赋值
-		ui.getUi3().getTextField_2().setText(String.valueOf(money));
+		if (e.getSource() == ui.getUi3().getTable()) {
+			int selectedRow = ui.getUi3().getTable().getSelectedRow(); // 获得选中行索引
+			String account = (String) ui.getUi3().getModel().getValueAt(selectedRow, 0);
+			double money = (Double) ui.getUi3().getModel().getValueAt(selectedRow, 1);
+			ui.getUi3().getTextField_1().setText(account); // 给文本框赋值
+			ui.getUi3().getTextField_2().setText(String.valueOf(money));
 		}
 
 	}

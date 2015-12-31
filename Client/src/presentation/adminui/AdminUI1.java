@@ -9,9 +9,9 @@ import javax.swing.JLabel;
 
 import java.awt.Color;
 
-import javax.swing.JComboBox;
 import listener.adminlistener.AdminListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
@@ -29,7 +29,7 @@ public class AdminUI1 extends JPanel {
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
     private MyDialog dialog;
-	private JComboBox<String> comboBox;
+	private MyComboBox<String> comboBox;
 
 	AdminListener1 adminlistener;
 
@@ -38,19 +38,19 @@ public class AdminUI1 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param j
 	 * @param i
 	 */
 	public AdminUI1(int i, int j) {
-		
+
 		width = i;
 		height = j;
 		adminlistener = new AdminListener1(this);
 		initialize();
 //		this.setImage();
 		this.setVisible(true);
-		
+
 	}
 
 	/**
@@ -60,15 +60,14 @@ public class AdminUI1 extends JPanel {
 		setBackground(Color.white);
 		this.setBounds(0, 0, 720, 480);
 		this.setLayout(null);
-		
+
 		dialog=new MyDialog();
-	
 		this.add(dialog);
-		
+
 		JLabel label_3 = new JLabel("姓名：");
 		label_3.setBounds(51, 41, 61, 16);
 		this.add(label_3);
-		
+
 
 		textField_3 = new MyTextField();
 		textField_3.setBounds(217, 35, 134, 28);
@@ -104,7 +103,7 @@ public class AdminUI1 extends JPanel {
 		lblNewLabel_1.setBounds(51, 195, 61, 16);
 		this.add(lblNewLabel_1);
 
-		comboBox = new JComboBox<String>();
+		comboBox = new MyComboBox<String>();
 		comboBox.setBounds(217, 190, 134, 27);
 		comboBox.addItem("无");
 		comboBox.addItem("总经理");
@@ -115,22 +114,15 @@ public class AdminUI1 extends JPanel {
 		comboBox.addItem("快递员");
 		comboBox.setSelectedIndex(0);
 		this.add(comboBox);
-		
-		MyDialog myDialog = new MyDialog();
-		myDialog.setBounds(51, 223, 100, 100);
-		add(myDialog);
-		
-     
-		
+
+
+
 		btnNewButton_10.addActionListener(adminlistener);
 		btnNewButton_11.addActionListener(adminlistener);
 		btnNewButton_10.addMouseListener(adminlistener);
 		btnNewButton_11.addMouseListener(adminlistener);
 	}
- 
-	public void setText(String s){
-		dialog.setText(s);
-	}
+
 	public MyTextField getTextField() {
 		return textField;
 	}
@@ -163,11 +155,11 @@ public class AdminUI1 extends JPanel {
 		this.btnNewButton_11 = btnNewButton_11;
 	}
 
-	public JComboBox<String> getComboBox() {
+	public MyComboBox<String> getComboBox() {
 		return comboBox;
 	}
 
-	public void setComboBox(JComboBox<String> comboBox) {
+	public void setComboBox(MyComboBox<String> comboBox) {
 		this.comboBox = comboBox;
 	}
 
@@ -178,5 +170,9 @@ public class AdminUI1 extends JPanel {
 	public void setTextField_3(MyTextField textField_3) {
 		this.textField_3 = textField_3;
 	}
-    
+
+    public void setText(String s){
+    	dialog.setText(s);
+    }
+
 }

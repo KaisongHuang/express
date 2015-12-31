@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import _enum.ResultMessage;
+import data.datafactory.DataFactory;
 import data.warehousedata.WarehouseData;
 import logic.warehouseblservice.WarehouseBlService;
 import po.CentreArrivalPO;
@@ -17,11 +18,14 @@ import vo.OutStorageVO;
 import vo.SenderVO;
 
 public class Warehouse implements WarehouseBlService {
-	WarehouseData wd = new WarehouseData();
+	WarehouseData wd ;
 	private int inNum;
 	private int outNum;
 	private int total;
 
+	public Warehouse(){
+		wd=DataFactory.getWarehosueDataService();
+	}
 	public int getInNum() {
 		return inNum;
 	}
@@ -212,6 +216,7 @@ public class Warehouse implements WarehouseBlService {
 		ArrayList<CentreArrivalPO> po = new ArrayList<CentreArrivalPO>();
 		try {
 			po = wd.getArrival();
+			System.out.println(po.size());
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -233,6 +238,7 @@ public class Warehouse implements WarehouseBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(po.size());
 		for (int i = 0; i < po.size(); i++) {
 			vo.add(new CentreTransforVO(po.get(i).getTransferStyle(), po.get(i).getDataOfGetin(),
 					po.get(i).getCentreTransferID(), po.get(i).getBanHao(), po.get(i).getStart(),

@@ -14,7 +14,7 @@ import dataservice.centredataservice.CentreDataBaseService;
 
 public class CentreData extends UnicastRemoteObject implements CentreDataBaseService{
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
@@ -42,11 +42,11 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		    rm=db.insert(sql);
 		    his.Centre(po1.getList().get(i), null, null);
 			}
-			
+
 		}else{
 			CentrePackPO po1=(CentrePackPO) po;
 			for(int i=0;i<po1.getList().size();i++){
-			sql="insert into CentrePackPO values("+"'"+po1.getDataOfGetin()+"',"+po1.getCentreTransferID()+",'"+po1.getArrival()+
+			sql="insert into CentrePack values("+"'"+po1.getDataOfGetin()+"',"+po1.getCentreTransferID()+",'"+po1.getArrival()+
 					"',"+po1.getCarID()+","+po1.getJianZhuangYuan()+","+po1.getYaYunYuan()+
 					","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+")";
 			rm=db.insert(sql);

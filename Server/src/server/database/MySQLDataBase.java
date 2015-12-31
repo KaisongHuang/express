@@ -12,18 +12,18 @@ import _enum.ResultMessage;
 
 
 public class MySQLDataBase {
-    
+
 	   Connection con;
 	   Statement st;
 	  public MySQLDataBase(){
-		  con=getMySQL_Con(null, null, null, "express", "root","141250081");
+		  con=getMySQL_Con(null, null, null, "express", "root","960725");
 		  try {
 			st=(Statement) con.createStatement();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		  
+
 	  }
       public  Connection getMySQL_Con(String driverClassName,String serverHost,String serverPort,String dbName,String userName,
     		  String password){
@@ -31,7 +31,7 @@ public class MySQLDataBase {
     		  driverClassName="com.mysql.jdbc.Driver";
     	  if(serverHost==null){
     		  serverHost="127.0.0.1";
-    		  
+
     	  }
     	  if(serverPort==null){
     		  serverPort="3306";
@@ -39,9 +39,9 @@ public class MySQLDataBase {
     	  String dbURL="jdbc:mysql://"+serverHost+":"+serverPort+"/"+dbName+"?useUnicode=true&characterEncoding=utf8";
     	  return getConnection(driverClassName,dbURL,userName,password);
       }
-      
+
       public  Connection getConnection(String driverClassName,String dbURL,String userName,String password){
-    	  
+
     	  try {
 			Class.forName(driverClassName);
 		} catch (ClassNotFoundException e) {
@@ -52,17 +52,17 @@ public class MySQLDataBase {
 			con=DriverManager.getConnection(dbURL,userName,password);
 		} catch (SQLException e) {
 			// TODO �Զ���ɵ� catch ��
-			
+
 			e.printStackTrace();
 		}
-    	  
+
     	  return con;
       }
-      
+
       public  ResultMessage insert(String sql){
     	  int i=0;
     	  try {
-    		  
+
 			 i=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
@@ -73,28 +73,28 @@ public class MySQLDataBase {
     		  return ResultMessage.UpdateFail;
     	  return ResultMessage.Success;
       }
-      
-      
+
+
       public  ResultSet find(String sql){
-    	  
+
     	  try {
-    		  
+
 			  ResultSet rs=((java.sql.Statement) st).executeQuery(sql);
-			 
+
 System.out.println("database ok");
 			  return rs;
 		} catch (SQLException e) {
-			
-			e.printStackTrace();		
+
+			e.printStackTrace();
 		}
 
     	  return null;
       }
-      
+
       public  ResultMessage delete(String sql){
     	  int i=0;
     	  try {
-    	
+
 			  i=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
@@ -104,13 +104,13 @@ System.out.println("database ok");
     	  if(i==0)
     		  return ResultMessage.UpdateFail;
     	  return ResultMessage.Success;
-    	  
+
       }
-      
+
       public  ResultMessage update(String sql){
     	  int i=0;
     	  try {
-    		
+
 			  i=((java.sql.Statement) st).executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
@@ -120,6 +120,6 @@ System.out.println("database ok");
     	  if(i==0)
     		  return ResultMessage.UpdateFail;
     	  return ResultMessage.Success;
-    	  
+
       }
-}    
+}

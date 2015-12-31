@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
 import presentation.sellingareaui.SellingAreaUI1;
@@ -20,12 +21,12 @@ import vo.DeliverVO;
 public class SellingAreaListener10 implements MouseListener, ActionListener {
 
 	private SellingAreaUI1 ui;
-	SellingareaBlService sellingarea = new SellingArea();
+	SellingareaBlService sellingarea ;
 	CentreBlService centre = new Centre();
 	
 	public SellingAreaListener10 (SellingAreaUI1 ui){
 		super();
-		this.ui=ui;
+		this.ui=ui;sellingarea=LogicFactory.getSellingAreaService();
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -57,38 +58,38 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 
 	private  boolean check(AcceptVO vo){
 		if(vo.checkIsNull()==0){
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setText("请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkData()==0){
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			ui.setText( "请检查日期格式是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			JOptionPane.showMessageDialog(ui, "请检查中转单格式是否正确！");
+			ui.setText("请检查中转单格式是否正确！");
 			return false;
 		}
 		if(vo.checkBarCode()==0){
-			JOptionPane.showMessageDialog(ui, "请检查订单编号格式是否正确！");
+			ui.setText("请检查订单编号格式是否正确！");
 			return false;
 		}
 		return true;
 	}
 	private boolean check(DeliverVO vo){
 		if(vo.checkIsNull()==0){
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
+			ui.setText("请将信息填写完整！！");
 			return false;
 		}
 		if(vo.checkCode()==0){
-			JOptionPane.showMessageDialog(ui, "请检查订单编号格式是否正确！");
+			ui.setText("请检查订单编号格式是否正确！");
 			return false;
 		}
 		if(vo.checkDate()==0){
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			ui.setText("请检查日期格式是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			JOptionPane.showMessageDialog(ui, "请检查中转单格式是否正确！");
+			ui.setText("请检查中转单格式是否正确！");
 			return false;
 		}
 		return true;
@@ -105,7 +106,7 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText( dialog);
 	}
 	private DeliverVO read2() {
 		// TODO Auto-generated method stub

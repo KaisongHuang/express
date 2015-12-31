@@ -12,6 +12,7 @@ import org.apache.poi.hssf.usermodel.*;
 import _enum.Operation;
 import _enum.ResultMessage;
 import data.admindata.AdminData;
+import data.datafactory.DataFactory;
 import data.financedata.FinanceData;
 import logic.financeblservice.FinanceBlService;
 import po.AccountPO;
@@ -22,10 +23,14 @@ import vo.PayVO;
 import vo.ReceiptVO;
 
 public class Finance implements FinanceBlService {
-	FinanceData fd = new FinanceData();
-	AdminData ad = new AdminData();
+	FinanceData fd ;
+	AdminData ad ;
 	private int count;
 
+	public Finance(){
+		fd=DataFactory.getFinanceDataService();
+		ad=DataFactory.getAdminDataService();
+	}
 	public ResultMessage createCost(PayVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm = null;
@@ -187,167 +192,190 @@ public class Finance implements FinanceBlService {
 		}
 		return rm;
 	}
-	public void exportCostAndReceive(String in,String out,String all){
-		HSSFWorkbook wb = new HSSFWorkbook();  
-        // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet  
-        HSSFSheet sheet = wb.createSheet("成本收益表");  
-        // 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short  
-        HSSFRow row = sheet.createRow((int) 0);  
-        // 第四步，创建单元格，并设置值表头 设置表头居中  
-        HSSFCellStyle style = wb.createCellStyle();  
-        style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式  
-  
-        HSSFCell cell = row.createCell((short) 0);  
-        cell.setCellValue("收入");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 1);  
-        cell.setCellValue("支出");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 2);  
-        cell.setCellValue("总收入");  
-        cell.setCellStyle(style);  
-      
-       
-  
-        // 第五步，写入实体数据 实际应用中这些数据从数据库得到，  
-      //  List list = CreateSimpleExcelToDisk.getStudent();  
-  
-       
-            row = sheet.createRow( 1);  
-              
-            // 第四步，创建单元格，并设置值  
-            row.createCell((short) 0).setCellValue(in);  
-            row.createCell((short) 1).setCellValue(out);  
-            row.createCell((short) 2).setCellValue(all);  
-        // 第六步，将文件存到指定位置  
-        try  
-        {  
-            FileOutputStream fout = new FileOutputStream(getPath());  
-            wb.write(fout);  
-            fout.close();  
-        }  
-        catch (Exception e)  
-        {  
-            e.printStackTrace();  
-        }  
-     
-	}
-	
-	public void exportPay(ArrayList<PayVO> list){
-		HSSFWorkbook wb = new HSSFWorkbook();  
-        // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet  
-        HSSFSheet sheet = wb.createSheet("付款单");  
-        // 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short  
-        HSSFRow row = sheet.createRow((int) 0);  
-        // 第四步，创建单元格，并设置值表头 设置表头居中  
-        HSSFCellStyle style = wb.createCellStyle();  
-        style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式  
-  
-        HSSFCell cell = row.createCell((short) 0);  
-        cell.setCellValue( "付款日期");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 1);  
-        cell.setCellValue("付款账号");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 2);  
-        cell.setCellValue("付款人");  
-        cell.setCellStyle(style); 
-        cell = row.createCell((short) 3);  
-        cell.setCellValue("付款金额");  
-        cell.setCellStyle(style); 
-        cell = row.createCell((short) 4);  
-        cell.setCellValue("条目");  
-        cell.setCellStyle(style); 
-        cell = row.createCell((short) 5);  
-        cell.setCellValue("备注");  
-        cell.setCellStyle(style);
-      
-       
-  
-        // 第五步，写入实体数据 实际应用中这些数据从数据库得到，  
-      //  List list = CreateSimpleExcelToDisk.getStudent();  
-  
-       for(int i=0;i<list.size();i++){
-            row = sheet.createRow(i+1);  
-            PayVO vo=list.get(i);
-            // 第四步，创建单元格，并设置值  
-            row.createCell((short) 0).setCellValue(vo.getDate());  
-            row.createCell((short) 1).setCellValue(vo.getPayAccount());  
-            row.createCell((short) 2).setCellValue(vo.getPayer());  
-            row.createCell((short) 3).setCellValue(vo.getCost());  
-            row.createCell((short) 4).setCellValue(vo.getEntry());  
-            row.createCell((short) 5).setCellValue(vo.getComments());  
-       }
-        // 第六步，将文件存到指定位置  
-        try  
-        {  
-            FileOutputStream fout = new FileOutputStream(getPath());  
-            wb.write(fout);  
-            fout.close();  
-        }  
-        catch (Exception e)  
-        {  
-            e.printStackTrace();  
-        }  
-	}
-	
-	public void exportReceipt(ArrayList<ReceiptVO> list){
-		HSSFWorkbook wb = new HSSFWorkbook();  
-        // 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet  
-        HSSFSheet sheet = wb.createSheet("收款单");  
-        // 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short  
-        HSSFRow row = sheet.createRow((int) 0);  
-        // 第四步，创建单元格，并设置值表头 设置表头居中  
-        HSSFCellStyle style = wb.createCellStyle();  
-        style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式  
-  
-        HSSFCell cell = row.createCell((short) 0);  
-        cell.setCellValue("收款日期");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 1);  
-        cell.setCellValue("收款单位");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 2);  
-        cell.setCellValue("收款快递员");  
-        cell.setCellStyle(style);  
-        cell = row.createCell((short) 3);  
-        cell.setCellValue("收款金额");  
-        cell.setCellStyle(style);  
-       
-  
-        // 第五步，写入实体数据 实际应用中这些数据从数据库得到，  
-      //  List list = CreateSimpleExcelToDisk.getStudent();  
-  
-       for(int i=0;i<list.size();i++){
-            row = sheet.createRow(i+1);  
-             ReceiptVO vo=list.get(i); 
-            // 第四步，创建单元格，并设置值  
-            row.createCell((short) 0).setCellValue(vo.getDate());  
-            row.createCell((short) 1).setCellValue(vo.getSellingArea());  
-            row.createCell((short) 2).setCellValue(vo.getNumber());  
-            row.createCell((short) 2).setCellValue(vo.getMoney()); 
-       }
-        // 第六步，将文件存到指定位置  
-        try  
-        {  
-            FileOutputStream fout = new FileOutputStream(getPath());  
-            wb.write(fout);  
-            fout.close();  
-        }  
-        catch (Exception e)  
-        {  
-            e.printStackTrace();  
-        }  
+
+	public void exportCostAndReceive(String in, String out, String all) {
+		HSSFWorkbook wb = new HSSFWorkbook();
+		// 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet
+		HSSFSheet sheet = wb.createSheet("成本收益表");
+		// 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short
+		HSSFRow row = sheet.createRow((int) 0);
+		// 第四步，创建单元格，并设置值表头 设置表头居中
+		HSSFCellStyle style = wb.createCellStyle();
+		style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式
+
+		HSSFCell cell = row.createCell((short) 0);
+		cell.setCellValue("收入");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 1);
+		cell.setCellValue("支出");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 2);
+		cell.setCellValue("总收入");
+		cell.setCellStyle(style);
+
+		// 第五步，写入实体数据 实际应用中这些数据从数据库得到，
+		// List list = CreateSimpleExcelToDisk.getStudent();
+
+		row = sheet.createRow(1);
+
+		// 第四步，创建单元格，并设置值
+		row.createCell((short) 0).setCellValue(in);
+		row.createCell((short) 1).setCellValue(out);
+		row.createCell((short) 2).setCellValue(all);
+		// 第六步，将文件存到指定位置
+		try {
+			FileOutputStream fout = new FileOutputStream(getPath());
+			wb.write(fout);
+			fout.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
-	public String  getPath(){
-		JFileChooser jf = new JFileChooser();  
-		jf.setFileSelectionMode(JFileChooser.SAVE_DIALOG | JFileChooser.DIRECTORIES_ONLY);  
-		jf.showDialog(null,null);  
-	
-		File fi = jf.getSelectedFile();  
-		String f = fi.getAbsolutePath()+".xls";  
-		System.out.println("save: "+f);
+	public void exportPay(ArrayList<PayVO> list) {
+		HSSFWorkbook wb = new HSSFWorkbook();
+		// 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet
+		HSSFSheet sheet = wb.createSheet("付款单");
+		// 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short
+		HSSFRow row = sheet.createRow((int) 0);
+		// 第四步，创建单元格，并设置值表头 设置表头居中
+		HSSFCellStyle style = wb.createCellStyle();
+		style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式
+
+		HSSFCell cell = row.createCell((short) 0);
+		cell.setCellValue("付款日期");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 1);
+		cell.setCellValue("付款账号");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 2);
+		cell.setCellValue("付款人");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 3);
+		cell.setCellValue("付款金额");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 4);
+		cell.setCellValue("条目");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 5);
+		cell.setCellValue("备注");
+		cell.setCellStyle(style);
+
+		// 第五步，写入实体数据 实际应用中这些数据从数据库得到，
+		// List list = CreateSimpleExcelToDisk.getStudent();
+
+		for (int i = 0; i < list.size(); i++) {
+			row = sheet.createRow(i + 1);
+			PayVO vo = list.get(i);
+			// 第四步，创建单元格，并设置值
+			row.createCell((short) 0).setCellValue(vo.getDate());
+			row.createCell((short) 1).setCellValue(vo.getPayAccount());
+			row.createCell((short) 2).setCellValue(vo.getPayer());
+			row.createCell((short) 3).setCellValue(vo.getCost());
+			row.createCell((short) 4).setCellValue(vo.getEntry());
+			row.createCell((short) 5).setCellValue(vo.getComments());
+		}
+		// 第六步，将文件存到指定位置
+		try {
+			FileOutputStream fout = new FileOutputStream(getPath());
+			wb.write(fout);
+			fout.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void exportReceipt(ArrayList<ReceiptVO> list) {
+		HSSFWorkbook wb = new HSSFWorkbook();
+		// 第二步，在webbook中添加一个sheet,对应Excel文件中的sheet
+		HSSFSheet sheet = wb.createSheet("收款单");
+		// 第三步，在sheet中添加表头第0行,注意老版本poi对Excel的行数列数有限制short
+		HSSFRow row = sheet.createRow((int) 0);
+		// 第四步，创建单元格，并设置值表头 设置表头居中
+		HSSFCellStyle style = wb.createCellStyle();
+		style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式
+
+		HSSFCell cell = row.createCell((short) 0);
+		cell.setCellValue("收款日期");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 1);
+		cell.setCellValue("收款单位");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 2);
+		cell.setCellValue("收款快递员");
+		cell.setCellStyle(style);
+		cell = row.createCell((short) 3);
+		cell.setCellValue("收款金额");
+		cell.setCellStyle(style);
+
+		// 第五步，写入实体数据 实际应用中这些数据从数据库得到，
+		// List list = CreateSimpleExcelToDisk.getStudent();
+
+		for (int i = 0; i < list.size(); i++) {
+			row = sheet.createRow(i + 1);
+			ReceiptVO vo = list.get(i);
+			// 第四步，创建单元格，并设置值
+			row.createCell((short) 0).setCellValue(vo.getDate());
+			row.createCell((short) 1).setCellValue(vo.getSellingArea());
+			row.createCell((short) 2).setCellValue(vo.getNumber());
+			row.createCell((short) 3).setCellValue(vo.getMoney());
+		}
+		// 第六步，将文件存到指定位置
+		try {
+			FileOutputStream fout = new FileOutputStream(getPath());
+			wb.write(fout);
+			fout.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public String getPath() {
+		JFileChooser jf = new JFileChooser();
+		jf.setFileSelectionMode(JFileChooser.SAVE_DIALOG | JFileChooser.DIRECTORIES_ONLY);
+		jf.showDialog(null, null);
+
+		File fi = jf.getSelectedFile();
+		String f = fi.getAbsolutePath() + ".xls";
+		System.out.println("save: " + f);
 		return f;
+	}
+
+	public ArrayList<ReceiptVO> getReceipt() {
+		// TODO Auto-generated method stub
+		ArrayList<ReceiptPO> po = new ArrayList<ReceiptPO>();
+		ArrayList<ReceiptVO> vo = new ArrayList<ReceiptVO>();
+
+		try {
+			po = fd.getReceipt();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++)
+			vo.add(new ReceiptVO(po.get(i).getMoney(), po.get(i).getDate(), po.get(i).getSellingArea(),
+					po.get(i).getNumber(), po.get(i).getId(), po.get(i).getIsCheck()));
+
+		return vo;
+	}
+
+	public ArrayList<PayVO> getPay() {
+		// TODO Auto-generated method stub
+		ArrayList<PayPO> po = new ArrayList<PayPO>();
+		ArrayList<PayVO> vo = new ArrayList<PayVO>();
+
+		try {
+			po = fd.getPay();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (int i = 0; i < po.size(); i++)
+			vo.add(new PayVO(po.get(i).getDate(), po.get(i).getPayer(), po.get(i).getPayAccount(), po.get(i).getEntry(),
+					po.get(i).getComments(), po.get(i).getCost(), po.get(i).getIsCheck()));
+		return vo;
 	}
 }

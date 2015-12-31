@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import _enum.Opera;
 import _enum.ResultMessage;
+import data.datafactory.DataFactory;
 import data.managerdata.ManagerData;
 import logic.managerblservice.ManagerBlService;
 import po.AcceptPO;
@@ -12,6 +13,7 @@ import po.CentreArrivalPO;
 import po.CentrePackPO;
 import po.CentreTransforPO;
 import po.DeliverPO;
+import po.DistanceAndFee;
 import po.EmployeePO;
 import po.InStoragePO;
 import po.InstitutionPO;
@@ -29,22 +31,26 @@ public class Manager implements ManagerBlService {
 	// WarehouseData wd = new WarehouseData();
 	// FinanceData fd = new FinanceData();
 
-	public ArrayList<SalaryVO> getSalary(){
-		ArrayList<SalaryPO> list=new ArrayList<SalaryPO>();
-		ArrayList<SalaryVO> list1=new ArrayList<SalaryVO>();
+	public Manager(){
+		md=DataFactory.getManagerDataService();
+	}
+	public ArrayList<SalaryVO> getSalary() {
+		ArrayList<SalaryPO> list = new ArrayList<SalaryPO>();
+		ArrayList<SalaryVO> list1 = new ArrayList<SalaryVO>();
 		try {
-			list=md.getSalary();
+			list = md.getSalary();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		for(int i=0;i<list.size();i++){
-			list1.add(new SalaryVO(list.get(i).getEmployeeName(),list.get(i).getSalaryMethod(),list.get(i).getMoney()));
+
+		for (int i = 0; i < list.size(); i++) {
+			list1.add(
+					new SalaryVO(list.get(i).getEmployeeName(), list.get(i).getSalaryMethod(), list.get(i).getMoney()));
 		}
 		return list1;
 	}
-	
+
 	public Object find(String id, Opera op) {
 		EmployeePO ep;
 		InstitutionPO po;
@@ -90,7 +96,6 @@ public class Manager implements ManagerBlService {
 				else
 					rm = md.update(po);
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm = ResultMessage.FunctionError;
 			}
@@ -106,7 +111,6 @@ public class Manager implements ManagerBlService {
 					rm = md.update(po);
 
 			} catch (RemoteException e) {
-				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm = ResultMessage.FunctionError;
 			}
@@ -267,7 +271,7 @@ public class Manager implements ManagerBlService {
 
 		if (tempvo instanceof SalaryVO) {
 			SalaryVO vo = (SalaryVO) tempvo;
-			SalaryPO po = new SalaryPO(vo.getEmployeeName(), vo.getSalaryMethod(),vo.getMoney());
+			SalaryPO po = new SalaryPO(vo.getEmployeeName(), vo.getSalaryMethod(), vo.getMoney());
 			try {
 				rm = md.update(po);
 			} catch (RemoteException e) {
@@ -490,17 +494,79 @@ public class Manager implements ManagerBlService {
 
 		return vo;
 	}
+
 	public ResultMessage updateSalary(SalaryVO vo) {
 		// TODO Auto-generated method stub
 		ResultMessage rm = null;
-		SalaryVO vo1=(SalaryVO) vo;
+		SalaryVO vo1 = (SalaryVO) vo;
 		try {
-			md.update(new SalaryPO(vo1.getEmployeeName(),vo1.getSalaryMethod(),vo1.getMoney()));
+			md.update(new SalaryPO(vo1.getEmployeeName(), vo1.getSalaryMethod(), vo1.getMoney()));
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rm;
+	}
+
+	public ResultMessage updateCity(DistanceAndFeeVO vo) {
+		// TODO Auto-generated method stub
+		ResultMessage rm;
+		DistanceAndFee po = new DistanceAndFee(vo.getCity1(),vo.getCity2(),vo.getDistance(),vo.getFee());
+		try {
+			rm = md.update(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	public ResultMessage insertCity(DistanceAndFeeVO vo) {
+		// TODO Auto-generated method stub
+		ResultMessage rm;
+		DistanceAndFee po = new DistanceAndFee(vo.getCity1(),vo.getCity2(),vo.getDistance(),vo.getFee());
+		try {
+			rm = md.insert(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public ArrayList<DistanceAndFeeVO> findCity() {
+		// TODO Auto-generated method stub
+		ArrayList<DistanceAndFee> po = new ArrayList<DistanceAndFee>();
+		ArrayList<DistanceAndFeeVO> vo = new ArrayList<DistanceAndFeeVO>();
+		try {
+			po = md.getCity();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (int i = 0; i < po.size(); i++) {
+			vo.add(new DistanceAndFeeVO(po.get(i).getCity1(), po.get(i).getCity2(), po.get(i).getDistance(),
+					po.get(i).getFee()));
+		}
+
+		return vo;
+	}
+
+	public ResultMessage deleteCity(DistanceAndFeeVO vo) {
+		// TODO Auto-generated method stub
+		ResultMessage rm;
+		DistanceAndFee po = new DistanceAndFee(vo.getCity1(),vo.getCity2(),vo.getDistance(),vo.getFee());
+		try {
+			rm = md.delete(po);
+			return rm;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

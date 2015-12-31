@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import _enum.ResultMessage;
 import logic.courierbl.Courier;
 import logic.courierblservice.CourierBlService;
+import logic.logicfactory.LogicFactory;
 import presentation.MySwing.MyButton;
 import presentation.courierui.CourierUI2;
 import vo.CourierVO;
@@ -21,11 +22,12 @@ import vo.CourierVO;
 public class CourierListener2 implements MouseListener, ActionListener {
 
 	private CourierUI2 ui;
-	CourierBlService courier = new Courier();
+	CourierBlService courier ;
 
 	public CourierListener2(CourierUI2 ui) {
 		super();
 		this.ui = ui;
+		courier=LogicFactory.getCourierService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -52,7 +54,7 @@ public class CourierListener2 implements MouseListener, ActionListener {
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setText(dialog);
 	}
 	private CourierVO read() {
 		// TODO Auto-generated method stub
@@ -67,15 +69,15 @@ public class CourierListener2 implements MouseListener, ActionListener {
 
 	private boolean check(CourierVO vo){
 		if(vo.checkIsNull()==0){
-			JOptionPane.showMessageDialog(ui,"请将信息填写完整！");
+			ui.setText("请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkDate()==0){
-			JOptionPane.showMessageDialog(ui,"请检查日期格式是否正确！");
+			ui.setText("请检查日期格式是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			JOptionPane.showMessageDialog(ui,"请检查快递单号格式是否正确！");
+			ui.setText("请检查快递单号格式是否正确！");
 			return false;
 		}
 		return true;
