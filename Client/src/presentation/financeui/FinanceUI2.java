@@ -1,3 +1,6 @@
+/**
+ * FinanceUI2是finance用户的成本管理界面
+ */
 package presentation.financeui;
 
 import java.awt.CardLayout;

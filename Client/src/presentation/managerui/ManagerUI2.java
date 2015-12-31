@@ -389,6 +389,9 @@ public class ManagerUI2 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyButton getButton() {
 		return button;
 	}

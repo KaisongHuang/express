@@ -28,7 +28,9 @@ public class FinanceListener2 implements ActionListener, MouseListener {
 			ui.getCard().show(ui.getPanel(), "1");
 			setClicked(false,true);
 			repaint();
+
 		}
+
 
 	}
 

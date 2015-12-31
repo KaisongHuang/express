@@ -135,10 +135,12 @@ public class WarehouseListener3 implements ActionListener {
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 }

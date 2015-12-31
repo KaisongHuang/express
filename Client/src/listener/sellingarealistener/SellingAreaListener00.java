@@ -68,41 +68,43 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 
 	private boolean check(CarPackVO vo) {
 		if (vo.checkIsNull() == 0) {
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			ui.setText("请检查日期格式是否正确！");
+			ui.setErrorText("请检查日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkFee() == 0) {
-			ui.setText( "请检查费用是否合理！");
+			ui.setErrorText( "请检查费用是否合理！");
 			return false;
 		}
 		if (vo.checkList() == 0) {
-			ui.setText("请检查快递编号格式是否正确！");
+			ui.setErrorText("请检查快递编号格式是否正确！");
 			return false;
 		}
 		if (vo.checkNumber() == 0) {
-			ui.setText("请检查汽运编号格式是否正确！");
+			ui.setErrorText("请检查汽运编号格式是否正确！");
 			return false;
 		}
 
 		if (vo.checkSupercargo() == 0) {
-			ui.setText("请检查押运员编号格式是否正确！");
+			ui.setErrorText("请检查押运员编号格式是否正确！");
 			return false;
 		}
 		if (vo.checkSupervisor() == 0) {
-			ui.setText("请检查监装员编号格式是否正确！");
+			ui.setErrorText("请检查监装员编号格式是否正确！");
 			return false;
 		}
 

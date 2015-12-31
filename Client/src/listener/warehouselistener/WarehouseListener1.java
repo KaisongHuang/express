@@ -205,19 +205,19 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private boolean check(InStorageVO vo) {
 		if (vo.checkDate() == 0) {
-			ui.setText("请检查入库日期是否正确！");
+			ui.setErrorText("请检查入库日期是否正确！");
 			return false;
 		}
 		if (vo.checkJia() == 0) {
-			ui.setText("请检查仓库架号是否正确！");
+			ui.setErrorText("请检查仓库架号是否正确！");
 			return false;
 		}
 		if (vo.checkPai() == 0) {
-			ui.setText("请检查仓库排号是否正确！");
+			ui.setErrorText("请检查仓库排号是否正确！");
 			return false;
 		}
 		if (vo.checkWei() == 0) {
-			ui.setText("请检查仓库位号是否正确！");
+			ui.setErrorText("请检查仓库位号是否正确！");
 			return false;
 		}
 		return true;
@@ -256,11 +256,13 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 
 	@SuppressWarnings("unchecked")

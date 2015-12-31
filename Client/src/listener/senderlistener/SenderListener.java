@@ -47,17 +47,21 @@ public class SenderListener implements ActionListener{
 
 	private boolean check(HistoryVO vo){
 		if(vo==null){
-			JOptionPane.showMessageDialog(search,"系统中不存在此快递编号！");
+			search.setMesErrorText("系统中不存在此快递编号！");
+
 			return false;
 		}
 		return true;
 	}
 	private boolean check(String id){
-		 if(id.length()!=10)
+		 if(id.length()!=10){
+			 search.setMesErrorText("请检查快递编号格式是否正确！");
     		 return false;
+		 }
     	 try{
     		 Integer.parseInt(id);
     	 }catch(NumberFormatException e){
+    		 search.setMesErrorText("请检查快递编号格式是否正确！");
     		 return false;
     	 }
     	 return true;

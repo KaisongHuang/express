@@ -107,6 +107,9 @@ public class CourierUI4 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public void setTextField(MyTextField textField) {
 		this.textField = textField;
 	}

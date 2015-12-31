@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.centrelistener.CentreListener2;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -37,14 +38,14 @@ public class CentreUI2 extends JPanel{
 	private MyTextField textField_8;
 	private MyTextField myTextField;
 	private JPanel panel;
-
+   
 	private MyButton confirm;
 	private MyButton cancle;
 	private MyButton myButton;
 	private MyButton myButton_1;
 	private MyButton myButton_2;
 	private MyButton myButton_3;
-
+    private MyDialog dialog;
 	private MyTable table;
 	private JScrollPane JSP;
 	private Vector<String> name;
@@ -77,6 +78,8 @@ public class CentreUI2 extends JPanel{
 		this.setBackground(Color.white);
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		panel.setPreferredSize(new Dimension(720, 800));
@@ -217,7 +220,15 @@ public class CentreUI2 extends JPanel{
 		add(scrollPane);
 
 	}
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
+
+	
 	public MyTextField getMyTextField() {
 		return myTextField;
 	}

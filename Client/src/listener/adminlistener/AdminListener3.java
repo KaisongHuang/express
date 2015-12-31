@@ -51,21 +51,21 @@ public class AdminListener3 implements MouseListener, ActionListener {
 
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){
-			ui.setText("系统中不存在此编号！");
+			ui.setErrorText("系统中不存在此编号！");
 	   	    return false;
 		}
 		return true;
 	}
 	private boolean check(String id){
 		if(id.length()!=10){
-			ui.setText( "请确保编号长度为10！");
+			ui.setErrorText( "请确保编号长度为10！");
 
    		   return false;
 		}
    	 try{
    		 Integer.parseInt(id);
    	 }catch(NumberFormatException e){
-   		ui.setText( "请确保编号只包含数字！");
+   		ui.setErrorText( "请确保编号只包含数字！");
    		 return false;
    	 }
    	 return true;
@@ -74,15 +74,18 @@ public class AdminListener3 implements MouseListener, ActionListener {
 		String dialog=null;
 		if(rm==ResultMessage.FunctionError){
 			dialog="网络连接出现了问题，请检查您的网络！";
-		}else if(rm==ResultMessage.Fail)
+		}else if(rm==ResultMessage.Fail){
 			dialog="数据更新失败！";
+		    ui.setText(dialog);
+		    return;
+		}
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub

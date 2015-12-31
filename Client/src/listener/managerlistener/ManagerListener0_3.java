@@ -64,48 +64,50 @@ public class ManagerListener0_3 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 	private boolean check(EmployeeVO vo){
 		if(vo==null){
-			ui.setText("员工编号不存在！");
+			ui.setErrorText("员工编号不存在！");
    		    return false;
 		}
 		if(vo.checkIsNull()==0){
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
    		    return false;
 		}
 		if(vo.checkAge()==0){
-			ui.setText("请检查员工年龄格式是否正确！");
+			ui.setErrorText("请检查员工年龄格式是否正确！");
    		    return false;
 		}
 		if(vo.checkBelong()==0){
-			ui.setText("请检查员工附属单位格式是否正确！");
+			ui.setErrorText("请检查员工附属单位格式是否正确！");
    		    return false;
 		}
 		if(vo.checkID()==0){
-			ui.setText("请检查员工编号格式是否正确！");
+			ui.setErrorText("请检查员工编号格式是否正确！");
    		    return false;
 		}
 		if(vo.checkTime()==0){
-			ui.setText("请检查员工工作时间是否合理！");
+			ui.setErrorText("请检查员工工作时间是否合理！");
    		    return false;
 		}
 		return true;
 	}
 	private boolean check(String id){
 	   	 if(id.length()!=10){
-	   		ui.setText("请确认员工编号格式是否正确！");
+	   		ui.setErrorText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
 	   	 try{
 	   		 Integer.parseInt(id);
 	   	 }catch(NumberFormatException e){
-	   		ui.setText("请确认员工编号格式是否正确！");
+	   		ui.setErrorText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
 	   	 return true;

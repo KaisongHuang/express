@@ -88,6 +88,9 @@ public class WarehouseUI3 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);;
+	}
 	public MyTable getTable() {
 		return table;
 	}

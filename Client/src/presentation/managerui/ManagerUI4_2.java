@@ -85,7 +85,7 @@ public class ManagerUI4_2 extends JPanel {
 			data.add(rowData);
 		}
 
-		String names[] = { "城市A", "城市B", "距离(KM)","价格(每千公里)" };
+		String names[] = { "城市A", "城市B","距离(KM)","价格(每千公里)" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -97,63 +97,66 @@ public class ManagerUI4_2 extends JPanel {
 		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
-		JSP.setBounds(21, 90, 444, 272);
+		JSP.setBounds(23, 29, 444, 285);
 		this.add(JSP);
 
 		JLabel lbla = new JLabel("城市A：");
-		lbla.setBounds(477, 101, 61, 16);
+		lbla.setBounds(477, 52, 61, 16);
 		add(lbla);
 
 		JLabel lblb = new JLabel("城市B：");
-		lblb.setBounds(477, 135, 61, 16);
+		lblb.setBounds(477, 88, 61, 16);
 		add(lblb);
 
 		JLabel lblkm = new JLabel("距离(KM)：");
-		lblkm.setBounds(477, 169, 73, 16);
+		lblkm.setBounds(477, 125, 73, 16);
 		add(lblkm);
 
 		myTextField = new MyTextField();
 		myTextField.setColumns(10);
-		myTextField.setBounds(550, 94, 122, 30);
+		myTextField.setBounds(548, 46, 122, 30);
 		add(myTextField);
 
 		myTextField_1 = new MyTextField();
 		myTextField_1.setColumns(10);
-		myTextField_1.setBounds(550, 128, 122, 30);
+		myTextField_1.setBounds(548, 82, 122, 30);
 		add(myTextField_1);
 
 		myTextField_2 = new MyTextField();
 		myTextField_2.setColumns(10);
-		myTextField_2.setBounds(550, 162, 122, 30);
+		myTextField_2.setBounds(548, 119, 122, 30);
 		add(myTextField_2);
 
 		myButton = new MyButton("添加");
-		myButton.setBounds(477, 260, 195, 30);
+		myButton.setBounds(477, 193, 195, 30);
 		myButton.addActionListener(managerlistener);
 		add(myButton);
 
 		myButton_1 = new MyButton("修改");
-		myButton_1.setBounds(477, 297, 195, 30);
+		myButton_1.setBounds(477, 233, 195, 30);
 		myButton_1.addActionListener(managerlistener);
 		add(myButton_1);
 
 		myButton_2 = new MyButton("删除");
-		myButton_2.setBounds(477, 332, 195, 30);
+		myButton_2.setBounds(477, 273, 195, 30);
 		myButton_2.addActionListener(managerlistener);
 		add(myButton_2);
 
 		label = new JLabel("价格：");
-		label.setBounds(477, 204, 86, 16);
+		label.setBounds(477, 159, 86, 16);
 		add(label);
 
 		myTextField_3 = new MyTextField();
 		myTextField_3.setColumns(10);
-		myTextField_3.setBounds(550, 197, 122, 30);
+		myTextField_3.setBounds(548, 153, 122, 30);
 		add(myTextField_3);
 
 	}
 
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyTextField getMyTextField_3() {
 		return myTextField_3;
 	}

@@ -101,6 +101,9 @@ public class ManagerUI3 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public SubNaviButton getButton1() {
 		return button1;
 	}

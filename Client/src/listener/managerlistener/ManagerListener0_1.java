@@ -43,20 +43,20 @@ public class ManagerListener0_1 implements MouseListener, ActionListener {
 	}
 	private boolean check(EmployeeVO vo){
 		if(vo==null){
-			ui.setText("员工编号不存在！");
+			ui.setErrorText("员工编号不存在！");
    		    return false;
 		}
 		return true;
 	}
 	private boolean check(String id){
 	   	 if(id.length()!=10){
-	   		ui.setText("请确认员工编号格式是否正确！");
+	   		ui.setErrorText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
 	   	 try{
 	   		 Integer.parseInt(id);
 	   	 }catch(NumberFormatException e){
-	   		ui.setText("请确认员工编号格式是否正确！");
+	   		ui.setErrorText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
 	   	 return true;
