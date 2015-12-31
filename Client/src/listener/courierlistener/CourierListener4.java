@@ -105,11 +105,14 @@ public class CourierListener4 implements MouseListener, ActionListener {
 		return true;
 	}
 	private boolean check(String id){
-		 if(id.length()!=10)
+		 if(id.length()!=10){
+			 ui.setErrorText("请检查快递编号格式是否正确！");
     		 return false;
+		 }
     	 try{
     		 Integer.parseInt(id);
     	 }catch(NumberFormatException e){
+    		 ui.setErrorText("请检查快递编号格式是否正确！");
     		 return false;
     	 }
     	 return true;

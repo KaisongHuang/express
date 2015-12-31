@@ -54,11 +54,14 @@ public class SenderListener implements ActionListener{
 		return true;
 	}
 	private boolean check(String id){
-		 if(id.length()!=10)
+		 if(id.length()!=10){
+			 search.setMesErrorText("请检查快递编号格式是否正确！");
     		 return false;
+		 }
     	 try{
     		 Integer.parseInt(id);
     	 }catch(NumberFormatException e){
+    		 search.setMesErrorText("请检查快递编号格式是否正确！");
     		 return false;
     	 }
     	 return true;
