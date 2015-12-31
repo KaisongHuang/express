@@ -206,6 +206,9 @@ public class FinanceUI2 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyComboBox<String> getComboBox_1() {
 		return comboBox_1;
 	}

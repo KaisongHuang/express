@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import listener.centrelistener.CentreListener0;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyComboBox;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -41,7 +42,7 @@ public class CentreUI extends JPanel {
 	private DefaultTableModel model;
 	private int width;
 	private int height;
-
+    private MyDialog dialog;
 	/**
 	 * Create the application.
 	 *
@@ -67,6 +68,8 @@ public class CentreUI extends JPanel {
 		this.setBackground(Color.white);
 		this.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		String names[] = { "托运编号", "到达日期","中转编号","出发地","状态" };
 		name = new Vector<String>(Arrays.asList(names));
 		table = new MyTable(data, name);
@@ -165,7 +168,13 @@ public class CentreUI extends JPanel {
 		cancle.addActionListener(centreListener);
 
 	}
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyTable getTable() {
 		return table;
 	}

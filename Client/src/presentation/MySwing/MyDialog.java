@@ -11,6 +11,7 @@ public class MyDialog extends JLabel{
    
 	private String content;
 	private Boolean isVisible=false;
+	private Boolean right=true;
 	public MyDialog(){
 		super();
 	    content="";
@@ -19,15 +20,25 @@ public class MyDialog extends JLabel{
 	}
 	public void setText(String s){
 		content=s;
-
+        right=true;
         isVisible=true;
         this.repaint();
         new Time().start();
 	}
 
+	public void setErrorText(String s){
+		content=s;
+        right=false;
+        isVisible=true;
+        this.repaint();
+        new Time().start();
+	}
 	public void paintComponent(Graphics g) {
 		if (isVisible ) {
-			g.setColor(new Color(158, 211, 240));
+			if(right)
+			    g.setColor(new Color(158, 211, 240));
+			else 
+				g.setColor(Color.RED);
 			g.fillRect(0, 0, 720, 40);
 			g.setFont(new Font(Font.SERIF, 10, 20));
 			g.setColor(Color.BLACK);

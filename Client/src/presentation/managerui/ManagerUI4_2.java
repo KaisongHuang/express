@@ -154,7 +154,10 @@ public class ManagerUI4_2 extends JPanel {
 
 	}
 
-
+	
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyTextField getMyTextField_3() {
 		return myTextField_3;
 	}

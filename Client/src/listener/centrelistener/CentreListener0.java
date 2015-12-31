@@ -97,30 +97,33 @@ public class CentreListener0 implements MouseListener, ActionListener {
 			dialog = "网络连接出现了问题，请检查您的网络！";
 		} else if (rm == ResultMessage.Fail)
 			dialog = "数据更新失败！";
+		
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.setErrorText(dialog);
 	}
 
 	private boolean check(CentreArrivalVO vo) {
 		if (vo.checkIsNull() == 0) {
-			JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkID() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查中转中心编号格式是否正确。");
+			ui.setErrorText("请检查中转中心编号格式是否正确。");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			ui.setErrorText("请检查日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkTransfer() == 0) {
-			JOptionPane.showMessageDialog(ui, "请检查中转单编号格式是否正确！");
+			ui.setErrorText("请检查中转单编号格式是否正确！");
 			return false;
 		}
 		return true;

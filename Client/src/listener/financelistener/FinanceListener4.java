@@ -338,15 +338,15 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	private boolean check(AccountVO vo) {
 		if (vo.checkIsNull() == 0) {
-			ui.getUi3().setText("请将信息填写完整！");
+			ui.getUi3().setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkAccount() == 0) {
-			ui.getUi3().setText("请检查账户格式是否正确！");
+			ui.getUi3().setErrorText("请检查账户格式是否正确！");
 			return false;
 		}
 		if (vo.checkBalance() == 0) {
-			ui.getUi3().setText("请检查账户余额是否为正！");
+			ui.getUi3().setErrorText("请检查账户余额是否为正！");
 			return false;
 		}
 		return true;
@@ -354,7 +354,7 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 
 	private boolean check(ArrayList<AccountVO> vo) {
 		if (vo == null) {
-			JOptionPane.showMessageDialog(ui, "查询的信息系统中不存在！");
+			ui.getUi3().setErrorText("查询的信息系统中不存在！");
 			return false;
 		}
 		return true;
@@ -380,11 +380,13 @@ public class FinanceListener4 implements ActionListener, MouseListener {
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.getUi3().setText(dialog);
+			return;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			JOptionPane.showMessageDialog(ui, dialog);
+			ui.getUi3().setErrorText(dialog);
 	}
 
 	public void mousePressed(MouseEvent e) {
