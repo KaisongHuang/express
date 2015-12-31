@@ -45,20 +45,20 @@ public class SellingAreaListener3_1 implements ActionListener {
 	}
 	private boolean check(CarVO vo){
 		if(vo==null){
-			ui.setText("车辆编号不存在！");
+			ui.setErrorText("车辆编号不存在！");
    		    return false;
 		}
 		return true;
 	}
     private boolean check(String id){
     	 if(id.length()!=10){
-    		 ui.setText("请确认车辆编号格式是否正确！");
+    		 ui.setErrorText("请确认车辆编号格式是否正确！");
     		 return false;
     	 }
     	 try{
     		 Integer.parseInt(id);
     	 }catch(NumberFormatException e){
-    		 ui.setText("请确认车辆编号格式是否正确！");
+    		 ui.setErrorText("请确认车辆编号格式是否正确！");
     		 return false;
     	 }
     	 return true;

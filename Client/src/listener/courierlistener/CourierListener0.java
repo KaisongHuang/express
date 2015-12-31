@@ -133,23 +133,25 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
     private boolean check(SenderVO vo){
     	if(vo.checkIsNull()==0){
-    		ui.setText("请将信息填写完整！");
+    		ui.setErrorText("请将信息填写完整！");
 			return false;
     	}
     	if(vo.checkRecipientPhone()==0){
-    		ui.setText("请检查收件人的手机号格式！");
+    		ui.setErrorText("请检查收件人的手机号格式！");
 			return false;
     	}
     	if(vo.checkSenderPhone()==0){
-    		ui.setText("请检查寄件人的手机号格式！");
+    		ui.setErrorText("请检查寄件人的手机号格式！");
 			return false;
     	}
     	return true;

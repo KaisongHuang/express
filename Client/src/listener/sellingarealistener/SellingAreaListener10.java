@@ -58,38 +58,38 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 
 	private  boolean check(AcceptVO vo){
 		if(vo.checkIsNull()==0){
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkData()==0){
-			ui.setText( "请检查日期格式是否正确！");
+			ui.setErrorText( "请检查日期格式是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			ui.setText("请检查中转单格式是否正确！");
+			ui.setErrorText("请检查中转单格式是否正确！");
 			return false;
 		}
 		if(vo.checkBarCode()==0){
-			ui.setText("请检查订单编号格式是否正确！");
+			ui.setErrorText("请检查订单编号格式是否正确！");
 			return false;
 		}
 		return true;
 	}
 	private boolean check(DeliverVO vo){
 		if(vo.checkIsNull()==0){
-			ui.setText("请将信息填写完整！！");
+			ui.setErrorText("请将信息填写完整！！");
 			return false;
 		}
 		if(vo.checkCode()==0){
-			ui.setText("请检查订单编号格式是否正确！");
+			ui.setErrorText("请检查订单编号格式是否正确！");
 			return false;
 		}
 		if(vo.checkDate()==0){
-			ui.setText("请检查日期格式是否正确！");
+			ui.setErrorText("请检查日期格式是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			ui.setText("请检查中转单格式是否正确！");
+			ui.setErrorText("请检查中转单格式是否正确！");
 			return false;
 		}
 		return true;
@@ -102,6 +102,8 @@ public class SellingAreaListener10 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+			ui.setErrorText( dialog);
+			return;
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}

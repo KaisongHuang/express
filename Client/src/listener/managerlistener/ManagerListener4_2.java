@@ -82,7 +82,7 @@ public class ManagerListener4_2 implements MouseListener, ActionListener {
 
 			String city1=(String) ui.getModel().getValueAt(selectedRow, 0);
 			String city2=(String) ui.getModel().getValueAt(selectedRow, 1);
-			double distance=(Double) ui.getModel().getValueAt(selectedRow, 1);
+			double distance=(Double) ui.getModel().getValueAt(selectedRow, 2);
 			double fee=(Double) ui.getModel().getValueAt(selectedRow, 3);
 
 			ui.getMyTextField().setText(city1);

@@ -6,6 +6,7 @@ import javax.swing.JTextArea;
 import listener.senderlistener.SenderListener;
 
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTextField;
 
 import javax.swing.JFrame;
@@ -23,6 +24,7 @@ public class SearchUI extends JFrame{
     private SenderListener listen;
     private MyButton search;
     private MyTextField id;
+    private MyDialog dialog;
 	public SearchUI() {
 		listen=new SenderListener(this);
 		initialize();
@@ -42,6 +44,8 @@ public class SearchUI extends JFrame{
 		state.setBounds(65, 73, 84, 18);
 		getContentPane().add(state);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		id=new MyTextField();
 		getContentPane().add(id);
 		id.setBounds(134,22,140,30);
@@ -73,6 +77,12 @@ public class SearchUI extends JFrame{
 
 	}
 
+	public void setMesText(String s){
+		dialog.setText(s);
+	}
+	public void setMesErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyButton getSearch(){
 		return search;
 	}

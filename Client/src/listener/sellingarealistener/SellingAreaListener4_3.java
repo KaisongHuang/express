@@ -66,28 +66,30 @@ public class SellingAreaListener4_3 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 	private boolean check(DriverVO vo){
 		if(vo==null){
-			ui.setText("车辆编号不存在！");
+			ui.setErrorText("车辆编号不存在！");
    		    return false;	
 		}
 		return true;
 	}
 	private boolean check(String id){
    	 if(id.length()!=10){
-   		ui.setText("请确认车辆编号格式是否正确！");
+   		ui.setErrorText("请确认车辆编号格式是否正确！");
    		 return false;
    	 }
    	 try{
    		 Integer.parseInt(id);
    	 }catch(NumberFormatException e){
-   		 JOptionPane.showMessageDialog(ui, "请确认车辆编号格式是否正确！");
+   		ui.setErrorText("请确认车辆编号格式是否正确！");
    		 return false;
    	 }
    	 return true;
