@@ -189,7 +189,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		}else if(po instanceof DistanceAndFee){
 			DistanceAndFee po1=(DistanceAndFee) po;
 			sql="update DistanceAndFee set fee="+po1.getFee()+",distance="+po1.getDistance()+" where city1='"+po1.getCity1()+
-					"';";
+					"' and city2='"+po1.getCity2()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof InstitutionPO){
 			InstitutionPO po1=(InstitutionPO) po;

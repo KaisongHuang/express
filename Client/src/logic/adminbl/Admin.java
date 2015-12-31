@@ -5,18 +5,19 @@ import java.rmi.RemoteException;
 import _enum.Operation;
 import _enum.ResultMessage;
 import data.admindata.AdminData;
+import data.datafactory.DataFactory;
 import logic.adminblservice.AdminBlService;
 import po.AdminPO;
 import vo.AdminVO;
 
 public class Admin implements AdminBlService {
 
-	AdminData ad = new AdminData();
+	AdminData ad ;
 
 	public AdminVO find(String id) {
 		// TODO Auto-generated method stub
 		AdminPO ap;
-
+        ad=DataFactory.getAdminDataService();
 		try{
 			ap = ad.find(id);
 			if(ap!=null)
