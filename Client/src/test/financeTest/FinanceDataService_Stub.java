@@ -79,4 +79,14 @@ public class FinanceDataService_Stub implements FinanceDataService{
 		return null;
 	}
 
+	public ArrayList<PayPO> getPay() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ArrayList<ReceiptPO> getReceipt() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
