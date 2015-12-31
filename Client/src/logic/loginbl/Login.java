@@ -2,6 +2,7 @@ package logic.loginbl;
 
 import java.rmi.RemoteException;
 
+import data.datafactory.DataFactory;
 import data.logindata.LoginData;
 import data.logindataservice.LoginDataService;
 import logic.loginblService.LoginBlService;
@@ -14,7 +15,7 @@ public class Login implements LoginBlService{
     AdminPO po;
     LoginDataService loginData;
     public Login(){
-    	loginData=new LoginData();
+    	loginData=DataFactory.getLoginDataService();
     }
 	public EmployeeVO login(AdminVO vo) {
 		

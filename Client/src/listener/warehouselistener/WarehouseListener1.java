@@ -13,6 +13,7 @@ import _enum.EmployeeMes;
 import _enum.ResultMessage;
 import logic.centrebl.Centre;
 import logic.centreblservice.CentreBlService;
+import logic.logicfactory.LogicFactory;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.warehouseui.WarehouseUI1;
@@ -24,7 +25,7 @@ import vo.OutStorageVO;
 public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private WarehouseUI1 ui;
-	private WarehouseBlService warehouseBl = new Warehouse();
+	private WarehouseBlService warehouseBl ;
 	private ArrayList<CentreArrivalVO> arrival;
 	private ArrayList<CentreTransforVO> trans;
 	private boolean import_clicked = true;
@@ -33,6 +34,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 	public WarehouseListener1(WarehouseUI1 ui) {
 		super();
 		this.ui = ui;
+		warehouseBl=LogicFactory.getWarehouseService();
 	}
 
 	public WarehouseListener1() {
@@ -107,10 +109,11 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 				String destination = (String) ui.getModel1().getValueAt(selectedRow, 1);
 				String transferType = (String) ui.getModel1().getValueAt(selectedRow, 2);
 
-				String year = (String) ui.getComboBox().getSelectedItem();
-				String month = (String) ui.getComboBox_1().getSelectedItem();
-				String day = (String) ui.getComboBox_2().getSelectedItem();
-				String date = year + month + day;
+//				String year = (String) ui.getComboBox().getSelectedItem();
+//				String month = (String) ui.getComboBox_1().getSelectedItem();
+//				String day = (String) ui.getComboBox_2().getSelectedItem();
+				String date = ui.getMdp2().getText().replace("/", "");
+				date = date.substring(4, 8) + date.substring(0, 4);
 
 				int row = ui.getModel2().getRowCount();
 				for (int i = 0; i < row; i++) {
@@ -121,7 +124,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 				for(int i=0;i<row;i++)
 					ui.getModel2().removeRow(0);
-					
+
 				ui.getModel1().removeRow(selectedRow);
 			}
 		}

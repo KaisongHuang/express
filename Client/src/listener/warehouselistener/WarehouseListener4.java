@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import _enum.EmployeeMes;
 import _enum.ResultMessage;
+import logic.logicfactory.LogicFactory;
 import logic.warehousebl.Warehouse;
 import logic.warehouseblservice.WarehouseBlService;
 import presentation.MySwing.MyButton;
@@ -25,12 +26,13 @@ import vo.InStorageVO;
 
 public class WarehouseListener4 implements ActionListener {
 	private WarehouseUI4 ui;
-	WarehouseBlService warehouseBl = new Warehouse();
+	WarehouseBlService warehouseBl ;
 	static Point origin = new Point();
 
 	public WarehouseListener4(WarehouseUI4 ui) {
 		super();
 		this.ui = ui;
+		warehouseBl=LogicFactory.getWarehouseService();
 	}
 
 	public void actionPerformed(ActionEvent e) {

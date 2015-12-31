@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import _enum.EmployeeMes;
+import logic.logicfactory.LogicFactory;
 import logic.loginbl.Login;
 import logic.loginblService.LoginBlService;
 import presentation.loginui.LoginUI;
@@ -25,7 +26,8 @@ public class LoginListener implements ActionListener, MouseListener {
 
 	public LoginListener(JFrame frame) {
 		this.ui = (LoginUI) frame;
-		l = new Login();
+		l = LogicFactory.getLoginService();
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
