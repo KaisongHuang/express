@@ -234,6 +234,7 @@ public class Warehouse implements WarehouseBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(po.size());
 		for (int i = 0; i < po.size(); i++) {
 			vo.add(new CentreTransforVO(po.get(i).getTransferStyle(), po.get(i).getDataOfGetin(),
 					po.get(i).getCentreTransferID(), po.get(i).getBanHao(), po.get(i).getStart(),

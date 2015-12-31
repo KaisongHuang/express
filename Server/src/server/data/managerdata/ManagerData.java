@@ -146,15 +146,15 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof ReceiptPO){
 			ReceiptPO receipt=(ReceiptPO) po;
-			sql="update Receipt set isCheck="+receipt.getIsCheck()+" where number='"+receipt.getNumber()+"';";
+			sql="update Receipt set isCheck="+receipt.getIsCheck()+" where id='"+receipt.getId()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof AcceptPO){
 			AcceptPO accept=(AcceptPO) po;
-			sql="update Accept set isCheck="+accept.getIsCheck()+" where number='"+accept.getNumber()+"';";
+			sql="update Accept set isCheck="+accept.getIsCheck()+" where BarCode='"+accept.getBarCode()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof DeliverPO){
 			DeliverPO deliver=(DeliverPO) po;
-			sql="update Deliver set isCheck="+deliver.getIsCheck()+"where number='"+deliver.getNumber()+"';";
+			sql="update Deliver set isCheck="+deliver.getIsCheck()+ " where number='"+deliver.getNumber()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof CentreArrivalPO){
 			CentreArrivalPO centre=(CentreArrivalPO) po;
@@ -180,11 +180,11 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof PayPO){
 			PayPO pay=(PayPO) po;
-			sql="update PayPO set isCheck="+pay.getIsCheck()+" where date='"+pay.getDate()+"' and payer='"+pay.getPayer()+"' and payAccount='"+pay.getPayAccount()+"' and entry='"+pay.getEntry()+"' and comments='"+pay.getComments()+"' and cost='"+pay.getCost()+"';";
+			sql="update Pay set isCheck="+pay.getIsCheck()+" where date='"+pay.getDate()+"' and payer='"+pay.getPayer()+"' and payAccount='"+pay.getPayAccount()+"' and entry='"+pay.getEntry()+"' and comments='"+pay.getComments()+"' and cost='"+pay.getCost()+"';";
 		    rm=db.update(sql);
 		}else if(po instanceof SalaryPO){
 			SalaryPO salary=(SalaryPO) po;
-			sql="update Salary set salaryMethod='"+salary.getSalaryMethod()+"',"+salary.getMoney()+"' where employeeName='"+salary.getEmployeeName()+"';";
+			sql="update Salary set salaryMethod='"+salary.getSalaryMethod()+"',money="+salary.getMoney()+" where employeeName='"+salary.getEmployeeName()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof DistanceAndFee){
 			DistanceAndFee po1=(DistanceAndFee) po;

@@ -137,38 +137,47 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	}
 
 	public ArrayList<CentreTransforPO> getTransfor(String start) throws RemoteException {
-		String sql = "select * from CentreTransfor where isCheck=1 and isOutStorage=0 and start='" + start + "';";
+		System.out.println("debug!");
+//		String sql = "select * from CentreTransfor where isCheck=1 and isOutStorage=0 and start='" + start + "';";
+		String sql = "select * from CentreTransfor where isCheck=1 and isOutStorage=0;";
 		ResultSet rs = db.find(sql);
 		ArrayList<CentreTransforPO> list = new ArrayList<CentreTransforPO>();
 		String id1 = null;
 		String id2 = null;
 		try {
 			int count = 0;
-			if (!rs.next()) {
-				return null;
-			}
+//			if (!rs.next()) {
+//				return null;
+//			}
 			while (rs.next()) {
 				id1 = rs.getString(3);
-				if (count == 0)
+				System.out.println("id1="+id1);
+				if (count == 0){
 					id2 = id1;
+				}
 				count++;
 				ArrayList<String> l = new ArrayList<String>();
-				if (id1.equals(id2))
+				if (id1.equals(id2)){
 					l.add(rs.getString(9));
-
-				else {
+				}else {
 					list.add(new CentreTransforPO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
 							rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), l, rs.getDouble(10),
 							rs.getInt(11), rs.getInt(12)));
 					l.clear();
 					l.add(rs.getString(9));
 				}
-				id2 = rs.getString(3);
+				if(rs.next()){
+					id2 = rs.getString(3);
+				}else{
+					id2 = null;
+				}
+				System.out.println("id2="+id2+"id1="+id1+"l="+l+"list.size"+list.size());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(list.size());
 		return list;
 	}
 

@@ -62,6 +62,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 				currentTable = 3;
 				refreshReceiptVO();
 				ui.getCard().show(ui.getPanel(), "2");
+				System.out.println("tmd");
 			} else if (ui.getComboBox().getSelectedIndex() == 3) {
 				previousIndex = 3;
 				currentTable = 4;
@@ -153,15 +154,19 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 
 		ArrayList<ReceiptVO> vo = new ArrayList<ReceiptVO>();
 		vo = manager.checkReceipt();
-
+		System.out.println(vo.size());
 		for (int i = 0; i < vo.size(); i++) {
 			Vector<Object> rowData = new Vector<Object>();
 			rowData.add(vo.get(i).getDate());
 			rowData.add(vo.get(i).getMoney());
+			rowData.add(vo.get(i).getSellingArea());
 			rowData.add(vo.get(i).getNumber());
+			rowData.add(vo.get(i).getId());
+			System.out.println("debug");
 			rowData.add(new Boolean(false));
 			ui.getModel3().addRow(rowData);
 		}
+		System.out.println("here");
 	}
 
 	private void refreshDeliverVO() {
@@ -254,6 +259,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			rowData.add(vo.get(i).getDate());
 			rowData.add(vo.get(i).getSellingArea());
 			rowData.add(vo.get(i).getNumber());
+			rowData.add(vo.get(i).getStart());
 			rowData.add(vo.get(i).getDestination());
 			rowData.add(vo.get(i).getCarID());
 			rowData.add(vo.get(i).getSupervisor());
@@ -273,8 +279,9 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 
 		for (int i = 0; i < vo.size(); i++) {
 			Vector<Object> rowData = new Vector<Object>();
-			rowData.add(vo.get(i).getDate());
 			rowData.add(vo.get(i).getBarCode());
+			rowData.add(vo.get(i).getDate());
+			rowData.add(vo.get(i).getNumber());
 			rowData.add(vo.get(i).getStart());
 			rowData.add(vo.get(i).getState());
 			rowData.add(new Boolean(false));
@@ -438,6 +445,7 @@ public class ManagerListener20 implements MouseListener, ActionListener {
 			break;
 		}
 		case 3: {
+			System.out.println(111);
 			int column = getCurrentTable().getColumnCount() - 1;
 			for (int i = 0; i < getCurrentTable().getRowCount(); i++) {
 				if ((Boolean) getCurrentTable().getValueAt(i, column)) {

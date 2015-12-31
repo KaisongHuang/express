@@ -89,6 +89,7 @@ public class WarehouseUI1 extends JPanel {
 	private MySeperator line;
 	private JPanel navi_panel;
 	private WarehouseListener1 warehouseListener;
+	private DatePicker mdp2;
 
 	private DatePicker mdp1;
 
@@ -155,35 +156,39 @@ public class WarehouseUI1 extends JPanel {
 		exportPanel.add(JSP2);
 
 		label_1 = new JLabel("出库日期:");
-		label_1.setBounds(520, 63, 57, 15);
+		label_1.setBounds(518, 116, 57, 15);
 		exportPanel.add(label_1);
 
-		comboBox = new MyComboBox<String>();
-		comboBox.setBounds(589, 58, 88, 25);
-		comboBox.addItem("2015");
-		exportPanel.add(comboBox);
+		mdp2 = new DatePicker(this);
+		mdp2.setBounds(585, 106, 88, 25);
+		exportPanel.add(mdp2);
 
-		label_3 = new JLabel("年");
-		label_3.setBounds(689, 63, 23, 15);
-		exportPanel.add(label_3);
-
-		comboBox_1 = new MyComboBox<String>();
-		comboBox_1.setBounds(589, 92, 88, 25);
-		comboBox_1.addItem("01");
-		exportPanel.add(comboBox_1);
-
-		label_4 = new JLabel("月");
-		label_4.setBounds(689, 97, 13, 15);
-		exportPanel.add(label_4);
-
-		comboBox_2 = new MyComboBox<String>();
-		comboBox_2.setBounds(589, 134, 88, 25);
-		comboBox_2.addItem("01");
-		exportPanel.add(comboBox_2);
-
-		label_5 = new JLabel("日");
-		label_5.setBounds(689, 139, 23, 15);
-		exportPanel.add(label_5);
+//		comboBox = new MyComboBox<String>();
+//		comboBox.setBounds(589, 58, 88, 25);
+//		comboBox.addItem("2015");
+//		exportPanel.add(comboBox);
+//
+//		label_3 = new JLabel("年");
+//		label_3.setBounds(689, 63, 23, 15);
+//		exportPanel.add(label_3);
+//
+//		comboBox_1 = new MyComboBox<String>();
+//		comboBox_1.setBounds(589, 92, 88, 25);
+//		comboBox_1.addItem("01");
+//		exportPanel.add(comboBox_1);
+//
+//		label_4 = new JLabel("月");
+//		label_4.setBounds(689, 97, 13, 15);
+//		exportPanel.add(label_4);
+//
+//		comboBox_2 = new MyComboBox<String>();
+//		comboBox_2.setBounds(589, 134, 88, 25);
+//		comboBox_2.addItem("01");
+//		exportPanel.add(comboBox_2);
+//
+//		label_5 = new JLabel("日");
+//		label_5.setBounds(689, 139, 23, 15);
+//		exportPanel.add(label_5);
 
 		button_5 = new MyButton("确认");
 		button_5.setBounds(589, 183, 94, 27);
@@ -573,4 +578,9 @@ public class WarehouseUI1 extends JPanel {
 	public void setMdp1(DatePicker mdp1) {
 		this.mdp1 = mdp1;
 	}
+
+	public DatePicker getMdp2() {
+		return mdp2;
+	}
+
 }
