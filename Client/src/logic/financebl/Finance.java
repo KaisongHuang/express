@@ -319,7 +319,7 @@ public class Finance implements FinanceBlService {
 			row.createCell((short) 0).setCellValue(vo.getDate());
 			row.createCell((short) 1).setCellValue(vo.getSellingArea());
 			row.createCell((short) 2).setCellValue(vo.getNumber());
-			row.createCell((short) 2).setCellValue(vo.getMoney());
+			row.createCell((short) 3).setCellValue(vo.getMoney());
 		}
 		// 第六步，将文件存到指定位置
 		try {
