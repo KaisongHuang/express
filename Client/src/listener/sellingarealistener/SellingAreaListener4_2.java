@@ -52,23 +52,23 @@ public class SellingAreaListener4_2 implements MouseListener, ActionListener {
 
 	private boolean check(DriverVO vo){
 		if(vo.checkIsNull()==0){
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkBirthday()==0){
-			ui.setText("请检查司机生日格式是否正确！");
+			ui.setErrorText("请检查司机生日格式是否正确！");
 			return false;
 		}
 		if(vo.checkID()==0){
-			ui.setText("请检查司机身份证号是否正确！");
+			ui.setErrorText("请检查司机身份证号是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			ui.setText("请检查司机编号！");
+			ui.setErrorText("请检查司机编号！");
 			return false;
 		}
 		if(vo.checkPhone()==0){
-			ui.setText("请检查司机手机号格式是否正确！");
+			ui.setErrorText("请检查司机手机号格式是否正确！");
 			return false;
 		}
 		return true;
