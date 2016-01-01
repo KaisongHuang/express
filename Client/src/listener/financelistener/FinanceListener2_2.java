@@ -103,7 +103,7 @@ public class FinanceListener2_2 implements ActionListener, MouseListener {
 				}
 			});
 			JPanel contentPane = new JPanel();
-			contentPane.setBackground(Color.WHITE);
+			contentPane.setBackground(new Color(240, 248, 255));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			jf.setContentPane(contentPane);
 			contentPane.setLayout(null);
