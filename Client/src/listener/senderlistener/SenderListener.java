@@ -16,7 +16,7 @@ import presentation.senderui.SearchUI;
 import vo.HistoryVO;
 
 public class SenderListener implements ActionListener{
-    
+
     SenderBlService sender;
     SearchUI search;
     JLabel label1;
@@ -33,13 +33,14 @@ public class SenderListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==search.getSearch()){
 			String s=search.getText();
+			search.getTextArea().setText("");
 	     	if(!check(s))
 	     		return ;
 			HistoryVO h= sender.search(s);
 			if(!check(h))
 				return ;
 		    set(h);
-		}	
+		}
 		else if(e.getSource()==search.getButton()){
 			search.setVisible(false);
 			search.getUi().getLoginPanel().setVisible(true);
@@ -76,7 +77,7 @@ public class SenderListener implements ActionListener{
 		sellingAreaID = list1.get(0);
 		centreID = list1.get(1);
         search.setLabel2(vo.getState());;
-        
+
 		int selling = list2.get(0);
 		int centre = list2.get(1);
 

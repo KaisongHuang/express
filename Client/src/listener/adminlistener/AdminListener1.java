@@ -40,6 +40,7 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			AdminVO vo = this.read();
 			if (!check(vo))
 				return;
+			System.out.println(vo.getPassword() + " " + vo.getName() + " " + vo.getId() + " " + vo.getRole());
 			rm = admin.manageCount(vo, Operation.insert);
 			check(rm);
 		}

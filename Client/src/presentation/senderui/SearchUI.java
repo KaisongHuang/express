@@ -78,7 +78,7 @@ public class SearchUI extends JPanel {
 		button.setMode(2);
 		button.addActionListener(listen);
 		add(button);
-		
+
 		this.setVisible(true);
 
 	}
@@ -102,6 +102,10 @@ public class SearchUI extends JPanel {
 	public void setText(String s) {
 		textArea.append(s);
 		;
+	}
+
+	public JTextArea getTextArea() {
+		return textArea;
 	}
 
 	public MyButton getButton() {

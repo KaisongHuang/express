@@ -19,7 +19,7 @@ import vo.CarPackVO;
 
 /**
  * 汽车装运管理界面监听
- * 
+ *
  * @author john
  *
  */
@@ -121,7 +121,8 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 		String carID = ui.getTextField_8().getText();
 		String supervisor = ui.getTextField_4().getText();
 		String supercargo = ui.getTextField_5().getText();
-		//String fee = ui.getTextField_6().getText();
+		String fee1 = ui.getTextField_6().getText();
+		double fee2 = Double.parseDouble(fee1);
 		// int count = ui.getTextArea().getLineCount();
 		// System.out.println(count);
 		ArrayList<String> list = new ArrayList<String>();
@@ -145,8 +146,8 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			i++;
 			d=destination.substring(0, i);
 		}
-		fee=sellingarea.getFee(s, d, "飞机", list.size());
-		CarPackVO vo = new CarPackVO(date, sellingArea, number, start, destination, carID, supervisor, supercargo, list,fee, 0);
+//		fee=sellingarea.getFee(s, d, "飞机", list.size());
+		CarPackVO vo = new CarPackVO(date, sellingArea, number, start, destination, carID, supervisor, supercargo, list,fee2, 0);
 
 		return vo;
 	}
