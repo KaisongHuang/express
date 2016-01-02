@@ -40,8 +40,8 @@ public class SellingAreaListener4_2 implements MouseListener, ActionListener {
 		} else if (e.getSource() == ui.getBtnNewButton_16()) {
 			ResultMessage rm;
 			DriverVO vo = this.read();
-			if(!check(vo))
-				return ;
+//			if(!check(vo))
+//				return ;
 			rm = sellingarea.manageDriverinfo(vo, Operation.update);
 		} else if (e.getSource() == ui.getBtnNewButton_15()) {
 			String id = ui.getTextField().getText();
