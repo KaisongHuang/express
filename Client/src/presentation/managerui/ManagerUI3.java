@@ -12,6 +12,7 @@ import listener.managerlistener.ManagerListener30;
 import presentation.MySwing.MyDialog;
 import presentation.MySwing.MySeperator;
 import presentation.MySwing.SubNaviButton;
+import presentation.financeui.FinanceUI2_1;
 import presentation.financeui.FinanceUI3;
 
 public class ManagerUI3 extends JPanel {
@@ -31,7 +32,7 @@ public class ManagerUI3 extends JPanel {
 
 	private CardLayout card;
 	private FinanceUI3 ui1;
-	private JPanel ui2;
+	private FinanceUI2_1 ui2;
 	private JPanel navi_panel;
 	private SubNaviButton button1;
 	private SubNaviButton button2;
@@ -61,7 +62,7 @@ public class ManagerUI3 extends JPanel {
 		ui1=new FinanceUI3();
 //		ui1.getComboBox_3().setBounds(159, 47, 88, 25);
 //		ui1.getComboBox().setBounds(159, 20, 88, 25);
-		ui2=new JPanel();
+		ui2=new FinanceUI2_1();
 		ui2.setBackground(Color.WHITE);
 
 		panel=new JPanel();

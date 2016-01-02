@@ -109,7 +109,7 @@ public class WarehouseListener4 implements ActionListener {
 
 			JPanel contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-			contentPane.setBackground(new Color(246,246,246));
+			contentPane.setBackground(new Color(240, 248, 255));
 			jf.setContentPane(contentPane);
 			contentPane.setLayout(null);
 

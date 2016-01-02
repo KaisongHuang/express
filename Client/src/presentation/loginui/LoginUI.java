@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 
 import listener.mainlistener.LoginListener;
 import presentation.MySwing.MyButton;
+import presentation.senderui.SearchUI;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -41,6 +42,8 @@ public class LoginUI extends JFrame {
 	private JLabel lblUserName;
 	private JLabel lblPassword;
 	private JLabel label;
+	private SearchUI ui;
+	private JPanel loginPanel;
 	private int height = 600;
 	private int width = 900;
 	static Point origin = new Point();
@@ -49,66 +52,62 @@ public class LoginUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginUI() {
-		try {
-		       final int SystemFontSize = 13;
-		       final int DataFontSize = 13;
-		       final Font SystemFont = new Font("stkaiti", Font.PLAIN,
-		                                        SystemFontSize);
-		       final Font DataFont = new Font("stkaiti", Font.PLAIN,
-		                                      DataFontSize);
-		       //   可以通过修改下面的代码,变换窗口的风格
-		       //   其它的外观风格类,可以通过引入外部JAR包来实现
-		       //   其它类型的LOOK&FEEL包
-		       //    LookAndFeel alloyLnF = new com.incors.plaf.alloy.AlloyLookAndFeel();
-		       //   UIManager.getSystemLookAndFeelClassName();
-//		         JFrame.setDefaultLookAndFeelDecorated(true);
-		         JDialog.setDefaultLookAndFeelDecorated(true);
-		         javax.swing.plaf.FontUIResource fontResource = new javax.swing.plaf.
-		             FontUIResource(SystemFont);
-		         javax.swing.plaf.FontUIResource datafontResource = new javax.swing.plaf.
-		             FontUIResource(DataFont);
-		         //UI管理器之字体管理
-		         UIManager.put("Button.font", fontResource);
-		         UIManager.put("ToggleButton.font", fontResource);
-		         UIManager.put("RadioButton.font", fontResource);
-		         UIManager.put("CheckBox.font", fontResource);
-		         UIManager.put("ColorChooser.font", fontResource);
-		         UIManager.put("ToggleButton.font", fontResource);
-		         UIManager.put("ComboBox.font", fontResource);
-		         UIManager.put("ComboBoxItem.font", fontResource);
-//		         UIManager.put("InternalFrame.titleFont", fontResource);
-		         UIManager.put("Label.font", fontResource);
-		         UIManager.put("List.font", datafontResource);
-		         UIManager.put("MenuBar.font", fontResource);
-		         UIManager.put("Menu.font", fontResource);
-		         UIManager.put("MenuItem.font", fontResource);
-		         UIManager.put("RadioButtonMenuItem.font", fontResource);
-		         UIManager.put("CheckBoxMenuItem.font", fontResource);
-		         UIManager.put("PopupMenu.font", fontResource);
-		         UIManager.put("OptionPane.font", fontResource);
-		         UIManager.put("Panel.font", fontResource);
-		         UIManager.put("ProgressBar.font", fontResource);
-		         UIManager.put("ScrollPane.font", fontResource);
-		         UIManager.put("Viewport", fontResource);
-		         UIManager.put("TabbedPane.font", fontResource);
-		         UIManager.put("TableHeader.font", fontResource);
-		         UIManager.put("TextField.font", datafontResource);
-		         UIManager.put("PasswordFiled.font", datafontResource);
-		         UIManager.put("TextArea.font", datafontResource);
-		         UIManager.put("TextPane.font", datafontResource);
-		         UIManager.put("EditorPane.font", fontResource);
-		         UIManager.put("TitledBorder.font", fontResource);
-		         UIManager.put("ToolBar.font", fontResource);
-		         UIManager.put("ToolTip.font", fontResource);
-		         UIManager.put("Tree.font", datafontResource);
-		         UIManager.put("TabbedPane.font", datafontResource);
-		         UIManager.put("ComboBox.font", datafontResource);
-		         UIManager.put("ProgressBar.repaintInterval", new Integer(150));
-		         UIManager.put("ProgressBar.cycleTime", new Integer(1050));
-		       }
-		       catch (Exception ex) {
-		         System.out.println("UIManager 异常 \r\n" + ex.toString());
-		       }
+//		try {
+//			final int SystemFontSize = 13;
+//			final int DataFontSize = 13;
+//			final Font SystemFont = new Font("stkaiti", Font.PLAIN, SystemFontSize);
+//			final Font DataFont = new Font("stkaiti", Font.PLAIN, DataFontSize);
+//			// 可以通过修改下面的代码,变换窗口的风格
+//			// 其它的外观风格类,可以通过引入外部JAR包来实现
+//			// 其它类型的LOOK&FEEL包
+//			// LookAndFeel alloyLnF = new
+//			// com.incors.plaf.alloy.AlloyLookAndFeel();
+//			// UIManager.getSystemLookAndFeelClassName();
+//			// JFrame.setDefaultLookAndFeelDecorated(true);
+//			JDialog.setDefaultLookAndFeelDecorated(true);
+//			javax.swing.plaf.FontUIResource fontResource = new javax.swing.plaf.FontUIResource(SystemFont);
+//			javax.swing.plaf.FontUIResource datafontResource = new javax.swing.plaf.FontUIResource(DataFont);
+//			// UI管理器之字体管理
+//			UIManager.put("Button.font", fontResource);
+//			UIManager.put("ToggleButton.font", fontResource);
+//			UIManager.put("RadioButton.font", fontResource);
+//			UIManager.put("CheckBox.font", fontResource);
+//			UIManager.put("ColorChooser.font", fontResource);
+//			UIManager.put("ToggleButton.font", fontResource);
+//			UIManager.put("ComboBox.font", fontResource);
+//			UIManager.put("ComboBoxItem.font", fontResource);
+//			// UIManager.put("InternalFrame.titleFont", fontResource);
+//			UIManager.put("Label.font", fontResource);
+//			UIManager.put("List.font", datafontResource);
+//			UIManager.put("MenuBar.font", fontResource);
+//			UIManager.put("Menu.font", fontResource);
+//			UIManager.put("MenuItem.font", fontResource);
+//			UIManager.put("RadioButtonMenuItem.font", fontResource);
+//			UIManager.put("CheckBoxMenuItem.font", fontResource);
+//			UIManager.put("PopupMenu.font", fontResource);
+//			UIManager.put("OptionPane.font", fontResource);
+//			UIManager.put("Panel.font", fontResource);
+//			UIManager.put("ProgressBar.font", fontResource);
+//			UIManager.put("ScrollPane.font", fontResource);
+//			UIManager.put("Viewport", fontResource);
+//			UIManager.put("TabbedPane.font", fontResource);
+//			UIManager.put("TableHeader.font", fontResource);
+//			UIManager.put("TextField.font", datafontResource);
+//			UIManager.put("PasswordFiled.font", datafontResource);
+//			UIManager.put("TextArea.font", datafontResource);
+//			UIManager.put("TextPane.font", datafontResource);
+//			UIManager.put("EditorPane.font", fontResource);
+//			UIManager.put("TitledBorder.font", fontResource);
+//			UIManager.put("ToolBar.font", fontResource);
+//			UIManager.put("ToolTip.font", fontResource);
+//			UIManager.put("Tree.font", datafontResource);
+//			UIManager.put("TabbedPane.font", datafontResource);
+//			UIManager.put("ComboBox.font", datafontResource);
+//			UIManager.put("ProgressBar.repaintInterval", new Integer(150));
+//			UIManager.put("ProgressBar.cycleTime", new Integer(1050));
+//		} catch (Exception ex) {
+//			System.out.println("UIManager 异常 \r\n" + ex.toString());
+//		}
 
 		setBackground(Color.white);
 		this.setUndecorated(true);
@@ -133,6 +132,9 @@ public class LoginUI extends JFrame {
 
 		label = new JLabel();
 
+		
+		
+		
 		listener = new LoginListener(this);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
@@ -140,24 +142,31 @@ public class LoginUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(158, 211, 240));
+		
+		loginPanel = new JPanel();
+		loginPanel.setLayout(null);
+		loginPanel.setBounds(0, 120, 900, 480);
+		loginPanel.setBackground(new Color(158, 211, 240));
+		contentPane.add(loginPanel);
+		
 		lblUserName = new JLabel("用户名:");
-//		lblUserName.setFont(new Font("kaiti", Font.PLAIN, 12));
+		// lblUserName.setFont(new Font("kaiti", Font.PLAIN, 12));
 
-		lblUserName.setBounds(311, 232, 50, 16);
-		contentPane.add(lblUserName);
+		lblUserName.setBounds(311, 130, 50, 16);
+		loginPanel.add(lblUserName);
 
 		lblPassword = new JLabel("密码:");
-		lblPassword.setBounds(311, 300, 50, 16);
-		contentPane.add(lblPassword);
+		lblPassword.setBounds(311, 180, 50, 16);
+		loginPanel.add(lblPassword);
 
 		textField = new JTextField();
-		textField.setBounds(380, 227, 196, 28);
-		contentPane.add(textField);
+		textField.setBounds(373, 124, 196, 28);
+		loginPanel.add(textField);
 		textField.setColumns(10);
 
 		textField1 = new JPasswordField();
-		textField1.setBounds(380, 295, 196, 28);
-		contentPane.add(textField1);
+		textField1.setBounds(373, 174, 196, 28);
+		loginPanel.add(textField1);
 		textField1.setColumns(10);
 
 		logout = new JButton();
@@ -166,22 +175,29 @@ public class LoginUI extends JFrame {
 		logout.addActionListener(listener);
 
 		Login = new MyButton("登录");
-		Login.setBounds(476, 362, 100, 28);
+		Login.setBounds(469, 247, 100, 28);
+		Login.setMode(2);
 		Login.addActionListener(listener);
 		Login.addMouseListener(listener);
-		contentPane.add(Login);
-
+		loginPanel.add(Login);
 
 		setImage();
 		this.setVisible(true);
 
 		Search = new MyButton("查询");
-		Search.setBounds(311, 362, 100, 28);
+		Search.setBounds(311, 247, 100, 28);
+		Search.setMode(2);
 		Search.addActionListener(listener);
 		Search.addMouseListener(listener);
-		contentPane.add(Search);
+		loginPanel.add(Search);
+
+		ui = new SearchUI(this);
+		ui.setBounds(0, 120, 900, 480);
+		ui.setVisible(false);
+		contentPane.add(ui);
 
 	}
+
 
 	private void setImage() {
 
@@ -200,7 +216,15 @@ public class LoginUI extends JFrame {
 		logout.setContentAreaFilled(false);
 		contentPane.add(label);
 
+	}
+	
 
+	public JPanel getLoginPanel() {
+		return loginPanel;
+	}
+
+	public SearchUI getUi() {
+		return ui;
 	}
 
 	public JTextField getText() {
@@ -223,6 +247,5 @@ public class LoginUI extends JFrame {
 	public MyButton getSearch() {
 		return Search;
 	}
-
 
 }

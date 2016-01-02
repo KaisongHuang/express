@@ -42,6 +42,7 @@ public class SenderListener implements ActionListener{
 		}	
 		else if(e.getSource()==search.getButton()){
 			search.setVisible(false);
+			search.getUi().getLoginPanel().setVisible(true);
 		}
 	}
 

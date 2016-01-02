@@ -7,6 +7,7 @@ public class Start {
     //MainFrame frame2;
 	public static void main(String[] args) {
          new Start().init();
+         
 	}
 
 	public void init(){

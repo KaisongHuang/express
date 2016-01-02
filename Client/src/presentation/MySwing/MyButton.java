@@ -15,17 +15,18 @@ public class MyButton extends JButton {
 	private static final long serialVersionUID = 1L;
 	private boolean pressed = false;
 	private boolean entered = false;
+	private int mode = 1;
 	private JLabel label;
 	private MyButtonListener listener;
 
 	public MyButton() {
-		listener=new MyButtonListener(this);
+		listener = new MyButtonListener(this);
 		this.setBorderPainted(false);
 		this.addMouseListener(listener);
 	}
 
 	public MyButton(String text) {
-		listener=new MyButtonListener(this);
+		listener = new MyButtonListener(this);
 		this.setBorderPainted(false);
 		label = new JLabel();
 		label.setText(text);
@@ -47,29 +48,62 @@ public class MyButton extends JButton {
 
 	protected void paintComponent(Graphics g) {
 		if (pressed) {
-			g.setColor(new Color(158, 211, 240));
-			g.fillRect(0, 0, this.getWidth(), this.getHeight());
-			// g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
-			label.setForeground(new Color(246, 246, 246));
+			switch (mode) {
+			case 1:
+				g.setColor(new Color(158, 211, 240));
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				// g.fillRoundRect(0, 0, this.getWidth(),
+				// this.getHeight(),15,15);
+				label.setForeground(new Color(246, 246, 246));
+				break;
+			case 2:
+				g.setColor(new Color(250, 205, 137));
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				label.setForeground(new Color(246, 246, 246));
+				break;
+			}
 		}
 
 		if (entered) {
-			label.setForeground(Color.BLACK);
-			g.setColor(new Color(158, 211, 240));
-			g.fillRect(0, 0, this.getWidth(), this.getHeight());
-			// g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
-			g.setColor(new Color(246, 246, 246));
-			g.fillRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
-					this.getHeight() - this.getWidth() / 15);
-			// g.fillRoundRect(this.getWidth() / 30, this.getWidth() / 30,
-			// this.getWidth() - this.getWidth() / 15,
-			// this.getHeight() - this.getWidth() / 15,15,15);
-
+			switch (mode) {
+			case 1:
+				label.setForeground(Color.BLACK);
+				g.setColor(new Color(158, 211, 240));
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				// g.fillRoundRect(0, 0, this.getWidth(),
+				// this.getHeight(),15,15);
+				g.setColor(new Color(246, 246, 246));
+				g.fillRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
+						this.getHeight() - this.getWidth() / 15);
+				// g.fillRoundRect(this.getWidth() / 30, this.getWidth() / 30,
+				// this.getWidth() - this.getWidth() / 15,
+				// this.getHeight() - this.getWidth() / 15,15,15);
+				break;
+			case 2:
+				label.setForeground(Color.BLACK);
+				g.setColor(new Color(250, 205, 137));
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				g.setColor(new Color(246, 246, 246));
+				g.fillRect(this.getWidth() / 30, this.getWidth() / 30, this.getWidth() - this.getWidth() / 15,
+						this.getHeight() - this.getWidth() / 15);
+				break;
+			}
 		} else if (!entered && !pressed) {
-			label.setForeground(Color.BLACK);
-			g.setColor(new Color(246, 246, 246));
-			g.fillRect(0, 0, this.getWidth(), this.getHeight());
-			// g.fillRoundRect(0, 0, this.getWidth(), this.getHeight(),15,15);
+			switch (mode) {
+			case 1:
+				label.setForeground(Color.BLACK);
+				g.setColor(new Color(246, 246, 246));
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				// g.fillRoundRect(0, 0, this.getWidth(),
+				// this.getHeight(),15,15);
+				break;
+			case 2:
+				label.setForeground(Color.BLACK);
+				g.setColor(new Color(246, 246, 246));
+				g.fillRect(0, 0, this.getWidth(), this.getHeight());
+				break;
+
+			}
 		}
 	}
 
@@ -89,4 +123,7 @@ public class MyButton extends JButton {
 		this.entered = entered;
 	}
 
+	public void setMode(int mode) {
+		this.mode = mode;
+	}
 }
