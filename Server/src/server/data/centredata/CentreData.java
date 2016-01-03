@@ -36,8 +36,9 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO po1=(CentreTransforPO) po;
 			for(int i=0;i<po1.getList().size();i++){
-			sql="insert into CentreTransfor values("+"'"+po1.getTransferStyle()+"','"+po1.getDataOfGetin()+"',"+po1.getCentreTransferID()+
-					","+po1.getBanHao()+",'"+po1.getStart()+"','"+po1.getArrival()+"',"+po1.getHuoGuiHao()+
+				System.out.println(po1.getCentreTransferID());
+			sql="insert into CentreTransfor values("+"'"+po1.getTransferStyle()+"','"+po1.getDataOfGetin()+"','"+po1.getCentreTransferID()+
+					"',"+po1.getBanHao()+",'"+po1.getStart()+"','"+po1.getArrival()+"',"+po1.getHuoGuiHao()+
 					","+po1.getJianZhuangYuan()+","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+",0)";
 		    rm=db.insert(sql);
 		    his.Centre(po1.getList().get(i), null, null);
@@ -46,7 +47,7 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		}else{
 			CentrePackPO po1=(CentrePackPO) po;
 			for(int i=0;i<po1.getList().size();i++){
-			sql="insert into CentrePack values("+"'"+po1.getDataOfGetin()+"',"+po1.getCentreTransferID()+",'"+po1.getArrival()+
+			sql="insert into CentrePack values("+"'"+po1.getDataOfGetin()+"','"+po1.getCentreTransferID()+"','"+po1.getArrival()+
 					"',"+po1.getCarID()+","+po1.getJianZhuangYuan()+","+po1.getYaYunYuan()+
 					","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+")";
 			rm=db.insert(sql);

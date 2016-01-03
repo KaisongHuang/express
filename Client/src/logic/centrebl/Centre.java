@@ -32,6 +32,7 @@ public class Centre implements CentreBlService {
 				vo.getBanHao(), vo.getStart(), vo.getArrival(),	vo.getHuoGuiHao(), vo.getJianZhuangYuan(),
 				vo.getList(), vo.getFee(),vo.getIsCheck(),0);
 		try{
+			System.out.println(po.getCentreTransferID());
 			rm=cd.insert(po);
 
 		}catch (RemoteException e) {
@@ -90,7 +91,7 @@ public class Centre implements CentreBlService {
         	fee=distance*1000*count/5000.0;
         }
 		return fee;
-		
+
 	}
 
 }

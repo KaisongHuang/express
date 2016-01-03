@@ -33,6 +33,7 @@ public class Admin implements AdminBlService {
 
 	public ResultMessage manageCount(AdminVO vo, Operation op) {
 		// TODO Auto-generated method stub
+		ad=DataFactory.getAdminDataService();
 
 		ResultMessage rm=null;
 		AdminPO po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());;
