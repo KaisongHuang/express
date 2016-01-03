@@ -32,11 +32,11 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
        if(e.getSource()==ui.getSearch()){
 			String s = ui.getTextField().getText();
-			if(!check(s))
-				return ;
+//			if(!check(s))
+//				return ;
 			EmployeeVO vo = (EmployeeVO) manager.find(s,Opera.Employee_find);
-			if(!check(vo))
-				return ;
+//			if(!check(vo))
+//				return ;
 			setLabel(vo);
 		}else if(e.getSource()==ui.getConfirm()){
 			ResultMessage rm;
@@ -62,7 +62,8 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 		textField.setText("");
 	}
 	private boolean check(String id){
-	   	 if(id.length()!=10){
+	   	boolean b=true;
+		if(id.length()!=10){
 	   		ui.setErrorText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
@@ -72,7 +73,7 @@ public class ManagerListener0_2 implements MouseListener, ActionListener {
 	   		ui.setErrorText("请确认员工编号格式是否正确！");
 	   		 return false;
 	   	 }
-	   	 return true;
+	   	 return b;
 	   }
 	private boolean check(EmployeeVO vo){
 		if(vo==null){

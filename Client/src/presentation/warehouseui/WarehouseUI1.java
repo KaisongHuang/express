@@ -286,7 +286,9 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_8 = new MyComboBox<Object>();
 		comboBox_8.setBounds(393, 138, 94, 27);
-		comboBox_8.addItem("1");
+		for(int i=0;i<100;i++){
+			comboBox_8.addItem(i+1+"");
+		}
 		importPanel.add(comboBox_8);
 
 		label_15 = new JLabel("架号:");
@@ -295,7 +297,9 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_9 = new MyComboBox<Object>();
 		comboBox_9.setBounds(393, 182, 94, 27);
-		comboBox_9.addItem("1");
+		for(int i=0;i<100;i++){
+			comboBox_9.addItem(i+1+"");
+		}
 		importPanel.add(comboBox_9);
 
 		label_16 = new JLabel("位号:");
@@ -304,7 +308,9 @@ public class WarehouseUI1 extends JPanel {
 
 		comboBox_10 = new MyComboBox<Object>();
 		comboBox_10.setBounds(393, 230, 94, 27);
-		comboBox_10.addItem("1");
+		for(int i=0;i<10;i++){
+			comboBox_10.addItem(i+1+"");
+		}
 		importPanel.add(comboBox_10);
 
 		button_1 = new MyButton("导入");

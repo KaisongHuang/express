@@ -43,8 +43,8 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 		} else if (e.getSource() == ui.getUpdate()) {
 			ResultMessage rm;
 			InstitutionVO vo = this.read();
-			if (check(vo.getOrganizationID()))
-				return;
+//			if (check(vo.getOrganizationID()))
+//				return;
 			rm = manager.manageMember(vo, Opera.Institution_update);
 			check(rm);
 		}

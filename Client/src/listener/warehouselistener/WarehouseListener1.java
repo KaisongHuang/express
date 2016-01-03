@@ -78,7 +78,9 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 				ui.getModel2().removeRow(0);
 
 			trans = new ArrayList<CentreTransforVO>();
+			System.out.println("size1="+trans.size());
 			trans = warehouseBl.getExport();
+			System.out.println("size2="+trans.size());
 			for (int i = 0; i < trans.size(); i++) {
 				Vector<Object> rowData = new Vector<Object>();
 				rowData.add(trans.get(i).getCentreTransferID());
