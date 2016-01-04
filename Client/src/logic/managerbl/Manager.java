@@ -203,7 +203,7 @@ public class Manager implements ManagerBlService {
 
 		} else if (vo instanceof CentreTransforVO) {
 			CentreTransforVO vo8 = (CentreTransforVO) vo;
-
+			vo8.setIsCheck(1);
 			CentreTransforPO po8 = new CentreTransforPO(vo8.getTransferStyle(), vo8.getDateOfGetin(),
 					vo8.getCentreTransferID(), vo8.getBanHao(), vo8.getStart(), vo8.getArrival(), vo8.getHuoGuiHao(),
 					vo8.getJianZhuangYuan(), vo8.getList(), vo8.getFee(), vo8.getIsCheck(), 0);
