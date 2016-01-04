@@ -23,12 +23,6 @@ public class FinanceUI4_1 extends JPanel {
 	 * 
 	 */
 	private MyButton ret;
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel year;
-	private JLabel month;
-	private JLabel day;
 	private static final long serialVersionUID = 1L;
 	private MyTable table;
 	private DefaultTableModel model;
@@ -62,7 +56,7 @@ public class FinanceUI4_1 extends JPanel {
 		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
-		JSP.setBounds(80, 60, 444, 270);
+		JSP.setBounds(80, 60, 506, 316);
 		this.add(JSP);
 		dialog=new MyDialog();
 		this.add(dialog);
@@ -71,30 +65,6 @@ public class FinanceUI4_1 extends JPanel {
 		ret.addActionListener(financeListener4);
 		ret.addMouseListener(financeListener4);
 		add(ret);
-
-		label = new JLabel("建账日期：");
-		label.setBounds(366, 342, 65, 16);
-		add(label);
-
-		year = new JLabel("2015");
-		year.setBounds(428, 342, 38, 16);
-		add(year);
-
-		label_1 = new JLabel("/");
-		label_1.setBounds(459, 342, 7, 16);
-		add(label_1);
-
-		month = new JLabel("01");
-		month.setBounds(465, 342, 16, 16);
-		add(month);
-
-		label_2 = new JLabel("/");
-		label_2.setBounds(480, 342, 7, 16);
-		add(label_2);
-
-		day = new JLabel("01");
-		day.setBounds(486, 342, 16, 16);
-		add(day);
 	}
 	public void setText(String s){
 		dialog.setText(s);
