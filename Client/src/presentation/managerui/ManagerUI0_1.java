@@ -63,7 +63,7 @@ public class ManagerUI0_1 extends JPanel{
 
 		
 		this.setBackground(Color.white);
-		this.setBounds(0, 44, 746, 394);
+		this.setBounds(0, 44, 720, 480);
 
 		this.setLayout(null);
 
@@ -77,7 +77,7 @@ public class ManagerUI0_1 extends JPanel{
 		panel_6.setLayout(null);
 
 		lblNewLabel_2 = new JLabel("员工信息");
-		lblNewLabel_2.setBounds(251, 0, 100, 18);
+		lblNewLabel_2.setBounds(245, 0, 100, 18);
 		panel_6.add(lblNewLabel_2);
 
 		lblNewLabel_3 = new JLabel("员工姓名：");
@@ -129,7 +129,7 @@ public class ManagerUI0_1 extends JPanel{
 		panel_6.add(lblNewLabel_14);
 
 		lblNewLabel_1 = new JLabel("员工编号：");
-		lblNewLabel_1.setBounds(94, 69, 100, 18);
+		lblNewLabel_1.setBounds(74, 69, 100, 18);
 		this.add(lblNewLabel_1);
 
 		textField = new MyTextField();

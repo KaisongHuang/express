@@ -60,7 +60,7 @@ public class ManagerUI0_2 extends JPanel{
 
 
 		this.setBackground(Color.white);
-		this.setBounds(0, 44, 746, 394);
+		this.setBounds(0, 44, 720, 480);
 
 		this.setLayout(null);
 

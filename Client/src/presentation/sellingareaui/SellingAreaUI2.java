@@ -72,7 +72,7 @@ public class SellingAreaUI2 extends JPanel {
 	private void initialize() {
 
 		this.setBackground(Color.white);
-		this.setBounds(136, 114, 742, 533);
+		this.setBounds(136, 114, 720,480);
 		this.setLayout(null);
 
 		String names[] = { "收款日期", "收款金额", "收款快递员" };

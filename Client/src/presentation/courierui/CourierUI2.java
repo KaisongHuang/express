@@ -51,7 +51,7 @@ public class CourierUI2 extends JPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		this.setBounds(136, 118, 748, 436);
+		this.setBounds(136, 118, 720,480);
 		setBackground(Color.white);
 		this.setLayout(null);
 		

@@ -585,7 +585,7 @@ public class FinanceUI2_2 extends JPanel {
 
 	private void initialize() {
 		setBackground(Color.WHITE);
-		this.setBounds(136, 115, 746, 438);
+		this.setBounds(136, 115, 720,480);
 		this.setLayout(null);
 
 		dialog=new MyDialog();
