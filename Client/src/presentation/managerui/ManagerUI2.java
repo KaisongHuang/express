@@ -115,7 +115,7 @@ public class ManagerUI2 extends JPanel {
 
 		setBackground(Color.white);
 
-		this.setBounds(136, 115, 746, 443);
+		this.setBounds(136, 115, 720, 480);
 		this.setBackground(Color.WHITE);
 		this.setLayout(null);
         dialog=new MyDialog();

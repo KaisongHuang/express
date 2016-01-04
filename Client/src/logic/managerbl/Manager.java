@@ -34,6 +34,16 @@ public class Manager implements ManagerBlService {
 	public Manager(){
 		md=DataFactory.getManagerDataService();
 	}
+	public ArrayList<String> Dialy(){
+		ArrayList<String> list=new ArrayList<String>();
+		try {
+			list=md.Dialy();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	public ArrayList<SalaryVO> getSalary() {
 		ArrayList<SalaryPO> list = new ArrayList<SalaryPO>();
 		ArrayList<SalaryVO> list1 = new ArrayList<SalaryVO>();

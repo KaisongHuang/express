@@ -70,7 +70,7 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	}
 	private boolean checkReturn(AdminVO vo){
 		if(vo==null){
-			ui.setText( "系统中不存在此编号！");
+			ui.setErrorText( "系统中不存在此编号！");
 	   	    return false;
 		}
 		return true;

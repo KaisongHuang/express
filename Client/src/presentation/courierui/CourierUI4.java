@@ -60,7 +60,7 @@ public class CourierUI4 extends JPanel {
 
 		dialog=new MyDialog();
 		this.add(dialog);
-		this.setBounds(136, 115, 746, 437);
+		this.setBounds(136, 115, 720,480);
 		setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("订单号：");

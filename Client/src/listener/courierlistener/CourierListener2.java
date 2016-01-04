@@ -71,15 +71,15 @@ public class CourierListener2 implements MouseListener, ActionListener {
 
 	private boolean check(CourierVO vo){
 		if(vo.checkIsNull()==0){
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if(vo.checkDate()==0){
-			ui.setText("请检查日期格式是否正确！");
+			ui.setErrorText("请检查日期格式是否正确！");
 			return false;
 		}
 		if(vo.checkNumber()==0){
-			ui.setText("请检查快递单号格式是否正确！");
+			ui.setErrorText("请检查快递单号格式是否正确！");
 			return false;
 		}
 		return true;

@@ -106,11 +106,21 @@ public class FinanceListener2_1 implements ActionListener{
 		int month = c.get(Calendar.MONTH)+1; 
 		int date = c.get(Calendar.DATE); 
 		
-		if(month>=10)
-			time=""+year+month+date;
-		else
-			time=""+year+"0"+month+date;
+		String month1="";
+		String date1="";
 		
+		if(month>=10)
+			month1=""+month;
+		else
+			month1="0"+month;
+		
+		if(date>=10)
+			date1=""+date;
+		else
+			date1="0"+date;
+		
+		
+		time=year+month1+date1;		
 		return time;
 	}
 }

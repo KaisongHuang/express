@@ -60,6 +60,7 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 			// System.out.println(row);
 			arrival = new ArrayList<CentreArrivalVO>();
 			arrival = warehouseBl.getImport();
+		
 			System.out.println(arrival.size());
 			for (int i = 0; i < arrival.size(); i++) {
 				Vector<Object> rowData = new Vector<Object>();
@@ -120,8 +121,9 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 				int row = ui.getModel2().getRowCount();
 				for (int i = 0; i < row; i++) {
 					String id = (String) ui.getModel2().getValueAt(i, 0);
-					warehouseBl.exportGoods(new OutStorageVO(id, destination, date, EmployeeMes.belongToWho,
+					ResultMessage rm=warehouseBl.exportGoods(new OutStorageVO(id, destination, date, EmployeeMes.belongToWho,
 							transferType, transferID, 0));
+					check(rm);
 				}
 
 				for(int i=0;i<row;i++)
@@ -186,19 +188,19 @@ public class WarehouseListener1 implements ActionListener, MouseListener {
 
 	private boolean check(OutStorageVO vo) {
 		if (vo.checkIsNUll() == 0) {
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			ui.setText("请检查出库日期格式是否正确！");
+			ui.setErrorText("请检查出库日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkID() == 0) {
-			ui.setText("请检查货物单号是否正确！");
+			ui.setErrorText("请检查货物单号是否正确！");
 			return false;
 		}
 		if (vo.checkTransID() == 0) {
-			ui.setText("请检查中转单编号是否正确！");
+			ui.setErrorText("请检查中转单编号是否正确！");
 			return false;
 		}
 

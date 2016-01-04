@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import DailyRecord.DailyRecord;
 import dataservice.logindataservice.LoginDataBaseService;
 import po.AdminPO;
 import po.EmployeePO;
@@ -16,12 +17,15 @@ public class LoginData extends UnicastRemoteObject implements LoginDataBaseServi
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
+	DailyRecord record;
 	public LoginData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
+		record=new DailyRecord(db);
 	}
 	public EmployeePO login(AdminPO po) throws RemoteException{
-System.out.println("远程方法调用成功");
+
+record.insert("用户登录系统");
 		String sql="select * from Admin where id='"+po.getId()+"' and password='"+po.getPassword()+"';";
 		ResultSet rs=db.find(sql);
 System.out.println(po.getId());		
