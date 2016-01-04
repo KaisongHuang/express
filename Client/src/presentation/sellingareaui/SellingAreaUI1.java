@@ -12,6 +12,7 @@ import listener.sellingarealistener.SellingAreaListener10;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyComboBox;
 import presentation.MySwing.MyDialog;
+import presentation.MySwing.MySeperator;
 import presentation.MySwing.MyTextField;
 
 
@@ -33,6 +34,7 @@ public class SellingAreaUI1 extends JPanel{
     private MyDialog dialog;
 	private MyButton btnNewButton_10;
 	private MyButton btnNewButton_11;
+	private MySeperator line;
 
 	SellingAreaListener10 sellingarealistener;
 
@@ -70,7 +72,7 @@ public class SellingAreaUI1 extends JPanel{
 		this.add(dialog);
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(6, 6, 699, 153);
-		panel_5.setBackground(new Color(233, 150, 122));
+		panel_5.setBackground(Color.WHITE);
 		this.add(panel_5);
 		panel_5.setLayout(null);
 
@@ -119,7 +121,7 @@ public class SellingAreaUI1 extends JPanel{
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(6, 184, 699, 153);
-		panel_6.setBackground(new Color(176, 224, 230));
+		panel_6.setBackground(Color.WHITE);
 		this.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -166,11 +168,18 @@ public class SellingAreaUI1 extends JPanel{
 		btnNewButton_10.addMouseListener(sellingarealistener);
 		btnNewButton_11.addActionListener(sellingarealistener);
 		btnNewButton_11.addMouseListener(sellingarealistener);
+		
+		line=new MySeperator();
+		line.setBounds(16, 170, 669, 10);
+		add(line);
 
 	}
 
 	public void setText(String s){
 		dialog.setText(s);;
+	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);;
 	}
 	public MyTextField getTextField() {
 		return textField;

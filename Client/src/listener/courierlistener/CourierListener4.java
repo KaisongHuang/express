@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 import logic.courierbl.Courier;
@@ -42,8 +43,13 @@ public class CourierListener4 implements MouseListener, ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == ui.getSearch()) {
+
 			String id = ui.getTextField().getText();
+			if(!check(id))
+				return;
 			HistoryVO vo = sender.search(id);
+			if(!check(vo))
+				return;
 			set(vo);
 		}
 	}
@@ -96,6 +102,26 @@ public class CourierListener4 implements MouseListener, ActionListener {
 
 	}
 
+	private boolean check(HistoryVO vo){
+		if(vo==null){
+			ui.setErrorText("系统中不存在此快递编号！");
+			return false;
+		}
+		return true;
+	}
+	private boolean check(String id){
+		 if(id.length()!=10){
+			 ui.setErrorText("请检查快递编号格式是否正确！");
+    		 return false;
+		 }
+    	 try{
+    		 Integer.parseInt(id);
+    	 }catch(NumberFormatException e){
+    		 ui.setErrorText("请检查快递编号格式是否正确！");
+    		 return false;
+    	 }
+    	 return true;
+	}
 
 	public void mousePressed(MouseEvent e) {
 	}

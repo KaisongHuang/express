@@ -55,7 +55,7 @@ public class SellingAreaUI2 extends JPanel {
 
 	/**
 	 * Create the application.
-	 * 
+	 *
 	 * @param j
 	 * @param i
 	 */
@@ -87,7 +87,7 @@ public class SellingAreaUI2 extends JPanel {
 		table.setFocusable(false);
 		model = (DefaultTableModel) table.getModel();
 		JSP = new JScrollPane(table);
-		JSP.setBounds(28, 58, 370, 298);
+		JSP.setBounds(28, 41, 370, 298);
 		this.add(JSP);
 
 		dialog=new MyDialog();
@@ -104,83 +104,83 @@ public class SellingAreaUI2 extends JPanel {
 		table1.setFocusable(false);
 		model1 = (DefaultTableModel) table1.getModel();
 		JSP1 = new JScrollPane(table1);
-		JSP1.setBounds(398, 58, 236, 298);
+		JSP1.setBounds(398, 41, 236, 298);
 		this.add(JSP1);
 
 		JLabel label = new JLabel("收款日期：");
-		label.setBounds(28, 368, 79, 16);
+		label.setBounds(28, 345, 79, 16);
 		add(label);
 
 		textField = new MyTextField();
-		textField.setBounds(100, 362, 108, 28);
+		textField.setBounds(100, 340, 108, 28);
 		add(textField);
 		textField.setColumns(10);
 
 		JLabel label_1 = new JLabel("收款金额：");
-		label_1.setBounds(28, 401, 73, 16);
+		label_1.setBounds(28, 378, 73, 16);
 		add(label_1);
 
 		textField_1 = new MyTextField();
-		textField_1.setBounds(100, 396, 108, 28);
+		textField_1.setBounds(100, 373, 108, 28);
 		add(textField_1);
 		textField_1.setColumns(10);
 
 		JLabel label_2 = new JLabel("收款快递员：");
-		label_2.setBounds(28, 436, 88, 16);
+		label_2.setBounds(28, 414, 88, 16);
 		add(label_2);
 
 		textField_2 = new MyTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(100, 430, 108, 28);
+		textField_2.setBounds(100, 409, 108, 28);
 		add(textField_2);
 
 		JLabel label_3 = new JLabel("条形码号：");
-		label_3.setBounds(340, 368, 79, 16);
+		label_3.setBounds(398, 345, 79, 16);
 		add(label_3);
 
 		textField_3 = new MyTextField();
-		textField_3.setBounds(408, 362, 134, 28);
+		textField_3.setBounds(466, 340, 134, 28);
 		add(textField_3);
 		textField_3.setColumns(10);
 
 		button = new MyButton("新增收款单");
-		button.setBounds(220, 363, 93, 29);
+		button.setBounds(218, 340, 93, 29);
 		button.addActionListener(sellingarealistener);
 		button.addMouseListener(sellingarealistener);
 		add(button);
 
 		button_1 = new MyButton("修改收款单");
-		button_1.setBounds(220, 396, 93, 29);
+		button_1.setBounds(218, 373, 93, 29);
 		button_1.addActionListener(sellingarealistener);
 		button_1.addMouseListener(sellingarealistener);
 		add(button_1);
 
 		button_2 = new MyButton("删除收款单");
-		button_2.setBounds(220, 431, 93, 29);
+		button_2.setBounds(218, 409, 93, 29);
 		button_2.addActionListener(sellingarealistener);
 		button_2.addMouseListener(sellingarealistener);
 		add(button_2);
 
 		button_3 = new MyButton("添加");
-		button_3.setBounds(555, 362, 79, 29);
+		button_3.setBounds(398, 372, 79, 29);
 		button_3.addActionListener(sellingarealistener);
 		button_3.addMouseListener(sellingarealistener);
 		add(button_3);
 
 		button_4 = new MyButton("删除");
-		button_4.setBounds(555, 401, 79, 29);
+		button_4.setBounds(521, 373, 79, 29);
 		button_4.addActionListener(sellingarealistener);
 		button_4.addMouseListener(sellingarealistener);
 		add(button_4);
 
 		button_5 = new MyButton("保存");
-		button_5.setBounds(28, 25, 79, 29);
+		button_5.setBounds(28, 10, 79, 29);
 		button_5.addActionListener(sellingarealistener);
 		button_5.addMouseListener(sellingarealistener);
 		add(button_5);
 
 		button_6 = new MyButton("清空");
-		button_6.setBounds(116, 25, 79, 29);
+		button_6.setBounds(116, 10, 79, 29);
 		button_6.addActionListener(sellingarealistener);
 		button_6.addMouseListener(sellingarealistener);
 		add(button_6);
@@ -188,10 +188,13 @@ public class SellingAreaUI2 extends JPanel {
 	public void setText(String s){
 		dialog.setText(s);;
 	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);;
+	}
 	public void setData(Vector<Object> data) {
 		this.data = data;
 	}
-	
+
 	public void setData1(Vector<Object> data1) {
 		this.data1 = data1;
 	}

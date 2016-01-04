@@ -166,6 +166,9 @@ public class SellingAreaUI4_1 extends JPanel{
 		dialog.setText(s);;
 	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);;
+	}
 	public MyTextField getTextField() {
 		return textField;
 	}

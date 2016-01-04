@@ -94,7 +94,7 @@ public class CentreListener2 implements MouseListener, ActionListener {
 			if (selectedRow != -1) {
 				ui.getModel().setValueAt(barcode, selectedRow, 8);
 			} else {
-				ui.getModel().setValueAt(barcode, ui.getModel().getRowCount() - 1, 8);
+//				ui.getModel().setValueAt(barcode, ui.getModel().getRowCount() - 1, 8);
 			}
 
 			hasUI1 = false;

@@ -3,6 +3,10 @@ package presentation.centreui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.util.Arrays;
 import java.util.Vector;
 
@@ -15,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 import listener.centrelistener.CentreListener1;
 import presentation.MySwing.MyButton;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 
@@ -31,7 +36,7 @@ public class CentreUI1_1 extends JFrame {
 	private MyButton myButton;
 	private MyButton myButton1;
 	private MyButton myButton2;
-
+    private MyDialog dialog;
 	private MyButton myButton3;
 	private MyTable table;
 	private JScrollPane JSP;
@@ -40,6 +45,7 @@ public class CentreUI1_1 extends JFrame {
 	private DefaultTableModel model;
 	private CentreListener1 listener;
 	private MyTextField textField;
+	static Point origin = new Point();
 
 	public CentreUI1_1(CentreListener1 listener,Vector<Object> data) {
 		this.listener = listener;
@@ -52,11 +58,31 @@ public class CentreUI1_1 extends JFrame {
 	 * Create the frame.
 	 */
 	private void init() {
-
+		this.addMouseListener(new MouseAdapter() {
+			// 按下（mousePressed 不是点击，而是鼠标被按下没有抬起）
+			public void mousePressed(MouseEvent e) {
+				// 当鼠标按下的时候获得窗口当前的位置
+				origin.x = e.getX();
+				origin.y = e.getY();
+			}
+		});
+		this.addMouseMotionListener(new MouseMotionAdapter() {
+			// 拖动（mouseDragged 指的不是鼠标在窗口中移动，而是用鼠标拖动）
+			public void mouseDragged(MouseEvent e) {
+				// 当鼠标拖动时获取窗口当前位置
+				Point p = getLocation();
+				// 设置窗口的位置
+				// 窗口当前的位置 + 鼠标当前在窗口的位置 - 鼠标按下的时候在窗口的位置
+				setLocation(p.x + e.getX() - origin.x, p.y + e.getY() - origin.y);
+			}
+		});
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 590, 418);
 		setUndecorated(true);
 		setVisible(true);
+		dialog=new MyDialog();
+		this.add(dialog);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(240, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -112,7 +138,13 @@ public class CentreUI1_1 extends JFrame {
 		textField.setColumns(10);
 
 	}
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyTable getTable() {
 		return table;
 	}

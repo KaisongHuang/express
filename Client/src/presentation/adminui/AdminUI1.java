@@ -5,6 +5,7 @@
 package presentation.adminui;
 
 import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import java.awt.Color;
@@ -27,6 +28,7 @@ public class AdminUI1 extends JPanel {
 	private MyTextField textField_3;
 
 	private MyButton btnNewButton_10;
+//	private JButton btnNewButton_10;
 	private MyButton btnNewButton_11;
     private MyDialog dialog;
 	private MyComboBox<String> comboBox;
@@ -92,10 +94,12 @@ public class AdminUI1 extends JPanel {
 		textField_1.setColumns(10);
 
 		btnNewButton_10 = new MyButton("确定");
+//		btnNewButton_10 = new JButton("确定");
 		btnNewButton_10.setBounds(74, 330, 61, 29);
 		this.add(btnNewButton_10);
 
 		btnNewButton_11 = new MyButton("取消");
+//		btnNewButton_11 = new JButton("取消");
 		btnNewButton_11.setBounds(333, 330, 61, 29);
 		this.add(btnNewButton_11);
 
@@ -142,6 +146,10 @@ public class AdminUI1 extends JPanel {
 	public MyButton getBtnNewButton_10() {
 		return btnNewButton_10;
 	}
+//
+//	public JButton getBtnNewButton_10() {
+//		return btnNewButton_10;
+//	}
 
 	public void setBtnNewButton_10(MyButton btnNewButton_10) {
 		this.btnNewButton_10 = btnNewButton_10;
@@ -174,5 +182,7 @@ public class AdminUI1 extends JPanel {
     public void setText(String s){
     	dialog.setText(s);
     }
-
+    public void setErrorText(String s){
+    	dialog.setErrorText(s);
+    }
 }

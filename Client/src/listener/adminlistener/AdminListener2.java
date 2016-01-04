@@ -55,14 +55,14 @@ public class AdminListener2 implements MouseListener, ActionListener {
 	}
 	private boolean check(String id){
 		if(id.length()!=10){
-			ui.setText( "请检查编号格式是否正确！");
+			ui.setErrorText( "请检查编号格式是否正确！");
 	   	    return false;
 		}else{
 			try{
 				Integer.parseInt(id);
 			}
 			catch(NumberFormatException e){
-				ui.setText( "编号必须全部由数字组成！");
+				ui.setErrorText( "编号必须全部由数字组成！");
 		   	    return false;
 			}
 		}
@@ -83,11 +83,13 @@ public class AdminListener2 implements MouseListener, ActionListener {
 			dialog="数据更新失败！";
 		else if(rm==ResultMessage.Success){
 			dialog="数据更新成功！";
+			ui.setText(dialog);
+			return;
 		}else if(rm==ResultMessage.UpdateFail){
 			dialog="请不要重复创建单据";
 		}
 		if(dialog!=null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 	
 

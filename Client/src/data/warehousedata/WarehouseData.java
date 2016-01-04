@@ -52,9 +52,9 @@ public class WarehouseData implements WarehouseDataService {
 	}
 
 	public ResultMessage insert(Object po) throws RemoteException {
-		InStoragePO po1 = (InStoragePO) po;
-		System.out.println(po1.getPos_qu());
-		rm = wd.insert(po1);
+//		InStoragePO po1 = (InStoragePO) po;
+//		System.out.println(po1.getPos_qu());
+		rm = wd.insert(po);
 		System.out.println(rm);
 		return rm;
 	}
@@ -83,6 +83,7 @@ public class WarehouseData implements WarehouseDataService {
 
 	public ArrayList<CentreTransforPO> getTransfor() throws RemoteException {
 		// TODO Auto-generated method stub
+		System.out.println(WarehouseID);
 		return wd.getTransfor(WarehouseID);
 	}
 

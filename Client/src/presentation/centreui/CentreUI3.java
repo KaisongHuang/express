@@ -66,6 +66,7 @@ public class CentreUI3 extends JPanel{
 		dialog=new MyDialog();
 		this.add(dialog);
 		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(Color.WHITE);
 		panel_5.setBounds(0, 0, 746, 47);
 		this.add(panel_5);
 		panel_5.setLayout(null);
@@ -73,6 +74,7 @@ public class CentreUI3 extends JPanel{
 		
 
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
 		panel_6.setBounds(75, 59, 476, 282);
 		this.add(panel_6);
 		panel_6.setLayout(null);
@@ -178,6 +180,10 @@ public class CentreUI3 extends JPanel{
 
 	public void setText(String s){
 		dialog.setText(s);
+	}
+
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
 	}
 	public MyTextField getTextField() {
 		return textField;

@@ -15,6 +15,7 @@ import java.util.Vector;
 import listener.centrelistener.CentreListener1;
 import presentation.MySwing.MyButton;
 import presentation.MySwing.MyComboBox;
+import presentation.MySwing.MyDialog;
 import presentation.MySwing.MyTable;
 import presentation.MySwing.MyTextField;
 import javax.swing.JScrollPane;
@@ -38,7 +39,7 @@ public class CentreUI1 extends JPanel {
 	private MyTextField textField_6;
 	private MyTextField textField_8;
 	private JPanel panel;
-
+    private MyDialog dialog;
 	private MyButton confirm;
 	private MyButton cancle;
 	private MyButton myButton;
@@ -87,6 +88,8 @@ public class CentreUI1 extends JPanel {
 		panel.setPreferredSize(new Dimension(720, 800));
 		panel.setLayout(null);
 
+		dialog=new MyDialog();
+		this.add(dialog);
 		JScrollPane scrollPane = new JScrollPane(panel);
 
 		String names[] = { "中转单", "日期", "出发地","目的地","运输","班次","货柜号","监装员","费用","所有运单号" };
@@ -233,7 +236,13 @@ public class CentreUI1 extends JPanel {
 		add(scrollPane);
 
 	}
+	public void setText(String s){
+		dialog.setText(s);
+	}
 
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
+	}
 	public MyButton getMyButton_3() {
 		return myButton_3;
 	}

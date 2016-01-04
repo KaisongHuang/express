@@ -20,24 +20,25 @@ public class AdminData implements AdminDataService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (RemoteException e) {
-			
+
 			e.printStackTrace();
 		} catch (NotBoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-    
-    
+
+
 	public AdminPO find(String id) throws RemoteException {
 		AdminPO p=ad.find(id);
 		return p;
 	}
 
 	public ResultMessage insert(AdminPO po) throws RemoteException {
+		System.out.println(2);
 		ResultMessage rm=ad.insert(po);
 		return rm;
-		
+
 	}
 
 	public ResultMessage delete(AdminPO po) throws RemoteException {
@@ -51,5 +52,5 @@ public class AdminData implements AdminDataService {
 		return rm;
 	}
 
-	
+
 }

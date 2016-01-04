@@ -53,9 +53,8 @@ public class LoginListener implements ActionListener, MouseListener {
 		} else if (e.getSource() == ui.getLogout()) {
 			System.exit(0);
 		} else if (e.getSource() == ui.getSearch()) {
-			SearchUI search=new SearchUI();
-			search.setBounds(100,100,900,600);
-		
+			ui.getLoginPanel().setVisible(false);
+			ui.getUi().setVisible(true);
 		}
 	}
 

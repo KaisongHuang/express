@@ -19,7 +19,7 @@ import vo.CarPackVO;
 
 /**
  * 汽车装运管理界面监听
- * 
+ *
  * @author john
  *
  */
@@ -68,41 +68,43 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return ;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 
 	private boolean check(CarPackVO vo) {
 		if (vo.checkIsNull() == 0) {
-			ui.setText("请将信息填写完整！");
+			ui.setErrorText("请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkDate() == 0) {
-			ui.setText("请检查日期格式是否正确！");
+			ui.setErrorText("请检查日期格式是否正确！");
 			return false;
 		}
 		if (vo.checkFee() == 0) {
-			ui.setText( "请检查费用是否合理！");
+			ui.setErrorText( "请检查费用是否合理！");
 			return false;
 		}
 		if (vo.checkList() == 0) {
-			ui.setText("请检查快递编号格式是否正确！");
+			ui.setErrorText("请检查快递编号格式是否正确！");
 			return false;
 		}
 		if (vo.checkNumber() == 0) {
-			ui.setText("请检查汽运编号格式是否正确！");
+			ui.setErrorText("请检查汽运编号格式是否正确！");
 			return false;
 		}
 
 		if (vo.checkSupercargo() == 0) {
-			ui.setText("请检查押运员编号格式是否正确！");
+			ui.setErrorText("请检查押运员编号格式是否正确！");
 			return false;
 		}
 		if (vo.checkSupervisor() == 0) {
-			ui.setText("请检查监装员编号格式是否正确！");
+			ui.setErrorText("请检查监装员编号格式是否正确！");
 			return false;
 		}
 
@@ -119,7 +121,8 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 		String carID = ui.getTextField_8().getText();
 		String supervisor = ui.getTextField_4().getText();
 		String supercargo = ui.getTextField_5().getText();
-		//String fee = ui.getTextField_6().getText();
+		String fee1 = ui.getTextField_6().getText();
+		double fee2 = Double.parseDouble(fee1);
 		// int count = ui.getTextArea().getLineCount();
 		// System.out.println(count);
 		ArrayList<String> list = new ArrayList<String>();
@@ -143,8 +146,8 @@ public class SellingAreaListener00 implements MouseListener, ActionListener {
 			i++;
 			d=destination.substring(0, i);
 		}
-		fee=sellingarea.getFee(s, d, "飞机", list.size());
-		CarPackVO vo = new CarPackVO(date, sellingArea, number, start, destination, carID, supervisor, supercargo, list,fee, 0);
+//		fee=sellingarea.getFee(s, d, "飞机", list.size());
+		CarPackVO vo = new CarPackVO(date, sellingArea, number, start, destination, carID, supervisor, supercargo, list,fee2, 0);
 
 		return vo;
 	}

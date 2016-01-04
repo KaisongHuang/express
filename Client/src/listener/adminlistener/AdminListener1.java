@@ -40,6 +40,7 @@ public class AdminListener1 implements MouseListener, ActionListener {
 			AdminVO vo = this.read();
 			if (!check(vo))
 				return;
+			System.out.println(vo.getPassword() + " " + vo.getName() + " " + vo.getId() + " " + vo.getRole());
 			rm = admin.manageCount(vo, Operation.insert);
 			check(rm);
 		}
@@ -48,13 +49,13 @@ public class AdminListener1 implements MouseListener, ActionListener {
 
 	private boolean check(AdminVO vo) {
 		if (vo.checkIsNull() == 0) {
-System.out.println("请将信息填写完整！");
-			ui.setText( "请将信息填写完整！");
+
+			ui.setErrorText( "请将信息填写完整！");
 			return false;
 		}
 		if (vo.checkId() == 0) {
-System.out.println("请检查编号格式是否正确。");
-			ui.setText( "请检查编号格式是否正确。");
+
+			ui.setErrorText( "请检查编号格式是否正确。");
 			return false;
 		}
 		return true;
@@ -78,11 +79,13 @@ System.out.println("请检查编号格式是否正确。");
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return;
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			ui.setText(dialog);
+			ui.setErrorText(dialog);
 	}
 
 	private void delete(JTextField textField) {

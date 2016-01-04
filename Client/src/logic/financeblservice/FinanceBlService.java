@@ -26,9 +26,6 @@ public interface FinanceBlService {
 	public ArrayList<ReceiptVO> checkReceipt(String date, String sellingArea);
 	
 	public ArrayList<AccountVO> checkInitInfo();
-	
-	public ArrayList<ReceiptVO> getReceipt();
-	
-	public ArrayList<PayVO> getPay();
+
 }
 

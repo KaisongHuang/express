@@ -107,7 +107,7 @@ public class FinanceListener3 implements ActionListener, MouseListener {
 
 	private boolean check(ArrayList<Object> ob) {
 		if (ob == null) {
-			ui.setText( "请将信息填写完整！");
+			ui.setErrorText( "请将信息填写完整！");
 			return false;
 		}
 		return true;

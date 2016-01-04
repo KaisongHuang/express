@@ -43,8 +43,8 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 		} else if (e.getSource() == ui.getUpdate()) {
 			ResultMessage rm;
 			InstitutionVO vo = this.read();
-			if (check(vo.getOrganizationID()))
-				return;
+//			if (check(vo.getOrganizationID()))
+//				return;
 			rm = manager.manageMember(vo, Opera.Institution_update);
 			check(rm);
 		}
@@ -53,7 +53,7 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 
 	private boolean check(InstitutionVO vo) {
 		if (vo == null) {
-			ui.setText( "机构编号不存在！");
+			ui.setErrorText( "机构编号不存在！");
 			return false;
 
 		}
@@ -72,18 +72,18 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 			dialog = "请不要重复创建单据";
 		}
 		if (dialog != null)
-			ui.setText( dialog);
+			ui.setErrorText( dialog);
 	}
 
 	private boolean check(String id) {
 		if (id.length() != 6) {
-			ui.setText( "请确认员工编号格式是否正确！");
+			ui.setErrorText( "请确认员工编号格式是否正确！");
 			return false;
 		}
 		try {
 			Integer.parseInt(id);
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(ui, "请确认员工编号格式是否正确！");
+			ui.setErrorText("请确认员工编号格式是否正确！");
 			return false;
 		}
 		return true;

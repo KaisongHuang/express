@@ -43,6 +43,8 @@ public class CourierUI extends JPanel{
 	private MyTextField textField_17;
 	private MyTextField textField_18;
 	private MyDialog dialog;
+	private JLabel Money;
+	private JLabel Time;
 
 	CourierListener0 courierlistener;
 	private MyComboBox<String> comboBox_1;
@@ -294,6 +296,22 @@ public class CourierUI extends JPanel{
 		label_10.setBounds(461, 122, 52, 16);
 		add(label_10);
 
+		JLabel label_11 = new JLabel("时间：");
+		label_11.setBounds(461, 270, 65, 21);
+		add(label_11);
+
+		JLabel label_12 = new JLabel("价格：");
+		label_12.setBounds(461, 318, 65, 21);
+		add(label_12);
+
+		Time = new JLabel("");
+		Time.setBounds(511, 270, 65, 21);
+		add(Time);
+
+		Money = new JLabel("");
+		Money.setBounds(511, 318, 65, 21);
+		add(Money);
+
 		cancle.addActionListener(courierlistener);
 		cancle.addMouseListener(courierlistener);
 		confirm.addActionListener(courierlistener);
@@ -302,6 +320,9 @@ public class CourierUI extends JPanel{
 	}
 	public void setText(String s){
 		dialog.setText(s);
+	}
+	public void setErrorText(String s){
+		dialog.setErrorText(s);
 	}
 	public MyTextField getTextField() {
 		return textField;
@@ -458,6 +479,23 @@ public class CourierUI extends JPanel{
 	}
 
 
+
+
+	public JLabel getMoney() {
+		return Money;
+	}
+
+	public void setMoney(String money) {
+		Money.setText(money);
+	}
+
+	public JLabel getTime() {
+		return Time;
+	}
+
+	public void setTime(String time) {
+		Time.setText(time);
+	}
 
 	public MyButton getCancle() {
 		return cancle;
