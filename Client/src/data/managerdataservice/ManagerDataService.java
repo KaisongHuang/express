@@ -60,4 +60,6 @@ public interface ManagerDataService {
 	public ArrayList<OutStoragePO> findExport() throws RemoteException;
 
 	public ArrayList<PayPO> findPay() throws RemoteException;
+	
+	public ArrayList<String> Dialy()throws RemoteException;
 }

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DailyRecord.DailyRecord;
 import po.AccountPO;
 import po.PayPO;
 import po.ReceiptPO;
@@ -15,24 +16,27 @@ import dataservice.financedataservice.FinanceDataBaseService;
 
 public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseService{
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
+	DailyRecord record;
 	public FinanceData(MySQLDataBase db) throws RemoteException{
            super();
            this.db=db;
+           record=new DailyRecord();
 	}
-	
+
 	public ResultMessage InitInsert(AccountPO po) throws RemoteException{
 		ResultMessage rm=null;
 		String sql="insert into Account values('"+po.getBankAccount()+"',"+po.getBalance()+",0);";
 		String sql1="insert into Account values('"+po.getBankAccount()+"',"+po.getBalance()+",1);";
 		rm=db.insert(sql);
 		rm=db.insert(sql1);
+		record.insert("财务期初建账");
 	    return rm;
 	}
-	
+
 	public ResultMessage insert(Object po) throws RemoteException{
 		String sql=null;
 		ResultMessage rm=null;
@@ -40,6 +44,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			AccountPO po1=(AccountPO) po;
 			sql="insert into Account values('"+po1.getBankAccount()+"',"+po1.getBalance()+",0);";
 			rm=db.insert(sql);
+			record.insert("财务新建银行账户");
 		}else if(po instanceof PayPO){
 			PayPO po1=(PayPO) po;
 			sql="insert into Pay values('"+po1.getDate()+"','"+po1.getPayer()+"','"+po1.getPayAccount()+"','"+po1.getEntry()+"','"+po1.getComments()+"',"+po1.getCost()+","+po1.getIsCheck()+");";
@@ -58,6 +63,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 				db.update(sql2);
 			    rm=db.insert(sql);
 			}
+			record.insert("财务新建付款单");
 		}
 		return rm;
 	}
@@ -74,6 +80,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("财务查看银行账户");
 		return list;
 	}
 
@@ -87,7 +94,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ArrayList<String> l=new ArrayList<String>();
 		try {
 			while(rs.next()){
-				
+
 				number1=rs.getString(3);
 				if(count==0){
 					number2=number1;
@@ -109,6 +116,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("财务查看收款单");
 		return list;
 	}
 	public ResultMessage delete( Object po) throws RemoteException{
@@ -116,7 +124,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		AccountPO po1=(AccountPO) po;
 		sql=sql+"bankAccount='"+po1.getBankAccount()+"' and isInit=0;";
 		ResultMessage rm=db.delete(sql);
-		
+		record.insert("财务删除账户");
 		return rm;
 	}
 
@@ -132,6 +140,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	    record.insert("财务查看期初信息");
 		return list;
 	}
 
@@ -147,6 +156,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("财务查看付款单");
 		return list;
 	}
 
@@ -164,6 +174,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("财务查看付款单");
 		return list;
 	}
 
@@ -171,8 +182,9 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		String sql1="truncate table Account;";
 		ResultMessage rm;
 		rm=db.delete(sql1);
+		record.insert("财务清空账户信息");
 		return rm;
-		
+
 	}
 	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -185,29 +197,31 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ArrayList<String> l=new ArrayList<String>();
 		try {
 			while(rs.next()){
-				
-				number1=rs.getString(3);
-				if(count==0)
-					number2=number1;
-				count++;
-				if(Integer.parseInt((begin))<=Integer.parseInt(rs.getString(2))&&Integer.parseInt(end)>=Integer.parseInt(rs.getString(2))){
-				     if(number1.equals(number2)){
-				          l.add(rs.getString(5));
-				          if(rs.isLast()){
-						    	 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
-						     }
-				     }else{
-					      list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
-					      list.clear();
-					      l.add(rs.getString(5));
-				     }
-				}
-				number2=rs.getString(3);
+				 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+//				number1=rs.getString(3);
+//				if(count==0)
+//					number2=number1;
+//				count++;
+//				if(Integer.parseInt((begin))<=Integer.parseInt(rs.getString(2))&&Integer.parseInt(end)>=Integer.parseInt(rs.getString(2))){
+//				     if(number1.equals(number2)){
+//				          l.add(rs.getString(5));
+//				          if(rs.isLast()){
+//						    	 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+//						     }
+//				     }else{
+//					      list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+//					      list.clear();
+//					      l.add(rs.getString(5));
+//				     }
+//				}
+//				number2=rs.getString(3);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("财务查看受款单");
+		System.out.println(list.size());
 		return list;
 	}
 
@@ -216,6 +230,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ResultMessage rm=null;
 		String sql = "update Account set balance = '" + po.getBalance() + "' where bankAccount = '" + po.getBankAccount() + "';";
 		rm = db.update(sql);
+		record.insert("财务更新银行账户信息");
 		return rm;
 	}
 

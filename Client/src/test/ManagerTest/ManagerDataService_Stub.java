@@ -124,4 +124,9 @@ public class ManagerDataService_Stub implements ManagerDataService {
 		return null;
 	}
 
+	public ArrayList<String> Dialy() throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -63,6 +63,7 @@ public class FinanceData implements FinanceDataService {
 	}
 
 	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
+		System.out.println("aaaaaa");
 		return fd.findReceipt(begin, end);
 	}
 
