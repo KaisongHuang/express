@@ -110,7 +110,7 @@ public class WarehouseUI1 extends JPanel {
 		this.setBackground(Color.white);
 		listener = new WarehouseListener1(this);
 		card = new CardLayout(0, 0);
-		this.setBounds(0, 0, 746, 438);
+		this.setBounds(0, 0, 720,480);
 		this.setLayout(null);
 		panel = new JPanel();
 		panel.setBounds(20, 50, 746, 394);

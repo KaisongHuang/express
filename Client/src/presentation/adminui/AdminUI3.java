@@ -51,7 +51,7 @@ public class AdminUI3 extends JPanel{
 	 */
 	private void initialize() {
 
-		this.setBounds(136, 115, 746, 438);
+		this.setBounds(136, 115,720,480);
 		this.setBackground(Color.white);
 		this.setLayout(null);
 	

@@ -30,7 +30,7 @@ public class ManagerUI4 extends JPanel {
 	}
 
 	private void initialize() {
-		this.setBounds(136, 115, 746, 438);
+		this.setBounds(136, 115, 720, 480);
 		this.setLayout(null);
 		setBackground(Color.white);
 		ui1 = new ManagerUI4_1();
