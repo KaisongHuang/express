@@ -184,6 +184,9 @@ public class FinanceUI2_1 extends JPanel {
 
 	}
 
+	public MyButton getMyButton(){
+		return myButton;
+	}
 	public JLabel getIncome() {
 		return income;
 	}

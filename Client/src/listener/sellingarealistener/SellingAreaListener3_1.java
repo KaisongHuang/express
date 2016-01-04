@@ -44,7 +44,7 @@ public class SellingAreaListener3_1 implements ActionListener {
 
 	}
 	private boolean check(CarVO vo){
-		if(vo==null){
+		if(vo.equals(null)){
 			ui.setErrorText("车辆编号不存在！");
    		    return false;
 		}
