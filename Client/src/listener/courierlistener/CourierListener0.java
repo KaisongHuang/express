@@ -68,6 +68,10 @@ public class CourierListener0 implements ActionListener ,MouseListener{
 			delete(ui.getTextField_12());
 			delete(ui.getTextField_13());
 			delete(ui.getTextField_14());
+			delete(ui.getTextField_15());
+			delete(ui.getTextField_16());
+			delete(ui.getTextField_17());
+			delete(ui.getTextField_18());
 			ui.setTime("");;
 			ui.setMoney("");
 			ui.getComboBox().setSelectedIndex(1);

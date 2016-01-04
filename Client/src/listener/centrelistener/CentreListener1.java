@@ -40,6 +40,7 @@ public class CentreListener1 implements MouseListener, ActionListener {
 			Vector<Object> item = new Vector<Object>();
 			String date = ui.getTextField().getText();
 			String transferID = ui.getTextField_1().getText();
+			System.out.println(transferID);
 			String banci = ui.getTextField_2().getText();
 			String huoguihao = ui.getTextField_3().getText();
 			String start = ui.getTextField_4().getText();
@@ -158,10 +159,15 @@ public class CentreListener1 implements MouseListener, ActionListener {
 				for (int j = 0; j < 10; j++) {
 					rowData.add(ui.getModel().getValueAt(i, j));
 				}
-				centre.manageTranfor(new CentreTransforVO((String) rowData.get(4), (String) rowData.get(1),
+				System.out.println((String) rowData.get(0));
+				CentreTransforVO vo=new CentreTransforVO((String) rowData.get(4), (String) rowData.get(1),
 						(String) rowData.get(0), (String) rowData.get(5), (String) rowData.get(2),
 						(String) rowData.get(3), (String) rowData.get(6), (String) rowData.get(7),
-						(ArrayList<String>) rowData.get(9), (Double) rowData.get(8), 0));
+						(ArrayList<String>) rowData.get(9), (Double) rowData.get(8), 0);
+				if(!check(vo))
+					return ;
+				ResultMessage rm=centre.manageTranfor(vo);
+				check(rm);
 			}
 			while (ui.getModel().getRowCount() > 0)
 				ui.getModel().removeRow(0);
@@ -179,45 +185,46 @@ public class CentreListener1 implements MouseListener, ActionListener {
 
 	}
 
-	// private void check(ResultMessage rm) {
-	// String dialog = null;
-	// if (rm == ResultMessage.FunctionError) {
-	// dialog = "网络连接出现了问题，请检查您的网络！";
-	// } else if (rm == ResultMessage.Fail)
-	// dialog = "数据更新失败！";
-	// else if (rm == ResultMessage.Success) {
-	// dialog = "数据更新成功！";
-	// } else if (rm == ResultMessage.UpdateFail) {
-	// dialog = "请不要重复创建单据";
-	// }
-	// if (dialog != null)
-	// JOptionPane.showMessageDialog(ui, dialog);
-	// }
+	 private void check(ResultMessage rm) {
+	     String dialog = null;
+	    if (rm == ResultMessage.FunctionError) {
+	        dialog = "网络连接出现了问题，请检查您的网络！";
+	     } else if (rm == ResultMessage.Fail)
+	         dialog = "数据更新失败！";
+	      else if (rm == ResultMessage.Success) {
+	          dialog = "数据更新成功！";
+	          ui.setText(dialog);
+	       } else if (rm == ResultMessage.UpdateFail) {
+	          dialog = "请不要重复创建单据";
+	       }
+	          if (dialog != null)
+	           ui.setErrorText(dialog);
+	 }
 	//
-	// private boolean check(CentreTransforVO vo) {
-	// if (vo.checkIsNull() == 0) {
-	// JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
-	// return false;
-	// }
-	// if (vo.checkBanHao() == 0) {
-	// JOptionPane.showMessageDialog(ui, "请检查班号格式是否正确！");
-	// return false;
-	// }
-	// if (vo.checkDate() == 0) {
-	// JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
-	// return false;
-	// }
-	//
-	// if (vo.checkJian() == 0) {
-	// JOptionPane.showMessageDialog(ui, "请检查监装员编号格式是否正确！");
-	// return false;
-	// }
-	// if (vo.checkList() == 0) {
-	// JOptionPane.showMessageDialog(ui, "请检查所有快递单号格式是否正确！");
-	// return false;
-	// }
-	// return true;
-	// }
+	 private boolean check(CentreTransforVO vo) {
+	 if (vo.checkIsNull() == 0) {
+	 JOptionPane.showMessageDialog(ui, "请将信息填写完整！");
+	 return false;
+	 }
+	 if (vo.checkBanHao() == 0) {
+	 JOptionPane.showMessageDialog(ui, "请检查班号格式是否正确！");
+	 return false;
+	 }
+	 if (vo.checkDate() == 0) {
+	 JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+	 return false;
+	 }
+	
+	 if (vo.checkJian() == 0) {
+	 JOptionPane.showMessageDialog(ui, "请检查监装员编号格式是否正确！");
+	 return false;
+	 }
+	 if (vo.checkList() == 0) {
+	 JOptionPane.showMessageDialog(ui, "请检查所有快递单号格式是否正确！");
+	 return false;
+	 }
+	 return true;
+	 }
 
 	private void delete(JTextField textField) {
 		// TODO Auto-generated method stub

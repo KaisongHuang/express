@@ -33,36 +33,46 @@ public class Admin implements AdminBlService {
 
 	public ResultMessage manageCount(AdminVO vo, Operation op) {
 		// TODO Auto-generated method stub
+		ad=DataFactory.getAdminDataService();
 
 		ResultMessage rm=null;
-		AdminPO po;
-
+		AdminPO po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());;
+System.out.println(op);
 		if(op==Operation.insert){
-			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
+//			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
+			System.out.println(po.getName());
 			try {
+				System.out.println(po.getId()+" "+po.getName() + " "+ po.getPassword()+" "+ po.getRole());
+				System.out.println(1);
 				rm=ad.insert(po);
+//				return ad.insert(po);
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
+//				return rm;
 			}
 		}else if(op==Operation.delete){
-			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
+//			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
 			try {
 				rm=ad.delete(po);
+//				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
+//				return rm;
 			}
 		}else if(op==Operation.update){
-			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
+//			po = new AdminPO(vo.getId(), vo.getName(), vo.getPassword(), vo.getRole());
 			try {
 				rm=ad.update(po);
+//				return rm;
 			} catch (RemoteException e) {
 				// TODO �Զ���ɵ� catch ��
 				e.printStackTrace();
 				rm=ResultMessage.FunctionError;
+//				return rm;
 			}
 		}
 

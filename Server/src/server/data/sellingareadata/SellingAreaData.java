@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DailyRecord.DailyRecord;
 import History.History;
 import _enum.ResultMessage;
 import server.database.MySQLDataBase;
@@ -19,11 +20,12 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	History his;
-
+    DailyRecord record;
 	public SellingAreaData(MySQLDataBase db) throws RemoteException {
 		super();
 		this.db = db;
 		his = new History(db);
+		record=new DailyRecord(db);
 	}
 
 	public CarPO findCar(String id) throws RemoteException {
@@ -48,6 +50,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("营业厅业务员查看车辆信息");
 		if (number != null)
 			return new CarPO(number, en, CarNumber, ChassisNumber, purchase, st);
 		else
@@ -81,6 +84,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("营业厅业务员查看司机信息");
 		if (number != null)
 			return new DriverPO(number, name, birthday, ID, phone, CarCompany, sex, LicenceTime);
 		else
@@ -96,6 +100,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 					+ "',ChassisNumber='" + po1.getChassisNumber() + "',purchase='" + po1.getPurchase() + "',ServiceTime="
 					+ po1.getServiceTime() + " where number='" + po1.getNumber()+"';";
 			rm = db.update(sql);
+			record.insert("营业厅业务员更新车辆信息");
 			return rm;
 		} else if (po instanceof DriverPO) {
 			DriverPO po1 = (DriverPO) po;
@@ -103,6 +108,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 					+ "',phone='" + po1.getPhone() + "',CarCompany='" + po1.getCarCompany() + "',sex='" + po1.getSex()
 					+ "',LicenceTime='" + po1.getLicenceTime() + "' where number='" + po1.getNumber()+"';";
 			rm = db.update(sql);
+			record.insert("营业厅业务员更新司机信息");
 			return rm;
 		}
 		return null;
@@ -113,11 +119,13 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 		String sql = null;
 		if (po instanceof CarPO) {
 			sql = "delete from Car where number='" + ((CarPO) po).getNumber()+"';";
+			record.insert("营业厅业务员删除车辆信息");
 		} else if (po instanceof DriverPO) {
 			sql = "delete from Driver where number='" + ((DriverPO) po).getNumber()+"';";
+			record.insert("营业厅业务员删除司机信息");
 		}
 		ResultMessage rm = db.delete(sql);
-
+		
 		return rm;
 	}
 
@@ -134,35 +142,41 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 				rm = db.insert(sql);
 				his.SellingArea(list.get(i), po1.getStart(), null);
 			}
+			record.insert("营业厅业务员新建装车单");
 		} else if (po instanceof CarPO) {
 			CarPO po1 = (CarPO) po;
 			sql = "insert into Car values('" + po1.getNumber() + "','" + po1.getEngineNumber() + "','"
 					+ po1.getCarNumber() + "','" + po1.getChassisNumber() + "','" + po1.getPurchase() + "',"
 					+ po1.getServiceTime() + ");";
 			rm = db.insert(sql);
+			record.insert("营业厅业务员新建车辆信息");
 		} else if (po instanceof DriverPO) {
 			DriverPO po1 = (DriverPO) po;
 			sql = "insert into Driver values('" + po1.getNumber() + "','" + po1.getName() + "','" + po1.getBirthday()
 					+ "','" + po1.getID() + "','" + po1.getPhone() + "','" + po1.getCarCompany() + "','" + po1.getSex()
 					+ "','" + po1.getLicenceTime() + "');";
 			rm = db.insert(sql);
+			record.insert("营业厅业务员新建司机信息");
 		} else if (po instanceof ReceiptPO) {
 			ReceiptPO po1 = (ReceiptPO) po;
 			sql = "insert into Receipt values(" + po1.getMoney() + ",'" + po1.getDate() + "','" + po1.getNumber() + "',"
 					+ po1.getIsCheck() + ",'" + po1.getId() + "','" + po1.getSellingArea() + "');";
 			rm = db.insert(sql);
+			record.insert("营业厅业务员新建收款单");
 		} else if (po instanceof AcceptPO) {
 			AcceptPO po1 = (AcceptPO) po;
 			sql = "insert into Accept values('" + po1.getBarCode() + "','" + po1.getDate() + "','" + po1.getNumber()
 					+ "','" + po1.getStart() + "','" + po1.getState() + "'," + po1.getIsCheck() + ");";
 			rm = db.insert(sql);
 			his.SellingArea(po1.getBarCode(), po1.getStart(), po1.getState());
+			record.insert("营业厅业务员新建接收单");
 		} else if (po instanceof DeliverPO) {
 			DeliverPO po1 = (DeliverPO) po;
 			sql = "insert into Deliver values('" + po1.getBarCode() + "','" + po1.getDate() + "','" + po1.getNumber()
 					+ "'," + po1.getIsCheck() + ");";
 			rm = db.insert(sql);
 			his.SellingArea(po1.getBarCode(), null, null);
+			record.insert("营业厅业务员新建派件单");
 		}
 
 		return rm;
@@ -182,6 +196,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
 		return distance;
 	}
 

@@ -138,4 +138,9 @@ public class ManagerData implements ManagerDataService {
 		return md.getCity();
 	}
 
+	public ArrayList<String> Dialy() throws RemoteException {
+		// TODO Auto-generated method stub
+		return md.Dialy();
+	}
+
 }

@@ -24,7 +24,7 @@ public class SellingAreaListener4_4 implements MouseListener, ActionListener {
 		super();
 		this.ui=ui;sellingarea=LogicFactory.getSellingAreaService();
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==ui.getBtnNewButton_17()){
@@ -39,8 +39,8 @@ public class SellingAreaListener4_4 implements MouseListener, ActionListener {
 		}else if(e.getSource()==ui.getBtnNewButton_16()){
 			ResultMessage rm;
 			DriverVO vo = this.read();
-			if(!check(vo))
-				return ;
+//			if(!check(vo))
+//				return ;
 			rm = sellingarea.manageDriverinfo(vo, Operation.insert);
 			check(rm);
 		}
@@ -88,7 +88,7 @@ public class SellingAreaListener4_4 implements MouseListener, ActionListener {
 		// TODO Auto-generated method stub
 		textField.setText("");
 	}
-	
+
 	private DriverVO read() {
 		// TODO Auto-generated method stub
 		String number = ui.getTextField_1().getText();
@@ -99,36 +99,36 @@ public class SellingAreaListener4_4 implements MouseListener, ActionListener {
 		String CarCompany = ui.getTextField_4().getText();
 		String sex = ui.getTextField_3().getText();
 		String LicenceTime = ui.getTextField_8().getText();
-		
+
 		DriverVO vo = new DriverVO(number,name,birthday,ID,
 				phone,CarCompany,sex,LicenceTime);
-		
+
 		return vo;
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

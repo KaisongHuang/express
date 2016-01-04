@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DailyRecord.DailyRecord;
 import po.CentreArrivalPO;
 import po.CentreTransforPO;
 import po.InStoragePO;
@@ -22,9 +23,11 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
     int size;
+    DailyRecord record;
 	public WareHouseData(MySQLDataBase db) throws RemoteException {
 		super();
 		this.db = db;
+		record=new DailyRecord(db);
 
 	}
 
@@ -37,15 +40,17 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			sql = "insert into InStorage values('" + po1.getId() + "','" + po1.getIndate() + "','"
 					+ po1.getDestination() + "','" + po1.getPos_qu() + "'," + po1.getPos_pai() + "," + po1.getPos_jia()
 					+ "," + po1.getPos_wei() + "," + po1.getIsCheck() + ",'" + po1.getWarehouseID() + "',1);";
-			String sql1="update table CentreArrival set isInStorage=1 where ID='"+po1.getId()+"';";
+			String sql1="update CentreArrival set isInStorage=1 where ID='"+po1.getId()+"';";
 			db.update(sql1);
 			rm = db.insert(sql);
+			record.insert("仓库管理员新建入库单");
 		} else {
 			OutStoragePO po1 = (OutStoragePO) po;
 			sql = "insert into OutStorage values('" + po1.getId() + "','" + po1.getDestination() + "','"
 					+ po1.getOutdate() + "','" + po1.getTransportation() + "','" + po1.getTrans_id() + "',"
 					+ po1.getIsCheck() + ",'" + po1.getWarehouseID() + "');";
 			rm = db.insert(sql);
+			record.insert("仓库管理员新建出库单");
 			if (rm == ResultMessage.Success) {
 				String sql1 = "update InStorage set isInStorage=0 where id='" + po1.getId() + "';";
 				db.update(sql1);
@@ -97,6 +102,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		ResultMessage rm;
 		rm = db.delete(sql1);
 		rm = db.delete(sql2);
+		record.insert("仓库管理员清空库存");
 		return rm;
 	}
 
@@ -105,6 +111,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		String sql = "update InStorage set qu='" + po1.getPos_qu() + "',pai=" + po1.getPos_pai() + ",jia="
 				+ po1.getPos_jia() + ",wei=" + po1.getPos_wei() + " where id='" + po1.getId() + "';";
 		ResultMessage rm = db.update(sql);
+		record.insert("仓库管理员进行分区调整");
 		return rm;
 	}
 
@@ -125,7 +132,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(list.size());
+		record.insert("仓库管理员获取到达单");
 		return list;
 	}
 
@@ -133,6 +140,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		String sql = "update Warehouse set alarm=" + d + " where WarehouseID='" + WarehouseID + "';";
 		ResultMessage rm = null;
 		rm = db.update(sql);
+		record.insert("仓库管理员设置报警值");
 		return rm;
 	}
 
@@ -144,40 +152,45 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		ArrayList<CentreTransforPO> list = new ArrayList<CentreTransforPO>();
 		String id1 = null;
 		String id2 = null;
+		int size=0;
 		try {
 			int count = 0;
+
 //			if (!rs.next()) {
 //				return null;
 //			}
 			while (rs.next()) {
 				id1 = rs.getString(3);
 				System.out.println("id1="+id1);
+				ArrayList<String> l = new ArrayList<String>();
 				if (count == 0){
 					id2 = id1;
 				}
 				count++;
-				ArrayList<String> l = new ArrayList<String>();
+
 				if (id1.equals(id2)){
 					l.add(rs.getString(9));
-				}else {
-					list.add(new CentreTransforPO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-							rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), l, rs.getDouble(10),
-							rs.getInt(11), rs.getInt(12)));
-					l.clear();
-					l.add(rs.getString(9));
+					list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),l,rs.getDouble(10),
+			    			rs.getInt(11),rs.getInt(12)));
+			    }
+			    else{
+			    	list.add(new CentreTransforPO(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),
+			    			rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),l,rs.getDouble(10),
+			    			rs.getInt(11),rs.getInt(12)));
+//			    	l.clear();
+			    	l.add(rs.getString(9));
 				}
-				if(rs.next()){
+
 					id2 = rs.getString(3);
-				}else{
-					id2 = null;
-				}
+
 				System.out.println("id2="+id2+"id1="+id1+"l="+l+"list.size"+list.size());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(list.size());
+		record.insert("仓库管理员获取中转单");
 		return list;
 	}
 
@@ -278,6 +291,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			rm = ResultMessage.Alarm;
 		else if (size3 / Size3 >= alarm)
 			rm = ResultMessage.Alarm;
+		record.insert("仓库管理员查看仓库是否报警");
 		return rm;
 	}
 

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DailyRecord.DailyRecord;
 import po.AcceptPO;
 import po.CarPackPO;
 import po.CentreArrivalPO;
@@ -32,13 +33,18 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	/**
 	 *
 	 */
+	DailyRecord record;
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	public ManagerData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
+		record=new DailyRecord(db);
 	}
 
+	public ArrayList<String> Dialy()throws RemoteException{
+		return record.read();
+	}
 	public ArrayList<DistanceAndFee> getCity()throws RemoteException{
 		ArrayList<DistanceAndFee> list=new ArrayList<DistanceAndFee>();
 		ResultSet rs;
@@ -53,6 +59,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看城市信息");
 		return list;
 	}
 	public ResultMessage insert(Object po) throws RemoteException {
@@ -82,6 +89,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			sql="insert into Salary values('"+po1.getEmployeeName()+"','"+po1.getSalaryMethod()+"',"+po1.getMoney()+")";
 			rm=db.insert(sql);
 		}
+		record.insert("总经理新建人员机构");
 		return rm;
 	}
 
@@ -91,8 +99,10 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs;
 		sql="select * from Employee where id='"+id+"';";
 	    rs=db.find(sql);
+		record.insert("总经理查看员工信息");
 	    try {
 			if(rs.next()){
+				
 				return new EmployeePO(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getDouble(5),rs.getString(6));
 			}
 		} catch (SQLException e) {
@@ -107,6 +117,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs;
 		sql="select * from Institution where id='"+id+"';";
 	    rs=db.find(sql);
+		record.insert("总经理查看机构信息");
 	    try {
 			if(rs.next()){
 				return new InstitutionPO(rs.getString(2),rs.getString(1));
@@ -122,6 +133,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		ResultSet rs;
 		sql="select * from Warehouse where WarehouseID='"+id+"';";
 	    rs=db.find(sql);
+		record.insert("总经理查看仓库信息");
 	    try {
 			if(rs.next()){
 				return new WarehousePO(rs.getString(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getInt(8),rs.getInt(9),rs.getInt(10),rs.getInt(11),rs.getInt(12),rs.getInt(13),rs.getDouble(14));
@@ -158,17 +170,17 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			rm=db.update(sql);
 		}else if(po instanceof CentreArrivalPO){
 			CentreArrivalPO centre=(CentreArrivalPO) po;
-			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where transforID='"+centre.getTransferID()+"';";
+			sql="update CentreArrival set isCheck="+centre.getIsCheck()+" where ID='"+centre.getID()+"';";
 //			System.out.println(centre.getIsCheck());
 //			System.out.println(centre.getTransferID());
 		    rm=db.update(sql);
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO centre=(CentreTransforPO) po;
-			sql="update CentreTransfor set isCheck="+centre.getIsCheck()+" where centreTransforID='"+centre.getCentreTransferID()+"';";
+			sql="update CentreTransfor set isCheck="+centre.getIsCheck()+" where list='"+centre.getList()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof CentrePackPO){
 			CentrePackPO centre=(CentrePackPO) po;
-			sql="update CentrePack set isCheck="+centre.getIsCheck()+" where centreTransferID='"+centre.getCentreTransferID()+"';";
+			sql="update CentrePack set isCheck="+centre.getIsCheck()+" where list='"+centre.getList()+"';";
 			rm=db.update(sql);
 		}else if(po instanceof InStoragePO){
 			InStoragePO in=(InStoragePO) po;
@@ -201,6 +213,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 					"',time="+po1.getTimeOfWorking()+",belong='"+po1.getBelongToWho()+"' where id='"+po1.getEmployeeID()+"';";
 			rm=db.update(sql);
 		}
+		record.insert("总经理审批单据");
 		return rm;
 	}
 
@@ -220,7 +233,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			sql="delete from DistanceAndFee where city1='"+po1.getCity1()+"' and city2='"+po1.getCity2()+"';";
 			rm=db.delete(sql);
 		}
-
+		record.insert("总经理删除人员机构信息");
 		return rm;
 	}
 
@@ -257,6 +270,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看装车单");
 		return list;
 
 	}
@@ -289,7 +303,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		record.insert("总经理查看收款单");
 		return list;
 	}
 
@@ -305,6 +319,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看收件单");
 		return list;
 	}
 
@@ -320,6 +335,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看派件单");
 		return list;
 	}
 	public ArrayList<CentreArrivalPO> getCentreArrival() throws RemoteException{
@@ -335,6 +351,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看中转中心到达单");
 		return list;
 	}
 
@@ -368,6 +385,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看中转中心装车单");
 	    return list;
 	}
 
@@ -403,6 +421,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看中转中心中转单");
 		return list;
 	}
 	public ArrayList<InStoragePO> getInStorage() throws RemoteException{
@@ -419,6 +438,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看入库单");
 		return list;
 	}
 
@@ -435,6 +455,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理查看出库单");
 		return list;
 	}
 
@@ -451,6 +472,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+		record.insert("总经理查看付款单");
 	   return list;
 	}
 	public ArrayList<SalaryPO> getSalary() throws RemoteException {
@@ -465,6 +487,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("");
 		return list;
 	}
 	public ArrayList<DistanceAndFee> getDistanceAndFee() throws RemoteException {
@@ -480,6 +503,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		record.insert("总经理获取城市信息");
 		return list;
 	}
 

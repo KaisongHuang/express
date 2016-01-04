@@ -9,6 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import DailyRecord.DailyRecord;
 import History.History;
 import HistoryService.HistoryService;
 import _enum.ResultMessage;
@@ -24,10 +25,12 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 	 */
 	MySQLDataBase db;
 	HistoryService his;
+	DailyRecord record;
 	public CourierData(MySQLDataBase db) throws RemoteException{
     	super();
     	this.db=db;
         his=new History(db);
+        record=new DailyRecord(db);
     }
 
 	public ResultMessage insert(Object po) throws RemoteException {
@@ -49,6 +52,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 
 				e.printStackTrace();
 			}
+			record.insert("快递员新建收件单");
 			return rm;
 		} else {
 			String sql1 = "select * from Sender";
@@ -79,6 +83,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
 				his.init(barcode);
 			    System.out.println("success");
 			}
+			record.insert("快递员新建寄件单");
 			return rm;
 		}
 
