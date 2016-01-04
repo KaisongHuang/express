@@ -63,6 +63,7 @@ public class Finance implements FinanceBlService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("haidhfdhbfjd"+receipt.size());
 
 		this.count = pay.size();
 
