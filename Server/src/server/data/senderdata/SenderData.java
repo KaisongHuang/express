@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DailyRecord.DailyRecord;
 import po.HistoryPO;
 import dataservice.senderdataservice.SenderDataBaseService;
 import server.database.MySQLDataBase;
@@ -19,11 +20,11 @@ public class SenderData extends UnicastRemoteObject implements SenderDataBaseSer
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
-
+    DailyRecord record;
 	public SenderData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
-
+        record=new DailyRecord();
 	}
 	public HistoryPO find(String id) throws RemoteException{
         String sql="select * from History where id='"+id+"';";
@@ -46,6 +47,7 @@ public class SenderData extends UnicastRemoteObject implements SenderDataBaseSer
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        record.insert("客户查询运单轨迹");
 		return po;
 	}
 
