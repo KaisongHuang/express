@@ -68,6 +68,7 @@ public class ManagerListener1_2 implements MouseListener, ActionListener {
 			dialog = "数据更新失败！";
 		else if (rm == ResultMessage.Success) {
 			dialog = "数据更新成功！";
+			ui.setText( dialog);
 		} else if (rm == ResultMessage.UpdateFail) {
 			dialog = "请不要重复创建单据";
 		}

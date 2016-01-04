@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Vector;
 
+import logic.logicfactory.LogicFactory;
 import logic.managerbl.Manager;
 import logic.managerblservice.ManagerBlService;
 import presentation.managerui.ManagerUI4_2;
@@ -14,11 +15,12 @@ import vo.DistanceAndFeeVO;
 public class ManagerListener4_2 implements MouseListener, ActionListener {
 
 	private ManagerUI4_2 ui;
-	ManagerBlService manager = new Manager();
+	ManagerBlService manager ;
 
 	public ManagerListener4_2(ManagerUI4_2 ui) {
 		super();
 		this.ui = ui;
+		manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
