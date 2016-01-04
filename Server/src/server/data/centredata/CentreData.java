@@ -25,7 +25,7 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		super();
 		this.db=db;
 		his=new History(db);
-		record=new DailyRecord();
+		record=new DailyRecord(db);
 	}
 
 	public ResultMessage insert(Object po) throws RemoteException {

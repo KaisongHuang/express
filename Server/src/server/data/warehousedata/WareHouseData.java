@@ -27,7 +27,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	public WareHouseData(MySQLDataBase db) throws RemoteException {
 		super();
 		this.db = db;
-		record=new DailyRecord();
+		record=new DailyRecord(db);
 
 	}
 

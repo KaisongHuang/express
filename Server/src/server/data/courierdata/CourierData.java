@@ -30,7 +30,7 @@ public class CourierData extends UnicastRemoteObject implements CourierDataBaseS
     	super();
     	this.db=db;
         his=new History(db);
-        record=new DailyRecord();
+        record=new DailyRecord(db);
     }
 
 	public ResultMessage insert(Object po) throws RemoteException {

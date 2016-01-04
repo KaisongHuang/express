@@ -25,7 +25,7 @@ public class SellingAreaData extends UnicastRemoteObject implements SellingAreaD
 		super();
 		this.db = db;
 		his = new History(db);
-		record=new DailyRecord();
+		record=new DailyRecord(db);
 	}
 
 	public CarPO findCar(String id) throws RemoteException {
