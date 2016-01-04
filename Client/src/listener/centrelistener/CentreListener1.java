@@ -40,6 +40,7 @@ public class CentreListener1 implements MouseListener, ActionListener {
 			Vector<Object> item = new Vector<Object>();
 			String date = ui.getTextField().getText();
 			String transferID = ui.getTextField_1().getText();
+			System.out.println(transferID);
 			String banci = ui.getTextField_2().getText();
 			String huoguihao = ui.getTextField_3().getText();
 			String start = ui.getTextField_4().getText();
@@ -158,6 +159,7 @@ public class CentreListener1 implements MouseListener, ActionListener {
 				for (int j = 0; j < 10; j++) {
 					rowData.add(ui.getModel().getValueAt(i, j));
 				}
+				System.out.println((String) rowData.get(0));
 				centre.manageTranfor(new CentreTransforVO((String) rowData.get(4), (String) rowData.get(1),
 						(String) rowData.get(0), (String) rowData.get(5), (String) rowData.get(2),
 						(String) rowData.get(3), (String) rowData.get(6), (String) rowData.get(7),

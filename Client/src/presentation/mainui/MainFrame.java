@@ -68,7 +68,7 @@ public class MainFrame implements ActionListener {
 			e.printStackTrace();
 		}
 
-//		EmployeeMes.employeePosition = "中转中心业务员";
+//		EmployeeMes.employeePosition = "总经理";
 
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);

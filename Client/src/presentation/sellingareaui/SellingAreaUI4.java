@@ -47,10 +47,6 @@ public class SellingAreaUI4 extends JPanel{
 		ui3 = new SellingAreaUI4_3(width,height);
 		ui4 = new SellingAreaUI4_4(width,height);
 
-		
-		
-		
-		
 		panel=new JPanel();
 		panel.setBounds(0,50, 746, 394);
 		add(panel);

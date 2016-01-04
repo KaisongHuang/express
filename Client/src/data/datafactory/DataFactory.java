@@ -3,7 +3,6 @@ package data.datafactory;
 import data.admindata.AdminData;
 import data.centredata.CentreData;
 import data.courierdata.CourierData;
-import data.datafactoryservice.DataFactoryService;
 import data.financedata.FinanceData;
 import data.logindata.LoginData;
 import data.managerdata.ManagerData;
@@ -16,7 +15,7 @@ public class DataFactory {
 	public static AdminData getAdminDataService(){
 		return new AdminData();
 	}
-	
+
 	public static CentreData getCentreDataService(){
 		return new CentreData();
 	}
@@ -26,7 +25,7 @@ public class DataFactory {
 	public static FinanceData getFinanceDataService(){
 		return new FinanceData();
 	}
-	
+
 	public static LoginData getLoginDataService(){
 		return new LoginData();
 	}

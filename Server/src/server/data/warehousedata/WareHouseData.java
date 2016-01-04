@@ -40,7 +40,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			sql = "insert into InStorage values('" + po1.getId() + "','" + po1.getIndate() + "','"
 					+ po1.getDestination() + "','" + po1.getPos_qu() + "'," + po1.getPos_pai() + "," + po1.getPos_jia()
 					+ "," + po1.getPos_wei() + "," + po1.getIsCheck() + ",'" + po1.getWarehouseID() + "',1);";
-			String sql1="update table CentreArrival set isInStorage=1 where ID='"+po1.getId()+"';";
+			String sql1="update CentreArrival set isInStorage=1 where ID='"+po1.getId()+"';";
 			db.update(sql1);
 			rm = db.insert(sql);
 			record.insert("仓库管理员新建入库单");
