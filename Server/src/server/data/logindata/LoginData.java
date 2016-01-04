@@ -21,7 +21,7 @@ public class LoginData extends UnicastRemoteObject implements LoginDataBaseServi
 	public LoginData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
-		record=new DailyRecord();
+		record=new DailyRecord(db);
 	}
 	public EmployeePO login(AdminPO po) throws RemoteException{
 

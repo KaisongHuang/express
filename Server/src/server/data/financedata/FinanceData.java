@@ -24,7 +24,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 	public FinanceData(MySQLDataBase db) throws RemoteException{
            super();
            this.db=db;
-           record=new DailyRecord();
+           record=new DailyRecord(db);
 	}
 
 	public ResultMessage InitInsert(AccountPO po) throws RemoteException{

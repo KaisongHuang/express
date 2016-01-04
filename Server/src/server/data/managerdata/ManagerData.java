@@ -39,7 +39,7 @@ public class ManagerData extends UnicastRemoteObject implements ManagerDataBaseS
 	public ManagerData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
-		record=new DailyRecord();
+		record=new DailyRecord(db);
 	}
 
 	public ArrayList<String> Dialy()throws RemoteException{

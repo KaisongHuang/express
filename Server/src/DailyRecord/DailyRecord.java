@@ -6,60 +6,53 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import DailyRecordService.DailyRecordService;
+import server.database.MySQLDataBase;
 
 public class DailyRecord implements DailyRecordService{
     BufferedReader br;
     BufferedWriter bw;
     DateFormat format;
     Date date;
-	public DailyRecord(){
-//		date=new Date();
-//		format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//		try {
-//			br=new BufferedReader(new FileReader("Sever/src/日志.txt"));
-//			bw=new BufferedWriter(new FileWriter("/src/日志.txt"));
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 
+    MySQLDataBase db;
+	public DailyRecord(MySQLDataBase db){
+		date=new Date();
+		format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		this.db=db;
+		
 	}
 	public void insert(String s) {
-//		String record=null;
-//
-//		String time=format.format(date);
-//		try {
-//			bw.write(time+" "+record);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
+		
+		
+		String time=format.format(date);
+		String sql="insert into Record values('"+time+"','"+s+"');";
+	    db.insert(sql);
 	}
+	
 
 	public ArrayList<String> read() {
 		ArrayList<String> list=new ArrayList<String>();
-//		try {
-//			String record=br.readLine();
-//			int count=0;
-//			while(record!=null&&count<=4000){
-//				count++;
-//				list.add(record);
-//				record=br.readLine();
-//			}
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+
+		String sql="select * from Record;";
+		ResultSet rs=db.find(sql);
+		
+		try {
+			while(rs.next()&&list.size()<1000){
+				list.add(rs.getString(1)+" "+rs.getString(2));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return list;
 	}
 

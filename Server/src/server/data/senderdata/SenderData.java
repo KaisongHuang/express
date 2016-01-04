@@ -24,7 +24,7 @@ public class SenderData extends UnicastRemoteObject implements SenderDataBaseSer
 	public SenderData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
-        record=new DailyRecord();
+        record=new DailyRecord(db);
 	}
 	public HistoryPO find(String id) throws RemoteException{
         String sql="select * from History where id='"+id+"';";

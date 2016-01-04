@@ -22,7 +22,7 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 
 		super();
 		this.db=db;
-		record=new DailyRecord();
+		record=new DailyRecord(db);
 	}
 	public AdminPO find( String id) throws RemoteException{
 
