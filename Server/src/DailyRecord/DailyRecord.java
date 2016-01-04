@@ -21,6 +21,7 @@ public class DailyRecord implements DailyRecordService{
     BufferedWriter bw;
     DateFormat format;
     Date date;
+
     MySQLDataBase db;
 	public DailyRecord(MySQLDataBase db){
 		date=new Date();
@@ -34,11 +35,12 @@ public class DailyRecord implements DailyRecordService{
 		String time=format.format(date);
 		String sql="insert into Record values('"+time+"','"+s+"');";
 	    db.insert(sql);
-		
 	}
+	
 
 	public ArrayList<String> read() {
 		ArrayList<String> list=new ArrayList<String>();
+
 		String sql="select * from Record;";
 		ResultSet rs=db.find(sql);
 		
@@ -50,6 +52,7 @@ public class DailyRecord implements DailyRecordService{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		return list;
 	}
 

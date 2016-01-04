@@ -16,7 +16,7 @@ import dataservice.financedataservice.FinanceDataBaseService;
 
 public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseService{
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
@@ -26,7 +26,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
            this.db=db;
            record=new DailyRecord(db);
 	}
-	
+
 	public ResultMessage InitInsert(AccountPO po) throws RemoteException{
 		ResultMessage rm=null;
 		String sql="insert into Account values('"+po.getBankAccount()+"',"+po.getBalance()+",0);";
@@ -36,7 +36,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		record.insert("财务期初建账");
 	    return rm;
 	}
-	
+
 	public ResultMessage insert(Object po) throws RemoteException{
 		String sql=null;
 		ResultMessage rm=null;
@@ -94,7 +94,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ArrayList<String> l=new ArrayList<String>();
 		try {
 			while(rs.next()){
-				
+
 				number1=rs.getString(3);
 				if(count==0){
 					number2=number1;
@@ -184,7 +184,7 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		rm=db.delete(sql1);
 		record.insert("财务清空账户信息");
 		return rm;
-		
+
 	}
 	public ArrayList<ReceiptPO> findReceipt(String begin, String end) throws RemoteException {
 		// TODO Auto-generated method stub
@@ -197,30 +197,31 @@ public class FinanceData extends UnicastRemoteObject implements FinanceDataBaseS
 		ArrayList<String> l=new ArrayList<String>();
 		try {
 			while(rs.next()){
-				
-				number1=rs.getString(3);
-				if(count==0)
-					number2=number1;
-				count++;
-				if(Integer.parseInt((begin))<=Integer.parseInt(rs.getString(2))&&Integer.parseInt(end)>=Integer.parseInt(rs.getString(2))){
-				     if(number1.equals(number2)){
-				          l.add(rs.getString(5));
-				          if(rs.isLast()){
-						    	 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
-						     }
-				     }else{
-					      list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
-					      list.clear();
-					      l.add(rs.getString(5));
-				     }
-				}
-				number2=rs.getString(3);
+				 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+//				number1=rs.getString(3);
+//				if(count==0)
+//					number2=number1;
+//				count++;
+//				if(Integer.parseInt((begin))<=Integer.parseInt(rs.getString(2))&&Integer.parseInt(end)>=Integer.parseInt(rs.getString(2))){
+//				     if(number1.equals(number2)){
+//				          l.add(rs.getString(5));
+//				          if(rs.isLast()){
+//						    	 list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+//						     }
+//				     }else{
+//					      list.add(new  ReceiptPO(rs.getDouble(1),rs.getString(2),rs.getString(6),rs.getString(3),l,rs.getInt(4)));
+//					      list.clear();
+//					      l.add(rs.getString(5));
+//				     }
+//				}
+//				number2=rs.getString(3);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		record.insert("财务查看受款单");
+		System.out.println(list.size());
 		return list;
 	}
 
