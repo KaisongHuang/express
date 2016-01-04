@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import _enum.EmployeeMes;
+import _enum.ResultMessage;
 import logic.logicfactory.LogicFactory;
 import logic.sellingareabl.SellingArea;
 import logic.sellingareablservice.SellingareaBlService;
@@ -26,11 +27,12 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 
 	private SellingAreaUI2 ui;
 	private Vector<Object> vec = new Vector<Object>();
-	SellingareaBlService sellingarea  ;
+	SellingareaBlService sellingarea;
 
 	public SellingAreaListener20(SellingAreaUI2 ui) {
 		super();
-		this.ui = ui;sellingarea=LogicFactory.getSellingAreaService();
+		this.ui = ui;
+		sellingarea = LogicFactory.getSellingAreaService();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -160,10 +162,10 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 						vo.setId(id);
 						vo.setSellingArea(EmployeeMes.belongToWho);
 						vo.setIsCheck(0);
-						// if(!check(vo))
-						// return ;
-						sellingarea.createDebitnote(vo);
-						
+						 if(!check(vo))
+						    return ;
+						ResultMessage rm=sellingarea.createDebitnote(vo);
+                         check(rm);
 					}
 					while (ui.getModel().getRowCount() > 0)
 						ui.getModel().removeRow(ui.getModel().getRowCount() - 1);
@@ -199,29 +201,45 @@ public class SellingAreaListener20 implements MouseListener, ActionListener {
 		}
 
 	}
+	private void check(ResultMessage rm) {
+		String dialog = null;
+		if (rm == ResultMessage.FunctionError) {
+			dialog = "网络连接出现了问题，请检查您的网络！";
+		} else if (rm == ResultMessage.Fail)
+			dialog = "数据更新失败！";
+		else if (rm == ResultMessage.Success) {
+			dialog = "数据更新成功！";
+			ui.setText(dialog);
+			return ;
+		} else if (rm == ResultMessage.UpdateFail) {
+			dialog = "请不要重复创建单据";
+		}
+		if (dialog != null)
+			ui.setErrorText(dialog);
+	}
+	private boolean check(ReceiptVO vo) {
+		if (vo.checkIsNull() == 0) {
+			JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
+			return false;
+		}
+		if (vo.checkDate() == 0) {
+			JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
+			return false;
+		}
+		if (vo.checkID() == 0) {
+			JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
+			return false;
+		}
+		if (vo.checkNumber() == 0) {
+			JOptionPane.showMessageDialog(ui, "请检查收款人编号格式是否正确！");
+			return false;
+		}
+		if (vo.checkSelling() == 0) {
 
-	// private boolean check(ReceiptVO vo){
-	// if(vo.checkIsNull()==0){
-	// JOptionPane.showMessageDialog(ui, "请将信息填写完整！！");
-	// return false;
-	// }
-	// if(vo.checkDate()==0){
-	// JOptionPane.showMessageDialog(ui, "请检查日期格式是否正确！");
-	// return false;
-	// }
-	// if(vo.checkID()==0){
-	// JOptionPane.showMessageDialog(ui, "请检查快递编号格式是否正确！");
-	// return false;
-	// }
-	// if(vo.checkNumber()==0){
-	// JOptionPane.showMessageDialog(ui, "请检查收款人编号格式是否正确！");
-	// return false;
-	// }
-	// if(vo.checkSelling()==0){
-	//
-	// }
-	// return true;
-	// }
+		}
+		return true;
+	}
+
 	@SuppressWarnings("unchecked")
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

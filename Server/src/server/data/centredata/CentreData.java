@@ -38,14 +38,12 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		    his.Centre(po1.getID(),po1.getTransferID().substring(0,6), po1.getExpressState());
 		}else if(po instanceof CentreTransforPO){
 			CentreTransforPO po1=(CentreTransforPO) po;
-			for(int i=0;i<po1.getList().size();i++){
-				System.out.println(po1.getCentreTransferID());
+
 			sql="insert into CentreTransfor values("+"'"+po1.getTransferStyle()+"','"+po1.getDataOfGetin()+"','"+po1.getCentreTransferID()+
 					"',"+po1.getBanHao()+",'"+po1.getStart()+"','"+po1.getArrival()+"',"+po1.getHuoGuiHao()+
-					","+po1.getJianZhuangYuan()+","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+",0)";
+					","+po1.getJianZhuangYuan()+","+po1.getList()+","+po1.getFee()+","+po1.getIsCheck()+",0)";
 		    rm=db.insert(sql);
-		    his.Centre(po1.getList().get(i), null, null);
-			}
+		    his.Centre(po1.getList().get(0), null, null);
 			record.insert("中转中心业务员新建中转中心中转单");
 
 		}else{
