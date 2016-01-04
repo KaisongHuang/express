@@ -65,7 +65,7 @@ public class SearchUI extends JPanel {
 		add(id);
 
 		state1 = new JLabel();
-		state1.setBounds(267, 94, 140, 37);
+		state1.setBounds(267, 98, 140, 37);
 		add(state1);
 
 		textArea = new JTextArea();

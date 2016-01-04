@@ -89,8 +89,9 @@ public class FinanceUI2_1 extends JPanel {
 		double outcome1=0;
 		double balance1=0;
 		
-		ArrayList<PayVO> pay=new ArrayList<PayVO>();
-		ArrayList<ReceiptVO> receipt=new ArrayList<ReceiptVO>();
+		
+		ArrayList<PayVO> pay=this.getPay();
+		ArrayList<ReceiptVO> receipt=this.getReceipt();
 		
 		for(int i=0;i<pay.size();i++){
 			Vector<Object> rowData=new Vector<Object>();
@@ -241,7 +242,7 @@ public class FinanceUI2_1 extends JPanel {
 		
 		return receipt;
 	}
-	
+
 	private String getDate(){
 		Calendar c = Calendar.getInstance();//可以对每个时间域单独修改
 		String time="";
@@ -250,11 +251,21 @@ public class FinanceUI2_1 extends JPanel {
 		int month = c.get(Calendar.MONTH)+1; 
 		int date = c.get(Calendar.DATE); 
 		
-		if(month>=10)
-			time=""+year+month+date;
-		else
-			time=""+year+"0"+month+date;
+		String month1="";
+		String date1="";
 		
+		if(month>=10)
+			month1=""+month;
+		else
+			month1="0"+month;
+		
+		if(date>=10)
+			date1=""+date;
+		else
+			date1="0"+date;
+		
+		
+		time=year+month1+date1;		
 		return time;
 	}
 }
