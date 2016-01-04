@@ -8,6 +8,7 @@ import server.database.MySQLDataBase;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+import DailyRecord.DailyRecord;
 import History.History;
 import _enum.ResultMessage;
 import dataservice.centredataservice.CentreDataBaseService;
@@ -19,10 +20,12 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	History his;
+	DailyRecord record;
 	public CentreData(MySQLDataBase db) throws RemoteException{
 		super();
 		this.db=db;
 		his=new History(db);
+		record=new DailyRecord();
 	}
 
 	public ResultMessage insert( Object po) throws RemoteException{
@@ -43,6 +46,7 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 		    rm=db.insert(sql);
 		    his.Centre(po1.getList().get(i), null, null);
 			}
+			record.insert("中转中心业务员新建中转中心中转单");
 
 		}else{
 			CentrePackPO po1=(CentrePackPO) po;
@@ -51,7 +55,17 @@ public class CentreData extends UnicastRemoteObject implements CentreDataBaseSer
 					"',"+po1.getCarID()+","+po1.getJianZhuangYuan()+","+po1.getYaYunYuan()+
 					","+po1.getList().get(i)+","+po1.getFee()+","+po1.getIsCheck()+")";
 			rm=db.insert(sql);
-			}
+		   }
+//			else {
+//			CentrePackPO po1 = (CentrePackPO) po;
+//			for (int i = 0; i < po1.getList().size(); i++) {
+//				sql = "insert into CentrePack values(" + "'" + po1.getDataOfGetin() + "'," + po1.getCentreTransferID()
+//						+ ",'" + po1.getArrival() + "'," + po1.getCarID() + "," + po1.getJianZhuangYuan() + ","
+//						+ po1.getYaYunYuan() + "," + po1.getList().get(i) + "," + po1.getFee() + "," + po1.getIsCheck()
+//						+ ")";
+//				rm = db.insert(sql);
+//			}
+			record.insert("中转中心业务员新建中转中心装车单");
 		}
 		return rm;
 	}

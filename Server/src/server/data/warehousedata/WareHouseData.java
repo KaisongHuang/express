@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DailyRecord.DailyRecord;
 import po.CentreArrivalPO;
 import po.CentreTransforPO;
 import po.InStoragePO;
@@ -22,9 +23,11 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
     int size;
+    DailyRecord record;
 	public WareHouseData(MySQLDataBase db) throws RemoteException {
 		super();
 		this.db = db;
+		record=new DailyRecord();
 
 	}
 
@@ -40,12 +43,14 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			String sql1="update CentreArrival set isInStorage=1 where ID='"+po1.getId()+"';";
 			db.update(sql1);
 			rm = db.insert(sql);
+			record.insert("仓库管理员新建入库单");
 		} else {
 			OutStoragePO po1 = (OutStoragePO) po;
 			sql = "insert into OutStorage values('" + po1.getId() + "','" + po1.getDestination() + "','"
 					+ po1.getOutdate() + "','" + po1.getTransportation() + "','" + po1.getTrans_id() + "',"
 					+ po1.getIsCheck() + ",'" + po1.getWarehouseID() + "');";
 			rm = db.insert(sql);
+			record.insert("仓库管理员新建出库单");
 			if (rm == ResultMessage.Success) {
 				String sql1 = "update InStorage set isInStorage=0 where id='" + po1.getId() + "';";
 				db.update(sql1);
@@ -97,6 +102,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		ResultMessage rm;
 		rm = db.delete(sql1);
 		rm = db.delete(sql2);
+		record.insert("仓库管理员清空库存");
 		return rm;
 	}
 
@@ -105,6 +111,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		String sql = "update InStorage set qu='" + po1.getPos_qu() + "',pai=" + po1.getPos_pai() + ",jia="
 				+ po1.getPos_jia() + ",wei=" + po1.getPos_wei() + " where id='" + po1.getId() + "';";
 		ResultMessage rm = db.update(sql);
+		record.insert("仓库管理员进行分区调整");
 		return rm;
 	}
 
@@ -125,7 +132,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(list.size());
+		record.insert("仓库管理员获取到达单");
 		return list;
 	}
 
@@ -133,6 +140,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 		String sql = "update Warehouse set alarm=" + d + " where WarehouseID='" + WarehouseID + "';";
 		ResultMessage rm = null;
 		rm = db.update(sql);
+		record.insert("仓库管理员设置报警值");
 		return rm;
 	}
 
@@ -182,7 +190,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(list.size());
+		record.insert("仓库管理员获取中转单");
 		return list;
 	}
 
@@ -283,6 +291,7 @@ public class WareHouseData extends UnicastRemoteObject implements WareHouseDataB
 			rm = ResultMessage.Alarm;
 		else if (size3 / Size3 >= alarm)
 			rm = ResultMessage.Alarm;
+		record.insert("仓库管理员查看仓库是否报警");
 		return rm;
 	}
 
