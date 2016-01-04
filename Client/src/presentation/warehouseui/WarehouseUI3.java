@@ -47,7 +47,7 @@ public class WarehouseUI3 extends JPanel {
 	 */
 	private void initialize() {
 
-		this.setBounds(136, 115, 746, 438);
+		this.setBounds(136, 115, 720,480);
 		this.setLayout(null);
 		this.setBackground(Color.white);
 		String names[] = { "快递编号", "原区号", "原排号", "原架号", "原位号", "现区号", "现排号", "现架号", "现位号" };

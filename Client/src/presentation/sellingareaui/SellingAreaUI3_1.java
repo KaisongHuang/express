@@ -72,7 +72,7 @@ public class SellingAreaUI3_1 extends JPanel{
 
 
 		this.setBackground(Color.white);
-		this.setBounds(0, 0, 745, 394);
+		this.setBounds(0, 0, 720,480);
 		this.setLayout(null);
 
 		dialog=new MyDialog();
