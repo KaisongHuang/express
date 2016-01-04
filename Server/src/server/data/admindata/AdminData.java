@@ -13,19 +13,19 @@ import dataservice.admindataservice.AdminDataBaseService;
 
 public class AdminData extends UnicastRemoteObject implements AdminDataBaseService{
     /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	MySQLDataBase db;
 	DailyRecord record;
 	public AdminData(MySQLDataBase db) throws RemoteException{
-		
+
 		super();
 		this.db=db;
 		record=new DailyRecord();
 	}
 	public AdminPO find( String id) throws RemoteException{
-	    
+
 		String sql="select * from Admin where id='"+id+"';";
 		ResultSet rs=db.find(sql);
 		String i=null;
@@ -58,6 +58,7 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 
 	public ResultMessage insert(Object po) throws RemoteException{
 		AdminPO po1=(AdminPO) po;
+		System.out.println(po1.getRole());
 		String sql="insert into Admin values('"+po1.getId()+"','"+po1.getName()+"','"+po1.getPassword()+"','"+po1.getRole()+"');";
 		ResultMessage rm=db.insert(sql);
 		record.insert("管理员新建账户");
@@ -71,6 +72,6 @@ public class AdminData extends UnicastRemoteObject implements AdminDataBaseServi
 		return rm;
 	}
 
-	
+
 
 }
