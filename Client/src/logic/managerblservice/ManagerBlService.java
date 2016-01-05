@@ -60,5 +60,5 @@ public interface ManagerBlService {
 	public ArrayList<OutStorageVO> checkExport();
 
 	public ArrayList<PayVO> checkPay();
-	
+	public ArrayList<String> Dialy();
 }
