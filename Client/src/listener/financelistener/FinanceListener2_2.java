@@ -126,8 +126,8 @@ public class FinanceListener2_2 implements ActionListener, MouseListener {
 						vo.setEntry((String) rowData.get(4));
 						vo.setComments((String) rowData.get(5));
 						vo.setIsCheck(0);
-						if (!check(vo))
-							return ;
+//						if (!check(vo))
+//							return ;
 						rm = finance.createCost(vo);
 						check(rm);
 					}
@@ -161,10 +161,10 @@ public class FinanceListener2_2 implements ActionListener, MouseListener {
 			ui.setErrorText(  "请将信息填写完整！");
 			return false;
 		}
-		if (vo.checkAccount() == 0) {
-			ui.setErrorText( "请检查账户格式是否正确！");
-			return false;
-		}
+//		if (vo.checkAccount() == 0) {
+//			ui.setErrorText( "请检查账户格式是否正确！");
+//			return false;
+//		}
 		if (vo.checkCost() == 0) {
 			ui.setErrorText(  "请检查金额是否正确！");
 			return false;
@@ -216,10 +216,10 @@ public class FinanceListener2_2 implements ActionListener, MouseListener {
 	}
 
 	private void clearText() {
-		ui.getComboBox().setSelectedIndex(0);
-		ui.getComboBox_1().setSelectedIndex(0);
-		ui.getComboBox_2().setSelectedIndex(0);
-		ui.getComboBox_3().setSelectedIndex(0);
+//		ui.getComboBox().setSelectedIndex(0);
+//		ui.getComboBox_1().setSelectedIndex(0);
+//		ui.getComboBox_2().setSelectedIndex(0);
+//		ui.getComboBox_3().setSelectedIndex(0);
 		ui.getTextField_1().setText("");
 		ui.getTextField_2().setText("");
 		ui.getTextField_3().setText("");
