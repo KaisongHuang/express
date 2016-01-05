@@ -36,9 +36,9 @@ public class PayVO {
 		return c.checkID(payer, 10);
 	}
 
-	public int checkAccount() {
-		return c.checkID(payAccount, 19);
-	}
+//	public int checkAccount() {
+//		return c.checkID(payAccount, 19);
+//	}
 
 	public int checkIsNull() {
 		if (date.length() == 0 || payer.length() == 0 || payAccount.length() == 0 || entry.length() == 0

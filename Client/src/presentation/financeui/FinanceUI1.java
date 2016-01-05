@@ -145,7 +145,7 @@ public class FinanceUI1 extends JPanel {
 		add(search);
 
 		textArea = new JTextArea();
-		textArea.setBounds(484, 389, 106, 27);
+		textArea.setBounds(499, 394, 106, 27);
 		textArea.setEditable(false);
 		add(textArea);
 	}
