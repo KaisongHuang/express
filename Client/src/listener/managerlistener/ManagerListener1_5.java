@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.JTextArea;
 
@@ -19,23 +20,21 @@ public class ManagerListener1_5 implements MouseListener, ActionListener {
 
 	public ManagerListener1_5(ManagerUI1_5 ui) {
 		super();
-		this.ui = ui;manager=LogicFactory.getManagerService();
+		this.ui = ui;
+		manager=LogicFactory.getManagerService();
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == ui.getBtnNewButton_15()) {
-
-		} else if (e.getSource() == ui.getBtnNewButton_16()) {
-			delete(ui.getTextArea());
+             ArrayList<String> list=manager.Dialy();
+             for(int i=0;i<list.size();i++)
+            	 ui.setText(list.get(i));
 		}
 
 	}
 
-	private void delete(JTextArea textArea) {
-		// TODO Auto-generated method stub
-		textArea.setText("");
-	}
+	
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
