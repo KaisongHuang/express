@@ -22,7 +22,7 @@ public class ManagerUI1_5 extends JPanel{
 	private static final long serialVersionUID = 1L;
 
 	private MyButton btnNewButton_15;
-	private MyButton btnNewButton_16;
+
 
     private MyDialog dialog;
 	private JTextArea textArea;
@@ -51,13 +51,10 @@ public class ManagerUI1_5 extends JPanel{
 
         dialog=new MyDialog();
         this.add(dialog);
-		btnNewButton_15 = new MyButton("确定");
+		btnNewButton_15 = new MyButton("刷新");
 		btnNewButton_15.setBounds(162, 333, 100, 30);
 		this.add(btnNewButton_15);
 
-		btnNewButton_16 = new MyButton("清空");
-		btnNewButton_16.setBounds(493, 333, 100, 30);
-		this.add(btnNewButton_16);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(119, 40, 536, 281);
@@ -68,8 +65,7 @@ public class ManagerUI1_5 extends JPanel{
 
 		btnNewButton_15.addActionListener(managerlistener);
 		btnNewButton_15.addMouseListener(managerlistener);
-		btnNewButton_16.addActionListener(managerlistener);
-		btnNewButton_16.addMouseListener(managerlistener);
+	
 	}
 	public void setText(String s){
 		dialog.setText(s);
@@ -85,20 +81,10 @@ public class ManagerUI1_5 extends JPanel{
 		this.btnNewButton_15 = btnNewButton_15;
 	}
 
-	public MyButton getBtnNewButton_16() {
-		return btnNewButton_16;
-	}
 
-	public void setBtnNewButton_16(MyButton btnNewButton_16) {
-		this.btnNewButton_16 = btnNewButton_16;
-	}
 
-	public JTextArea getTextArea() {
-		return textArea;
-	}
-
-	public void setTextArea(JTextArea textArea) {
-		this.textArea = textArea;
+	public void setTextArea(String s) {
+		textArea.append(s+"\n");
 	}
 
 

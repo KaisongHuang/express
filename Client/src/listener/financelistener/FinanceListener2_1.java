@@ -15,7 +15,9 @@ import vo.ReceiptVO;
 public class FinanceListener2_1 implements ActionListener{
 	private FinanceUI2_1 ui;
 	Finance finance;
-	
+	double income=0;
+	double outcome=0;
+	double balance=0;
 	public FinanceListener2_1(FinanceUI2_1 ui){
 		this.ui=ui;
 		finance=LogicFactory.getFinanceService();
@@ -38,9 +40,7 @@ public class FinanceListener2_1 implements ActionListener{
 			pay=this.getPay();
 			receipt=this.getReceipt();
 			
-			double income=0;
-			double outcome=0;
-			double balance=0;
+		
 			
 			for(int i=0;i<pay.size();i++){
 				Vector<Object> rowData=new Vector<Object>();
@@ -68,6 +68,9 @@ public class FinanceListener2_1 implements ActionListener{
 			ui.getIncome().setText(""+income);
 			ui.getOutcome().setText(""+outcome);
 			ui.getBalance().setText(""+balance);
+		}
+		if(e.getSource()==ui.getMyButton()){
+			finance.exportCostAndReceive(""+income, ""+outcome,""+balance);
 		}
 	}
 	
